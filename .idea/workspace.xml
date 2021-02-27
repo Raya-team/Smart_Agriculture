@@ -4,12 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/resources/views" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d703aa5-6bf4-4443-9648-150136637f3e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_27_2021_12_23_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_27_2021_12_23_PM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web/admin.php" afterDir="false" />
-    </list>
+    <list default="true" id="7d703aa5-6bf4-4443-9648-150136637f3e" name="Default Changelist" comment="" />
     <ignored path="F:\laravel\Work\first\.idea\shelf/" />
     <ignored path="G:\work\Smart_Agriculture\.idea\shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,6 +46,20 @@
     </expand>
     <select />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-884568443">
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="php" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PHP" value="6" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="first" />
   </component>
@@ -59,17 +68,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/web/admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web/user.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="930">
-              <caret line="32" column="27" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
+            <state relative-caret-position="362">
+              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
             </state>
           </provider>
         </entry>
@@ -192,11 +192,17 @@
       </list>
     </option>
   </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpServers">
     <servers />
@@ -332,8 +338,19 @@
         <subPane>
           <expand>
             <path>
-              <item name="Smart_Agriculture" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Smart_Agriculture" type="462c0819:PsiDirectoryNode" />
+              <item name="first" type="b2602c69:ProjectViewProjectNode" />
+              <item name="first" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="first" type="b2602c69:ProjectViewProjectNode" />
+              <item name="first" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="first" type="b2602c69:ProjectViewProjectNode" />
+              <item name="first" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -379,10 +396,10 @@
     </option>
   </component>
   <component name="RunManager" selected="npm.watch">
-    <configuration name="create-map.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/resources/js/land/create-map.js" working-dir="$PROJECT_DIR$/resources/js">
+    <configuration name="create-map.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/resources/js/land/create-map.js" working-dir="$PROJECT_DIR$/resources/js">
       <method v="2" />
     </configuration>
-    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="dev" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
@@ -392,7 +409,7 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="prod" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="prod" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
@@ -402,7 +419,7 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="production" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="production" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
@@ -412,7 +429,7 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="watch" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="watch" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
@@ -555,11 +572,18 @@
       <option name="project" value="LOCAL" />
       <updated>1614430713400</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="update again">
+      <created>1614430964624</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1614430964624</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="501935000" />
+    <option name="totallyTimeSpent" value="501990000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -571,10 +595,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5563584" visible="true" weight="0.19969743" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5563584" visible="true" weight="0.1965124" />
       <window_info id="Structure" order="1" sideWeight="0.40462428" side_tool="true" weight="0.20858485" />
       <window_info auto_hide="true" id="npm" order="2" sideWeight="0.44364163" side_tool="true" weight="0.1965124" />
       <window_info id="Favorites" order="3" sideWeight="0.44942197" side_tool="true" weight="0.20590208" />
@@ -590,7 +614,7 @@
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32803467" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.501006" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" auto_hide="true" id="Terminal" order="12" sideWeight="0.49966466" weight="0.47135842" />
+      <window_info anchor="bottom" auto_hide="true" id="Terminal" order="12" sideWeight="0.49966466" weight="0.47109827" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -965,8 +989,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web/admin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
+        <state relative-caret-position="362">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
         </state>
       </provider>
     </entry>
