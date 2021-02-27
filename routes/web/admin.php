@@ -57,8 +57,7 @@ Route::group(['middleware' =>['auth', 'auth.admin']] , function (){
     Route::resource('/sensors',SensorController::class);
     Route::resource('/roles',RoleController::class);
     Route::resource('/users-role',RoleUserController::class, ['parameters' => ['users-role' => 'user']]);
-//TODO ACL
-//okmkmk
+//TODO ACL for this
 //    if (Auth::user()->level == 1 || Auth::user()->level == 2){
         Route::get('/admin/profile',[ProfileController::class,'index'])->name('admin.profile.index');
         Route::PATCH('/admin/profile/{user}',[ProfileController::class,'update'])->name('admin.profile.update');
@@ -69,7 +68,7 @@ Route::group(['middleware' =>['auth', 'auth.admin']] , function (){
     })->name('admin.chart');
 });
 Route::post('/user_register',[RegisterController::class, 'store'])->name('user.register');
-//change 222
+
 
 
 
