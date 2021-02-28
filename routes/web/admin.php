@@ -62,10 +62,6 @@ Route::group(['middleware' =>['auth', 'auth.admin']] , function (){
         Route::get('/admin/profile',[ProfileController::class,'index'])->name('admin.profile.index');
         Route::PATCH('/admin/profile/{user}',[ProfileController::class,'update'])->name('admin.profile.update');
 //    }
-
-    Route::get('/admin/chart', function (){
-        return view('admin.chart.index');
-    })->name('admin.chart');
 });
 Route::post('/user_register',[RegisterController::class, 'store'])->name('user.register');
 
