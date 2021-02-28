@@ -1,0 +1,646 @@
+Index: .idea/dataSources.local.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"dataSourceStorageLocal\">\r\n    <data-source name=\"@localhost\" uuid=\"7a162439-02a1-4346-be1b-513b6fb1c840\">\r\n      <database-info product=\"MySQL\" version=\"5.5.5-10.3.16-MariaDB\" jdbc-version=\"4.0\" driver-name=\"MySQL Connector Java\" driver-version=\"mysql-connector-java-5.1.47 ( Revision: fe1903b1ecb4a96a917f7ed3190d80c049b1de29 )\" family=\"MARIADB\" exact-version=\"5.5.5\">\r\n        <extra-name-characters>#@</extra-name-characters>\r\n        <identifier-quote-string>`</identifier-quote-string>\r\n      </database-info>\r\n      <case-sensitivity plain-identifiers=\"lower\" quoted-identifiers=\"lower\" />\r\n      <secret-storage>master_key</secret-storage>\r\n      <introspection-schemas>*:work_first</introspection-schemas>\r\n    </data-source>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/dataSources.local.xml	(revision 35214c631d52c28fbfda26e524bcc79cf6d4d0e1)
++++ .idea/dataSources.local.xml	(date 1614430617392)
+@@ -2,7 +2,7 @@
+ <project version="4">
+   <component name="dataSourceStorageLocal">
+     <data-source name="@localhost" uuid="7a162439-02a1-4346-be1b-513b6fb1c840">
+-      <database-info product="MySQL" version="5.5.5-10.3.16-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.47 ( Revision: fe1903b1ecb4a96a917f7ed3190d80c049b1de29 )" family="MARIADB" exact-version="5.5.5">
++      <database-info product="MySQL" version="5.5.5-10.3.16-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.47 ( Revision: fe1903b1ecb4a96a917f7ed3190d80c049b1de29 )" dbms="MARIADB" exact-version="5.5.5">
+         <extra-name-characters>#@</extra-name-characters>
+         <identifier-quote-string>`</identifier-quote-string>
+       </database-info>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"BookmarkManager\">\r\n    <bookmark url=\"file://$PROJECT_DIR$/resources/views\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"7d703aa5-6bf4-4443-9648-150136637f3e\" name=\"Default Changelist\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/routes/web/admin.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/routes/web/admin.php\" afterDir=\"false\" />\r\n    </list>\r\n    <ignored path=\"F:\\laravel\\Work\\first\\.idea\\shelf/\" />\r\n    <option name=\"EXCLUDED_CONVERTED_TO_IGNORED\" value=\"true\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ComposerSettings\" doNotAsk=\"true\" synchronizationState=\"SYNCHRONIZE\">\r\n    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>\r\n  </component>\r\n  <component name=\"DatabaseView\">\r\n    <option name=\"SHOW_INTERMEDIATE\" value=\"true\" />\r\n    <option name=\"GROUP_DATA_SOURCES\" value=\"true\" />\r\n    <option name=\"GROUP_SCHEMA\" value=\"true\" />\r\n    <option name=\"GROUP_CONTENTS\" value=\"false\" />\r\n    <option name=\"SORT_POSITIONED\" value=\"false\" />\r\n    <option name=\"SHOW_EMPTY_GROUPS\" value=\"false\" />\r\n    <option name=\"AUTO_SCROLL_FROM_SOURCE\" value=\"false\" />\r\n    <option name=\"HIDDEN_KINDS\">\r\n      <set />\r\n    </option>\r\n    <expand>\r\n      <path>\r\n        <item name=\"Database\" type=\"3277223f:DatabaseStructure$DbRootGroup\" />\r\n        <item name=\"@localhost\" type=\"feb32156:DbDataSourceImpl\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"Database\" type=\"3277223f:DatabaseStructure$DbRootGroup\" />\r\n        <item name=\"@localhost\" type=\"feb32156:DbDataSourceImpl\" />\r\n        <item name=\"schemas\" type=\"d4e8921:DatabaseStructure$FamilyGroup\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"Database\" type=\"3277223f:DatabaseStructure$DbRootGroup\" />\r\n        <item name=\"@localhost\" type=\"feb32156:DbDataSourceImpl\" />\r\n        <item name=\"schemas\" type=\"d4e8921:DatabaseStructure$FamilyGroup\" />\r\n        <item name=\"work_first: schema\" type=\"c314c289:MysqlImplModel$Schema\" />\r\n      </path>\r\n    </expand>\r\n    <select />\r\n  </component>\r\n  <component name=\"FUSProjectUsageTrigger\">\r\n    <session id=\"-884568443\">\r\n      <usages-collector id=\"statistics.lifecycle.project\">\r\n        <counts>\r\n          <entry key=\"project.closed\" value=\"58\" />\r\n          <entry key=\"project.open.time.0\" value=\"4\" />\r\n          <entry key=\"project.open.time.1\" value=\"1\" />\r\n          <entry key=\"project.open.time.101\" value=\"1\" />\r\n          <entry key=\"project.open.time.11\" value=\"1\" />\r\n          <entry key=\"project.open.time.12\" value=\"1\" />\r\n          <entry key=\"project.open.time.2\" value=\"1\" />\r\n          <entry key=\"project.open.time.24\" value=\"1\" />\r\n          <entry key=\"project.open.time.29\" value=\"2\" />\r\n          <entry key=\"project.open.time.3\" value=\"1\" />\r\n          <entry key=\"project.open.time.31\" value=\"1\" />\r\n          <entry key=\"project.open.time.33\" value=\"1\" />\r\n          <entry key=\"project.open.time.36\" value=\"3\" />\r\n          <entry key=\"project.open.time.37\" value=\"4\" />\r\n          <entry key=\"project.open.time.39\" value=\"1\" />\r\n          <entry key=\"project.open.time.4\" value=\"3\" />\r\n          <entry key=\"project.open.time.40\" value=\"4\" />\r\n          <entry key=\"project.open.time.41\" value=\"5\" />\r\n          <entry key=\"project.open.time.42\" value=\"1\" />\r\n          <entry key=\"project.open.time.43\" value=\"1\" />\r\n          <entry key=\"project.open.time.44\" value=\"1\" />\r\n          <entry key=\"project.open.time.45\" value=\"2\" />\r\n          <entry key=\"project.open.time.46\" value=\"2\" />\r\n          <entry key=\"project.open.time.47\" value=\"2\" />\r\n          <entry key=\"project.open.time.49\" value=\"1\" />\r\n          <entry key=\"project.open.time.50\" value=\"1\" />\r\n          <entry key=\"project.open.time.52\" value=\"2\" />\r\n          <entry key=\"project.open.time.53\" value=\"2\" />\r\n          <entry key=\"project.open.time.56\" value=\"1\" />\r\n          <entry key=\"project.open.time.6\" value=\"1\" />\r\n          <entry key=\"project.open.time.62\" value=\"1\" />\r\n          <entry key=\"project.open.time.63\" value=\"1\" />\r\n          <entry key=\"project.open.time.65\" value=\"1\" />\r\n          <entry key=\"project.open.time.70\" value=\"1\" />\r\n          <entry key=\"project.open.time.73\" value=\"1\" />\r\n          <entry key=\"project.open.time.78\" value=\"3\" />\r\n          <entry key=\"project.open.time.80\" value=\"1\" />\r\n          <entry key=\"project.open.time.96\" value=\"1\" />\r\n          <entry key=\"project.opened\" value=\"62\" />\r\n        </counts>\r\n      </usages-collector>\r\n      <usages-collector id=\"statistics.file.extensions.open\">\r\n        <counts>\r\n          <entry key=\"css\" value=\"17\" />\r\n          <entry key=\"env\" value=\"5\" />\r\n          <entry key=\"failed_jobs\" value=\"1\" />\r\n          <entry key=\"gitignore\" value=\"1\" />\r\n          <entry key=\"html\" value=\"2\" />\r\n          <entry key=\"js\" value=\"130\" />\r\n          <entry key=\"json\" value=\"20\" />\r\n          <entry key=\"lands\" value=\"1\" />\r\n          <entry key=\"less\" value=\"6\" />\r\n          <entry key=\"lock\" value=\"1\" />\r\n          <entry key=\"log\" value=\"1\" />\r\n          <entry key=\"migrations\" value=\"1\" />\r\n          <entry key=\"php\" value=\"796\" />\r\n          <entry key=\"png\" value=\"2\" />\r\n          <entry key=\"role_has_permissions\" value=\"1\" />\r\n          <entry key=\"scss\" value=\"4\" />\r\n          <entry key=\"sql\" value=\"1\" />\r\n        </counts>\r\n      </usages-collector>\r\n      <usages-collector id=\"statistics.file.types.open\">\r\n        <counts>\r\n          <entry key=\".env file\" value=\"5\" />\r\n          <entry key=\"Blade\" value=\"306\" />\r\n          <entry key=\"CSS\" value=\"17\" />\r\n          <entry key=\"Database Element\" value=\"4\" />\r\n          <entry key=\"Git file\" value=\"1\" />\r\n          <entry key=\"HTML\" value=\"2\" />\r\n          <entry key=\"Image\" value=\"2\" />\r\n          <entry key=\"JSON\" value=\"21\" />\r\n          <entry key=\"JavaScript\" value=\"130\" />\r\n          <entry key=\"Less\" value=\"6\" />\r\n          <entry key=\"PHP\" value=\"490\" />\r\n          <entry key=\"PLAIN_TEXT\" value=\"1\" />\r\n          <entry key=\"SCSS\" value=\"4\" />\r\n          <entry key=\"Scratch\" value=\"1\" />\r\n        </counts>\r\n      </usages-collector>\r\n      <usages-collector id=\"statistics.file.extensions.edit\">\r\n        <counts>\r\n          <entry key=\"css\" value=\"225\" />\r\n          <entry key=\"html\" value=\"8\" />\r\n          <entry key=\"js\" value=\"4623\" />\r\n          <entry key=\"php\" value=\"27565\" />\r\n          <entry key=\"scss\" value=\"45\" />\r\n          <entry key=\"txt\" value=\"80\" />\r\n        </counts>\r\n      </usages-collector>\r\n      <usages-collector id=\"statistics.file.types.edit\">\r\n        <counts>\r\n          <entry key=\"Blade\" value=\"10986\" />\r\n          <entry key=\"CSS\" value=\"225\" />\r\n          <entry key=\"HTML\" value=\"8\" />\r\n          <entry key=\"JavaScript\" value=\"4623\" />\r\n          <entry key=\"PHP\" value=\"16579\" />\r\n          <entry key=\"PLAIN_TEXT\" value=\"80\" />\r\n          <entry key=\"SCSS\" value=\"45\" />\r\n        </counts>\r\n      </usages-collector>\r\n    </session>\r\n  </component>\r\n  <component name=\"FavoritesManager\">\r\n    <favorites_list name=\"first\" />\r\n  </component>\r\n  <component name=\"FileEditorManager\">\r\n    <leaf SIDE_TABS_SIZE_LIMIT_KEY=\"300\">\r\n      <file pinned=\"false\" current-in-tab=\"true\">\r\n        <entry file=\"file://$PROJECT_DIR$/routes/web/admin.php\">\r\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n            <state relative-caret-position=\"266\">\r\n              <caret line=\"59\" column=\"14\" selection-start-line=\"59\" selection-start-column=\"14\" selection-end-line=\"59\" selection-end-column=\"14\" />\r\n            </state>\r\n          </provider>\r\n        </entry>\r\n      </file>\r\n      <file pinned=\"false\" current-in-tab=\"false\">\r\n        <entry file=\"file://$PROJECT_DIR$/routes/web/user.php\">\r\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n            <state relative-caret-position=\"290\">\r\n              <caret line=\"32\" column=\"27\" lean-forward=\"true\" selection-start-line=\"32\" selection-start-column=\"27\" selection-end-line=\"32\" selection-end-column=\"27\" />\r\n            </state>\r\n          </provider>\r\n        </entry>\r\n      </file>\r\n    </leaf>\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"CSS File\" />\r\n        <option value=\"JavaScript File\" />\r\n        <option value=\"Blade Laravel\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"FindInProjectRecents\">\r\n    <findStrings>\r\n      <find>categ</find>\r\n      <find>category_id</find>\r\n      <find>cat_id</find>\r\n      <find>catid</find>\r\n      <find>cat</find>\r\n      <find>map</find>\r\n      <find>@can</find>\r\n      <find>user</find>\r\n      <find>ProviderRepository</find>\r\n      <find>role</find>\r\n      <find>check</find>\r\n      <find>route</find>\r\n      <find>منو</find>\r\n      <find>ایجاد زمین</find>\r\n      <find>سطوح دسترسی</find>\r\n      <find>swee</find>\r\n      <find>@ca</find>\r\n      <find>فعالی</find>\r\n      <find>ارسا</find>\r\n      <find>کنل</find>\r\n      <find>کنترل پ</find>\r\n      <find>پروفایل</find>\r\n      <find>user_id</find>\r\n      <find>test</find>\r\n      <find>show.bs.modal</find>\r\n      <find>modal</find>\r\n      <find>show</find>\r\n      <find>delete</find>\r\n      <find>سنسو</find>\r\n      <find>نمو</find>\r\n    </findStrings>\r\n    <replaceStrings>\r\n      <replace>داشبورد</replace>\r\n      <replace>/admin/dist</replace>\r\n      <replace>/admin/bower_components</replace>\r\n      <replace>/admin/plugins</replace>\r\n      <replace>/user/</replace>\r\n      <replace>users</replace>\r\n    </replaceStrings>\r\n    <dirStrings>\r\n      <dir>F:\\laravel\\Work\\first\\resources\\js</dir>\r\n    </dirStrings>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"UPDATE_CHANGES_POLICY\" value=\"SHELVE\" />\r\n    <option name=\"UPDATE_TYPE\" value=\"MERGE\" />\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"IdeDocumentHistory\">\r\n    <option name=\"CHANGED_PATHS\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/resources/js/show-map-edit-sensor.js\" />\r\n        <option value=\"$PROJECT_DIR$/resources/js/land/create-map.js\" />\r\n        <option value=\"$PROJECT_DIR$/public/js/map.js\" />\r\n        <option value=\"$PROJECT_DIR$/resources/js/leaflet/create-land.js\" />\r\n        <option value=\"$PROJECT_DIR$/resources/views/admin/lands/create.blade.php\" />\r\n        <option value=\"$PROJECT_DIR$/resources/js/show-map-sensor-show.js\" />\r\n        <option value=\"$PROJECT_DIR$/resources/views/admin/lands/show.blade.php\" />\r\n        <option value=\"$PROJECT_DIR$/resources/views/admin/sensors/create.blade.php\" />\r\n        <option value=\"$PROJECT_DIR$/resources/views/admin/sensors/edit.blade.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Providers/RouteServiceProvider.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Rules/Username.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Rules/Security.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Rules/Unspace.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Http/Requests/SensorRequest.php\" />\r\n        <option value=\"$PROJECT_DIR$/resources/views/admin/users/verify.blade.php\" />\r\n        <option value=\"$PROJECT_DIR$/resources/views/admin/users/index.blade.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Http/Requests/UserRequest.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Http/Requests/EditSensorRrequest.php\" />\r\n        <option value=\"$PROJECT_DIR$/resources/lang/fa/validation.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Http/Requests/RoleRequest.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Http/Requests/RoleUserRequest.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Http/Controllers/Admin/RoleUserController.php\" />\r\n        <option value=\"$PROJECT_DIR$/resources/views/admin/roles/create.blade.php\" />\r\n        <option value=\"$PROJECT_DIR$/resources/views/admin/roles/edit.blade.php\" />\r\n        <option value=\"$PROJECT_DIR$/resources/views/admin/roles/index.blade.php\" />\r\n        <option value=\"$PROJECT_DIR$/resources/views/admin/role-user/index.blade.php\" />\r\n        <option value=\"$PROJECT_DIR$/resources/views/admin/role-user/edit.blade.php\" />\r\n        <option value=\"$PROJECT_DIR$/resources/views/admin/sensors/index.blade.php\" />\r\n        <option value=\"$PROJECT_DIR$/resources/views/welcome.blade.php\" />\r\n        <option value=\"$PROJECT_DIR$/webpack.mix.js\" />\r\n        <option value=\"$PROJECT_DIR$/node_modules/@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.min.js\" />\r\n        <option value=\"$PROJECT_DIR$/resources/views/admin/lands/edit.blade.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Http/Controllers/Admin/SensorController.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Http/Requests/CreateSensorRequest.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Http/Requests/EditSensorRequest.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Http/Controllers/Admin/LandController.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Http/Requests/LandRequest.php\" />\r\n        <option value=\"$PROJECT_DIR$/resources/views/user/master.blade.php\" />\r\n        <option value=\"$PROJECT_DIR$/routes/web/user.php\" />\r\n        <option value=\"$PROJECT_DIR$/resources/views/user/sensors/index.blade.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Http/Controllers/User/SensorController.php\" />\r\n        <option value=\"$PROJECT_DIR$/resources/js/leaflet/land-edit.js\" />\r\n        <option value=\"$PROJECT_DIR$/resources/js/leaflet/land-create.js\" />\r\n        <option value=\"$PROJECT_DIR$/resources/js/leaflet/land-show.js\" />\r\n        <option value=\"$PROJECT_DIR$/resources/js/leaflet/sensor-create.js\" />\r\n        <option value=\"$PROJECT_DIR$/resources/js/leaflet/sensor-edit.js\" />\r\n        <option value=\"$PROJECT_DIR$/routes/web/admin.php\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"JsBuildToolGruntFileManager\" detection-done=\"true\" sorting=\"DEFINITION_ORDER\" />\r\n  <component name=\"JsBuildToolPackageJson\" detection-done=\"true\" sorting=\"DEFINITION_ORDER\">\r\n    <package-json value=\"$PROJECT_DIR$/package.json\" />\r\n  </component>\r\n  <component name=\"JsFlowSettings\">\r\n    <service-enabled>true</service-enabled>\r\n    <exe-path />\r\n    <other-services-enabled>true</other-services-enabled>\r\n    <auto-save>true</auto-save>\r\n  </component>\r\n  <component name=\"JsGulpfileManager\">\r\n    <detection-done>true</detection-done>\r\n    <sorting>DEFINITION_ORDER</sorting>\r\n  </component>\r\n  <component name=\"NodeModulesDirectoryManager\">\r\n    <handled-path value=\"$PROJECT_DIR$/node_modules\" />\r\n  </component>\r\n  <component name=\"NodePackageJsonFileManager\">\r\n    <packageJsonPaths>\r\n      <path value=\"$PROJECT_DIR$/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/admin/bower_components/Flot/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/admin/bower_components/bootstrap-colorpicker/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/admin/bower_components/bootstrap-datepicker/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/admin/bower_components/bootstrap-daterangepicker/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/admin/bower_components/bootstrap/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/admin/bower_components/chart.js/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/admin/bower_components/ckeditor-english/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/admin/bower_components/ckeditor/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/admin/bower_components/eve-raphael/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/admin/bower_components/ion.rangeSlider/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/admin/bower_components/jquery-knob/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/admin/bower_components/jquery-slimscroll/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/admin/bower_components/jquery-ui/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/admin/bower_components/morris.js/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/admin/bower_components/select2/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/user/bower_components/Flot/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/user/bower_components/bootstrap-colorpicker/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/user/bower_components/bootstrap-datepicker/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/user/bower_components/bootstrap-daterangepicker/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/user/bower_components/bootstrap/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/user/bower_components/chart.js/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/user/bower_components/ckeditor-english/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/user/bower_components/ckeditor/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/user/bower_components/eve-raphael/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/user/bower_components/ion.rangeSlider/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/user/bower_components/jquery-knob/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/user/bower_components/jquery-slimscroll/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/user/bower_components/jquery-ui/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/user/bower_components/morris.js/package.json\" />\r\n      <path value=\"$PROJECT_DIR$/public/user/bower_components/select2/package.json\" />\r\n    </packageJsonPaths>\r\n  </component>\r\n  <component name=\"PhpServers\">\r\n    <servers />\r\n  </component>\r\n  <component name=\"PhpWorkspaceProjectConfiguration\">\r\n    <include_path>\r\n      <path value=\"$PROJECT_DIR$/vendor/nikic/php-parser\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/voku/portable-ascii\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/nunomaduro/collision\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/facade/ignition-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/facade/flare-client-php\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/facade/ignition\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/dragonmantank/cron-expression\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psy/psysh\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/theseer/tokenizer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpdocumentor/type-resolver\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpdocumentor/reflection-common\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/nesbot/carbon\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/swiftmailer/swiftmailer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/mockery/mockery\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/instantiator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/inflector\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/lexer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/php-file-iterator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/php-timer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/php-text-template\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/php-invoker\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/php-code-coverage\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/myclabs/deep-copy\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/phpunit\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/vlucas/phpdotenv\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/fideloper/proxy\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/fruitcake/laravel-cors\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phar-io/manifest\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phar-io/version\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpoption/phpoption\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/webmozart/assert\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/graham-campbell/result-type\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/ralouphie/getallheaders\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/guzzlehttp/guzzle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/guzzlehttp/psr7\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/guzzlehttp/promises\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/fakerphp/faker\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/global-state\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/complexity\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/recursion-context\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/object-enumerator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/object-reflector\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/cli-parser\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/diff\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/deprecation-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/lines-of-code\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/string\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/type\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/service-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/version\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/egulias/email-validator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/mime\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/comparator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-iconv\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/environment\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/var-dumper\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/exporter\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/code-unit\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-php80\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/resource-operations\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-client-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/routing\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/css-selector\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/error-handler\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/event-dispatcher\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-ctype\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/console\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/process\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/composer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-php72\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-php73\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-kernel\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/finder\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/translation\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-mbstring\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-foundation\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/translation-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/ramsey/collection\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/ramsey/uuid\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/filp/whoops\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/hamcrest/hamcrest-php\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/monolog/monolog\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpspec/prophecy\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/container\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/http-client\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/http-message\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/event-dispatcher\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/log\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/simple-cache\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/asm89/stack-cors\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/league/flysystem\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/league/commonmark\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/brick/math\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/league/mime-type-detection\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/laravel/tinker\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/laravel/framework\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/laravel/sail\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/opis/closure\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/laravel/ui\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/uxweb/sweet-alert\" />\r\n    </include_path>\r\n  </component>\r\n  <component name=\"ProjectFrameBounds\" extendedState=\"6\">\r\n    <option name=\"x\" value=\"1905\" />\r\n    <option name=\"y\" value=\"-15\" />\r\n    <option name=\"width\" value=\"1955\" />\r\n    <option name=\"height\" value=\"2095\" />\r\n  </component>\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectView\">\r\n    <navigator proportions=\"\" version=\"1\">\r\n      <foldersAlwaysOnTop value=\"true\" />\r\n    </navigator>\r\n    <panes>\r\n      <pane id=\"Scope\" />\r\n      <pane id=\"ProjectPane\">\r\n        <subPane>\r\n          <expand>\r\n            <path>\r\n              <item name=\"first\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"first\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"first\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"first\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"routes\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"first\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"first\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"routes\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"web\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n          </expand>\r\n          <select />\r\n        </subPane>\r\n      </pane>\r\n    </panes>\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"DatabaseDriversLRU\" value=\"mysql\" />\r\n    <property name=\"SearchEverywhereHistoryKey\" value=\"todo&#9;ACTION&#9;ActivateTODOToolWindow&#10;maste&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php&#10;mas&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/user/master.blade.php&#10;landco&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/LandController.php&#10;sensorc&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;welcom&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/welcome.blade.php&#10;user.php&#9;FILE&#9;file://F:/laravel/Work/first/app/Models/User.php&#10;index&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/users/index.blade.php&#10;usercontroller&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/UserController.php&#10;login&#9;null&#9;null&#10;sensorcon&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;sen&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;user&#9;null&#9;null&#10;land&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/LandController.php&#10;master&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php&#10;throttle&#9;null&#9;null&#10;edit&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/role-user/edit.blade.php&#10;userc&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/UserController.php&#10;مخل&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/login.blade.php&#10;log&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/login.blade.php&#10;index.bla&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/lands/index.blade.php&#10;عسثق&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Requests/UserRequest.php&#10;va&#9;FILE&#9;file://F:/laravel/Work/first/resources/lang/fa/validation.php&#10;role&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/RoleController.php&#10;loginco&#9;null&#9;null&#10;landc&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/LandController.php&#10;admin&#9;FILE&#9;file://F:/laravel/Work/first/routes/web/admin.php&#10;sensor&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;index.b&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/sensors/index.blade.php&#10;master.php&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php&#10;home&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/HomeController.php&#10;ئ&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php&#10;regist&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/register.blade.php&#10;create.bla&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/users/create.blade.php&#10;logi&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/login.blade.php&#10;crelandre&#9;null&#9;null&#10;config.php&#9;FILE&#9;file://F:/laravel/Work/first/vendor/psy/psysh/.phan/config.php&#10;ProviderRepository.php&#9;FILE&#9;file://F:/laravel/Work/first/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php&#10;ProviderRepository&#9;null&#9;null&#10;map&#9;FILE&#9;file://F:/laravel/Work/first/resources/js/map.js&#10;user-rol&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/user-role&#10;sens&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;show&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/lands/show.blade.php&#10;هدیثط&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/roles/index.blade.php&#10;userco&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/UserController.php&#10;master.blade&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php&#10;sensoc&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;senso&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;landcon&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/LandController.php&#10;master.bla&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"database.console.LAST_STATE\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/../QuickAdminPanel-Material-Dashboard\" />\r\n    <property name=\"list.type.of.created.stylesheet\" value=\"CSS\" />\r\n    <property name=\"nodejs_interpreter_path.stuck_in_default_project\" value=\"undefined stuck path\" />\r\n    <property name=\"nodejs_npm_path_reset_for_default_project\" value=\"true\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"editing.templates\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"F:\\laravel\\Work\\first\\public\\admin\" />\r\n      <recent name=\"F:\\laravel\\Work\\first\\resources\\views\\admin\" />\r\n      <recent name=\"F:\\laravel\\Work\\first\\resources\\views\\user\" />\r\n      <recent name=\"F:\\laravel\\Work\\first\\resources\\views\\admin\\users\" />\r\n      <recent name=\"F:\\laravel\\Work\\first\\resources\\views\\admin\\lands\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"F:\\laravel\\Work\\first\\resources\\js\\land\" />\r\n      <recent name=\"F:\\laravel\\Work\\first\\routes\\web\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RestoreUpdateTree\" date=\"Moments ago\" ActionInfo=\"_Update\">\r\n    <UpdatedFiles>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Updated from server\" />\r\n        <option name=\"myStatusName\" value=\"Changed on server\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"CHANGED_ON_SERVER\" />\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" value=\"Updated\" />\r\n          <option name=\"myStatusName\" value=\"Changed\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" value=\"UPDATED\" />\r\n          <PATH vcs=\"Git\" revision=\"\">$PROJECT_DIR$/.idea/workspace.xml</PATH>\r\n          <PATH vcs=\"Git\" revision=\"\">$PROJECT_DIR$/routes/web/admin.php</PATH>\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" value=\"Created\" />\r\n          <option name=\"myStatusName\" value=\"Created\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" value=\"CREATED\" />\r\n          <PATH vcs=\"Git\" revision=\"\">$PROJECT_DIR$/.idea/encodings.xml</PATH>\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" value=\"Deleted\" />\r\n          <option name=\"myStatusName\" value=\"Deleted\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"true\" />\r\n          <option name=\"myId\" value=\"REMOVED_FROM_REPOSITORY\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" value=\"Restored\" />\r\n          <option name=\"myStatusName\" value=\"Will be restored\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" value=\"RESTORED\" />\r\n        </FILE-GROUP>\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Modified\" />\r\n        <option name=\"myStatusName\" value=\"Modified\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"MODIFIED\" />\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Skipped\" />\r\n        <option name=\"myStatusName\" value=\"Skipped\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"SKIPPED\" />\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Merged with conflicts\" />\r\n        <option name=\"myStatusName\" value=\"Will be merged with conflicts\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"MERGED_WITH_CONFLICTS\" />\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Merged with tree conflicts\" />\r\n        <option name=\"myStatusName\" value=\"Merged with tree conflicts\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"MERGED_WITH_TREE_CONFLICT\" />\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Merged with property conflicts\" />\r\n        <option name=\"myStatusName\" value=\"Will be merged with property conflicts\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"MERGED_WITH_PROPERTY_CONFLICT\" />\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Merged\" />\r\n        <option name=\"myStatusName\" value=\"Will be merged\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"MERGED\" />\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Not in repository\" />\r\n        <option name=\"myStatusName\" value=\"Not in repository\" />\r\n        <option name=\"mySupportsDeletion\" value=\"true\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"UNKNOWN\" />\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Locally added\" />\r\n        <option name=\"myStatusName\" value=\"Locally added\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"LOCALLY_ADDED\" />\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Locally removed\" />\r\n        <option name=\"myStatusName\" value=\"Locally removed\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"LOCALLY_REMOVED\" />\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Switched\" />\r\n        <option name=\"myStatusName\" value=\"Switched\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"SWITCHED\" />\r\n      </FILE-GROUP>\r\n    </UpdatedFiles>\r\n  </component>\r\n  <component name=\"RunDashboard\">\r\n    <option name=\"ruleStates\">\r\n      <list>\r\n        <RuleState>\r\n          <option name=\"name\" value=\"ConfigurationTypeDashboardGroupingRule\" />\r\n        </RuleState>\r\n        <RuleState>\r\n          <option name=\"name\" value=\"StatusDashboardGroupingRule\" />\r\n        </RuleState>\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"npm.watch\">\r\n    <configuration name=\"create-map.js\" type=\"NodeJSConfigurationType\" factoryName=\"Node.js\" temporary=\"true\" nameIsGenerated=\"true\" path-to-js-file=\"$PROJECT_DIR$/resources/js/land/create-map.js\" working-dir=\"$PROJECT_DIR$/resources/js\">\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"dev\" type=\"js.build_tools.npm\" factoryName=\"npm\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <package-json value=\"$PROJECT_DIR$/package.json\" />\r\n      <command value=\"run\" />\r\n      <scripts>\r\n        <script value=\"dev\" />\r\n      </scripts>\r\n      <node-interpreter value=\"project\" />\r\n      <envs />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"prod\" type=\"js.build_tools.npm\" factoryName=\"npm\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <package-json value=\"$PROJECT_DIR$/package.json\" />\r\n      <command value=\"run\" />\r\n      <scripts>\r\n        <script value=\"prod\" />\r\n      </scripts>\r\n      <node-interpreter value=\"project\" />\r\n      <envs />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"production\" type=\"js.build_tools.npm\" factoryName=\"npm\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <package-json value=\"$PROJECT_DIR$/package.json\" />\r\n      <command value=\"run\" />\r\n      <scripts>\r\n        <script value=\"production\" />\r\n      </scripts>\r\n      <node-interpreter value=\"project\" />\r\n      <envs />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"watch\" type=\"js.build_tools.npm\" factoryName=\"npm\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <package-json value=\"$PROJECT_DIR$/package.json\" />\r\n      <command value=\"run\" />\r\n      <scripts>\r\n        <script value=\"watch\" />\r\n      </scripts>\r\n      <node-interpreter value=\"project\" />\r\n      <envs />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Node.js.create-map.js\" />\r\n      <item itemvalue=\"npm.dev\" />\r\n      <item itemvalue=\"npm.prod\" />\r\n      <item itemvalue=\"npm.production\" />\r\n      <item itemvalue=\"npm.watch\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"npm.watch\" />\r\n        <item itemvalue=\"npm.prod\" />\r\n        <item itemvalue=\"npm.dev\" />\r\n        <item itemvalue=\"npm.production\" />\r\n        <item itemvalue=\"Node.js.create-map.js\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SvnConfiguration\">\r\n    <configuration />\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"7d703aa5-6bf4-4443-9648-150136637f3e\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1608536792325</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1608536792325</updated>\r\n      <workItem from=\"1608536794006\" duration=\"20132000\" />\r\n      <workItem from=\"1608615734989\" duration=\"6570000\" />\r\n      <workItem from=\"1608803908276\" duration=\"937000\" />\r\n      <workItem from=\"1608806505347\" duration=\"1506000\" />\r\n      <workItem from=\"1608808048169\" duration=\"1791000\" />\r\n      <workItem from=\"1608959585101\" duration=\"3377000\" />\r\n      <workItem from=\"1608975517978\" duration=\"10076000\" />\r\n      <workItem from=\"1609045051173\" duration=\"8362000\" />\r\n      <workItem from=\"1609353761607\" duration=\"404000\" />\r\n      <workItem from=\"1609565206354\" duration=\"603000\" />\r\n      <workItem from=\"1609571718364\" duration=\"2794000\" />\r\n      <workItem from=\"1609650874985\" duration=\"22887000\" />\r\n      <workItem from=\"1609737802059\" duration=\"11572000\" />\r\n      <workItem from=\"1609845069874\" duration=\"1608000\" />\r\n      <workItem from=\"1610429603178\" duration=\"15507000\" />\r\n      <workItem from=\"1610466884584\" duration=\"3340000\" />\r\n      <workItem from=\"1610517568369\" duration=\"7898000\" />\r\n      <workItem from=\"1610538277296\" duration=\"6541000\" />\r\n      <workItem from=\"1610603869250\" duration=\"15956000\" />\r\n      <workItem from=\"1610773908861\" duration=\"18885000\" />\r\n      <workItem from=\"1610868569302\" duration=\"3144000\" />\r\n      <workItem from=\"1610897755486\" duration=\"127000\" />\r\n      <workItem from=\"1610898192012\" duration=\"118000\" />\r\n      <workItem from=\"1610898345379\" duration=\"2349000\" />\r\n      <workItem from=\"1610947540998\" duration=\"7107000\" />\r\n      <workItem from=\"1610960224477\" duration=\"2086000\" />\r\n      <workItem from=\"1610966113503\" duration=\"8970000\" />\r\n      <workItem from=\"1611037658369\" duration=\"26601000\" />\r\n      <workItem from=\"1611121217891\" duration=\"10516000\" />\r\n      <workItem from=\"1611380372413\" duration=\"13075000\" />\r\n      <workItem from=\"1611466515669\" duration=\"12620000\" />\r\n      <workItem from=\"1611761072343\" duration=\"10788000\" />\r\n      <workItem from=\"1611828933052\" duration=\"597000\" />\r\n      <workItem from=\"1611851139706\" duration=\"2215000\" />\r\n      <workItem from=\"1611908135594\" duration=\"12536000\" />\r\n      <workItem from=\"1611989155892\" duration=\"7793000\" />\r\n      <workItem from=\"1612020776899\" duration=\"735000\" />\r\n      <workItem from=\"1612072619918\" duration=\"8426000\" />\r\n      <workItem from=\"1612159154439\" duration=\"16667000\" />\r\n      <workItem from=\"1612242271579\" duration=\"717000\" />\r\n      <workItem from=\"1612248630083\" duration=\"11534000\" />\r\n      <workItem from=\"1612261974162\" duration=\"7539000\" />\r\n      <workItem from=\"1612335287469\" duration=\"14276000\" />\r\n      <workItem from=\"1612415026225\" duration=\"18794000\" />\r\n      <workItem from=\"1612443178330\" duration=\"596000\" />\r\n      <workItem from=\"1612590166791\" duration=\"4935000\" />\r\n      <workItem from=\"1612675875476\" duration=\"19410000\" />\r\n      <workItem from=\"1612761524544\" duration=\"16796000\" />\r\n      <workItem from=\"1612848825341\" duration=\"13291000\" />\r\n      <workItem from=\"1612992906864\" duration=\"955000\" />\r\n      <workItem from=\"1613120375110\" duration=\"172000\" />\r\n      <workItem from=\"1613193907071\" duration=\"15697000\" />\r\n      <workItem from=\"1613282512720\" duration=\"6091000\" />\r\n      <workItem from=\"1613300530894\" duration=\"597000\" />\r\n      <workItem from=\"1613366766825\" duration=\"14788000\" />\r\n      <workItem from=\"1613498012553\" duration=\"1297000\" />\r\n      <workItem from=\"1613541407578\" duration=\"17560000\" />\r\n      <workItem from=\"1613625727054\" duration=\"10943000\" />\r\n      <workItem from=\"1613799938500\" duration=\"3129000\" />\r\n      <workItem from=\"1613979409677\" duration=\"1216000\" />\r\n      <workItem from=\"1614079062523\" duration=\"1665000\" />\r\n      <workItem from=\"1614404083633\" duration=\"12092000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"update LandController\">\r\n      <created>1610903462592</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1610903462592</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"return update LandController\">\r\n      <created>1610903804857</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1610903804857</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"update\">\r\n      <created>1614413828260</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1614413828260</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"update again\">\r\n      <created>1614416054488</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1614416054488</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"update again\">\r\n      <created>1614422793233</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1614422793233</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"6\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TimeTrackingManager\">\r\n    <option name=\"totallyTimeSpent\" value=\"501306000\" />\r\n  </component>\r\n  <component name=\"TodoView\">\r\n    <todo-panel id=\"selected-file\">\r\n      <is-autoscroll-to-source value=\"true\" />\r\n    </todo-panel>\r\n    <todo-panel id=\"all\">\r\n      <are-packages-shown value=\"true\" />\r\n      <is-autoscroll-to-source value=\"true\" />\r\n    </todo-panel>\r\n  </component>\r\n  <component name=\"ToolWindowManager\">\r\n    <frame x=\"-6\" y=\"-6\" width=\"1549\" height=\"837\" extended-state=\"6\" />\r\n    <editor active=\"true\" />\r\n    <layout>\r\n      <window_info active=\"true\" content_ui=\"combo\" id=\"Project\" order=\"0\" sideWeight=\"0.5563584\" visible=\"true\" weight=\"0.1965124\" />\r\n      <window_info id=\"Structure\" order=\"1\" sideWeight=\"0.40462428\" side_tool=\"true\" weight=\"0.20858485\" />\r\n      <window_info auto_hide=\"true\" id=\"npm\" order=\"2\" sideWeight=\"0.44364163\" side_tool=\"true\" weight=\"0.1965124\" />\r\n      <window_info id=\"Favorites\" order=\"3\" sideWeight=\"0.44942197\" side_tool=\"true\" weight=\"0.20590208\" />\r\n      <window_info anchor=\"bottom\" id=\"Database Console\" order=\"0\" weight=\"0.32947975\" />\r\n      <window_info anchor=\"bottom\" id=\"Message\" order=\"1\" />\r\n      <window_info anchor=\"bottom\" id=\"Find\" order=\"2\" weight=\"0.32658958\" />\r\n      <window_info anchor=\"bottom\" id=\"Debug\" order=\"3\" weight=\"0.39884394\" />\r\n      <window_info anchor=\"bottom\" id=\"Cvs\" order=\"4\" weight=\"0.25\" />\r\n      <window_info anchor=\"bottom\" id=\"Inspection\" order=\"5\" weight=\"0.4\" />\r\n      <window_info anchor=\"bottom\" auto_hide=\"true\" id=\"Run\" order=\"6\" sideWeight=\"0.49899396\" weight=\"0.3468208\" />\r\n      <window_info anchor=\"bottom\" id=\"Database Changes\" order=\"7\" weight=\"0.32658958\" />\r\n      <window_info anchor=\"bottom\" id=\"TODO\" order=\"8\" weight=\"0.32658958\" />\r\n      <window_info anchor=\"bottom\" id=\"Docker\" order=\"9\" show_stripe_button=\"false\" />\r\n      <window_info anchor=\"bottom\" id=\"Version Control\" order=\"10\" weight=\"0.32803467\" />\r\n      <window_info anchor=\"bottom\" id=\"Event Log\" order=\"11\" sideWeight=\"0.501006\" side_tool=\"true\" weight=\"0.25\" />\r\n      <window_info anchor=\"bottom\" auto_hide=\"true\" id=\"Terminal\" order=\"12\" sideWeight=\"0.49966466\" weight=\"0.47254336\" />\r\n      <window_info anchor=\"right\" id=\"Commander\" internal_type=\"SLIDING\" order=\"0\" type=\"SLIDING\" weight=\"0.4\" />\r\n      <window_info anchor=\"right\" id=\"Ant Build\" order=\"1\" weight=\"0.25\" />\r\n      <window_info anchor=\"right\" content_ui=\"combo\" id=\"Hierarchy\" order=\"2\" weight=\"0.25\" />\r\n      <window_info anchor=\"right\" id=\"Database\" order=\"3\" weight=\"0.22199866\" />\r\n    </layout>\r\n    <layout-to-restore>\r\n      <window_info active=\"true\" content_ui=\"combo\" id=\"Project\" order=\"0\" sideWeight=\"0.55780345\" visible=\"true\" weight=\"0.27095908\" />\r\n      <window_info id=\"Structure\" order=\"1\" sideWeight=\"0.40462428\" side_tool=\"true\" weight=\"0.20858485\" />\r\n      <window_info auto_hide=\"true\" id=\"npm\" order=\"2\" sideWeight=\"0.44219652\" side_tool=\"true\" weight=\"0.24681422\" />\r\n      <window_info id=\"Favorites\" order=\"3\" sideWeight=\"0.44942197\" side_tool=\"true\" weight=\"0.20590208\" />\r\n      <window_info anchor=\"bottom\" id=\"Database Console\" order=\"0\" weight=\"0.32947975\" />\r\n      <window_info anchor=\"bottom\" id=\"Message\" order=\"1\" />\r\n      <window_info anchor=\"bottom\" id=\"Find\" order=\"2\" weight=\"0.32658958\" />\r\n      <window_info anchor=\"bottom\" id=\"Debug\" order=\"3\" weight=\"0.39884394\" />\r\n      <window_info anchor=\"bottom\" id=\"Cvs\" order=\"4\" weight=\"0.25\" />\r\n      <window_info anchor=\"bottom\" id=\"Inspection\" order=\"5\" weight=\"0.4\" />\r\n      <window_info anchor=\"bottom\" auto_hide=\"true\" id=\"Run\" order=\"6\" sideWeight=\"0.49899396\" weight=\"0.25\" />\r\n      <window_info anchor=\"bottom\" id=\"Database Changes\" order=\"7\" weight=\"0.32658958\" />\r\n      <window_info anchor=\"bottom\" id=\"TODO\" order=\"8\" weight=\"0.32658958\" />\r\n      <window_info anchor=\"bottom\" id=\"Docker\" order=\"9\" show_stripe_button=\"false\" />\r\n      <window_info anchor=\"bottom\" id=\"Version Control\" order=\"10\" show_stripe_button=\"false\" />\r\n      <window_info anchor=\"bottom\" id=\"Event Log\" order=\"11\" sideWeight=\"0.501006\" side_tool=\"true\" weight=\"0.25\" />\r\n      <window_info anchor=\"bottom\" auto_hide=\"true\" id=\"Terminal\" order=\"12\" sideWeight=\"0.49966466\" weight=\"0.47254336\" />\r\n      <window_info anchor=\"right\" id=\"Commander\" internal_type=\"SLIDING\" order=\"0\" type=\"SLIDING\" weight=\"0.4\" />\r\n      <window_info anchor=\"right\" id=\"Ant Build\" order=\"1\" weight=\"0.25\" />\r\n      <window_info anchor=\"right\" content_ui=\"combo\" id=\"Hierarchy\" order=\"2\" weight=\"0.25\" />\r\n      <window_info anchor=\"right\" id=\"Database\" order=\"3\" weight=\"0.22199866\" />\r\n    </layout-to-restore>\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"1\" />\r\n  </component>\r\n  <component name=\"VcsContentAnnotationSettings\">\r\n    <option name=\"myLimit\" value=\"2678400000\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"update LandController\" />\r\n    <MESSAGE value=\"return update LandController\" />\r\n    <MESSAGE value=\"update\" />\r\n    <MESSAGE value=\"update again\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"update again\" />\r\n  </component>\r\n  <component name=\"editorHistoryManager\">\r\n    <entry file=\"file://$PROJECT_DIR$/app/Rules/Unspace.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"312\">\r\n          <caret line=\"28\" column=\"46\" lean-forward=\"true\" selection-start-line=\"28\" selection-start-column=\"46\" selection-end-line=\"28\" selection-end-column=\"46\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/views/admin/sensors/edit.blade.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"107\">\r\n          <caret line=\"19\" column=\"117\" selection-start-line=\"19\" selection-start-column=\"113\" selection-end-line=\"19\" selection-end-column=\"117\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/views/admin/users/verify.blade.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"960\">\r\n          <caret line=\"40\" column=\"54\" selection-start-line=\"40\" selection-start-column=\"54\" selection-end-line=\"40\" selection-end-column=\"54\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Http/Requests/EditSensorRrequest.php\" />\r\n    <entry file=\"file://$PROJECT_DIR$/app/Http/Controllers/Admin/PermissionController.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\" />\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/database/migrations/2021_02_02_080008_create_permissions_and_roles_table.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"133\">\r\n          <caret line=\"24\" column=\"25\" selection-start-line=\"24\" selection-start-column=\"25\" selection-end-line=\"24\" selection-end-column=\"25\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Models/User.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"1176\">\r\n          <caret line=\"52\" column=\"25\" selection-start-line=\"52\" selection-start-column=\"25\" selection-end-line=\"52\" selection-end-column=\"25\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Models/Land.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\" />\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/lang/fa/validation.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"434\">\r\n          <caret line=\"154\" column=\"35\" selection-start-line=\"154\" selection-start-column=\"35\" selection-end-line=\"154\" selection-end-column=\"35\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/views/admin/users/edit.blade.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"216\">\r\n          <caret line=\"27\" column=\"166\" selection-start-line=\"27\" selection-start-column=\"127\" selection-end-line=\"27\" selection-end-column=\"166\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Http/Requests/RoleUserRequest.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"648\">\r\n          <caret line=\"27\" column=\"50\" lean-forward=\"true\" selection-start-line=\"27\" selection-start-column=\"50\" selection-end-line=\"27\" selection-end-column=\"50\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"227\">\r\n          <caret line=\"105\" column=\"7\" selection-start-line=\"105\" selection-start-column=\"7\" selection-end-line=\"105\" selection-end-column=\"54\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/views/admin/users/index.blade.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"457\">\r\n          <caret line=\"154\" selection-start-line=\"154\" selection-end-line=\"154\" selection-end-column=\"52\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Http/Controllers/Admin/RoleUserController.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"410\">\r\n          <caret line=\"98\" column=\"50\" selection-start-line=\"98\" selection-start-column=\"50\" selection-end-line=\"98\" selection-end-column=\"50\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"1466\">\r\n          <caret line=\"96\" column=\"43\" selection-start-line=\"96\" selection-start-column=\"43\" selection-end-line=\"96\" selection-end-column=\"43\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/views/admin/roles/edit.blade.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"288\">\r\n          <caret line=\"12\" column=\"56\" selection-start-line=\"12\" selection-start-column=\"56\" selection-end-line=\"12\" selection-end-column=\"56\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/views/admin/roles/create.blade.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"192\">\r\n          <caret line=\"11\" column=\"55\" selection-start-line=\"11\" selection-start-column=\"55\" selection-end-line=\"11\" selection-end-column=\"55\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/views/admin/role-user/index.blade.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"240\">\r\n          <caret line=\"10\" column=\"58\" selection-start-line=\"10\" selection-start-column=\"58\" selection-end-line=\"10\" selection-end-column=\"58\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/views/admin/roles/index.blade.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"72\">\r\n          <caret line=\"9\" column=\"57\" selection-start-line=\"9\" selection-start-column=\"57\" selection-end-line=\"9\" selection-end-column=\"57\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/views/admin/role-user/edit.blade.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"576\">\r\n          <caret line=\"24\" column=\"52\" selection-start-line=\"24\" selection-start-column=\"52\" selection-end-line=\"24\" selection-end-column=\"52\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/views/admin/sensors/index.blade.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"360\">\r\n          <caret line=\"15\" column=\"21\" lean-forward=\"true\" selection-start-line=\"15\" selection-start-column=\"21\" selection-end-line=\"15\" selection-end-column=\"21\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/public/images/vendor/leaflet/dist/layers.png\">\r\n      <provider selected=\"true\" editor-type-id=\"images\" />\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/public/images/vendor/leaflet.fullscreen/icon-fullscreen.png\">\r\n      <provider selected=\"true\" editor-type-id=\"images\" />\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/views/welcome.blade.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"1440\">\r\n          <caret line=\"60\" column=\"10\" lean-forward=\"true\" selection-start-line=\"60\" selection-start-column=\"10\" selection-end-line=\"60\" selection-end-column=\"10\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/routes/api.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\" />\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/webpack.mix.js\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"482\">\r\n          <caret line=\"25\" selection-start-line=\"25\" selection-end-line=\"25\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/public/js/leaflet/land-edit.js\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state>\r\n          <folding>\r\n            <element signature=\"n#!!doc\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/node_modules/@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.min.js\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"551\">\r\n          <caret column=\"245702\" selection-start-column=\"245702\" selection-end-column=\"245702\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/views/admin/lands/edit.blade.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"362\">\r\n          <caret line=\"30\" column=\"73\" selection-start-line=\"30\" selection-start-column=\"73\" selection-end-line=\"30\" selection-end-column=\"73\" />\r\n          <folding>\r\n            <element signature=\"e#1365#1385#0#HTML\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Http/Requests/CreteLandRequest.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"362\">\r\n          <caret line=\"26\" column=\"26\" selection-start-line=\"26\" selection-start-column=\"26\" selection-end-line=\"26\" selection-end-column=\"26\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Http/Requests/SensorRequest.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"362\">\r\n          <caret line=\"27\" column=\"67\" selection-start-line=\"27\" selection-start-column=\"60\" selection-end-line=\"27\" selection-end-column=\"67\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Rules/Security.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"-48\">\r\n          <caret line=\"13\" column=\"20\" selection-start-line=\"13\" selection-start-column=\"20\" selection-end-line=\"13\" selection-end-column=\"20\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Http/Requests/CreateSensorRequest.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"386\">\r\n          <caret line=\"28\" column=\"52\" selection-start-line=\"28\" selection-start-column=\"52\" selection-end-line=\"28\" selection-end-column=\"52\" />\r\n          <folding>\r\n            <element signature=\"e#37#60#0#PHP\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Http/Controllers/Admin/SensorController.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"144\">\r\n          <caret line=\"6\" column=\"40\" selection-start-line=\"6\" selection-start-column=\"40\" selection-end-line=\"6\" selection-end-column=\"40\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Http/Requests/EditSensorRequest.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"410\">\r\n          <caret line=\"29\" column=\"52\" selection-start-line=\"29\" selection-start-column=\"52\" selection-end-line=\"29\" selection-end-column=\"52\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Http/Requests/UserRequest.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"218\">\r\n          <caret line=\"30\" column=\"52\" selection-start-line=\"30\" selection-start-column=\"47\" selection-end-line=\"30\" selection-end-column=\"52\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Http/Requests/LandRequest.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"506\">\r\n          <caret line=\"35\" column=\"16\" lean-forward=\"true\" selection-start-line=\"35\" selection-start-column=\"16\" selection-end-line=\"35\" selection-end-column=\"16\" />\r\n          <folding>\r\n            <element signature=\"e#37#60#0#PHP\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Http/Requests/RoleRequest.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"410\">\r\n          <caret line=\"31\" lean-forward=\"true\" selection-start-line=\"31\" selection-end-line=\"37\" selection-end-column=\"5\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/views/admin/master.blade.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"198\">\r\n          <caret line=\"369\" column=\"81\" selection-start-line=\"369\" selection-start-column=\"69\" selection-end-line=\"369\" selection-end-column=\"93\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/views/user/master.blade.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"-642\">\r\n          <caret line=\"326\" column=\"91\" selection-start-line=\"326\" selection-start-column=\"91\" selection-end-line=\"326\" selection-end-column=\"91\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Gate.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"217\">\r\n          <caret line=\"26\" column=\"6\" selection-start-line=\"26\" selection-start-column=\"6\" selection-end-line=\"26\" selection-end-column=\"6\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/views/user/sensors/index.blade.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"1392\">\r\n          <caret line=\"58\" column=\"11\" selection-start-line=\"58\" selection-start-column=\"11\" selection-end-line=\"58\" selection-end-column=\"11\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Http/Controllers/Admin/LandController.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"264\">\r\n          <caret line=\"38\" column=\"15\" selection-start-line=\"38\" selection-start-column=\"15\" selection-end-line=\"38\" selection-end-column=\"15\" />\r\n          <folding>\r\n            <element signature=\"e#46#82#0#PHP\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/js/leaflet/land-edit.js\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"480\">\r\n          <caret line=\"20\" column=\"214\" selection-start-line=\"20\" selection-start-column=\"196\" selection-end-line=\"20\" selection-end-column=\"214\" />\r\n          <folding>\r\n            <element signature=\"e#0#17#0\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/js/leaflet/land-create.js\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"386\">\r\n          <caret line=\"33\" column=\"95\" selection-start-line=\"33\" selection-start-column=\"95\" selection-end-line=\"33\" selection-end-column=\"95\" />\r\n          <folding>\r\n            <element signature=\"e#0#24#0\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/js/leaflet/land-show.js\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"240\">\r\n          <caret line=\"14\" column=\"95\" selection-start-line=\"14\" selection-start-column=\"95\" selection-end-line=\"14\" selection-end-column=\"95\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/js/leaflet/sensor-create.js\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"144\">\r\n          <caret line=\"8\" column=\"95\" selection-start-line=\"8\" selection-start-column=\"95\" selection-end-line=\"8\" selection-end-column=\"95\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/js/leaflet/sensor-edit.js\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"192\">\r\n          <caret line=\"8\" column=\"95\" selection-start-line=\"8\" selection-start-column=\"95\" selection-end-line=\"8\" selection-end-column=\"95\" />\r\n          <folding>\r\n            <element signature=\"e#0#24#0\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Http/Controllers/User/SensorController.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"360\">\r\n          <caret line=\"15\" column=\"34\" selection-start-line=\"15\" selection-start-column=\"34\" selection-end-line=\"15\" selection-end-column=\"34\" />\r\n          <folding>\r\n            <element signature=\"e#45#81#0#PHP\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/routes/web/user.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"290\">\r\n          <caret line=\"32\" column=\"27\" lean-forward=\"true\" selection-start-line=\"32\" selection-start-column=\"27\" selection-end-line=\"32\" selection-end-column=\"27\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/routes/web/admin.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"266\">\r\n          <caret line=\"59\" column=\"14\" selection-start-line=\"59\" selection-start-column=\"14\" selection-end-line=\"59\" selection-end-column=\"14\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 35214c631d52c28fbfda26e524bcc79cf6d4d0e1)
++++ .idea/workspace.xml	(date 1614431128693)
+@@ -4,11 +4,13 @@
+     <bookmark url="file://$PROJECT_DIR$/resources/views" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="7d703aa5-6bf4-4443-9648-150136637f3e" name="Default Changelist" comment="">
++    <list default="true" id="7d703aa5-6bf4-4443-9648-150136637f3e" name="Default Changelist" comment="update again">
++      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_27_2021_12_23_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_27_2021_12_23_PM__Default_Changelist_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/routes/web/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web/admin.php" afterDir="false" />
+     </list>
+     <ignored path="F:\laravel\Work\first\.idea\shelf/" />
++    <ignored path="G:\work\Smart_Agriculture\.idea\shelf/" />
+     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -47,113 +49,6 @@
+       </path>
+     </expand>
+     <select />
+-  </component>
+-  <component name="FUSProjectUsageTrigger">
+-    <session id="-884568443">
+-      <usages-collector id="statistics.lifecycle.project">
+-        <counts>
+-          <entry key="project.closed" value="58" />
+-          <entry key="project.open.time.0" value="4" />
+-          <entry key="project.open.time.1" value="1" />
+-          <entry key="project.open.time.101" value="1" />
+-          <entry key="project.open.time.11" value="1" />
+-          <entry key="project.open.time.12" value="1" />
+-          <entry key="project.open.time.2" value="1" />
+-          <entry key="project.open.time.24" value="1" />
+-          <entry key="project.open.time.29" value="2" />
+-          <entry key="project.open.time.3" value="1" />
+-          <entry key="project.open.time.31" value="1" />
+-          <entry key="project.open.time.33" value="1" />
+-          <entry key="project.open.time.36" value="3" />
+-          <entry key="project.open.time.37" value="4" />
+-          <entry key="project.open.time.39" value="1" />
+-          <entry key="project.open.time.4" value="3" />
+-          <entry key="project.open.time.40" value="4" />
+-          <entry key="project.open.time.41" value="5" />
+-          <entry key="project.open.time.42" value="1" />
+-          <entry key="project.open.time.43" value="1" />
+-          <entry key="project.open.time.44" value="1" />
+-          <entry key="project.open.time.45" value="2" />
+-          <entry key="project.open.time.46" value="2" />
+-          <entry key="project.open.time.47" value="2" />
+-          <entry key="project.open.time.49" value="1" />
+-          <entry key="project.open.time.50" value="1" />
+-          <entry key="project.open.time.52" value="2" />
+-          <entry key="project.open.time.53" value="2" />
+-          <entry key="project.open.time.56" value="1" />
+-          <entry key="project.open.time.6" value="1" />
+-          <entry key="project.open.time.62" value="1" />
+-          <entry key="project.open.time.63" value="1" />
+-          <entry key="project.open.time.65" value="1" />
+-          <entry key="project.open.time.70" value="1" />
+-          <entry key="project.open.time.73" value="1" />
+-          <entry key="project.open.time.78" value="3" />
+-          <entry key="project.open.time.80" value="1" />
+-          <entry key="project.open.time.96" value="1" />
+-          <entry key="project.opened" value="62" />
+-        </counts>
+-      </usages-collector>
+-      <usages-collector id="statistics.file.extensions.open">
+-        <counts>
+-          <entry key="css" value="17" />
+-          <entry key="env" value="5" />
+-          <entry key="failed_jobs" value="1" />
+-          <entry key="gitignore" value="1" />
+-          <entry key="html" value="2" />
+-          <entry key="js" value="130" />
+-          <entry key="json" value="20" />
+-          <entry key="lands" value="1" />
+-          <entry key="less" value="6" />
+-          <entry key="lock" value="1" />
+-          <entry key="log" value="1" />
+-          <entry key="migrations" value="1" />
+-          <entry key="php" value="796" />
+-          <entry key="png" value="2" />
+-          <entry key="role_has_permissions" value="1" />
+-          <entry key="scss" value="4" />
+-          <entry key="sql" value="1" />
+-        </counts>
+-      </usages-collector>
+-      <usages-collector id="statistics.file.types.open">
+-        <counts>
+-          <entry key=".env file" value="5" />
+-          <entry key="Blade" value="306" />
+-          <entry key="CSS" value="17" />
+-          <entry key="Database Element" value="4" />
+-          <entry key="Git file" value="1" />
+-          <entry key="HTML" value="2" />
+-          <entry key="Image" value="2" />
+-          <entry key="JSON" value="21" />
+-          <entry key="JavaScript" value="130" />
+-          <entry key="Less" value="6" />
+-          <entry key="PHP" value="490" />
+-          <entry key="PLAIN_TEXT" value="1" />
+-          <entry key="SCSS" value="4" />
+-          <entry key="Scratch" value="1" />
+-        </counts>
+-      </usages-collector>
+-      <usages-collector id="statistics.file.extensions.edit">
+-        <counts>
+-          <entry key="css" value="225" />
+-          <entry key="html" value="8" />
+-          <entry key="js" value="4623" />
+-          <entry key="php" value="27565" />
+-          <entry key="scss" value="45" />
+-          <entry key="txt" value="80" />
+-        </counts>
+-      </usages-collector>
+-      <usages-collector id="statistics.file.types.edit">
+-        <counts>
+-          <entry key="Blade" value="10986" />
+-          <entry key="CSS" value="225" />
+-          <entry key="HTML" value="8" />
+-          <entry key="JavaScript" value="4623" />
+-          <entry key="PHP" value="16579" />
+-          <entry key="PLAIN_TEXT" value="80" />
+-          <entry key="SCSS" value="45" />
+-        </counts>
+-      </usages-collector>
+-    </session>
+   </component>
+   <component name="FavoritesManager">
+     <favorites_list name="first" />
+@@ -163,8 +58,8 @@
+       <file pinned="false" current-in-tab="true">
+         <entry file="file://$PROJECT_DIR$/routes/web/admin.php">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="266">
+-              <caret line="59" column="14" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
++            <state relative-caret-position="248">
++              <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
+             </state>
+           </provider>
+         </entry>
+@@ -172,8 +67,8 @@
+       <file pinned="false" current-in-tab="false">
+         <entry file="file://$PROJECT_DIR$/routes/web/user.php">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="290">
+-              <caret line="32" column="27" lean-forward="true" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
++            <state relative-caret-position="930">
++              <caret line="32" column="27" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
+             </state>
+           </provider>
+         </entry>
+@@ -242,7 +137,6 @@
+   <component name="IdeDocumentHistory">
+     <option name="CHANGED_PATHS">
+       <list>
+-        <option value="$PROJECT_DIR$/resources/js/show-map-edit-sensor.js" />
+         <option value="$PROJECT_DIR$/resources/js/land/create-map.js" />
+         <option value="$PROJECT_DIR$/public/js/map.js" />
+         <option value="$PROJECT_DIR$/resources/js/leaflet/create-land.js" />
+@@ -292,61 +186,16 @@
+         <option value="$PROJECT_DIR$/resources/js/leaflet/land-show.js" />
+         <option value="$PROJECT_DIR$/resources/js/leaflet/sensor-create.js" />
+         <option value="$PROJECT_DIR$/resources/js/leaflet/sensor-edit.js" />
++        <option value="$PROJECT_DIR$/.env" />
+         <option value="$PROJECT_DIR$/routes/web/admin.php" />
+       </list>
+     </option>
+-  </component>
+-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+-    <package-json value="$PROJECT_DIR$/package.json" />
+   </component>
+   <component name="JsFlowSettings">
+     <service-enabled>true</service-enabled>
+     <exe-path />
+     <other-services-enabled>true</other-services-enabled>
+     <auto-save>true</auto-save>
+-  </component>
+-  <component name="JsGulpfileManager">
+-    <detection-done>true</detection-done>
+-    <sorting>DEFINITION_ORDER</sorting>
+-  </component>
+-  <component name="NodeModulesDirectoryManager">
+-    <handled-path value="$PROJECT_DIR$/node_modules" />
+-  </component>
+-  <component name="NodePackageJsonFileManager">
+-    <packageJsonPaths>
+-      <path value="$PROJECT_DIR$/package.json" />
+-      <path value="$PROJECT_DIR$/public/admin/bower_components/Flot/package.json" />
+-      <path value="$PROJECT_DIR$/public/admin/bower_components/bootstrap-colorpicker/package.json" />
+-      <path value="$PROJECT_DIR$/public/admin/bower_components/bootstrap-datepicker/package.json" />
+-      <path value="$PROJECT_DIR$/public/admin/bower_components/bootstrap-daterangepicker/package.json" />
+-      <path value="$PROJECT_DIR$/public/admin/bower_components/bootstrap/package.json" />
+-      <path value="$PROJECT_DIR$/public/admin/bower_components/chart.js/package.json" />
+-      <path value="$PROJECT_DIR$/public/admin/bower_components/ckeditor-english/package.json" />
+-      <path value="$PROJECT_DIR$/public/admin/bower_components/ckeditor/package.json" />
+-      <path value="$PROJECT_DIR$/public/admin/bower_components/eve-raphael/package.json" />
+-      <path value="$PROJECT_DIR$/public/admin/bower_components/ion.rangeSlider/package.json" />
+-      <path value="$PROJECT_DIR$/public/admin/bower_components/jquery-knob/package.json" />
+-      <path value="$PROJECT_DIR$/public/admin/bower_components/jquery-slimscroll/package.json" />
+-      <path value="$PROJECT_DIR$/public/admin/bower_components/jquery-ui/package.json" />
+-      <path value="$PROJECT_DIR$/public/admin/bower_components/morris.js/package.json" />
+-      <path value="$PROJECT_DIR$/public/admin/bower_components/select2/package.json" />
+-      <path value="$PROJECT_DIR$/public/user/bower_components/Flot/package.json" />
+-      <path value="$PROJECT_DIR$/public/user/bower_components/bootstrap-colorpicker/package.json" />
+-      <path value="$PROJECT_DIR$/public/user/bower_components/bootstrap-datepicker/package.json" />
+-      <path value="$PROJECT_DIR$/public/user/bower_components/bootstrap-daterangepicker/package.json" />
+-      <path value="$PROJECT_DIR$/public/user/bower_components/bootstrap/package.json" />
+-      <path value="$PROJECT_DIR$/public/user/bower_components/chart.js/package.json" />
+-      <path value="$PROJECT_DIR$/public/user/bower_components/ckeditor-english/package.json" />
+-      <path value="$PROJECT_DIR$/public/user/bower_components/ckeditor/package.json" />
+-      <path value="$PROJECT_DIR$/public/user/bower_components/eve-raphael/package.json" />
+-      <path value="$PROJECT_DIR$/public/user/bower_components/ion.rangeSlider/package.json" />
+-      <path value="$PROJECT_DIR$/public/user/bower_components/jquery-knob/package.json" />
+-      <path value="$PROJECT_DIR$/public/user/bower_components/jquery-slimscroll/package.json" />
+-      <path value="$PROJECT_DIR$/public/user/bower_components/jquery-ui/package.json" />
+-      <path value="$PROJECT_DIR$/public/user/bower_components/morris.js/package.json" />
+-      <path value="$PROJECT_DIR$/public/user/bower_components/select2/package.json" />
+-    </packageJsonPaths>
+   </component>
+   <component name="PhpServers">
+     <servers />
+@@ -373,7 +222,6 @@
+       <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+       <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+       <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+-      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+       <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+       <path value="$PROJECT_DIR$/vendor/phpunit/php-invoker" />
+       <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+@@ -418,7 +266,6 @@
+       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+       <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+       <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
+-      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+       <path value="$PROJECT_DIR$/vendor/symfony/routing" />
+       <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+       <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
+@@ -461,13 +308,15 @@
+       <path value="$PROJECT_DIR$/vendor/opis/closure" />
+       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+       <path value="$PROJECT_DIR$/vendor/uxweb/sweet-alert" />
++      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
++      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+     </include_path>
+   </component>
+   <component name="ProjectFrameBounds" extendedState="6">
+-    <option name="x" value="1905" />
+-    <option name="y" value="-15" />
+-    <option name="width" value="1955" />
+-    <option name="height" value="2095" />
++    <option name="x" value="-8" />
++    <option name="y" value="-8" />
++    <option name="width" value="1382" />
++    <option name="height" value="744" />
+   </component>
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+     <ConfirmationsSetting value="2" id="Add" />
+@@ -482,19 +331,19 @@
+         <subPane>
+           <expand>
+             <path>
+-              <item name="first" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="first" type="462c0819:PsiDirectoryNode" />
++              <item name="Smart_Agriculture" type="b2602c69:ProjectViewProjectNode" />
++              <item name="Smart_Agriculture" type="462c0819:PsiDirectoryNode" />
+             </path>
+             <path>
+-              <item name="first" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="first" type="462c0819:PsiDirectoryNode" />
+-              <item name="routes" type="462c0819:PsiDirectoryNode" />
++              <item name="Smart_Agriculture" type="b2602c69:ProjectViewProjectNode" />
++              <item name="Smart_Agriculture" type="462c0819:PsiDirectoryNode" />
++              <item name="app" type="462c0819:PsiDirectoryNode" />
+             </path>
+             <path>
+-              <item name="first" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="first" type="462c0819:PsiDirectoryNode" />
+-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+-              <item name="web" type="462c0819:PsiDirectoryNode" />
++              <item name="Smart_Agriculture" type="b2602c69:ProjectViewProjectNode" />
++              <item name="Smart_Agriculture" type="462c0819:PsiDirectoryNode" />
++              <item name="app" type="462c0819:PsiDirectoryNode" />
++              <item name="Models" type="462c0819:PsiDirectoryNode" />
+             </path>
+           </expand>
+           <select />
+@@ -515,129 +364,17 @@
+     <property name="settings.editor.selected.configurable" value="editing.templates" />
+   </component>
+   <component name="RecentsManager">
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="F:\laravel\Work\first\resources\js\land" />
++      <recent name="F:\laravel\Work\first\routes\web" />
++    </key>
+     <key name="CopyFile.RECENT_KEYS">
++      <recent name="G:\work\Smart_Agriculture" />
+       <recent name="F:\laravel\Work\first\public\admin" />
+       <recent name="F:\laravel\Work\first\resources\views\admin" />
+       <recent name="F:\laravel\Work\first\resources\views\user" />
+       <recent name="F:\laravel\Work\first\resources\views\admin\users" />
+-      <recent name="F:\laravel\Work\first\resources\views\admin\lands" />
+-    </key>
+-    <key name="MoveFile.RECENT_KEYS">
+-      <recent name="F:\laravel\Work\first\resources\js\land" />
+-      <recent name="F:\laravel\Work\first\routes\web" />
+     </key>
+-  </component>
+-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+-    <UpdatedFiles>
+-      <FILE-GROUP>
+-        <option name="myUpdateName" value="Updated from server" />
+-        <option name="myStatusName" value="Changed on server" />
+-        <option name="mySupportsDeletion" value="false" />
+-        <option name="myCanBeAbsent" value="false" />
+-        <option name="myId" value="CHANGED_ON_SERVER" />
+-        <FILE-GROUP>
+-          <option name="myUpdateName" value="Updated" />
+-          <option name="myStatusName" value="Changed" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" value="UPDATED" />
+-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+-          <PATH vcs="Git" revision="">$PROJECT_DIR$/routes/web/admin.php</PATH>
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" value="Created" />
+-          <option name="myStatusName" value="Created" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" value="CREATED" />
+-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/encodings.xml</PATH>
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" value="Deleted" />
+-          <option name="myStatusName" value="Deleted" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="true" />
+-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" value="Restored" />
+-          <option name="myStatusName" value="Will be restored" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" value="RESTORED" />
+-        </FILE-GROUP>
+-      </FILE-GROUP>
+-      <FILE-GROUP>
+-        <option name="myUpdateName" value="Modified" />
+-        <option name="myStatusName" value="Modified" />
+-        <option name="mySupportsDeletion" value="false" />
+-        <option name="myCanBeAbsent" value="false" />
+-        <option name="myId" value="MODIFIED" />
+-      </FILE-GROUP>
+-      <FILE-GROUP>
+-        <option name="myUpdateName" value="Skipped" />
+-        <option name="myStatusName" value="Skipped" />
+-        <option name="mySupportsDeletion" value="false" />
+-        <option name="myCanBeAbsent" value="false" />
+-        <option name="myId" value="SKIPPED" />
+-      </FILE-GROUP>
+-      <FILE-GROUP>
+-        <option name="myUpdateName" value="Merged with conflicts" />
+-        <option name="myStatusName" value="Will be merged with conflicts" />
+-        <option name="mySupportsDeletion" value="false" />
+-        <option name="myCanBeAbsent" value="false" />
+-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+-      </FILE-GROUP>
+-      <FILE-GROUP>
+-        <option name="myUpdateName" value="Merged with tree conflicts" />
+-        <option name="myStatusName" value="Merged with tree conflicts" />
+-        <option name="mySupportsDeletion" value="false" />
+-        <option name="myCanBeAbsent" value="false" />
+-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+-      </FILE-GROUP>
+-      <FILE-GROUP>
+-        <option name="myUpdateName" value="Merged with property conflicts" />
+-        <option name="myStatusName" value="Will be merged with property conflicts" />
+-        <option name="mySupportsDeletion" value="false" />
+-        <option name="myCanBeAbsent" value="false" />
+-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+-      </FILE-GROUP>
+-      <FILE-GROUP>
+-        <option name="myUpdateName" value="Merged" />
+-        <option name="myStatusName" value="Will be merged" />
+-        <option name="mySupportsDeletion" value="false" />
+-        <option name="myCanBeAbsent" value="false" />
+-        <option name="myId" value="MERGED" />
+-      </FILE-GROUP>
+-      <FILE-GROUP>
+-        <option name="myUpdateName" value="Not in repository" />
+-        <option name="myStatusName" value="Not in repository" />
+-        <option name="mySupportsDeletion" value="true" />
+-        <option name="myCanBeAbsent" value="false" />
+-        <option name="myId" value="UNKNOWN" />
+-      </FILE-GROUP>
+-      <FILE-GROUP>
+-        <option name="myUpdateName" value="Locally added" />
+-        <option name="myStatusName" value="Locally added" />
+-        <option name="mySupportsDeletion" value="false" />
+-        <option name="myCanBeAbsent" value="false" />
+-        <option name="myId" value="LOCALLY_ADDED" />
+-      </FILE-GROUP>
+-      <FILE-GROUP>
+-        <option name="myUpdateName" value="Locally removed" />
+-        <option name="myStatusName" value="Locally removed" />
+-        <option name="mySupportsDeletion" value="false" />
+-        <option name="myCanBeAbsent" value="false" />
+-        <option name="myId" value="LOCALLY_REMOVED" />
+-      </FILE-GROUP>
+-      <FILE-GROUP>
+-        <option name="myUpdateName" value="Switched" />
+-        <option name="myStatusName" value="Switched" />
+-        <option name="mySupportsDeletion" value="false" />
+-        <option name="myCanBeAbsent" value="false" />
+-        <option name="myId" value="SWITCHED" />
+-      </FILE-GROUP>
+-    </UpdatedFiles>
+   </component>
+   <component name="RunDashboard">
+     <option name="ruleStates">
+@@ -652,10 +389,10 @@
+     </option>
+   </component>
+   <component name="RunManager" selected="npm.watch">
+-    <configuration name="create-map.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/resources/js/land/create-map.js" working-dir="$PROJECT_DIR$/resources/js">
++    <configuration name="create-map.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/resources/js/land/create-map.js" working-dir="$PROJECT_DIR$/resources/js">
+       <method v="2" />
+     </configuration>
+-    <configuration name="dev" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
++    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+       <package-json value="$PROJECT_DIR$/package.json" />
+       <command value="run" />
+       <scripts>
+@@ -665,7 +402,7 @@
+       <envs />
+       <method v="2" />
+     </configuration>
+-    <configuration name="prod" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
++    <configuration name="prod" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+       <package-json value="$PROJECT_DIR$/package.json" />
+       <command value="run" />
+       <scripts>
+@@ -675,7 +412,7 @@
+       <envs />
+       <method v="2" />
+     </configuration>
+-    <configuration name="production" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
++    <configuration name="production" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+       <package-json value="$PROJECT_DIR$/package.json" />
+       <command value="run" />
+       <scripts>
+@@ -685,7 +422,7 @@
+       <envs />
+       <method v="2" />
+     </configuration>
+-    <configuration name="watch" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
++    <configuration name="watch" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+       <package-json value="$PROJECT_DIR$/package.json" />
+       <command value="run" />
+       <scripts>
+@@ -784,6 +521,7 @@
+       <workItem from="1613979409677" duration="1216000" />
+       <workItem from="1614079062523" duration="1665000" />
+       <workItem from="1614404083633" duration="12092000" />
++      <workItem from="1614430199843" duration="900000" />
+     </task>
+     <task id="LOCAL-00001" summary="update LandController">
+       <created>1610903462592</created>
+@@ -820,11 +558,25 @@
+       <option name="project" value="LOCAL" />
+       <updated>1614422793233</updated>
+     </task>
+-    <option name="localTasksCounter" value="6" />
++    <task id="LOCAL-00006" summary="update again">
++      <created>1614430713400</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1614430713400</updated>
++    </task>
++    <task id="LOCAL-00007" summary="update again">
++      <created>1614430870785</created>
++      <option name="number" value="00007" />
++      <option name="presentableId" value="LOCAL-00007" />
++      <option name="project" value="LOCAL" />
++      <updated>1614430870785</updated>
++    </task>
++    <option name="localTasksCounter" value="8" />
+     <servers />
+   </component>
+   <component name="TimeTrackingManager">
+-    <option name="totallyTimeSpent" value="501306000" />
++    <option name="totallyTimeSpent" value="502206000" />
+   </component>
+   <component name="TodoView">
+     <todo-panel id="selected-file">
+@@ -836,10 +588,9 @@
+     </todo-panel>
+   </component>
+   <component name="ToolWindowManager">
+-    <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
+-    <editor active="true" />
++    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+     <layout>
+-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5563584" visible="true" weight="0.1965124" />
++      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5563584" visible="true" weight="0.19969743" />
+       <window_info id="Structure" order="1" sideWeight="0.40462428" side_tool="true" weight="0.20858485" />
+       <window_info auto_hide="true" id="npm" order="2" sideWeight="0.44364163" side_tool="true" weight="0.1965124" />
+       <window_info id="Favorites" order="3" sideWeight="0.44942197" side_tool="true" weight="0.20590208" />
+@@ -855,7 +606,7 @@
+       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32803467" />
+       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.501006" side_tool="true" weight="0.25" />
+-      <window_info anchor="bottom" auto_hide="true" id="Terminal" order="12" sideWeight="0.49966466" weight="0.47254336" />
++      <window_info anchor="bottom" auto_hide="true" id="Terminal" order="12" sideWeight="0.49966466" weight="0.47135842" />
+       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+@@ -887,9 +638,6 @@
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="1" />
+-  </component>
+-  <component name="VcsContentAnnotationSettings">
+-    <option name="myLimit" value="2678400000" />
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="update LandController" />
+@@ -899,13 +647,6 @@
+     <option name="LAST_COMMIT_MESSAGE" value="update again" />
+   </component>
+   <component name="editorHistoryManager">
+-    <entry file="file://$PROJECT_DIR$/app/Rules/Unspace.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="312">
+-          <caret line="28" column="46" lean-forward="true" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
+-        </state>
+-      </provider>
+-    </entry>
+     <entry file="file://$PROJECT_DIR$/resources/views/admin/sensors/edit.blade.php">
+       <provider selected="true" editor-type-id="text-editor">
+         <state relative-caret-position="107">
+@@ -1064,13 +805,7 @@
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/node_modules/@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.min.js">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="551">
+-          <caret column="245702" selection-start-column="245702" selection-end-column="245702" />
+-        </state>
+-      </provider>
+-    </entry>
++    <entry file="file://$PROJECT_DIR$/node_modules/@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.min.js" />
+     <entry file="file://$PROJECT_DIR$/resources/views/admin/lands/edit.blade.php">
+       <provider selected="true" editor-type-id="text-editor">
+         <state relative-caret-position="362">
+@@ -1081,20 +816,8 @@
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/CreteLandRequest.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="362">
+-          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/SensorRequest.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="362">
+-          <caret line="27" column="67" selection-start-line="27" selection-start-column="60" selection-end-line="27" selection-end-column="67" />
+-        </state>
+-      </provider>
+-    </entry>
++    <entry file="file://$PROJECT_DIR$/app/Http/Requests/CreteLandRequest.php" />
++    <entry file="file://$PROJECT_DIR$/app/Http/Requests/SensorRequest.php" />
+     <entry file="file://$PROJECT_DIR$/app/Rules/Security.php">
+       <provider selected="true" editor-type-id="text-editor">
+         <state relative-caret-position="-48">
+@@ -1244,15 +967,22 @@
+     </entry>
+     <entry file="file://$PROJECT_DIR$/routes/web/user.php">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="290">
+-          <caret line="32" column="27" lean-forward="true" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
++        <state relative-caret-position="930">
++          <caret line="32" column="27" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/.env">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="434">
++          <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+         </state>
+       </provider>
+     </entry>
+     <entry file="file://$PROJECT_DIR$/routes/web/admin.php">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="266">
+-          <caret line="59" column="14" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
++        <state relative-caret-position="248">
++          <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
+         </state>
+       </provider>
+     </entry>
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_2_27_2021_12_23_PM__Default_Changelist_.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><changelist name=\"Uncommitted_changes_before_Update_at_2_27_2021_12_23_PM_[Default_Changelist]\" date=\"1614415982392\" recycled=\"true\" toDelete=\"true\">\r\n  <option name=\"PATH\" value=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_27_2021_12_23_PM_[Default_Changelist]/shelved.patch\" />\r\n  <option name=\"DESCRIPTION\" value=\"Uncommitted changes before Update at 2/27/2021 12:23 PM [Default Changelist]\" />\r\n</changelist>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/shelf/Uncommitted_changes_before_Update_at_2_27_2021_12_23_PM__Default_Changelist_.xml	(revision 35214c631d52c28fbfda26e524bcc79cf6d4d0e1)
++++ .idea/shelf/Uncommitted_changes_before_Update_at_2_27_2021_12_23_PM__Default_Changelist_.xml	(date 1614430317550)

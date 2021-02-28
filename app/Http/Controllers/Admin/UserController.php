@@ -46,6 +46,7 @@ class UserController extends Controller
 
         $user->name = $request->input('name');
         $user->username = $request->input('username');
+        $user->phone_number = $request->input('phone_number');
         $user->level = $request->input('level');
         $user->status = 1;
         $user->password = Hash::make($request->input('password'));

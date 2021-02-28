@@ -14,12 +14,14 @@ class RegisterController extends Controller
         $data = $request->validate([
             'name' => ['required'],
             'username' => ['required', 'regex:/^\S*$/u', 'string', 'regex:/(^([a-zA-Z]+)(\d+)?$)/u'],
+            'phone_number'=>['required','regex:/(09)[0-9]{9}/','digits:11','numeric'],
             'password' => ['required', 'min:6'],
             'password_confirmation' => ['required_with:password', 'same:password'],
         ]);
 
         $user->name = $data['name'];
         $user->username = $data['username'];
+        $user->phone_number = $data['phone_number'];
         $user->password = Hash::make($data['password']);
         $user->level = 0;
         $user->status = 0;

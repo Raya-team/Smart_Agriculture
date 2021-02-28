@@ -22,12 +22,16 @@
                         @include('admin.section.errors')
                         <div class="box-body">
                             <div class="form-group">
-                                <label for="exampleInputEmail1">نام و نام خانوادگی</label>
+                                <label for="name">نام و نام خانوادگی</label>
                                 <input type="text" class="form-control" name="name" id="name" placeholder="نام و نام خانوادگی" value="{{ old('name') }}">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">نام کاربری</label>
-                                <input type="text" class="form-control" name="username" id="exampleInputEmail1" placeholder="نام کاربری" value="{{ old('username') }}">
+                                <label for="username">نام کاربری</label>
+                                <input type="text" class="form-control" name="username" id="username" placeholder="نام کاربری" value="{{ old('username') }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone_number">شماره همراه</label>
+                                <input type="text" class="form-control" name="phone_number" id="phone_number" placeholder="َشماره همراه" value="{{ old('phone_number') }}">
                             </div>
                             <div class="form-group">
                                 <label>دسترسی به پنل :</label>
@@ -37,12 +41,12 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">رمز عبور</label>
-                                <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="رمز عبور">
+                                <label for="password">رمز عبور</label>
+                                <input type="password" class="form-control" name="password" id="password" placeholder="رمز عبور">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">تکرار رمز عبور</label>
-                                <input type="password" class="form-control" name="password_confirmation" id="exampleInputPassword1" placeholder="تکرار رمز عبور">
+                                <label for="password_confirmation">تکرار رمز عبور</label>
+                                <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" placeholder="تکرار رمز عبور">
                             </div>
                         </div>
                         <!-- /.box-body -->

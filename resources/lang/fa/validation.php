@@ -153,5 +153,6 @@ return array(
         'role_id' => 'نقش ها',
         'user_id' => 'کاربر',
         'permissions' => 'مجوز ها',
+        'phone_number' => 'شماره همراه'
     ),
 );

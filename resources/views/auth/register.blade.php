@@ -50,19 +50,23 @@
 
             @endif
             <div class="form-group has-feedback">
-                <input type="text" class="form-control" placeholder="نام و نام خانوادگی" name="name" value="{{ old('name') }}" required>
+                <input type="text" class="form-control" placeholder="نام و نام خانوادگی" name="name" value="{{ old('name') }}" >
                 <span class="fa fa-vcard-o form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input type="text" class="form-control" placeholder="نام کاربری" name="username" value="{{ old('username') }}" required>
+                <input type="text" class="form-control" placeholder="نام کاربری" name="username" value="{{ old('username') }}">
                 <span class="fa fa-user-circle form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input type="password" class="form-control" placeholder="رمز عبور" name="password" required>
+                <input type="text" class="form-control" placeholder="شماره همراه" name="phone_number">
+                <span class="fa fa-phone form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="password" class="form-control" placeholder="رمز عبور" name="password" >
                 <span class="fa fa-lock form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input type="password" name="password_confirmation" class="form-control" placeholder="تکرار رمز عبور" required>
+                <input type="password" name="password_confirmation" class="form-control" placeholder="تکرار رمز عبور" >
                 <span class="fa fa-key form-control-feedback"></span>
             </div>
             <!-- /.col -->
