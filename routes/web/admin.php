@@ -32,17 +32,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/createuser', function () {
-    \App\Models\User::create([
-        'name' => 'a',
-        'username' => 'a',
-        'status' => '1',
-        'level' => '2',
-        'password' => Hash::make('asdasd'),
-    ]);
-    return view('welcome');
-});
-
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
