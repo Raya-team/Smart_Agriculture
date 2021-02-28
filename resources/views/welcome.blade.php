@@ -90,8 +90,12 @@
         <h1>خوش آمدید</h1>
         <hr>
         <br>
-        <a href="{{ asset('login') }}" class="cross-fade">ورود</a><br>
-        <a href="{{ asset('register') }}" class="cross-fade">ثبت‌نام</a>
+        @if(Auth::check())
+            <a href="{{ asset('admin/dashboard') }}" class="cross-fade">داشبورد</a>
+        @else
+            <a href="{{ asset('login') }}" class="cross-fade">ورود</a><br>
+            <a href="{{ asset('register') }}" class="cross-fade">ثبت نام</a>
+        @endif
     </div>
 </div>
 
