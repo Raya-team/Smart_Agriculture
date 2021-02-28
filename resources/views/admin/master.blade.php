@@ -272,7 +272,6 @@
 
                                 <p>
                                     {{ Auth::user()->name }}
-                                    <small>مدیریت کل سایت</small>
                                 </p>
                             </li>
                             <!-- Menu Body -->
