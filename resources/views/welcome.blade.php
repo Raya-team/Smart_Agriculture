@@ -44,10 +44,10 @@
     .cross-fade {
         display: inline-block;
         padding: 16px 28px;
-        border: 2px rgba(255, 255, 255, 0.50) solid;
+        border: 2px rgba(147, 255, 145, 0.5) solid;
         text-align: center;
         text-decoration: none;
-        color: white;
+        color: #93ff91;
         position: relative;
         overflow: hidden;
         transition: color 0.75s ease-in-out;
