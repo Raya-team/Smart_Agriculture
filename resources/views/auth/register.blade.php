@@ -58,7 +58,7 @@
                 <span class="fa fa-user-circle form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input type="number" class="form-control" placeholder="شماره همراه" name="phone_number">
+                <input type="text" class="form-control" placeholder="شماره همراه" name="phone_number" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                 <span class="fa fa-phone form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">

@@ -41,11 +41,43 @@
         margin: auto;
         width: 40%;
     }
-    a {
-        color: #fff;
-        text-decoration:none;
-        background-color: #00cc66;
-        border-radius: 10px;
+    .cross-fade {
+        display: inline-block;
+        padding: 16px 28px;
+        border: 2px rgba(255, 255, 255, 0.50) solid;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        transition: color 0.75s ease-in-out;
+        z-index: 1;
+        border-radius: 0px;
+    }
+    .cross-fade:before, .cross-fade:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -25%;
+        width: 150%;
+        height: 100%;
+        background: rgba(102, 102, 102, 0.5);
+        transition: transform 0.75s ease-in-out;
+        z-index: -1;
+    }
+    .cross-fade:before {
+        transform: translate3d(100%, 0, 0) skew(20deg);
+        transform-origin: 0 0;
+    }
+    .cross-fade:after {
+        transform: translate3d(-100%, 0, 0) skew(20deg);
+        transform-origin: 100% 100%;
+    }
+    .cross-fade:hover {
+        color: white;
+    }
+    .cross-fade:hover:before, .cross-fade:hover:after {
+        transform: translate3d(0, 0, 0) skew(20deg);
     }
 </style>
 <body>
@@ -58,8 +90,8 @@
         <h1>خوش آمدید</h1>
         <hr>
         <br>
-        <a href="{{ asset('login') }}">ورود</a><br><br>
-        <a href="{{ asset('register') }}">ثبت نام</a>
+        <a href="{{ asset('login') }}" class="cross-fade">ورود</a><br>
+        <a href="{{ asset('register') }}" class="cross-fade">ثبت‌نام</a>
     </div>
 </div>
 
