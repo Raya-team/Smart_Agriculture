@@ -336,7 +336,6 @@
                         <li><a href="{{ route('users.verify') }}"><i class="fa fa-users"></i>  لیست کاربران تایید نشده</a></li>
                     </ul>
                 </li>
-                <li><a href="{{ route('admin.chart') }}"><i class="fa fa-line-chart"></i> <span>نمودار</span></a></li>
             </ul>
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="treeview">
