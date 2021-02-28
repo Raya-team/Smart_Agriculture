@@ -13,7 +13,7 @@
                 <!-- general form elements -->
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">ایجاد کاربر</h3>
+                        <h3 class="box-title">ویرایش کاربر</h3>
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
@@ -28,8 +28,12 @@
                                 <input type="text" class="form-control" name="name" id="name" placeholder="نام و نام خانوادگی" value="{{ old('name' , $user->name) }}">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">نام کاربری</label>
-                                <input type="text" class="form-control" name="username" id="exampleInputEmail1" placeholder="نام کاربری" value="{{ old('username' , $user->username) }}">
+                                <label for="username">نام کاربری</label>
+                                <input type="text" class="form-control" name="username" id="username" placeholder="نام کاربری" value="{{ old('username' , $user->username) }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone_number">شماره همراه</label>
+                                <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" class="form-control" name="phone_number" id="phone_number" placeholder="09" value="{{ old('phone_number' , $user->phone_number) }}">
                             </div>
                             <div class="form-group">
                                 <label for="level">سطح دسترسی</label>

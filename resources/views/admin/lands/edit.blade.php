@@ -24,7 +24,7 @@
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">نام زمین</label>
-                                <input type="text" class="form-control" name="name" id="name" placeholder="نام و نام خانوادگی" value="{{ $land->name }}">
+                                <input type="text" class="form-control" name="name" id="name" placeholder="نام و نام خانوادگی" value="{{ old('name' , $land->name) }}">
                             </div>
                             <div class="form-group">
                                 <label>نام کاربر</label>

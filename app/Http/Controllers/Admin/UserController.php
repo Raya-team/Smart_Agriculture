@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequest;
 use App\Models\User;
+use App\Rules\Security;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -89,8 +90,9 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $data = $request->validate([
-            'name' => ['required'],
+            'name' => ['required', new Security()],
             'username' => ['required', 'regex:/^\S*$/u', 'string', 'regex:/(^([a-zA-Z]+)(\d+)?$)/u', Rule::unique('users')->ignore($user->id)],
+            'phone_number'=>['required',Rule::unique('users')->ignore($user->phone_number),'regex:/(09)[0-9]{9}/','digits:11','numeric'],
             'level' => ['required'],
         ]);
 
@@ -116,7 +118,6 @@ class UserController extends Controller
      */
     public function destroy(Request $request)
     {
-        return $request;
         $user = User::findOrFail($request->user_id);
         $user->delete();
 
@@ -126,7 +127,7 @@ class UserController extends Controller
 
     public function verify()
     {
-        $users = User::all();
+        $users = User::where('status',0)->get();
         return view('admin.users.verify', compact('users'));
     }
 

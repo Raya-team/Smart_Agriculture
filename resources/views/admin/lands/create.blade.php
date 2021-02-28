@@ -19,7 +19,7 @@
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="name">نام زمین</label>
-                                <input type="text" class="form-control" name="name" id="name" placeholder="نام زمین">
+                                <input type="text" class="form-control" name="name" id="name" placeholder="نام زمین" value="{{old('name')}}">
                             </div>
                             <div class="form-group">
                                 <label for="user">نام کاربر</label>

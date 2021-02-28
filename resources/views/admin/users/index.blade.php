@@ -61,7 +61,7 @@
                                                                 <p class="text-center">
                                                                     آیا از حذف این کاربر اطمینان دارین؟
                                                                 </p>
-                                                                <input type="hidden" name="user_id" id="user_id" value="">
+                                                                <input type="hidden" name="user_id" id="user_id" value="{{$user->id}}">
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-primary" data-dismiss="modal">خیر، منصرف شدم</button>
@@ -99,7 +99,6 @@
 
     <script type="text/javascript">
         $('#delete').on('show.bs.modal', function (event) {
-            console.log(event);
             var button = $(event.relatedTarget);
             var user_id = button.data('userid');
             var modal = $(this);

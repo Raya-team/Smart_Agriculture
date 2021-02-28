@@ -14,7 +14,7 @@ class RegisterController extends Controller
         $data = $request->validate([
             'name' => ['required'],
             'username' => ['required', 'regex:/^\S*$/u', 'string', 'regex:/(^([a-zA-Z]+)(\d+)?$)/u'],
-            'phone_number'=>['required','regex:/(09)[0-9]{9}/','digits:11','numeric'],
+            'phone_number'=>['required','unique:users','regex:/(09)[0-9]{9}/','digits:11','numeric'],
             'password' => ['required', 'min:6'],
             'password_confirmation' => ['required_with:password', 'same:password'],
         ]);

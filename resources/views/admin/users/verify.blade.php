@@ -4,7 +4,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            لیست کاربران
+            لیست کاربران تایید نشده
         </h1>
         <ol class="breadcrumb">
             <li><a href="{{route('dashboard')}}"><i class="fa fa-dashboard"></i> داشبورد</a></li>
@@ -38,7 +38,6 @@
                             </thead>
                             <tbody>
                             @foreach($users as $user)
-                                @if($user->status == 1)
                                     <tr>
                                         <td>{{ $user->username }}</td>
                                         <td>{{ $user->name }}</td>
@@ -87,8 +86,6 @@
                                             <!-- /.modal -->
                                         </td>
                                     </tr>
-                                @endif
-
                             @endforeach
                             </tbody>
                         </table>

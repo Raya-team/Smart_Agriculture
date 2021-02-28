@@ -31,7 +31,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="phone_number">شماره همراه</label>
-                                <input type="text" class="form-control" name="phone_number" id="phone_number" placeholder="َشماره همراه" value="{{ old('phone_number') }}">
+                                <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" class="form-control" name="phone_number" id="phone_number" placeholder="09" value="{{ old('phone_number') }}">
                             </div>
                             <div class="form-group">
                                 <label>دسترسی به پنل :</label>
