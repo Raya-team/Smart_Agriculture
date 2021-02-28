@@ -58,7 +58,7 @@
                 <span class="fa fa-user-circle form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input type="text" class="form-control" placeholder="شماره همراه" name="phone_number">
+                <input type="number" class="form-control" placeholder="شماره همراه" name="phone_number">
                 <span class="fa fa-phone form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">

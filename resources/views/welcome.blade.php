@@ -44,6 +44,8 @@
     a {
         color: #fff;
         text-decoration:none;
+        background-color: #00cc66;
+        border-radius: 10px;
     }
 </style>
 <body>
@@ -56,7 +58,7 @@
         <h1>خوش آمدید</h1>
         <hr>
         <br>
-        <a href="{{ asset('login') }}">ورود</a>
+        <a href="{{ asset('login') }}">ورود</a><br><br>
         <a href="{{ asset('register') }}">ثبت نام</a>
     </div>
 </div>
