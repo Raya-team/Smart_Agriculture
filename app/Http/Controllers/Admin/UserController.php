@@ -92,7 +92,7 @@ class UserController extends Controller
         $data = $request->validate([
             'name' => ['required', new Security()],
             'username' => ['required', 'regex:/^\S*$/u', 'string', 'regex:/(^([a-zA-Z]+)(\d+)?$)/u', Rule::unique('users')->ignore($user->id)],
-            'phone_number'=>['required',Rule::unique('users')->ignore($user->phone_number),'regex:/(09)[0-9]{9}/','digits:11','numeric'],
+            'phone_number'=>['required','regex:/(09)[0-9]{9}/','digits:11','numeric',Rule::unique('users')->ignore($user->phone_number)],
             'level' => ['required'],
         ]);
 
@@ -103,6 +103,7 @@ class UserController extends Controller
             $data['password'] = Hash::make($request->password);
         }
         $user->level = $request->input('level');
+        $user->phone_number = $request->input('phone_number');
 
         $user->update($data);
 
