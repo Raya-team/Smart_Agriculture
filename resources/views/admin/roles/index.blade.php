@@ -5,7 +5,7 @@
         <h1>
             لیست نقش ها
         </h1>
-        <ol class="breadcrumb">
+        <ol class="breadcrumb" dir="ltr">
             <li><a href="{{route('dashboard')}}"><i class="fa fa-dashboard"></i> داشبورد</a></li>
             <li><a href="{{route('roles.index')}}">نقش ها</a></li>
         </ol>
