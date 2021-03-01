@@ -1,8 +1,7 @@
 <p align="center"><a href="https://uupload.ir/files/2ym6_raya8.png" width="400"></a></p>
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://uupload.ir/files/2ym6_raya8.png" alt="Build Status"></a>
-
+<a href="https://travis-ci.org/laravel/framework"><img src="https://uupload.ir/files/2ym6_raya8.png" width="300" alt="Build Status"></a>
 </p>
 
 ## About Laravel
