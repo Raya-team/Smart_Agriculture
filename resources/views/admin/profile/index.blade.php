@@ -39,47 +39,6 @@
                     </div>
                     <!-- /.box-body -->
                 </div>
-                <!-- /.box -->
-
-                <!-- About Me Box -->
-                <div class="box box-primary">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">درباره من</h3>
-                    </div>
-                    <!-- /.box-header -->
-                    <div class="box-body">
-                        <strong><i class="fa fa-book margin-r-5"></i> تحصیلات</strong>
-
-                        <p class="text-muted">
-                            لیسانس نرم افزار کامپیوتر
-                        </p>
-
-                        <hr>
-
-                        <strong><i class="fa fa-map-marker margin-r-5"></i> موقعیت</strong>
-
-                        <p class="text-muted">ایران، تهران</p>
-
-                        <hr>
-
-                        <strong><i class="fa fa-pencil margin-r-5"></i> توانایی ها</strong>
-
-                        <p>
-                            <span class="label label-danger">UI Design</span>
-                            <span class="label label-info">Javascript</span>
-                            <span class="label label-warning">PHP</span>
-                            <span class="label label-primary">laravel</span>
-                        </p>
-
-                        <hr>
-
-                        <strong><i class="fa fa-file-text-o margin-r-5"></i> یادداشت</strong>
-
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
-                    </div>
-                    <!-- /.box-body -->
-                </div>
-                <!-- /.box -->
             </div>
             <!-- /.col -->
             <div class="col-md-9">
