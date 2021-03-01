@@ -6,7 +6,7 @@ var map = L.map('mapid', {
     fullscreenControl: true,
 }).setView([33.093382,52.811137], 5);
 
-map.attributionControl.setPrefix('<a href="http://blog.thematicmapping.org/">ناهید آسمان گستران</a>');
+map.attributionControl.setPrefix('<a href="#">ناهید آسمان ایرانیان</a>');
 
 L.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png').addTo(map);
 

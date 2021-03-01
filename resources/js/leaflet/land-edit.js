@@ -18,7 +18,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '<a href="https://rasm.io/company/14004709542/%D9%86%D8%A7%D9%87%DB%8C%D8%AF%20%D8%A2%D8%B3%D9%85%D8%A7%D9%86%20%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C%D8%A7%D9%86/">Aseman</a>'
 }).addTo(map);*/
 L.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png').addTo(map);
-map.attributionControl.setPrefix('<a href="https://rasm.io/company/14004709542/%D9%86%D8%A7%D9%87%DB%8C%D8%AF%20%D8%A2%D8%B3%D9%85%D8%A7%D9%86%20%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C%D8%A7%D9%86/">ناهید آسمان گستران</a>');
+map.attributionControl.setPrefix('<a href="#">ناهید آسمان گستران</a>');
 
 
 map.pm.addControls({

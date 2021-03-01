@@ -31,7 +31,7 @@ let map = L.map('mapid', {
     //     position: 'bottomleft'
     // }
 }).setView([36.29813761025315, 59.60592779759344], 12);
-map.attributionControl.setPrefix('<a href="http://blog.thematicmapping.org/">ناهید آسمان ایرانیان</a>');
+map.attributionControl.setPrefix('<a href="#">ناهید آسمان ایرانیان</a>');
 L.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png').addTo(map);
 var Defaultmap = L.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png', {
     maxZoom: 17,
