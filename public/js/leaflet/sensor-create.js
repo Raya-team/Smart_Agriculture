@@ -14429,7 +14429,7 @@ __webpack_require__.r(__webpack_exports__);
 var map = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.map('mapid', {
   fullscreenControl: true
 }).setView([33.093382, 52.811137], 5);
-map.attributionControl.setPrefix('<a href="http://blog.thematicmapping.org/">ناهید آسمان گستران</a>');
+map.attributionControl.setPrefix('<a href="#">ناهید آسمان ایرانیان</a>');
 leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png').addTo(map);
 var shipLayer = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.layerGroup();
 map.addLayer(shipLayer);

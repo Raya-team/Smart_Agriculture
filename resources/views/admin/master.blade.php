@@ -332,7 +332,15 @@
                     <ul class="treeview-menu">
                         <li><a href="{{ route('users.create') }}"><i class="fa fa-plus"></i>ایجاد کاربر</a></li>
                         <li><a href="{{ route('users.index') }}"><i class="fa fa-users"></i>لیست کاربران</a></li>
-                        <li><a href="{{ route('users.verify') }}"><i class="fa fa-users"></i>  لیست کاربران تایید نشده</a></li>
+                        {{--<li><a href="{{ route('users.verify') }}"><i class="fa fa-users"></i>لیست کاربران تایید نشده</a></li>--}}
+                        <li>
+                            <a href="{{ route('users.verify') }}">
+                                <i class="fa fa-users"></i> <span>کاربران تایید نشده</span>
+                                <span class="pull-left-container">
+                                <small class="label pull-left bg-yellow">{{ \App\Models\User::where('status', 0)->get()->count() }}</small>
+                                </span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>

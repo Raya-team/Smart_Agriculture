@@ -15040,7 +15040,7 @@ var lat = points[0].lat,
 var map = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.map('mapid', {
   fullscreenControl: true
 }).setView([lat, lng], 12);
-map.attributionControl.setPrefix('<a href="http://blog.thematicmapping.org/">ناهید آسمان گستران</a>');
+map.attributionControl.setPrefix('<a href="#">ناهید آسمان ایرانیان</a>');
 leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png').addTo(map);
 var Defaultmap = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png', {
   maxZoom: 17
