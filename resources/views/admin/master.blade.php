@@ -322,19 +322,18 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">منو</li>
-                <li><a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i><span>داشبورد</span></a></li>
-                <li class="treeview">
+                <li class="{{ Route::currentRouteName() == 'dashboard' ? 'active' : '' }}"><a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i><span>داشبورد</span></a></li>
+                <li class="treeview {{ in_array(Route::currentRouteName(), ['users.create', 'users.index', 'users.verify']) ? 'menu-open' : ''  }}">
                     <a href="#">
                         <i class="fa fa-users"></i> <span>مدیریت کاربران</span>
                         <span class="pull-left-container">
               <i class="fa fa-angle-right pull-left"></i>
             </span>
                     </a>
-                    <ul class="treeview-menu">
-                        <li><a href="{{ route('users.create') }}"><i class="fa fa-plus"></i>ایجاد کاربر</a></li>
-                        <li><a href="{{ route('users.index') }}"><i class="fa fa-users"></i>لیست کاربران</a></li>
-                        {{--<li><a href="{{ route('users.verify') }}"><i class="fa fa-users"></i>لیست کاربران تایید نشده</a></li>--}}
-                        <li>
+                    <ul class="treeview-menu" style="{{ in_array(Route::currentRouteName(), ['users.create', 'users.index', 'users.verify']) ? 'display: block;' : '' }}">
+                        <li class="{{ Route::currentRouteName() == 'users.create' ? 'active' : '' }}"><a href="{{ route('users.create') }}"><i class="fa fa-plus"></i>ایجاد کاربر</a></li>
+                        <li class="{{ Route::currentRouteName() == 'users.index' ? 'active' : '' }}"><a href="{{ route('users.index') }}"><i class="fa fa-users"></i>لیست کاربران</a></li>
+                        <li class="{{ Route::currentRouteName() == 'users.verify' ? 'active' : '' }}">
                             <a href="{{ route('users.verify') }}">
                                 <i class="fa fa-users"></i> <span>کاربران تایید نشده</span>
                                 <span class="pull-left-container">
@@ -346,35 +345,35 @@
                 </li>
             </ul>
             <ul class="sidebar-menu" data-widget="tree">
-                <li class="treeview">
+                <li class="treeview {{ in_array(Route::currentRouteName(), ['roles.index', 'users-role.index']) ? 'menu-open' : ''  }}">
                     <a href="#">
                         <i class="fa fa-lock"></i> <span>سطوح دسترسی</span>
                         <span class="pull-left-container">
               <i class="fa fa-angle-right pull-left"></i>
             </span>
                     </a>
-                    <ul class="treeview-menu">
-                        <li><a href="{{route('roles.index')}}"><i class="fa fa-expeditedssl"></i>مدیریت نقش ها</a></li>
-                        <li><a href="{{ route('users-role.index') }}"><i class="fa fa-users"></i>نقش کاربران</a></li>
+                    <ul class="treeview-menu" style="{{ in_array(Route::currentRouteName(), ['roles.index', 'users-role.index']) ? 'display: block;' : '' }}">
+                        <li class="{{ Route::currentRouteName() == 'roles.index' ? 'active' : '' }}"><a href="{{route('roles.index')}}"><i class="fa fa-expeditedssl"></i>مدیریت نقش ها</a></li>
+                        <li class="{{ Route::currentRouteName() == 'users-role.index' ? 'active' : '' }}"><a href="{{ route('users-role.index') }}"><i class="fa fa-users"></i>نقش کاربران</a></li>
                     </ul>
                 </li>
             </ul>
             <ul class="sidebar-menu" data-widget="tree">
-                <li class="treeview">
+                <li class="treeview {{ in_array(Route::currentRouteName(), ['lands.create', 'lands.index']) ? 'menu-open' : ''  }}">
                     <a href="#">
                         <i class="fa  fa-safari"></i> <span>مدیریت زمین ها</span>
                         <span class="pull-left-container">
               <i class="fa fa-angle-right pull-left"></i>
             </span>
                     </a>
-                    <ul class="treeview-menu">
+                    <ul class="treeview-menu" style="{{ in_array(Route::currentRouteName(), ['lands.create', 'lands.index']) ? 'display: block;' : '' }}">
                         @if(Gate::allows('asdsad') || Auth::user()->level == 2)
-                            <li><a href="{{ route('lands.create') }}"><i class="fa fa-plus"></i>ایجاد زمین</a></li>
+                            <li class="{{ Route::currentRouteName() == 'lands.create' ? 'active' : '' }}"><a href="{{ route('lands.create') }}"><i class="fa fa-plus"></i>ایجاد زمین</a></li>
                         @endif
-                        <li><a href="{{ route('lands.index') }}"><i class="fa fa-users"></i>لیست زمین</a></li>
+                        <li class="{{ Route::currentRouteName() == 'lands.index' ? 'active' : '' }}"><a href="{{ route('lands.index') }}"><i class="fa fa-users"></i>لیست زمین</a></li>
                     </ul>
                 </li>
-                <li><a href="{{ route('sensors.index') }}"><i class="fa fa-fw fa-dot-circle-o"></i> <span>مدیریت سنسور ها</span></a></li>
+                <li class="{{ Route::currentRouteName() == 'sensors.index' ? 'active' : '' }}"><a href="{{ route('sensors.index') }}"><i class="fa fa-fw fa-dot-circle-o"></i> <span>مدیریت سنسور ها</span></a></li>
 
             </ul>
         </section>
