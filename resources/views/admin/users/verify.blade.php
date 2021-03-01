@@ -110,7 +110,6 @@
 
     <script type="text/javascript">
         $('#delete').on('show.bs.modal', function (event) {
-            console.log(event);
             var button = $(event.relatedTarget);
             var user_id = button.data('userid');
             var modal = $(this);
