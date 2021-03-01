@@ -1,167 +1,53 @@
-@extends('admin.master')
+## About Laravel
 
-@section('main-content')
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <h1>
-            لیست کاربران تایید نشده
-        </h1>
-        <ol class="breadcrumb">
-            <li><a href="{{route('dashboard')}}"><i class="fa fa-dashboard"></i> داشبورد</a></li>
-            <li><a href="{{route('users.index')}}">کاربران</a></li>
-        </ol>
-    </section>
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-    <!-- Main content -->
-    <section class="content">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="box">
-                    <div class="box-header">
-                        <h1 class="box-title">کاربران</h1>
-                        <div class="box-tools pull-right">
-                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                            </button>
-                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                        </div>
-                    </div>
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-                    <!-- /.box-header -->
-                    <div class="box-body">
-                        <table id="example" class="table table-bordered table-striped display">
-                            <thead>
-                            <tr>
-                                <th>نام کاربری</th>
-                                <th>نام و نام خانوادگی</th>
-                                <th>ویرایش</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($users as $user)
-                                <tr>
-                                    <td>{{ $user->username }}</td>
-                                    <td>{{ $user->name }}</td>
-                                    <td>
-                                        <div class="btn-group btn-group-xs">
-                                            <span class="spanFormat">
-                                                <a href="{{ route('users.edit', ['user' => $user->id]) }}" class="btn btn-primary"><i class="fa fa-fw fa-edit"></i></a>
-                                            </span>
-                                            <span class="spanFormat">
-                                                <form action="{{ route('users.verified' , ['user'=> $user->id]) }}" method="post">
-                                                    {{ csrf_field() }}
-                                                    {{ method_field('put') }}
-                                                    <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-check"></i></button>
-                                                </form>
-                                            </span>
-                                            <span class="spanFormat">
-                                                    <button class="btn btn-danger" data-userid="{{ $user->id }}" data-toggle="modal" data-target="#delete"><i class="fa fa-fw fa-trash-o"></i></button>
-                                            </span>
-                                        </div>
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                        <h4 class="modal-title text-center" id="myModalLabel">تایید حذف</h4>
-                                                    </div>
-                                                    <form action="{{route('users.destroy',['user' => $user->id])}}" method="post">
-                                                        {{method_field('delete')}}
-                                                        {{csrf_field()}}
-                                                        <div class="modal-body">
-                                                            <p class="text-center">
-                                                                آیا از حذف این کاربر اطمینان دارین؟
-                                                            </p>
-                                                            <input type="hidden" name="user_id" id="user_id" value="">
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-primary" data-dismiss="modal">خیر، منصرف شدم</button>
-                                                            <button type="submit" class="btn btn-danger">بله، حذف شود</button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-                                        <!-- /.modal -->
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- /.box-body -->
-                </div>
-                <!-- /.box -->
-            </div>
-            <!-- /.col -->
-        </div>
-        <!-- /.row -->
-    </section>
-    <!-- /.content -->
-    @include('sweet::alert')
-@endsection
+## Learning Laravel
 
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-@section('script')
-    <!-- DataTables -->
-    <script src="/admin/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="/admin/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-    <script type="text/javascript">
-        $('#delete').on('show.bs.modal', function (event) {
-            console.log(event);
-            var button = $(event.relatedTarget);
-            var user_id = button.data('userid');
-            var modal = $(this);
-            modal.find('.modal-body #user_id').val(user_id);
-        })
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('#example').DataTable({
-                deferRender:    true,
-                scrollY:        450,
-                scrollCollapse: true,
-                scroller:       true,
-                "language": {
-                    "lengthMenu": "تعداد سطرها  _MENU_",
-                    "zeroRecords": "نتیجه ای یافت نشد",
-                    "info": "نمایش صفحه _PAGE_ از _PAGES_",
-                    "infoEmpty": "موردی وجود ندارد",
-                    "infoFiltered": "(filtered from _MAX_ total records)",
-                    "search": "جست و جو : ",
-                    paginate: {
-                        first:    '«',
-                        previous: '‹',
-                        next:     '›',
-                        last:     '»',
-                    },
-                    aria: {
-                        paginate: {
-                            first:    'صفحه نخست',
-                            previous: 'قبلی',
-                            next:     'بعدی',
-                            last:     'صفحه آخر',
-                        }
-                    }
+## Laravel Sponsors
 
-                }
-            });
-        });
-    </script>
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
+### Premium Partners
 
-@endsection
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Cubet Techno Labs](https://cubettech.com)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[Many](https://www.many.co.uk)**
+- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+- **[DevSquad](https://devsquad.com)**
+- **[Curotec](https://www.curotec.com/)**
+- **[OP.GG](https://op.gg)**
 
-@section('css')
-    <style>
-        .spanFormat
-        {
-            text-align: left;
-            display: table-cell;
-            min-width: 10px;
-        }
-    </style>
-    <script src="{{ asset('js/app.js') }}"></script>
-@endsection()
+## Contributing
+
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+
+## Code of Conduct
+
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+
+## Security Vulnerabilities
+
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
