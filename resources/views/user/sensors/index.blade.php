@@ -36,11 +36,15 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($sensors as $sensor)
-                                @if($sensor->land->user_id == $user_login)
+                            @foreach($lands as $land)
+                                @if($land->user_id == $user_login)
                                     <tr>
-                                        <td>{{ $sensor->land->name }}</td>
-                                        <td>{{ $sensor->serial }}</td>
+                                        <td>{{ $land->name }}</td>
+                                        <td>
+                                            @foreach($land->sensors as $sensor)
+                                                <span class="label" style="background-color: #00bcd4; color: #fff" >{{ $sensor->serial }}</span>
+                                            @endforeach
+                                        </td>
                                     </tr>
                                 @endif
                             @endforeach
