@@ -9,10 +9,14 @@ import '@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css';
 var geojson = document.getElementById('eventoutput').value;
 var points = JSON.parse(geojson);
 var lat = points[1].lat, lng = points[1].lng;
+
 let map = L.map('mapid', {
     fullscreenControl: true,
 }).setView([lat,lng], 12);
-L.polygon([points]).addTo(map);
+
+L.polygon([points],{
+    color: '#9b2d14'
+}).addTo(map);
 
 L.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png').addTo(map);
 map.attributionControl.setPrefix('<a href="#">ناهید آسمان گستران</a>');

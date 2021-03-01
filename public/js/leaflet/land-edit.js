@@ -15109,7 +15109,9 @@ var lat = points[1].lat,
 var map = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.map('mapid', {
   fullscreenControl: true
 }).setView([lat, lng], 12);
-leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]).addTo(map);
+leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points], {
+  color: '#9b2d14'
+}).addTo(map);
 leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png').addTo(map);
 map.attributionControl.setPrefix('<a href="#">ناهید آسمان گستران</a>');
 map.pm.addControls({
