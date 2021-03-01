@@ -4,14 +4,14 @@ import 'leaflet-measure/dist/leaflet-measure.fa'
 import 'leaflet-contextmenu';
 import 'leaflet.fullscreen';
 
-
 var geojson = document.getElementById('eventoutput').value;
 var points = JSON.parse(geojson);
-
 var lat = points[0].lat, lng = points[0].lng;
+
 let map = L.map('mapid', {
     fullscreenControl: true,
 }).setView([lat,lng], 12);
+
 map.attributionControl.setPrefix('<a href="#">ناهید آسمان ایرانیان</a>');
 
 L.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png').addTo(map);
@@ -46,6 +46,5 @@ var _baseLayers = {
 };
 
 L.control.layers(_baseLayers, null, {position: "bottomright"}).addTo(map);
-
 
 L.polygon([points]).addTo(map);
