@@ -33,7 +33,7 @@
                                 <b>آدرس</b> <a class="pull-left">مشهد، عبادی</a>
                             </li>
                             <li class="list-group-item">
-                                <b>شماره تلفن</b> <a class="pull-left">09123456789</a>
+                                <b>شماره تلفن</b> <a class="pull-left">{{ $user->phone_number }}</a>
                             </li>
                         </ul>
                     </div>

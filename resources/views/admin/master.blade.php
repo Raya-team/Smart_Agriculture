@@ -271,7 +271,8 @@
                                 <img src="/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                 <p>
-                                    {{ Auth::user()->name }}
+                                    {{ Auth::user()->username }}
+                                    <small>{{ Auth::user()->name }}</small>
                                 </p>
                             </li>
                             <!-- Menu Body -->
