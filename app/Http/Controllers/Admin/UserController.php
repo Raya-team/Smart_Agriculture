@@ -20,7 +20,6 @@ class UserController extends Controller
      */
     public function index()
     {
-//        $users = User::where('status', 1)->get();
         $users = User::where('status', 1)->whereNotIn('level', [2])->get();
         return view('admin.users.index',compact('users'));
     }
@@ -128,7 +127,7 @@ class UserController extends Controller
 
     public function verify()
     {
-        $users = User::where('status',0)->get();
+        $users = User::where('status', 0)->get();
         return view('admin.users.verify', compact('users'));
     }
 
