@@ -33,6 +33,7 @@ class RoleUserController extends Controller
         $user_login = Auth::user();
         $users = User::where('level', '1')->with('roles')->get();
         $roles = Role::all();
+
         if($roles->count() == 0)
         {
             alert()->error('برای ایجاد مقام باید ابتدا نقشی ایجاد شده باشد')->persistent('باشد');
