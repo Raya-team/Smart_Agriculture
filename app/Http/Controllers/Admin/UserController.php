@@ -46,21 +46,25 @@ class UserController extends Controller
     //TODO validation
     public function store(Request $request, User $user)
     {
-        $file = $request->file('image');
-        $imagePath = "/upload/images/";
-        $filename = rand(1000,9999) . Carbon::now()->microsecond . $file->getClientOriginalName();
-        $url = $imagePath . "72_" . $filename;
+        if (! is_null($request->file('image'))){
+            $file = $request->file('image');
+            $imagePath = "/upload/images/";
+            $filename = rand(1000,9999) . Carbon::now()->microsecond . $file->getClientOriginalName();
+            $url = $imagePath . "160_" . $filename;
 
-        Image::make($file->getRealPath())->resize(160, 160, function ($constraint) {
-            $constraint->aspectRatio();
-        })->save(public_path($url));
-
-
+            Image::make($file->getRealPath())->resize(160, 160, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save(public_path($url));
+            //TODO Validation for image
+            $request->validate([
+                'image' => ['required']
+            ]);
+            $user->image = $url;
+        }
 
         $user->name = $request->input('name');
         $user->username = $request->input('username');
         $user->phone_number = $request->input('phone_number');
-        $user->image = $url;
         $user->level = $request->input('level');
         $user->status = 1;
         $user->password = Hash::make($request->input('password'));
@@ -113,7 +117,7 @@ class UserController extends Controller
             $file = $request->file('image');
             $imagePath = "/upload/images/";
             $filename = rand(1000,9999) . Carbon::now()->microsecond . $file->getClientOriginalName();
-            $url = $imagePath . "72_" . $filename;
+            $url = $imagePath . "160_" . $filename;
 
             Image::make($file->getRealPath())->resize(160, 160, function ($constraint) {
                 $constraint->aspectRatio();

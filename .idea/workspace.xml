@@ -9,10 +9,6 @@
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProfileController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/profile/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/profile/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/profile/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/profile/index.blade.php" afterDir="false" />
     </list>
     <ignored path="F:\laravel\Work\first\.idea\shelf/" />
     <ignored path="G:\work\Smart_Agriculture\.idea\shelf/" />
@@ -60,24 +56,24 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="md" value="2" />
-          <entry key="php" value="33" />
-          <entry key="png" value="6" />
+          <entry key="php" value="40" />
+          <entry key="png" value="7" />
           <entry key="tmp" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Blade" value="18" />
-          <entry key="Image" value="6" />
+          <entry key="Image" value="7" />
           <entry key="Markdown" value="2" />
-          <entry key="PHP" value="15" />
+          <entry key="PHP" value="22" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="md" value="61" />
-          <entry key="php" value="1742" />
+          <entry key="php" value="1751" />
           <entry key="txt" value="5" />
         </counts>
       </usages-collector>
@@ -85,7 +81,7 @@
         <counts>
           <entry key="Blade" value="318" />
           <entry key="Markdown" value="61" />
-          <entry key="PHP" value="1424" />
+          <entry key="PHP" value="1433" />
           <entry key="PLAIN_TEXT" value="5" />
         </counts>
       </usages-collector>
@@ -104,10 +100,13 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/user/master.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2358">
-              <caret line="264" column="32" selection-start-line="264" selection-start-column="28" selection-end-line="264" selection-end-column="32" />
+            <state relative-caret-position="530">
+              <caret line="66" column="62" selection-start-line="66" selection-start-column="62" selection-end-line="66" selection-end-column="62" />
+              <folding>
+                <element signature="e#46#82#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -125,7 +124,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>user</find>
       <find>ProviderRepository</find>
       <find>role</find>
       <find>check</find>
@@ -155,6 +153,7 @@
       <find>img</find>
       <find>آنلاین</find>
       <find>&lt;img</find>
+      <find>72</find>
     </findStrings>
     <replaceStrings>
       <replace>داشبورد</replace>
@@ -176,7 +175,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/admin/roles/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/roles/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/role-user/edit.blade.php" />
         <option value="$PROJECT_DIR$/webpack.mix.js" />
@@ -213,7 +211,6 @@
         <option value="$PROJECT_DIR$/resources/views/admin/role-user/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/SensorController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/sensors/index.blade.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2021_03_02_091341_add_image_to_users_table.php" />
         <option value="$PROJECT_DIR$/routes/web/admin.php" />
         <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" />
@@ -221,12 +218,14 @@
         <option value="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/profile/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ProfileController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/master.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/user/profile/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/User/ProfileController.php" />
         <option value="$PROJECT_DIR$/resources/views/user/master.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ProfileController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/User/ProfileController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2021_03_02_091341_add_image_to_users_table.php" />
+        <option value="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" />
       </list>
     </option>
   </component>
@@ -420,20 +419,28 @@
             <path>
               <item name="first" type="b2602c69:ProjectViewProjectNode" />
               <item name="first" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="first" type="b2602c69:ProjectViewProjectNode" />
               <item name="first" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="first" type="b2602c69:ProjectViewProjectNode" />
               <item name="first" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="first" type="b2602c69:ProjectViewProjectNode" />
+              <item name="first" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -444,7 +451,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="SearchEverywhereHistoryKey" value="profile&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/profile&#10;maste&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php&#10;admin&#9;FILE&#9;file://F:/laravel/Work/first/routes/web/admin.php&#10;getClientOriginalName&#9;null&#9;null&#10;prof&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/user/profile&#10;master&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php&#10;register&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/register.blade.php&#10;todo&#9;ACTION&#9;ActivateTODOToolWindow&#10;mas&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/user/master.blade.php&#10;landco&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/LandController.php&#10;sensorc&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;welcom&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/welcome.blade.php&#10;user.php&#9;FILE&#9;file://F:/laravel/Work/first/app/Models/User.php&#10;index&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/users/index.blade.php&#10;usercontroller&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/UserController.php&#10;login&#9;null&#9;null&#10;sensorcon&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;sen&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;user&#9;null&#9;null&#10;land&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/LandController.php&#10;throttle&#9;null&#9;null&#10;edit&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/role-user/edit.blade.php&#10;userc&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/UserController.php&#10;مخل&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/login.blade.php&#10;log&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/login.blade.php&#10;index.bla&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/lands/index.blade.php&#10;عسثق&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Requests/UserRequest.php&#10;va&#9;FILE&#9;file://F:/laravel/Work/first/resources/lang/fa/validation.php&#10;role&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/RoleController.php&#10;loginco&#9;null&#9;null&#10;landc&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/LandController.php&#10;sensor&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;index.b&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/sensors/index.blade.php&#10;master.php&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php&#10;home&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/HomeController.php&#10;ئ&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php&#10;regist&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/register.blade.php&#10;create.bla&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/users/create.blade.php&#10;logi&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/login.blade.php&#10;crelandre&#9;null&#9;null&#10;config.php&#9;FILE&#9;file://F:/laravel/Work/first/vendor/psy/psysh/.phan/config.php&#10;ProviderRepository.php&#9;FILE&#9;file://F:/laravel/Work/first/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php&#10;ProviderRepository&#9;null&#9;null&#10;map&#9;FILE&#9;file://F:/laravel/Work/first/resources/js/map.js&#10;user-rol&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/user-role&#10;sens&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;show&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/lands/show.blade.php&#10;هدیثط&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/roles/index.blade.php&#10;userco&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/UserController.php&#10;master.blade&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php" />
+    <property name="SearchEverywhereHistoryKey" value="user&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/UserController.php&#10;profile&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/profile&#10;maste&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php&#10;admin&#9;FILE&#9;file://F:/laravel/Work/first/routes/web/admin.php&#10;getClientOriginalName&#9;null&#9;null&#10;prof&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/user/profile&#10;master&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php&#10;register&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/register.blade.php&#10;todo&#9;ACTION&#9;ActivateTODOToolWindow&#10;mas&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/user/master.blade.php&#10;landco&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/LandController.php&#10;sensorc&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;welcom&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/welcome.blade.php&#10;user.php&#9;FILE&#9;file://F:/laravel/Work/first/app/Models/User.php&#10;index&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/users/index.blade.php&#10;usercontroller&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/UserController.php&#10;login&#9;null&#9;null&#10;sensorcon&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;sen&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;land&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/LandController.php&#10;throttle&#9;null&#9;null&#10;edit&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/role-user/edit.blade.php&#10;userc&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/UserController.php&#10;مخل&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/login.blade.php&#10;log&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/login.blade.php&#10;index.bla&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/lands/index.blade.php&#10;عسثق&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Requests/UserRequest.php&#10;va&#9;FILE&#9;file://F:/laravel/Work/first/resources/lang/fa/validation.php&#10;role&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/RoleController.php&#10;loginco&#9;null&#9;null&#10;landc&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/LandController.php&#10;sensor&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;index.b&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/sensors/index.blade.php&#10;master.php&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php&#10;home&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/HomeController.php&#10;ئ&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php&#10;regist&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/register.blade.php&#10;create.bla&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/users/create.blade.php&#10;logi&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/login.blade.php&#10;crelandre&#9;null&#9;null&#10;config.php&#9;FILE&#9;file://F:/laravel/Work/first/vendor/psy/psysh/.phan/config.php&#10;ProviderRepository.php&#9;FILE&#9;file://F:/laravel/Work/first/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php&#10;ProviderRepository&#9;null&#9;null&#10;map&#9;FILE&#9;file://F:/laravel/Work/first/resources/js/map.js&#10;user-rol&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/user-role&#10;sens&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;show&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/lands/show.blade.php&#10;هدیثط&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/roles/index.blade.php&#10;userco&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/UserController.php&#10;master.blade&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../QuickAdminPanel-Material-Dashboard" />
@@ -460,11 +467,11 @@
       <recent name="F:\laravel\Work\first\routes\web" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\laravel\Work\first\public\upload\images" />
       <recent name="G:\work\Smart_Agriculture" />
       <recent name="F:\laravel\Work\first\public\admin" />
       <recent name="F:\laravel\Work\first\resources\views\admin" />
       <recent name="F:\laravel\Work\first\resources\views\user" />
-      <recent name="F:\laravel\Work\first\resources\views\admin\users" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -616,7 +623,7 @@
       <workItem from="1614491762145" duration="266000" />
       <workItem from="1614492427947" duration="3496000" />
       <workItem from="1614576991760" duration="9922000" />
-      <workItem from="1614665403503" duration="18592000" />
+      <workItem from="1614665403503" duration="19532000" />
     </task>
     <task id="LOCAL-00001" summary="update LandController">
       <created>1610903462592</created>
@@ -821,11 +828,18 @@
       <option name="project" value="LOCAL" />
       <updated>1614684763897</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Ehsan">
+      <created>1614686403753</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1614686403753</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="557195000" />
+    <option name="totallyTimeSpent" value="558135000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -929,13 +943,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Ehsan" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/UserRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/lands/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="637">
@@ -964,22 +971,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/AuthServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_28_083147_add_phone_number_for_users_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1112,13 +1105,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2021_03_02_091341_add_image_to_users_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/RoleUserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -1227,33 +1213,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ProfileController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/ProfileController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-          <folding>
-            <element signature="e#45#81#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="117" column="62" selection-start-line="117" selection-start-column="62" selection-end-line="117" selection-end-column="62" />
-          <folding>
-            <element signature="e#46#82#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/profile/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -1261,10 +1220,64 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/upload/images/default-profile.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/user/master.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2358">
-          <caret line="264" column="32" selection-start-line="264" selection-start-column="28" selection-end-line="264" selection-end-column="32" />
+        <state relative-caret-position="150">
+          <caret line="172" column="22" lean-forward="true" selection-start-line="172" selection-start-column="22" selection-end-line="172" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/ProfileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="32" column="37" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
+          <folding>
+            <element signature="e#45#81#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ProfileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="32" column="37" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
+          <folding>
+            <element signature="e#46#82#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_28_083147_add_phone_number_for_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="28" column="12" lean-forward="true" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/AuthServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_03_02_091341_add_image_to_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="66" column="62" selection-start-line="66" selection-start-column="62" selection-end-line="66" selection-end-column="62" />
+          <folding>
+            <element signature="e#46#82#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

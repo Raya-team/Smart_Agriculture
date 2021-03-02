@@ -30,7 +30,7 @@ class ProfileController extends Controller
             $file = $request->file('image');
             $imagePath = "/upload/images/";
             $filename = rand(1000,9999) . Carbon::now()->microsecond . $file->getClientOriginalName();
-            $url = $imagePath . "72_" . $filename;
+            $url = $imagePath . "160_" . $filename;
 
             Image::make($file->getRealPath())->resize(160, 160, function ($constraint) {
                 $constraint->aspectRatio();
