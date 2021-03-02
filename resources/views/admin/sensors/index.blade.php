@@ -6,7 +6,7 @@
         <h1>
             لیست سنسور ها
         </h1>
-        <ol class="breadcrumb">
+        <ol class="breadcrumb" dir="ltr">
             <li><a href="{{route('dashboard')}}"><i class="fa fa-dashboard"></i> داشبورد</a></li>
             <li><a href="{{route('sensors.index')}}">سنسور ها</a></li>
         </ol>
