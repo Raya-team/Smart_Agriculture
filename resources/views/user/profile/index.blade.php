@@ -22,7 +22,7 @@
                 <!-- Profile Image -->
                 <div class="box box-primary">
                     <div class="box-body box-profile">
-                        <img class="profile-user-img img-responsive img-circle" src="/user/dist/img/user2-160x160.jpg" alt="User profile picture">
+                        <img class="profile-user-img img-responsive img-circle" src="{{ Auth::user()->image }}" alt="User profile picture">
 
                         <h3 class="profile-username text-center">{{ $user->name }}</h3>
 
@@ -48,7 +48,7 @@
                     </ul>
                     <div class="tab-content">
                         <div class="">
-                            <form role="form" class="form-horizontal" action="{{ route('user.profile.update' , ['user' => $user->id]) }}" method="post">
+                            <form role="form" class="form-horizontal" action="{{ route('user.profile.update' , ['user' => $user->id]) }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @method('PATCH')
                                 @include('admin.section.errors')
@@ -66,6 +66,14 @@
 
                                     <div class="col-sm-10">
                                         <input class="form-control" id="username" name="username" placeholder="نام کاربری" value="{{ old('username' , $user->username) }}" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="image" class="col-sm-2 control-label">تصویر پروفایل :</label>
+
+                                    <div class="col-sm-10">
+                                        <input type="file" class="form-control" id="image" name="image">
                                     </div>
                                 </div>
 

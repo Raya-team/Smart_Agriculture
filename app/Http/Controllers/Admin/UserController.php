@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 use Intervention\Image\Facades\Image;
-use function PHPUnit\Framework\isNull;
 
 class UserController extends Controller
 {
@@ -50,11 +49,11 @@ class UserController extends Controller
         $file = $request->file('image');
         $imagePath = "/upload/images/";
         $filename = rand(1000,9999) . Carbon::now()->microsecond . $file->getClientOriginalName();
-        $url = $imagePath . $filename;
+        $url = $imagePath . "72_" . $filename;
 
-        Image::make($file->getRealPath())->resize(72, 72, function ($constraint) {
+        Image::make($file->getRealPath())->resize(160, 160, function ($constraint) {
             $constraint->aspectRatio();
-        })->save(public_path($imagePath . "72_" . $filename));
+        })->save(public_path($url));
 
 
 
@@ -114,12 +113,12 @@ class UserController extends Controller
             $file = $request->file('image');
             $imagePath = "/upload/images/";
             $filename = rand(1000,9999) . Carbon::now()->microsecond . $file->getClientOriginalName();
-            $url = $imagePath . $filename;
+            $url = $imagePath . "72_" . $filename;
 
-            Image::make($file->getRealPath())->resize(72, 72, function ($constraint) {
+            Image::make($file->getRealPath())->resize(160, 160, function ($constraint) {
                 $constraint->aspectRatio();
-            })->save(public_path($imagePath . "72_" . $filename));
-
+            })->save(public_path($url));
+            //TODO Validation for image
             $request->validate([
                 'image' => ['required']
             ]);
