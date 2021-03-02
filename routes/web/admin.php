@@ -53,12 +53,3 @@ Route::group(['middleware' =>['auth', 'auth.admin']] , function (){
 //    }
 });
 Route::post('/user_register',[RegisterController::class, 'store'])->name('user.register');
-
-
-
-
-//Route::get('/', function () {
-////    return view('welcome');
-////    return User::factory()->make([
-////        'name' => 'Ehsan Roozbakhsh'
-////    ]);

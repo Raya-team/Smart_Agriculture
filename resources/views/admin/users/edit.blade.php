@@ -17,7 +17,7 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form role="form" action="{{ route('users.update' , ['user' => $user->id]) }}" method="post">
+                    <form role="form" action="{{ route('users.update' , ['user' => $user->id]) }}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('PATCH')
                         @include('admin.section.errors')
@@ -34,6 +34,10 @@
                             <div class="form-group">
                                 <label for="phone_number">شماره همراه</label>
                                 <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" class="form-control" name="phone_number" id="phone_number" placeholder="09" value="{{ old('phone_number' , $user->phone_number) }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="image">تصویر پروفایل</label>
+                                <input type="file" class="form-control" name="image" id="image" placeholder="تصویر پروفایل">
                             </div>
                             <div class="form-group">
                                 <label for="level">سطح دسترسی</label>

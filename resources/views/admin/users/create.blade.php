@@ -17,7 +17,7 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form role="form" action="{{route('users.store')}}" method="POST">
+                    <form role="form" action="{{route('users.store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @include('admin.section.errors')
                         <div class="box-body">
@@ -34,7 +34,11 @@
                                 <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" class="form-control" name="phone_number" id="phone_number" placeholder="09" value="{{ old('phone_number') }}">
                             </div>
                             <div class="form-group">
-                                <label>دسترسی به پنل :</label>
+                                <label for="image">تصویر پروفایل</label>
+                                <input type="file" class="form-control" name="image" id="image" placeholder="تصویر پروفایل">
+                            </div>
+                            <div class="form-group">
+                                <label>دسترسی به پنل</label>
                                 <select class="form-control chosen-select" name="level" style="width: 100%;">
                                     <option value="0">کاربران</option>
                                     <option value="1">مدیریت</option>

@@ -5,8 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d703aa5-6bf4-4443-9648-150136637f3e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/first.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/first.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SensorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SensorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/sensors/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/sensors/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/verify.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/verify.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web/admin.php" afterDir="false" />
     </list>
     <ignored path="F:\laravel\Work\first\.idea\shelf/" />
     <ignored path="G:\work\Smart_Agriculture\.idea\shelf/" />
@@ -54,27 +66,33 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="md" value="2" />
-          <entry key="php" value="8" />
+          <entry key="php" value="24" />
+          <entry key="png" value="3" />
+          <entry key="tmp" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Blade" value="2" />
+          <entry key="Blade" value="12" />
+          <entry key="Image" value="3" />
           <entry key="Markdown" value="2" />
-          <entry key="PHP" value="6" />
+          <entry key="PHP" value="12" />
+          <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="md" value="61" />
-          <entry key="php" value="304" />
+          <entry key="php" value="1583" />
+          <entry key="txt" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="90" />
+          <entry key="Blade" value="225" />
           <entry key="Markdown" value="61" />
-          <entry key="PHP" value="214" />
+          <entry key="PHP" value="1358" />
+          <entry key="PLAIN_TEXT" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -92,40 +110,52 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/RoleUserController.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/users/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
+            <state relative-caret-position="224">
+              <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="38" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/LandController.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/users/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="27" column="29" lean-forward="true" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+            <state relative-caret-position="545">
+              <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/sensors/index.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+            <state relative-caret-position="194">
+              <caret line="125" column="28" selection-start-line="125" selection-start-column="28" selection-end-line="125" selection-end-column="28" />
+              <folding>
+                <element signature="e#46#82#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/SensorController.php">
+        <entry file="file://$PROJECT_DIR$/routes/web/admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="99" />
+            <state relative-caret-position="144">
+              <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
               <folding>
-                <element signature="e#46#82#0#PHP" expanded="true" />
+                <element signature="e#7#58#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="338">
+              <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -194,14 +224,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Requests/EditSensorRrequest.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/RoleRequest.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/RoleUserRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/roles/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/roles/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/roles/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/role-user/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/role-user/edit.blade.php" />
         <option value="$PROJECT_DIR$/webpack.mix.js" />
         <option value="$PROJECT_DIR$/node_modules/@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.min.js" />
@@ -219,14 +245,8 @@
         <option value="$PROJECT_DIR$/resources/views/admin/lands/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/UserRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/User/RegisterController.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web/admin.php" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/users/verify.blade.php" />
         <option value="$PROJECT_DIR$/resources/js/leaflet/sensor-create.js" />
         <option value="$PROJECT_DIR$/resources/js/leaflet/sensor-edit.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" />
@@ -241,10 +261,20 @@
         <option value="$PROJECT_DIR$/ver" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/resources/views/admin/master.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/SensorController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleUserController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/LandController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/lands/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/role-user/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/SensorController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/sensors/index.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2021_03_02_091341_add_image_to_users_table.php" />
+        <option value="$PROJECT_DIR$/routes/web/admin.php" />
+        <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/users/verify.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" />
       </list>
     </option>
   </component>
@@ -411,6 +441,7 @@
       <path value="$PROJECT_DIR$/vendor/uxweb/sweet-alert" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
       <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/intervention/image" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -437,6 +468,24 @@
             <path>
               <item name="first" type="b2602c69:ProjectViewProjectNode" />
               <item name="first" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="first" type="b2602c69:ProjectViewProjectNode" />
+              <item name="first" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="upload" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="first" type="b2602c69:ProjectViewProjectNode" />
+              <item name="first" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="upload" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="first" type="b2602c69:ProjectViewProjectNode" />
+              <item name="first" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -458,7 +507,7 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="sensors" type="462c0819:PsiDirectoryNode" />
+              <item name="users" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -469,7 +518,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="SearchEverywhereHistoryKey" value="prof&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/user/profile&#10;profile&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/profile&#10;master&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php&#10;register&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/register.blade.php&#10;todo&#9;ACTION&#9;ActivateTODOToolWindow&#10;maste&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php&#10;mas&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/user/master.blade.php&#10;landco&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/LandController.php&#10;sensorc&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;welcom&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/welcome.blade.php&#10;user.php&#9;FILE&#9;file://F:/laravel/Work/first/app/Models/User.php&#10;index&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/users/index.blade.php&#10;usercontroller&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/UserController.php&#10;login&#9;null&#9;null&#10;sensorcon&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;sen&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;user&#9;null&#9;null&#10;land&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/LandController.php&#10;throttle&#9;null&#9;null&#10;edit&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/role-user/edit.blade.php&#10;userc&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/UserController.php&#10;مخل&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/login.blade.php&#10;log&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/login.blade.php&#10;index.bla&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/lands/index.blade.php&#10;عسثق&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Requests/UserRequest.php&#10;va&#9;FILE&#9;file://F:/laravel/Work/first/resources/lang/fa/validation.php&#10;role&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/RoleController.php&#10;loginco&#9;null&#9;null&#10;landc&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/LandController.php&#10;admin&#9;FILE&#9;file://F:/laravel/Work/first/routes/web/admin.php&#10;sensor&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;index.b&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/sensors/index.blade.php&#10;master.php&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php&#10;home&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/HomeController.php&#10;ئ&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php&#10;regist&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/register.blade.php&#10;create.bla&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/users/create.blade.php&#10;logi&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/login.blade.php&#10;crelandre&#9;null&#9;null&#10;config.php&#9;FILE&#9;file://F:/laravel/Work/first/vendor/psy/psysh/.phan/config.php&#10;ProviderRepository.php&#9;FILE&#9;file://F:/laravel/Work/first/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php&#10;ProviderRepository&#9;null&#9;null&#10;map&#9;FILE&#9;file://F:/laravel/Work/first/resources/js/map.js&#10;user-rol&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/user-role&#10;sens&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;show&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/lands/show.blade.php&#10;هدیثط&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/roles/index.blade.php&#10;userco&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/UserController.php&#10;master.blade&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php&#10;sensoc&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php" />
+    <property name="SearchEverywhereHistoryKey" value="admin&#9;FILE&#9;file://F:/laravel/Work/first/routes/web/admin.php&#10;getClientOriginalName&#9;null&#9;null&#10;prof&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/user/profile&#10;profile&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/profile&#10;master&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php&#10;register&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/register.blade.php&#10;todo&#9;ACTION&#9;ActivateTODOToolWindow&#10;maste&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php&#10;mas&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/user/master.blade.php&#10;landco&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/LandController.php&#10;sensorc&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;welcom&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/welcome.blade.php&#10;user.php&#9;FILE&#9;file://F:/laravel/Work/first/app/Models/User.php&#10;index&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/users/index.blade.php&#10;usercontroller&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/UserController.php&#10;login&#9;null&#9;null&#10;sensorcon&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;sen&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;user&#9;null&#9;null&#10;land&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/LandController.php&#10;throttle&#9;null&#9;null&#10;edit&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/role-user/edit.blade.php&#10;userc&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/UserController.php&#10;مخل&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/login.blade.php&#10;log&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/login.blade.php&#10;index.bla&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/lands/index.blade.php&#10;عسثق&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Requests/UserRequest.php&#10;va&#9;FILE&#9;file://F:/laravel/Work/first/resources/lang/fa/validation.php&#10;role&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/RoleController.php&#10;loginco&#9;null&#9;null&#10;landc&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/LandController.php&#10;sensor&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;index.b&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/sensors/index.blade.php&#10;master.php&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php&#10;home&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/HomeController.php&#10;ئ&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php&#10;regist&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/register.blade.php&#10;create.bla&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/users/create.blade.php&#10;logi&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/login.blade.php&#10;crelandre&#9;null&#9;null&#10;config.php&#9;FILE&#9;file://F:/laravel/Work/first/vendor/psy/psysh/.phan/config.php&#10;ProviderRepository.php&#9;FILE&#9;file://F:/laravel/Work/first/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php&#10;ProviderRepository&#9;null&#9;null&#10;map&#9;FILE&#9;file://F:/laravel/Work/first/resources/js/map.js&#10;user-rol&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/user-role&#10;sens&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;show&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/lands/show.blade.php&#10;هدیثط&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/roles/index.blade.php&#10;userco&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/UserController.php&#10;master.blade&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../QuickAdminPanel-Material-Dashboard" />
@@ -480,16 +529,16 @@
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\laravel\Work\first\resources\js\land" />
+      <recent name="F:\laravel\Work\first\routes\web" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\work\Smart_Agriculture" />
       <recent name="F:\laravel\Work\first\public\admin" />
       <recent name="F:\laravel\Work\first\resources\views\admin" />
       <recent name="F:\laravel\Work\first\resources\views\user" />
       <recent name="F:\laravel\Work\first\resources\views\admin\users" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\laravel\Work\first\resources\js\land" />
-      <recent name="F:\laravel\Work\first\routes\web" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -641,7 +690,7 @@
       <workItem from="1614491762145" duration="266000" />
       <workItem from="1614492427947" duration="3496000" />
       <workItem from="1614576991760" duration="9922000" />
-      <workItem from="1614665403503" duration="3314000" />
+      <workItem from="1614665403503" duration="16918000" />
     </task>
     <task id="LOCAL-00001" summary="update LandController">
       <created>1610903462592</created>
@@ -818,11 +867,32 @@
       <option name="project" value="LOCAL" />
       <updated>1614668487411</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="mahdy">
+      <created>1614668752414</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1614668752414</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Ehsan">
+      <created>1614668809967</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1614668809967</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Ehsan">
+      <created>1614669757146</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1614669757146</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="541917000" />
+    <option name="totallyTimeSpent" value="555521000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -835,7 +905,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5563584" visible="true" weight="0.20120725" />
       <window_info id="Structure" order="1" sideWeight="0.40462428" side_tool="true" weight="0.20858485" />
@@ -920,61 +989,12 @@
     <MESSAGE value="return update LandController" />
     <MESSAGE value="update" />
     <MESSAGE value="update again" />
-    <MESSAGE value="Ehsan" />
     <MESSAGE value="update 3" />
     <MESSAGE value="mahdy" />
-    <option name="LAST_COMMIT_MESSAGE" value="mahdy" />
+    <MESSAGE value="Ehsan" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ehsan" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/LandRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="35" column="16" lean-forward="true" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/RoleRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="37" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Gate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/user/sensors/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="39" column="66" lean-forward="true" selection-start-line="39" selection-start-column="66" selection-end-line="39" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/fa/validation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3836">
-          <caret line="151" column="28" lean-forward="true" selection-start-line="151" selection-start-column="28" selection-end-line="151" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -1011,13 +1031,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/users/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="37" column="109" lean-forward="true" selection-start-line="37" selection-start-column="109" selection-end-line="37" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="404">
@@ -1039,13 +1052,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/users/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="42" column="41" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Providers/AuthServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
@@ -1063,55 +1069,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/lands/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/role-user/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/roles/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="42" column="37" selection-start-line="42" selection-start-column="37" selection-end-line="44" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="43" column="45" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="89" column="26" lean-forward="true" selection-start-line="89" selection-start-column="26" selection-end-line="89" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/users/verify.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1980">
-          <caret line="63" column="78" lean-forward="true" selection-start-line="63" selection-start-column="78" selection-end-line="63" selection-end-column="78" />
-          <folding>
-            <element signature="e#3796#3803#1#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/users/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-70">
-          <caret line="46" column="90" selection-start-line="46" selection-start-column="90" selection-end-line="46" selection-end-column="90" />
         </state>
       </provider>
     </entry>
@@ -1133,13 +1094,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1185,13 +1139,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
           <caret line="85" selection-start-line="85" selection-end-line="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/profile/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1680">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
@@ -1243,34 +1190,147 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/role-user/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/lands/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/roles/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/LandController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="56" column="50" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/SensorController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="99" />
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="21" />
           <folding>
             <element signature="e#46#82#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/RoleUserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/LandController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="27" column="29" lean-forward="true" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/sensors/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1044">
+          <caret line="124" column="30" selection-start-line="124" selection-start-column="30" selection-end-line="124" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_03_02_091341_add_image_to_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/RoleUserController.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
-          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+          <caret line="73" column="38" selection-start-line="73" selection-start-column="38" selection-end-line="73" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-foundation/File/UploadedFile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="80" column="20" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/upload/images/2021/Raya435456.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/upload/images/2021/300_Raya435456.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/upload/images/72_6523947624Raya435456.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/users/verify.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/users/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="39" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/upload/images/php7E2F.tmp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="105" selection-start-line="7" selection-start-column="105" selection-end-line="7" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/profile/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+          <folding>
+            <element signature="e#7#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/users/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="38" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/users/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="545">
+          <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="125" column="28" selection-start-line="125" selection-start-column="28" selection-end-line="125" selection-end-column="28" />
+          <folding>
+            <element signature="e#46#82#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

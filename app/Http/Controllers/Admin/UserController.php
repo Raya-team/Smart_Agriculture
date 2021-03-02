@@ -6,10 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequest;
 use App\Models\User;
 use App\Rules\Security;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
+use Intervention\Image\Facades\Image;
+use function PHPUnit\Framework\isNull;
 
 class UserController extends Controller
 {
@@ -41,12 +44,24 @@ class UserController extends Controller
      * @param User $user
      * @return \Illuminate\Http\Response
      */
-    public function store(UserRequest $request, User $user)
+    //TODO validation
+    public function store(Request $request, User $user)
     {
+        $file = $request->file('image');
+        $imagePath = "/upload/images/";
+        $filename = rand(1000,9999) . Carbon::now()->microsecond . $file->getClientOriginalName();
+        $url = $imagePath . $filename;
+
+        Image::make($file->getRealPath())->resize(72, 72, function ($constraint) {
+            $constraint->aspectRatio();
+        })->save(public_path($imagePath . "72_" . $filename));
+
+
 
         $user->name = $request->input('name');
         $user->username = $request->input('username');
         $user->phone_number = $request->input('phone_number');
+        $user->image = $url;
         $user->level = $request->input('level');
         $user->status = 1;
         $user->password = Hash::make($request->input('password'));
@@ -94,6 +109,22 @@ class UserController extends Controller
             'phone_number'=> ['required', 'regex:/(09)[0-9]{9}/', 'digits:11', 'numeric', Rule::unique('users')->ignore($user->id)],
             'level' => ['required'],
         ]);
+
+        if (! is_null($request->file('image'))){
+            $file = $request->file('image');
+            $imagePath = "/upload/images/";
+            $filename = rand(1000,9999) . Carbon::now()->microsecond . $file->getClientOriginalName();
+            $url = $imagePath . $filename;
+
+            Image::make($file->getRealPath())->resize(72, 72, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save(public_path($imagePath . "72_" . $filename));
+
+            $request->validate([
+                'image' => ['required']
+            ]);
+            $user->image = $url;
+        }
 
         if (! is_null($request->password)){
             $request->validate([
