@@ -30,6 +30,7 @@ class UserRequest extends FormRequest
             'name' => ['required',new Security()],
             'username' => ['required', 'unique:users', 'string', new Username()],
             'phone_number'=>['required','unique:users','regex:/(09)[0-9]{9}/','digits:11','numeric'],
+            'image' => ['mimes:jpeg,jpg,png'],
             'password' => ['required', 'min:6'],
             'level' => ['required'],
             'password_confirmation' => ['required_with:password', 'same:password'],
@@ -41,6 +42,7 @@ class UserRequest extends FormRequest
 //            'name.required' => 'نام و نام خانوادگی باید وارد شود',
 //            'username.required' => 'نام کاربری باید وارد شود',
 //            'password_confirmation.same' => 'رمز های عبور یکسان نمباشند'
+//        'image' => 'پسوند فایل معتبر نمیباشد'
         ];
     }
 }

@@ -43,8 +43,7 @@ class UserController extends Controller
      * @param User $user
      * @return \Illuminate\Http\Response
      */
-    //TODO validation
-    public function store(Request $request, User $user)
+    public function store(UserRequest $request, User $user)
     {
         if (! is_null($request->file('image'))){
             $file = $request->file('image');
@@ -55,10 +54,7 @@ class UserController extends Controller
             Image::make($file->getRealPath())->resize(160, 160, function ($constraint) {
                 $constraint->aspectRatio();
             })->save(public_path($url));
-            //TODO Validation for image
-            $request->validate([
-                'image' => ['required']
-            ]);
+
             $user->image = $url;
         }
 
@@ -111,9 +107,13 @@ class UserController extends Controller
             'username' => ['required', 'regex:/^\S*$/u', 'string', 'regex:/(^([a-zA-Z]+)(\d+)?$)/u', Rule::unique('users')->ignore($user->id)],
             'phone_number'=> ['required', 'regex:/(09)[0-9]{9}/', 'digits:11', 'numeric', Rule::unique('users')->ignore($user->id)],
             'level' => ['required'],
+            'image' => ['mimes:jpeg,jpg,png'],
         ]);
 
         if (! is_null($request->file('image'))){
+            if ($user->image != "/upload/images/default-profile.png"){
+                unlink(public_path() . $user->image);
+            }
             $file = $request->file('image');
             $imagePath = "/upload/images/";
             $filename = rand(1000,9999) . Carbon::now()->microsecond . $file->getClientOriginalName();
@@ -122,10 +122,7 @@ class UserController extends Controller
             Image::make($file->getRealPath())->resize(160, 160, function ($constraint) {
                 $constraint->aspectRatio();
             })->save(public_path($url));
-            //TODO Validation for image
-            $request->validate([
-                'image' => ['required']
-            ]);
+
             $user->image = $url;
         }
 

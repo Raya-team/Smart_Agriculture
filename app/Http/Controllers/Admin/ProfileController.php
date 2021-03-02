@@ -24,9 +24,13 @@ class ProfileController extends Controller
         $data = $request->validate(([
             'name' => ['required'],
             'username' => ['required', 'regex:/^\S*$/u', 'string', 'regex:/(^([a-zA-Z]+)(\d+)?$)/u', Rule::unique('users')->ignore($user->id)],
+            'image' => ['mimes:jpeg,jpg,png'],
         ]));
 
         if (! is_null($request->file('image'))){
+            if ($user->image != "/upload/images/default-profile.png"){
+                unlink(public_path() . $user->image);
+            }
             $file = $request->file('image');
             $imagePath = "/upload/images/";
             $filename = rand(1000,9999) . Carbon::now()->microsecond . $file->getClientOriginalName();
@@ -35,10 +39,7 @@ class ProfileController extends Controller
             Image::make($file->getRealPath())->resize(160, 160, function ($constraint) {
                 $constraint->aspectRatio();
             })->save(public_path($url));
-            //TODO Validation for image
-            $request->validate([
-                'image' => ['required']
-            ]);
+
             $user->image = $url;
         }
 
