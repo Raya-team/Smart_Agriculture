@@ -25,7 +25,7 @@ class LandController extends Controller
      */
     public function index()
     {
-        $lands = Land::all();
+        $lands = Land::all()->count();
         return view('admin.lands.index',compact('lands'));
     }
 

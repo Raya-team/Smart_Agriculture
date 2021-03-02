@@ -345,16 +345,16 @@
                 </li>
             </ul>
             <ul class="sidebar-menu" data-widget="tree">
-                <li class="treeview {{ in_array(Route::currentRouteName(), ['roles.index', 'users-role.index']) ? 'menu-open' : ''  }}">
+                <li class="treeview {{ in_array(Route::currentRouteName(), ['roles.index', 'users-role.index', 'roles.create', 'roles.edit', 'users-role.create', 'users-role.edit']) ? 'menu-open' : ''  }}">
                     <a href="#">
                         <i class="fa fa-lock"></i> <span>سطوح دسترسی</span>
                         <span class="pull-left-container">
               <i class="fa fa-angle-right pull-left"></i>
             </span>
                     </a>
-                    <ul class="treeview-menu" style="{{ in_array(Route::currentRouteName(), ['roles.index', 'users-role.index']) ? 'display: block;' : '' }}">
-                        <li class="{{ Route::currentRouteName() == 'roles.index' ? 'active' : '' }}"><a href="{{route('roles.index')}}"><i class="fa fa-expeditedssl"></i>مدیریت نقش ها</a></li>
-                        <li class="{{ Route::currentRouteName() == 'users-role.index' ? 'active' : '' }}"><a href="{{ route('users-role.index') }}"><i class="fa fa-users"></i>نقش کاربران</a></li>
+                    <ul class="treeview-menu" style="{{ in_array(Route::currentRouteName(), ['roles.index', 'users-role.index', 'roles.create', 'roles.edit', 'users-role.create', 'users-role.edit']) ? 'display: block;' : '' }}">
+                        <li class="{{ in_array(Route::currentRouteName(), ['roles.index', 'roles.create', 'roles.edit']) ? 'active' : '' }}"><a href="{{route('roles.index')}}"><i class="fa fa-expeditedssl"></i>مدیریت نقش ها</a></li>
+                        <li class="{{ in_array(Route::currentRouteName(), ['users-role.index', 'users-role.create', 'users-role.edit']) ? 'active' : '' }} }}"><a href="{{ route('users-role.index') }}"><i class="fa fa-users"></i>نقش کاربران</a></li>
                     </ul>
                 </li>
             </ul>

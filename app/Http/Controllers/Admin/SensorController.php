@@ -30,6 +30,11 @@ class SensorController extends Controller
     public function create()
     {
         $lands = Land::all();
+        if ($lands->count() == 0)
+        {
+            alert()->error('برای ایجاد سنسور باید ابتدا زمینی ایجاد شده باشد')->persistent('باشد');
+            return back();
+        }
         return view('admin.sensors.create', compact('lands'));
     }
 
