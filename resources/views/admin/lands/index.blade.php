@@ -23,7 +23,6 @@
                             </button>
                             <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                         </div>
-
                     </div>
 
                     <!-- /.box-header -->
@@ -76,16 +75,6 @@
     <script src="/admin/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 
     <script>
-        {{--$(document).ready(function() {--}}
-        {{--$('#example').DataTable({--}}
-        {{--"ajax": "{{ route('api.index') }}",--}}
-        {{--"columns": [--}}
-        {{--// { "data": "id" },--}}
-        {{--{ "data": "name" },--}}
-        {{--{ "data": "username" },--}}
-        {{--],--}}
-        {{--});--}}
-        {{--});--}}
         $(document).ready(function() {
             $('#example').DataTable({
                 deferRender:    true,
