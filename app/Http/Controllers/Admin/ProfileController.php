@@ -4,12 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
-use Intervention\Image\Facades\Image;
 
 class ProfileController extends Controller
 {
@@ -28,28 +26,7 @@ class ProfileController extends Controller
         ]));
 
         if (! is_null($request->file('image'))){
-            if ($user->image != "/upload/images/default-profile.png"){
-                unlink(public_path() . $user->image);
-            }
-            $file = $request->file('image');
-            $imagePath = "/upload/images/";
-            $filename = rand(1000,9999) . Carbon::now()->microsecond . $file->getClientOriginalName();
-            $url = $imagePath . "160_" . $filename;
-
-            $image = Image::make($file->getRealPath());
-            $height = $image->height();
-            $width = $image->width();
-            if ($width >= $height){
-                $size = $height;
-            } elseif ($width <= $height) {
-                $size = $width;
-            }
-            $image->resizeCanvas($size, $size, 'center', false, 'ff0000');
-            $image->resize(160, 160, function ($constraint) {
-                $constraint->aspectRatio();
-            });
-            $image->save(public_path($url));
-
+            $url = $this->UploadImage($request->file('image'), $user->image);
             $user->image = $url;
         }
 
