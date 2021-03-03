@@ -22,7 +22,7 @@ class ProfileController extends Controller
         $data = $request->validate(([
             'name' => ['required'],
             'username' => ['required', 'regex:/^\S*$/u', 'string', 'regex:/(^([a-zA-Z]+)(\d+)?$)/u', Rule::unique('users')->ignore($user->id)],
-            'image' => ['mimes:jpeg,jpg,png'],
+            'image' => ['max:15360','mimes:jpeg,jpg,png','file','image'],
         ]));
 
         if (! is_null($request->file('image'))){

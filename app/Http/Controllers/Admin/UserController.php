@@ -97,7 +97,7 @@ class UserController extends Controller
             'username' => ['required', 'regex:/^\S*$/u', 'string', 'regex:/(^([a-zA-Z]+)(\d+)?$)/u', Rule::unique('users')->ignore($user->id)],
             'phone_number'=> ['required', 'regex:/(09)[0-9]{9}/', 'digits:11', 'numeric', Rule::unique('users')->ignore($user->id)],
             'level' => ['required'],
-            'image' => ['mimes:jpeg,jpg,png'],
+            'image' => ['max:15360','mimes:jpeg,jpg,png','file','image'],
         ]);
 
         if (! is_null($request->file('image'))){

@@ -21,7 +21,7 @@ class Controller extends BaseController
             }
         }
         $imagePath = "/upload/images/";
-        $filename = rand(1000,9999) . Carbon::now()->microsecond . $file->getClientOriginalName();
+        $filename = rand(1000,9999) . Carbon::now()->microsecond . "." . $file->guessClientExtension();
         $url = $imagePath . "160_" . $filename;
 
         $image = Image::make($file->getRealPath());

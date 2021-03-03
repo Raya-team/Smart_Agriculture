@@ -22,7 +22,11 @@
                 <!-- Profile Image -->
                 <div class="box box-primary">
                     <div class="box-body box-profile">
-                        <img class="profile-user-img img-responsive img-circle" src="{{ Auth::user()->image }}" alt="User profile picture">
+                        @if(!file_exists(public_path() . Auth::user()->image))
+                            <img class="profile-user-img img-responsive img-circle" src="/upload/images/default-profile.png" alt="User profile picture" style="height: 100px;">
+                        @else
+                            <img class="profile-user-img img-responsive img-circle" src="{{ Auth::user()->image }}" alt="User profile picture" style="height: 100px;">
+                        @endif
 
                         <h3 class="profile-username text-center">{{ $user->name }}</h3>
 
@@ -115,8 +119,8 @@
 @endsection
 
 @section('script')
-<script src="{{ asset('js/app.js') }}"></script>
-@include('sweet::alert')
+    <script src="{{ asset('js/app.js') }}"></script>
+    @include('sweet::alert')
 @endsection
 
 @section('css')

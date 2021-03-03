@@ -262,13 +262,21 @@
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="{{ Auth::user()->image }}" class="user-image img-circle" alt="User Image">
+                            @if(!file_exists(public_path() . Auth::user()->image))
+                                <img src="/upload/images/default-profile.png" class="user-image img-circle" alt="User Image">
+                            @else
+                                <img src="{{ Auth::user()->image }}" class="user-image img-circle" alt="User Image">
+                            @endif
                             <span class="hidden-xs">{{ Auth::user()->name }}</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
-                                <img src="{{ Auth::user()->image }}" class="img-circle" alt="User Image">
+                                @if(!file_exists(public_path() . Auth::user()->image))
+                                    <img src="/upload/images/default-profile.png" class="img-circle" alt="User Image">
+                                @else
+                                    <img src="{{ Auth::user()->image }}" class="img-circle" alt="User Image">
+                                @endif
 
                                 <p>
                                     {{ Auth::user()->username }}
@@ -312,7 +320,11 @@
             <!-- Sidebar user panel -->
             <div class="user-panel">
                 <div class="pull-right image">
-                    <img src="{{ Auth::user()->image }}" class="img-circle" alt="User Image" style="height: 45px; width: 45px">
+                    @if(!file_exists(public_path() . Auth::user()->image))
+                        <img src="/upload/images/default-profile.png" class="img-circle" alt="User Image" style="height: 45px; width: 45px">
+                    @else
+                        <img src="{{ Auth::user()->image }}" class="img-circle" alt="User Image" style="height: 45px; width: 45px">
+                    @endif
                 </div>
                 <div class="pull-right info">
                     <p>{{ Auth::user()->name }}</p>

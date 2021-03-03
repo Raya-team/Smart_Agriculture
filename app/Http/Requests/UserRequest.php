@@ -30,7 +30,7 @@ class UserRequest extends FormRequest
             'name' => ['required',new Security()],
             'username' => ['required', 'unique:users', 'string', new Username()],
             'phone_number'=>['required','unique:users','regex:/(09)[0-9]{9}/','digits:11','numeric'],
-            'image' => ['mimes:jpeg,jpg,png'],
+            'image' => ['mimes:jpeg,jpg,png|file|image'],
             'password' => ['required', 'min:6'],
             'level' => ['required'],
             'password_confirmation' => ['required_with:password', 'same:password'],
