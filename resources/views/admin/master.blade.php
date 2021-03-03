@@ -349,7 +349,9 @@
                             <a href="{{ route('users.verify') }}">
                                 <i class="fa fa-users"></i> <span>کاربران تایید نشده</span>
                                 <span class="pull-left-container">
-                                <small class="label pull-left bg-yellow">{{ \App\Models\User::where('status', 0)->get()->count() }}</small>
+                                    @if(\App\Models\User::where('status', 0)->get()->count() > 0)
+                                        <small class="label pull-left bg-yellow">{{ \App\Models\User::where('status', 0)->get()->count() }}</small>
+                                    @endif
                                 </span>
                             </a>
                         </li>
