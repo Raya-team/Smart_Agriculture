@@ -1,6 +1,4 @@
 import L from 'leaflet';
-import 'leaflet-measure';
-import 'leaflet-measure/dist/leaflet-measure.fa'
 import 'leaflet-contextmenu';
 import 'leaflet.fullscreen';
 

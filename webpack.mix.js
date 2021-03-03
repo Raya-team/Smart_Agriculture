@@ -18,6 +18,7 @@ mix
     .js('resources/js/leaflet/land-create.js', 'public/js/leaflet')
     .js('resources/js/leaflet/land-show.js', 'public/js/leaflet')
     .js('resources/js/leaflet/land-edit.js', 'public/js/leaflet')
+    .js('resources/js/leaflet/land-heat.js', 'public/js/leaflet')
     .js('resources/js/leaflet/sensor-create.js', 'public/js/leaflet')
     .js('resources/js/leaflet/sensor-edit.js', 'public/js/leaflet')
     .sass('resources/sass/app.scss', 'public/css')

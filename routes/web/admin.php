@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\LandController;
+use App\Http\Controllers\Admin\LandHeatController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\RoleUserController;
@@ -43,6 +44,7 @@ Route::group(['middleware' =>['auth', 'auth.admin']] , function (){
     Route::get('/user-verify',[UserController::class,'verify'])->name('users.verify');
     Route::put('/user-verified/{user}',[UserController::class,'verified'])->name('users.verified');
     Route::resource('/lands' , LandController::class);
+    Route::get('/lands/heat/{land}' ,[LandHeatController::class,'index'])->name('lands.heat');
     Route::resource('/sensors',SensorController::class);
     Route::resource('/roles',RoleController::class);
     Route::resource('/users-role',RoleUserController::class, ['parameters' => ['users-role' => 'user']]);
