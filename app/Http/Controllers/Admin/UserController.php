@@ -51,9 +51,19 @@ class UserController extends Controller
             $filename = rand(1000,9999) . Carbon::now()->microsecond . $file->getClientOriginalName();
             $url = $imagePath . "160_" . $filename;
 
-            Image::make($file->getRealPath())->resize(160, 160, function ($constraint) {
+            $image = Image::make($file->getRealPath());
+            $height = $image->height();
+            $width = $image->width();
+            if ($width >= $height){
+                $size = $height;
+            } elseif ($width <= $height) {
+                $size = $width;
+            }
+            $image->resizeCanvas($size, $size, 'center', false, 'ff0000');
+            $image->resize(160, 160, function ($constraint) {
                 $constraint->aspectRatio();
-            })->save(public_path($url));
+            });
+            $image->save(public_path($url));
 
             $user->image = $url;
         }
@@ -119,9 +129,19 @@ class UserController extends Controller
             $filename = rand(1000,9999) . Carbon::now()->microsecond . $file->getClientOriginalName();
             $url = $imagePath . "160_" . $filename;
 
-            Image::make($file->getRealPath())->resize(160, 160, function ($constraint) {
+            $image = Image::make($file->getRealPath());
+            $height = $image->height();
+            $width = $image->width();
+            if ($width >= $height){
+                $size = $height;
+            } elseif ($width <= $height) {
+                $size = $width;
+            }
+            $image->resizeCanvas($size, $size, 'center', false, 'ff0000');
+            $image->resize(160, 160, function ($constraint) {
                 $constraint->aspectRatio();
-            })->save(public_path($url));
+            });
+            $image->save(public_path($url));
 
             $user->image = $url;
         }

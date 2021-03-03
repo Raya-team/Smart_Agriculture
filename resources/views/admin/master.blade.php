@@ -312,7 +312,7 @@
             <!-- Sidebar user panel -->
             <div class="user-panel">
                 <div class="pull-right image">
-                    <img src="{{ Auth::user()->image }}" class="img-circle" alt="User Image">
+                    <img src="{{ Auth::user()->image }}" class="img-circle" alt="User Image" style="height: 45px; width: 45px">
                 </div>
                 <div class="pull-right info">
                     <p>{{ Auth::user()->name }}</p>
