@@ -86,989 +86,263 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/heatmap.js/build/heatmap.js":
-/*!**************************************************!*\
-  !*** ./node_modules/heatmap.js/build/heatmap.js ***!
-  \**************************************************/
+/***/ "./node_modules/leaflet.fullscreen/Control.FullScreen.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/leaflet.fullscreen/Control.FullScreen.js ***!
+  \***************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
- * heatmap.js v2.0.5 | JavaScript Heatmap Library
- *
- * Copyright 2008-2016 Patrick Wied <heatmapjs@patrick-wied.at> - All rights reserved.
- * Dual licensed under MIT and Beerware license 
- *
- * :: 2016-09-05 01:16
- */
-;(function (name, context, factory) {
-
-  // Supports UMD. AMD, CommonJS/Node.js and browser context
-  if ( true && module.exports) {
-    module.exports = factory();
-  } else if (true) {
-    !(__WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) :
-				__WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-  } else {}
-
-})("h337", this, function () {
-
-// Heatmap Config stores default values and will be merged with instance config
-var HeatmapConfig = {
-  defaultRadius: 40,
-  defaultRenderer: 'canvas2d',
-  defaultGradient: { 0.25: "rgb(0,0,255)", 0.55: "rgb(0,255,0)", 0.85: "yellow", 1.0: "rgb(255,0,0)"},
-  defaultMaxOpacity: 1,
-  defaultMinOpacity: 0,
-  defaultBlur: .85,
-  defaultXField: 'x',
-  defaultYField: 'y',
-  defaultValueField: 'value', 
-  plugins: {}
-};
-var Store = (function StoreClosure() {
-
-  var Store = function Store(config) {
-    this._coordinator = {};
-    this._data = [];
-    this._radi = [];
-    this._min = 10;
-    this._max = 1;
-    this._xField = config['xField'] || config.defaultXField;
-    this._yField = config['yField'] || config.defaultYField;
-    this._valueField = config['valueField'] || config.defaultValueField;
-
-    if (config["radius"]) {
-      this._cfgRadius = config["radius"];
-    }
-  };
-
-  var defaultRadius = HeatmapConfig.defaultRadius;
-
-  Store.prototype = {
-    // when forceRender = false -> called from setData, omits renderall event
-    _organiseData: function(dataPoint, forceRender) {
-        var x = dataPoint[this._xField];
-        var y = dataPoint[this._yField];
-        var radi = this._radi;
-        var store = this._data;
-        var max = this._max;
-        var min = this._min;
-        var value = dataPoint[this._valueField] || 1;
-        var radius = dataPoint.radius || this._cfgRadius || defaultRadius;
-
-        if (!store[x]) {
-          store[x] = [];
-          radi[x] = [];
-        }
-
-        if (!store[x][y]) {
-          store[x][y] = value;
-          radi[x][y] = radius;
-        } else {
-          store[x][y] += value;
-        }
-        var storedVal = store[x][y];
-
-        if (storedVal > max) {
-          if (!forceRender) {
-            this._max = storedVal;
-          } else {
-            this.setDataMax(storedVal);
-          }
-          return false;
-        } else if (storedVal < min) {
-          if (!forceRender) {
-            this._min = storedVal;
-          } else {
-            this.setDataMin(storedVal);
-          }
-          return false;
-        } else {
-          return { 
-            x: x, 
-            y: y,
-            value: value, 
-            radius: radius,
-            min: min,
-            max: max 
-          };
-        }
-    },
-    _unOrganizeData: function() {
-      var unorganizedData = [];
-      var data = this._data;
-      var radi = this._radi;
-
-      for (var x in data) {
-        for (var y in data[x]) {
-
-          unorganizedData.push({
-            x: x,
-            y: y,
-            radius: radi[x][y],
-            value: data[x][y]
-          });
-
-        }
-      }
-      return {
-        min: this._min,
-        max: this._max,
-        data: unorganizedData
-      };
-    },
-    _onExtremaChange: function() {
-      this._coordinator.emit('extremachange', {
-        min: this._min,
-        max: this._max
-      });
-    },
-    addData: function() {
-      if (arguments[0].length > 0) {
-        var dataArr = arguments[0];
-        var dataLen = dataArr.length;
-        while (dataLen--) {
-          this.addData.call(this, dataArr[dataLen]);
-        }
-      } else {
-        // add to store  
-        var organisedEntry = this._organiseData(arguments[0], true);
-        if (organisedEntry) {
-          // if it's the first datapoint initialize the extremas with it
-          if (this._data.length === 0) {
-            this._min = this._max = organisedEntry.value;
-          }
-          this._coordinator.emit('renderpartial', {
-            min: this._min,
-            max: this._max,
-            data: [organisedEntry]
-          });
-        }
-      }
-      return this;
-    },
-    setData: function(data) {
-      var dataPoints = data.data;
-      var pointsLen = dataPoints.length;
-
-
-      // reset data arrays
-      this._data = [];
-      this._radi = [];
-
-      for(var i = 0; i < pointsLen; i++) {
-        this._organiseData(dataPoints[i], false);
-      }
-      this._max = data.max;
-      this._min = data.min || 0;
-      
-      this._onExtremaChange();
-      this._coordinator.emit('renderall', this._getInternalData());
-      return this;
-    },
-    removeData: function() {
-      // TODO: implement
-    },
-    setDataMax: function(max) {
-      this._max = max;
-      this._onExtremaChange();
-      this._coordinator.emit('renderall', this._getInternalData());
-      return this;
-    },
-    setDataMin: function(min) {
-      this._min = min;
-      this._onExtremaChange();
-      this._coordinator.emit('renderall', this._getInternalData());
-      return this;
-    },
-    setCoordinator: function(coordinator) {
-      this._coordinator = coordinator;
-    },
-    _getInternalData: function() {
-      return { 
-        max: this._max,
-        min: this._min, 
-        data: this._data,
-        radi: this._radi 
-      };
-    },
-    getData: function() {
-      return this._unOrganizeData();
-    }/*,
-
-      TODO: rethink.
-
-    getValueAt: function(point) {
-      var value;
-      var radius = 100;
-      var x = point.x;
-      var y = point.y;
-      var data = this._data;
-
-      if (data[x] && data[x][y]) {
-        return data[x][y];
-      } else {
-        var values = [];
-        // radial search for datapoints based on default radius
-        for(var distance = 1; distance < radius; distance++) {
-          var neighbors = distance * 2 +1;
-          var startX = x - distance;
-          var startY = y - distance;
-
-          for(var i = 0; i < neighbors; i++) {
-            for (var o = 0; o < neighbors; o++) {
-              if ((i == 0 || i == neighbors-1) || (o == 0 || o == neighbors-1)) {
-                if (data[startY+i] && data[startY+i][startX+o]) {
-                  values.push(data[startY+i][startX+o]);
-                }
-              } else {
-                continue;
-              } 
-            }
-          }
-        }
-        if (values.length > 0) {
-          return Math.max.apply(Math, values);
-        }
-      }
-      return false;
-    }*/
-  };
-
-
-  return Store;
-})();
-
-var Canvas2dRenderer = (function Canvas2dRendererClosure() {
-
-  var _getColorPalette = function(config) {
-    var gradientConfig = config.gradient || config.defaultGradient;
-    var paletteCanvas = document.createElement('canvas');
-    var paletteCtx = paletteCanvas.getContext('2d');
-
-    paletteCanvas.width = 256;
-    paletteCanvas.height = 1;
-
-    var gradient = paletteCtx.createLinearGradient(0, 0, 256, 1);
-    for (var key in gradientConfig) {
-      gradient.addColorStop(key, gradientConfig[key]);
-    }
-
-    paletteCtx.fillStyle = gradient;
-    paletteCtx.fillRect(0, 0, 256, 1);
-
-    return paletteCtx.getImageData(0, 0, 256, 1).data;
-  };
-
-  var _getPointTemplate = function(radius, blurFactor) {
-    var tplCanvas = document.createElement('canvas');
-    var tplCtx = tplCanvas.getContext('2d');
-    var x = radius;
-    var y = radius;
-    tplCanvas.width = tplCanvas.height = radius*2;
-
-    if (blurFactor == 1) {
-      tplCtx.beginPath();
-      tplCtx.arc(x, y, radius, 0, 2 * Math.PI, false);
-      tplCtx.fillStyle = 'rgba(0,0,0,1)';
-      tplCtx.fill();
-    } else {
-      var gradient = tplCtx.createRadialGradient(x, y, radius*blurFactor, x, y, radius);
-      gradient.addColorStop(0, 'rgba(0,0,0,1)');
-      gradient.addColorStop(1, 'rgba(0,0,0,0)');
-      tplCtx.fillStyle = gradient;
-      tplCtx.fillRect(0, 0, 2*radius, 2*radius);
-    }
-
-
-
-    return tplCanvas;
-  };
-
-  var _prepareData = function(data) {
-    var renderData = [];
-    var min = data.min;
-    var max = data.max;
-    var radi = data.radi;
-    var data = data.data;
-
-    var xValues = Object.keys(data);
-    var xValuesLen = xValues.length;
-
-    while(xValuesLen--) {
-      var xValue = xValues[xValuesLen];
-      var yValues = Object.keys(data[xValue]);
-      var yValuesLen = yValues.length;
-      while(yValuesLen--) {
-        var yValue = yValues[yValuesLen];
-        var value = data[xValue][yValue];
-        var radius = radi[xValue][yValue];
-        renderData.push({
-          x: xValue,
-          y: yValue,
-          value: value,
-          radius: radius
-        });
-      }
-    }
-
-    return {
-      min: min,
-      max: max,
-      data: renderData
-    };
-  };
-
-
-  function Canvas2dRenderer(config) {
-    var container = config.container;
-    var shadowCanvas = this.shadowCanvas = document.createElement('canvas');
-    var canvas = this.canvas = config.canvas || document.createElement('canvas');
-    var renderBoundaries = this._renderBoundaries = [10000, 10000, 0, 0];
-
-    var computed = getComputedStyle(config.container) || {};
-
-    canvas.className = 'heatmap-canvas';
-
-    this._width = canvas.width = shadowCanvas.width = config.width || +(computed.width.replace(/px/,''));
-    this._height = canvas.height = shadowCanvas.height = config.height || +(computed.height.replace(/px/,''));
-
-    this.shadowCtx = shadowCanvas.getContext('2d');
-    this.ctx = canvas.getContext('2d');
-
-    // @TODO:
-    // conditional wrapper
-
-    canvas.style.cssText = shadowCanvas.style.cssText = 'position:absolute;left:0;top:0;';
-
-    container.style.position = 'relative';
-    container.appendChild(canvas);
-
-    this._palette = _getColorPalette(config);
-    this._templates = {};
-
-    this._setStyles(config);
-  };
-
-  Canvas2dRenderer.prototype = {
-    renderPartial: function(data) {
-      if (data.data.length > 0) {
-        this._drawAlpha(data);
-        this._colorize();
-      }
-    },
-    renderAll: function(data) {
-      // reset render boundaries
-      this._clear();
-      if (data.data.length > 0) {
-        this._drawAlpha(_prepareData(data));
-        this._colorize();
-      }
-    },
-    _updateGradient: function(config) {
-      this._palette = _getColorPalette(config);
-    },
-    updateConfig: function(config) {
-      if (config['gradient']) {
-        this._updateGradient(config);
-      }
-      this._setStyles(config);
-    },
-    setDimensions: function(width, height) {
-      this._width = width;
-      this._height = height;
-      this.canvas.width = this.shadowCanvas.width = width;
-      this.canvas.height = this.shadowCanvas.height = height;
-    },
-    _clear: function() {
-      this.shadowCtx.clearRect(0, 0, this._width, this._height);
-      this.ctx.clearRect(0, 0, this._width, this._height);
-    },
-    _setStyles: function(config) {
-      this._blur = (config.blur == 0)?0:(config.blur || config.defaultBlur);
-
-      if (config.backgroundColor) {
-        this.canvas.style.backgroundColor = config.backgroundColor;
-      }
-
-      this._width = this.canvas.width = this.shadowCanvas.width = config.width || this._width;
-      this._height = this.canvas.height = this.shadowCanvas.height = config.height || this._height;
-
-
-      this._opacity = (config.opacity || 0) * 255;
-      this._maxOpacity = (config.maxOpacity || config.defaultMaxOpacity) * 255;
-      this._minOpacity = (config.minOpacity || config.defaultMinOpacity) * 255;
-      this._useGradientOpacity = !!config.useGradientOpacity;
-    },
-    _drawAlpha: function(data) {
-      var min = this._min = data.min;
-      var max = this._max = data.max;
-      var data = data.data || [];
-      var dataLen = data.length;
-      // on a point basis?
-      var blur = 1 - this._blur;
-
-      while(dataLen--) {
-
-        var point = data[dataLen];
-
-        var x = point.x;
-        var y = point.y;
-        var radius = point.radius;
-        // if value is bigger than max
-        // use max as value
-        var value = Math.min(point.value, max);
-        var rectX = x - radius;
-        var rectY = y - radius;
-        var shadowCtx = this.shadowCtx;
-
-
-
-
-        var tpl;
-        if (!this._templates[radius]) {
-          this._templates[radius] = tpl = _getPointTemplate(radius, blur);
-        } else {
-          tpl = this._templates[radius];
-        }
-        // value from minimum / value range
-        // => [0, 1]
-        var templateAlpha = (value-min)/(max-min);
-        // this fixes #176: small values are not visible because globalAlpha < .01 cannot be read from imageData
-        shadowCtx.globalAlpha = templateAlpha < .01 ? .01 : templateAlpha;
-
-        shadowCtx.drawImage(tpl, rectX, rectY);
-
-        // update renderBoundaries
-        if (rectX < this._renderBoundaries[0]) {
-            this._renderBoundaries[0] = rectX;
-          }
-          if (rectY < this._renderBoundaries[1]) {
-            this._renderBoundaries[1] = rectY;
-          }
-          if (rectX + 2*radius > this._renderBoundaries[2]) {
-            this._renderBoundaries[2] = rectX + 2*radius;
-          }
-          if (rectY + 2*radius > this._renderBoundaries[3]) {
-            this._renderBoundaries[3] = rectY + 2*radius;
-          }
-
-      }
-    },
-    _colorize: function() {
-      var x = this._renderBoundaries[0];
-      var y = this._renderBoundaries[1];
-      var width = this._renderBoundaries[2] - x;
-      var height = this._renderBoundaries[3] - y;
-      var maxWidth = this._width;
-      var maxHeight = this._height;
-      var opacity = this._opacity;
-      var maxOpacity = this._maxOpacity;
-      var minOpacity = this._minOpacity;
-      var useGradientOpacity = this._useGradientOpacity;
-
-      if (x < 0) {
-        x = 0;
-      }
-      if (y < 0) {
-        y = 0;
-      }
-      if (x + width > maxWidth) {
-        width = maxWidth - x;
-      }
-      if (y + height > maxHeight) {
-        height = maxHeight - y;
-      }
-
-      var img = this.shadowCtx.getImageData(x, y, width, height);
-      var imgData = img.data;
-      var len = imgData.length;
-      var palette = this._palette;
-
-
-      for (var i = 3; i < len; i+= 4) {
-        var alpha = imgData[i];
-        var offset = alpha * 4;
-
-
-        if (!offset) {
-          continue;
-        }
-
-        var finalAlpha;
-        if (opacity > 0) {
-          finalAlpha = opacity;
-        } else {
-          if (alpha < maxOpacity) {
-            if (alpha < minOpacity) {
-              finalAlpha = minOpacity;
-            } else {
-              finalAlpha = alpha;
-            }
-          } else {
-            finalAlpha = maxOpacity;
-          }
-        }
-
-        imgData[i-3] = palette[offset];
-        imgData[i-2] = palette[offset + 1];
-        imgData[i-1] = palette[offset + 2];
-        imgData[i] = useGradientOpacity ? palette[offset + 3] : finalAlpha;
-
-      }
-
-      img.data = imgData;
-      this.ctx.putImageData(img, x, y);
-
-      this._renderBoundaries = [1000, 1000, 0, 0];
-
-    },
-    getValueAt: function(point) {
-      var value;
-      var shadowCtx = this.shadowCtx;
-      var img = shadowCtx.getImageData(point.x, point.y, 1, 1);
-      var data = img.data[3];
-      var max = this._max;
-      var min = this._min;
-
-      value = (Math.abs(max-min) * (data/255)) >> 0;
-
-      return value;
-    },
-    getDataURL: function() {
-      return this.canvas.toDataURL();
-    }
-  };
-
-
-  return Canvas2dRenderer;
-})();
-
-
-var Renderer = (function RendererClosure() {
-
-  var rendererFn = false;
-
-  if (HeatmapConfig['defaultRenderer'] === 'canvas2d') {
-    rendererFn = Canvas2dRenderer;
-  }
-
-  return rendererFn;
-})();
-
-
-var Util = {
-  merge: function() {
-    var merged = {};
-    var argsLen = arguments.length;
-    for (var i = 0; i < argsLen; i++) {
-      var obj = arguments[i]
-      for (var key in obj) {
-        merged[key] = obj[key];
-      }
-    }
-    return merged;
-  }
-};
-// Heatmap Constructor
-var Heatmap = (function HeatmapClosure() {
-
-  var Coordinator = (function CoordinatorClosure() {
-
-    function Coordinator() {
-      this.cStore = {};
-    };
-
-    Coordinator.prototype = {
-      on: function(evtName, callback, scope) {
-        var cStore = this.cStore;
-
-        if (!cStore[evtName]) {
-          cStore[evtName] = [];
-        }
-        cStore[evtName].push((function(data) {
-            return callback.call(scope, data);
-        }));
-      },
-      emit: function(evtName, data) {
-        var cStore = this.cStore;
-        if (cStore[evtName]) {
-          var len = cStore[evtName].length;
-          for (var i=0; i<len; i++) {
-            var callback = cStore[evtName][i];
-            callback(data);
-          }
-        }
-      }
-    };
-
-    return Coordinator;
-  })();
-
-
-  var _connect = function(scope) {
-    var renderer = scope._renderer;
-    var coordinator = scope._coordinator;
-    var store = scope._store;
-
-    coordinator.on('renderpartial', renderer.renderPartial, renderer);
-    coordinator.on('renderall', renderer.renderAll, renderer);
-    coordinator.on('extremachange', function(data) {
-      scope._config.onExtremaChange &&
-      scope._config.onExtremaChange({
-        min: data.min,
-        max: data.max,
-        gradient: scope._config['gradient'] || scope._config['defaultGradient']
-      });
-    });
-    store.setCoordinator(coordinator);
-  };
-
-
-  function Heatmap() {
-    var config = this._config = Util.merge(HeatmapConfig, arguments[0] || {});
-    this._coordinator = new Coordinator();
-    if (config['plugin']) {
-      var pluginToLoad = config['plugin'];
-      if (!HeatmapConfig.plugins[pluginToLoad]) {
-        throw new Error('Plugin \''+ pluginToLoad + '\' not found. Maybe it was not registered.');
-      } else {
-        var plugin = HeatmapConfig.plugins[pluginToLoad];
-        // set plugin renderer and store
-        this._renderer = new plugin.renderer(config);
-        this._store = new plugin.store(config);
-      }
-    } else {
-      this._renderer = new Renderer(config);
-      this._store = new Store(config);
-    }
-    _connect(this);
-  };
-
-  // @TODO:
-  // add API documentation
-  Heatmap.prototype = {
-    addData: function() {
-      this._store.addData.apply(this._store, arguments);
-      return this;
-    },
-    removeData: function() {
-      this._store.removeData && this._store.removeData.apply(this._store, arguments);
-      return this;
-    },
-    setData: function() {
-      this._store.setData.apply(this._store, arguments);
-      return this;
-    },
-    setDataMax: function() {
-      this._store.setDataMax.apply(this._store, arguments);
-      return this;
-    },
-    setDataMin: function() {
-      this._store.setDataMin.apply(this._store, arguments);
-      return this;
-    },
-    configure: function(config) {
-      this._config = Util.merge(this._config, config);
-      this._renderer.updateConfig(this._config);
-      this._coordinator.emit('renderall', this._store._getInternalData());
-      return this;
-    },
-    repaint: function() {
-      this._coordinator.emit('renderall', this._store._getInternalData());
-      return this;
-    },
-    getData: function() {
-      return this._store.getData();
-    },
-    getDataURL: function() {
-      return this._renderer.getDataURL();
-    },
-    getValueAt: function(point) {
-
-      if (this._store.getValueAt) {
-        return this._store.getValueAt(point);
-      } else  if (this._renderer.getValueAt) {
-        return this._renderer.getValueAt(point);
-      } else {
-        return null;
-      }
-    }
-  };
-
-  return Heatmap;
-
-})();
-
-
-// core
-var heatmapFactory = {
-  create: function(config) {
-    return new Heatmap(config);
-  },
-  register: function(pluginKey, plugin) {
-    HeatmapConfig.plugins[pluginKey] = plugin;
-  }
-};
-
-return heatmapFactory;
-
-
+/***/ (function(module, exports) {
+
+(function () {
+
+L.Control.FullScreen = L.Control.extend({
+	options: {
+		position: 'topleft',
+		title: 'Full Screen',
+		titleCancel: 'Exit Full Screen',
+		forceSeparateButton: false,
+		forcePseudoFullscreen: false,
+		fullscreenElement: false
+	},
+	
+	onAdd: function (map) {
+		var className = 'leaflet-control-zoom-fullscreen', container, content = '';
+		
+		if (map.zoomControl && !this.options.forceSeparateButton) {
+			container = map.zoomControl._container;
+		} else {
+			container = L.DomUtil.create('div', 'leaflet-bar');
+		}
+		
+		if (this.options.content) {
+			content = this.options.content;
+		} else {
+			className += ' fullscreen-icon';
+		}
+
+		this._createButton(this.options.title, className, content, container, this.toggleFullScreen, this);
+		this._map.fullscreenControl = this;
+
+		this._map.on('enterFullscreen exitFullscreen', this._toggleTitle, this);
+
+		return container;
+	},
+	
+	onRemove: function (map) {
+		L.DomEvent
+			.off(this.link, 'click', L.DomEvent.stopPropagation)
+			.off(this.link, 'click', L.DomEvent.preventDefault)
+			.off(this.link, 'click', this.toggleFullScreen, this);
+		
+		L.DomEvent
+			.off(this._container, fullScreenApi.fullScreenEventName, L.DomEvent.stopPropagation)
+			.off(this._container, fullScreenApi.fullScreenEventName, L.DomEvent.preventDefault)
+			.off(this._container, fullScreenApi.fullScreenEventName, this._handleFullscreenChange, this);
+		
+		L.DomEvent
+			.off(document, fullScreenApi.fullScreenEventName, L.DomEvent.stopPropagation)
+			.off(document, fullScreenApi.fullScreenEventName, L.DomEvent.preventDefault)
+			.off(document, fullScreenApi.fullScreenEventName, this._handleFullscreenChange, this);
+	},
+	
+	_createButton: function (title, className, content, container, fn, context) {
+		this.link = L.DomUtil.create('a', className, container);
+		this.link.href = '#';
+		this.link.title = title;
+		this.link.innerHTML = content;
+
+		this.link.setAttribute('role', 'button');
+		this.link.setAttribute('aria-label', title);
+
+		L.DomEvent
+			.on(this.link, 'click', L.DomEvent.stopPropagation)
+			.on(this.link, 'click', L.DomEvent.preventDefault)
+			.on(this.link, 'click', fn, context);
+		
+		L.DomEvent
+			.on(container, fullScreenApi.fullScreenEventName, L.DomEvent.stopPropagation)
+			.on(container, fullScreenApi.fullScreenEventName, L.DomEvent.preventDefault)
+			.on(container, fullScreenApi.fullScreenEventName, this._handleFullscreenChange, context);
+		
+		L.DomEvent
+			.on(document, fullScreenApi.fullScreenEventName, L.DomEvent.stopPropagation)
+			.on(document, fullScreenApi.fullScreenEventName, L.DomEvent.preventDefault)
+			.on(document, fullScreenApi.fullScreenEventName, this._handleFullscreenChange, context);
+
+		return this.link;
+	},
+	
+	toggleFullScreen: function () {
+		var map = this._map;
+		map._exitFired = false;
+		if (map._isFullscreen) {
+			if (fullScreenApi.supportsFullScreen && !this.options.forcePseudoFullscreen) {
+				fullScreenApi.cancelFullScreen();
+			} else {
+				L.DomUtil.removeClass(this.options.fullscreenElement ? this.options.fullscreenElement : map._container, 'leaflet-pseudo-fullscreen');
+			}
+			map.fire('exitFullscreen');
+			map._exitFired = true;
+			map._isFullscreen = false;
+		}
+		else {
+			if (fullScreenApi.supportsFullScreen && !this.options.forcePseudoFullscreen) {
+				fullScreenApi.requestFullScreen(this.options.fullscreenElement ? this.options.fullscreenElement : map._container);
+			} else {
+				L.DomUtil.addClass(this.options.fullscreenElement ? this.options.fullscreenElement : map._container, 'leaflet-pseudo-fullscreen');
+			}
+			map.fire('enterFullscreen');
+			map._isFullscreen = true;
+		}
+	},
+	
+	_toggleTitle: function () {
+		this.link.title = this._map._isFullscreen ? this.options.title : this.options.titleCancel;
+	},
+	
+	_handleFullscreenChange: function () {
+		var map = this._map;
+		map.invalidateSize();
+		if (!fullScreenApi.isFullScreen() && !map._exitFired) {
+			map.fire('exitFullscreen');
+			map._exitFired = true;
+			map._isFullscreen = false;
+		}
+	}
 });
+
+L.Map.include({
+	toggleFullscreen: function () {
+		this.fullscreenControl.toggleFullScreen();
+	}
+});
+
+L.Map.addInitHook(function () {
+	if (this.options.fullscreenControl) {
+		this.addControl(L.control.fullscreen(this.options.fullscreenControlOptions));
+	}
+});
+
+L.control.fullscreen = function (options) {
+	return new L.Control.FullScreen(options);
+};
+
+/* 
+Native FullScreen JavaScript API
+-------------
+Assumes Mozilla naming conventions instead of W3C for now
+
+source : http://johndyer.name/native-fullscreen-javascript-api-plus-jquery-plugin/
+
+*/
+
+	var 
+		fullScreenApi = { 
+			supportsFullScreen: false,
+			isFullScreen: function () { return false; }, 
+			requestFullScreen: function () {}, 
+			cancelFullScreen: function () {},
+			fullScreenEventName: '',
+			prefix: ''
+		},
+		browserPrefixes = 'webkit moz o ms khtml'.split(' ');
+	
+	// check for native support
+	if (typeof document.exitFullscreen !== 'undefined') {
+		fullScreenApi.supportsFullScreen = true;
+	} else {
+		// check for fullscreen support by vendor prefix
+		for (var i = 0, il = browserPrefixes.length; i < il; i++) {
+			fullScreenApi.prefix = browserPrefixes[i];
+			if (typeof document[fullScreenApi.prefix + 'CancelFullScreen'] !== 'undefined') {
+				fullScreenApi.supportsFullScreen = true;
+				break;
+			}
+		}
+		if (typeof document['msExitFullscreen'] !== 'undefined') {
+			fullScreenApi.prefix = 'ms';
+			fullScreenApi.supportsFullScreen = true;
+		}
+	}
+	
+	// update methods to do something useful
+	if (fullScreenApi.supportsFullScreen) {
+		if (fullScreenApi.prefix === 'ms') {
+			fullScreenApi.fullScreenEventName = 'MSFullscreenChange';
+		} else {
+			fullScreenApi.fullScreenEventName = fullScreenApi.prefix + 'fullscreenchange';
+		}
+		fullScreenApi.isFullScreen = function () {
+			switch (this.prefix) {
+				case '':
+					return document.fullscreen;
+				case 'webkit':
+					return document.webkitIsFullScreen;
+				case 'ms':
+					return document.msFullscreenElement;
+				default:
+					return document[this.prefix + 'FullScreen'];
+			}
+		};
+		fullScreenApi.requestFullScreen = function (el) {
+			switch (this.prefix) {
+				case '':
+					return el.requestFullscreen();
+				case 'ms':
+					return el.msRequestFullscreen();
+				default:
+					return el[this.prefix + 'RequestFullScreen']();
+			}
+		};
+		fullScreenApi.cancelFullScreen = function () {
+			switch (this.prefix) {
+				case '':
+					return document.exitFullscreen();
+				case 'ms':
+					return document.msExitFullscreen();
+				default:
+					return document[this.prefix + 'CancelFullScreen']();
+			}
+		};
+	}
+
+	// jQuery plugin
+	if (typeof jQuery !== 'undefined') {
+		jQuery.fn.requestFullScreen = function () {
+			return this.each(function () {
+				var el = jQuery(this);
+				if (fullScreenApi.supportsFullScreen) {
+					fullScreenApi.requestFullScreen(el);
+				}
+			});
+		};
+	}
+
+	// export api
+	window.fullScreenApi = fullScreenApi;
+})();
+
 
 /***/ }),
 
-/***/ "./node_modules/leaflet-heatmap/leaflet-heatmap.js":
-/*!*********************************************************!*\
-  !*** ./node_modules/leaflet-heatmap/leaflet-heatmap.js ***!
-  \*********************************************************/
+/***/ "./node_modules/leaflet.heat/dist/leaflet-heat.js":
+/*!********************************************************!*\
+  !*** ./node_modules/leaflet.heat/dist/leaflet-heat.js ***!
+  \********************************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
-* Leaflet Heatmap Overlay
-*
-* Copyright (c) 2008-2016, Patrick Wied (https://www.patrick-wied.at)
-* Dual-licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
-* and the Beerware (http://en.wikipedia.org/wiki/Beerware) license.
+/*
+ (c) 2014, Vladimir Agafonkin
+ simpleheat, a tiny JavaScript library for drawing heatmaps with Canvas
+ https://github.com/mourner/simpleheat
 */
-;(function (name, context, factory) {
-  // Supports UMD. AMD, CommonJS/Node.js and browser context
-  if ( true && module.exports) {
-    module.exports = factory(
-      __webpack_require__(/*! heatmap.js */ "./node_modules/heatmap.js/build/heatmap.js"),
-      __webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js")
-    );
-  } else if (true) {
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! heatmap.js */ "./node_modules/heatmap.js/build/heatmap.js"), __webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js")], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-  } else {}
-
-})("HeatmapOverlay", this, function (h337, L) {
-  'use strict';
-
-  // Leaflet < 0.8 compatibility
-  if (typeof L.Layer === 'undefined') {
-    L.Layer = L.Class;
-  }
-
-  var HeatmapOverlay = L.Layer.extend({
-
-    initialize: function (config) {
-      this.cfg = config;
-      this._el = L.DomUtil.create('div', 'leaflet-zoom-hide');
-      this._data = [];
-      this._max = 1;
-      this._min = 0;
-      this.cfg.container = this._el;
-    },
-
-    onAdd: function (map) {
-      var size = map.getSize();
-
-      this._map = map;
-
-      this._width = size.x;
-      this._height = size.y;
-
-      this._el.style.width = size.x + 'px';
-      this._el.style.height = size.y + 'px';
-      this._el.style.position = 'absolute';
-
-      this._origin = this._map.layerPointToLatLng(new L.Point(0, 0));
-
-      map.getPanes().overlayPane.appendChild(this._el);
-
-      if (!this._heatmap) {
-        this._heatmap = h337.create(this.cfg);
-      } 
-
-      // this resets the origin and redraws whenever
-      // the zoom changed or the map has been moved
-      map.on('moveend', this._reset, this);
-      this._draw();
-    },
-
-    addTo: function (map) {
-      map.addLayer(this);
-      return this;
-    },
-
-    onRemove: function (map) {
-      // remove layer's DOM elements and listeners
-      map.getPanes().overlayPane.removeChild(this._el);
-
-      map.off('moveend', this._reset, this);
-    },
-    _draw: function() {
-      if (!this._map) { return; }
-      
-      var mapPane = this._map.getPanes().mapPane;
-      var point = mapPane._leaflet_pos;      
-
-      // reposition the layer
-      this._el.style[HeatmapOverlay.CSS_TRANSFORM] = 'translate(' +
-        -Math.round(point.x) + 'px,' +
-        -Math.round(point.y) + 'px)';
-
-      this._update();
-    },
-    _update: function() {
-      var bounds, zoom, scale;
-      var generatedData = { max: this._max, min: this._min, data: [] };
-
-      bounds = this._map.getBounds();
-      zoom = this._map.getZoom();
-      scale = Math.pow(2, zoom);
-
-      if (this._data.length == 0) {
-        if (this._heatmap) {
-          this._heatmap.setData(generatedData);
-        }
-        return;
-      }
-
-
-      var latLngPoints = [];
-      var radiusMultiplier = this.cfg.scaleRadius ? scale : 1;
-      var localMax = 0;
-      var localMin = 0;
-      var valueField = this.cfg.valueField;
-      var len = this._data.length;
-    
-      while (len--) {
-        var entry = this._data[len];
-        var value = entry[valueField];
-        var latlng = entry.latlng;
-
-
-        // we don't wanna render points that are not even on the map ;-)
-        if (!bounds.contains(latlng)) {
-          continue;
-        }
-        // local max is the maximum within current bounds
-        localMax = Math.max(value, localMax);
-        localMin = Math.min(value, localMin);
-
-        var point = this._map.latLngToContainerPoint(latlng);
-        var latlngPoint = { x: Math.round(point.x), y: Math.round(point.y) };
-        latlngPoint[valueField] = value;
-
-        var radius;
-
-        if (entry.radius) {
-          radius = entry.radius * radiusMultiplier;
-        } else {
-          radius = (this.cfg.radius || 2) * radiusMultiplier;
-        }
-        latlngPoint.radius = radius;
-        latLngPoints.push(latlngPoint);
-      }
-      if (this.cfg.useLocalExtrema) {
-        generatedData.max = localMax;
-        generatedData.min = localMin;
-      }
-
-      generatedData.data = latLngPoints;
-
-      this._heatmap.setData(generatedData);
-    },
-    setData: function(data) {
-      this._max = data.max || this._max;
-      this._min = data.min || this._min;
-      var latField = this.cfg.latField || 'lat';
-      var lngField = this.cfg.lngField || 'lng';
-      var valueField = this.cfg.valueField || 'value';
-    
-      // transform data to latlngs
-      var data = data.data;
-      var len = data.length;
-      var d = [];
-    
-      while (len--) {
-        var entry = data[len];
-        var latlng = new L.LatLng(entry[latField], entry[lngField]);
-        var dataObj = { latlng: latlng };
-        dataObj[valueField] = entry[valueField];
-        if (entry.radius) {
-          dataObj.radius = entry.radius;
-        }
-        d.push(dataObj);
-      }
-      this._data = d;
-    
-      this._draw();
-    },
-    // experimential... not ready.
-    addData: function(pointOrArray) {
-      if (pointOrArray.length > 0) {
-        var len = pointOrArray.length;
-        while(len--) {
-          this.addData(pointOrArray[len]);
-        }
-      } else {
-        var latField = this.cfg.latField || 'lat';
-        var lngField = this.cfg.lngField || 'lng';
-        var valueField = this.cfg.valueField || 'value';
-        var entry = pointOrArray;
-        var latlng = new L.LatLng(entry[latField], entry[lngField]);
-        var dataObj = { latlng: latlng };
-        
-        dataObj[valueField] = entry[valueField];
-        this._max = Math.max(this._max, dataObj[valueField]);
-        this._min = Math.min(this._min, dataObj[valueField]);
-
-        if (entry.radius) {
-          dataObj.radius = entry.radius;
-        }
-        this._data.push(dataObj);
-        this._draw();
-      }
-    },
-    _reset: function () {
-      this._origin = this._map.layerPointToLatLng(new L.Point(0, 0));
-      
-      var size = this._map.getSize();
-      if (this._width !== size.x || this._height !== size.y) {
-        this._width  = size.x;
-        this._height = size.y;
-
-        this._el.style.width = this._width + 'px';
-        this._el.style.height = this._height + 'px';
-
-        this._heatmap._renderer.setDimensions(this._width, this._height);
-      }
-      this._draw();
-    } 
-  });
-
-  HeatmapOverlay.CSS_TRANSFORM = (function() {
-    var div = document.createElement('div');
-    var props = [
-      'transform',
-      'WebkitTransform',
-      'MozTransform',
-      'OTransform',
-      'msTransform'
-    ];
-
-    for (var i = 0; i < props.length; i++) {
-      var prop = props[i];
-      if (div.style[prop] !== undefined) {
-        return prop;
-      }
-    }
-    return props[0];
-  })();
-
-  return HeatmapOverlay;
-});
+!function(){"use strict";function t(i){return this instanceof t?(this._canvas=i="string"==typeof i?document.getElementById(i):i,this._ctx=i.getContext("2d"),this._width=i.width,this._height=i.height,this._max=1,void this.clear()):new t(i)}t.prototype={defaultRadius:25,defaultGradient:{.4:"blue",.6:"cyan",.7:"lime",.8:"yellow",1:"red"},data:function(t,i){return this._data=t,this},max:function(t){return this._max=t,this},add:function(t){return this._data.push(t),this},clear:function(){return this._data=[],this},radius:function(t,i){i=i||15;var a=this._circle=document.createElement("canvas"),s=a.getContext("2d"),e=this._r=t+i;return a.width=a.height=2*e,s.shadowOffsetX=s.shadowOffsetY=200,s.shadowBlur=i,s.shadowColor="black",s.beginPath(),s.arc(e-200,e-200,t,0,2*Math.PI,!0),s.closePath(),s.fill(),this},gradient:function(t){var i=document.createElement("canvas"),a=i.getContext("2d"),s=a.createLinearGradient(0,0,0,256);i.width=1,i.height=256;for(var e in t)s.addColorStop(e,t[e]);return a.fillStyle=s,a.fillRect(0,0,1,256),this._grad=a.getImageData(0,0,1,256).data,this},draw:function(t){this._circle||this.radius(this.defaultRadius),this._grad||this.gradient(this.defaultGradient);var i=this._ctx;i.clearRect(0,0,this._width,this._height);for(var a,s=0,e=this._data.length;e>s;s++)a=this._data[s],i.globalAlpha=Math.max(a[2]/this._max,t||.05),i.drawImage(this._circle,a[0]-this._r,a[1]-this._r);var n=i.getImageData(0,0,this._width,this._height);return this._colorize(n.data,this._grad),i.putImageData(n,0,0),this},_colorize:function(t,i){for(var a,s=3,e=t.length;e>s;s+=4)a=4*t[s],a&&(t[s-3]=i[a],t[s-2]=i[a+1],t[s-1]=i[a+2])}},window.simpleheat=t}(),/*
+ (c) 2014, Vladimir Agafonkin
+ Leaflet.heat, a tiny and fast heatmap plugin for Leaflet.
+ https://github.com/Leaflet/Leaflet.heat
+*/
+L.HeatLayer=(L.Layer?L.Layer:L.Class).extend({initialize:function(t,i){this._latlngs=t,L.setOptions(this,i)},setLatLngs:function(t){return this._latlngs=t,this.redraw()},addLatLng:function(t){return this._latlngs.push(t),this.redraw()},setOptions:function(t){return L.setOptions(this,t),this._heat&&this._updateOptions(),this.redraw()},redraw:function(){return!this._heat||this._frame||this._map._animating||(this._frame=L.Util.requestAnimFrame(this._redraw,this)),this},onAdd:function(t){this._map=t,this._canvas||this._initCanvas(),t._panes.overlayPane.appendChild(this._canvas),t.on("moveend",this._reset,this),t.options.zoomAnimation&&L.Browser.any3d&&t.on("zoomanim",this._animateZoom,this),this._reset()},onRemove:function(t){t.getPanes().overlayPane.removeChild(this._canvas),t.off("moveend",this._reset,this),t.options.zoomAnimation&&t.off("zoomanim",this._animateZoom,this)},addTo:function(t){return t.addLayer(this),this},_initCanvas:function(){var t=this._canvas=L.DomUtil.create("canvas","leaflet-heatmap-layer leaflet-layer"),i=L.DomUtil.testProp(["transformOrigin","WebkitTransformOrigin","msTransformOrigin"]);t.style[i]="50% 50%";var a=this._map.getSize();t.width=a.x,t.height=a.y;var s=this._map.options.zoomAnimation&&L.Browser.any3d;L.DomUtil.addClass(t,"leaflet-zoom-"+(s?"animated":"hide")),this._heat=simpleheat(t),this._updateOptions()},_updateOptions:function(){this._heat.radius(this.options.radius||this._heat.defaultRadius,this.options.blur),this.options.gradient&&this._heat.gradient(this.options.gradient),this.options.max&&this._heat.max(this.options.max)},_reset:function(){var t=this._map.containerPointToLayerPoint([0,0]);L.DomUtil.setPosition(this._canvas,t);var i=this._map.getSize();this._heat._width!==i.x&&(this._canvas.width=this._heat._width=i.x),this._heat._height!==i.y&&(this._canvas.height=this._heat._height=i.y),this._redraw()},_redraw:function(){var t,i,a,s,e,n,h,o,r,d=[],_=this._heat._r,l=this._map.getSize(),m=new L.Bounds(L.point([-_,-_]),l.add([_,_])),c=void 0===this.options.max?1:this.options.max,u=void 0===this.options.maxZoom?this._map.getMaxZoom():this.options.maxZoom,f=1/Math.pow(2,Math.max(0,Math.min(u-this._map.getZoom(),12))),g=_/2,p=[],v=this._map._getMapPanePos(),w=v.x%g,y=v.y%g;for(t=0,i=this._latlngs.length;i>t;t++)if(a=this._map.latLngToContainerPoint(this._latlngs[t]),m.contains(a)){e=Math.floor((a.x-w)/g)+2,n=Math.floor((a.y-y)/g)+2;var x=void 0!==this._latlngs[t].alt?this._latlngs[t].alt:void 0!==this._latlngs[t][2]?+this._latlngs[t][2]:1;r=x*f,p[n]=p[n]||[],s=p[n][e],s?(s[0]=(s[0]*s[2]+a.x*r)/(s[2]+r),s[1]=(s[1]*s[2]+a.y*r)/(s[2]+r),s[2]+=r):p[n][e]=[a.x,a.y,r]}for(t=0,i=p.length;i>t;t++)if(p[t])for(h=0,o=p[t].length;o>h;h++)s=p[t][h],s&&d.push([Math.round(s[0]),Math.round(s[1]),Math.min(s[2],c)]);this._heat.data(d).draw(this.options.minOpacity),this._frame=null},_animateZoom:function(t){var i=this._map.getZoomScale(t.zoom),a=this._map._getCenterOffset(t.center)._multiplyBy(-i).subtract(this._map._getMapPanePos());L.DomUtil.setTransform?L.DomUtil.setTransform(this._canvas,a,i):this._canvas.style[L.DomUtil.TRANSFORM]=L.DomUtil.getTranslateString(a)+" scale("+i+")"}}),L.heatLayer=function(t,i){return new L.HeatLayer(t,i)};
 
 /***/ }),
 
@@ -15155,39 +14429,27 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js");
 /* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(leaflet__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var leaflet_heatmap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! leaflet-heatmap */ "./node_modules/leaflet-heatmap/leaflet-heatmap.js");
-/* harmony import */ var leaflet_heatmap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(leaflet_heatmap__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var leaflet_heat_dist_leaflet_heat__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! leaflet.heat/dist/leaflet-heat */ "./node_modules/leaflet.heat/dist/leaflet-heat.js");
+/* harmony import */ var leaflet_heat_dist_leaflet_heat__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(leaflet_heat_dist_leaflet_heat__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var leaflet_fullscreen__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! leaflet.fullscreen */ "./node_modules/leaflet.fullscreen/Control.FullScreen.js");
+/* harmony import */ var leaflet_fullscreen__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(leaflet_fullscreen__WEBPACK_IMPORTED_MODULE_2__);
 
 
-var map = L.map('mapid').setView([-37.82109, 175.2193], 16);
+
+var geojson = document.getElementById('eventoutput').value;
+var points = JSON.parse(geojson);
+var lat = points[0].lat,
+    lng = points[0].lng;
+var map = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.map('mapid', {
+  fullscreenControl: true
+}).setView([lat, lng], 12);
+leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]).addTo(map);
 map.attributionControl.setPrefix('<a href="#">ناهید آسمان ایرانیان</a>');
-var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
-/*var heat = L.heatLayer([
-    [50.5, 30.5, 0.2], // lat, lng, intensity
-    [50.6, 30.4, 0.5],
-], {radius: 25}).addTo(map);*/
-
-var addressPoints = addressPoints.map(function (p) {
+leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png').addTo(map);
+addressPoints = addressPoints.map(function (p) {
   return [p[0], p[1]];
 });
-console.log(addressPoints);
-var heat = L.heatLayer(addressPoints).addTo(map),
-    draw = true;
-map.on({
-  movestart: function movestart() {
-    draw = false;
-  },
-  moveend: function moveend() {
-    draw = true;
-  },
-  mousemove: function mousemove(e) {
-    if (draw) {
-      heat.addLatLng(e.latlng);
-    }
-  }
-});
+var heat = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.heatLayer(addressPoints).addTo(map);
 
 /***/ }),
 
@@ -15198,7 +14460,7 @@ map.on({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\leaflet\land-heat.js */"./resources/js/leaflet/land-heat.js");
+module.exports = __webpack_require__(/*! F:\laravel\Work\first\resources\js\leaflet\land-heat.js */"./resources/js/leaflet/land-heat.js");
 
 
 /***/ })

@@ -31,6 +31,5 @@
 
 @endsection
 @section('css')
-    <link rel="stylesheet" href="{{asset('css/chosen.css')}}">
     <link rel="stylesheet" href="{{asset('css/map.css')}}">
 @endsection

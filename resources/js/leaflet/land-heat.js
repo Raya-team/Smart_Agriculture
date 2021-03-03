@@ -1,32 +1,20 @@
-import 'leaflet';
-import 'leaflet-heatmap';
+import L from 'leaflet';
+import 'leaflet.heat/dist/leaflet-heat';
+import 'leaflet.fullscreen';
 
-var map = L.map('mapid').setView([-37.82109, 175.2193], 16);
+var geojson = document.getElementById('eventoutput').value;
+var points = JSON.parse(geojson);
+var lat = points[0].lat, lng = points[0].lng;
 
+let map = L.map('mapid', {
+    fullscreenControl: true,
+}).setView([lat,lng], 12);
+L.polygon([points]).addTo(map);
 map.attributionControl.setPrefix('<a href="#">ناهید آسمان ایرانیان</a>');
 
-var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-}).addTo(map);
+L.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png').addTo(map);
 
-/*var heat = L.heatLayer([
-    [50.5, 30.5, 0.2], // lat, lng, intensity
-    [50.6, 30.4, 0.5],
-], {radius: 25}).addTo(map);*/
 
-var addressPoints = addressPoints.map(function (p) { return [p[0], p[1]]; });
+addressPoints = addressPoints.map(function (p) { return [p[0], p[1]]; });
 
-console.log(addressPoints);
-
-var heat = L.heatLayer(addressPoints).addTo(map),
-    draw = true;
-
-map.on({
-    movestart: function () { draw = false; },
-    moveend:   function () { draw = true; },
-    mousemove: function (e) {
-        if (draw) {
-            heat.addLatLng(e.latlng);
-        }
-    }
-});
+var heat = L.heatLayer(addressPoints).addTo(map);

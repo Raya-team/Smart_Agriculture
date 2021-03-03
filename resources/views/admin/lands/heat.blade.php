@@ -9,7 +9,7 @@
                 <!-- general form elements -->
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">دمای نقاط مختلف زمین</h3>
+                        <h3 class="box-title">نمایش زمین</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -17,6 +17,7 @@
                             <label for="mapid">نقشه</label>
                             <div id="mapid"></div>
                         </div>
+                        <input type="hidden" id="eventoutput" name="points" value="{{ $land->points }}">
                     </div>
                 </div>
                 <!-- /.box -->
@@ -25,7 +26,9 @@
     </section>
 @endsection
 @section('script')
+    <script src="http://leaflet.github.io/Leaflet.markercluster/example/realworld.10000.js"></script>
     <script src="{{ asset('js/leaflet/land-heat.js') }}"></script>
+
 @endsection
 @section('css')
     <link rel="stylesheet" href="{{asset('css/map.css')}}">
