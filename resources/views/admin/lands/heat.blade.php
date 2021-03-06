@@ -26,7 +26,7 @@
     </section>
 @endsection
 @section('script')
-    <script src="http://leaflet.github.io/Leaflet.markercluster/example/realworld.10000.js"></script>
+    {{--<script src="http://leaflet.github.io/Leaflet.markercluster/example/realworld.10000.js"></script>--}}
     <script src="{{ asset('js/leaflet/land-heat.js') }}"></script>
 
 @endsection

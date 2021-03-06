@@ -12,7 +12,7 @@ let map = L.map('mapid', {
 
 map.attributionControl.setPrefix('<a href="#">ناهید آسمان ایرانیان</a>');
 
-L.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png').addTo(map);
+L.tileLayer('https://a.tiles.azavea.com/climate/tmean_07/{z}/{x}/{y}.png').addTo(map);
 
 var Defaultmap = L.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png', {
     maxZoom: 17,
@@ -45,4 +45,4 @@ var _baseLayers = {
 
 L.control.layers(_baseLayers, null, {position: "bottomright"}).addTo(map);
 
-L.polygon([points]).addTo(map);
+L.polygon([points],{snakingSpeed: 200}).addTo(map).snakeIn();
