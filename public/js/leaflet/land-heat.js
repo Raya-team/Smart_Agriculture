@@ -16291,7 +16291,9 @@ var map = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.map('mapid', {
   fullscreenControl: true //TODO lat_lng
 
 }).setView([44.667505, -63.558414], 12);
-leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]).addTo(map);
+leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points], {
+  color: "#e0fff1"
+}).addTo(map);
 map.attributionControl.setPrefix('<a href="#">ناهید آسمان ایرانیان</a>');
 leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png').addTo(map);
 
@@ -16306,6 +16308,10 @@ var heatmap = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.webGLHeatmap({
 });
 heatmap.setData(dataPoints);
 map.addLayer(heatmap);
+
+for (var i = 0; i < dataPoints.length; i++) {
+  marker = new leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.marker([dataPoints[i][0], dataPoints[i][1]]).addTo(map);
+}
 
 /***/ }),
 
