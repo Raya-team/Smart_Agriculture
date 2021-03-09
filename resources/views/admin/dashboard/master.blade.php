@@ -14,7 +14,7 @@
                     <!-- small box -->
                     <div class="small-box bg-yellow">
                         <div class="inner">
-                            <h3>{{$users->count()}}</h3>
+                            <h3>{{$users}}</h3>
                             <p>کاربران تایید شده</p>
                         </div>
                         <div class="icon">
@@ -28,7 +28,7 @@
                     <!-- small box -->
                     <div class="small-box bg-aqua">
                         <div class="inner">
-                            <h3>{{$lands->count()}}</h3>
+                            <h3>{{$lands}}</h3>
                             <p>زمین ها</p>
                         </div>
                         <div class="icon">
@@ -42,7 +42,7 @@
                     <!-- small box -->
                     <div class="small-box bg-red">
                         <div class="inner">
-                            <h3>{{$sensors->count()}}</h3>
+                            <h3>{{$sensors}}</h3>
                             <p>سنسور ها</p>
                         </div>
                         <div class="icon">

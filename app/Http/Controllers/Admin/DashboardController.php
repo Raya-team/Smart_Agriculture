@@ -12,10 +12,9 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $users=User::where('status','1')->count()->get();
-        return $users;
+        $users=User::where('status','1')->count();
         $lands=Land::all()->count();
-        $sensors=Sensor::all();
+        $sensors=Sensor::all()->count();
         return view('admin.dashboard.master',compact('users','lands','sensors'));
     }
 }
