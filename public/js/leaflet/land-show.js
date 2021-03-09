@@ -15041,9 +15041,7 @@ var _baseLayers = {
 leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.control.layers(_baseLayers, null, {
   position: "bottomright"
 }).addTo(map);
-leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points], {
-  snakingSpeed: 200
-}).addTo(map).snakeIn();
+leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]).addTo(map);
 
 /***/ }),
 
@@ -15054,7 +15052,7 @@ leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points], {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\leaflet\land-show.js */"./resources/js/leaflet/land-show.js");
+module.exports = __webpack_require__(/*! F:\laravel\Work\first\resources\js\leaflet\land-show.js */"./resources/js/leaflet/land-show.js");
 
 
 /***/ })

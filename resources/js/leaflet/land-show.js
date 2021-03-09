@@ -45,4 +45,4 @@ var _baseLayers = {
 
 L.control.layers(_baseLayers, null, {position: "bottomright"}).addTo(map);
 
-L.polygon([points],{snakingSpeed: 200}).addTo(map).snakeIn();
+L.polygon([points]).addTo(map);
