@@ -10,7 +10,7 @@
         <section class="content">
             <!-- Small boxes (Stat box) -->
             <div class="row">
-                <div class="col-lg-4 col-xs-4">
+                <div class="col-lg-4 col-xs-4" height="">
                     <!-- small box -->
                     <div class="small-box bg-yellow">
                         <div class="inner">
@@ -93,6 +93,10 @@
                 </section>
             </div>
         </section>
+        <footer class="main-footer text-left">
+            {{--TODO Creat footer--}}
+            {{--<strong>طراحی شده توسط تیم رایا</strong>--}}
+        </footer>
 @endsection
 @section('script')
     <script src="{{ asset('js/dashboard/map.js')}}"></script>
