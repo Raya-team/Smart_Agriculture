@@ -20,7 +20,7 @@ let map = L.map('mapid', {
     //TODO lat_lng
 }).setView([44.667505, -63.558414], 12);
 
-L.polygon([points]).addTo(map);
+L.polygon([points],{color: "#e0fff1"}).addTo(map);
 
 map.attributionControl.setPrefix('<a href="#">ناهید آسمان ایرانیان</a>');
 
@@ -44,3 +44,7 @@ var heatmap = L.webGLHeatmap({size: 10000,opacity: 0.8});
 heatmap.setData( dataPoints );
 
 map.addLayer(heatmap);
+
+for (var i = 0; i < dataPoints.length; i++) {
+    marker = new L.marker([dataPoints[i][0],dataPoints[i][1]]).addTo(map);
+}
