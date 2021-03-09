@@ -1,5 +1,4 @@
 import L from 'leaflet';
-import 'leaflet.heat'
 import 'leaflet-measure';
 import 'leaflet-measure/dist/leaflet-measure.fa';
 import 'leaflet-contextmenu';

@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -15020,16 +15020,14 @@ source : http://johndyer.name/native-fullscreen-javascript-api-plus-jquery-plugi
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js");
 /* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(leaflet__WEBPACK_IMPORTED_MODULE_0__);
-!(function webpackMissingModule() { var e = new Error("Cannot find module 'leaflet.heat'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-/* harmony import */ var leaflet_measure__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! leaflet-measure */ "./node_modules/leaflet-measure/dist/leaflet-measure.js");
-/* harmony import */ var leaflet_measure__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(leaflet_measure__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var leaflet_measure_dist_leaflet_measure_fa__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! leaflet-measure/dist/leaflet-measure.fa */ "./node_modules/leaflet-measure/dist/leaflet-measure.fa.js");
-/* harmony import */ var leaflet_measure_dist_leaflet_measure_fa__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(leaflet_measure_dist_leaflet_measure_fa__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var leaflet_contextmenu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! leaflet-contextmenu */ "./node_modules/leaflet-contextmenu/dist/leaflet.contextmenu.js");
-/* harmony import */ var leaflet_contextmenu__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(leaflet_contextmenu__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var leaflet_fullscreen__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! leaflet.fullscreen */ "./node_modules/leaflet.fullscreen/Control.FullScreen.js");
-/* harmony import */ var leaflet_fullscreen__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(leaflet_fullscreen__WEBPACK_IMPORTED_MODULE_5__);
-
+/* harmony import */ var leaflet_measure__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! leaflet-measure */ "./node_modules/leaflet-measure/dist/leaflet-measure.js");
+/* harmony import */ var leaflet_measure__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(leaflet_measure__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var leaflet_measure_dist_leaflet_measure_fa__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! leaflet-measure/dist/leaflet-measure.fa */ "./node_modules/leaflet-measure/dist/leaflet-measure.fa.js");
+/* harmony import */ var leaflet_measure_dist_leaflet_measure_fa__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(leaflet_measure_dist_leaflet_measure_fa__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var leaflet_contextmenu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! leaflet-contextmenu */ "./node_modules/leaflet-contextmenu/dist/leaflet.contextmenu.js");
+/* harmony import */ var leaflet_contextmenu__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(leaflet_contextmenu__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var leaflet_fullscreen__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! leaflet.fullscreen */ "./node_modules/leaflet.fullscreen/Control.FullScreen.js");
+/* harmony import */ var leaflet_fullscreen__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(leaflet_fullscreen__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
@@ -15142,14 +15140,14 @@ function Zoomout(e) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!***************************************************!*\
   !*** multi ./resources/js/leaflet/land-create.js ***!
   \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\laravel\Work\first\resources\js\leaflet\land-create.js */"./resources/js/leaflet/land-create.js");
+module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\leaflet\land-create.js */"./resources/js/leaflet/land-create.js");
 
 
 /***/ })

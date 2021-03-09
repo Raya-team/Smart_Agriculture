@@ -15,6 +15,7 @@ mix
     .js('resources/js/app.js', 'public/js')
     .js('resources/js/highcharts.js', 'public/js')
     .js('resources/js/chosen.js', 'public/js')
+    .js('resources/js/dashboard/map.js', 'public/js/dashboard')
     .js('resources/js/leaflet/land-create.js', 'public/js/leaflet')
     .js('resources/js/leaflet/land-show.js', 'public/js/leaflet')
     .js('resources/js/leaflet/land-edit.js', 'public/js/leaflet')

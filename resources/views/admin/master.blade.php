@@ -349,7 +349,7 @@
                             <a href="{{ route('users.verify') }}">
                                 <i class="fa fa-users"></i> <span>کاربران تایید نشده</span>
                                 <span class="pull-left-container">
-                                    @if(\App\Models\User::where('status', 0)->get()->count() > 0)
+                                    @if(\App\Models\User::where('status', 0)->get()->count())
                                         <small class="label pull-left bg-yellow">{{ \App\Models\User::where('status', 0)->get()->count() }}</small>
                                     @endif
                                 </span>
@@ -403,7 +403,8 @@
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer text-left">
-        <strong>Copyleft &copy; 2014-2017 <a href="https://adminlte.io">Almsaeed Studio</a> & <a href="http://hosseinizadeh.ir/adminlte">Alireza Hosseinizadeh</a></strong>
+        {{--TODO Creat footer--}}
+        {{--<strong>Copyleft &copy; 2014-2017 <a href="https://adminlte.io">Almsaeed Studio</a> & <a href="http://hosseinizadeh.ir/adminlte">Alireza Hosseinizadeh</a></strong>--}}
     </footer>
 
     <!-- Control Sidebar -->

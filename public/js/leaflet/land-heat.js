@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -16290,7 +16290,7 @@ var map = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.map('mapid', {
   }],
   fullscreenControl: true //TODO lat_lng
 
-}).setView([44.667505, -63.558414], 14);
+}).setView([44.667505, -63.558414], 12);
 leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]).addTo(map);
 map.attributionControl.setPrefix('<a href="#">ناهید آسمان ایرانیان</a>');
 leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png').addTo(map);
@@ -16299,24 +16299,24 @@ function WhatHere(e) {
   alert(e.latlng);
 }
 
-var dataPoints = [[44.6674, -63.5703, 0.8], [44.662841, -63.577935, 0.9], [44.672913, -63.542018, 0.4], [44.6826, -63.7552, 0.5], [44.6325, -63.5852, 0.9], [44.6467, -63.4696, 0.9], [44.6804, -63.487, 0.9], [44.6622, -63.5364, 0.9], [44.603, -63.743, 0.9]];
+var dataPoints = [[44.715026, -63.579426, 0.5], [44.678663, -63.612385, 0.67], [44.624686, -63.587666, 0.9999], [44.651559, -63.489819, 0.9], [44.697701, -63.494625, 0.7], [44.673292, -63.551617, 0.9]];
 var heatmap = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.webGLHeatmap({
-  size: 3000,
-  opacity: 0.7
+  size: 10000,
+  opacity: 0.8
 });
 heatmap.setData(dataPoints);
 map.addLayer(heatmap);
 
 /***/ }),
 
-/***/ 6:
+/***/ 7:
 /*!*************************************************!*\
   !*** multi ./resources/js/leaflet/land-heat.js ***!
   \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\laravel\Work\first\resources\js\leaflet\land-heat.js */"./resources/js/leaflet/land-heat.js");
+module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\leaflet\land-heat.js */"./resources/js/leaflet/land-heat.js");
 
 
 /***/ })
