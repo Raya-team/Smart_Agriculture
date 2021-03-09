@@ -402,9 +402,9 @@
     <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-    <footer class="main-footer text-left">
+    <footer class="main-footer text-left" style="text-align: center">
         {{--TODO Creat footer--}}
-        {{--<strong>Copyleft &copy; 2014-2017 <a href="https://adminlte.io">Almsaeed Studio</a> & <a href="http://hosseinizadeh.ir/adminlte">Alireza Hosseinizadeh</a></strong>--}}
+        <strong>شرکت ناهید آسمان ایرانیان</strong>
     </footer>
 
     <!-- Control Sidebar -->
