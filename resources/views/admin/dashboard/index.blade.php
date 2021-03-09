@@ -55,7 +55,6 @@
                 </div>
             </div>
 
-            <hr style="background-color: aqua ; width: 100% ; height: 3px">
             <!-- Main row -->
             <div class="row">
                 <section class="col-lg-6 connectedSortable">
@@ -63,19 +62,14 @@
                         <div class="box-header">
                             <!-- tools box -->
                             <div class="pull-left box-tools">
-                                <button type="button" class="btn btn-primary btn-sm daterange pull-left" data-toggle="tooltip"
-                                        title="Date range">
-                                    <i class="fa fa-calendar"></i></button>
                                 <button type="button" class="btn btn-primary btn-sm pull-left" data-widget="collapse"
                                         data-toggle="tooltip" title="Collapse" style="margin-left: 5px;">
-                                    <i class="fa fa-minus"></i></button>
+                                        <i class="fa fa-minus"></i>
+                                </button>
                             </div>
-                            <!-- /. tools -->
-
                             <i class="fa fa-map-marker"></i>
-
                             <h3 class="box-title">
-                                بازدید ها
+                                نقشه
                             </h3>
                         </div>
                         <div class="box-body">
@@ -87,13 +81,9 @@
                     <div class="box box-solid bg-teal-gradient">
                         <div class="box-header">
                             <i class="fa fa-th"></i>
-
-                            <h3 class="box-title">نمودار فروش</h3>
-
+                            <h3 class="box-title">نمودار </h3>
                             <div class="box-tools pull-left">
                                 <button type="button" class="btn bg-teal btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn bg-teal btn-sm" data-widget="remove"><i class="fa fa-times"></i>
                                 </button>
                             </div>
                         </div>
