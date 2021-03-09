@@ -10,9 +10,9 @@
         <section class="content">
             <!-- Small boxes (Stat box) -->
             <div class="row">
-                <div class="col-lg-4 col-xs-4" height="">
+                <div class="col-lg-4 col-xs-4" style="height:180px">
                     <!-- small box -->
-                    <div class="small-box bg-yellow">
+                    <div class="small-box bg-yellow"  >
                         <div class="inner">
                             <h3>{{$users}}</h3>
                             <p>کاربران تایید شده</p>
@@ -54,8 +54,6 @@
                     </div>
                 </div>
             </div>
-
-            <hr style="background-color: aqua ; width: 100% ; height: 3px">
             <!-- Main row -->
             <div class="row">
                 <section class="col-lg-6 connectedSortable">
@@ -75,11 +73,11 @@
                             <i class="fa fa-map-marker"></i>
 
                             <h3 class="box-title">
-                                بازدید ها
+                                نقشه
                             </h3>
                         </div>
                         <div class="box-body">
-                            <div id="world-map" style="height: 250px; width: 100%;"></div>
+                            <div id="world-map" style="height: 320px; width: 100%;"></div>
                         </div>
                     </div>
                 </section>
@@ -88,7 +86,7 @@
                         <div class="box-header">
                             <i class="fa fa-th"></i>
 
-                            <h3 class="box-title">نمودار فروش</h3>
+                            <h3 class="box-title">نمودار</h3>
 
                             <div class="box-tools pull-left">
                                 <button type="button" class="btn bg-teal btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -98,16 +96,13 @@
                             </div>
                         </div>
                         <div class="box-body border-radius-none">
-                            <div class="chart" id="line-chart" style="height: 250px;"></div>
+                            <div class="chart" id="line-chart" style="height: 320px;"></div>
                         </div>
                     </div>
                 </section>
             </div>
         </section>
-        <footer class="main-footer text-left">
-            {{--TODO Creat footer--}}
-            {{--<strong>طراحی شده توسط تیم رایا</strong>--}}
-        </footer>
+
 @endsection
 @section('script')
     <script src="{{ asset('js/dashboard/map.js')}}"></script>
