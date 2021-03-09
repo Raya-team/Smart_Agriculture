@@ -15013,7 +15013,7 @@ var map = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.map('mapid', {
   fullscreenControl: true
 }).setView([lat, lng], 12);
 map.attributionControl.setPrefix('<a href="#">ناهید آسمان ایرانیان</a>');
-leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.tileLayer('https://a.tiles.azavea.com/climate/tmean_07/{z}/{x}/{y}.png').addTo(map);
+leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png').addTo(map);
 var Defaultmap = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png', {
   maxZoom: 17
 });
@@ -15052,7 +15052,7 @@ leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]).addTo(map);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\laravel\Work\first\resources\js\leaflet\land-show.js */"./resources/js/leaflet/land-show.js");
+module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\leaflet\land-show.js */"./resources/js/leaflet/land-show.js");
 
 
 /***/ })

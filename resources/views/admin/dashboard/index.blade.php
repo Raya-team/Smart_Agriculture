@@ -54,7 +54,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Main row -->
             <div class="row">
                 <section class="col-lg-6 connectedSortable">
