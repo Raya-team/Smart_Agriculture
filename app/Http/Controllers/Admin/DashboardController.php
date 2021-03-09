@@ -15,6 +15,6 @@ class DashboardController extends Controller
         $users=User::where('status','1')->count();
         $lands=Land::all()->count();
         $sensors=Sensor::all()->count();
-        return view('admin.dashboard.master',compact('users','lands','sensors'));
+        return view('admin.dashboard.index',compact('users','lands','sensors'));
     }
 }
