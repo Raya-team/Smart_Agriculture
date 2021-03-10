@@ -16278,8 +16278,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var geojson = document.getElementById('eventoutput').value;
 var points = JSON.parse(geojson);
-var lat = points[0].lat,
-    lng = points[0].lng;
+var Center = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]).getBounds().getCenter();
 var map = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.map('mapid', {
   contextmenu: true,
   contextmenuWidth: 140,
@@ -16324,7 +16323,7 @@ for (var i = 0; i < dataPoints.length; i++) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\leaflet\land-heat.js */"./resources/js/leaflet/land-heat.js");
+module.exports = __webpack_require__(/*! F:\laravel\Work\first\resources\js\leaflet\land-heat.js */"./resources/js/leaflet/land-heat.js");
 
 
 /***/ })

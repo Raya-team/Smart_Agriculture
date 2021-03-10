@@ -15007,11 +15007,10 @@ __webpack_require__.r(__webpack_exports__);
 
 var geojson = document.getElementById('eventoutput').value;
 var points = JSON.parse(geojson);
-var lat = points[0].lat,
-    lng = points[0].lng;
+var Center = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]).getBounds().getCenter();
 var map = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.map('mapid', {
   fullscreenControl: true
-}).setView([lat, lng], 12);
+}).setView([Center['lat'], Center['lng']], 12);
 map.attributionControl.setPrefix('<a href="#">ناهید آسمان ایرانیان</a>');
 leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png').addTo(map);
 var Defaultmap = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png', {
@@ -15052,7 +15051,7 @@ leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]).addTo(map);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\leaflet\land-show.js */"./resources/js/leaflet/land-show.js");
+module.exports = __webpack_require__(/*! F:\laravel\Work\first\resources\js\leaflet\land-show.js */"./resources/js/leaflet/land-show.js");
 
 
 /***/ })

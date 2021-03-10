@@ -14436,9 +14436,8 @@ map.addLayer(shipLayer);
 $("#land_id").change(function () {
   shipLayer.clearLayers();
   var points = $(this).find(':selected').data('points');
-  var lat = points[0].lat,
-      lng = points[0].lng;
-  map.flyTo(new leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.LatLng(lat, lng), 12);
+  var Center = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]).getBounds().getCenter();
+  map.flyTo(new leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.LatLng(Center['lat'], Center['lng']), 12);
   shipLayer.addLayer(leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]));
 });
 
@@ -14451,7 +14450,7 @@ $("#land_id").change(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\leaflet\sensor-create.js */"./resources/js/leaflet/sensor-create.js");
+module.exports = __webpack_require__(/*! F:\laravel\Work\first\resources\js\leaflet\sensor-create.js */"./resources/js/leaflet/sensor-create.js");
 
 
 /***/ })

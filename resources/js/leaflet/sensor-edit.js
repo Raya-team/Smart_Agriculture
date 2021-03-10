@@ -25,8 +25,8 @@ $("#land_id").change(function () {
     var points = $(this).find(':selected').data('points');
     shipLayer.addLayer(L.polygon([points]));
 
-    var lat = points[0].lat, lng = points[0].lng;
-    map.flyTo(new L.LatLng(lat, lng), 12);
+    var Center = L.polygon([points]).getBounds().getCenter();
+    map.flyTo(new L.LatLng(Center['lat'], Center['lng']), 12);
 });
 
 

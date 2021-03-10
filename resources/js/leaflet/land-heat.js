@@ -6,7 +6,7 @@ import 'leaflet-contextmenu';
 
 var geojson = document.getElementById('eventoutput').value;
 var points = JSON.parse(geojson);
-var lat = points[0].lat, lng = points[0].lng;
+var Center = L.polygon([points]).getBounds().getCenter();
 
 let map = L.map('mapid', {
     contextmenu: true,

@@ -8,11 +8,11 @@ import '@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css';
 
 var geojson = document.getElementById('eventoutput').value;
 var points = JSON.parse(geojson);
-var lat = points[1].lat, lng = points[1].lng;
+var Center = L.polygon([points]).getBounds().getCenter();
 
 let map = L.map('mapid', {
     fullscreenControl: true,
-}).setView([lat,lng], 12);
+}).setView([Center['lat'],Center['lng']], 12);
 
 L.polygon([points],{
     color: '#9b2d14'

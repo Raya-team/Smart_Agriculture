@@ -15104,11 +15104,10 @@ __webpack_require__.r(__webpack_exports__);
 
 var geojson = document.getElementById('eventoutput').value;
 var points = JSON.parse(geojson);
-var lat = points[1].lat,
-    lng = points[1].lng;
+var Center = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]).getBounds().getCenter();
 var map = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.map('mapid', {
   fullscreenControl: true
-}).setView([lat, lng], 12);
+}).setView([Center['lat'], Center['lng']], 12);
 leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points], {
   color: '#9b2d14'
 }).addTo(map);
@@ -15182,7 +15181,7 @@ map.pm.setLang('fa');
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\leaflet\land-edit.js */"./resources/js/leaflet/land-edit.js");
+module.exports = __webpack_require__(/*! F:\laravel\Work\first\resources\js\leaflet\land-edit.js */"./resources/js/leaflet/land-edit.js");
 
 
 /***/ })

@@ -4,11 +4,11 @@ import 'leaflet.fullscreen';
 
 var geojson = document.getElementById('eventoutput').value;
 var points = JSON.parse(geojson);
-var lat = points[0].lat, lng = points[0].lng;
+var Center = L.polygon([points]).getBounds().getCenter();
 
 let map = L.map('mapid', {
     fullscreenControl: true,
-}).setView([lat,lng], 12);
+}).setView([Center['lat'],Center['lng']], 12);
 
 map.attributionControl.setPrefix('<a href="#">ناهید آسمان ایرانیان</a>');
 
