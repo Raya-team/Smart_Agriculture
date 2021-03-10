@@ -14,13 +14,23 @@ class LandHeatController extends Controller
     {
         $arr=[];
 
-        $sensors = Sensor::with('details')->get();
-        
-//        foreach($sensors->details as $detail)
-//        {
-//            array_push($arr,$detail);
-//        }
+        $sensors = Sensor::all();
+
+        foreach ($sensors as $sensor)
+        {
+            if($sensor->land_id == $land->id)
+            {
+                $details = Detail::all();
+
+                foreach ($details as $detail)
+
+                if($detail->sensor_id == $sensor->id)
+                {
+                    array_push($arr,$detail);
+                }
+            }
+        }
 //        return $arr;
-////        return view('admin.lands.heat', compact('land','detail'));
+        return view('admin.lands.heat', compact('land','arr'));
    }
 }
