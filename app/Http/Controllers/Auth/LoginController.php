@@ -56,8 +56,7 @@ class LoginController extends Controller
         if ($user->status == 0) {
             $this->logout($request);
             return redirect()->back()
-                ->withInput($request->only($this->username(), 'remember'))
-                ->withErrors(['status' => 'وضعیت شما هنوز توسط مدیر سامانه تایید نشده است']);
+                ->withErrors(['status' => 'وضعیت شما هنوز توسط مدیر سامانه تایید نشده است.']);
         }
     }
 }
