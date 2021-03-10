@@ -35,7 +35,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="image">تصویر پروفایل</label>
-                                <input type="file" class="form-control" name="image" id="image" placeholder="تصویر پروفایل">
+                                <input type="file" accept="image/png, image/jpg, image/jpeg" class="form-control" name="image" id="image" placeholder="تصویر پروفایل">
                             </div>
                             <div class="form-group">
                                 <label>دسترسی به پنل</label>

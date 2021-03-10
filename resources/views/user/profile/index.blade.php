@@ -77,7 +77,7 @@
                                     <label for="image" class="col-sm-2 control-label">تصویر پروفایل :</label>
 
                                     <div class="col-sm-10">
-                                        <input type="file" class="form-control" id="image" name="image">
+                                        <input type="file" accept="image/png, image/jpg, image/jpeg" class="form-control" id="image" name="image">
                                     </div>
                                 </div>
 
