@@ -12,7 +12,7 @@ class LandHeatController extends Controller
 {
     public function index(Land $land)
     {
-        $arr=[];
+        $details=[];
 
         $sensors = Sensor::all();
 
@@ -20,17 +20,16 @@ class LandHeatController extends Controller
         {
             if($sensor->land_id == $land->id)
             {
-                $details = Detail::all();
+                $all_details = Detail::all();
 
-                foreach ($details as $detail)
+                foreach ($all_details as $all_detail)
 
-                if($detail->sensor_id == $sensor->id)
+                if($all_detail->sensor_id == $sensor->id)
                 {
-                    array_push($arr,$detail);
+                    array_push($details,$all_detail);
                 }
             }
         }
-//        return $arr;
-        return view('admin.lands.heat', compact('land','arr'));
+        return view('admin.lands.heat', compact('land','details'));
    }
 }
