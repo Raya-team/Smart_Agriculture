@@ -29,6 +29,8 @@ L.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png').addTo(map);
 function WhatHere(e) {
     alert(e.latlng);
 }
+var loc = document.getElementById('location').value;
+var heat = document.getElementById('location').value;
 
 var dataPoints = [
     [44.715026, -63.579426, 0.5],
@@ -46,5 +48,5 @@ heatmap.setData( dataPoints );
 map.addLayer(heatmap);
 
 for (var i = 0; i < dataPoints.length; i++) {
-    marker = new L.marker([dataPoints[i][0],dataPoints[i][1]]).addTo(map);
+    L.marker([dataPoints[i][0],dataPoints[i][1]]).addTo(map);
 }

@@ -14427,7 +14427,7 @@ leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.tileLayer('https://tiles.wmflabs.
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\laravel\Work\first\resources\js\dashboard\map.js */"./resources/js/dashboard/map.js");
+module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\dashboard\map.js */"./resources/js/dashboard/map.js");
 
 
 /***/ })

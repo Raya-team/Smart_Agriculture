@@ -18,4 +18,9 @@ class Sensor extends Model
     {
         return $this->belongsTo(Land::class);
     }
+
+    public function details()
+    {
+        return $this->hasMany(Detail::class);
+    }
 }

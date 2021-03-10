@@ -12,13 +12,13 @@
                         <h3 class="box-title">نمایش زمین</h3>
                     </div>
                     <!-- /.box-header -->
-                        <div class="box-body">
-                            <div class="form-group">
-                                <label for="mapid">نقشه</label>
-                                <div id="mapid"></div>
-                            </div>
-                            <input type="hidden" id="eventoutput" name="points" value="{{ $land->points }}">
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label for="mapid">نقشه</label>
+                            <div id="mapid"></div>
                         </div>
+                        <input type="hidden" id="eventoutput" name="points" value="{{ $land->points }}">
+                    </div>
                 </div>
                 <!-- /.box -->
             </div>
