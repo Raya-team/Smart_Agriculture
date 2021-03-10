@@ -14414,21 +14414,9 @@ __webpack_require__.r(__webpack_exports__);
 
 var map = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.map('world-map', {
   fullscreenControl: true
-}).setView([33.093382, 52.811137], 5);
+}).setView([33.093382, 52.811137], 4);
 map.attributionControl.setPrefix('<a href="#">ناهید آسمان ایرانیان</a>');
 leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png').addTo(map);
-/*var shipLayer = L.layerGroup();
-map.addLayer(shipLayer);*/
-
-/*$("#land_id").change(function () {
-    shipLayer.clearLayers();
-    var points = $(this).find(':selected').data('points');
-
-    var lat = points[0].lat, lng = points[0].lng;
-    map.flyTo(new L.LatLng(lat, lng), 12);
-
-    shipLayer.addLayer(L.polygon([points]));
-});*/
 
 /***/ }),
 
