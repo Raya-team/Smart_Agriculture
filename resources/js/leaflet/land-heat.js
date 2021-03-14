@@ -29,8 +29,8 @@ L.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png').addTo(map);
 function WhatHere(e) {
     alert(e.latlng);
 }
-var loc = document.getElementById('location').value;
-var heat = document.getElementById('location').value;
+/*var loc = document.getElementById('location').value;
+var heat = document.getElementById('location').value;*/
 
 var dataPoints = [
     [44.715026, -63.579426, 0.5],

@@ -16299,9 +16299,10 @@ leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.tileLayer('https://tiles.wmflabs.
 function WhatHere(e) {
   alert(e.latlng);
 }
+/*var loc = document.getElementById('location').value;
+var heat = document.getElementById('location').value;*/
 
-var loc = document.getElementById('location').value;
-var heat = document.getElementById('location').value;
+
 var dataPoints = [[44.715026, -63.579426, 0.5], [44.678663, -63.612385, 0.67], [44.624686, -63.587666, 0.9999], [44.651559, -63.489819, 0.9], [44.697701, -63.494625, 0.7], [44.673292, -63.551617, 0.9]];
 var heatmap = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.webGLHeatmap({
   size: 10000,

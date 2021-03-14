@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\FilterController;
 use App\Http\Controllers\Admin\LandController;
 use App\Http\Controllers\Admin\LandHeatController;
 use App\Http\Controllers\Admin\ProfileController;
@@ -46,6 +47,7 @@ Route::group(['middleware' =>['auth', 'auth.admin']] , function (){
     Route::resource('/lands' , LandController::class);
     Route::get('/lands/heat/{land}' ,[LandHeatController::class,'index'])->name('lands.heat');
     Route::resource('/sensors',SensorController::class);
+    Route::resource('filters',FilterController::class);
     Route::resource('/roles',RoleController::class);
     Route::resource('/users-role',RoleUserController::class, ['parameters' => ['users-role' => 'user']]);
 

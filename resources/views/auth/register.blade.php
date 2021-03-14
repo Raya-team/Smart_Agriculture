@@ -32,7 +32,7 @@
 <body class="hold-transition register-page">
 <div class="register-box">
     <div class="register-logo">
-        <a href="../../admin/index2.html"><b>ثبت نام در سایت</b></a>
+        <a href="../../admin/index2.html"><b>ثبت نام در سامانه</b></a>
     </div>
 
     <div class="register-box-body">

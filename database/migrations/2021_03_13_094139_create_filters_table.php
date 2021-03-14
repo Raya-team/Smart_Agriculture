@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDetailsTable extends Migration
+class CreateFiltersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('details', function (Blueprint $table) {
+        Schema::create('filters', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('sensor_id')->unsigned();
-            $table->foreign('sensor_id')->references('id')->on('sensors')->onDelete('cascade');
-            $table->string('location');
-            $table->string('heat');
+            $table->string('name');
+            $table->string('nickname');
+            $table->integer('min');
+            $table->integer('max');
+            $table->string('colors');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreateDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('details');
+        Schema::dropIfExists('filters');
     }
 }

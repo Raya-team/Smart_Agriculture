@@ -13,4 +13,8 @@ class Detail extends Model
     {
         return $this->belongsTo(Land::class);
     }
+    public function filter()
+    {
+        return $this->belongsTo(Filter::class);
+    }
 }
