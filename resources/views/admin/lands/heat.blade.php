@@ -18,8 +18,7 @@
                             <div id="mapid"></div>
                         </div>
                         <input type="hidden" id="eventoutput" name="points" value="{{ $land->points }}">
-                            <input type="hidden" id="location" name="location" value="{{ $details->location }}">
-                            <input type="hidden" id="heat" name="heat" value="{{ $details->heat }}">
+                            <input type="hidden" id="details" name="details" value="{{ $details }}">
                     </div>
                 </div>
                 <!-- /.box -->
