@@ -43,8 +43,8 @@
                                         <td>{{ $user->name }}</td>
                                         <td>
                                             <div class="btn-group btn-group-xs">
-                                                <a href="{{ route('users.edit', ['user' => $user->id]) }}" class="btn btn-primary"><i class="fa fa-fw fa-edit"></i></a>
-                                                <button class="btn btn-danger" data-userid="{{$user->id}}" data-toggle="modal" data-target="#delete"><i class="fa fa-fw fa-trash-o"></i></button>
+                                                <a href="{{ route('users.edit', ['user' => $user->id]) }}" class="btn btn-primary" data-tooltip="tooltip" data-placement="right" title="ویرایش"><i class="fa fa-fw fa-edit"></i></a>
+                                                <button class="btn btn-danger" data-userid="{{$user->id}}" data-toggle="modal" data-target="#delete" data-tooltip="tooltip" data-placement="left" title="حذف"><i class="fa fa-fw fa-trash-o"></i></button>
                                             </div>
                                             <!-- Modal -->
                                             <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -143,8 +143,6 @@
 @endsection
 
 @section('css')
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <style>
         .swal-text{
@@ -152,4 +150,9 @@
         }
     </style>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+        $(function () {
+            $('[data-tooltip="tooltip"]').tooltip()
+        })
+    </script>
 @endsection()

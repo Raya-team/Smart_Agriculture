@@ -44,17 +44,17 @@
                                     <td>
                                         <div class="btn-group btn-group-xs">
                                             <span class="spanFormat">
-                                                <a href="{{ route('users.edit', ['user' => $user->id]) }}" class="btn btn-primary"><i class="fa fa-fw fa-edit"></i></a>
+                                                <a href="{{ route('users.edit', ['user' => $user->id]) }}" class="btn btn-primary" data-tooltip="tooltip" data-placement="right" title="ویرایش"><i class="fa fa-fw fa-edit"></i></a>
                                             </span>
                                             <span class="spanFormat">
                                                 <form action="{{ route('users.verified' , ['user'=> $user->id]) }}" method="post">
                                                     {{ csrf_field() }}
                                                     {{ method_field('put') }}
-                                                    <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-check"></i></button>
+                                                    <button type="submit" class="btn btn-success" data-tooltip="tooltip" data-placement="bottom" title="تایید"><i class="fa fa-fw fa-check"></i></button>
                                                 </form>
                                             </span>
                                             <span class="spanFormat">
-                                                    <button class="btn btn-danger" data-userid="{{ $user->id }}" data-toggle="modal" data-target="#delete"><i class="fa fa-fw fa-trash-o"></i></button>
+                                                    <button class="btn btn-danger" data-userid="{{ $user->id }}" data-toggle="modal" data-target="#delete" data-tooltip="tooltip" data-placement="left" title="حذف"><i class="fa fa-fw fa-trash-o"></i></button>
                                             </span>
                                         </div>
                                         <!-- Modal -->
@@ -163,4 +163,9 @@
         }
     </style>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+        $(function () {
+            $('[data-tooltip="tooltip"]').tooltip()
+        })
+    </script>
 @endsection()

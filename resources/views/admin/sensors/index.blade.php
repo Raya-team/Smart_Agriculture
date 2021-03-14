@@ -48,8 +48,8 @@
                                             {{ csrf_field() }}
 
                                             <div class="btn-group btn-group-xs">
-                                                <a href="{{ route('sensors.edit', ['sensor' => $sensor->id]) }}" class="btn btn-primary"><i class="fa fa-fw fa-edit"></i></a>
-                                                <button type="submit" class="btn btn-danger"><i class="fa fa-fw fa-trash-o"></i></button>
+                                                <a href="{{ route('sensors.edit', ['sensor' => $sensor->id]) }}" class="btn btn-primary" data-tooltip="tooltip" data-placement="right" title="ویرایش"><i class="fa fa-fw fa-edit"></i></a>
+                                                <button type="submit" class="btn btn-danger" data-tooltip="tooltip" data-placement="left" title="حذف"><i class="fa fa-fw fa-trash-o"></i></button>
                                             </div>
 
                                         </form>
@@ -111,7 +111,11 @@
 
 
     </script>
-
+    <script>
+        $(function () {
+            $('[data-tooltip="tooltip"]').tooltip()
+        })
+    </script>
 @endsection
 
 @section('css')
