@@ -45,11 +45,11 @@
                                     <div class="form-group">
                                         <label for="color">رنگ ها :</label>
                                         <select id="color-select" >
-                                            <option value="blue" style="background-color: blue" data-color="آبی">آبی</option>
-                                            <option value="purple" style="background-color: purple" data-color="بنفش">بنفش</option>
-                                            <option value="green" style="background-color: green" data-color="سبز">سبز</option>
-                                            <option value="red" style="background-color: red" data-color="قرمز">قرمز</option>
-                                            <option value="orange" style="background-color: orange" data-color="نارنجی">نارنجی</option>
+                                            <option value="blue" style="background-color: #3b5dff; color: #fff;" data-color="blue">آبی</option>
+                                            <option value="purple" style="background-color: #80045a;color: #fff" data-color="purple">بنفش</option>
+                                            <option value="green" style="background-color: #069207;color: #fff" data-color="green">سبز</option>
+                                            <option value="red" style="background-color: #ff091f;color: #fff" data-color="red">قرمز</option>
+                                            <option value="orange" style="background-color: #ff8a09;color: #fff" data-color="orange">نارنجی</option>
                                         </select>
                                         <input type="button" id="btnAdd" value="اضافه کردن">
                                         <input type="hidden" value="" name="colors" id="colors">
