@@ -1,4 +1,5 @@
 @extends('admin.master')
+@section('title', 'داشبورد')
 @section('main-content')
     <!-- Content Header (Page header) -->
     <section class="content-header">

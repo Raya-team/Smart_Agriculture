@@ -1,5 +1,5 @@
 @extends('admin.master')
-
+@section('title', 'ویرایش سنسور')
 @section('main-content')
 
 

@@ -1,5 +1,5 @@
 @extends('admin.master')
-
+@section('title', 'کاربران تایید نشده')
 @section('main-content')
     <!-- Content Header (Page header) -->
     <section class="content-header">

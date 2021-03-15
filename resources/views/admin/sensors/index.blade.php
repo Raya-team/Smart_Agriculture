@@ -1,5 +1,5 @@
 @extends('admin.master')
-
+@section('title', 'لیست سنسور ها')
 @section('main-content')
     <!-- Content Header (Page header) -->
     <section class="content-header">

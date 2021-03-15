@@ -1,4 +1,5 @@
 @extends('admin.master')
+@section('title', 'ایجاد سنسور')
 @section('main-content')
     <section class="content">
         <div class="container">

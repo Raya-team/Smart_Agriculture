@@ -1,5 +1,5 @@
 @extends('admin.master')
-
+@section('title', 'ویرایش نقش')
 @section('main-content')
     <section class="content">
         <div class="container">

@@ -1,5 +1,5 @@
 @extends('admin.master')
-
+@section('title', 'لیست مقام ها')
 @section('main-content')
     <!-- Content Header (Page header) -->
     <section class="content-header">

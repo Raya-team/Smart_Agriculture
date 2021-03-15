@@ -1,4 +1,5 @@
 @extends('admin.master')
+@section('title', 'نمایش زمین')
 @section('main-content')
     <section class="content">
         <div class="container">

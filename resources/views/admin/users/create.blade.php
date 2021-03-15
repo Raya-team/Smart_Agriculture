@@ -1,5 +1,5 @@
 @extends('admin.master')
-
+@section('title', 'ایجاد کاربر')
 @section('main-content')
 
 
