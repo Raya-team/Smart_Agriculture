@@ -1,5 +1,5 @@
 @extends('user.master')
-
+@section('title', 'نمودار')
 @section('main-content')
     <section class="content-header">
         <h1>

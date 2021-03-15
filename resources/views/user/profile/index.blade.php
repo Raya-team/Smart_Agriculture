@@ -1,5 +1,5 @@
 @extends('user.master')
-
+@section('title', 'پروفایل')
 @section('main-content')
 
     <!-- Content Header (Page header) -->
