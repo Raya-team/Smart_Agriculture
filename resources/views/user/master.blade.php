@@ -321,9 +321,9 @@
             <div class="user-panel">
                 <div class="pull-right image">
                     @if(!file_exists(public_path() . Auth::user()->image))
-                        <img src="/upload/images/default-profile.png" class="img-circle" alt="User Image" style="height: 45px; width: 45px">
+                        <img src="/upload/images/default-profile.png" class="img-circle" alt="User Image">
                     @else
-                        <img src="{{ Auth::user()->image }}" class="img-circle" alt="User Image" style="height: 45px; width: 45px">
+                        <img src="{{ Auth::user()->image }}" class="img-circle" alt="User Image">
                     @endif
                 </div>
                 <div class="pull-right info">
