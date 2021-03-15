@@ -23,28 +23,57 @@
                                 <input type="text" class="form-control" name="name" id="name" placeholder="نام فیلتر" value="{{ old('name') }}">
                             </div>
                             <div class="form-group">
-                                <label for="username">معادل فارسی</label>
+                                <label for="nickname">معادل فارسی</label>
                                 <input type="text" class="form-control" name="nickname" id="nickname" placeholder="معادل فارسی" value="{{ old('nickname') }}">
                             </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="min">حداقل بازه</label>
+                                        <input type="text" class="form-control" name="min" id="min" placeholder="حداقل بازه" value="{{ old('min') }}">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="max">حداکثر بازه</label>
+                                        <input type="text" class="form-control" name="max" id="max" placeholder="حداکثر بازه" value="{{ old('max') }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="color">رنگ ها :</label>
+                                        <select id="color-select" >
+                                            <option value="blue" style="background-color: blue" data-color="آبی">آبی</option>
+                                            <option value="purple" style="background-color: purple" data-color="بنفش">بنفش</option>
+                                            <option value="green" style="background-color: green" data-color="سبز">سبز</option>
+                                            <option value="red" style="background-color: red" data-color="قرمز">قرمز</option>
+                                            <option value="orange" style="background-color: orange" data-color="نارنجی">نارنجی</option>
+                                        </select>
+                                        <input type="button" id="btnAdd" value="اضافه کردن">
+                                        <input type="hidden" value="" name="colors" id="colors">
+                                    </div>
+                                </div>
+                            </div>
 
+                            <div class="row">
+                                <table id="persons" align="center">
+                                    <tr>
+                                        <td> رنگ ها</td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
-                        <!-- /.box-body -->
                         <div class="box-footer">
                             <button type="submit" class="btn btn-success">ثبت</button>
                         </div>
                     </form>
                 </div>
-                <!-- /.box -->
             </div>
         </div>
     </section>
-
-
 @endsection
-
 @section('script')
-    <script src="{{ asset('js/chosen.js') }}"></script>
-@endsection()
-@section('css')
-    <link rel="stylesheet" href="{{ asset('css/chosen.css') }}">
+    <script src="../../../js/filter/create.js"></script>
 @endsection()
