@@ -51,16 +51,16 @@
                                             <option value="red" style="background-color: #ff091f;color: #fff" data-color="red">قرمز</option>
                                             <option value="orange" style="background-color: #ff8a09;color: #fff" data-color="orange">نارنجی</option>
                                         </select>
-                                        <input type="button" id="btnAdd" value="اضافه کردن">
+                                        <input type="button" id="btnAdd" class="btn"  value="اضافه کردن">
+                                        <input type="button" id="btnremove" class="btn del"  value="انتخاب مجدد">
                                         <input type="hidden" value="" name="colors" id="colors">
                                     </div>
                                 </div>
                             </div>
-
                             <div class="row">
                                 <table id="persons" align="center">
                                     <tr>
-                                        <td> رنگ ها</td>
+                                        <td><b>رنگ های انتخابی</b></td>
                                     </tr>
                                 </table>
                             </div>
@@ -77,3 +77,21 @@
 @section('script')
     <script src="../../../js/filter/create.js"></script>
 @endsection()
+@section('css')
+    <style>
+        #btnAdd{
+            color: white;
+            background-color: #0b97c4;
+        }
+        #btnAdd:hover{
+            background-color: #30a6c4;
+        }
+        #btnremove{
+            color: white;
+            background-color:#b4031a ;
+        }
+        #btnremove:hover{
+            background-color: #b4102b;
+        }
+    </style>
+@endsection
