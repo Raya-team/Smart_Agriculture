@@ -1,7 +1,0 @@
-Index: public/js/leaflet/land-heat.js
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- public/js/leaflet/land-heat.js	(revision 4a5dd27384c0188c808cf4042cb0e9e074501e7a)
-+++ public/js/leaflet/land-heat.js	(date 1615281712078)

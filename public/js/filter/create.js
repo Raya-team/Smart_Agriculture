@@ -98,7 +98,7 @@ $(document).ready(function () {
   $('#btnAdd').click(function () {
     var x = $('#color-select').val();
     var y = $('#color-select').find(':selected').data('color');
-    var fnCell = $('<td class="del1"><div  style="background-color:' + x + ';width: 18px;height: 18px">' + y + '</div></td>'); // var opCell = $('<td><i class="fa fa-fw fa-trash del"></i></td>');
+    var fnCell = $('<td class="del1"><div  style="background-color:' + x + ';width: 18px;height: 18px; border-radius: 100%">' + y + '</div></td>'); // var opCell = $('<td><i class="fa fa-fw fa-trash del"></i></td>');
 
     colors.push($('#color-select').find(':selected').data('color'));
     var row = $('<tr></tr>');
@@ -124,7 +124,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\filter\create.js */"./resources/js/filter/create.js");
+module.exports = __webpack_require__(/*! F:\laravel\Work\first\resources\js\filter\create.js */"./resources/js/filter/create.js");
 
 
 /***/ })

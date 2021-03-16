@@ -84,14 +84,14 @@
             background-color: #0b97c4;
         }
         #btnAdd:hover{
-            background-color: #30a6c4;
+            background-color: rgba(11, 151, 196, 0.8);
         }
         #btnremove{
             color: white;
             background-color:#b4031a ;
         }
         #btnremove:hover{
-            background-color: #b4102b;
+            background-color: rgba(180, 3, 26, 0.8);
         }
     </style>
 @endsection
