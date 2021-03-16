@@ -397,7 +397,7 @@
               <i class="fa fa-angle-right pull-left"></i>
             </span>
                     </a>
-                    <ul class="treeview-menu" style="{{ in_array(Route::currentRouteName(), ['lands.create', 'lands.index']) ? 'display: block;' : '' }}">
+                    <ul class="treeview-menu" style="{{ in_array(Route::currentRouteName(), ['filters.create', 'filters.index']) ? 'display: block;' : '' }}">
                         @if(Gate::allows('asdsad') || Auth::user()->level == 2)
                             <li class="{{ Route::currentRouteName() == 'filters.create' ? 'active' : '' }}"><a href="{{ route('filters.create') }}"><i class="fa fa-plus"></i>ایجاد فیلتر</a></li>
                         @endif
