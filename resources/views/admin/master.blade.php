@@ -381,9 +381,7 @@
             </span>
                     </a>
                     <ul class="treeview-menu" style="{{ in_array(Route::currentRouteName(), ['lands.create', 'lands.index']) ? 'display: block;' : '' }}">
-                        @if(Gate::allows('asdsad') || Auth::user()->level == 2)
-                            <li class="{{ Route::currentRouteName() == 'lands.create' ? 'active' : '' }}"><a href="{{ route('lands.create') }}"><i class="fa fa-plus"></i>ایجاد زمین</a></li>
-                        @endif
+                        <li class="{{ Route::currentRouteName() == 'lands.create' ? 'active' : '' }}"><a href="{{ route('lands.create') }}"><i class="fa fa-plus"></i>ایجاد زمین</a></li>
                         <li class="{{ Route::currentRouteName() == 'lands.index' ? 'active' : '' }}"><a href="{{ route('lands.index') }}"><i class="fa fa-users"></i>لیست زمین</a></li>
                     </ul>
                 </li>
