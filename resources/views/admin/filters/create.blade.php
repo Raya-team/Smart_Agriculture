@@ -52,7 +52,10 @@
                                             <option value="orange" style="background-color: #ff8a09;color: #fff" data-color="orange">نارنجی</option>
                                         </select>
                                         <input type="button" id="btnAdd" class="btn"  value="اضافه کردن">
-                                        <input type="button" id="btnremove" class="btn del"  value="انتخاب مجدد">
+                                        {{--<input type="button" id="btnremove" class="btn del"  value="انتخاب مجدد">--}}
+                                        <a class="btn del" id="btnremove" data-tooltip="tooltip" data-placement="bottom" title="انتخاب مجدد">
+                                            <i class="fa fa-fw fa-refresh"></i>
+                                        </a>
                                         <input type="hidden" value="" name="colors" id="colors">
                                     </div>
                                 </div>
@@ -76,6 +79,11 @@
 @endsection
 @section('script')
     <script src="../../../js/filter/create.js"></script>
+    <script>
+        $(function () {
+            $('[data-tooltip="tooltip"]').tooltip()
+        })
+    </script>
 @endsection()
 @section('css')
     <style>

@@ -3,8 +3,7 @@ $(document).ready(function(){
     $('#btnAdd').click(function(){
         var x = $('#color-select').val();
         var y = $('#color-select').find(':selected').data('color');
-        var fnCell = $('<td class="del1"><div  style="background-color:' +x+ ';width: 18px;height: 18px; border-radius: 100%; margin-top: 2px"></div></td>');
-        // var opCell = $('<td><i class="fa fa-fw fa-trash del"></i></td>');
+        var fnCell = $('<td class="del1"><div  style="background-color:' +x+ ';width: 20px;height: 20px; border-radius: 100%; margin-top: 2px; margin-right: auto; margin-left: auto;"></div></td>');
         colors.push($('#color-select').find(':selected').data('color'));
 
         var row = $('<tr></tr>');
