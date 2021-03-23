@@ -51,8 +51,9 @@
                                             <option value="red" style="background-color: #ff091f;color: #fff" data-color="red">قرمز</option>
                                             <option value="orange" style="background-color: #ff8a09;color: #fff" data-color="orange">نارنجی</option>
                                         </select>
-                                        <input type="button" id="btnAdd" class="btn"  value="اضافه کردن">
-                                        {{--<input type="button" id="btnremove" class="btn del"  value="انتخاب مجدد">--}}
+                                        <a class="btn" id="btnAdd" data-tooltip="tooltip" data-placement="bottom" title="اضافه کردن">
+                                            <i class="fa fa-fw fa-plus-circle"></i>
+                                        </a>
                                         <a class="btn del" id="btnremove" data-tooltip="tooltip" data-placement="bottom" title="انتخاب مجدد">
                                             <i class="fa fa-fw fa-refresh"></i>
                                         </a>
