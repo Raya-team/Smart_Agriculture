@@ -32,12 +32,20 @@ class FilterController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
+     * @param Filter $filter
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Filter $filter)
     {
-        return $request->all();
+        $filter->name = $request->input('name');
+        $filter->nickname = $request->input('nickname');
+        $filter->min = $request->input('min');
+        $filter->max = $request->input('max');
+        $filter->colors = $request->input('colors');
+        $filter->save();
+        alert()->success('فیلتر با موفقیت ایجاد شد');
+        return redirect(route('filters.index'));
     }
 
     /**
@@ -77,11 +85,14 @@ class FilterController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param Filter $filter
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
-    public function destroy($id)
+    public function destroy(Filter $filter)
     {
-        //
+        $filter->delete();
+        alert()->success('فیلتر با موفقیت حذف شد');
+        return back();
     }
 }

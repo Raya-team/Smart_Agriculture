@@ -40,7 +40,7 @@
                             @foreach($filters as $filter)
                                 <tr>
                                     <td>{{ $filter->name }}</td>
-                                    <td>{{ $filter->user->name }}</td>
+                                    <td>{{ $filter->nickname }}</td>
                                     <td>
                                         <form action="{{ route('filters.destroy' , ['filter'=> $filter->id]) }}" method="post">
                                             {{ method_field('delete') }}
@@ -71,6 +71,7 @@
         <!-- /.row -->
     </section>
     <!-- /.content -->
+    @include('sweet::alert')
 @endsection
 
 @section('script')
@@ -116,4 +117,7 @@
             $('[data-tooltip="tooltip"]').tooltip()
         })
     </script>
+@endsection
+@section('css')
+    <script src="{{ asset('js/app.js') }}"></script>
 @endsection

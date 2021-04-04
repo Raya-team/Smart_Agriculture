@@ -1,4 +1,5 @@
 @extends('admin.master')
+@section('title', 'ایجاد فیلتر')
 @section('main-content')
 
     <section class="content">
@@ -43,8 +44,8 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label for="color">رنگ ها :</label>
-                                        <select id="color-select" >
+                                        <label for="color-select">رنگ ها :</label>
+                                        <select id="color-select">
                                             <option value="blue" style="background-color: #3b5dff; color: #fff;" data-color="blue">آبی</option>
                                             <option value="purple" style="background-color: #80045a;color: #fff" data-color="purple">بنفش</option>
                                             <option value="green" style="background-color: #069207;color: #fff" data-color="green">سبز</option>
