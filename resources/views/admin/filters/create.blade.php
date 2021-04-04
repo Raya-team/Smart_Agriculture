@@ -24,20 +24,20 @@
                                 <input type="text" class="form-control" name="name" id="name" placeholder="نام فیلتر" value="{{ old('name') }}">
                             </div>
                             <div class="form-group">
-                                <label for="nickname">معادل فارسی</label>
-                                <input type="text" class="form-control" name="nickname" id="nickname" placeholder="معادل فارسی" value="{{ old('nickname') }}">
+                                <label for="nickname">نام مستعار</label>
+                                <input type="text" class="form-control" name="nickname" id="nickname" placeholder="نام مستعار" value="{{ old('nickname') }}">
                             </div>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label for="min">حداقل بازه</label>
-                                        <input type="text" class="form-control" name="min" id="min" placeholder="حداقل بازه" value="{{ old('min') }}">
+                                        <input type="text" class="form-control" name="min" id="min" placeholder="حداقل بازه" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" value="{{ old('min') }}">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label for="max">حداکثر بازه</label>
-                                        <input type="text" class="form-control" name="max" id="max" placeholder="حداکثر بازه" value="{{ old('max') }}">
+                                        <input type="text" class="form-control" name="max" id="max" placeholder="حداکثر بازه" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" value="{{ old('max') }}">
                                     </div>
                                 </div>
                             </div>
