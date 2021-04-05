@@ -4,11 +4,12 @@
     <bookmark url="file://$PROJECT_DIR$/resources/views" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d703aa5-6bf4-4443-9648-150136637f3e" name="Default Changelist" comment="Ehsan">
+    <list default="true" id="7d703aa5-6bf4-4443-9648-150136637f3e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/admin/Logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/filter/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/filter/create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/filter/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/filter/create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/filters/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/filters/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/160_7467330931.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <ignored path="F:\laravel\Work\first\.idea\shelf/" />
     <ignored path="G:\work\Smart_Agriculture\.idea\shelf/" />
@@ -50,17 +51,17 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="9" />
-          <entry key="js" value="497" />
-          <entry key="php" value="796" />
+          <entry key="js" value="500" />
+          <entry key="php" value="873" />
           <entry key="txt" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="347" />
+          <entry key="Blade" value="406" />
           <entry key="CSS" value="9" />
-          <entry key="JavaScript" value="497" />
-          <entry key="PHP" value="449" />
+          <entry key="JavaScript" value="500" />
+          <entry key="PHP" value="467" />
           <entry key="PLAIN_TEXT" value="5" />
         </counts>
       </usages-collector>
@@ -78,19 +79,21 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="3" />
+          <entry key="jpg" value="1" />
           <entry key="js" value="6" />
           <entry key="json" value="1" />
-          <entry key="php" value="35" />
+          <entry key="php" value="40" />
           <entry key="ts" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Blade" value="16" />
+          <entry key="Blade" value="17" />
           <entry key="CSS" value="3" />
+          <entry key="Image" value="1" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="6" />
-          <entry key="PHP" value="19" />
+          <entry key="PHP" value="23" />
           <entry key="TypeScript" value="2" />
         </counts>
       </usages-collector>
@@ -105,58 +108,7 @@
     <favorites_list name="first" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/js/filter/create.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="11" selection-start-column="11" selection-end-line="5" selection-end-column="3" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#td#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/dashboard/map.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/filters/create.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webpack.mix.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="19" column="53" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/css/jquery-confirm.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="52" selection-start-column="52" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -169,7 +121,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>کنترل پ</find>
       <find>پروفایل</find>
       <find>user_id</find>
       <find>test</find>
@@ -199,6 +150,7 @@
       <find>footer</find>
       <find>height: 45px; width: 45px</find>
       <find>alert</find>
+      <find>logo</find>
     </findStrings>
     <replaceStrings>
       <replace>داشبورد</replace>
@@ -220,7 +172,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/admin/dashboard/a.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/dashboard/master.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" />
@@ -265,12 +216,13 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/FilterController.php" />
         <option value="$PROJECT_DIR$/resources/lang/fa/validation.php" />
         <option value="$PROJECT_DIR$/app/Rules/Security.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/FilterRequest.php" />
         <option value="$PROJECT_DIR$/resources/css/Jquery-confirm.css" />
         <option value="$PROJECT_DIR$/resources/css/jquery-confirm.css" />
         <option value="$PROJECT_DIR$/webpack.mix.js" />
         <option value="$PROJECT_DIR$/resources/views/admin/filters/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/js/filter/create.js" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/FilterRequest.php" />
+        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
       </list>
     </option>
   </component>
@@ -464,51 +416,13 @@
             <path>
               <item name="first" type="b2602c69:ProjectViewProjectNode" />
               <item name="first" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="first" type="b2602c69:ProjectViewProjectNode" />
               <item name="first" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="jquery-confirm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="first" type="b2602c69:ProjectViewProjectNode" />
-              <item name="first" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="jquery-confirm" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="first" type="b2602c69:ProjectViewProjectNode" />
-              <item name="first" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="first" type="b2602c69:ProjectViewProjectNode" />
-              <item name="first" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="first" type="b2602c69:ProjectViewProjectNode" />
-              <item name="first" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="first" type="b2602c69:ProjectViewProjectNode" />
-              <item name="first" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="first" type="b2602c69:ProjectViewProjectNode" />
-              <item name="first" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="filter" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="upload" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -531,16 +445,16 @@
     <property name="ts.external.directory.path" value="E:\App\PhpStorm 2018.2.4\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\laravel\Work\first\resources\js\land" />
+      <recent name="F:\laravel\Work\first\routes\web" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\laravel\Work\first\public\admin" />
       <recent name="F:\laravel\Work\first\resources\views\admin\filters" />
       <recent name="F:\laravel\Work\first\resources\views\admin\dashboard" />
       <recent name="F:\laravel\Work\first\public\upload\images" />
       <recent name="G:\work\Smart_Agriculture" />
-      <recent name="F:\laravel\Work\first\public\admin" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\laravel\Work\first\resources\js\land" />
-      <recent name="F:\laravel\Work\first\routes\web" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -709,14 +623,7 @@
       <workItem from="1616138462624" duration="483000" />
       <workItem from="1616470532225" duration="907000" />
       <workItem from="1617512400679" duration="8885000" />
-      <workItem from="1617599763323" duration="6853000" />
-    </task>
-    <task id="LOCAL-00006" summary="update again">
-      <created>1614430713400</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1614430713400</updated>
+      <workItem from="1617599763323" duration="12870000" />
     </task>
     <task id="LOCAL-00007" summary="update again">
       <created>1614430964624</created>
@@ -1054,11 +961,18 @@
       <option name="project" value="LOCAL" />
       <updated>1617523373972</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Ehsan">
+      <created>1617614301558</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1617614301558</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="697045000" />
+    <option name="totallyTimeSpent" value="703062000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1071,7 +985,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="877" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5260116" visible="true" weight="0.23541248" />
       <window_info id="Structure" order="1" sideWeight="0.40462428" side_tool="true" weight="0.20858485" />
@@ -1141,24 +1054,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Ehsan" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/migrations/2021_03_13_094139_create_filters_table.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-show.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="8" column="26" lean-forward="true" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/index.html" />
     <entry file="file://$PROJECT_DIR$/resources/views/user/master.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
@@ -1287,11 +1182,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/LandRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-54" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/SensorController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -1365,16 +1255,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/FilterRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-          <folding>
-            <element signature="e#37#60#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
@@ -1423,13 +1303,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.mix.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="19" column="53" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/jquery-confirm/dist/jquery-confirm.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -1447,6 +1320,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/filters/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="43" column="45" lean-forward="true" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.mix.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="19" column="53" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/dashboard/map.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1456,22 +1343,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/filters/create.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/RoleRequest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
+        <state relative-caret-position="-390" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/LandRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-288" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/FilterRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+          <folding>
+            <element signature="e#37#60#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/EditSensorRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="28" column="102" lean-forward="true" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="102" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/filter/create.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="11" selection-start-column="11" selection-end-line="5" selection-end-column="3" />
+        <state relative-caret-position="576">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
           <folding>
+            <element signature="n#!!doc" expanded="true" />
             <element signature="n#style#0;n#div#0;n#td#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="834">
+          <caret line="92" column="11" selection-start-line="92" selection-start-column="11" selection-end-line="92" selection-end-column="11" />
+          <folding>
+            <element signature="n#style#0;n#a#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/upload/images/160_7467330931.jpg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
   </component>
 </project>

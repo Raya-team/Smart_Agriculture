@@ -84,7 +84,7 @@
 
 <div class="bgimg">
     <div class="topleft" >
-        <p>Logo</p>
+        <img src="/admin/logo.png" width="100">
     </div>
     <div class="middle">
         <h1>خوش آمدید</h1>
@@ -93,8 +93,8 @@
         @if(Auth::check())
             <a href="{{ asset('admin/dashboard') }}" class="cross-fade">داشبورد</a>
         @else
-            <a href="{{ asset('login') }}" class="cross-fade">ورود</a><br>
-            <a href="{{ asset('register') }}" class="cross-fade">ثبت نام</a>
+            <a href="{{ asset('login') }}" class="cross-fade" style="border-radius: 10%">ورود</a><br>
+            <a href="{{ asset('register') }}" class="cross-fade" style="border-radius: 10%">ثبت نام</a>
         @endif
     </div>
 </div>
