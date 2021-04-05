@@ -93,21 +93,24 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+// import 'jquery-confirm/dist/jquery-confirm.min'
+//
+// $.alert({
+//     title: 'Alert!',
+//     content: 'Simple alert!',
+// });
 $(document).ready(function () {
   var colors = [];
   $('#btnAdd').click(function () {
-    var x = $('#color-select').val();
+    // var x = $('#color-select').val();
     var y = $('#color-select').find(':selected').data('color');
-    var fnCell = $('<td class="del1"><div  style="background-color:' + x + ';width: 20px;height: 20px; border-radius: 100%; margin-top: 2px; margin-right: auto; margin-left: auto;"></div></td>');
+    var fnCell = $('<td class="del1"><div  style="background-color:' + y + ';width: 20px;height: 20px; border-radius: 100%; margin-top: 2px; margin-right: auto; margin-left: auto;"></div></td>');
     var row = $('<tr></tr>');
 
     if (colors.find(function (item) {
       return item === y;
     })) {
-      $.alert({
-        title: 'Alert!',
-        content: 'Simple alert!'
-      });
+      alert('رنگ انتخابی شما تکراری است');
     } else {
       colors.push(y);
       row.append(fnCell);
@@ -132,7 +135,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\filter\create.js */"./resources/js/filter/create.js");
+module.exports = __webpack_require__(/*! F:\laravel\Work\first\resources\js\filter\create.js */"./resources/js/filter/create.js");
 
 
 /***/ })
