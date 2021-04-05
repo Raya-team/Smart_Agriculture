@@ -41,7 +41,8 @@
                                 <tr>
                                     <td>{{ $filter->name }}</td>
                                     <td>{{ $filter->nickname }}</td>
-                                    <td>از {{ $filter->min }} تا {{ $filter->max }}</td>
+                                    <td>{{ $filter->min }}</td>
+                                    <td>{{ $filter->max }}</td>
                                     <td>
                                         <form action="{{ route('filters.destroy' , ['filter'=> $filter->id]) }}" method="post">
                                             {{ method_field('delete') }}
