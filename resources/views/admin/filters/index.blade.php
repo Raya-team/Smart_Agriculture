@@ -31,7 +31,7 @@
                             <tr>
                                 <th>نام فیلتر</th>
                                 <th>نام مستعار</th>
-                                <th>طیف رنگ ها</th>
+                                <th>بازه</th>
                                 <th>عملیات</th>
                             </tr>
                             </thead>
@@ -40,7 +40,7 @@
                                 <tr>
                                     <td>{{ $filter->name }}</td>
                                     <td>{{ $filter->nickname }}</td>
-                                    <td><div class="gradient"></div></td>
+                                    <td>از {{ $filter->min }} تا {{ $filter->max }}</td>
                                     <td>
                                         <form action="{{ route('filters.destroy' , ['filter'=> $filter->id]) }}" method="post">
                                             {{ method_field('delete') }}
@@ -120,18 +120,4 @@
 @endsection
 @section('css')
     <script src="{{ asset('js/app.js') }}"></script>
-    <style>
-        .gradient{
-            background-image: linear-gradient(
-                    to right,
-                    rgba(255, 0, 0, 0),
-                    rgba(255, 0, 0, 1),
-                    blue
-            );
-            height: 20px;
-            width: 100px;
-            border-style: solid;
-            border-radius: 20px;
-        }
-    </style>
 @endsection
