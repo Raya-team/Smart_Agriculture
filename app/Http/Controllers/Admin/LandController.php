@@ -56,7 +56,7 @@ class LandController extends Controller
         $land->user_id = $request->input('user_id');
         $land->points = $request->input('points');
         $land->save();
-        alert()->success('زمین با موفقیت ثبت شد', 'Optional Title');
+        alert()->success('زمین با موفقیت ثبت شد');
         return redirect(route('lands.index'));
     }
 
@@ -96,7 +96,7 @@ class LandController extends Controller
         $land->user_id = $request->input('user_id');
         $land->points = $request->input('points');
         $land->save();
-        alert()->success('زمین با موفقیت ویرایش شد', 'Optional Title');
+        alert()->success('زمین با موفقیت ویرایش شد');
         return redirect(route('lands.index'));
     }
 

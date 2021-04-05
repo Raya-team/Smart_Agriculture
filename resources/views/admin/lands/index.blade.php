@@ -69,6 +69,7 @@
         <!-- /.row -->
     </section>
     <!-- /.content -->
+    @include('sweet::alert')
 @endsection
 
 @section('script')
@@ -114,4 +115,8 @@
             $('[data-tooltip="tooltip"]').tooltip()
         })
     </script>
+@endsection
+
+@section('css')
+    <script src="{{ asset('js/app.js') }}"></script>
 @endsection
