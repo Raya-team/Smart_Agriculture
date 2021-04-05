@@ -1,8 +1,10 @@
-import 'jquery-confirm/dist/jquery-confirm.min';
-$.alert({
-    title: 'Alert!',
-    content: 'Simple alert!',
-});
+// import 'jquery-confirm/dist/jquery-confirm.min'
+//
+// $.alert({
+//     title: 'Alert!',
+//     content: 'Simple alert!',
+// });
+
 $(document).ready(function(){
     var colors = [];
     $('#btnAdd').click(function(){
@@ -12,10 +14,7 @@ $(document).ready(function(){
         var row = $('<tr></tr>');
 
         if (colors.find(item => item === y)){
-            $.alert({
-                title: 'Alert!',
-                content: 'Simple alert!',
-            });
+            alert('رنگ انتخابی شما تکراری است')
         } else {
             colors.push(y);
             row.append(fnCell);
