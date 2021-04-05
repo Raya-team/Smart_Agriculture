@@ -154,6 +154,11 @@ return array(
         'user_id' => 'کاربر',
         'permissions' => 'مجوز ها',
         'phone_number' => 'شماره همراه',
-        'image' => 'تصویر'
+        'image' => 'تصویر',
+        'nickname' => 'نام مستعار',
+        'min' => 'حداقل بازه',
+        'max' => 'حداکثر بازه',
+        'colors' => 'رنگ ها',
+
     ),
 );

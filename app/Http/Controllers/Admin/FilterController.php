@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\FilterRequest;
 use App\Models\Filter;
 use Illuminate\Http\Request;
 
@@ -32,11 +33,11 @@ class FilterController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param FilterRequest $request
      * @param Filter $filter
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Filter $filter)
+    public function store(FilterRequest $request, Filter $filter)
     {
         $filter->name = $request->input('name');
         $filter->nickname = $request->input('nickname');

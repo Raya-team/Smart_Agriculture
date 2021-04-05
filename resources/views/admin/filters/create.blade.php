@@ -20,7 +20,7 @@
                         @include('admin.section.errors')
                         <div class="box-body">
                             <div class="form-group">
-                                <label for="name">نام فیلتر</label>
+                                <label for="name">نام</label>
                                 <input type="text" class="form-control" name="name" id="name" placeholder="نام فیلتر" value="{{ old('name') }}">
                             </div>
                             <div class="form-group">
@@ -31,13 +31,13 @@
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label for="min">حداقل بازه</label>
-                                        <input type="text" class="form-control" name="min" id="min" placeholder="حداقل بازه" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" value="{{ old('min') }}">
+                                        <input type="text" class="form-control" name="min" id="min" placeholder="حداقل بازه" oninput="this.value = this.value.replace(/[^-0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" value="{{ old('min') }}">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label for="max">حداکثر بازه</label>
-                                        <input type="text" class="form-control" name="max" id="max" placeholder="حداکثر بازه" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" value="{{ old('max') }}">
+                                        <input type="text" class="form-control" name="max" id="max" placeholder="حداکثر بازه" oninput="this.value = this.value.replace(/[^-0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" value="{{ old('max') }}">
                                     </div>
                                 </div>
                             </div>
@@ -80,7 +80,7 @@
     </section>
 @endsection
 @section('script')
-    <script src="../../../js/filter/create.js"></script>
+    <script src="{{ asset('js/filter/create.js') }}"></script>
     <script>
         $(function () {
             $('[data-tooltip="tooltip"]').tooltip()
@@ -104,4 +104,5 @@
             background-color: rgba(180, 3, 26, 0.8);
         }
     </style>
+    <link rel="stylesheet" href="{{ asset('css/jquery-confirm.css') }}">
 @endsection

@@ -25,4 +25,5 @@ mix
     .js('resources/js/filter/create.js', 'public/js/filter')
     .sass('resources/sass/app.scss', 'public/css')
     .postCss('resources/css/chosen.css', 'public/css')
-    .postCss('resources/css/map.css', 'public/css');
+    .postCss('resources/css/map.css', 'public/css')
+    .postCss('resources/css/jquery-confirm.css', 'public/css');

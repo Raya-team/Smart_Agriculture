@@ -25,9 +25,11 @@ class FilterRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required', new Security()],
+            'name' => ['required', new Security(), 'unique:filters'],
             'nickname' => ['required', new Security()],
-            'min' => ['required', ]
+            'min' => ['required', 'numeric', new Security()],
+            'max' => ['required', 'numeric', new Security()],
+            'colors' => ['required']
         ];
     }
 }
