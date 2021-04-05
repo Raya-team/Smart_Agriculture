@@ -1,8 +1,3 @@
-import 'jquery-confirm/dist/jquery-confirm.min';
-$.alert({
-    title: 'Alert!',
-    content: 'Simple alert!',
-});
 $(document).ready(function(){
     var colors = [];
     $('#btnAdd').click(function(){
@@ -28,7 +23,6 @@ $(document).ready(function(){
             document.getElementById('colors').value = null ;
             colors.splice([0]);
         });
-
 
         document.getElementById('colors').value = JSON.stringify(colors) ;
     });
