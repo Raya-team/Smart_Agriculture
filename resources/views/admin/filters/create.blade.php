@@ -15,7 +15,7 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form role="form" action="{{route('filters.store')}}" method="POST" enctype="multipart/form-data">
+                    <form role="form" action="{{route('filters.store')}}" method="POST">
                         @csrf
                         @include('admin.section.errors')
                         <div class="box-body">

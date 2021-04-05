@@ -7,6 +7,7 @@
     "/js/chosen.js": "/js/chosen.js",
     "/js/dashboard/map.js": "/js/dashboard/map.js",
     "/js/filter/create.js": "/js/filter/create.js",
+    "/js/filter/edit.js": "/js/filter/edit.js",
     "/js/highcharts.js": "/js/highcharts.js",
     "/js/leaflet/land-create.js": "/js/leaflet/land-create.js",
     "/js/leaflet/land-edit.js": "/js/leaflet/land-edit.js",

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\EditFilterRequst;
 use App\Http\Requests\FilterRequest;
 use App\Models\Filter;
 use Illuminate\Http\Request;
@@ -66,9 +67,9 @@ class FilterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Filter $filter)
     {
-        //
+        return view('admin.filters.edit',compact('filter'));
     }
 
     /**
@@ -78,10 +79,16 @@ class FilterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EditFilterRequst $request, Filter $filter)
     {
-        //
-    }
+        $filter->name = $request->input('name');
+        $filter->nickname = $request->input('nickname');
+        $filter->min = $request->input('min');
+        $filter->max = $request->input('max');
+        $filter->colors = $request->input('colors');
+        $filter->save();
+        alert()->success('فیلتر با موفقیت ویرایش شد');
+        return redirect(route('filters.index'));    }
 
     /**
      * Remove the specified resource from storage.
