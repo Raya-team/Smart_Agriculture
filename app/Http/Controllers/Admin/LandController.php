@@ -37,7 +37,7 @@ class LandController extends Controller
     public function create()
     {
         if (Gate::allows('create-land') || Auth::user()->level == 2){
-            $users=User::all();
+            $users = User::Where('level', 0)->get();
             return view('admin.lands.create',compact('users'));
         }
         abort(401);
@@ -79,7 +79,7 @@ class LandController extends Controller
      */
     public function edit(Land $land)
     {
-        $users = User::all();
+        $users = User::where('level', 0)->get();
         return view('admin.lands.edit', compact(['land','users']));
     }
 
