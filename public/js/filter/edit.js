@@ -94,17 +94,23 @@
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
+  var colors = [];
   var colorjson = document.getElementById('colors').value;
   var color = JSON.parse(colorjson);
 
   for (var i = 0; i < color.length; i++) {
+    colors.push(color[i]);
     var fnCell = $('<td class="del1"><div  style="background-color:' + color[i] + ';width: 20px;height: 20px; border-radius: 100%; margin-top: 2px; margin-right: auto; margin-left: auto;"></div></td>');
     var row = $('<tr></tr>');
     row.append(fnCell);
     $("#persons").append(row);
   }
 
-  var colors = [];
+  $('.del').click(function () {
+    $('.del1').closest('tr').remove();
+    document.getElementById('colors').value = null;
+    colors.splice([0]);
+  });
   $('#btnAdd').click(function () {
     var x = $('#color-select').val();
     var y = $('#color-select').find(':selected').data('color');
@@ -142,7 +148,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\laravel\Work\first\resources\js\filter\edit.js */"./resources/js/filter/edit.js");
+module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\filter\edit.js */"./resources/js/filter/edit.js");
 
 
 /***/ })

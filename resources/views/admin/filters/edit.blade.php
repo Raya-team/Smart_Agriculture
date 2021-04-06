@@ -72,7 +72,7 @@
                             </div>
                         </div>
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-success">ثبت</button>
+                            <button type="submit" class="btn btn-success">ویرایش</button>
                         </div>
                     </form>
                 </div>
