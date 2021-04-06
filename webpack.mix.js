@@ -27,4 +27,4 @@ mix
     .sass('resources/sass/app.scss', 'public/css')
     .postCss('resources/css/chosen.css', 'public/css')
     .postCss('resources/css/map.css', 'public/css')
-    .postCss('resources/css/jquery-confirm.css', 'public/css');
+;
