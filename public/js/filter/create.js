@@ -110,10 +110,10 @@ $(document).ready(function () {
     if (colors.find(function (item) {
       return item === y;
     })) {
-      $("#color-error").show(2000);
+      $("#color-error").show(1000);
       setTimeout(function () {
-        $("#color-error").hide(2000);
-      }, 3000);
+        $("#color-error").hide(1000);
+      }, 4000);
     } else {
       colors.push(y);
       row.append(fnCell);

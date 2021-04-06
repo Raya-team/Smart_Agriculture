@@ -5,25 +5,7 @@
     <bookmark url="file://$PROJECT_DIR$/resources/lang/fa/validation.php" line="79" mnemonic="2" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d703aa5-6bf4-4443-9648-150136637f3e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_10_2021_2_54_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_10_2021_2_54_AM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_10_2021_3_07_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_10_2021_3_07_PM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_15_2021_3_49_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_15_2021_3_49_PM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_5_2021_10_39_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_5_2021_10_39_PM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_5_2021_10_45_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_5_2021_10_45_PM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_9_2021_12_51_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_9_2021_12_51_PM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2021_11_43_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2021_11_43_PM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2021_1_03_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2021_1_03_AM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_5_2021_2_19_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_5_2021_2_19_AM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_5_2021_4_24_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_5_2021_4_24_AM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_5_2021_4_34_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_5_2021_4_34_AM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_5_2021_5_10_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_5_2021_5_10_AM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/filter/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/filter/create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/filter/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/filter/edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/filter/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/filter/create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/filters/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/filters/create.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="7d703aa5-6bf4-4443-9648-150136637f3e" name="Default Changelist" comment="" />
     <ignored path="F:\laravel\Work\first\.idea\shelf/" />
     <ignored path="G:\work\Smart_Agriculture\.idea\shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -75,14 +57,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="22" />
+          <entry key="js" value="61" />
           <entry key="php" value="131" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Blade" value="131" />
-          <entry key="JavaScript" value="22" />
+          <entry key="JavaScript" value="61" />
         </counts>
       </usages-collector>
     </session>
@@ -109,7 +91,7 @@
         <entry file="file://$PROJECT_DIR$/resources/js/filter/create.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="288">
-              <caret line="18" column="65" lean-forward="true" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
+              <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#td#0;n#!!top" expanded="true" />
@@ -618,13 +600,6 @@
       <workItem from="1617599763323" duration="15370000" />
       <workItem from="1617684004928" duration="2396000" />
     </task>
-    <task id="LOCAL-00011" summary="update again">
-      <created>1614514258908</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1614514258908</updated>
-    </task>
     <task id="LOCAL-00012" summary="update again">
       <created>1614514805047</created>
       <option name="number" value="00012" />
@@ -961,11 +936,18 @@
       <option name="project" value="LOCAL" />
       <updated>1617684868380</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Mahdy">
+      <created>1617688006287</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1617688006287</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="709218000" />
+    <option name="totallyTimeSpent" value="709502000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1381,7 +1363,7 @@
     <entry file="file://$PROJECT_DIR$/resources/js/filter/create.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
-          <caret line="18" column="65" lean-forward="true" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
+          <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="n#style#0;n#div#0;n#td#0;n#!!top" expanded="true" />
