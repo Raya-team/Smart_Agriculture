@@ -110,7 +110,10 @@ $(document).ready(function () {
     if (colors.find(function (item) {
       return item === y;
     })) {
-      alert('رنگ انتخابی شما تکراری است');
+      $("#color-error").show(2000);
+      setTimeout(function () {
+        $("#color-error").hide(2000);
+      }, 3000);
     } else {
       colors.push(y);
       row.append(fnCell);
@@ -135,7 +138,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\filter\create.js */"./resources/js/filter/create.js");
+module.exports = __webpack_require__(/*! F:\laravel\Work\first\resources\js\filter\create.js */"./resources/js/filter/create.js");
 
 
 /***/ })

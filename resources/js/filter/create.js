@@ -14,7 +14,10 @@ $(document).ready(function(){
         var row = $('<tr></tr>');
 
         if (colors.find(item => item === y)){
-            alert('رنگ انتخابی شما تکراری است')
+            $("#color-error").show(2000);
+            setTimeout(function(){
+                $("#color-error").hide(2000);
+                }, 3000);
         } else {
             colors.push(y);
             row.append(fnCell);
