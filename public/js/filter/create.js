@@ -93,12 +93,6 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// import 'jquery-confirm/dist/jquery-confirm.min'
-//
-// $.alert({
-//     title: 'Alert!',
-//     content: 'Simple alert!',
-// });
 $(document).ready(function () {
   var colors = [];
   $('#btnAdd').click(function () {

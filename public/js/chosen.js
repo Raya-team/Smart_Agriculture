@@ -1470,7 +1470,7 @@ $(".chosen-select").chosen({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\chosen.js */"./resources/js/chosen.js");
+module.exports = __webpack_require__(/*! F:\laravel\Work\first\resources\js\chosen.js */"./resources/js/chosen.js");
 
 
 /***/ })

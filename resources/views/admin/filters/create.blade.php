@@ -62,15 +62,11 @@
                                     </div>
                                 </div>
                             </div>
-                            {{--<div class="row">--}}
                                 <div class="form-group" id="color-error" style="display: none;">
-                                    {{--<div class="col-lg-6">--}}
                                         <div class="alert alert-warning" role="alert" style="background-color: rgba(243,156,18,0.51) !important; color: red !important;">
                                             رنگ انتخابی شما تکراری است
                                         </div>
-                                    {{--</div>--}}
                                 </div>
-                            {{--</div>--}}
                             <div class="row">
                                 <table id="persons" align="center">
                                     <tr>
@@ -90,8 +86,6 @@
     </section>
 @endsection
 @section('script')
-    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>--}}
-
     <script src="{{ asset('js/filter/create.js') }}"></script>
     <script>
         $(function () {
@@ -116,6 +110,4 @@
             background-color: rgba(180, 3, 26, 0.8);
         }
     </style>
-
-    {{--    <link rel="stylesheet" href="{{ asset('css/jquery-confirm.css') }}">--}}
 @endsection
