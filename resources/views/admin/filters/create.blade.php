@@ -30,14 +30,14 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label for="min">حداقل بازه</label>
-                                        <input type="text" class="form-control" name="min" id="min" placeholder="حداقل بازه" oninput="this.value = this.value.replace(/[^-0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" value="{{ old('min') }}">
+                                        <label for="minimum">حداقل بازه</label>
+                                        <input type="text" class="form-control" name="minimum" id="min" placeholder="حداقل بازه" oninput="this.value = this.value.replace(/[^-0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" value="{{ old('minimum') }}">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label for="max">حداکثر بازه</label>
-                                        <input type="text" class="form-control" name="max" id="max" placeholder="حداکثر بازه" oninput="this.value = this.value.replace(/[^-0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" value="{{ old('max') }}">
+                                        <label for="maximum">حداکثر بازه</label>
+                                        <input type="text" class="form-control" name="maximum" id="max" placeholder="حداکثر بازه" oninput="this.value = this.value.replace(/[^-0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" value="{{ old('maximum') }}">
                                     </div>
                                 </div>
                             </div>

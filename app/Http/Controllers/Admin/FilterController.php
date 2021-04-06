@@ -42,8 +42,8 @@ class FilterController extends Controller
     {
         $filter->name = $request->input('name');
         $filter->nickname = $request->input('nickname');
-        $filter->min = $request->input('min');
-        $filter->max = $request->input('max');
+        $filter->min = $request->input('minimum');
+        $filter->max = $request->input('maximum');
         $filter->colors = $request->input('colors');
         $filter->save();
         alert()->success('فیلتر با موفقیت ایجاد شد');
