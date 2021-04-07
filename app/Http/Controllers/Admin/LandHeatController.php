@@ -7,6 +7,7 @@ use App\Models\Detail;
 use App\Models\Land;
 use App\Models\Sensor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class LandHeatController extends Controller
 {
