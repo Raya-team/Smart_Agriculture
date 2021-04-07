@@ -3,6 +3,7 @@
     "/css/app.css": "/css/app.css",
     "/css/chosen.css": "/css/chosen.css",
     "/css/map.css": "/css/map.css",
+    "/css/jquery-confirm.css": "/css/jquery-confirm.css",
     "/js/chosen.js": "/js/chosen.js",
     "/js/dashboard/map.js": "/js/dashboard/map.js",
     "/js/filter/create.js": "/js/filter/create.js",

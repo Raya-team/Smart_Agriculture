@@ -31,6 +31,7 @@ class LandHeatController extends Controller
             }
         }
         $details = json_encode($details);
+
         return view('admin.lands.heat', compact('land','details'));
    }
 }
