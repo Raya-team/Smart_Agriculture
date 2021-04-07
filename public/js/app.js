@@ -49857,17 +49857,6 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./resources/css/jquery-confirm.css":
-/*!******************************************!*\
-  !*** ./resources/css/jquery-confirm.css ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/postcss-loader/src/index.js):\nError: ENOENT: no such file or directory, open 'G:\\work\\Smart_Agriculture\\node_modules\\jquery-confirm\\dist\\jquery-confirm.min.css'\n    at G:\\work\\Smart_Agriculture\\node_modules\\webpack\\lib\\NormalModule.js:316:20\n    at G:\\work\\Smart_Agriculture\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at G:\\work\\Smart_Agriculture\\node_modules\\loader-runner\\lib\\LoaderRunner.js:203:19\n    at G:\\work\\Smart_Agriculture\\node_modules\\enhanced-resolve\\lib\\CachedInputFileSystem.js:85:15\n    at processTicksAndRejections (internal/process/task_queues.js:75:11)");
-
-/***/ }),
-
 /***/ "./resources/css/map.css":
 /*!*******************************!*\
   !*** ./resources/css/map.css ***!
@@ -50046,17 +50035,16 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!***************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/css/chosen.css ./resources/css/map.css ./resources/css/jquery-confirm.css ***!
-  \***************************************************************************************************************************************************/
+/*!****************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/css/chosen.css ./resources/css/map.css ***!
+  \****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! G:\work\Smart_Agriculture\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! G:\work\Smart_Agriculture\resources\css\chosen.css */"./resources/css/chosen.css");
-__webpack_require__(/*! G:\work\Smart_Agriculture\resources\css\map.css */"./resources/css/map.css");
-module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\css\jquery-confirm.css */"./resources/css/jquery-confirm.css");
+__webpack_require__(/*! F:\laravel\Work\first\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! F:\laravel\Work\first\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! F:\laravel\Work\first\resources\css\chosen.css */"./resources/css/chosen.css");
+module.exports = __webpack_require__(/*! F:\laravel\Work\first\resources\css\map.css */"./resources/css/map.css");
 
 
 /***/ })
