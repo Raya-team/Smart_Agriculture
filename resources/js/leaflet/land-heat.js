@@ -1,5 +1,7 @@
 import L from 'leaflet';
-import 'leaflet.heat/dist/leaflet-heat';
+import 'leaflet-webgl-heatmap/src/leaflet-webgl-heatmap';
+import 'leaflet-webgl-heatmap/src/webgl-heatmap/webgl-heatmap';
+// import 'leaflet-webgl-heatmap/dist/leaflet-webgl-heatmap.min';
 import 'leaflet.fullscreen';
 import 'leaflet-contextmenu';
 
@@ -29,30 +31,40 @@ function WhatHere(e) {
 
 L.polygon([points],{color: "#79acff"}).addTo(map);
 
-var dataPoints = [
-    [36.3367, 59.593792, 1],
-    [36.308209, 59.573879, 4],
-    [36.252579, 59.609585,4],
-    [36.286903, 59.683743,5],
-    [36.294928, 59.616108,9],
-    [36.32702, 59.66383,10],
- ];
+var detailjson = document.getElementById('details').value;
+var details = JSON.parse( detailjson);
+var arr = [];
+for(var d=0;d<details.length;d++)
+{
+    var loc=(details[d]['location']);
+    var val=(details[d]['value']);
+    //convert string to array
+    arr.push(JSON.parse( loc));
+    arr.push(JSON.parse( val));
+}
+var datapoints =[];
+for(var j=0;j<details.length;j++ )
+{
+    var data =[];
 
-var heat = L.heatLayer(dataPoints, {
-    radius: 20,
-    blur: 5,
-    maxZoom: 5,
-    max: 100,
+    data.push(arr[2*j][0]['lat']);
 
-    gradient: {
-        0.0: '#fff548',
-        0.3: '#276300',
-        0.6: '#9b3d11',
-        1.0: '#ff0629'
+    data.push(arr[2*j][0]['lng']);
 
-    }
-}).addTo(map);
+    data.push(arr[2*j+1]);
 
-for (var i = 0; i < dataPoints.length; i++) {
-    L.marker([dataPoints[i][0],dataPoints[i][1]]).addTo(map);
+    datapoints.push(data);
+
+}
+
+var heatmap = L.webGLHeatmap({
+    size: 2000,
+    opacity: 0.8,
+    gradientTexture: false,
+    alphaRange : 1});
+
+heatmap.setData( datapoints );
+
+map.addLayer(heatmap);for (var i = 0; i < datapoints.length; i++) {
+    L.marker([datapoints[i][0],datapoints[i][1]]).addTo(map);
 }

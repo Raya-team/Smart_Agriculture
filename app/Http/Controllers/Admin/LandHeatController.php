@@ -21,6 +21,7 @@ class LandHeatController extends Controller
 
             foreach ($sensors as $sensor) {
                 if ($sensor->land_id == $land->id) {
+
                     $all_details = Detail::all();
 
                     foreach ($all_details as $all_detail)

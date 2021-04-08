@@ -12,6 +12,8 @@ $(document).ready(function(){
         row.append(fnCell);
         $("#persons").append(row);
     }
+    console.log(colors);
+
     $('.del').click(function(){
         $('.del1').closest('tr').remove();
         document.getElementById('colors').value = null ;
