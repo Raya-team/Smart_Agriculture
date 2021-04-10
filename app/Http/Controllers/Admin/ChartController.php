@@ -50,11 +50,9 @@ class ChartController extends Controller
      */
     public function show($sensor)
     {
-//        $details = Detail::where('sensor_id', $sensor)->get();
-        $filters = Filter::all(['id', 'name', 'nickname']);
-//        $filters = Filter::with(['details' => function ($query){
-//            $query->where('sensor_id', $sensor );
-//        }])->get();
+        $details = Detail::where('sensor_id', $sensor)->get();
+//        $filters = Filter::all(['id', 'name', 'nickname']);
+        $filters = Filter::with('details')->get();
 //        return $filters;
 
 //        for ( $i = 0 ; $i<count($filters) ; $i++){
