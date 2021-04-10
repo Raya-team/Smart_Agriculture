@@ -28,9 +28,8 @@
     </section>
 @endsection
 @section('script')
-    {{--<script src="http://leaflet.github.io/Leaflet.markercluster/example/realworld.10000.js"></script>--}}
+    {{--<script src="{{ asset('js/leaflet/test.js') }}"></script>--}}
     <script src="{{ asset('js/leaflet/land-heat.js') }}"></script>
-
 @endsection
 @section('css')
     <link rel="stylesheet" href="{{asset('css/map.css')}}">

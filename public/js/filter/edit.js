@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 11);
+/******/ 	return __webpack_require__(__webpack_require__.s = 12);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -106,6 +106,7 @@ $(document).ready(function () {
     $("#persons").append(row);
   }
 
+  console.log(colors);
   $('.del').click(function () {
     $('.del1').closest('tr').remove();
     document.getElementById('colors').value = null;
@@ -141,14 +142,14 @@ $(document).ready(function () {
 
 /***/ }),
 
-/***/ 11:
+/***/ 12:
 /*!*******************************************!*\
   !*** multi ./resources/js/filter/edit.js ***!
   \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\laravel\Work\first\resources\js\filter\edit.js */"./resources/js/filter/edit.js");
+module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\filter\edit.js */"./resources/js/filter/edit.js");
 
 
 /***/ })

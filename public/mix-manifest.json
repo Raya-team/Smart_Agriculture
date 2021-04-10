@@ -13,5 +13,6 @@
     "/js/leaflet/land-heat.js": "/js/leaflet/land-heat.js",
     "/js/leaflet/land-show.js": "/js/leaflet/land-show.js",
     "/js/leaflet/sensor-create.js": "/js/leaflet/sensor-create.js",
-    "/js/leaflet/sensor-edit.js": "/js/leaflet/sensor-edit.js"
+    "/js/leaflet/sensor-edit.js": "/js/leaflet/sensor-edit.js",
+    "/js/leaflet/test.js": "/js/leaflet/test.js"
 }

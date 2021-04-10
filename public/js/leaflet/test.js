@@ -81,19 +81,1863 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 10);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/leaflet-measure/dist/leaflet-measure.fa.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/leaflet-measure/dist/leaflet-measure.fa.js ***!
-  \*****************************************************************/
+/***/ "./node_modules/leaflet-contextmenu/dist/leaflet.contextmenu.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/leaflet-contextmenu/dist/leaflet.contextmenu.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
+	Leaflet.contextmenu, a context menu for Leaflet.
+	(c) 2015, Adam Ratcliffe, GeoSmart Maps Limited
+
+	@preserve
+*/
+
+(function(factory) {
+	// Packaging/modules magic dance
+	var L;
+	if (true) {
+		// AMD
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js")], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else {}
+})(function(L) {
+L.Map.mergeOptions({
+    contextmenuItems: []
+});
+
+L.Map.ContextMenu = L.Handler.extend({
+    _touchstart: L.Browser.msPointer ? 'MSPointerDown' : L.Browser.pointer ? 'pointerdown' : 'touchstart',
+    
+    statics: {
+        BASE_CLS: 'leaflet-contextmenu'
+    },
+    
+    initialize: function (map) {
+        L.Handler.prototype.initialize.call(this, map);
+        
+        this._items = [];
+        this._visible = false;
+
+        var container = this._container = L.DomUtil.create('div', L.Map.ContextMenu.BASE_CLS, map._container);
+        container.style.zIndex = 10000;
+        container.style.position = 'absolute';
+
+        if (map.options.contextmenuWidth) {
+            container.style.width = map.options.contextmenuWidth + 'px';
+        }
+
+        this._createItems();
+
+        L.DomEvent
+            .on(container, 'click', L.DomEvent.stop)
+            .on(container, 'mousedown', L.DomEvent.stop)
+            .on(container, 'dblclick', L.DomEvent.stop)
+            .on(container, 'contextmenu', L.DomEvent.stop);
+    },
+
+    addHooks: function () {
+        var container = this._map.getContainer();
+
+        L.DomEvent
+            .on(container, 'mouseleave', this._hide, this)
+            .on(document, 'keydown', this._onKeyDown, this);
+
+        if (L.Browser.touch) {
+            L.DomEvent.on(document, this._touchstart, this._hide, this);
+        }
+
+        this._map.on({
+            contextmenu: this._show,
+            mousedown: this._hide,
+            movestart: this._hide,
+            zoomstart: this._hide
+        }, this);
+    },
+
+    removeHooks: function () {
+        var container = this._map.getContainer();
+
+        L.DomEvent
+            .off(container, 'mouseleave', this._hide, this)
+            .off(document, 'keydown', this._onKeyDown, this);
+
+        if (L.Browser.touch) {
+            L.DomEvent.off(document, this._touchstart, this._hide, this);
+        }
+
+        this._map.off({
+            contextmenu: this._show,
+            mousedown: this._hide,
+            movestart: this._hide,
+            zoomstart: this._hide
+        }, this);
+    },
+
+    showAt: function (point, data) {
+        if (point instanceof L.LatLng) {
+            point = this._map.latLngToContainerPoint(point);
+        }
+        this._showAtPoint(point, data);
+    },
+
+    hide: function () {
+        this._hide();
+    },
+
+    addItem: function (options) {
+        return this.insertItem(options);
+    },
+
+    insertItem: function (options, index) {
+        index = index !== undefined ? index: this._items.length;
+
+        var item = this._createItem(this._container, options, index);
+
+        this._items.push(item);
+
+        this._sizeChanged = true;
+
+        this._map.fire('contextmenu.additem', {
+            contextmenu: this,
+            el: item.el,
+            index: index
+        });
+
+        return item.el;
+    },
+
+    removeItem: function (item) {
+        var container = this._container;
+
+        if (!isNaN(item)) {
+            item = container.children[item];
+        }
+
+        if (item) {
+            this._removeItem(L.Util.stamp(item));
+
+            this._sizeChanged = true;
+
+            this._map.fire('contextmenu.removeitem', {
+                contextmenu: this,
+                el: item
+            });
+
+            return item;
+        }
+
+        return null;
+    },
+
+    removeAllItems: function () {
+        var items = this._container.children,
+            item;
+
+        while (items.length) {
+            item = items[0];
+            this._removeItem(L.Util.stamp(item));
+        }
+        return items;
+    },
+
+    hideAllItems: function () {
+        var item, i, l;
+
+        for (i = 0, l = this._items.length; i < l; i++) {
+            item = this._items[i];
+            item.el.style.display = 'none';
+        }
+    },
+
+    showAllItems: function () {
+        var item, i, l;
+
+        for (i = 0, l = this._items.length; i < l; i++) {
+            item = this._items[i];
+            item.el.style.display = '';
+        }
+    },
+
+    setDisabled: function (item, disabled) {
+        var container = this._container,
+        itemCls = L.Map.ContextMenu.BASE_CLS + '-item';
+
+        if (!isNaN(item)) {
+            item = container.children[item];
+        }
+
+        if (item && L.DomUtil.hasClass(item, itemCls)) {
+            if (disabled) {
+                L.DomUtil.addClass(item, itemCls + '-disabled');
+                this._map.fire('contextmenu.disableitem', {
+                    contextmenu: this,
+                    el: item
+                });
+            } else {
+                L.DomUtil.removeClass(item, itemCls + '-disabled');
+                this._map.fire('contextmenu.enableitem', {
+                    contextmenu: this,
+                    el: item
+                });
+            }
+        }
+    },
+
+    isVisible: function () {
+        return this._visible;
+    },
+
+    _createItems: function () {
+        var itemOptions = this._map.options.contextmenuItems,
+            item,
+            i, l;
+
+        for (i = 0, l = itemOptions.length; i < l; i++) {
+            this._items.push(this._createItem(this._container, itemOptions[i]));
+        }
+    },
+
+    _createItem: function (container, options, index) {
+        if (options.separator || options === '-') {
+            return this._createSeparator(container, index);
+        }
+
+        var itemCls = L.Map.ContextMenu.BASE_CLS + '-item',
+            cls = options.disabled ? (itemCls + ' ' + itemCls + '-disabled') : itemCls,
+            el = this._insertElementAt('a', cls, container, index),
+            callback = this._createEventHandler(el, options.callback, options.context, options.hideOnSelect),
+            icon = this._getIcon(options),
+            iconCls = this._getIconCls(options),
+            html = '';
+
+        if (icon) {
+            html = '<img class="' + L.Map.ContextMenu.BASE_CLS + '-icon" src="' + icon + '"/>';
+        } else if (iconCls) {
+            html = '<span class="' + L.Map.ContextMenu.BASE_CLS + '-icon ' + iconCls + '"></span>';
+        }
+
+        el.innerHTML = html + options.text;
+        el.href = '#';
+
+        L.DomEvent
+            .on(el, 'mouseover', this._onItemMouseOver, this)
+            .on(el, 'mouseout', this._onItemMouseOut, this)
+            .on(el, 'mousedown', L.DomEvent.stopPropagation)
+            .on(el, 'click', callback);
+
+        if (L.Browser.touch) {
+            L.DomEvent.on(el, this._touchstart, L.DomEvent.stopPropagation);
+        }
+
+        // Devices without a mouse fire "mouseover" on tap, but never “mouseout"
+        if (!L.Browser.pointer) {
+            L.DomEvent.on(el, 'click', this._onItemMouseOut, this);
+        }
+
+        return {
+            id: L.Util.stamp(el),
+            el: el,
+            callback: callback
+        };
+    },
+
+    _removeItem: function (id) {
+        var item,
+            el,
+            i, l, callback;
+
+        for (i = 0, l = this._items.length; i < l; i++) {
+            item = this._items[i];
+
+            if (item.id === id) {
+                el = item.el;
+                callback = item.callback;
+
+                if (callback) {
+                    L.DomEvent
+                        .off(el, 'mouseover', this._onItemMouseOver, this)
+                        .off(el, 'mouseover', this._onItemMouseOut, this)
+                        .off(el, 'mousedown', L.DomEvent.stopPropagation)
+                        .off(el, 'click', callback);
+
+                    if (L.Browser.touch) {
+                        L.DomEvent.off(el, this._touchstart, L.DomEvent.stopPropagation);
+                    }
+
+                    if (!L.Browser.pointer) {
+                        L.DomEvent.on(el, 'click', this._onItemMouseOut, this);
+                    }
+                }
+
+                this._container.removeChild(el);
+                this._items.splice(i, 1);
+
+                return item;
+            }
+        }
+        return null;
+    },
+
+    _createSeparator: function (container, index) {
+        var el = this._insertElementAt('div', L.Map.ContextMenu.BASE_CLS + '-separator', container, index);
+
+        return {
+            id: L.Util.stamp(el),
+            el: el
+        };
+    },
+
+    _createEventHandler: function (el, func, context, hideOnSelect) {
+        var me = this,
+            map = this._map,
+            disabledCls = L.Map.ContextMenu.BASE_CLS + '-item-disabled',
+            hideOnSelect = (hideOnSelect !== undefined) ? hideOnSelect : true;
+
+        return function (e) {
+            if (L.DomUtil.hasClass(el, disabledCls)) {
+                return;
+            }
+
+            if (hideOnSelect) {
+                me._hide();
+            }
+
+            if (func) {
+                func.call(context || map, me._showLocation);
+            }
+
+            me._map.fire('contextmenu.select', {
+                contextmenu: me,
+                el: el
+            });
+        };
+    },
+
+    _insertElementAt: function (tagName, className, container, index) {
+        var refEl,
+            el = document.createElement(tagName);
+
+        el.className = className;
+
+        if (index !== undefined) {
+            refEl = container.children[index];
+        }
+
+        if (refEl) {
+            container.insertBefore(el, refEl);
+        } else {
+            container.appendChild(el);
+        }
+
+        return el;
+    },
+
+    _show: function (e) {
+        this._showAtPoint(e.containerPoint, e);
+    },
+
+    _showAtPoint: function (pt, data) {
+        if (this._items.length) {
+            var map = this._map,
+            layerPoint = map.containerPointToLayerPoint(pt),
+            latlng = map.layerPointToLatLng(layerPoint),
+            event = L.extend(data || {}, {contextmenu: this});
+
+            this._showLocation = {
+                latlng: latlng,
+                layerPoint: layerPoint,
+                containerPoint: pt
+            };
+
+            if (data && data.relatedTarget){
+                this._showLocation.relatedTarget = data.relatedTarget;
+            }
+
+            this._setPosition(pt);
+
+            if (!this._visible) {
+                this._container.style.display = 'block';
+                this._visible = true;
+            }
+
+            this._map.fire('contextmenu.show', event);
+        }
+    },
+
+    _hide: function () {
+        if (this._visible) {
+            this._visible = false;
+            this._container.style.display = 'none';
+            this._map.fire('contextmenu.hide', {contextmenu: this});
+        }
+    },
+
+    _getIcon: function (options) {
+        return L.Browser.retina && options.retinaIcon || options.icon;
+    },
+
+    _getIconCls: function (options) {
+        return L.Browser.retina && options.retinaIconCls || options.iconCls;
+    },
+
+    _setPosition: function (pt) {
+        var mapSize = this._map.getSize(),
+            container = this._container,
+            containerSize = this._getElementSize(container),
+            anchor;
+
+        if (this._map.options.contextmenuAnchor) {
+            anchor = L.point(this._map.options.contextmenuAnchor);
+            pt = pt.add(anchor);
+        }
+
+        container._leaflet_pos = pt;
+
+        if (pt.x + containerSize.x > mapSize.x) {
+            container.style.left = 'auto';
+            container.style.right = Math.min(Math.max(mapSize.x - pt.x, 0), mapSize.x - containerSize.x - 1) + 'px';
+        } else {
+            container.style.left = Math.max(pt.x, 0) + 'px';
+            container.style.right = 'auto';
+        }
+
+        if (pt.y + containerSize.y > mapSize.y) {
+            container.style.top = 'auto';
+            container.style.bottom = Math.min(Math.max(mapSize.y - pt.y, 0), mapSize.y - containerSize.y - 1) + 'px';
+        } else {
+            container.style.top = Math.max(pt.y, 0) + 'px';
+            container.style.bottom = 'auto';
+        }
+    },
+
+    _getElementSize: function (el) {
+        var size = this._size,
+            initialDisplay = el.style.display;
+
+        if (!size || this._sizeChanged) {
+            size = {};
+
+            el.style.left = '-999999px';
+            el.style.right = 'auto';
+            el.style.display = 'block';
+
+            size.x = el.offsetWidth;
+            size.y = el.offsetHeight;
+
+            el.style.left = 'auto';
+            el.style.display = initialDisplay;
+
+            this._sizeChanged = false;
+        }
+
+        return size;
+    },
+
+    _onKeyDown: function (e) {
+        var key = e.keyCode;
+
+        // If ESC pressed and context menu is visible hide it
+        if (key === 27) {
+            this._hide();
+        }
+    },
+
+    _onItemMouseOver: function (e) {
+        L.DomUtil.addClass(e.target || e.srcElement, 'over');
+    },
+
+    _onItemMouseOut: function (e) {
+        L.DomUtil.removeClass(e.target || e.srcElement, 'over');
+    }
+});
+
+L.Map.addInitHook('addHandler', 'contextmenu', L.Map.ContextMenu);
+L.Mixin.ContextMenu = {
+    bindContextMenu: function (options) {
+        L.setOptions(this, options);
+        this._initContextMenu();
+
+        return this;
+    },
+
+    unbindContextMenu: function (){
+        this.off('contextmenu', this._showContextMenu, this);
+
+        return this;
+    },
+
+    addContextMenuItem: function (item) {
+            this.options.contextmenuItems.push(item);
+    },
+
+    removeContextMenuItemWithIndex: function (index) {
+        var items = [];
+        for (var i = 0; i < this.options.contextmenuItems.length; i++) {
+            if (this.options.contextmenuItems[i].index == index){
+                items.push(i);
+            }
+        }
+        var elem = items.pop();
+        while (elem !== undefined) {
+            this.options.contextmenuItems.splice(elem,1);
+            elem = items.pop();
+        }
+    },
+
+    replaceContextMenuItem: function (item) {
+        this.removeContextMenuItemWithIndex(item.index);
+        this.addContextMenuItem(item);
+    },
+
+    _initContextMenu: function () {
+        this._items = [];
+
+        this.on('contextmenu', this._showContextMenu, this);
+    },
+
+    _showContextMenu: function (e) {
+        var itemOptions,
+            data, pt, i, l;
+
+        if (this._map.contextmenu) {
+            data = L.extend({relatedTarget: this}, e);
+
+            pt = this._map.mouseEventToContainerPoint(e.originalEvent);
+
+            if (!this.options.contextmenuInheritItems) {
+                this._map.contextmenu.hideAllItems();
+            }
+
+            for (i = 0, l = this.options.contextmenuItems.length; i < l; i++) {
+                itemOptions = this.options.contextmenuItems[i];
+                this._items.push(this._map.contextmenu.insertItem(itemOptions, itemOptions.index));
+            }
+
+            this._map.once('contextmenu.hide', this._hideContextMenu, this);
+
+            this._map.contextmenu.showAt(pt, data);
+        }
+    },
+
+    _hideContextMenu: function () {
+        var i, l;
+
+        for (i = 0, l = this._items.length; i < l; i++) {
+            this._map.contextmenu.removeItem(this._items[i]);
+        }
+        this._items.length = 0;
+
+        if (!this.options.contextmenuInheritItems) {
+            this._map.contextmenu.showAllItems();
+        }
+    }
+};
+
+var classes = [L.Marker, L.Path],
+    defaultOptions = {
+        contextmenu: false,
+        contextmenuItems: [],
+        contextmenuInheritItems: true
+    },
+    cls, i, l;
+
+for (i = 0, l = classes.length; i < l; i++) {
+    cls = classes[i];
+
+    // L.Class should probably provide an empty options hash, as it does not test
+    // for it here and add if needed
+    if (!cls.prototype.options) {
+        cls.prototype.options = defaultOptions;
+    } else {
+        cls.mergeOptions(defaultOptions);
+    }
+
+    cls.addInitHook(function () {
+        if (this.options.contextmenu) {
+            this._initContextMenu();
+        }
+    });
+
+    cls.include(L.Mixin.ContextMenu);
+}
+return L.Map.ContextMenu;
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/leaflet-webgl-heatmap/src/leaflet-webgl-heatmap.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/leaflet-webgl-heatmap/src/leaflet-webgl-heatmap.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-!function(e){function t(n){if(r[n])return r[n].exports;var o=r[n]={i:n,l:!1,exports:{}};return e[n].call(o.exports,o,o.exports,t),o.l=!0,o.exports}var r={};t.m=e,t.c=r,t.d=function(e,r,n){t.o(e,r)||Object.defineProperty(e,r,{configurable:!1,enumerable:!0,get:n})},t.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(r,"a",r),r},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="/dist/",t(t.s=28)}([function(e,t,r){function n(e){return null==e?void 0===e?u:a:l&&l in Object(e)?i(e):s(e)}var o=r(4),i=r(38),s=r(39),a="[object Null]",u="[object Undefined]",l=o?o.toStringTag:void 0;e.exports=n},function(e,t){function r(e){return null!=e&&"object"==typeof e}e.exports=r},function(e,t){function r(e){var t=typeof e;return null!=e&&("object"==t||"function"==t)}e.exports=r},function(e,t,r){"use strict";function n(e,t,r){if(r=r||{},!h(r))throw new Error("options is invalid");var n=r.bbox,o=r.id;if(void 0===e)throw new Error("geometry is required");if(t&&t.constructor!==Object)throw new Error("properties must be an Object");n&&d(n),o&&m(o);var i={type:"Feature"};return o&&(i.id=o),n&&(i.bbox=n),i.properties=t||{},i.geometry=e,i}function o(e,t,r){if(!e)throw new Error("coordinates is required");if(!Array.isArray(e))throw new Error("coordinates must be an Array");if(e.length<2)throw new Error("coordinates must be at least 2 numbers long");if(!p(e[0])||!p(e[1]))throw new Error("coordinates must contain numbers");return n({type:"Point",coordinates:e},t,r)}function i(e,t,r){if(!e)throw new Error("coordinates is required");for(var o=0;o<e.length;o++){var i=e[o];if(i.length<4)throw new Error("Each LinearRing of a Polygon must have 4 or more Positions.");for(var s=0;s<i[i.length-1].length;s++){if(0===o&&0===s&&!p(i[0][0])||!p(i[0][1]))throw new Error("coordinates must contain numbers");if(i[i.length-1][s]!==i[0][s])throw new Error("First and last Position are not equivalent.")}}return n({type:"Polygon",coordinates:e},t,r)}function s(e,t,r){if(!e)throw new Error("coordinates is required");if(e.length<2)throw new Error("coordinates must be an array of two or more positions");if(!p(e[0][1])||!p(e[0][1]))throw new Error("coordinates must contain numbers");return n({type:"LineString",coordinates:e},t,r)}function a(e,t,r){if(!e)throw new Error("coordinates is required");return n({type:"MultiLineString",coordinates:e},t,r)}function u(e,t,r){if(!e)throw new Error("coordinates is required");return n({type:"MultiPoint",coordinates:e},t,r)}function l(e,t,r){if(!e)throw new Error("coordinates is required");return n({type:"MultiPolygon",coordinates:e},t,r)}function c(e,t){if(void 0===e||null===e)throw new Error("radians is required");if(t&&"string"!=typeof t)throw new Error("units must be a string");var r=y[t||"kilometers"];if(!r)throw new Error(t+" units is invalid");return e*r}function f(e){if(null===e||void 0===e)throw new Error("degrees is required");return e%360*Math.PI/180}function p(e){return!isNaN(e)&&null!==e&&!Array.isArray(e)}function h(e){return!!e&&e.constructor===Object}function d(e){if(!e)throw new Error("bbox is required");if(!Array.isArray(e))throw new Error("bbox must be an Array");if(4!==e.length&&6!==e.length)throw new Error("bbox must be an Array of 4 or 6 numbers");e.forEach(function(e){if(!p(e))throw new Error("bbox must only contain numbers")})}function m(e){if(!e)throw new Error("id is required");if(-1===["string","number"].indexOf(typeof e))throw new Error("id must be a number or a string")}r.d(t,"b",function(){return n}),r.d(t,"f",function(){return o}),r.d(t,"e",function(){return s}),r.d(t,"g",function(){return c}),r.d(t,"a",function(){return f}),r.d(t,"c",function(){return p}),r.d(t,"d",function(){return h});var y={meters:6371008.8,metres:6371008.8,millimeters:6371008800,millimetres:6371008800,centimeters:637100880,centimetres:637100880,kilometers:6371.0088,kilometres:6371.0088,miles:3958.761333810546,nauticalmiles:6371008.8/1852,inches:6371008.8*39.37,yards:6371008.8/1.0936,feet:20902260.511392,radians:1,degrees:6371008.8/111325}},function(e,t,r){var n=r(5),o=n.Symbol;e.exports=o},function(e,t,r){var n=r(11),o="object"==typeof self&&self&&self.Object===Object&&self,i=n||o||Function("return this")();e.exports=i},function(e,t){function r(e,t){return e===t||e!==e&&t!==t}e.exports=r},function(e,t,r){function n(e){return null!=e&&i(e.length)&&!o(e)}var o=r(10),i=r(16);e.exports=n},function(e,t,r){function n(e,t,r){"__proto__"==t&&o?o(e,t,{configurable:!0,enumerable:!0,value:r,writable:!0}):e[t]=r}var o=r(9);e.exports=n},function(e,t,r){var n=r(35),o=function(){try{var e=n(Object,"defineProperty");return e({},"",{}),e}catch(e){}}();e.exports=o},function(e,t,r){function n(e){if(!i(e))return!1;var t=o(e);return t==a||t==u||t==s||t==l}var o=r(0),i=r(2),s="[object AsyncFunction]",a="[object Function]",u="[object GeneratorFunction]",l="[object Proxy]";e.exports=n},function(e,t,r){(function(t){var r="object"==typeof t&&t&&t.Object===Object&&t;e.exports=r}).call(t,r(37))},function(e,t,r){function n(e,t){return s(i(e,t,o),e+"")}var o=r(13),i=r(45),s=r(46);e.exports=n},function(e,t){function r(e){return e}e.exports=r},function(e,t){function r(e,t,r){switch(r.length){case 0:return e.call(t);case 1:return e.call(t,r[0]);case 2:return e.call(t,r[0],r[1]);case 3:return e.call(t,r[0],r[1],r[2])}return e.apply(t,r)}e.exports=r},function(e,t,r){function n(e,t,r){if(!a(r))return!1;var n=typeof t;return!!("number"==n?i(r)&&s(t,r.length):"string"==n&&t in r)&&o(r[t],e)}var o=r(6),i=r(7),s=r(17),a=r(2);e.exports=n},function(e,t){function r(e){return"number"==typeof e&&e>-1&&e%1==0&&e<=n}var n=9007199254740991;e.exports=r},function(e,t){function r(e,t){var r=typeof e;return!!(t=null==t?n:t)&&("number"==r||"symbol"!=r&&o.test(e))&&e>-1&&e%1==0&&e<t}var n=9007199254740991,o=/^(?:0|[1-9]\d*)$/;e.exports=r},function(e,t,r){function n(e,t){var r=s(e),n=!r&&i(e),c=!r&&!n&&a(e),p=!r&&!n&&!c&&l(e),h=r||n||c||p,d=h?o(e.length,String):[],m=d.length;for(var y in e)!t&&!f.call(e,y)||h&&("length"==y||c&&("offset"==y||"parent"==y)||p&&("buffer"==y||"byteLength"==y||"byteOffset"==y)||u(y,m))||d.push(y);return d}var o=r(51),i=r(52),s=r(19),a=r(54),u=r(17),l=r(56),c=Object.prototype,f=c.hasOwnProperty;e.exports=n},function(e,t){var r=Array.isArray;e.exports=r},function(e,t){e.exports=function(e){return e.webpackPolyfill||(e.deprecate=function(){},e.paths=[],e.children||(e.children=[]),Object.defineProperty(e,"loaded",{enumerable:!0,get:function(){return e.l}}),Object.defineProperty(e,"id",{enumerable:!0,get:function(){return e.i}}),e.webpackPolyfill=1),e}},function(e,t){function r(e){var t=e&&e.constructor;return e===("function"==typeof t&&t.prototype||n)}var n=Object.prototype;e.exports=r},function(e,t,r){function n(e){if(!i(e))return!1;var t=o(e);return t==u||t==a||"string"==typeof e.message&&"string"==typeof e.name&&!s(e)}var o=r(0),i=r(1),s=r(63),a="[object DOMException]",u="[object Error]";e.exports=n},function(e,t){function r(e,t){return function(r){return e(t(r))}}e.exports=r},function(e,t){function r(e,t){for(var r=-1,n=null==e?0:e.length,o=Array(n);++r<n;)o[r]=t(e[r],r,e);return o}e.exports=r},function(e,t){var r=/<%=([\s\S]+?)%>/g;e.exports=r},function(e,t,r){function n(e){return null==e?"":o(e)}var o=r(75);e.exports=n},function(e,t,r){"use strict";function n(e,t,r){if(null!==e)for(var o,i,s,a,u,l,c,f,p=0,h=0,d=e.type,m="FeatureCollection"===d,y="Feature"===d,v=m?e.features.length:1,g=0;g<v;g++){c=m?e.features[g].geometry:y?e.geometry:e,f=!!c&&"GeometryCollection"===c.type,u=f?c.geometries.length:1;for(var b=0;b<u;b++){var _=0,j=0;if(null!==(a=f?c.geometries[b]:c)){l=a.coordinates;var x=a.type;switch(p=!r||"Polygon"!==x&&"MultiPolygon"!==x?0:1,x){case null:break;case"Point":if(!1===t(l,h,g,_,j))return!1;h++,_++;break;case"LineString":case"MultiPoint":for(o=0;o<l.length;o++){if(!1===t(l[o],h,g,_,j))return!1;h++,"MultiPoint"===x&&_++}"LineString"===x&&_++;break;case"Polygon":case"MultiLineString":for(o=0;o<l.length;o++){for(i=0;i<l[o].length-p;i++){if(!1===t(l[o][i],h,g,_,j))return!1;h++}"MultiLineString"===x&&_++,"Polygon"===x&&j++}"Polygon"===x&&_++;break;case"MultiPolygon":for(o=0;o<l.length;o++){for("MultiPolygon"===x&&(j=0),i=0;i<l[o].length;i++){for(s=0;s<l[o][i].length-p;s++){if(!1===t(l[o][i][s],h,g,_,j))return!1;h++}j++}_++}break;case"GeometryCollection":for(o=0;o<a.geometries.length;o++)if(!1===n(a.geometries[o],t,r))return!1;break;default:throw new Error("Unknown Geometry Type")}}}}}function o(e,t){var r,n,o,i,s,a,u,l,c,f,p=0,h="FeatureCollection"===e.type,d="Feature"===e.type,m=h?e.features.length:1;for(r=0;r<m;r++){for(a=h?e.features[r].geometry:d?e.geometry:e,l=h?e.features[r].properties:d?e.properties:{},c=h?e.features[r].bbox:d?e.bbox:void 0,f=h?e.features[r].id:d?e.id:void 0,u=!!a&&"GeometryCollection"===a.type,s=u?a.geometries.length:1,o=0;o<s;o++)if(null!==(i=u?a.geometries[o]:a))switch(i.type){case"Point":case"LineString":case"MultiPoint":case"Polygon":case"MultiLineString":case"MultiPolygon":if(!1===t(i,p,l,c,f))return!1;break;case"GeometryCollection":for(n=0;n<i.geometries.length;n++)if(!1===t(i.geometries[n],p,l,c,f))return!1;break;default:throw new Error("Unknown Geometry Type")}else if(!1===t(null,p,l,c,f))return!1;p++}}function i(e,t,r){var n=r;return o(e,function(e,o,i,s,a){n=0===o&&void 0===r?e:t(n,e,o,i,s,a)}),n}function s(e,t){o(e,function(e,r,n,o,i){var s=null===e?null:e.type;switch(s){case null:case"Point":case"LineString":case"Polygon":if(!1===t(Object(l.b)(e,n,{bbox:o,id:i}),r,0))return!1;return}var a;switch(s){case"MultiPoint":a="Point";break;case"MultiLineString":a="LineString";break;case"MultiPolygon":a="Polygon"}for(var u=0;u<e.coordinates.length;u++){var c=e.coordinates[u],f={type:a,coordinates:c};if(!1===t(Object(l.b)(f,n),r,u))return!1}})}function a(e,t){s(e,function(e,r,o){var i=0;if(e.geometry){var s=e.geometry.type;if("Point"!==s&&"MultiPoint"!==s){var a;return!1!==n(e,function(n,s,u,c,f){if(void 0===a)return void(a=n);var p=Object(l.e)([a,n],e.properties);if(!1===t(p,r,o,f,i))return!1;i++,a=n})&&void 0}}})}function u(e,t,r){var n=r,o=!1;return a(e,function(e,i,s,a,u){n=!1===o&&void 0===r?e:t(n,e,i,s,a,u),o=!0}),n}r.d(t,"a",function(){return i}),r.d(t,"b",function(){return u});var l=r(3)},function(e,t,r){e.exports=r(29)},function(e,t,r){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}r(30);var o=r(31),i=n(o),s=r(79),a=n(s),u=r(80),l=n(u),c=r(85),f=function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var r in e)Object.prototype.hasOwnProperty.call(e,r)&&(t[r]=e[r]);return t.default=e,t}(c),p=r(86),h=n(p),d=r(87),m=r(88),y={imports:{numberFormat:d.numberFormat},interpolate:/{{([\s\S]+?)}}/g},v=(0,i.default)(m.controlTemplate,y),g=(0,i.default)(m.resultsTemplate,y),b=(0,i.default)(m.pointPopupTemplate,y),_=(0,i.default)(m.linePopupTemplate,y),j=(0,i.default)(m.areaPopupTemplate,y);L.Control.Measure=L.Control.extend({_className:"leaflet-control-measure",options:{units:{},position:"topright",primaryLengthUnit:"feet",secondaryLengthUnit:"miles",primaryAreaUnit:"acres",activeColor:"#ABE67E",completedColor:"#C8F2BE",captureZIndex:1e4,popupOptions:{className:"leaflet-measure-resultpopup",autoPanPadding:[10,10]}},initialize:function(e){L.setOptions(this,e);var t=this.options,r=t.activeColor,n=t.completedColor;this._symbols=new h.default({activeColor:r,completedColor:n}),this.options.units=L.extend({},a.default,this.options.units)},onAdd:function(e){return this._map=e,this._latlngs=[],this._initLayout(),e.on("click",this._collapse,this),this._layer=L.layerGroup().addTo(e),this._container},onRemove:function(e){e.off("click",this._collapse,this),e.removeLayer(this._layer)},_initLayout:function(){var e=this._className,t=this._container=L.DomUtil.create("div",e+" leaflet-bar");t.innerHTML=v({model:{className:e}}),t.setAttribute("aria-haspopup",!0),L.DomEvent.disableClickPropagation(t),L.DomEvent.disableScrollPropagation(t);var r=this.$toggle=(0,c.selectOne)(".js-toggle",t);this.$interaction=(0,c.selectOne)(".js-interaction",t);var n=(0,c.selectOne)(".js-start",t),o=(0,c.selectOne)(".js-cancel",t),i=(0,c.selectOne)(".js-finish",t);this.$startPrompt=(0,c.selectOne)(".js-startprompt",t),this.$measuringPrompt=(0,c.selectOne)(".js-measuringprompt",t),this.$startHelp=(0,c.selectOne)(".js-starthelp",t),this.$results=(0,c.selectOne)(".js-results",t),this.$measureTasks=(0,c.selectOne)(".js-measuretasks",t),this._collapse(),this._updateMeasureNotStarted(),L.Browser.android||(L.DomEvent.on(t,"mouseenter",this._expand,this),L.DomEvent.on(t,"mouseleave",this._collapse,this)),L.DomEvent.on(r,"click",L.DomEvent.stop),L.Browser.touch?L.DomEvent.on(r,"click",this._expand,this):L.DomEvent.on(r,"focus",this._expand,this),L.DomEvent.on(n,"click",L.DomEvent.stop),L.DomEvent.on(n,"click",this._startMeasure,this),L.DomEvent.on(o,"click",L.DomEvent.stop),L.DomEvent.on(o,"click",this._finishMeasure,this),L.DomEvent.on(i,"click",L.DomEvent.stop),L.DomEvent.on(i,"click",this._handleMeasureDoubleClick,this)},_expand:function(){f.hide(this.$toggle),f.show(this.$interaction)},_collapse:function(){this._locked||(f.hide(this.$interaction),f.show(this.$toggle))},_updateMeasureNotStarted:function(){f.hide(this.$startHelp),f.hide(this.$results),f.hide(this.$measureTasks),f.hide(this.$measuringPrompt),f.show(this.$startPrompt)},_updateMeasureStartedNoPoints:function(){f.hide(this.$results),f.show(this.$startHelp),f.show(this.$measureTasks),f.hide(this.$startPrompt),f.show(this.$measuringPrompt)},_updateMeasureStartedWithPoints:function(){f.hide(this.$startHelp),f.show(this.$results),f.show(this.$measureTasks),f.hide(this.$startPrompt),f.show(this.$measuringPrompt)},_startMeasure:function(){this._locked=!0,this._measureVertexes=L.featureGroup().addTo(this._layer),this._captureMarker=L.marker(this._map.getCenter(),{clickable:!0,zIndexOffset:this.options.captureZIndex,opacity:0}).addTo(this._layer),this._setCaptureMarkerIcon(),this._captureMarker.on("mouseout",this._handleMapMouseOut,this).on("dblclick",this._handleMeasureDoubleClick,this).on("click",this._handleMeasureClick,this),this._map.on("mousemove",this._handleMeasureMove,this).on("mouseout",this._handleMapMouseOut,this).on("move",this._centerCaptureMarker,this).on("resize",this._setCaptureMarkerIcon,this),L.DomEvent.on(this._container,"mouseenter",this._handleMapMouseOut,this),this._updateMeasureStartedNoPoints(),this._map.fire("measurestart",null,!1)},_finishMeasure:function(){var e=L.extend({},this._resultsModel,{points:this._latlngs});this._locked=!1,L.DomEvent.off(this._container,"mouseover",this._handleMapMouseOut,this),this._clearMeasure(),this._captureMarker.off("mouseout",this._handleMapMouseOut,this).off("dblclick",this._handleMeasureDoubleClick,this).off("click",this._handleMeasureClick,this),this._map.off("mousemove",this._handleMeasureMove,this).off("mouseout",this._handleMapMouseOut,this).off("move",this._centerCaptureMarker,this).off("resize",this._setCaptureMarkerIcon,this),this._layer.removeLayer(this._measureVertexes).removeLayer(this._captureMarker),this._measureVertexes=null,this._updateMeasureNotStarted(),this._collapse(),this._map.fire("measurefinish",e,!1)},_clearMeasure:function(){this._latlngs=[],this._resultsModel=null,this._measureVertexes.clearLayers(),this._measureDrag&&this._layer.removeLayer(this._measureDrag),this._measureArea&&this._layer.removeLayer(this._measureArea),this._measureBoundary&&this._layer.removeLayer(this._measureBoundary),this._measureDrag=null,this._measureArea=null,this._measureBoundary=null},_centerCaptureMarker:function(){this._captureMarker.setLatLng(this._map.getCenter())},_setCaptureMarkerIcon:function(){this._captureMarker.setIcon(L.divIcon({iconSize:this._map.getSize().multiplyBy(2)}))},_getMeasurementDisplayStrings:function(e){function t(e,t,o,i,s){if(t&&n[t]){var a=r(e,n[t],i,s);if(o&&n[o]){a=a+" ("+r(e,n[o],i,s)+")"}return a}return r(e,null,i,s)}function r(e,t,r,n){var o={acres:"ایکر",feet:"پا",kilometers:"کیلومتر",hectares:"هکتار",meters:"متر",miles:"مایل",sqfeet:"پا مربع",sqmeters:"متر مربع",sqmiles:"مایل مربع"},i=L.extend({factor:1,decimals:0},t);return[(0,d.numberFormat)(e*i.factor,i.decimals,r||"/",n||","),o[i.display]||i.display].join(" ")}var n=this.options.units;return{lengthDisplay:t(e.length,this.options.primaryLengthUnit,this.options.secondaryLengthUnit,this.options.decPoint,this.options.thousandsSep),areaDisplay:t(e.area,this.options.primaryAreaUnit,this.options.secondaryAreaUnit,this.options.decPoint,this.options.thousandsSep)}},_updateResults:function(){var e=(0,l.default)(this._latlngs),t=this._resultsModel=L.extend({},e,this._getMeasurementDisplayStrings(e),{pointCount:this._latlngs.length});this.$results.innerHTML=g({model:t})},_handleMeasureMove:function(e){this._measureDrag?this._measureDrag.setLatLng(e.latlng):this._measureDrag=L.circleMarker(e.latlng,this._symbols.getSymbol("measureDrag")).addTo(this._layer),this._measureDrag.bringToFront()},_handleMeasureDoubleClick:function(){var e=this._latlngs,t=void 0,r=void 0;if(this._finishMeasure(),e.length){e.length>2&&e.push(e[0]);var n=(0,l.default)(e);1===e.length?(t=L.circleMarker(e[0],this._symbols.getSymbol("resultPoint")),r=b({model:n})):2===e.length?(t=L.polyline(e,this._symbols.getSymbol("resultLine")),r=_({model:L.extend({},n,this._getMeasurementDisplayStrings(n))})):(t=L.polygon(e,this._symbols.getSymbol("resultArea")),r=j({model:L.extend({},n,this._getMeasurementDisplayStrings(n))}));var o=L.DomUtil.create("div","");o.innerHTML=r;var i=(0,c.selectOne)(".js-zoomto",o);i&&(L.DomEvent.on(i,"click",L.DomEvent.stop),L.DomEvent.on(i,"click",function(){t.getBounds?this._map.fitBounds(t.getBounds(),{padding:[20,20],maxZoom:17}):t.getLatLng&&this._map.panTo(t.getLatLng())},this));var s=(0,c.selectOne)(".js-deletemarkup",o);s&&(L.DomEvent.on(s,"click",L.DomEvent.stop),L.DomEvent.on(s,"click",function(){this._layer.removeLayer(t)},this)),t.addTo(this._layer),t.bindPopup(o,this.options.popupOptions),t.getBounds?t.openPopup(t.getBounds().getCenter()):t.getLatLng&&t.openPopup(t.getLatLng())}},_handleMeasureClick:function(e){var t=this._map.mouseEventToLatLng(e.originalEvent),r=this._latlngs[this._latlngs.length-1],n=this._symbols.getSymbol("measureVertex");r&&t.equals(r)||(this._latlngs.push(t),this._addMeasureArea(this._latlngs),this._addMeasureBoundary(this._latlngs),this._measureVertexes.eachLayer(function(e){e.setStyle(n),e._path&&e._path.setAttribute("class",n.className)}),this._addNewVertex(t),this._measureBoundary&&this._measureBoundary.bringToFront(),this._measureVertexes.bringToFront()),this._updateResults(),this._updateMeasureStartedWithPoints()},_handleMapMouseOut:function(){this._measureDrag&&(this._layer.removeLayer(this._measureDrag),this._measureDrag=null)},_addNewVertex:function(e){L.circleMarker(e,this._symbols.getSymbol("measureVertexActive")).addTo(this._measureVertexes)},_addMeasureArea:function(e){if(e.length<3)return void(this._measureArea&&(this._layer.removeLayer(this._measureArea),this._measureArea=null));this._measureArea?this._measureArea.setLatLngs(e):this._measureArea=L.polygon(e,this._symbols.getSymbol("measureArea")).addTo(this._layer)},_addMeasureBoundary:function(e){if(e.length<2)return void(this._measureBoundary&&(this._layer.removeLayer(this._measureBoundary),this._measureBoundary=null));this._measureBoundary?this._measureBoundary.setLatLngs(e):this._measureBoundary=L.polyline(e,this._symbols.getSymbol("measureBoundary")).addTo(this._layer)}}),L.Map.mergeOptions({measureControl:!1}),L.Map.addInitHook(function(){this.options.measureControl&&(this.measureControl=(new L.Control.Measure).addTo(this))}),L.control.measure=function(e){return new L.Control.Measure(e)}},function(e,t){},function(e,t,r){function n(e,t,r){var n=h.imports._.templateSettings||h;r&&c(e,t,r)&&(t=void 0),e=d(e),t=o({},t,n,a);var j,x,M=o({},t.imports,n.imports,a),w=f(M),L=s(M,w),O=0,k=t.interpolate||b,P="__p += '",E=RegExp((t.escape||b).source+"|"+k.source+"|"+(k===p?g:b).source+"|"+(t.evaluate||b).source+"|$","g"),C="sourceURL"in t?"//# sourceURL="+t.sourceURL+"\n":"";e.replace(E,function(t,r,n,o,i,s){return n||(n=o),P+=e.slice(O,s).replace(_,u),r&&(j=!0,P+="' +\n__e("+r+") +\n'"),i&&(x=!0,P+="';\n"+i+";\n__p += '"),n&&(P+="' +\n((__t = ("+n+")) == null ? '' : __t) +\n'"),O=s+t.length,t}),P+="';\n";var S=t.variable;S||(P="with (obj) {\n"+P+"\n}\n"),P=(x?P.replace(m,""):P).replace(y,"$1").replace(v,"$1;"),P="function("+(S||"obj")+") {\n"+(S?"":"obj || (obj = {});\n")+"var __t, __p = ''"+(j?", __e = _.escape":"")+(x?", __j = Array.prototype.join;\nfunction print() { __p += __j.call(arguments, '') }\n":";\n")+P+"return __p\n}";var A=i(function(){return Function(w,C+"return "+P).apply(void 0,L)});if(A.source=P,l(A))throw A;return A}var o=r(32),i=r(62),s=r(65),a=r(66),u=r(67),l=r(22),c=r(15),f=r(68),p=r(25),h=r(71),d=r(26),m=/\b__p \+= '';/g,y=/\b(__p \+=) '' \+/g,v=/(__e\(.*?\)|\b__t\)) \+\n'';/g,g=/\$\{([^\\}]*(?:\\.[^\\}]*)*)\}/g,b=/($^)/,_=/['\n\r\u2028\u2029\\]/g;e.exports=n},function(e,t,r){var n=r(33),o=r(44),i=r(50),s=o(function(e,t,r,o){n(t,i(t),e,o)});e.exports=s},function(e,t,r){function n(e,t,r,n){var s=!r;r||(r={});for(var a=-1,u=t.length;++a<u;){var l=t[a],c=n?n(r[l],e[l],l,r,e):void 0;void 0===c&&(c=e[l]),s?i(r,l,c):o(r,l,c)}return r}var o=r(34),i=r(8);e.exports=n},function(e,t,r){function n(e,t,r){var n=e[t];a.call(e,t)&&i(n,r)&&(void 0!==r||t in e)||o(e,t,r)}var o=r(8),i=r(6),s=Object.prototype,a=s.hasOwnProperty;e.exports=n},function(e,t,r){function n(e,t){var r=i(e,t);return o(r)?r:void 0}var o=r(36),i=r(43);e.exports=n},function(e,t,r){function n(e){return!(!s(e)||i(e))&&(o(e)?d:l).test(a(e))}var o=r(10),i=r(40),s=r(2),a=r(42),u=/[\\^$.*+?()[\]{}|]/g,l=/^\[object .+?Constructor\]$/,c=Function.prototype,f=Object.prototype,p=c.toString,h=f.hasOwnProperty,d=RegExp("^"+p.call(h).replace(u,"\\$&").replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g,"$1.*?")+"$");e.exports=n},function(e,t){var r;r=function(){return this}();try{r=r||Function("return this")()||(0,eval)("this")}catch(e){"object"==typeof window&&(r=window)}e.exports=r},function(e,t,r){function n(e){var t=s.call(e,u),r=e[u];try{e[u]=void 0;var n=!0}catch(e){}var o=a.call(e);return n&&(t?e[u]=r:delete e[u]),o}var o=r(4),i=Object.prototype,s=i.hasOwnProperty,a=i.toString,u=o?o.toStringTag:void 0;e.exports=n},function(e,t){function r(e){return o.call(e)}var n=Object.prototype,o=n.toString;e.exports=r},function(e,t,r){function n(e){return!!i&&i in e}var o=r(41),i=function(){var e=/[^.]+$/.exec(o&&o.keys&&o.keys.IE_PROTO||"");return e?"Symbol(src)_1."+e:""}();e.exports=n},function(e,t,r){var n=r(5),o=n["__core-js_shared__"];e.exports=o},function(e,t){function r(e){if(null!=e){try{return o.call(e)}catch(e){}try{return e+""}catch(e){}}return""}var n=Function.prototype,o=n.toString;e.exports=r},function(e,t){function r(e,t){return null==e?void 0:e[t]}e.exports=r},function(e,t,r){function n(e){return o(function(t,r){var n=-1,o=r.length,s=o>1?r[o-1]:void 0,a=o>2?r[2]:void 0;for(s=e.length>3&&"function"==typeof s?(o--,s):void 0,a&&i(r[0],r[1],a)&&(s=o<3?void 0:s,o=1),t=Object(t);++n<o;){var u=r[n];u&&e(t,u,n,s)}return t})}var o=r(12),i=r(15);e.exports=n},function(e,t,r){function n(e,t,r){return t=i(void 0===t?e.length-1:t,0),function(){for(var n=arguments,s=-1,a=i(n.length-t,0),u=Array(a);++s<a;)u[s]=n[t+s];s=-1;for(var l=Array(t+1);++s<t;)l[s]=n[s];return l[t]=r(u),o(e,this,l)}}var o=r(14),i=Math.max;e.exports=n},function(e,t,r){var n=r(47),o=r(49),i=o(n);e.exports=i},function(e,t,r){var n=r(48),o=r(9),i=r(13),s=o?function(e,t){return o(e,"toString",{configurable:!0,enumerable:!1,value:n(t),writable:!0})}:i;e.exports=s},function(e,t){function r(e){return function(){return e}}e.exports=r},function(e,t){function r(e){var t=0,r=0;return function(){var s=i(),a=o-(s-r);if(r=s,a>0){if(++t>=n)return arguments[0]}else t=0;return e.apply(void 0,arguments)}}var n=800,o=16,i=Date.now;e.exports=r},function(e,t,r){function n(e){return s(e)?o(e,!0):i(e)}var o=r(18),i=r(60),s=r(7);e.exports=n},function(e,t){function r(e,t){for(var r=-1,n=Array(e);++r<e;)n[r]=t(r);return n}e.exports=r},function(e,t,r){var n=r(53),o=r(1),i=Object.prototype,s=i.hasOwnProperty,a=i.propertyIsEnumerable,u=n(function(){return arguments}())?n:function(e){return o(e)&&s.call(e,"callee")&&!a.call(e,"callee")};e.exports=u},function(e,t,r){function n(e){return i(e)&&o(e)==s}var o=r(0),i=r(1),s="[object Arguments]";e.exports=n},function(e,t,r){(function(e){var n=r(5),o=r(55),i="object"==typeof t&&t&&!t.nodeType&&t,s=i&&"object"==typeof e&&e&&!e.nodeType&&e,a=s&&s.exports===i,u=a?n.Buffer:void 0,l=u?u.isBuffer:void 0,c=l||o;e.exports=c}).call(t,r(20)(e))},function(e,t){function r(){return!1}e.exports=r},function(e,t,r){var n=r(57),o=r(58),i=r(59),s=i&&i.isTypedArray,a=s?o(s):n;e.exports=a},function(e,t,r){function n(e){return s(e)&&i(e.length)&&!!a[o(e)]}var o=r(0),i=r(16),s=r(1),a={};a["[object Float32Array]"]=a["[object Float64Array]"]=a["[object Int8Array]"]=a["[object Int16Array]"]=a["[object Int32Array]"]=a["[object Uint8Array]"]=a["[object Uint8ClampedArray]"]=a["[object Uint16Array]"]=a["[object Uint32Array]"]=!0,a["[object Arguments]"]=a["[object Array]"]=a["[object ArrayBuffer]"]=a["[object Boolean]"]=a["[object DataView]"]=a["[object Date]"]=a["[object Error]"]=a["[object Function]"]=a["[object Map]"]=a["[object Number]"]=a["[object Object]"]=a["[object RegExp]"]=a["[object Set]"]=a["[object String]"]=a["[object WeakMap]"]=!1,e.exports=n},function(e,t){function r(e){return function(t){return e(t)}}e.exports=r},function(e,t,r){(function(e){var n=r(11),o="object"==typeof t&&t&&!t.nodeType&&t,i=o&&"object"==typeof e&&e&&!e.nodeType&&e,s=i&&i.exports===o,a=s&&n.process,u=function(){try{return a&&a.binding&&a.binding("util")}catch(e){}}();e.exports=u}).call(t,r(20)(e))},function(e,t,r){function n(e){if(!o(e))return s(e);var t=i(e),r=[];for(var n in e)("constructor"!=n||!t&&u.call(e,n))&&r.push(n);return r}var o=r(2),i=r(21),s=r(61),a=Object.prototype,u=a.hasOwnProperty;e.exports=n},function(e,t){function r(e){var t=[];if(null!=e)for(var r in Object(e))t.push(r);return t}e.exports=r},function(e,t,r){var n=r(14),o=r(12),i=r(22),s=o(function(e,t){try{return n(e,void 0,t)}catch(e){return i(e)?e:new Error(e)}});e.exports=s},function(e,t,r){function n(e){if(!s(e)||o(e)!=a)return!1;var t=i(e);if(null===t)return!0;var r=f.call(t,"constructor")&&t.constructor;return"function"==typeof r&&r instanceof r&&c.call(r)==p}var o=r(0),i=r(64),s=r(1),a="[object Object]",u=Function.prototype,l=Object.prototype,c=u.toString,f=l.hasOwnProperty,p=c.call(Object);e.exports=n},function(e,t,r){var n=r(23),o=n(Object.getPrototypeOf,Object);e.exports=o},function(e,t,r){function n(e,t){return o(t,function(t){return e[t]})}var o=r(24);e.exports=n},function(e,t,r){function n(e,t,r,n){return void 0===e||o(e,i[r])&&!s.call(n,r)?t:e}var o=r(6),i=Object.prototype,s=i.hasOwnProperty;e.exports=n},function(e,t){function r(e){return"\\"+n[e]}var n={"\\":"\\","'":"'","\n":"n","\r":"r","\u2028":"u2028","\u2029":"u2029"};e.exports=r},function(e,t,r){function n(e){return s(e)?o(e):i(e)}var o=r(18),i=r(69),s=r(7);e.exports=n},function(e,t,r){function n(e){if(!o(e))return i(e);var t=[];for(var r in Object(e))a.call(e,r)&&"constructor"!=r&&t.push(r);return t}var o=r(21),i=r(70),s=Object.prototype,a=s.hasOwnProperty;e.exports=n},function(e,t,r){var n=r(23),o=n(Object.keys,Object);e.exports=o},function(e,t,r){var n=r(72),o=r(77),i=r(78),s=r(25),a={escape:o,evaluate:i,interpolate:s,variable:"",imports:{_:{escape:n}}};e.exports=a},function(e,t,r){function n(e){return e=i(e),e&&a.test(e)?e.replace(s,o):e}var o=r(73),i=r(26),s=/[&<>"']/g,a=RegExp(s.source);e.exports=n},function(e,t,r){var n=r(74),o={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"},i=n(o);e.exports=i},function(e,t){function r(e){return function(t){return null==e?void 0:e[t]}}e.exports=r},function(e,t,r){function n(e){if("string"==typeof e)return e;if(s(e))return i(e,n)+"";if(a(e))return c?c.call(e):"";var t=e+"";return"0"==t&&1/e==-u?"-0":t}var o=r(4),i=r(24),s=r(19),a=r(76),u=1/0,l=o?o.prototype:void 0,c=l?l.toString:void 0;e.exports=n},function(e,t,r){function n(e){return"symbol"==typeof e||i(e)&&o(e)==s}var o=r(0),i=r(1),s="[object Symbol]";e.exports=n},function(e,t){var r=/<%-([\s\S]+?)%>/g;e.exports=r},function(e,t){var r=/<%([\s\S]+?)%>/g;e.exports=r},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default={acres:{factor:24711e-8,display:"acres",decimals:2},feet:{factor:3.2808,display:"feet",decimals:0},kilometers:{factor:.001,display:"kilometers",decimals:2},hectares:{factor:1e-4,display:"hectares",decimals:2},meters:{factor:1,display:"meters",decimals:0},miles:{factor:3.2808/5280,display:"miles",decimals:2},sqfeet:{factor:10.7639,display:"sqfeet",decimals:0},sqmeters:{factor:1,display:"sqmeters",decimals:0},sqmiles:{factor:3.86102e-7,display:"sqmiles",decimals:2}}},function(e,t,r){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}function o(e){return e<10?"0"+e.toString():e.toString()}function i(e,t,r){var n=Math.abs(e),i=Math.floor(n),s=Math.floor(60*(n-i)),a=Math.round(3600*(n-i-s/60)*100)/100,u=n===e?t:r;return o(i)+"&deg; "+o(s)+"' "+o(a)+'" '+u}function s(e){var t=e[e.length-1],r=e.map(function(e){return[e.lat,e.lng]}),n=L.polyline(r),o=L.polygon(r),s=1e3*(0,u.default)(n.toGeoJSON(),{units:"kilometers"}),a=(0,c.default)(o.toGeoJSON());return{lastCoord:{dd:{x:t.lng,y:t.lat},dms:{x:i(t.lng,"E","W"),y:i(t.lat,"N","S")}},length:s,area:a}}Object.defineProperty(t,"__esModule",{value:!0}),t.default=s;var a=r(81),u=n(a),l=r(84),c=n(l)},function(e,t,r){"use strict";function n(e,t){if(t=t||{},!Object(s.d)(t))throw new Error("options is invalid");if(!e)throw new Error("geojson is required");return Object(i.b)(e,function(e,r){var n=r.geometry.coordinates;return e+Object(o.a)(n[0],n[1],t)},0)}Object.defineProperty(t,"__esModule",{value:!0});var o=r(82),i=r(27),s=r(3);t.default=n},function(e,t,r){"use strict";function n(e,t,r){if(r=r||{},!Object(i.d)(r))throw new Error("options is invalid");var n=r.units,s=Object(o.a)(e),a=Object(o.a)(t),u=Object(i.a)(a[1]-s[1]),l=Object(i.a)(a[0]-s[0]),c=Object(i.a)(s[1]),f=Object(i.a)(a[1]),p=Math.pow(Math.sin(u/2),2)+Math.pow(Math.sin(l/2),2)*Math.cos(c)*Math.cos(f);return Object(i.g)(2*Math.atan2(Math.sqrt(p),Math.sqrt(1-p)),n)}var o=r(83),i=r(3);t.a=n},function(e,t,r){"use strict";function n(e){if(!e)throw new Error("coord is required");if("Feature"===e.type&&null!==e.geometry&&"Point"===e.geometry.type)return e.geometry.coordinates;if("Point"===e.type)return e.coordinates;if(Array.isArray(e)&&e.length>=2&&void 0===e[0].length&&void 0===e[1].length)return e;throw new Error("coord must be GeoJSON Point or an Array of numbers")}r.d(t,"a",function(){return n});r(3)},function(e,t,r){"use strict";function n(e){return Object(u.a)(e,function(e,t){return e+o(t)},0)}function o(e){var t,r=0;switch(e.type){case"Polygon":return i(e.coordinates);case"MultiPolygon":for(t=0;t<e.coordinates.length;t++)r+=i(e.coordinates[t]);return r;case"Point":case"MultiPoint":case"LineString":case"MultiLineString":return 0;case"GeometryCollection":for(t=0;t<e.geometries.length;t++)r+=o(e.geometries[t]);return r}}function i(e){var t=0;if(e&&e.length>0){t+=Math.abs(s(e[0]));for(var r=1;r<e.length;r++)t-=Math.abs(s(e[r]))}return t}function s(e){var t,r,n,o,i,s,u,c=0,f=e.length;if(f>2){for(u=0;u<f;u++)u===f-2?(o=f-2,i=f-1,s=0):u===f-1?(o=f-1,i=0,s=1):(o=u,i=u+1,s=u+2),t=e[o],r=e[i],n=e[s],c+=(a(n[0])-a(t[0]))*Math.sin(a(r[1]));c=c*l*l/2}return c}function a(e){return e*Math.PI/180}Object.defineProperty(t,"__esModule",{value:!0});var u=r(27),l=6378137;t.default=n},function(e,t,r){"use strict";function n(e,t){return t||(t=document),t.querySelector(e)}function o(e,t){return t||(t=document),Array.prototype.slice.call(t.querySelectorAll(e))}function i(e){if(e)return e.setAttribute("style","display:none;"),e}function s(e){if(e)return e.removeAttribute("style"),e}Object.defineProperty(t,"__esModule",{value:!0}),t.selectOne=n,t.selectAll=o,t.hide=i,t.show=s},function(e,t,r){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}(),i={activeColor:"#ABE67E",completedColor:"#C8F2BE"},s=function(){function e(t){n(this,e),this._options=L.extend({},i,this._options,t)}return o(e,[{key:"getSymbol",value:function(e){return{measureDrag:{clickable:!1,radius:4,color:this._options.activeColor,weight:2,opacity:.7,fillColor:this._options.activeColor,fillOpacity:.5,className:"layer-measuredrag"},measureArea:{clickable:!1,stroke:!1,fillColor:this._options.activeColor,fillOpacity:.2,className:"layer-measurearea"},measureBoundary:{clickable:!1,color:this._options.activeColor,weight:2,opacity:.9,fill:!1,className:"layer-measureboundary"},measureVertex:{clickable:!1,radius:4,color:this._options.activeColor,weight:2,opacity:1,fillColor:this._options.activeColor,fillOpacity:.7,className:"layer-measurevertex"},measureVertexActive:{clickable:!1,radius:4,color:this._options.activeColor,weight:2,opacity:1,fillColor:this._options.activeColor,fillOpacity:1,className:"layer-measurevertex active"},resultArea:{clickable:!0,color:this._options.completedColor,weight:2,opacity:.9,fillColor:this._options.completedColor,fillOpacity:.2,className:"layer-measure-resultarea"},resultLine:{clickable:!0,color:this._options.completedColor,weight:3,opacity:.9,fill:!1,className:"layer-measure-resultline"},resultPoint:{clickable:!0,radius:4,color:this._options.completedColor,weight:2,opacity:1,fillColor:this._options.completedColor,fillOpacity:.7,className:"layer-measure-resultpoint"}}[e]}}]),e}();t.default=s},function(e,t,r){"use strict";function n(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:2,r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:".",n=arguments.length>3&&void 0!==arguments[3]?arguments[3]:",",o=e<0?"-":"",i=Math.abs(+e||0),s=parseInt(i.toFixed(t),10)+"",a=s.length>3?s.length%3:0;return[o,a?s.substr(0,a)+n:"",s.substr(a).replace(/(\d{3})(?=\d)/g,"$1"+n),t?""+r+Math.abs(i-s).toFixed(t).slice(2):""].join("")}Object.defineProperty(t,"__esModule",{value:!0}),t.numberFormat=n},function(e,t,r){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var o=r(89);Object.defineProperty(t,"controlTemplate",{enumerable:!0,get:function(){return n(o).default}});var i=r(90);Object.defineProperty(t,"resultsTemplate",{enumerable:!0,get:function(){return n(i).default}});var s=r(91);Object.defineProperty(t,"pointPopupTemplate",{enumerable:!0,get:function(){return n(s).default}});var a=r(92);Object.defineProperty(t,"linePopupTemplate",{enumerable:!0,get:function(){return n(a).default}});var u=r(93);Object.defineProperty(t,"areaPopupTemplate",{enumerable:!0,get:function(){return n(u).default}})},function(e,t,r){e.exports='<a class="{{ model.className }}-toggle js-toggle" href=# title="اندازه گیری فاصله و مساحت">اندازه گیری</a> <div class="{{ model.className }}-interaction js-interaction"> <div class="js-startprompt startprompt"> <h3>اندازه گیری فاصله و مساحت</h3> <ul class=tasks> <a href=# class="js-start start">ثبت اندازه گیری جدید</a> </ul> </div> <div class=js-measuringprompt> <h3>اندازه گیری فاصله و مساحت</h3> <p class=js-starthelp>برای ثبت اندازه گیری جدید نقاطی را به نقشه اضافه کنید.</p> <div class="js-results results"></div> <ul class="js-measuretasks tasks"> <li><a href=# class="js-cancel cancel">لغو</a></li> <li><a href=# class="js-finish finish">پایان اندازه گیری</a></li> </ul> </div> </div> '},function(e,t,r){e.exports='<div class=group> <p class="lastpoint heading">آخرین نقطه</p> <p>{{ model.lastCoord.dms.y }} <span class=coorddivider>/</span> {{ model.lastCoord.dms.x }}</p> <p>{{ numberFormat(model.lastCoord.dd.y, 6) }} <span class=coorddivider>/</span> {{ numberFormat(model.lastCoord.dd.x, 6) }}</p> </div> <% if (model.pointCount > 1) { %> <div class=group> <p><span class=heading>فاصله مسیر</span> {{ model.lengthDisplay }}</p> </div> <% } %> <% if (model.pointCount > 2) { %> <div class=group> <p><span class=heading>مساحت</span> {{ model.areaDisplay }}</p> </div> <% } %> '},function(e,t,r){e.exports='<h3>مکان نقطه</h3> <p>{{ model.lastCoord.dms.y }} <span class=coorddivider>/</span> {{ model.lastCoord.dms.x }}</p> <p>{{ numberFormat(model.lastCoord.dd.y, 6) }} <span class=coorddivider>/</span> {{ numberFormat(model.lastCoord.dd.x, 6) }}</p> <ul class=tasks> <li><a href=# class="js-zoomto zoomto">مرکز این مکان</a></li> <li><a href=# class="js-deletemarkup deletemarkup">حذف</a></li> </ul> '},function(e,t,r){e.exports='<h3>اندازه گیری خطی</h3> <p>{{ model.lengthDisplay }}</p> <ul class=tasks> <li><a href=# class="js-zoomto zoomto">مرکز این خط</a></li> <li><a href=# class="js-deletemarkup deletemarkup">حذف</a></li> </ul> '},function(e,t,r){e.exports='<h3>اندازه گیری مساحت</h3> <p>{{ model.areaDisplay }}</p> <p>{{ model.lengthDisplay }} محیط</p> <ul class=tasks> <li><a href=# class="js-zoomto zoomto">مرکز این سطح</a></li> <li><a href=# class="js-deletemarkup deletemarkup">حذف</a></li> </ul> '}]);
+/*
+ * MIT Copyright 2016 Ursudio <info@ursudio.com>
+ * http://www.ursudio.com/
+ * Please attribute Ursudio in any production associated with this JavaScript plugin.
+ */
+
+L.WebGLHeatMap = L.Renderer.extend({
+
+    // tested on Leaflet 1.0.3
+    version: '0.2.7',
+
+    options: {
+        // @option size: Number
+        // corresponds with units below
+        size: 30000,
+        // @option units: String
+        // 'm' for meters or 'px' for pixels
+        units: 'm',
+        opacity: 1,
+        gradientTexture: false,
+        alphaRange: 1,
+        // @option padding: 
+        // don't add padding (0 helps with zoomanim)
+        padding: 0
+    },
+
+    _initContainer: function() {
+        var container = this._container = L.DomUtil.create('canvas', 'leaflet-zoom-animated'),
+            options = this.options;
+
+        container.id = 'webgl-leaflet-' + L.Util.stamp(this);
+        container.style.opacity = options.opacity;
+        container.style.position = 'absolute';
+
+        try {
+            this.gl = window.createWebGLHeatmap({
+                canvas: container,
+                gradientTexture: options.gradientTexture,
+                alphaRange: [0, options.alphaRange]
+            });
+        } catch (e) {
+            console.error(e);
+            
+            // setup for webgl-less unit testing
+            this.gl = {
+                clear: function () {},
+                update: function () {},
+                multiply: function () {},
+                addPoint: function () {},
+                display: function () {},
+                adjustSize: function () {},
+            };
+        }
+
+        this._container = container;
+    },
+
+    onAdd: function() {
+        // save this to a shorter method
+        this.size = this.options.size;
+
+        L.Renderer.prototype.onAdd.call(this);
+
+        this.resize();
+    },
+
+    // onRemove-ish
+    _destroyContainer: function () {
+        delete this.gl;
+        L.DomUtil.remove(this._container);
+        L.DomEvent.off(this._container);
+        delete this._container;
+    },
+
+    // events
+
+    getEvents: function() {
+        var events = L.Renderer.prototype.getEvents.call(this);
+
+        L.Util.extend(events, {
+            resize: this.resize,
+            move: L.Util.throttle(this._update, 49, this)
+        });
+
+        return events;
+    },
+
+    resize: function() {
+        var canvas = this._container,
+            size = this._map.getSize();
+
+        canvas.width = size.x;
+        canvas.height = size.y;
+
+        this.gl.adjustSize();
+        this.draw();
+    },
+
+    reposition: function() {
+        // canvas moves opposite to map pane's position
+        var pos = this._map
+            ._getMapPanePos()
+            .multiplyBy(-1);
+
+        L.DomUtil.setPosition(this._container, pos);
+    },
+
+    _update: function() {
+        L.Renderer.prototype._update.call(this);
+        this.draw();
+    },
+
+    // draw function
+
+    draw: function() {
+        var map = this._map,
+            heatmap = this.gl,
+            data = this.data,
+            dataLen = data.length,
+            floor = Math.floor,
+            scaleFn = this['_scale' + this.options.units].bind( this ),
+            multiply = this._multiply;
+
+        if (!map) return;
+
+        heatmap.clear();
+        this.reposition();
+
+        if (dataLen) {
+
+            for (var i = 0; i < dataLen; i++) {
+                var dataVal = data[i],
+                    latlng = L.latLng(dataVal),
+                    point = map.latLngToContainerPoint(latlng);
+
+                heatmap.addPoint(
+                    floor(point.x),
+                    floor(point.y),
+                    scaleFn(latlng),
+                    dataVal[2]
+                );
+            }
+
+            heatmap.update();
+
+            if (multiply) {
+                heatmap.multiply(multiply);
+                heatmap.update();
+            }
+
+        }
+        heatmap.display();
+    },
+
+    // scale methods 
+
+    _scalem: function(latlng) {
+        // necessary to maintain accurately sized circles
+        // to change scale to miles (for example), you will need to convert 40075017 (equatorial circumference of the Earth in metres) to miles
+        var map = this._map,
+            lngRadius = (this.size / 40075017) *
+                360 / 
+                Math.cos((Math.PI / 180) * latlng.lat),
+            latlng2 = new L.LatLng(latlng.lat, latlng.lng - lngRadius),
+            point = map.latLngToLayerPoint(latlng),
+            point2 = map.latLngToLayerPoint(latlng2);
+
+        return Math.max(Math.round(point.x - point2.x), 1);
+    },
+
+    _scalepx: function() {
+        return this.size;
+    },
+
+    // data handling methods
+
+    data: [],
+
+    addDataPoint: function(lat, lon, value) {
+        this.data.push([lat, lon, value / 100]);
+    },
+
+    setData: function(dataset) {
+        // format: [[lat, lon, intensity],...]
+        this.data = dataset;
+        this._multiply = null;
+        this.draw();
+    },
+
+    clear: function() {
+        this.setData([]);
+    },
+
+    // affects original points
+    multiply: function(n) {
+        this._multiply = n;
+        this.draw();
+    }
+
+});
+
+L.webGLHeatmap = function(options) {
+    return new L.WebGLHeatMap(options);
+};
+
+/***/ }),
+
+/***/ "./node_modules/leaflet-webgl-heatmap/src/webgl-heatmap/webgl-heatmap.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/leaflet-webgl-heatmap/src/webgl-heatmap/webgl-heatmap.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// Generated by CoffeeScript 1.8.0
+(function() {
+  var Framebuffer, Heights, Node, Shader, Texture, WebGLHeatmap, fragmentShaderBlit, nukeVendorPrefix, textureFloatShims, vertexShaderBlit,
+    __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
+
+  nukeVendorPrefix = function() {
+    var getExtension, getSupportedExtensions, vendorRe, vendors;
+    if (window.WebGLRenderingContext != null) {
+      vendors = ['WEBKIT', 'MOZ', 'MS', 'O'];
+      vendorRe = /^WEBKIT_(.*)|MOZ_(.*)|MS_(.*)|O_(.*)/;
+      getExtension = WebGLRenderingContext.prototype.getExtension;
+      WebGLRenderingContext.prototype.getExtension = function(name) {
+        var extobj, match, vendor, _i, _len;
+        match = name.match(vendorRe);
+        if (match !== null) {
+          name = match[1];
+        }
+        extobj = getExtension.call(this, name);
+        if (extobj === null) {
+          for (_i = 0, _len = vendors.length; _i < _len; _i++) {
+            vendor = vendors[_i];
+            extobj = getExtension.call(this, vendor + '_' + name);
+            if (extobj !== null) {
+              return extobj;
+            }
+          }
+          return null;
+        } else {
+          return extobj;
+        }
+      };
+      getSupportedExtensions = WebGLRenderingContext.prototype.getSupportedExtensions;
+      return WebGLRenderingContext.prototype.getSupportedExtensions = function() {
+        var extension, match, result, supported, _i, _len;
+        supported = getSupportedExtensions.call(this);
+        result = [];
+        for (_i = 0, _len = supported.length; _i < _len; _i++) {
+          extension = supported[_i];
+          match = extension.match(vendorRe);
+          if (match !== null) {
+            extension = match[1];
+          }
+          if (__indexOf.call(result, extension) < 0) {
+            result.push(extension);
+          }
+        }
+        return result;
+      };
+    }
+  };
+
+  textureFloatShims = function() {
+    var checkColorBuffer, checkFloatLinear, checkSupport, checkTexture, createSourceCanvas, getExtension, getSupportedExtensions, name, shimExtensions, shimLookup, unshimExtensions, unshimLookup, _i, _len;
+    createSourceCanvas = function() {
+      var canvas, ctx, imageData;
+      canvas = document.createElement('canvas');
+      canvas.width = 2;
+      canvas.height = 2;
+      ctx = canvas.getContext('2d');
+      imageData = ctx.getImageData(0, 0, 2, 2);
+      imageData.data.set(new Uint8ClampedArray([0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 255, 255, 255, 255]));
+      ctx.putImageData(imageData, 0, 0);
+      return canvas;
+    };
+    createSourceCanvas();
+    checkFloatLinear = function(gl, sourceType) {
+      var buffer, cleanup, fragmentShader, framebuffer, positionLoc, program, readBuffer, result, source, sourceCanvas, sourceLoc, target, vertexShader, vertices;
+      program = gl.createProgram();
+      vertexShader = gl.createShader(gl.VERTEX_SHADER);
+      gl.attachShader(program, vertexShader);
+      gl.shaderSource(vertexShader, 'attribute vec2 position;\nvoid main(){\n    gl_Position = vec4(position, 0.0, 1.0);\n}');
+      gl.compileShader(vertexShader);
+      if (!gl.getShaderParameter(vertexShader, gl.COMPILE_STATUS)) {
+        throw gl.getShaderInfoLog(vertexShader);
+      }
+      fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
+      gl.attachShader(program, fragmentShader);
+      gl.shaderSource(fragmentShader, 'uniform sampler2D source;\nvoid main(){\n    gl_FragColor = texture2D(source, vec2(1.0, 1.0));\n}');
+      gl.compileShader(fragmentShader);
+      if (!gl.getShaderParameter(fragmentShader, gl.COMPILE_STATUS)) {
+        throw gl.getShaderInfoLog(fragmentShader);
+      }
+      gl.linkProgram(program);
+      if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+        throw gl.getProgramInfoLog(program);
+      }
+      gl.useProgram(program);
+      cleanup = function() {
+        gl.deleteShader(fragmentShader);
+        gl.deleteShader(vertexShader);
+        gl.deleteProgram(program);
+        gl.deleteBuffer(buffer);
+        gl.deleteTexture(source);
+        gl.deleteTexture(target);
+        gl.deleteFramebuffer(framebuffer);
+        gl.bindBuffer(gl.ARRAY_BUFFER, null);
+        gl.useProgram(null);
+        gl.bindTexture(gl.TEXTURE_2D, null);
+        return gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+      };
+      target = gl.createTexture();
+      gl.bindTexture(gl.TEXTURE_2D, target);
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, 2, 2, 0, gl.RGBA, gl.UNSIGNED_BYTE, null);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+      framebuffer = gl.createFramebuffer();
+      gl.bindFramebuffer(gl.FRAMEBUFFER, framebuffer);
+      gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, target, 0);
+      sourceCanvas = createSourceCanvas();
+      source = gl.createTexture();
+      gl.bindTexture(gl.TEXTURE_2D, source);
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, sourceType, sourceCanvas);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+      vertices = new Float32Array([1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1]);
+      buffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+      gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
+      positionLoc = gl.getAttribLocation(program, 'position');
+      sourceLoc = gl.getUniformLocation(program, 'source');
+      gl.enableVertexAttribArray(positionLoc);
+      gl.vertexAttribPointer(positionLoc, 2, gl.FLOAT, false, 0, 0);
+      gl.uniform1i(sourceLoc, 0);
+      gl.drawArrays(gl.TRIANGLES, 0, 6);
+      readBuffer = new Uint8Array(4 * 4);
+      gl.readPixels(0, 0, 2, 2, gl.RGBA, gl.UNSIGNED_BYTE, readBuffer);
+      result = Math.abs(readBuffer[0] - 127) < 10;
+      cleanup();
+      return result;
+    };
+    checkTexture = function(gl, targetType) {
+      var target;
+      target = gl.createTexture();
+      gl.bindTexture(gl.TEXTURE_2D, target);
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, 2, 2, 0, gl.RGBA, targetType, null);
+      if (gl.getError() === 0) {
+        gl.deleteTexture(target);
+        return true;
+      } else {
+        gl.deleteTexture(target);
+        return false;
+      }
+    };
+    checkColorBuffer = function(gl, targetType) {
+      var check, framebuffer, target;
+      target = gl.createTexture();
+      gl.bindTexture(gl.TEXTURE_2D, target);
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, 2, 2, 0, gl.RGBA, targetType, null);
+      framebuffer = gl.createFramebuffer();
+      gl.bindFramebuffer(gl.FRAMEBUFFER, framebuffer);
+      gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, target, 0);
+      check = gl.checkFramebufferStatus(gl.FRAMEBUFFER);
+      gl.deleteTexture(target);
+      gl.deleteFramebuffer(framebuffer);
+      gl.bindTexture(gl.TEXTURE_2D, null);
+      gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+      if (check === gl.FRAMEBUFFER_COMPLETE) {
+        return true;
+      } else {
+        return false;
+      }
+    };
+    shimExtensions = [];
+    shimLookup = {};
+    unshimExtensions = [];
+    checkSupport = function() {
+      var canvas, extobj, gl, halfFloatExt, halfFloatTexturing, singleFloatExt, singleFloatTexturing;
+      canvas = document.createElement('canvas');
+      gl = null;
+      try {
+        gl = canvas.getContext('experimental-webgl');
+        if (gl === null) {
+          gl = canvas.getContext('webgl');
+        }
+      } catch (_error) {}
+      if (gl != null) {
+        singleFloatExt = gl.getExtension('OES_texture_float');
+        if (singleFloatExt === null) {
+          if (checkTexture(gl, gl.FLOAT)) {
+            singleFloatTexturing = true;
+            shimExtensions.push('OES_texture_float');
+            shimLookup.OES_texture_float = {
+              shim: true
+            };
+          } else {
+            singleFloatTexturing = false;
+            unshimExtensions.push('OES_texture_float');
+          }
+        } else {
+          if (checkTexture(gl, gl.FLOAT)) {
+            singleFloatTexturing = true;
+            shimExtensions.push('OES_texture_float');
+          } else {
+            singleFloatTexturing = false;
+            unshimExtensions.push('OES_texture_float');
+          }
+        }
+        if (singleFloatTexturing) {
+          extobj = gl.getExtension('WEBGL_color_buffer_float');
+          if (extobj === null) {
+            if (checkColorBuffer(gl, gl.FLOAT)) {
+              shimExtensions.push('WEBGL_color_buffer_float');
+              shimLookup.WEBGL_color_buffer_float = {
+                shim: true,
+                RGBA32F_EXT: 0x8814,
+                RGB32F_EXT: 0x8815,
+                FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE_EXT: 0x8211,
+                UNSIGNED_NORMALIZED_EXT: 0x8C17
+              };
+            } else {
+              unshimExtensions.push('WEBGL_color_buffer_float');
+            }
+          } else {
+            if (checkColorBuffer(gl, gl.FLOAT)) {
+              shimExtensions.push('WEBGL_color_buffer_float');
+            } else {
+              unshimExtensions.push('WEBGL_color_buffer_float');
+            }
+          }
+          extobj = gl.getExtension('OES_texture_float_linear');
+          if (extobj === null) {
+            if (checkFloatLinear(gl, gl.FLOAT)) {
+              shimExtensions.push('OES_texture_float_linear');
+              shimLookup.OES_texture_float_linear = {
+                shim: true
+              };
+            } else {
+              unshimExtensions.push('OES_texture_float_linear');
+            }
+          } else {
+            if (checkFloatLinear(gl, gl.FLOAT)) {
+              shimExtensions.push('OES_texture_float_linear');
+            } else {
+              unshimExtensions.push('OES_texture_float_linear');
+            }
+          }
+        }
+        halfFloatExt = gl.getExtension('OES_texture_half_float');
+        if (halfFloatExt === null) {
+          if (checkTexture(gl, 0x8D61)) {
+            halfFloatTexturing = true;
+            shimExtensions.push('OES_texture_half_float');
+            halfFloatExt = shimLookup.OES_texture_half_float = {
+              HALF_FLOAT_OES: 0x8D61,
+              shim: true
+            };
+          } else {
+            halfFloatTexturing = false;
+            unshimExtensions.push('OES_texture_half_float');
+          }
+        } else {
+          if (checkTexture(gl, halfFloatExt.HALF_FLOAT_OES)) {
+            halfFloatTexturing = true;
+            shimExtensions.push('OES_texture_half_float');
+          } else {
+            halfFloatTexturing = false;
+            unshimExtensions.push('OES_texture_half_float');
+          }
+        }
+        if (halfFloatTexturing) {
+          extobj = gl.getExtension('EXT_color_buffer_half_float');
+          if (extobj === null) {
+            if (checkColorBuffer(gl, halfFloatExt.HALF_FLOAT_OES)) {
+              shimExtensions.push('EXT_color_buffer_half_float');
+              shimLookup.EXT_color_buffer_half_float = {
+                shim: true,
+                RGBA16F_EXT: 0x881A,
+                RGB16F_EXT: 0x881B,
+                FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE_EXT: 0x8211,
+                UNSIGNED_NORMALIZED_EXT: 0x8C17
+              };
+            } else {
+              unshimExtensions.push('EXT_color_buffer_half_float');
+            }
+          } else {
+            if (checkColorBuffer(gl, halfFloatExt.HALF_FLOAT_OES)) {
+              shimExtensions.push('EXT_color_buffer_half_float');
+            } else {
+              unshimExtensions.push('EXT_color_buffer_half_float');
+            }
+          }
+          extobj = gl.getExtension('OES_texture_half_float_linear');
+          if (extobj === null) {
+            if (checkFloatLinear(gl, halfFloatExt.HALF_FLOAT_OES)) {
+              shimExtensions.push('OES_texture_half_float_linear');
+              return shimLookup.OES_texture_half_float_linear = {
+                shim: true
+              };
+            } else {
+              return unshimExtensions.push('OES_texture_half_float_linear');
+            }
+          } else {
+            if (checkFloatLinear(gl, halfFloatExt.HALF_FLOAT_OES)) {
+              return shimExtensions.push('OES_texture_half_float_linear');
+            } else {
+              return unshimExtensions.push('OES_texture_half_float_linear');
+            }
+          }
+        }
+      }
+    };
+    if (window.WebGLRenderingContext != null) {
+      checkSupport();
+      unshimLookup = {};
+      for (_i = 0, _len = unshimExtensions.length; _i < _len; _i++) {
+        name = unshimExtensions[_i];
+        unshimLookup[name] = true;
+      }
+      getExtension = WebGLRenderingContext.prototype.getExtension;
+      WebGLRenderingContext.prototype.getExtension = function(name) {
+        var extobj;
+        extobj = shimLookup[name];
+        if (extobj === void 0) {
+          if (unshimLookup[name]) {
+            return null;
+          } else {
+            return getExtension.call(this, name);
+          }
+        } else {
+          return extobj;
+        }
+      };
+      getSupportedExtensions = WebGLRenderingContext.prototype.getSupportedExtensions;
+      WebGLRenderingContext.prototype.getSupportedExtensions = function() {
+        var extension, result, supported, _j, _k, _len1, _len2;
+        supported = getSupportedExtensions.call(this);
+        result = [];
+        for (_j = 0, _len1 = supported.length; _j < _len1; _j++) {
+          extension = supported[_j];
+          if (unshimLookup[extension] === void 0) {
+            result.push(extension);
+          }
+        }
+        for (_k = 0, _len2 = shimExtensions.length; _k < _len2; _k++) {
+          extension = shimExtensions[_k];
+          if (__indexOf.call(result, extension) < 0) {
+            result.push(extension);
+          }
+        }
+        return result;
+      };
+      return WebGLRenderingContext.prototype.getFloatExtension = function(spec) {
+        var candidate, candidates, half, halfFramebuffer, halfLinear, halfTexture, i, importance, preference, result, single, singleFramebuffer, singleLinear, singleTexture, use, _j, _k, _l, _len1, _len2, _len3, _len4, _m, _ref, _ref1, _ref2;
+        if (spec.prefer == null) {
+          spec.prefer = ['half'];
+        }
+        if (spec.require == null) {
+          spec.require = [];
+        }
+        if (spec.throws == null) {
+          spec.throws = true;
+        }
+        singleTexture = this.getExtension('OES_texture_float');
+        halfTexture = this.getExtension('OES_texture_half_float');
+        singleFramebuffer = this.getExtension('WEBGL_color_buffer_float');
+        halfFramebuffer = this.getExtension('EXT_color_buffer_half_float');
+        singleLinear = this.getExtension('OES_texture_float_linear');
+        halfLinear = this.getExtension('OES_texture_half_float_linear');
+        single = {
+          texture: singleTexture !== null,
+          filterable: singleLinear !== null,
+          renderable: singleFramebuffer !== null,
+          score: 0,
+          precision: 'single',
+          half: false,
+          single: true,
+          type: this.FLOAT
+        };
+        half = {
+          texture: halfTexture !== null,
+          filterable: halfLinear !== null,
+          renderable: halfFramebuffer !== null,
+          score: 0,
+          precision: 'half',
+          half: true,
+          single: false,
+          type: (_ref = halfTexture != null ? halfTexture.HALF_FLOAT_OES : void 0) != null ? _ref : null
+        };
+        candidates = [];
+        if (single.texture) {
+          candidates.push(single);
+        }
+        if (half.texture) {
+          candidates.push(half);
+        }
+        result = [];
+        for (_j = 0, _len1 = candidates.length; _j < _len1; _j++) {
+          candidate = candidates[_j];
+          use = true;
+          _ref1 = spec.require;
+          for (_k = 0, _len2 = _ref1.length; _k < _len2; _k++) {
+            name = _ref1[_k];
+            if (candidate[name] === false) {
+              use = false;
+            }
+          }
+          if (use) {
+            result.push(candidate);
+          }
+        }
+        for (_l = 0, _len3 = result.length; _l < _len3; _l++) {
+          candidate = result[_l];
+          _ref2 = spec.prefer;
+          for (i = _m = 0, _len4 = _ref2.length; _m < _len4; i = ++_m) {
+            preference = _ref2[i];
+            importance = Math.pow(2, spec.prefer.length - i - 1);
+            if (candidate[preference]) {
+              candidate.score += importance;
+            }
+          }
+        }
+        result.sort(function(a, b) {
+          if (a.score === b.score) {
+            return 0;
+          } else if (a.score < b.score) {
+            return 1;
+          } else if (a.score > b.score) {
+            return -1;
+          }
+        });
+        if (result.length === 0) {
+          if (spec.throws) {
+            throw 'No floating point texture support that is ' + spec.require.join(', ');
+          } else {
+            return null;
+          }
+        } else {
+          result = result[0];
+          return {
+            filterable: result.filterable,
+            renderable: result.renderable,
+            type: result.type,
+            precision: result.precision
+          };
+        }
+      };
+    }
+  };
+
+  nukeVendorPrefix();
+
+  textureFloatShims();
+
+  Shader = (function() {
+    function Shader(gl, _arg) {
+      var fragment, vertex;
+      this.gl = gl;
+      vertex = _arg.vertex, fragment = _arg.fragment;
+      this.program = this.gl.createProgram();
+      this.vs = this.gl.createShader(this.gl.VERTEX_SHADER);
+      this.fs = this.gl.createShader(this.gl.FRAGMENT_SHADER);
+      this.gl.attachShader(this.program, this.vs);
+      this.gl.attachShader(this.program, this.fs);
+      this.compileShader(this.vs, vertex);
+      this.compileShader(this.fs, fragment);
+      this.link();
+      this.value_cache = {};
+      this.uniform_cache = {};
+      this.attribCache = {};
+    }
+
+    Shader.prototype.attribLocation = function(name) {
+      var location;
+      location = this.attribCache[name];
+      if (location === void 0) {
+        location = this.attribCache[name] = this.gl.getAttribLocation(this.program, name);
+      }
+      return location;
+    };
+
+    Shader.prototype.compileShader = function(shader, source) {
+      this.gl.shaderSource(shader, source);
+      this.gl.compileShader(shader);
+      if (!this.gl.getShaderParameter(shader, this.gl.COMPILE_STATUS)) {
+        throw "Shader Compile Error: " + (this.gl.getShaderInfoLog(shader));
+      }
+    };
+
+    Shader.prototype.link = function() {
+      this.gl.linkProgram(this.program);
+      if (!this.gl.getProgramParameter(this.program, this.gl.LINK_STATUS)) {
+        throw "Shader Link Error: " + (this.gl.getProgramInfoLog(this.program));
+      }
+    };
+
+    Shader.prototype.use = function() {
+      this.gl.useProgram(this.program);
+      return this;
+    };
+
+    Shader.prototype.uniformLoc = function(name) {
+      var location;
+      location = this.uniform_cache[name];
+      if (location === void 0) {
+        location = this.uniform_cache[name] = this.gl.getUniformLocation(this.program, name);
+      }
+      return location;
+    };
+
+    Shader.prototype.int = function(name, value) {
+      var cached, loc;
+      cached = this.value_cache[name];
+      if (cached !== value) {
+        this.value_cache[name] = value;
+        loc = this.uniformLoc(name);
+        if (loc) {
+          this.gl.uniform1i(loc, value);
+        }
+      }
+      return this;
+    };
+
+    Shader.prototype.vec2 = function(name, a, b) {
+      var loc;
+      loc = this.uniformLoc(name);
+      if (loc) {
+        this.gl.uniform2f(loc, a, b);
+      }
+      return this;
+    };
+
+    Shader.prototype.float = function(name, value) {
+      var cached, loc;
+      cached = this.value_cache[name];
+      if (cached !== value) {
+        this.value_cache[name] = value;
+        loc = this.uniformLoc(name);
+        if (loc) {
+          this.gl.uniform1f(loc, value);
+        }
+      }
+      return this;
+    };
+
+    return Shader;
+
+  })();
+
+  Framebuffer = (function() {
+    function Framebuffer(gl) {
+      this.gl = gl;
+      this.buffer = this.gl.createFramebuffer();
+    }
+
+    Framebuffer.prototype.destroy = function() {
+      return this.gl.deleteFRamebuffer(this.buffer);
+    };
+
+    Framebuffer.prototype.bind = function() {
+      this.gl.bindFramebuffer(this.gl.FRAMEBUFFER, this.buffer);
+      return this;
+    };
+
+    Framebuffer.prototype.unbind = function() {
+      this.gl.bindFramebuffer(this.gl.FRAMEBUFFER, null);
+      return this;
+    };
+
+    Framebuffer.prototype.check = function() {
+      var result;
+      result = this.gl.checkFramebufferStatus(this.gl.FRAMEBUFFER);
+      switch (result) {
+        case this.gl.FRAMEBUFFER_UNSUPPORTED:
+          throw 'Framebuffer is unsupported';
+          break;
+        case this.gl.FRAMEBUFFER_INCOMPLETE_ATTACHMENT:
+          throw 'Framebuffer incomplete attachment';
+          break;
+        case this.gl.FRAMEBUFFER_INCOMPLETE_DIMENSIONS:
+          throw 'Framebuffer incomplete dimensions';
+          break;
+        case this.gl.FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT:
+          throw 'Framebuffer incomplete missing attachment';
+      }
+      return this;
+    };
+
+    Framebuffer.prototype.color = function(texture) {
+      this.gl.framebufferTexture2D(this.gl.FRAMEBUFFER, this.gl.COLOR_ATTACHMENT0, texture.target, texture.handle, 0);
+      this.check();
+      return this;
+    };
+
+    Framebuffer.prototype.depth = function(buffer) {
+      this.gl.framebufferRenderbuffer(this.gl.FRAMEBUFFER, this.gl.DEPTH_ATTACHMENT, this.gl.RENDERBUFFER, buffer.id);
+      this.check();
+      return this;
+    };
+
+    Framebuffer.prototype.destroy = function() {
+      return this.gl.deleteFramebuffer(this.buffer);
+    };
+
+    return Framebuffer;
+
+  })();
+
+  Texture = (function() {
+    function Texture(gl, params) {
+      var _ref, _ref1;
+      this.gl = gl;
+      if (params == null) {
+        params = {};
+      }
+      this.channels = this.gl[((_ref = params.channels) != null ? _ref : 'rgba').toUpperCase()];
+      if (typeof params.type === 'number') {
+        this.type = params.type;
+      } else {
+        this.type = this.gl[((_ref1 = params.type) != null ? _ref1 : 'unsigned_byte').toUpperCase()];
+      }
+      switch (this.channels) {
+        case this.gl.RGBA:
+          this.chancount = 4;
+          break;
+        case this.gl.RGB:
+          this.chancount = 3;
+          break;
+        case this.gl.LUMINANCE_ALPHA:
+          this.chancount = 2;
+          break;
+        default:
+          this.chancount = 1;
+      }
+      this.target = this.gl.TEXTURE_2D;
+      this.handle = this.gl.createTexture();
+    }
+
+    Texture.prototype.destroy = function() {
+      return this.gl.deleteTexture(this.handle);
+    };
+
+    Texture.prototype.bind = function(unit) {
+      if (unit == null) {
+        unit = 0;
+      }
+      if (unit > 15) {
+        throw 'Texture unit too large: ' + unit;
+      }
+      this.gl.activeTexture(this.gl.TEXTURE0 + unit);
+      this.gl.bindTexture(this.target, this.handle);
+      return this;
+    };
+
+    Texture.prototype.setSize = function(width, height) {
+      this.width = width;
+      this.height = height;
+      this.gl.texImage2D(this.target, 0, this.channels, this.width, this.height, 0, this.channels, this.type, null);
+      return this;
+    };
+
+    Texture.prototype.upload = function(data) {
+      this.width = data.width;
+      this.height = data.height;
+      this.gl.texImage2D(this.target, 0, this.channels, this.channels, this.type, data);
+      return this;
+    };
+
+    Texture.prototype.linear = function() {
+      this.gl.texParameteri(this.target, this.gl.TEXTURE_MAG_FILTER, this.gl.LINEAR);
+      this.gl.texParameteri(this.target, this.gl.TEXTURE_MIN_FILTER, this.gl.LINEAR);
+      return this;
+    };
+
+    Texture.prototype.nearest = function() {
+      this.gl.texParameteri(this.target, this.gl.TEXTURE_MAG_FILTER, this.gl.NEAREST);
+      this.gl.texParameteri(this.target, this.gl.TEXTURE_MIN_FILTER, this.gl.NEAREST);
+      return this;
+    };
+
+    Texture.prototype.clampToEdge = function() {
+      this.gl.texParameteri(this.target, this.gl.TEXTURE_WRAP_S, this.gl.CLAMP_TO_EDGE);
+      this.gl.texParameteri(this.target, this.gl.TEXTURE_WRAP_T, this.gl.CLAMP_TO_EDGE);
+      return this;
+    };
+
+    Texture.prototype.repeat = function() {
+      this.gl.texParameteri(this.target, this.gl.TEXTURE_WRAP_S, this.gl.REPEAT);
+      this.gl.texParameteri(this.target, this.gl.TEXTURE_WRAP_T, this.gl.REPEAT);
+      return this;
+    };
+
+    return Texture;
+
+  })();
+
+  Node = (function() {
+    function Node(gl, width, height) {
+      var floatExt;
+      this.gl = gl;
+      this.width = width;
+      this.height = height;
+      floatExt = this.gl.getFloatExtension({
+        require: ['renderable']
+      });
+      this.texture = new Texture(this.gl, {
+        type: floatExt.type
+      }).bind(0).setSize(this.width, this.height).nearest().clampToEdge();
+      this.fbo = new Framebuffer(this.gl).bind().color(this.texture).unbind();
+    }
+
+    Node.prototype.use = function() {
+      return this.fbo.bind();
+    };
+
+    Node.prototype.bind = function(unit) {
+      return this.texture.bind(unit);
+    };
+
+    Node.prototype.end = function() {
+      return this.fbo.unbind();
+    };
+
+    Node.prototype.resize = function(width, height) {
+      this.width = width;
+      this.height = height;
+      return this.texture.bind(0).setSize(this.width, this.height);
+    };
+
+    return Node;
+
+  })();
+
+  vertexShaderBlit = 'attribute vec4 position;\nvarying vec2 texcoord;\nvoid main(){\n    texcoord = position.xy*0.5+0.5;\n    gl_Position = position;\n}';
+
+  fragmentShaderBlit = '#ifdef GL_FRAGMENT_PRECISION_HIGH\n    precision highp int;\n    precision highp float;\n#else\n    precision mediump int;\n    precision mediump float;\n#endif\nuniform sampler2D source;\nvarying vec2 texcoord;';
+
+  Heights = (function() {
+    function Heights(heatmap, gl, width, height) {
+      var i, _i, _ref;
+      this.heatmap = heatmap;
+      this.gl = gl;
+      this.width = width;
+      this.height = height;
+      this.shader = new Shader(this.gl, {
+        vertex: 'attribute vec4 position, intensity;\nvarying vec2 off, dim;\nvarying float vIntensity;\nuniform vec2 viewport;\n\nvoid main(){\n    dim = abs(position.zw);\n    off = position.zw;\n    vec2 pos = position.xy + position.zw;\n    vIntensity = intensity.x;\n    gl_Position = vec4((pos/viewport)*2.0-1.0, 0.0, 1.0);\n}',
+        fragment: '#ifdef GL_FRAGMENT_PRECISION_HIGH\n    precision highp int;\n    precision highp float;\n#else\n    precision mediump int;\n    precision mediump float;\n#endif\nvarying vec2 off, dim;\nvarying float vIntensity;\nvoid main(){\n    float falloff = (1.0 - smoothstep(0.0, 1.0, length(off/dim)));\n    float intensity = falloff*vIntensity;\n    gl_FragColor = vec4(intensity);\n}'
+      });
+      this.clampShader = new Shader(this.gl, {
+        vertex: vertexShaderBlit,
+        fragment: fragmentShaderBlit + 'uniform float low, high;\nvoid main(){\n    gl_FragColor = vec4(clamp(texture2D(source, texcoord).rgb, low, high), 1.0);\n}'
+      });
+      this.multiplyShader = new Shader(this.gl, {
+        vertex: vertexShaderBlit,
+        fragment: fragmentShaderBlit + 'uniform float value;\nvoid main(){\n    gl_FragColor = vec4(texture2D(source, texcoord).rgb*value, 1.0);\n}'
+      });
+      this.blurShader = new Shader(this.gl, {
+        vertex: vertexShaderBlit,
+        fragment: fragmentShaderBlit + 'uniform vec2 viewport;\nvoid main(){\n    vec4 result = vec4(0.0);\n    for(int x=-1; x<=1; x++){\n        for(int y=-1; y<=1; y++){\n            vec2 off = vec2(x,y)/viewport;\n            //float factor = 1.0 - smoothstep(0.0, 1.5, length(off));\n            float factor = 1.0;\n            result += vec4(texture2D(source, texcoord+off).rgb*factor, factor);\n        }\n    }\n    gl_FragColor = vec4(result.rgb/result.w, 1.0);\n}'
+      });
+      this.nodeBack = new Node(this.gl, this.width, this.height);
+      this.nodeFront = new Node(this.gl, this.width, this.height);
+      this.vertexBuffer = this.gl.createBuffer();
+      this.vertexSize = 8;
+      this.maxPointCount = 1024 * 10;
+      this.vertexBufferData = new Float32Array(this.maxPointCount * this.vertexSize * 6);
+      this.vertexBufferViews = [];
+      for (i = _i = 0, _ref = this.maxPointCount; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
+        this.vertexBufferViews.push(new Float32Array(this.vertexBufferData.buffer, 0, i * this.vertexSize * 6));
+      }
+      this.bufferIndex = 0;
+      this.pointCount = 0;
+    }
+
+    Heights.prototype.resize = function(width, height) {
+      this.width = width;
+      this.height = height;
+      this.nodeBack.resize(this.width, this.height);
+      return this.nodeFront.resize(this.width, this.height);
+    };
+
+    Heights.prototype.update = function() {
+      var intensityLoc, positionLoc;
+      if (this.pointCount > 0) {
+        this.gl.enable(this.gl.BLEND);
+        this.nodeFront.use();
+        this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.vertexBuffer);
+        this.gl.bufferData(this.gl.ARRAY_BUFFER, this.vertexBufferViews[this.pointCount], this.gl.STREAM_DRAW);
+        positionLoc = this.shader.attribLocation('position');
+        intensityLoc = this.shader.attribLocation('intensity');
+        this.gl.enableVertexAttribArray(1);
+        this.gl.vertexAttribPointer(positionLoc, 4, this.gl.FLOAT, false, 8 * 4, 0 * 4);
+        this.gl.vertexAttribPointer(intensityLoc, 4, this.gl.FLOAT, false, 8 * 4, 4 * 4);
+        this.shader.use().vec2('viewport', this.width, this.height);
+        this.gl.drawArrays(this.gl.TRIANGLES, 0, this.pointCount * 6);
+        this.gl.disableVertexAttribArray(1);
+        this.pointCount = 0;
+        this.bufferIndex = 0;
+        this.nodeFront.end();
+        return this.gl.disable(this.gl.BLEND);
+      }
+    };
+
+    Heights.prototype.clear = function() {
+      this.nodeFront.use();
+      this.gl.clearColor(0, 0, 0, 1);
+      this.gl.clear(this.gl.COLOR_BUFFER_BIT);
+      return this.nodeFront.end();
+    };
+
+    Heights.prototype.clamp = function(min, max) {
+      this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.heatmap.quad);
+      this.gl.vertexAttribPointer(0, 4, this.gl.FLOAT, false, 0, 0);
+      this.nodeFront.bind(0);
+      this.nodeBack.use();
+      this.clampShader.use().int('source', 0).float('low', min).float('high', max);
+      this.gl.drawArrays(this.gl.TRIANGLES, 0, 6);
+      this.nodeBack.end();
+      return this.swap();
+    };
+
+    Heights.prototype.multiply = function(value) {
+      this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.heatmap.quad);
+      this.gl.vertexAttribPointer(0, 4, this.gl.FLOAT, false, 0, 0);
+      this.nodeFront.bind(0);
+      this.nodeBack.use();
+      this.multiplyShader.use().int('source', 0).float('value', value);
+      this.gl.drawArrays(this.gl.TRIANGLES, 0, 6);
+      this.nodeBack.end();
+      return this.swap();
+    };
+
+    Heights.prototype.blur = function() {
+      this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.heatmap.quad);
+      this.gl.vertexAttribPointer(0, 4, this.gl.FLOAT, false, 0, 0);
+      this.nodeFront.bind(0);
+      this.nodeBack.use();
+      this.blurShader.use().int('source', 0).vec2('viewport', this.width, this.height);
+      this.gl.drawArrays(this.gl.TRIANGLES, 0, 6);
+      this.nodeBack.end();
+      return this.swap();
+    };
+
+    Heights.prototype.swap = function() {
+      var tmp;
+      tmp = this.nodeFront;
+      this.nodeFront = this.nodeBack;
+      return this.nodeBack = tmp;
+    };
+
+    Heights.prototype.addVertex = function(x, y, xs, ys, intensity) {
+      this.vertexBufferData[this.bufferIndex++] = x;
+      this.vertexBufferData[this.bufferIndex++] = y;
+      this.vertexBufferData[this.bufferIndex++] = xs;
+      this.vertexBufferData[this.bufferIndex++] = ys;
+      this.vertexBufferData[this.bufferIndex++] = intensity;
+      this.vertexBufferData[this.bufferIndex++] = intensity;
+      this.vertexBufferData[this.bufferIndex++] = intensity;
+      return this.vertexBufferData[this.bufferIndex++] = intensity;
+    };
+
+    Heights.prototype.addPoint = function(x, y, size, intensity) {
+      var s;
+      if (size == null) {
+        size = 50;
+      }
+      if (intensity == null) {
+        intensity = 0.2;
+      }
+      if (this.pointCount >= this.maxPointCount - 1) {
+        this.update();
+      }
+      y = this.height - y;
+      s = size / 2;
+      this.addVertex(x, y, -s, -s, intensity);
+      this.addVertex(x, y, +s, -s, intensity);
+      this.addVertex(x, y, -s, +s, intensity);
+      this.addVertex(x, y, -s, +s, intensity);
+      this.addVertex(x, y, +s, -s, intensity);
+      this.addVertex(x, y, +s, +s, intensity);
+      return this.pointCount += 1;
+    };
+
+    return Heights;
+
+  })();
+
+  WebGLHeatmap = (function() {
+    function WebGLHeatmap(_arg) {
+      var alphaEnd, alphaRange, alphaStart, error, getColorFun, gradientTexture, image, intensityToAlpha, output, quad, textureGradient, _ref, _ref1;
+      _ref = _arg != null ? _arg : {}, this.canvas = _ref.canvas, this.width = _ref.width, this.height = _ref.height, intensityToAlpha = _ref.intensityToAlpha, gradientTexture = _ref.gradientTexture, alphaRange = _ref.alphaRange;
+      if (!this.canvas) {
+        this.canvas = document.createElement('canvas');
+      }
+      try {
+        this.gl = this.canvas.getContext('experimental-webgl', {
+          depth: false,
+          antialias: false
+        });
+        if (this.gl === null) {
+          this.gl = this.canvas.getContext('webgl', {
+            depth: false,
+            antialias: false
+          });
+          if (this.gl === null) {
+            throw 'WebGL not supported';
+          }
+        }
+      } catch (_error) {
+        error = _error;
+        throw 'WebGL not supported';
+      }
+      if (window.WebGLDebugUtils != null) {
+        console.log('debugging mode');
+        this.gl = WebGLDebugUtils.makeDebugContext(this.gl, function(err, funcName, args) {
+          throw WebGLDebugUtils.glEnumToString(err) + " was caused by call to: " + funcName;
+        });
+      }
+      this.gl.enableVertexAttribArray(0);
+      this.gl.blendFunc(this.gl.ONE, this.gl.ONE);
+      if (gradientTexture) {
+        textureGradient = this.gradientTexture = new Texture(this.gl, {
+          channels: 'rgba'
+        }).bind(0).setSize(2, 2).nearest().clampToEdge();
+        if (typeof gradientTexture === 'string') {
+          image = new Image();
+          image.onload = function() {
+            return textureGradient.bind().upload(image);
+          };
+          image.src = gradientTexture;
+        } else {
+          if (gradientTexture.width > 0 && gradientTexture.height > 0) {
+            textureGradient.upload(gradientTexture);
+          } else {
+            gradientTexture.onload = function() {
+              return textureGradient.upload(gradientTexture);
+            };
+          }
+        }
+        getColorFun = 'uniform sampler2D gradientTexture;\nvec3 getColor(float intensity){\n    return texture2D(gradientTexture, vec2(intensity, 0.0)).rgb;\n}';
+      } else {
+        textureGradient = null;
+        getColorFun = 'vec3 getColor(float intensity){\n    vec3 blue = vec3(0.0, 0.0, 1.0);\n    vec3 cyan = vec3(0.0, 1.0, 1.0);\n    vec3 green = vec3(0.0, 1.0, 0.0);\n    vec3 yellow = vec3(1.0, 1.0, 0.0);\n    vec3 red = vec3(1.0, 0.0, 0.0);\n\n    vec3 color = (\n        fade(-0.25, 0.25, intensity)*blue +\n        fade(0.0, 0.5, intensity)*cyan +\n        fade(0.25, 0.75, intensity)*green +\n        fade(0.5, 1.0, intensity)*yellow +\n        smoothstep(0.75, 1.0, intensity)*red\n    );\n    return color;\n}';
+      }
+      if (intensityToAlpha == null) {
+        intensityToAlpha = true;
+      }
+      if (intensityToAlpha) {
+        _ref1 = alphaRange != null ? alphaRange : [0, 1], alphaStart = _ref1[0], alphaEnd = _ref1[1];
+        output = "vec4 alphaFun(vec3 color, float intensity){\n    float alpha = smoothstep(" + (alphaStart.toFixed(8)) + ", " + (alphaEnd.toFixed(8)) + ", intensity);\n    return vec4(color*alpha, alpha);\n}";
+      } else {
+        output = 'vec4 alphaFun(vec3 color, float intensity){\n    return vec4(color, 1.0);\n}';
+      }
+      this.shader = new Shader(this.gl, {
+        vertex: vertexShaderBlit,
+        fragment: fragmentShaderBlit + ("float linstep(float low, float high, float value){\n    return clamp((value-low)/(high-low), 0.0, 1.0);\n}\n\nfloat fade(float low, float high, float value){\n    float mid = (low+high)*0.5;\n    float range = (high-low)*0.5;\n    float x = 1.0 - clamp(abs(mid-value)/range, 0.0, 1.0);\n    return smoothstep(0.0, 1.0, x);\n}\n\n" + getColorFun + "\n" + output + "\n\nvoid main(){\n    float intensity = smoothstep(0.0, 1.0, texture2D(source, texcoord).r);\n    vec3 color = getColor(intensity);\n    gl_FragColor = alphaFun(color, intensity);\n}")
+      });
+      if (this.width == null) {
+        this.width = this.canvas.offsetWidth || 2;
+      }
+      if (this.height == null) {
+        this.height = this.canvas.offsetHeight || 2;
+      }
+      this.canvas.width = this.width;
+      this.canvas.height = this.height;
+      this.gl.viewport(0, 0, this.width, this.height);
+      this.quad = this.gl.createBuffer();
+      this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.quad);
+      quad = new Float32Array([-1, -1, 0, 1, 1, -1, 0, 1, -1, 1, 0, 1, -1, 1, 0, 1, 1, -1, 0, 1, 1, 1, 0, 1]);
+      this.gl.bufferData(this.gl.ARRAY_BUFFER, quad, this.gl.STATIC_DRAW);
+      this.gl.bindBuffer(this.gl.ARRAY_BUFFER, null);
+      this.heights = new Heights(this, this.gl, this.width, this.height);
+    }
+
+    WebGLHeatmap.prototype.adjustSize = function() {
+      var canvasHeight, canvasWidth;
+      canvasWidth = this.canvas.offsetWidth || 2;
+      canvasHeight = this.canvas.offsetHeight || 2;
+      if (this.width !== canvasWidth || this.height !== canvasHeight) {
+        this.gl.viewport(0, 0, canvasWidth, canvasHeight);
+        this.canvas.width = canvasWidth;
+        this.canvas.height = canvasHeight;
+        this.width = canvasWidth;
+        this.height = canvasHeight;
+        return this.heights.resize(this.width, this.height);
+      }
+    };
+
+    WebGLHeatmap.prototype.display = function() {
+      this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.quad);
+      this.gl.vertexAttribPointer(0, 4, this.gl.FLOAT, false, 0, 0);
+      this.heights.nodeFront.bind(0);
+      if (this.gradientTexture) {
+        this.gradientTexture.bind(1);
+      }
+      this.shader.use().int('source', 0).int('gradientTexture', 1);
+      return this.gl.drawArrays(this.gl.TRIANGLES, 0, 6);
+    };
+
+    WebGLHeatmap.prototype.update = function() {
+      return this.heights.update();
+    };
+
+    WebGLHeatmap.prototype.clear = function() {
+      return this.heights.clear();
+    };
+
+    WebGLHeatmap.prototype.clamp = function(min, max) {
+      if (min == null) {
+        min = 0;
+      }
+      if (max == null) {
+        max = 1;
+      }
+      return this.heights.clamp(min, max);
+    };
+
+    WebGLHeatmap.prototype.multiply = function(value) {
+      if (value == null) {
+        value = 0.95;
+      }
+      return this.heights.multiply(value);
+    };
+
+    WebGLHeatmap.prototype.blur = function() {
+      return this.heights.blur();
+    };
+
+    WebGLHeatmap.prototype.addPoint = function(x, y, size, intensity) {
+      return this.heights.addPoint(x, y, size, intensity);
+    };
+
+    WebGLHeatmap.prototype.addPoints = function(items) {
+      var item, _i, _len, _results;
+      _results = [];
+      for (_i = 0, _len = items.length; _i < _len; _i++) {
+        item = items[_i];
+        _results.push(this.addPoint(item.x, item.y, item.size, item.intensity));
+      }
+      return _results;
+    };
+
+    return WebGLHeatmap;
+
+  })();
+
+  window.createWebGLHeatmap = function(params) {
+    return new WebGLHeatmap(params);
+  };
+
+}).call(this);
+
 
 /***/ }),
 
@@ -14408,10 +16252,10 @@ source : http://johndyer.name/native-fullscreen-javascript-api-plus-jquery-plugi
 
 /***/ }),
 
-/***/ "./resources/js/leaflet/sensor-edit.js":
-/*!*********************************************!*\
-  !*** ./resources/js/leaflet/sensor-edit.js ***!
-  \*********************************************/
+/***/ "./resources/js/leaflet/test.js":
+/*!**************************************!*\
+  !*** ./resources/js/leaflet/test.js ***!
+  \**************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -14419,44 +16263,88 @@ source : http://johndyer.name/native-fullscreen-javascript-api-plus-jquery-plugi
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js");
 /* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(leaflet__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var leaflet_measure_dist_leaflet_measure_fa__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! leaflet-measure/dist/leaflet-measure.fa */ "./node_modules/leaflet-measure/dist/leaflet-measure.fa.js");
-/* harmony import */ var leaflet_measure_dist_leaflet_measure_fa__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(leaflet_measure_dist_leaflet_measure_fa__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var leaflet_fullscreen__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! leaflet.fullscreen */ "./node_modules/leaflet.fullscreen/Control.FullScreen.js");
-/* harmony import */ var leaflet_fullscreen__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(leaflet_fullscreen__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var leaflet_webgl_heatmap_src_leaflet_webgl_heatmap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! leaflet-webgl-heatmap/src/leaflet-webgl-heatmap */ "./node_modules/leaflet-webgl-heatmap/src/leaflet-webgl-heatmap.js");
+/* harmony import */ var leaflet_webgl_heatmap_src_leaflet_webgl_heatmap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(leaflet_webgl_heatmap_src_leaflet_webgl_heatmap__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var leaflet_webgl_heatmap_src_webgl_heatmap_webgl_heatmap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! leaflet-webgl-heatmap/src/webgl-heatmap/webgl-heatmap */ "./node_modules/leaflet-webgl-heatmap/src/webgl-heatmap/webgl-heatmap.js");
+/* harmony import */ var leaflet_webgl_heatmap_src_webgl_heatmap_webgl_heatmap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(leaflet_webgl_heatmap_src_webgl_heatmap_webgl_heatmap__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var leaflet_fullscreen__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! leaflet.fullscreen */ "./node_modules/leaflet.fullscreen/Control.FullScreen.js");
+/* harmony import */ var leaflet_fullscreen__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(leaflet_fullscreen__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var leaflet_contextmenu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! leaflet-contextmenu */ "./node_modules/leaflet-contextmenu/dist/leaflet.contextmenu.js");
+/* harmony import */ var leaflet_contextmenu__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(leaflet_contextmenu__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
+
+
+var geojson = document.getElementById('eventoutput').value;
+var points = JSON.parse(geojson);
+var Center = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]).getBounds().getCenter();
 var map = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.map('mapid', {
-  fullscreenControl: true
-}).setView([33.093382, 52.811137], 5);
+  contextmenu: true,
+  contextmenuWidth: 140,
+  contextmenuItems: [{
+    text: 'اینجا کجاست؟',
+    callback: WhatHere,
+    icon: "https://fastcode.space/wp-content/uploads/2019/11/Location-Icon-Creative-Design-Template.jpg"
+  }],
+  fullscreenControl: true //TODO lat_lng
+
+}).setView([36.297418, 59.616795], 12);
 map.attributionControl.setPrefix('<a href="#">ناهید آسمان ایرانیان</a>');
 leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png').addTo(map);
-var shipLayer = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.layerGroup();
-map.addLayer(shipLayer);
-var geojson = document.getElementById('points').value;
-var points = JSON.parse(geojson);
-shipLayer.addLayer(leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]));
-var lat = points[0].lat,
-    lng = points[0].lng;
-map.flyTo(new leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.LatLng(lat, lng), 12);
-$("#land_id").change(function () {
-  shipLayer.clearLayers();
-  var points = $(this).find(':selected').data('points');
-  shipLayer.addLayer(leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]));
-  var Center = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]).getBounds().getCenter();
-  map.flyTo(new leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.LatLng(Center['lat'], Center['lng']), 12);
+
+function WhatHere(e) {
+  alert(e.latlng);
+}
+
+leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points], {
+  color: "#79acff"
+}).addTo(map);
+var detailjson = document.getElementById('details').value;
+var details = JSON.parse(detailjson);
+var arr = [];
+
+for (var d = 0; d < details.length; d++) {
+  var loc = details[d]['location'];
+  var val = details[d]['value']; //convert string to array
+
+  arr.push(JSON.parse(loc));
+  arr.push(JSON.parse(val));
+}
+
+var datapoints = [];
+
+for (var j = 0; j < details.length; j++) {
+  var data = [];
+  data.push(arr[2 * j][0]['lat']);
+  data.push(arr[2 * j][0]['lng']);
+  data.push(arr[2 * j + 1]);
+  datapoints.push(data);
+}
+
+var heatmap = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.webGLHeatmap({
+  size: 2000,
+  opacity: 0.8,
+  gradientTexture: false,
+  alphaRange: 1
 });
+heatmap.setData(datapoints);
+map.addLayer(heatmap);
+
+for (var i = 0; i < datapoints.length; i++) {
+  leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.marker([datapoints[i][0], datapoints[i][1]]).addTo(map);
+}
 
 /***/ }),
 
-/***/ 10:
-/*!***************************************************!*\
-  !*** multi ./resources/js/leaflet/sensor-edit.js ***!
-  \***************************************************/
+/***/ 8:
+/*!********************************************!*\
+  !*** multi ./resources/js/leaflet/test.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\leaflet\sensor-edit.js */"./resources/js/leaflet/sensor-edit.js");
+module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\leaflet\test.js */"./resources/js/leaflet/test.js");
 
 
 /***/ })

@@ -18,9 +18,7 @@ let map = L.map('mapid', {
     }],
     fullscreenControl: true,
     //TODO lat_lng
-}).setView([44.667505, -63.558414], 12);
-
-L.polygon([points],{color: "#e0fff1"}).addTo(map);
+}).setView([36.297418, 59.616795], 12);
 
 map.attributionControl.setPrefix('<a href="#">ناهید آسمان ایرانیان</a>');
 
@@ -29,24 +27,43 @@ L.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png').addTo(map);
 function WhatHere(e) {
     alert(e.latlng);
 }
-/*var loc = document.getElementById('location').value;
-var heat = document.getElementById('location').value;*/
 
-var dataPoints = [
-    [44.715026, -63.579426, 0.5],
-    [44.678663, -63.612385, 0.67],
-    [44.624686, -63.587666, 0.9999],
-    [44.651559, -63.489819, 0.9],
-    [44.697701, -63.494625, 0.7],
-    [44.673292, -63.551617, 0.9],
-];
+L.polygon([points],{color: "#79acff"}).addTo(map);
 
-var heatmap = L.webGLHeatmap({size: 10000,opacity: 0.8,gradientTexture: false});
+var detailjson = document.getElementById('details').value;
+var details = JSON.parse( detailjson);
+var arr = [];
+for(var d=0;d<details.length;d++)
+{
+    var loc=(details[d]['location']);
+    var val=(details[d]['value']);
+    //convert string to array
+    arr.push(JSON.parse( loc));
+    arr.push(JSON.parse( val));
+}
+var datapoints =[];
+for(var j=0;j<details.length;j++ )
+{
+    var data =[];
 
-heatmap.setData( dataPoints );
+    data.push(arr[2*j][0]['lat']);
 
-map.addLayer(heatmap);
+    data.push(arr[2*j][0]['lng']);
 
-for (var i = 0; i < dataPoints.length; i++) {
-    L.marker([dataPoints[i][0],dataPoints[i][1]]).addTo(map);
+    data.push(arr[2*j+1]);
+
+    datapoints.push(data);
+
+}
+
+var heatmap = L.webGLHeatmap({
+    size: 2000,
+    opacity: 0.8,
+    gradientTexture: false,
+    alphaRange : 1});
+
+heatmap.setData( datapoints );
+
+map.addLayer(heatmap);for (var i = 0; i < datapoints.length; i++) {
+    L.marker([datapoints[i][0],datapoints[i][1]]).addTo(map);
 }

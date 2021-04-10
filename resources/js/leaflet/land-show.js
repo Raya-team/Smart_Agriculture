@@ -5,6 +5,7 @@ import 'leaflet.fullscreen';
 var geojson = document.getElementById('eventoutput').value;
 var points = JSON.parse(geojson);
 var Center = L.polygon([points]).getBounds().getCenter();
+// console.log(points);
 
 let map = L.map('mapid', {
     fullscreenControl: true,

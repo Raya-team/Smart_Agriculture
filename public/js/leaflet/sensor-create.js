@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 9);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -14443,14 +14443,14 @@ $("#land_id").change(function () {
 
 /***/ }),
 
-/***/ 8:
+/***/ 9:
 /*!*****************************************************!*\
   !*** multi ./resources/js/leaflet/sensor-create.js ***!
   \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\laravel\Work\first\resources\js\leaflet\sensor-create.js */"./resources/js/leaflet/sensor-create.js");
+module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\leaflet\sensor-create.js */"./resources/js/leaflet/sensor-create.js");
 
 
 /***/ })
