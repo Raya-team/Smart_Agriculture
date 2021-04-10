@@ -28,9 +28,6 @@ Auth::routes();
 
 Route::group(['middleware' => ['auth', 'auth.user']] , function (){
     Route::get('/user/dashboard', [DashboardController::class, 'index'])->name('user.dashboard');
-    Route::get('/user/chart', function (){
-        return view('user.chart.index');
-    })->name('user.chart');
     Route::get('/user/profile', [ProfileController::class, 'index'])->name('user.profile.index');
     Route::PATCH('/user/profile/{user}', [ProfileController::class, 'update'])->name('user.profile.update');
     Route::get('/user/sensor', [SensorController::class, 'index'])->name('user.sensor');

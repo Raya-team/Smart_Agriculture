@@ -335,7 +335,6 @@
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">منو</li>
                 <li><a href="{{ route('user.dashboard') }}"><i class="fa fa-dashboard"></i><span>داشبورد</span></a></li>
-                <li><a href="{{ route('user.chart') }}"><i class="fa fa-line-chart"></i> <span>نمودار</span></a></li>
                 <li><a href="{{ route('user.sensor') }}"><i class="fa fa-fw fa-dot-circle-o"></i><span>سنسورها</span></a></li>
             </ul>
         </section>

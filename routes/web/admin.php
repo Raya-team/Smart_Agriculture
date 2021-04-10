@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ChartController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\FilterController;
 use App\Http\Controllers\Admin\LandController;
@@ -55,5 +56,6 @@ Route::group(['middleware' =>['auth', 'auth.admin']] , function (){
         Route::get('/admin/profile',[ProfileController::class,'index'])->name('admin.profile.index');
         Route::PATCH('/admin/profile/{user}',[ProfileController::class,'update'])->name('admin.profile.update');
 //    }
+    Route::resource('/chart',ChartController::class, ['parameters' => ['chart' => 'sensor']]);
 });
 Route::post('/user_register',[RegisterController::class, 'store'])->name('user.register');

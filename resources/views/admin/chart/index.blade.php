@@ -1,4 +1,4 @@
-@extends('user.master')
+@extends('admin.master')
 @section('title', 'نمودار')
 @section('main-content')
     <section class="content-header">
@@ -13,6 +13,8 @@
 
     <!-- Main content -->
     <section class="content">
+{{--        <input type="hidden" value="{{ $details }}" id="details">--}}
+        <input type="hidden" value="{{ $filters }}" id="fitlers">
         <div class="row">
             <div class="col-xs-12">
                 <!-- interactive chart -->
@@ -20,7 +22,7 @@
                     <div class="box-header with-border">
                         <i class="fa fa-bar-chart-o"></i>
 
-                        <h3 class="box-title">منطقه ای</h3>
+                        <h3 class="box-title">نمودار</h3>
 
                         <div class="box-tools pull-right">
                             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
