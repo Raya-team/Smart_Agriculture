@@ -16272,8 +16272,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var leaflet_contextmenu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! leaflet-contextmenu */ "./node_modules/leaflet-contextmenu/dist/leaflet.contextmenu.js");
 /* harmony import */ var leaflet_contextmenu__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(leaflet_contextmenu__WEBPACK_IMPORTED_MODULE_4__);
 
+var getColorFun = 'vec3 getColor(float intensity){\n    vec3 blue = vec3(0.0, 0.0, 1.0);\n    vec3 cyan = vec3(0.0, 1.0, 1.0);\n    vec3 green = vec3(0.0, 1.0, 0.0);\n    vec3 yellow = vec3(1.0, 1.0, 0.0);\n    vec3 red = vec3(0.0, 0.0, 0.0);\n\n    vec3 color = (\n        fade(-0.25, 0.25, intensity)*blue +\n        fade(0.0, 0.5, intensity)*cyan +\n        fade(0.25, 0.75, intensity)*green +\n        fade(0.5, 1.0, intensity)*yellow +\n        smoothstep(0.75, 1.0, intensity)*red\n    );\n    return color;\n}';
 
- // import 'leaflet-webgl-heatmap/dist/leaflet-webgl-heatmap.min';
 
 
 
