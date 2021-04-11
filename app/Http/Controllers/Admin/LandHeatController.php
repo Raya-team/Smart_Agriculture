@@ -29,21 +29,22 @@ class LandHeatController extends Controller
                     foreach ($all_details as $all_detail)
                     {
                         if ($all_detail->sensor_id == $sensor->id) {
+//                            array_push($details, $all_detail);
                             if ($details == null){
                                 array_push($details, $all_detail);
                             } else {
                                 for ($i = 0 ; $i < count($details); $i++)
                                 {
-                                    if ($all_detail->filter_id == $details[$i]->filter_id && $all_detail->created_at > $details[$i]->created_at)
+                                    if ($all_detail->filter_id == $details[$i]->filter_id)
                                     {
                                         $details[$i] = $all_detail;
-                                    }else{
-                                        array_push($details[$i], $all_detail);
+                                        break;
+                                    }
+                                    if ($all_detail->filter_id != $details[$i]->filter_id){
+                                        $details[$i+1] = $all_detail;
                                     }
                                 }
                             }
-
-
                         }
                     }
                     return $details;
