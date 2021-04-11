@@ -27,6 +27,7 @@ class LandHeatController extends Controller
                     foreach ($all_details as $all_detail)
 
                         if ($all_detail->sensor_id == $sensor->id) {
+
                             array_push($details, $all_detail);
                         }
                 }
