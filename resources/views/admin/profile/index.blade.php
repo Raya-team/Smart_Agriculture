@@ -87,7 +87,7 @@
                                     </div>
                                 </div>
 
-                                <h6 style="text-align: center;color: rgba(0,0,0,0.50);">اگر قصد تغییر رمز عبور خود ندارید میتوانید فیلد های زیر را خالی بگذارید</h6>
+                                <h6 style="text-align: center;color: rgba(255,0,22,0.5);">اگر قصد تغییر رمز عبور خود ندارید میتوانید فیلد های زیر را خالی بگذارید</h6>
 
                                 <div class="form-group">
                                     <label for="current_password" class="col-sm-2 control-label">رمز عبور فعلی :</label>

@@ -1,5 +1,6 @@
 @extends('user.master')
 {{--TODO Create Title--}}
+@section('title','سنسور ها')
 @section('main-content')
     <!-- Content Header (Page header) -->
     @include('sweet::alert')
