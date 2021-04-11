@@ -29,8 +29,14 @@ class LandHeatController extends Controller
                     foreach ($all_details as $all_detail)
                     {
                         if ($all_detail->sensor_id == $sensor->id) {
+return array_search("$all_detail->filter_id",$details);
+                            if (array_search("$all_detail->filter_id",$details))
+                            {
+                                return "sda";
+                            }else{
+                                array_push($details, $all_detail);
+                            }
 
-                            array_push($details, $all_detail);
                         }
                     }
                     return $details;

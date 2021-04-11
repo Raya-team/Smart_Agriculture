@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Validation\Rule;
 
 class ProfileController extends Controller
@@ -34,7 +35,14 @@ class ProfileController extends Controller
             $request->validate([
                 'password' => ['required', 'min:6', 'confirmed']
             ]);
-            $data['password'] = Hash::make($request->password);
+
+            if (Hash::check($request->current_password, $user->password)) {
+                $data['password'] = Hash::make($request->password);
+            }else{
+                Session::flash('current_password', 'رمز عبور فعلی را اشتباه وارد کرده اید.');
+                return redirect(route('admin.profile.index'));
+            }
+
         }
 
         $user->update($data);

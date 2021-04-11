@@ -56,10 +56,16 @@
                                 @csrf
                                 @method('PATCH')
                                 @include('admin.section.errors')
+                                @if(Session::has('current_password'))
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            <li>{{ Session::get('current_password') }}</li>
+                                        </ul>
+                                    </div>
+                                @endif
 
                                 <div class="form-group">
                                     <label for="name" class="col-sm-2 control-label">نام و نام خانوادگی :</label>
-
                                     <div class="col-sm-10">
                                         <input class="form-control" id="name" name="name" placeholder="نام و نام خانوادگی" value="{{ old('name' , $user->name) }}" required>
                                     </div>
@@ -67,7 +73,6 @@
 
                                 <div class="form-group">
                                     <label for="username" class="col-sm-2 control-label">نام کاربری :</label>
-
                                     <div class="col-sm-10">
                                         <input class="form-control" id="username" name="username" placeholder="نام کاربری" value="{{ old('username' , $user->username) }}" required>
                                     </div>
@@ -75,25 +80,31 @@
 
                                 <div class="form-group">
                                     <label for="image" class="col-sm-2 control-label">تصویر پروفایل :</label>
-
                                     <div class="col-sm-10">
                                         <input type="file" accept="image/png, image/jpg, image/jpeg" class="form-control" id="image" name="image">
                                     </div>
                                 </div>
 
+                                <h6 style="text-align: center;color: rgba(0,0,0,0.50);">اگر قصد تغییر رمز عبور خود ندارید میتوانید فیلد های زیر را خالی بگذارید</h6>
+
+                                <div class="form-group">
+                                    <label for="current_password" class="col-sm-2 control-label">رمز عبور فعلی :</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" name="current_password" id="current_password" placeholder="رمز عبور فعلی را وارد فرمایید">
+                                    </div>
+                                </div>
+
                                 <div class="form-group">
                                     <label for="password" class="col-sm-2 control-label">رمز عبور :</label>
-
                                     <div class="col-sm-10">
-                                        <input type="password" class="form-control" name="password" id="password" placeholder="اگه قصد تغییر رمز عبور را ندارید نیاز به وارد کردن این فیلد نیست">
+                                        <input type="password" class="form-control" name="password" id="password" placeholder="رمز عبور جدید را وارد فرمایید">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="password_confirmation" class="col-sm-2 control-label">تکرار رمز عبور :</label>
-
                                     <div class="col-sm-10">
-                                        <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" placeholder="اگه قصد تغییر رمز عبور را ندارید نیاز به وارد کردن این فیلد نیست">
+                                        <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" placeholder="رمز عبور را مجددا وارد فرمایید">
                                     </div>
                                 </div>
 
