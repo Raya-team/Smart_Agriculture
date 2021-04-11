@@ -61,7 +61,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="js" value="1921" />
-          <entry key="php" value="2181" />
+          <entry key="php" value="2490" />
           <entry key="txt" value="6" />
         </counts>
       </usages-collector>
@@ -69,7 +69,7 @@
         <counts>
           <entry key="Blade" value="433" />
           <entry key="JavaScript" value="1921" />
-          <entry key="PHP" value="1748" />
+          <entry key="PHP" value="2057" />
           <entry key="PLAIN_TEXT" value="6" />
         </counts>
       </usages-collector>
@@ -92,8 +92,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/LandHeatController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="37" column="88" selection-start-line="37" selection-start-column="88" selection-end-line="37" selection-end-column="88" />
+            <state relative-caret-position="426">
+              <caret line="32" column="73" selection-start-line="32" selection-start-column="73" selection-end-line="32" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -728,14 +728,7 @@
       <workItem from="1617684004928" duration="2396000" />
       <workItem from="1617858937382" duration="10660000" />
       <workItem from="1618039207305" duration="8436000" />
-      <workItem from="1618118943730" duration="15260000" />
-    </task>
-    <task id="LOCAL-00021" summary="Ehsan">
-      <created>1614586294359</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1614586294359</updated>
+      <workItem from="1618118943730" duration="18182000" />
     </task>
     <task id="LOCAL-00022" summary="mahdy">
       <created>1614594062163</created>
@@ -1073,11 +1066,18 @@
       <option name="project" value="LOCAL" />
       <updated>1618134163921</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="Ehsan">
+      <created>1618135988314</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1618135988314</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="777071000" />
+    <option name="totallyTimeSpent" value="779993000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1525,8 +1525,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/LandHeatController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="37" column="88" selection-start-line="37" selection-start-column="88" selection-end-line="37" selection-end-column="88" />
+        <state relative-caret-position="426">
+          <caret line="32" column="73" selection-start-line="32" selection-start-column="73" selection-end-line="32" selection-end-column="73" />
         </state>
       </provider>
     </entry>

@@ -32,18 +32,11 @@ class LandHeatController extends Controller
 //                            array_push($details, $all_detail);
                             if ($details == null){
                                 array_push($details, $all_detail);
-                            } else {
-                                for ($i = 0 ; $i < count($details); $i++)
-                                {
-                                    if ($all_detail->filter_id == $details[$i]->filter_id)
-                                    {
-                                        $details[$i] = $all_detail;
-                                        break;
-                                    }
-                                    if ($all_detail->filter_id != $details[$i]->filter_id){
-                                        $details[$i+1] = $all_detail;
-                                    }
-                                }
+                            } elseif (array_search("$all_detail->filter_id", $details)){
+                                $x = array_search("$all_detail->filter_id", $details);
+                                $details[$x] = $all_detail;
+                            }else{
+                                array_push($details, $all_detail);
                             }
                         }
                     }
