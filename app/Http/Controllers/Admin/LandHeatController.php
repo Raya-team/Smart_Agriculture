@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Detail;
+use App\Models\Filter;
 use App\Models\Land;
 use App\Models\Sensor;
 use Illuminate\Http\Request;
@@ -19,23 +20,27 @@ class LandHeatController extends Controller
 
             $sensors = Sensor::all();
 
+            $all_details = Detail::all();
+
             foreach ($sensors as $sensor) {
+
                 if ($sensor->land_id == $land->id) {
 
-                    $all_details = Detail::with('filter')->get();
-
                     foreach ($all_details as $all_detail)
-
+                    {
                         if ($all_detail->sensor_id == $sensor->id) {
 
                             array_push($details, $all_detail);
                         }
+                    }
+                    return $details;
                 }
             }
+
             $details = json_encode($details);
 
             return view('admin.lands.heat', compact('land', 'details'));
         }
         abort(401);
-   }
+    }
 }
