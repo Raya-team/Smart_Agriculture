@@ -33,12 +33,10 @@ class LandHeatController extends Controller
                             if ($details == null){
                                 array_push($details, $all_detail);
                             } else {
-                                for ($i = 0 ; $i < count($details); $i++)
-                                {
-                                    if ($all_detail->filter_id == $details[$i]->filter_id)
-                                    {
-
-                                    }
+                                if ($this->SearchDetails($details, $all_detail)){
+                                    continue;
+                                }else{
+                                    array_push($details, $all_detail);
                                 }
 
                             }
@@ -53,5 +51,18 @@ class LandHeatController extends Controller
             return view('admin.lands.heat', compact('land', 'details'));
         }
         abort(401);
+    }
+
+    /**
+     * @param array $details
+     * @param $all_detail
+     */
+    public function SearchDetails(array $details, $all_detail)
+    {
+        for ($i = 0; $i < count($details); $i++) {
+            if ($all_detail->filter_id == $details[$i]->filter_id) {
+                return true;
+            }
+        }
     }
 }
