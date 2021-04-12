@@ -17,4 +17,9 @@ class Detail extends Model
     {
         return $this->belongsTo(Filter::class);
     }
+
+    public function scopeCreatedAtDesc($query)
+    {
+        return $query->orderBy('created_at','DESC');
+    }
 }

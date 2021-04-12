@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/login_by_admin', function () {
+Route::get('/', function () {
 //    if (Auth::user()->level == 1 || Auth::user()->level == 2){
 //        return 'level is 1';
 //    }

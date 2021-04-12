@@ -20,7 +20,8 @@ class LandHeatController extends Controller
 
             $sensors = Sensor::all();
 
-            $all_details = Detail::all();
+            $all_details = Detail::createdAtDesc()->get();
+
 
             foreach ($sensors as $sensor) {
 
@@ -29,21 +30,24 @@ class LandHeatController extends Controller
                     foreach ($all_details as $all_detail)
                     {
                         if ($all_detail->sensor_id == $sensor->id) {
-//                            array_push($details, $all_detail);
                             if ($details == null){
                                 array_push($details, $all_detail);
-                            } elseif (array_search("$all_detail->filter_id", $details)){
-                                $x = array_search("$all_detail->filter_id", $details);
-                                $details[$x] = $all_detail;
-                            }else{
-                                array_push($details, $all_detail);
+                            } else {
+                                for ($i = 0 ; $i < count($details); $i++)
+                                {
+                                    if ($all_detail->filter_id == $details[$i]->filter_id)
+                                    {
+
+                                    }
+                                }
+
                             }
                         }
+
                     }
-                    return $details;
                 }
             }
-
+            return $details;
             $details = json_encode($details);
 
             return view('admin.lands.heat', compact('land', 'details'));
