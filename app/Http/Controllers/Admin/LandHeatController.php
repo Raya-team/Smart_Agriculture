@@ -16,12 +16,14 @@ class LandHeatController extends Controller
     public function index(Land $land)
     {
         if (Gate::allows('show-land') || Auth::user()->level == 2) {
+
             $details = [];
 
             $sensors = Sensor::all();
 
             $all_details = Detail::createdAtDesc()->get();
 
+            $filters=Filter::all();
 
             foreach ($sensors as $sensor) {
 
@@ -45,18 +47,13 @@ class LandHeatController extends Controller
                     }
                 }
             }
-            return $details;
+//            return $details;
             $details = json_encode($details);
 
-            return view('admin.lands.heat', compact('land', 'details'));
+            return view('admin.lands.heat', compact('land', 'details','filters'));
         }
         abort(401);
     }
-
-    /**
-     * @param array $details
-     * @param $all_detail
-     */
     public function SearchDetails(array $details, $all_detail)
     {
         for ($i = 0; $i < count($details); $i++) {

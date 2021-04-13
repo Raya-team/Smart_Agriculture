@@ -56,6 +56,15 @@ for(var j=0;j<details.length;j++ )
 
 }
 
+$("#filter_id").change(function () {
+    shipLayer.clearLayers();
+    var points = $(this).find(':selected').data('points');
+    shipLayer.addLayer(L.polygon([points]));
+
+    var Center = L.polygon([points]).getBounds().getCenter();
+    map.flyTo(new L.LatLng(Center['lat'], Center['lng']), 12);
+});
+
 var heatmap = L.webGLHeatmap({
     size: 2000,
     opacity: 0.8,

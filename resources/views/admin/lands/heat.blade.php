@@ -12,9 +12,15 @@
                     <div class="box-header with-border">
                         <h3 class="box-title">نمایش زمین</h3>
                     </div>
-                    <!-- /.box-header -->
                     <div class="box-body">
-                        <div class="form-group">
+                        <label>نام فیلتر</label>
+                        <select class="form-control chosen-select" style="width: 100%;" name="filter_id" id="filter_id">
+                            @foreach($filters as $filter)
+                                <option value="{{ $filter->id }}" >{{$filter->nickname}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="box-body">
                             <label for="mapid">نقشه</label>
                             <div id="mapid"></div>
                         </div>
