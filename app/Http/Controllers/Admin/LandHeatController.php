@@ -35,7 +35,7 @@ class LandHeatController extends Controller
                             if ($details == null){
                                 array_push($details, $all_detail);
                             } else {
-                                if ($this->SearchDetails($details, $all_detail)){
+                                if ($this->SearchDetails($details, $all_detail, $sensor)){
                                     continue;
                                 }else{
                                     array_push($details, $all_detail);
@@ -47,17 +47,17 @@ class LandHeatController extends Controller
                     }
                 }
             }
-//            return $details;
+            return $details;
             $details = json_encode($details);
 
             return view('admin.lands.heat', compact('land', 'details','filters'));
         }
         abort(401);
     }
-    public function SearchDetails(array $details, $all_detail)
+    public function SearchDetails(array $details, $all_detail,$sensor)
     {
         for ($i = 0; $i < count($details); $i++) {
-            if ($all_detail->filter_id == $details[$i]->filter_id) {
+            if ($all_detail->filter_id == $details[$i]->filter_id && $details[$i]->sensor_id == $sensor->id) {
                 return true;
             }
         }
