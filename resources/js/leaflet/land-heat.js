@@ -32,45 +32,49 @@ L.polygon([points],{color: "#79acff"}).addTo(map);
 
 var detailjson = document.getElementById('details').value;
 var details = JSON.parse( detailjson);
+// console.log(details);
 
-// $("#filter_id").change(function () {
+$("#filter_id").change(function () {
 
-    // var filters = $(this).find(':selected').data('filters');
+    var filters = $(this).find(':selected').val();
 
     var arr = [];
 
     for(var d=0;d<details.length;d++)
     {
-        var loc=(details[d]['location']);
-        var val=(details[d]['value']);
-        //convert string to array
-        arr.push(JSON.parse( loc));
-        arr.push(JSON.parse( val));
+        if(details[d]['filter_id'] == filters)
+        {
+            var loc=(details[d]['location']);
+            var val=(details[d]['value']);
+            //convert string to array
+            arr.push(JSON.parse( loc));
+            arr.push(JSON.parse( val));
+        }
+
     }
+    // console.log(arr);
     var datapoints =[];
-    for(var j=0;j<details.length;j++ )
+
+    for(var j=0;j<arr.length/2;j++ )
     {
         var data =[];
-
         data.push(arr[2*j][0]['lat']);
-
         data.push(arr[2*j][0]['lng']);
-
         data.push(arr[2*j+1]);
-
         datapoints.push(data);
-
     }
-    var heatmap = L.webGLHeatmap({
-        size: 2000,
-        opacity: 0.8,
-        gradientTexture: false,
-        alphaRange : 1});
+    // console.log(datapoints);
+     var heatmap = L.webGLHeatmap({
+         size: 2000,
+         opacity: 0.8,
+         gradientTexture: false,
+         alphaRange : 1});
 
-    heatmap.setData( datapoints );
-// });
+     heatmap.setData( datapoints );
+    map.addLayer(heatmap);for (var i = 0; i < datapoints.length; i++) {
+        L.marker([datapoints[i][0],datapoints[i][1]]).addTo(map);
+    }
+});
 
-map.addLayer(heatmap);for (var i = 0; i < datapoints.length; i++) {
-    L.marker([datapoints[i][0],datapoints[i][1]]).addTo(map);
-}
+
 

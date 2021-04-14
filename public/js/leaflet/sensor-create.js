@@ -14450,7 +14450,7 @@ $("#land_id").change(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\laravel\Work\first\resources\js\leaflet\sensor-create.js */"./resources/js/leaflet/sensor-create.js");
+module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\leaflet\sensor-create.js */"./resources/js/leaflet/sensor-create.js");
 
 
 /***/ })
