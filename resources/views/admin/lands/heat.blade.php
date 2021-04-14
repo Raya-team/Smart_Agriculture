@@ -13,8 +13,9 @@
                         <h3 class="box-title">نمایش زمین</h3>
                     </div>
                     <div class="box-body">
-                        <label>نام فیلتر</label>
-                        <select class="form-control chosen-select" style="width: 100%;" name="filter_id" id="filter_id">
+                        <label>فیلتر</label>
+                        <select class="form-control chosen-select" style="width: 100%;" name="filter_id" id="filter_id" data-placeholder="فیلتر خود را انتخاب کنید">
+                            <option value=""></option>
                             @foreach($filters as $filter)
                                 <option value="{{ $filter->id }}" data-filters="{{ $filter->nickname }}" >{{$filter->nickname}}</option>
                             @endforeach

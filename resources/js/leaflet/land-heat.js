@@ -33,9 +33,9 @@ L.polygon([points],{color: "#79acff"}).addTo(map);
 var detailjson = document.getElementById('details').value;
 var details = JSON.parse( detailjson);
 
-$("#filter_id").change(function () {
+// $("#filter_id").change(function () {
 
-    var filters = $(this).find(':selected').data('filters');
+    // var filters = $(this).find(':selected').data('filters');
 
     var arr = [];
 
@@ -68,7 +68,7 @@ $("#filter_id").change(function () {
         alphaRange : 1});
 
     heatmap.setData( datapoints );
-});
+// });
 
 map.addLayer(heatmap);for (var i = 0; i < datapoints.length; i++) {
     L.marker([datapoints[i][0],datapoints[i][1]]).addTo(map);
