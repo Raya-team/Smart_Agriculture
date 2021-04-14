@@ -86,17 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/leaflet/test.js":
-/*!**************************************!*\
-  !*** ./resources/js/leaflet/test.js ***!
-  \**************************************/
-/*! no exports provided */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'G:\\work\\Smart_Agriculture\\resources\\js\\leaflet\\test.js'");
-
-/***/ }),
-
 /***/ 8:
 /*!********************************************!*\
   !*** multi ./resources/js/leaflet/test.js ***!
@@ -104,7 +93,7 @@ throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\leaflet\test.js */"./resources/js/leaflet/test.js");
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'G:\\work\\Smart_Agriculture\\resources\\js\\leaflet\\test.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 
 
 /***/ })

@@ -13,7 +13,7 @@
                 <!-- general form elements -->
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">ایجاد کاربر</h3>
+                        <h3 class="box-title">ویرایش سنسور</h3>
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
@@ -23,11 +23,11 @@
                         @include('admin.section.errors')
                         <div class="box-body">
                             <div class="form-group">
-                                <label for="exampleInputEmail1">نام زمین</label>
+                                <label for="exampleInputEmail1">شناسه سنسور</label>
                                 <input type="text" class="form-control" name="serial" id="name" placeholder="نام و نام خانوادگی" value="{{ $sensor->serial }}">
                             </div>
                             <div class="form-group">
-                                <label>نام کاربر</label>
+                                <label>نام زمین</label>
                                 <select class="form-control chosen-select" style="width: 100%;" name="land_id" id="land_id">
                                     @foreach($lands as $land)
                                         <option value="{{ $land->id }}" {{ in_array($land->id , $sensor->land()->pluck('id')->toArray()) ? 'selected' : '' }} data-points="{{ $land->points }}" >{{$land->name}}</option>
