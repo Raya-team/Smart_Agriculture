@@ -16342,10 +16342,14 @@ $("#filter_id").change(function () {
     alphaRange: 1
   });
   heatmap.setData(datapoints);
+  var icon = new leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.Icon.Default();
+  icon.options.shadowSize = [0, 0];
   map.addLayer(heatmap);
 
   for (var i = 0; i < datapoints.length; i++) {
-    leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.marker([datapoints[i][0], datapoints[i][1]]).addTo(map);
+    leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.marker([datapoints[i][0], datapoints[i][1]], {
+      icon: icon
+    }).addTo(map);
   }
 });
 

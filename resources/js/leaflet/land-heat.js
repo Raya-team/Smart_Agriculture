@@ -69,15 +69,17 @@ $("#filter_id").change(function () {
         datapoints.push(data);
     }
     // console.log(datapoints);
-     var heatmap = L.webGLHeatmap({
-         size: 2000,
-         opacity: 0.8,
-         gradientTexture: false,
-         alphaRange : 1});
+    var heatmap = L.webGLHeatmap({
+        size: 2000,
+        opacity: 0.8,
+        gradientTexture: false,
+        alphaRange : 1});
 
-     heatmap.setData( datapoints );
+    heatmap.setData( datapoints );
+    var icon = new L.Icon.Default();
+    icon.options.shadowSize = [0,0];
     map.addLayer(heatmap);for (var i = 0; i < datapoints.length; i++) {
-        L.marker([datapoints[i][0],datapoints[i][1]]).addTo(map);
+        L.marker([datapoints[i][0],datapoints[i][1]], {icon : icon}).addTo(map);
     }
 });
 
