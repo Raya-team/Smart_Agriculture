@@ -34,7 +34,11 @@ var detailjson = document.getElementById('details').value;
 var details = JSON.parse( detailjson);
 // console.log(details);
 
+var shipLayer = L.layerGroup();
+map.addLayer(shipLayer);
+
 $("#filter_id").change(function () {
+    shipLayer.clearLayers();
 
     var filters = $(this).find(':selected').val();
     var max1 = $(this).find(':selected').data('max');
@@ -57,7 +61,6 @@ $("#filter_id").change(function () {
         }
 
     }
-    // console.log(arr);
     var datapoints =[];
 
     for(var j=0;j<arr.length/2;j++ )
@@ -68,18 +71,20 @@ $("#filter_id").change(function () {
         data.push(arr[2*j+1]);
         datapoints.push(data);
     }
-    // console.log(datapoints);
     var heatmap = L.webGLHeatmap({
         size: 2000,
         opacity: 0.8,
         gradientTexture: false,
         alphaRange : 1});
-
     heatmap.setData( datapoints );
+    shipLayer.addLayer(heatmap);
+
+
+    // Create Marker
     var icon = new L.Icon.Default();
     icon.options.shadowSize = [0,0];
-    map.addLayer(heatmap);for (var i = 0; i < datapoints.length; i++) {
-        L.marker([datapoints[i][0],datapoints[i][1]], {icon : icon}).addTo(map);
+    for (var i = 0; i < datapoints.length; i++) {
+        shipLayer.addLayer(L.marker([datapoints[i][0],datapoints[i][1]], {icon : icon}).addTo(map));
     }
 });
 

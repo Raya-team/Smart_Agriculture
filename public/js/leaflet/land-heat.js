@@ -16303,7 +16303,10 @@ leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points], {
 var detailjson = document.getElementById('details').value;
 var details = JSON.parse(detailjson); // console.log(details);
 
+var shipLayer = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.layerGroup();
+map.addLayer(shipLayer);
 $("#filter_id").change(function () {
+  shipLayer.clearLayers();
   var filters = $(this).find(':selected').val();
   var max1 = $(this).find(':selected').data('max');
   var min1 = $(this).find(':selected').data('min');
@@ -16321,8 +16324,7 @@ $("#filter_id").change(function () {
       arr.push(JSON.parse(loc));
       arr.push(JSON.parse(val2));
     }
-  } // console.log(arr);
-
+  }
 
   var datapoints = [];
 
@@ -16332,8 +16334,7 @@ $("#filter_id").change(function () {
     data.push(arr[2 * j][0]['lng']);
     data.push(arr[2 * j + 1]);
     datapoints.push(data);
-  } // console.log(datapoints);
-
+  }
 
   var heatmap = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.webGLHeatmap({
     size: 2000,
@@ -16342,14 +16343,15 @@ $("#filter_id").change(function () {
     alphaRange: 1
   });
   heatmap.setData(datapoints);
+  shipLayer.addLayer(heatmap); // Create Marker
+
   var icon = new leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.Icon.Default();
   icon.options.shadowSize = [0, 0];
-  map.addLayer(heatmap);
 
   for (var i = 0; i < datapoints.length; i++) {
-    leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.marker([datapoints[i][0], datapoints[i][1]], {
+    shipLayer.addLayer(leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.marker([datapoints[i][0], datapoints[i][1]], {
       icon: icon
-    }).addTo(map);
+    }).addTo(map));
   }
 });
 
