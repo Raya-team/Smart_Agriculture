@@ -1,85 +1,46 @@
-import L from 'leaflet';
-import 'leaflet-webgl-heatmap/src/leaflet-webgl-heatmap';
-import 'leaflet-webgl-heatmap/src/webgl-heatmap/webgl-heatmap';
-import 'leaflet.fullscreen';
-import 'leaflet-contextmenu';
+//TODO COLOR
 
-var geojson = document.getElementById('eventoutput').value;
-var points = JSON.parse(geojson);
-var Center = L.polygon([points]).getBounds().getCenter();
-
-let map = L.map('mapid', {
-    contextmenu: true,
-    contextmenuWidth: 140,
-    contextmenuItems: [{
-        text: 'اینجا کجاست؟',
-        callback: WhatHere,
-        icon: "https://fastcode.space/wp-content/uploads/2019/11/Location-Icon-Creative-Design-Template.jpg"
-    }],
-    fullscreenControl: true,
-    //TODO lat_lng
-}).setView([36.297418, 59.616795], 12);
-
-map.attributionControl.setPrefix('<a href="#">ناهید آسمان ایرانیان</a>');
-
-L.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png').addTo(map);
-
-function WhatHere(e) {
-    alert(e.latlng);
-}
-
-L.polygon([points],{color: "#79acff"}).addTo(map);
-
-var detailjson = document.getElementById('details').value;
-var details = JSON.parse( detailjson);
-// console.log(details);
-
-$("#filter_id").change(function () {
-
-    var filters = $(this).find(':selected').val();
-
-    var arr = [];
-
-    for(var d=0;d<details.length;d++)
+function colorValues(color)
+{
+    if (!color)
+        return;
+    if (color.toLowerCase() === 'transparent')
+        return [0, 0, 0, 0];
+    if (color[0] === '#')
     {
-        if(details[d]['filter_id'] == filters)
+        if (color.length < 7)
         {
-            var loc=(details[d]['location']);
-            var val=(details[d]['value']);
-            //convert string to array
-            arr.push(JSON.parse( loc));
-            arr.push(JSON.parse( val));
+            // convert #RGB and #RGBA to #RRGGBB and #RRGGBBAA
+            color = '#' + color[1] + color[1] + color[2] + color[2] + color[3] + color[3] + (color.length > 4 ? color[4] + color[4] : '');
         }
-
+        return [parseInt(color.substr(1, 2), 16),
+            parseInt(color.substr(3, 2), 16),
+            parseInt(color.substr(5, 2), 16),
+            color.length > 7 ? parseInt(color.substr(7, 2), 16)/255 : 1];
     }
-
-    // console.log(arr);
-
-    var datapoints =[];
-
-    for(var j=0;j<details.length;j++ )
+    if (color.indexOf('rgb') === -1)
     {
-        var data =[];
-
-        data.push(arr[2*j][0]['lat']);
-
-        data.push(arr[2*j][0]['lng']);
-
-        data.push(arr[2*j+1]);
-
-        datapoints.push(data);
-
+        // convert named colors
+        var temp_elem = document.body.appendChild(document.createElement('fictum')); // intentionally use unknown tag to lower chances of css rule override with !important
+        var flag = 'rgb(1, 2, 3)'; // this flag tested on chrome 59, ff 53, ie9, ie10, ie11, edge 14
+        temp_elem.style.color = flag;
+        if (temp_elem.style.color !== flag)
+            return; // color set failed - some monstrous css rule is probably taking over the color of our object
+        temp_elem.style.color = color;
+        if (temp_elem.style.color === flag || temp_elem.style.color === '')
+            return; // color parse failed
+        color = getComputedStyle(temp_elem).color;
+        document.body.removeChild(temp_elem);
     }
-    /* var heatmap = L.webGLHeatmap({
-         size: 2000,
-         opacity: 0.8,
-         gradientTexture: false,
-         alphaRange : 1});
-
-     heatmap.setData( datapoints );*/
-});
-
-map.addLayer(heatmap);for (var i = 0; i < datapoints.length; i++) {
-    L.marker([datapoints[i][0],datapoints[i][1]]).addTo(map);
+    if (color.indexOf('rgb') === 0)
+    {
+        if (color.indexOf('rgba') === -1)
+            color += ',1'; // convert 'rgb(R,G,B)' to 'rgb(R,G,B)A' which looks awful but will pass the regxep below
+        return color.match(/[\.\d]+/g).map(function (a)
+        {
+            return +a
+        });
+    }
 }
 
+// console.log(colorValues('black'));

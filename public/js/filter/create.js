@@ -95,9 +95,10 @@
 
 $(document).ready(function () {
   var colors = [];
+  var inputcolors = [];
   $('#btnAdd').click(function () {
-    // var x = $('#color-select').val();
-    var y = $('#color-select').find(':selected').data('color');
+    var x = $('#color-select').find(':selected').data('color');
+    var y = $('#color-select').val();
     var fnCell = $('<td class="del1"><div  style="background-color:' + y + ';width: 20px;height: 20px; border-radius: 100%; margin-top: 2px; margin-right: auto; margin-left: auto;"></div></td>');
     var row = $('<tr></tr>');
 
@@ -110,6 +111,7 @@ $(document).ready(function () {
       }, 4000);
     } else {
       colors.push(y);
+      inputcolors.push(x);
       row.append(fnCell);
     }
 
@@ -118,8 +120,9 @@ $(document).ready(function () {
       $('.del1').closest('tr').remove();
       document.getElementById('colors').value = null;
       colors.splice([0]);
+      inputcolors.splice([0]);
     });
-    document.getElementById('colors').value = JSON.stringify(colors);
+    document.getElementById('colors').value = JSON.stringify(inputcolors);
   });
 });
 
@@ -132,7 +135,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\laravel\Work\first\resources\js\filter\create.js */"./resources/js/filter/create.js");
+module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\filter\create.js */"./resources/js/filter/create.js");
 
 
 /***/ })

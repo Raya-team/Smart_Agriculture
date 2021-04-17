@@ -30,25 +30,37 @@ function WhatHere(e) {
 
 L.polygon([points],{color: "#79acff"}).addTo(map);
 
+var colorsjson = document.getElementById('filters').value;
+var colors = JSON.parse(colorsjson);
+
 var detailjson = document.getElementById('details').value;
 var details = JSON.parse( detailjson);
-// console.log(details);
+
 
 var shipLayer = L.layerGroup();
 map.addLayer(shipLayer);
-// var x = new nukeVendorPrefix();
-// console.log(x);
+
 
 $("#filter_id").change(function () {
     shipLayer.clearLayers();
-
     var filters = $(this).find(':selected').val();
     var max1 = $(this).find(':selected').data('max');
     var min1 = $(this).find(':selected').data('min');
     var max2 = 1;
     var min2 = 0;
-    var arr = [];
+    var arr1=[];
+    var arr2 = [];
 
+    for(var c=0;c<colors.length;c++)
+    {
+        if(colors[c]['id'] == filters)
+        {
+            var color =(colors[c]['colors']);
+            //convert string to array
+            var test = JSON.parse("[" + color + "]");
+        }
+
+    }
     for(var d=0;d<details.length;d++)
     {
         if(details[d]['filter_id'] == filters)
@@ -56,21 +68,21 @@ $("#filter_id").change(function () {
             var loc=(details[d]['location']);
             var val1=(details[d]['value']);
             var val2 = ((val1 - min1) / (max1 - min1)) * (max2 - min2) + min2;
-            console.log(val2);
             //convert string to array
-            arr.push(JSON.parse(loc));
-            arr.push(JSON.parse(val2));
+            arr2.push(JSON.parse(loc));
+            arr2.push(JSON.parse(val2));
         }
 
     }
+
     var datapoints =[];
     var sensorsPoints = [];
-    for(var j=0;j<arr.length/2;j++ )
+    for(var j=0;j<arr2.length/2;j++ )
     {
         var data =[];
-        data.push(arr[2*j][0]['lat']);
-        data.push(arr[2*j][0]['lng']);
-        data.push(arr[2*j+1]);
+        data.push(arr2[2*j][0]['lat']);
+        data.push(arr2[2*j][0]['lng']);
+        data.push(arr2[2*j+1]);
         datapoints.push(data);
     }
     var heatmap = L.webGLHeatmap({

@@ -22,19 +22,21 @@
                         </select>
                     </div>
                     <div class="box-body">
-                            <label for="mapid">نقشه</label>
-                            <div id="mapid"></div>
-                        </div>
-                        <input type="hidden" id="eventoutput" name="points" value="{{ $land->points }}">
-                            <input type="hidden" id="details" name="details" value="{{ $details }}">
+                        <label for="mapid">نقشه</label>
+                        <div id="mapid"></div>
                     </div>
+                    <input type="hidden" id="eventoutput" name="points" value="{{ $land->points }}">
+                    <input type="hidden" id="details" name="details" value="{{ $details }}">
+                    <input type="hidden" id="filters" name="filters" value="{{ $filters }}">
                 </div>
-                <!-- /.box -->
             </div>
+            <!-- /.box -->
+        </div>
         </div>
     </section>
 @endsection
 @section('script')
+    <script src="{{ asset('js/leaflet/test.js') }}"></script>
     <script src="{{ asset('js/chosen.js') }}"></script>
     <script src="{{ asset('js/leaflet/land-heat.js') }}"></script>
 @endsection
