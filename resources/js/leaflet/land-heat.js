@@ -36,6 +36,8 @@ var details = JSON.parse( detailjson);
 
 var shipLayer = L.layerGroup();
 map.addLayer(shipLayer);
+// var x = new nukeVendorPrefix();
+// console.log(x);
 
 $("#filter_id").change(function () {
     shipLayer.clearLayers();
@@ -62,7 +64,7 @@ $("#filter_id").change(function () {
 
     }
     var datapoints =[];
-
+    var sensorsPoints = [];
     for(var j=0;j<arr.length/2;j++ )
     {
         var data =[];
@@ -81,10 +83,16 @@ $("#filter_id").change(function () {
 
 
     // Create Marker
+
+    var PopupCode = "<b style='text-align: center'>جزئیات سنسور</b><br>" +
+        "" +
+        "<a href='#' style=''>نمودار</a>";
+
     var icon = new L.Icon.Default();
     icon.options.shadowSize = [0,0];
     for (var i = 0; i < datapoints.length; i++) {
-        shipLayer.addLayer(L.marker([datapoints[i][0],datapoints[i][1]], {icon : icon}).addTo(map));
+        shipLayer.addLayer(L.marker([datapoints[i][0],datapoints[i][1]], {icon : icon}).addTo(map)
+            .bindPopup(PopupCode));
     }
 });
 

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <link rel="icon" href="/admin/logo.png">
+<title>کشاورزی هوشمند</title>
 <style>
     body, html {
         height: 100%;

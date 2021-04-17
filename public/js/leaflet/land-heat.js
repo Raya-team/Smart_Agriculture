@@ -16304,7 +16304,9 @@ var detailjson = document.getElementById('details').value;
 var details = JSON.parse(detailjson); // console.log(details);
 
 var shipLayer = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.layerGroup();
-map.addLayer(shipLayer);
+map.addLayer(shipLayer); // var x = new nukeVendorPrefix();
+// console.log(x);
+
 $("#filter_id").change(function () {
   shipLayer.clearLayers();
   var filters = $(this).find(':selected').val();
@@ -16327,6 +16329,7 @@ $("#filter_id").change(function () {
   }
 
   var datapoints = [];
+  var sensorsPoints = [];
 
   for (var j = 0; j < arr.length / 2; j++) {
     var data = [];
@@ -16345,13 +16348,14 @@ $("#filter_id").change(function () {
   heatmap.setData(datapoints);
   shipLayer.addLayer(heatmap); // Create Marker
 
+  var PopupCode = "<b style='text-align: center'>جزئیات سنسور</b><br>" + "" + "<a href='#' style=''>نمودار</a>";
   var icon = new leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.Icon.Default();
   icon.options.shadowSize = [0, 0];
 
   for (var i = 0; i < datapoints.length; i++) {
     shipLayer.addLayer(leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.marker([datapoints[i][0], datapoints[i][1]], {
       icon: icon
-    }).addTo(map));
+    }).addTo(map).bindPopup(PopupCode));
   }
 });
 
