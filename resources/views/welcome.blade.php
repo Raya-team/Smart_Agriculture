@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<link rel="icon" href="/admin/logo.png">
 <style>
     body, html {
         height: 100%;
