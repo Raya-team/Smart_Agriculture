@@ -15107,7 +15107,12 @@ var points = JSON.parse(geojson);
 var Center = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]).getBounds().getCenter();
 var map = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.map('mapid', {
   fullscreenControl: true
-}).setView([Center['lat'], Center['lng']], 12);
+}).setView([Center['lat'], Center['lng']], 5); // (1) Zoom on polygon
+
+map.flyToBounds(new leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]).getBounds(), {
+  'duration': 3
+}); // End (1)
+
 leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points], {
   color: '#9b2d14'
 }).addTo(map);

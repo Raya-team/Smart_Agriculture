@@ -14435,9 +14435,11 @@ var shipLayer = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.layerGroup();
 map.addLayer(shipLayer);
 $("#land_id").change(function () {
   shipLayer.clearLayers();
-  var points = $(this).find(':selected').data('points');
-  var Center = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]).getBounds().getCenter();
-  map.flyTo(new leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.LatLng(Center['lat'], Center['lng']), 12);
+  var points = $(this).find(':selected').data('points'); // var Center = L.polygon([points]).getBounds().getCenter();
+
+  map.flyToBounds(new leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]).getBounds(), {
+    'duration': 3
+  });
   shipLayer.addLayer(leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]));
 });
 

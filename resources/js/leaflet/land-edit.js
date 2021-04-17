@@ -12,7 +12,11 @@ var Center = L.polygon([points]).getBounds().getCenter();
 
 let map = L.map('mapid', {
     fullscreenControl: true,
-}).setView([Center['lat'],Center['lng']], 12);
+}).setView([Center['lat'],Center['lng']], 5);
+
+// (1) Zoom on polygon
+map.flyToBounds(new L.polygon([points]).getBounds(), {'duration':3});
+// End (1)
 
 L.polygon([points],{
     color: '#9b2d14'

@@ -14438,13 +14438,17 @@ var points = JSON.parse(geojson);
 shipLayer.addLayer(leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]));
 var lat = points[0].lat,
     lng = points[0].lng;
-map.flyTo(new leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.LatLng(lat, lng), 12);
+map.flyToBounds(new leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]).getBounds(), {
+  'duration': 3
+});
 $("#land_id").change(function () {
   shipLayer.clearLayers();
   var points = $(this).find(':selected').data('points');
-  shipLayer.addLayer(leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]));
-  var Center = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]).getBounds().getCenter();
-  map.flyTo(new leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.LatLng(Center['lat'], Center['lng']), 12);
+  shipLayer.addLayer(leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points])); // var Center = L.polygon([points]).getBounds().getCenter();
+
+  map.flyToBounds(new leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]).getBounds(), {
+    'duration': 1
+  });
 });
 
 /***/ }),

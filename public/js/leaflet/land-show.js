@@ -15011,7 +15011,17 @@ var Center = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]).ge
 
 var map = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.map('mapid', {
   fullscreenControl: true
-}).setView([Center['lat'], Center['lng']], 12);
+}).setView([Center['lat'], Center['lng']], 5); // (1) Zoom on Polygon
+// Method 1
+// var bounds = L.latLngBounds();
+// bounds.extend(points);
+// var t = map.fitBounds(bounds);
+// Method 2
+
+map.flyToBounds(new leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]).getBounds(), {
+  'duration': 3
+}); // End (1)
+
 map.attributionControl.setPrefix('<a href="#">ناهید آسمان ایرانیان</a>');
 leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png').addTo(map);
 var Defaultmap = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png', {

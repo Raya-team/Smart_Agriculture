@@ -18,15 +18,15 @@ var points = JSON.parse(geojson);
 shipLayer.addLayer(L.polygon([points]));
 
 var lat = points[0].lat, lng = points[0].lng;
-map.flyTo(new L.LatLng(lat, lng), 12);
+map.flyToBounds(new L.polygon([points]).getBounds(), {'duration':3});
 
 $("#land_id").change(function () {
     shipLayer.clearLayers();
     var points = $(this).find(':selected').data('points');
     shipLayer.addLayer(L.polygon([points]));
 
-    var Center = L.polygon([points]).getBounds().getCenter();
-    map.flyTo(new L.LatLng(Center['lat'], Center['lng']), 12);
+    // var Center = L.polygon([points]).getBounds().getCenter();
+    map.flyToBounds(new L.polygon([points]).getBounds(), {'duration':1});
 });
 
 

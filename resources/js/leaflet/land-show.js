@@ -6,10 +6,19 @@ var geojson = document.getElementById('eventoutput').value;
 var points = JSON.parse(geojson);
 var Center = L.polygon([points]).getBounds().getCenter();
 // console.log(points);
-
 let map = L.map('mapid', {
     fullscreenControl: true,
-}).setView([Center['lat'],Center['lng']], 12);
+}).setView([Center['lat'],Center['lng']], 5);
+
+
+// (1) Zoom on Polygon
+// Method 1
+// var bounds = L.latLngBounds();
+// bounds.extend(points);
+// var t = map.fitBounds(bounds);
+// Method 2
+map.flyToBounds(new L.polygon([points]).getBounds(), {'duration':3});
+// End (1)
 
 map.attributionControl.setPrefix('<a href="#">ناهید آسمان ایرانیان</a>');
 
