@@ -15,7 +15,12 @@
                 <!-- small box -->
                 <div class="small-box bg-yellow"  >
                     <div class="inner">
-                        <h3>{{ $users }}</h3>
+                        <h3>{{ $users_count }}
+                            <span style="font-size: 15px; color: #8a0000;" class="animated infinite fadeIn">
+                                @if($unapproved_users)
+                                    ({{$unapproved_users}} کاربر در انتظار تایید)
+                                @endif
+                            </span></h3>
                         <p>کاربران تایید شده</p>
                     </div>
                     <div class="icon">
@@ -29,7 +34,7 @@
                 <!-- small box -->
                 <div class="small-box bg-aqua">
                     <div class="inner">
-                        <h3>{{$lands}}</h3>
+                        <h3>{{$lands_count}}</h3>
                         <p>زمین ها</p>
                     </div>
                     <div class="icon">
@@ -43,7 +48,7 @@
                 <!-- small box -->
                 <div class="small-box bg-red">
                     <div class="inner">
-                        <h3>{{$sensors}}</h3>
+                        <h3>{{$sensors_count}}</h3>
                         <p>سنسور ها</p>
                     </div>
                     <div class="icon">
@@ -97,6 +102,7 @@
                 </div>
             </section>
         </div>
+        <input type="hidden" value="{{ $details }}" id="details">
     </section>
 
 @endsection
@@ -105,4 +111,5 @@
 @endsection
 @section('css')
     <link rel="stylesheet" href="{{asset('css/map.css')}}">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.6/animate.min.css" />
 @endsection

@@ -14417,6 +14417,35 @@ var map = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.map('world-map', {
 }).setView([33.093382, 52.811137], 4);
 map.attributionControl.setPrefix('<a href="#">ناهید آسمان ایرانیان</a>');
 leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png').addTo(map);
+var detailjson = document.getElementById('details').value;
+var details = JSON.parse(detailjson);
+var arr2 = [];
+var datapoints = [];
+var icon = new leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.Icon.Default();
+
+for (var d = 0; d < details.length; d++) {
+  var loc = details[d]['location'];
+  var val1 = details[d]['value']; //convert string to array
+
+  arr2.push(JSON.parse(loc));
+  arr2.push(JSON.parse(val1));
+}
+
+for (var j = 0; j < arr2.length / 2; j++) {
+  var data = [];
+  data.push(arr2[2 * j][0]['lat']);
+  data.push(arr2[2 * j][0]['lng']);
+  data.push(arr2[2 * j + 1]);
+  datapoints.push(data);
+}
+
+icon.options.shadowSize = [0, 0];
+
+for (var i = 0; i < datapoints.length; i++) {
+  leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.marker([datapoints[i][0], datapoints[i][1]], {
+    icon: icon
+  }).addTo(map);
+}
 
 /***/ }),
 
@@ -14427,7 +14456,7 @@ leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.tileLayer('https://tiles.wmflabs.
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\dashboard\map.js */"./resources/js/dashboard/map.js");
+module.exports = __webpack_require__(/*! F:\laravel\Work\first\resources\js\dashboard\map.js */"./resources/js/dashboard/map.js");
 
 
 /***/ })
