@@ -56,7 +56,7 @@ class DashboardController extends Controller
     public function SearchDetails(array $details, $all_detail,$sensor)
     {
         for ($i = 0; $i < count($details); $i++) {
-            if ($all_detail->filter_id == $details[$i]->filter_id && $details[$i]->sensor_id == $sensor->id) {
+            if ($all_detail->filter_id == $details[$i]->filter_id || $details[$i]->sensor_id == $sensor->id) {
                 return true;
             }
         }
