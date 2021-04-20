@@ -43,7 +43,7 @@ class DashboardController extends Controller
                         }
                     }
             }
-//            return $details;
+            return $details;
             $details = json_encode($details);
 
 //            return view('admin.lands.heat', compact('land', 'details','filters'));
@@ -56,7 +56,7 @@ class DashboardController extends Controller
     public function SearchDetails(array $details, $all_detail,$sensor)
     {
         for ($i = 0; $i < count($details); $i++) {
-            if ($all_detail->filter_id == $details[$i]->filter_id || $details[$i]->sensor_id == $sensor->id) {
+            if ($details[$i]->sensor_id == $sensor->id) {
                 return true;
             }
         }
