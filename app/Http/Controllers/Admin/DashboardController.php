@@ -43,7 +43,7 @@ class DashboardController extends Controller
                         }
                     }
             }
-            return $details;
+//            return $details;
             $details = json_encode($details);
 
 //            return view('admin.lands.heat', compact('land', 'details','filters'));
