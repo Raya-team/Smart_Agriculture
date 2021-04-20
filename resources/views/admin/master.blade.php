@@ -386,21 +386,21 @@
                         <li class="{{ Route::currentRouteName() == 'lands.index' ? 'active' : '' }}"><a href="{{ route('lands.index') }}"><i class="fa fa-users"></i>لیست زمین</a></li>
                     </ul>
                 </li>
-                <li class="{{ Route::currentRouteName() == 'sensors.index' ? 'active' : '' }}"><a href="{{ route('sensors.index') }}"><i class="fa fa-dot-circle-o"></i> <span>مدیریت سنسور ها</span></a></li>
+                <li class="{{ Route::currentRouteName() == 'sensors.index' ? 'active' : '' }}"><a href="{{ route('sensors.index') }}"><i class="fa fa-dot-circle-o"></i> <span>مدیریت ایستگاه ها</span></a></li>
             </ul>
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="treeview {{ in_array(Route::currentRouteName(), ['filters.create', 'filters.index']) ? 'menu-open' : ''  }}">
                     <a href="#">
-                        <i class="fa  fa-filter"></i> <span>مدیریت فیلتر ها</span>
+                        <i class="fa  fa-filter"></i> <span>مدیریت پارامتر ها</span>
                         <span class="pull-left-container">
               <i class="fa fa-angle-right pull-left"></i>
             </span>
                     </a>
                     <ul class="treeview-menu" style="{{ in_array(Route::currentRouteName(), ['filters.create', 'filters.index']) ? 'display: block;' : '' }}">
                         @if(Gate::allows('asdsad') || Auth::user()->level == 2)
-                            <li class="{{ Route::currentRouteName() == 'filters.create' ? 'active' : '' }}"><a href="{{ route('filters.create') }}"><i class="fa fa-plus"></i>ایجاد فیلتر</a></li>
+                            <li class="{{ Route::currentRouteName() == 'filters.create' ? 'active' : '' }}"><a href="{{ route('filters.create') }}"><i class="fa fa-plus"></i>ایجاد پارامتر</a></li>
                         @endif
-                        <li class="{{ Route::currentRouteName() == 'filters.index' ? 'active' : '' }}"><a href="{{ route('filters.index') }}"><i class="fa fa-users"></i>لیست فیلتر</a></li>
+                        <li class="{{ Route::currentRouteName() == 'filters.index' ? 'active' : '' }}"><a href="{{ route('filters.index') }}"><i class="fa fa-users"></i>لیست پارامتر ها</a></li>
                     </ul>
                 </li>
             </ul>

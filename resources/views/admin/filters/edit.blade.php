@@ -1,5 +1,5 @@
 @extends('admin.master')
-@section('title', 'ویرایش فیلتر')
+@section('title', 'ویرایش پارامتر')
 @section('main-content')
 
     <section class="content">
@@ -11,7 +11,7 @@
                 <!-- general form elements -->
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">ویرایش فیلتر</h3>
+                        <h3 class="box-title">ویرایش پارامتر</h3>
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
@@ -21,8 +21,8 @@
                         @include('admin.section.errors')
                         <div class="box-body">
                             <div class="form-group">
-                                <label for="name">نام فیلتر</label>
-                                <input type="text" class="form-control" name="name" id="name" placeholder="نام فیلتر" value="{{ old('name' , $filter->name) }}">
+                                <label for="name">نام پارامتر</label>
+                                <input type="text" class="form-control" name="name" id="name" placeholder="نام پارامتر" value="{{ old('name' , $filter->name) }}">
                             </div>
                             <div class="form-group">
                                 <label for="nickname">نام مستعار</label>

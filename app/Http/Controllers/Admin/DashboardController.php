@@ -47,7 +47,7 @@ class DashboardController extends Controller
             $details = json_encode($details);
 
 //            return view('admin.lands.heat', compact('land', 'details','filters'));
-            return view('admin.dashboard.index', compact('users_count','lands_count', 'sensors_count', 'unapproved_users', 'details'));
+            return view('admin.dashboard.index', compact(['users_count','lands_count', 'sensors_count', 'unapproved_users', 'details']));
 
         }
         abort(401);

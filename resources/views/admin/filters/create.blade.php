@@ -1,5 +1,5 @@
 @extends('admin.master')
-@section('title', 'ایجاد فیلتر')
+@section('title', 'ایجاد پارامتر')
 @section('main-content')
 
     <section class="content">
@@ -11,7 +11,7 @@
                 <!-- general form elements -->
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">ایجاد فیلتر</h3>
+                        <h3 class="box-title">ایجاد پارامتر</h3>
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
@@ -21,7 +21,7 @@
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="name">نام</label>
-                                <input type="text" class="form-control" name="name" id="name" placeholder="نام فیلتر" value="{{ old('name') }}">
+                                <input type="text" class="form-control" name="name" id="name" placeholder="نام پارامتر" value="{{ old('name') }}">
                             </div>
                             <div class="form-group">
                                 <label for="nickname">نام مستعار</label>

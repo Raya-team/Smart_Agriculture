@@ -14439,7 +14439,7 @@ for (var j = 0; j < arr2.length / 2; j++) {
   datapoints.push(data);
 }
 
-icon.options.shadowSize = [0, 0];
+icon.options.shadowSize = [0, 0]; // icon.options.iconSize = [50, 50];
 
 for (var i = 0; i < datapoints.length; i++) {
   leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.marker([datapoints[i][0], datapoints[i][1]], {

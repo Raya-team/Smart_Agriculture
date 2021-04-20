@@ -36,6 +36,7 @@
     </section>
 @endsection
 @section('script')
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-geodesy/v0.1.0/leaflet-geodesy.js'></script>
     <script src="{{ asset('js/leaflet/test.js') }}"></script>
     <script src="{{ asset('js/chosen.js') }}"></script>
     <script src="{{ asset('js/leaflet/land-heat.js') }}"></script>

@@ -1,14 +1,14 @@
 @extends('admin.master')
-@section('title', 'لیست فیلتر ها')
+@section('title', 'لیست پارامتر ها')
 @section('main-content')
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            لیست فیلتر ها
+            لیست پارامتر ها
         </h1>
         <ol class="breadcrumb" dir="ltr">
             <li><a href="{{route('dashboard')}}"><i class="fa fa-dashboard"></i> داشبورد</a></li>
-            <li><a href="{{route('filters.index')}}">فیلتر ها</a></li>
+            <li><a href="{{route('filters.index')}}">پارامتر ها</a></li>
         </ol>
     </section>
 
@@ -18,7 +18,7 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h1 class="box-title">فیلتر ها</h1>
+                        <h1 class="box-title">پارامتر ها</h1>
                         <div class="box-tools pull-right">
                             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                         </div>
@@ -29,7 +29,7 @@
                         <table id="example" class="table table-bordered table-striped display">
                             <thead>
                             <tr>
-                                <th>نام فیلتر</th>
+                                <th>نام پارامتر</th>
                                 <th>نام مستعار</th>
                                 <th>حداقل بازه</th>
                                 <th>حداکثر بازه</th>

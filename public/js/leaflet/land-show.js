@@ -15051,7 +15051,8 @@ var _baseLayers = {
 leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.control.layers(_baseLayers, null, {
   position: "bottomright"
 }).addTo(map);
-leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]).addTo(map);
+var t = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]).addTo(map);
+t.bindPopup((LGeo.area(t) / 1000000).toFixed(2) + ' km<sup>2</sup>'); // t.bindPopup('مساحت زمین : ' + area);
 
 /***/ }),
 

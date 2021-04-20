@@ -663,52 +663,72 @@ console.log(fitlers); // var nickname = [];
 
 var options = {
   chart: {
-    type: 'area'
+    type: 'spline'
   },
   title: {
-    text: 'وضعیت نمودار'
+    text: 'نمودار دما'
   },
+  // subtitle: {
+  //     text: 'Weekly temperature averages'
+  // },
   yAxis: {
     title: {
-      text: 'شاخص'
+      text: 'شاخص دما (°C)'
     }
   },
   xAxis: {
-    categories: ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد']
+    type: 'Weeks',
+    labels: [5, 3, 4, 7, 2, 4, 6, 4, 3, 6, 2, 3, 4, 5]
+  },
+  tooltip: {
+    split: true,
+    valueDecimals: 0,
+    valueSuffix: '°C'
   },
   credits: {
     text: 'ناهید آسمان ایرانیان',
     href: '#'
   },
-  colors: ['#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+  // colors: ['#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
   series: [{
     name: 'دما',
-    data: [5, 3, 4, 7, 2],
-    color: '#ED561B'
-  }, {
-    name: 'رطوبت',
-    data: [2, -2, -3, 2, 1]
+    data: [[1, 1], [2, 6], [3, 3], [4, 8], [5, 1], [6, -8], [7, 5]],
+    color: '#ED561B',
+    marker: false,
+    showInLegend: false
   }]
 };
-newseries = {
-  name: '',
-  data: []
-};
-var ab = [];
 
-for (var y = 0; y < fitlers.length; y++) {
-  var newseries = new Object();
-  newseries.name = fitlers[y]['nickname'];
+function highlightPoint(event, point) {
+  var chart = point.series.chart,
+      hasVisibleSeries = chart.series.some(function (series) {
+    return series.visible;
+  });
 
-  for (var j = 0; j < fitlers[y]['details'].length; j++) {
-    ab.push(fitlers[y]['details'][j]);
+  if (!point.isNull && hasVisibleSeries) {
+    point.onMouseOver(); // Show the hover marker and tooltip
+  } else {
+    if (chart.tooltip) {
+      chart.tooltip.hide(0);
+    }
   }
+} // newseries = {
+//     name: '',
+//     data: []
+// }
+// var ab = [];
+// for (var y = 0; y<fitlers.length ; y++ ){
+//     var newseries = new Object();
+//     newseries.name = fitlers[y]['nickname'];
+//     for (var j = 0; j<fitlers[y]['details'].length ; j++ ){
+//         ab.push(fitlers[y]['details'][j]);
+//     }
+//     newseries.data = ab;
+//     options.series.push(newseries);
+//     console.log(ab);
+//     ab.splice([0]);
+// }
 
-  newseries.data = ab;
-  options.series.push(newseries);
-  console.log(ab);
-  ab.splice([0]);
-}
 
 highcharts__WEBPACK_IMPORTED_MODULE_0___default.a.chart('highcharts', options); // Ch.chart('highcharts', {
 //

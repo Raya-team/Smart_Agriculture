@@ -1,5 +1,5 @@
 @extends('admin.master')
-@section('title', 'ایجاد سنسور')
+@section('title', 'ایجاد ایستگاه')
 @section('main-content')
     <section class="content">
         <div class="container">
@@ -10,7 +10,7 @@
                 <!-- general form elements -->
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">ایجاد سنسور</h3>
+                        <h3 class="box-title">ایجاد ایستگاه</h3>
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
@@ -19,8 +19,8 @@
                         @include('admin.section.errors')
                         <div class="box-body">
                             <div class="form-group">
-                                <label for="serial">شناسه سنسور</label>
-                                <input type="text" class="form-control" name="serial" id="serial" placeholder="شناسه سنسور">
+                                <label for="serial">شناسه ایستگاه</label>
+                                <input type="text" class="form-control" name="serial" id="serial" placeholder="شناسه ایستگاه">
                             </div>
                             <div class="form-group">
                                 <label for="land_id">زمین</label>

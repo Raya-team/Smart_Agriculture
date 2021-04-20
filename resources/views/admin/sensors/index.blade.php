@@ -1,14 +1,14 @@
 @extends('admin.master')
-@section('title', 'لیست سنسور ها')
+@section('title', 'لیست ایستگاه ها')
 @section('main-content')
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            لیست سنسور ها
+            لیست ایستگاه ها
         </h1>
         <ol class="breadcrumb" dir="ltr">
             <li><a href="{{route('dashboard')}}"><i class="fa fa-dashboard"></i> داشبورد</a></li>
-            <li><a href="{{route('sensors.index')}}">سنسور ها</a></li>
+            <li><a href="{{route('sensors.index')}}">ایستگاه ها</a></li>
         </ol>
     </section>
 
@@ -18,10 +18,10 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h1 class="box-title">سنسور ها</h1>
+                        <h1 class="box-title">ایستگاه ها</h1>
                         <div class="box-tools pull-right">
                             <a href="{{ route('sensors.create') }}" class="btn btn-app" style="background-color: #89ffae">
-                                <i class="fa fa-plus"></i> ایجاد سنسور
+                                <i class="fa fa-plus"></i> ایجاد ایستگاه
                             </a>
                         </div>
 
