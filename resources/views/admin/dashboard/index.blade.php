@@ -40,8 +40,7 @@
                     <div class="icon">
                         <i class="ion ion-pie-graph"></i>
                     </div>
-                    <a href="{{route('lands.index')}}" class="small-box-footer">اطلاعات بیشتر <i
-                                class="fa fa-arrow-circle-left"></i></a>
+                    <a href="{{route('lands.index')}}" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-arrow-circle-left"></i></a>
                 </div>
             </div>
             <div class="col-lg-4 col-xs-4">
@@ -49,7 +48,7 @@
                 <div class="small-box bg-red">
                     <div class="inner">
                         <h3>{{$sensors_count}}</h3>
-                        <p>سنسور ها</p>
+                        <p>ایستگاه ها</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-android-radio-button-on"></i>
@@ -76,7 +75,7 @@
                         <i class="fa fa-map-marker"></i>
 
                         <h3 class="box-title">
-                            نقشه
+                            ایستگاه های فعال
                         </h3>
                     </div>
                     <div class="box-body">
