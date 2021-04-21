@@ -1,4 +1,5 @@
 import L from 'leaflet';
+import 'leaflet-measure-path/leaflet-measure-path'
 import 'leaflet-contextmenu';
 import 'leaflet.fullscreen';
 
@@ -55,4 +56,6 @@ var _baseLayers = {
 
 L.control.layers(_baseLayers, null, {position: "bottomright"}).addTo(map);
 
-L.polygon([points],).addTo(map);
+
+var t = L.polygon([points]).addTo(map)
+    .showMeasurements();

@@ -31,6 +31,7 @@
         "leaflet": "^1.7.1",
         "leaflet-contextmenu": "^1.4.0",
         "leaflet-measure": "^3.1.0",
+        "leaflet-measure-path": "^1.5.0",
         "leaflet-webgl-heatmap": "^0.2.7",
         "leaflet.fullscreen": "^1.6.0"
     }

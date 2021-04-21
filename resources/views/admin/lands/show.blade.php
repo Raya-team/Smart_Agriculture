@@ -31,4 +31,5 @@
 @endsection
 @section('css')
     <link rel="stylesheet" href="{{asset('css/map.css')}}">
+    <link rel="stylesheet" href="{{asset('css/leaflet-measure-path.css')}}">
 @endsection
