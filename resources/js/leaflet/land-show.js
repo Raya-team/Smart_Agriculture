@@ -55,6 +55,4 @@ var _baseLayers = {
 
 L.control.layers(_baseLayers, null, {position: "bottomright"}).addTo(map);
 
-var t = L.polygon([points]).addTo(map);
-t.bindPopup((LGeo.area(t) / 1000000).toFixed(2) + ' km<sup>2</sup>');
-// t.bindPopup('مساحت زمین : ' + area);
+L.polygon([points],).addTo(map);
