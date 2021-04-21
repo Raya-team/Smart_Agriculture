@@ -16,9 +16,9 @@
                 <div class="small-box bg-yellow"  >
                     <div class="inner">
                         <h3>{{ $users_count }}
-                            <span style="font-size: 15px; color: #8a0000;" class="animated infinite fadeIn">
+                            <span style="font-size: 15px;" class="animated infinite fadeIn">
                                 @if($unapproved_users)
-                                    ({{$unapproved_users}} کاربر در انتظار تایید)
+                                    <a href="{{ route('users.verify') }}" style="color: #8a0000;">({{$unapproved_users}} کاربر در انتظار تایید)</a>
                                 @endif
                             </span></h3>
                         <p>کاربران تایید شده</p>
