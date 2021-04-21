@@ -57,5 +57,8 @@ var _baseLayers = {
 L.control.layers(_baseLayers, null, {position: "bottomright"}).addTo(map);
 
 
-var t = L.polygon([points]).addTo(map)
-    .showMeasurements();
+L.polygon([points]).addTo(map)
+    .showMeasurements({
+        showOnHover: true,
+        showTotalDistance: false
+    });

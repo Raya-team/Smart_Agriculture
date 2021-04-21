@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d703aa5-6bf4-4443-9648-150136637f3e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/leaflet/land-show.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/leaflet/land-show.js" afterDir="false" />
     </list>
     <ignored path="F:\laravel\Work\first\.idea\shelf/" />
     <ignored path="G:\work\Smart_Agriculture\.idea\shelf/" />
@@ -48,17 +47,17 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="2" />
-          <entry key="js" value="16" />
+          <entry key="js" value="17" />
           <entry key="json" value="1" />
-          <entry key="php" value="20" />
+          <entry key="php" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Blade" value="14" />
+          <entry key="Blade" value="16" />
           <entry key="CSS" value="2" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="16" />
+          <entry key="JavaScript" value="17" />
           <entry key="PHP" value="6" />
         </counts>
       </usages-collector>
@@ -75,7 +74,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="51" />
-          <entry key="js" value="607" />
+          <entry key="js" value="612" />
           <entry key="php" value="411" />
           <entry key="txt" value="6" />
         </counts>
@@ -84,7 +83,7 @@
         <counts>
           <entry key="Blade" value="336" />
           <entry key="CSS" value="51" />
-          <entry key="JavaScript" value="607" />
+          <entry key="JavaScript" value="612" />
           <entry key="PHP" value="75" />
           <entry key="PLAIN_TEXT" value="6" />
         </counts>
@@ -97,13 +96,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard/index.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-show.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1032">
-              <caret line="43" column="22" lean-forward="true" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
+            <state relative-caret-position="444">
+              <caret line="60" column="40" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
               <folding>
-                <element signature="e#622#662#0#HTML" expanded="true" />
-                <element signature="e#800#823#0#HTML" expanded="true" />
+                <element signature="e#0#24#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,7 +120,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>@yield</find>
       <find>world</find>
       <find>فروش</find>
       <find>footer</find>
@@ -152,6 +149,7 @@
       <find>area</find>
       <find>سنسور</find>
       <find>فیلتر</find>
+      <find>نقشه</find>
     </findStrings>
     <replaceStrings>
       <replace>داشبورد</replace>
@@ -163,6 +161,7 @@
       <replace>detail</replace>
       <replace>ایستگاه</replace>
       <replace>پارامتر</replace>
+      <replace>ایستگاه های فعال</replace>
     </replaceStrings>
     <dirStrings>
       <dir>F:\laravel\Work\first\resources\js</dir>
@@ -176,8 +175,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/admin/lands/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/lands/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/FilterController.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/FilterRequest.php" />
         <option value="$PROJECT_DIR$/resources/lang/fa/validation.php" />
@@ -222,11 +219,13 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" />
         <option value="$PROJECT_DIR$/resources/js/leaflet/land-create.js" />
         <option value="$PROJECT_DIR$/resources/css/leaflet-measure-path.css" />
-        <option value="$PROJECT_DIR$/resources/js/leaflet/land-show.js" />
         <option value="$PROJECT_DIR$/webpack.mix.js" />
         <option value="$PROJECT_DIR$/resources/views/admin/lands/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/css/map.css" />
         <option value="$PROJECT_DIR$/resources/views/admin/dashboard/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/users/verify.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/js/leaflet/land-show.js" />
       </list>
     </option>
   </component>
@@ -427,22 +426,14 @@
               <item name="first" type="b2602c69:ProjectViewProjectNode" />
               <item name="first" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="first" type="b2602c69:ProjectViewProjectNode" />
               <item name="first" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="first" type="b2602c69:ProjectViewProjectNode" />
-              <item name="first" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="leaflet" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -656,7 +647,7 @@
       <workItem from="1618726825155" duration="600000" />
       <workItem from="1618737183351" duration="7928000" />
       <workItem from="1618812217343" duration="10725000" />
-      <workItem from="1618894717051" duration="15253000" />
+      <workItem from="1618894717051" duration="15539000" />
     </task>
     <task id="LOCAL-00031" summary="Ehsan">
       <created>1614687534773</created>
@@ -1005,7 +996,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="862214000" />
+    <option name="totallyTimeSpent" value="862500000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1043,30 +1034,6 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.22163388" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5260116" visible="true" weight="0.20590208" />
-      <window_info id="Structure" order="1" sideWeight="0.40462428" side_tool="true" weight="0.20858485" />
-      <window_info auto_hide="true" id="npm" order="2" sideWeight="0.44364163" side_tool="true" weight="0.1965124" />
-      <window_info id="Favorites" order="3" sideWeight="0.44942197" side_tool="true" weight="0.20590208" />
-      <window_info anchor="bottom" id="TypeScript" order="0" weight="0.329235" />
-      <window_info anchor="bottom" id="Database Console" order="1" weight="0.32947975" />
-      <window_info anchor="bottom" id="Message" order="2" />
-      <window_info anchor="bottom" id="Find" order="3" weight="0.3251445" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.39884394" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="Database Changes" order="7" weight="0.32658958" />
-      <window_info anchor="bottom" id="TODO" order="8" weight="0.30114567" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.5549133" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.501006" side_tool="true" weight="0.2487725" />
-      <window_info anchor="bottom" auto_hide="true" id="Run" order="12" sideWeight="0.47398844" weight="0.3251445" />
-      <window_info anchor="bottom" auto_hide="true" id="Terminal" order="13" sideWeight="0.49966466" weight="0.37861273" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.22163388" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1112,7 +1079,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Ehsan" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://G:/source code/racket/php/phplearn/5-array/5-array.php" />
     <entry file="file://G:/source code/racket/php/phplearn/7-functions/array-functions.php" />
     <entry file="file://$PROJECT_DIR$/resources/views/admin/lands/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1222,13 +1188,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/users/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="45" column="228" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="228" />
         </state>
       </provider>
     </entry>
@@ -1432,13 +1391,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-show.js">
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/users/verify.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-334">
-          <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="312">
+          <caret line="22" column="125" selection-start-line="22" selection-start-column="125" selection-end-line="22" selection-end-column="125" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/users/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="22" column="125" selection-start-line="22" selection-start-column="125" selection-end-line="22" selection-end-column="125" />
         </state>
       </provider>
     </entry>
@@ -1449,6 +1412,16 @@
           <folding>
             <element signature="e#622#662#0#HTML" expanded="true" />
             <element signature="e#800#823#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-show.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="60" column="40" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
