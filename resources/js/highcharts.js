@@ -1,79 +1,100 @@
 import Ch from 'highcharts';
 
 
-// var details = JSON.parse(document.getElementById('details').value);
-var fitlers = JSON.parse(document.getElementById('fitlers').value);
-console.log(fitlers);
+var all_filters = JSON.parse(document.getElementById('filters').value);
+var all_details = JSON.parse(document.getElementById('details').value);
 
-// var nickname = [];
+var nickname,options,i;
 
+$("#filter_id").change(function () {
+    nickname = $(this).find(':selected').data('nickname');
+    var filter_id = $(this).find(':selected').val();
+    // console.log(filter_id);
+    var data = [];
 
-// for (var i = 0; i < fitlers.length; i++) {
-//     nickname.push(fitlers[i]['nickname']);
-// }
-
-
-
-
-var options = {
-    chart: {
-        type: 'spline'
-    },
-    title: {
-        text: 'نمودار دما'
-    },
-    // subtitle: {
-    //     text: 'Weekly temperature averages'
-    // },
-    yAxis: {
-        title: {
-            text: 'شاخص دما (°C)'
-        }
-    },
-    xAxis: {
-        type: 'Weeks',
-        labels: [5, 3, 4, 7, 2,4,6,4,3,6,2,3,4,5]
-    },
-    tooltip: {
-        split: true,
-        valueDecimals: 0,
-        valueSuffix: '°C'
-    },
-    credits: {
-        text: 'ناهید آسمان ایرانیان',
-        href: '#'
-    },
-    // colors: ['#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
-    series: [{
-        name: 'دما',
-        data: [
-            [1 , 1],
-            [2 , 6],
-            [3 , 3],
-            [4 , 8],
-            [5 , 1],
-            [6 , -8],
-            [7 , 5],
-        ],
-        color: '#ED561B',
-        marker: false,
-        showInLegend: false,
-    }]
-};
-
-function highlightPoint(event, point) {
-    var chart = point.series.chart,
-        hasVisibleSeries = chart.series.some(function (series) {
-            return series.visible;
-        });
-    if (!point.isNull && hasVisibleSeries) {
-        point.onMouseOver(); // Show the hover marker and tooltip
-    } else {
-        if (chart.tooltip) {
-            chart.tooltip.hide(0);
+    for (i=0 ; i<all_details.length ; i++){
+        if ( filter_id == all_details[i]['filter_id'] ){
+            data.push([all_details[i]['created_at'], all_details[i]['value'] ]);
         }
     }
-}
+
+    console.log(data);
+
+    options =  {
+        chart: {
+            type: 'spline'
+        },
+        title: {
+            text: "نمودار" + " " + nickname
+        },
+        // subtitle: {
+        //     text: 'Weekly temperature averages'
+        // },
+        yAxis: {
+            title: {
+                text: 'شاخص دما (°C)'
+            },
+        },
+        xAxis: {
+            type: 'years',
+        },
+        tooltip: {
+            split: true,
+            valueDecimals: 0,
+            valueSuffix: '°C'
+        },
+        credits: {
+            text: 'ناهید آسمان ایرانیان',
+            href: '#'
+        },
+        // colors: ['#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+        series: [{
+            name: 'دما',
+            data: data,
+            color: '#ED561B',
+            marker: false,
+            showInLegend: false,
+        }]
+    };
+    Ch.chart('highcharts', options);
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // newseries = {
 //     name: '',
@@ -93,4 +114,3 @@ function highlightPoint(event, point) {
 // }
 
 
-Ch.chart('highcharts', options);

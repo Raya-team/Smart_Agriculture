@@ -4,10 +4,18 @@
     <bookmark url="file://$PROJECT_DIR$/resources/views" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d703aa5-6bf4-4443-9648-150136637f3e" name="Default Changelist" comment="">
+    <list default="true" id="7d703aa5-6bf4-4443-9648-150136637f3e" name="Default Changelist" comment="Ehsan">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2021_11_34_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2021_11_34_PM__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2021_12_46_AM_[Default_Changelist]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2021_12_46_AM__Default_Changelist_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2021_1_48_AM_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2021_1_48_AM__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/leaflet/land-show.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/leaflet/land-show.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ChartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ChartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/highcharts.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/highcharts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/highcharts.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/highcharts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/chart/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/chart/index.blade.php" afterDir="false" />
     </list>
     <ignored path="F:\laravel\Work\first\.idea\shelf/" />
     <ignored path="G:\work\Smart_Agriculture\.idea\shelf/" />
@@ -49,44 +57,44 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="2" />
-          <entry key="js" value="18" />
+          <entry key="js" value="21" />
           <entry key="json" value="1" />
-          <entry key="php" value="22" />
+          <entry key="php" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Blade" value="16" />
+          <entry key="Blade" value="18" />
           <entry key="CSS" value="2" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="18" />
-          <entry key="PHP" value="6" />
+          <entry key="JavaScript" value="21" />
+          <entry key="PHP" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.32" value="1" />
           <entry key="project.open.time.38" value="1" />
           <entry key="project.open.time.49" value="1" />
-          <entry key="project.open.time.50" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.50" value="2" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="51" />
-          <entry key="js" value="627" />
-          <entry key="php" value="411" />
+          <entry key="js" value="1354" />
+          <entry key="php" value="629" />
           <entry key="txt" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="336" />
+          <entry key="Blade" value="522" />
           <entry key="CSS" value="51" />
-          <entry key="JavaScript" value="627" />
-          <entry key="PHP" value="75" />
+          <entry key="JavaScript" value="1354" />
+          <entry key="PHP" value="107" />
           <entry key="PLAIN_TEXT" value="6" />
         </counts>
       </usages-collector>
@@ -96,12 +104,45 @@
     <favorites_list name="first" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/chart/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="28" column="194" selection-start-line="28" selection-start-column="194" selection-end-line="28" selection-end-column="194" />
+              <folding>
+                <element signature="e#934#965#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/js/highcharts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+            <state relative-caret-position="408">
+              <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-heat.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="45" column="19" lean-forward="true" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="50" />
+              <folding>
+                <element signature="n#style#0;n#b#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ChartController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="55" column="68" selection-start-line="55" selection-start-column="61" selection-end-line="55" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -119,8 +160,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>world</find>
-      <find>فروش</find>
       <find>footer</find>
       <find>height: 45px; width: 45px</find>
       <find>alert</find>
@@ -149,6 +188,8 @@
       <find>سنسور</find>
       <find>فیلتر</find>
       <find>نقشه</find>
+      <find>valu</find>
+      <find>data</find>
     </findStrings>
     <replaceStrings>
       <replace>داشبورد</replace>
@@ -183,8 +224,6 @@
         <option value="$PROJECT_DIR$/routes/web/user.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/LandController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ChartController.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/chart/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Controller.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/SensorController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ProfileController.php" />
@@ -204,7 +243,6 @@
         <option value="$PROJECT_DIR$/resources/js/leaflet/sensor-create.js" />
         <option value="$PROJECT_DIR$/resources/js/leaflet/land-edit.js" />
         <option value="$PROJECT_DIR$/routes/web/admin.php" />
-        <option value="$PROJECT_DIR$/resources/js/leaflet/land-heat.js" />
         <option value="$PROJECT_DIR$/resources/js/dashboard/map.js" />
         <option value="$PROJECT_DIR$/resources/views/admin/lands/heat.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/sensors/index.blade.php" />
@@ -224,6 +262,9 @@
         <option value="$PROJECT_DIR$/resources/views/admin/users/verify.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/js/leaflet/land-show.js" />
+        <option value="$PROJECT_DIR$/resources/js/leaflet/land-heat.js" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ChartController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/chart/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/js/highcharts.js" />
       </list>
     </option>
@@ -431,7 +472,8 @@
               <item name="first" type="b2602c69:ProjectViewProjectNode" />
               <item name="first" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="leaflet" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -453,16 +495,16 @@
     <property name="ts.external.directory.path" value="E:\App\PhpStorm 2018.2.4\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\laravel\Work\first\resources\js\land" />
+      <recent name="F:\laravel\Work\first\routes\web" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\laravel\Work\first\public\user" />
       <recent name="F:\laravel\Work\first\resources\views\admin" />
       <recent name="F:\laravel\Work\first\public\admin" />
       <recent name="F:\laravel\Work\first\resources\views\admin\filters" />
       <recent name="F:\laravel\Work\first\resources\views\admin\dashboard" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\laravel\Work\first\resources\js\land" />
-      <recent name="F:\laravel\Work\first\routes\web" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -645,7 +687,8 @@
       <workItem from="1618726825155" duration="600000" />
       <workItem from="1618737183351" duration="7928000" />
       <workItem from="1618812217343" duration="10725000" />
-      <workItem from="1618894717051" duration="17670000" />
+      <workItem from="1618894717051" duration="18054000" />
+      <workItem from="1619074599590" duration="7742000" />
     </task>
     <task id="LOCAL-00032" summary="Ehsan">
       <created>1614690948268</created>
@@ -994,7 +1037,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="864631000" />
+    <option name="totallyTimeSpent" value="872757000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1009,7 +1052,7 @@
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5260116" visible="true" weight="0.20858485" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5260116" visible="true" weight="0.2112676" />
       <window_info id="Structure" order="1" sideWeight="0.40462428" side_tool="true" weight="0.20858485" />
       <window_info auto_hide="true" id="npm" order="2" sideWeight="0.44364163" side_tool="true" weight="0.1965124" />
       <window_info id="Favorites" order="3" sideWeight="0.44942197" side_tool="true" weight="0.20590208" />
@@ -1077,7 +1120,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Ehsan" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://G:/source code/racket/php/phplearn/7-functions/array-functions.php" />
     <entry file="file://$PROJECT_DIR$/resources/views/admin/lands/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="501">
@@ -1213,13 +1255,6 @@
     <entry file="file://$PROJECT_DIR$/resources/js/filter/edit.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-heat.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="73" column="36" lean-forward="true" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/LandHeatController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1104">
@@ -1272,13 +1307,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/lands/heat.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="38" column="110" selection-start-line="38" selection-start-column="110" selection-end-line="38" selection-end-column="110" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/leaflet-measure/src/leaflet-measure.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="517">
@@ -1324,16 +1352,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/chart/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1296">
           <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
-          <folding>
-            <element signature="e#46#82#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1341,9 +1363,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="69" selection-start-line="69" selection-end-line="76" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1400,10 +1419,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1032">
           <caret line="43" column="22" lean-forward="true" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
-          <folding>
-            <element signature="e#622#662#0#HTML" expanded="true" />
-            <element signature="e#800#823#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1411,16 +1426,47 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1080">
           <caret line="45" column="25" lean-forward="true" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/lands/heat.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="40" selection-start-line="40" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ChartController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="55" column="68" selection-start-line="55" selection-start-column="61" selection-end-line="55" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-heat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="45" column="19" lean-forward="true" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="50" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="n#style#0;n#b#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/chart/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="28" column="194" selection-start-line="28" selection-start-column="194" selection-end-line="28" selection-end-column="194" />
+          <folding>
+            <element signature="e#934#965#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/highcharts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+        <state relative-caret-position="408">
+          <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
         </state>
       </provider>
     </entry>

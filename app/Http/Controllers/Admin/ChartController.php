@@ -51,15 +51,9 @@ class ChartController extends Controller
     public function show($sensor)
     {
         $details = Detail::where('sensor_id', $sensor)->get();
-//        $filters = Filter::all(['id', 'name', 'nickname']);
-        $filters = Filter::with('details')->get();
-//        return $filters;
+        $filters = Filter::all();
 
-//        for ( $i = 0 ; $i<count($filters) ; $i++){
-//            $x[i] =
-//        }
-//        $details = json_encode($all);
-        return view('admin.chart.index', compact('filters'));
+        return view('admin.chart.index', compact(['filters','details']));
     }
 
     /**
