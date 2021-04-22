@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7d703aa5-6bf4-4443-9648-150136637f3e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Detail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/highcharts.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/highcharts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/highcharts.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/highcharts.js" afterDir="false" />
     </list>
     <ignored path="F:\laravel\Work\first\.idea\shelf/" />
     <ignored path="G:\work\Smart_Agriculture\.idea\shelf/" />
@@ -78,16 +74,16 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="51" />
-          <entry key="js" value="1462" />
-          <entry key="php" value="646" />
+          <entry key="js" value="1467" />
+          <entry key="php" value="711" />
           <entry key="txt" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="522" />
+          <entry key="Blade" value="587" />
           <entry key="CSS" value="51" />
-          <entry key="JavaScript" value="1462" />
+          <entry key="JavaScript" value="1467" />
           <entry key="PHP" value="124" />
           <entry key="PLAIN_TEXT" value="6" />
         </counts>
@@ -98,74 +94,7 @@
     <favorites_list name="first" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/chart/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="28" column="194" selection-start-line="28" selection-start-column="194" selection-end-line="28" selection-end-column="194" />
-              <folding>
-                <element signature="e#934#965#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/js/highcharts.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-heat.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="50" />
-              <folding>
-                <element signature="n#style#0;n#b#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ChartController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="52" column="24" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
-              <folding>
-                <element signature="e#46#82#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/Detail.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-              <folding>
-                <element signature="e#30#84#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/app.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1152">
-              <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -280,9 +209,9 @@
         <option value="$PROJECT_DIR$/resources/js/leaflet/land-show.js" />
         <option value="$PROJECT_DIR$/resources/js/leaflet/land-heat.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ChartController.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/chart/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Models/Detail.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/chart/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/js/highcharts.js" />
       </list>
     </option>
@@ -693,14 +622,7 @@
       <workItem from="1618737183351" duration="7928000" />
       <workItem from="1618812217343" duration="10725000" />
       <workItem from="1618894717051" duration="18054000" />
-      <workItem from="1619074599590" duration="11995000" />
-    </task>
-    <task id="LOCAL-00033" summary="Ehsan">
-      <created>1614750347042</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1614750347042</updated>
+      <workItem from="1619074599590" duration="13889000" />
     </task>
     <task id="LOCAL-00034" summary="Ehsan">
       <created>1614755432051</created>
@@ -1038,11 +960,18 @@
       <option name="project" value="LOCAL" />
       <updated>1619083707049</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="Ehsan">
+      <created>1619091270568</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1619091270568</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="877010000" />
+    <option name="totallyTimeSpent" value="878904000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1055,10 +984,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5260116" visible="true" weight="0.2112676" />
-      <window_info id="Structure" order="1" sideWeight="0.40462428" side_tool="true" weight="0.20858485" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5635838" visible="true" weight="0.2112676" />
+      <window_info id="Structure" order="1" sideWeight="0.43641618" side_tool="true" weight="0.2112676" />
       <window_info auto_hide="true" id="npm" order="2" sideWeight="0.44364163" side_tool="true" weight="0.1965124" />
       <window_info id="Favorites" order="3" sideWeight="0.44942197" side_tool="true" weight="0.20590208" />
       <window_info anchor="bottom" id="TypeScript" order="0" weight="0.329235" />
@@ -1454,16 +1382,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/chart/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="28" column="194" selection-start-line="28" selection-start-column="194" selection-end-line="28" selection-end-column="194" />
-          <folding>
-            <element signature="e#934#965#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-heat.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -1476,8 +1394,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/highcharts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="-216">
+          <caret line="54" column="61" selection-start-line="54" selection-start-column="55" selection-end-line="54" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/chart/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="40" column="61" lean-forward="true" selection-start-line="40" selection-start-column="61" selection-end-line="40" selection-end-column="61" />
+          <folding>
+            <element signature="e#934#965#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
