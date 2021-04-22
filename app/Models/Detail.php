@@ -22,4 +22,9 @@ class Detail extends Model
     {
         return $query->orderBy('created_at','DESC');
     }
+
+//    public function getCreatedAtAttribute($date)
+//    {
+//        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('Y-m-d');
+//    }
 }
