@@ -58,4 +58,6 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/chosen.css') }}">
+    <script src="https://code.highcharts.com.cn/highstock/modules/exporting.js"></script>
+    <script type="text/javascript" src="https://www.highcharts.com/samples/data/usdeur.js"></script>
 @endsection

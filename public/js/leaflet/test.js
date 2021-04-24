@@ -141,7 +141,7 @@ function colorValues(color) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\laravel\Work\first\resources\js\leaflet\test.js */"./resources/js/leaflet/test.js");
+module.exports = __webpack_require__(/*! F:\laravel\Work\Smart agriculture\resources\js\leaflet\test.js */"./resources/js/leaflet/test.js");
 
 
 /***/ })
