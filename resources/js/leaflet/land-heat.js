@@ -28,13 +28,13 @@ function WhatHere(e) {
     alert(e.latlng);
 }
 
-L.polygon([points],{color: "#79acff"}).addTo(map);
+L.polygon([points], {color: "#79acff"}).addTo(map);
 
 var colorsjson = document.getElementById('filters').value;
 var colors = JSON.parse(colorsjson);
 
 var detailjson = document.getElementById('details').value;
-var details = JSON.parse( detailjson);
+var details = JSON.parse(detailjson);
 
 
 var shipLayer = L.layerGroup();
@@ -48,26 +48,22 @@ $("#filter_id").change(function () {
     var min1 = $(this).find(':selected').data('min');
     var max2 = 1;
     var min2 = 0;
-    var arr1=[];
+    var arr1 = [];
     var arr2 = [];
 
-    for(var c=0;c<colors.length;c++)
-    {
-        if(colors[c]['id'] == filters)
-        {
-            var color =(colors[c]['colors']);
+    for (var c = 0; c < colors.length; c++) {
+        if (colors[c]['id'] == filters) {
+            var color = (colors[c]['colors']);
             //convert string to array
-            var test = JSON.parse( color );
+            var test = JSON.parse(color);
             // console.log(test[2]);
         }
 
     }
-    for(var d=0;d<details.length;d++)
-    {
-        if(details[d]['filter_id'] == filters)
-        {
-            var loc=(details[d]['location']);
-            var val1=(details[d]['value']);
+    for (var d = 0; d < details.length; d++) {
+        if (details[d]['filter_id'] == filters) {
+            var loc = (details[d]['location']);
+            var val1 = (details[d]['value']);
             var val2 = ((val1 - min1) / (max1 - min1)) * (max2 - min2) + min2;
             //convert string to array
             arr2.push(JSON.parse(loc));
@@ -76,22 +72,22 @@ $("#filter_id").change(function () {
 
     }
 
-    var datapoints =[];
+    var datapoints = [];
     var sensorsPoints = [];
-    for(var j=0;j<arr2.length/2;j++ )
-    {
-        var data =[];
-        data.push(arr2[2*j][0]['lat']);
-        data.push(arr2[2*j][0]['lng']);
-        data.push(arr2[2*j+1]);
+    for (var j = 0; j < arr2.length / 2; j++) {
+        var data = [];
+        data.push(arr2[2 * j][0]['lat']);
+        data.push(arr2[2 * j][0]['lng']);
+        data.push(arr2[2 * j + 1]);
         datapoints.push(data);
     }
     var heatmap = L.webGLHeatmap({
-        size: 2000,
-        opacity: 0.8,
+        size: 5000,
+        opacity: 1,
         gradientTexture: false,
-        alphaRange : 1});
-    heatmap.setData( datapoints );
+        alphaRange: 1
+    });
+    heatmap.setData(datapoints);
     shipLayer.addLayer(heatmap);
 
 
@@ -102,9 +98,9 @@ $("#filter_id").change(function () {
         "<a href='#' style=''>نمودار</a>";
 
     var icon = new L.Icon.Default();
-    icon.options.shadowSize = [0,0];
+    icon.options.shadowSize = [0, 0];
     for (var i = 0; i < datapoints.length; i++) {
-        shipLayer.addLayer(L.marker([datapoints[i][0],datapoints[i][1]], {icon : icon}).addTo(map)
+        shipLayer.addLayer(L.marker([datapoints[i][0], datapoints[i][1]], {icon: icon}).addTo(map)
             .bindPopup(PopupCode));
     }
 });

@@ -7,6 +7,7 @@ use App\Http\Requests\EditFilterRequst;
 use App\Http\Requests\FilterRequest;
 use App\Models\Filter;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class FilterController extends Controller
 {
@@ -28,7 +29,7 @@ class FilterController extends Controller
      */
     public function create()
     {
-       return view('admin.filters.create');
+        return view('admin.filters.create');
     }
 
     /**
@@ -40,14 +41,23 @@ class FilterController extends Controller
      */
     public function store(FilterRequest $request, Filter $filter)
     {
-        $filter->name = $request->input('name');
-        $filter->nickname = $request->input('nickname');
-        $filter->min = $request->input('minimum');
-        $filter->max = $request->input('maximum');
-        $filter->colors = $request->input('colors');
-        $filter->save();
-        alert()->success('فیلتر با موفقیت ایجاد شد');
-        return redirect(route('filters.index'));
+        $color_num =  json_decode($request->colors);
+
+        if(count($color_num) == 5)
+        {
+            $filter->name = $request->input('name');
+            $filter->nickname = $request->input('nickname');
+            $filter->min = $request->input('minimum');
+            $filter->max = $request->input('maximum');
+            $filter->colors = $request->input('colors');
+            $filter->save();
+            alert()->success('فیلتر با موفقیت ایجاد شد');
+            return redirect(route('filters.index'));
+        }
+        else{
+            Session::flash('colors', 'تعداد رنگ ها باید 5 تا باشد.');
+            return redirect(route('filters.create'));
+        }
     }
 
     /**

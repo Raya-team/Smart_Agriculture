@@ -46,12 +46,6 @@ $(document).ready(function(){
 
         document.getElementById('colors').value = JSON.stringify(colors) ;
     });
-
-
-
-
-
-
 });
 
 

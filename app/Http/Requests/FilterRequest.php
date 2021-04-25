@@ -29,7 +29,6 @@ class FilterRequest extends FormRequest
             'nickname' => ['required', new Security()],
             'maximum' => ['required', 'numeric', new Security()],
             'minimum' => ['required', 'numeric', new Security(),'lt:maximum'],
-            'colors' => ['required']
         ];
     }
 }

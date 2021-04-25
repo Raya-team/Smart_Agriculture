@@ -42,7 +42,6 @@ class ProfileController extends Controller
                 Session::flash('current_password', 'رمز عبور فعلی را اشتباه وارد کرده اید.');
                 return redirect(route('admin.profile.index'));
             }
-
         }
 
         $user->update($data);

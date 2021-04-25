@@ -18,6 +18,13 @@
                     <form role="form" action="{{route('filters.store')}}" method="POST">
                         @csrf
                         @include('admin.section.errors')
+                        @if(Session::has('colors'))
+                            <div class="alert alert-danger">
+                                <ul>
+                                    <li>{{ Session::get('colors') }}</li>
+                                </ul>
+                            </div>
+                        @endif
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="name">نام</label>
@@ -45,13 +52,7 @@
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label for="color-select">رنگ ها :</label>
-                                        <select id="color-select">
-                                            <option value="blue" style="background-color: #3b5dff; color: #fff;" data-color="(0,0,255)">آبی</option>
-                                            <option value="purple" style="background-color: #80045a;color: #fff" data-color="(128,0,128)">بنفش</option>
-                                            <option value="green" style="background-color: #069207;color: #fff" data-color="(0,255,0)">سبز</option>
-                                            <option value="red" style="background-color: #ff091f;color: #fff" data-color="(255,0,0)">قرمز</option>
-                                            <option value="orange" style="background-color: #ff8a09;color: #fff" data-color="(255,165,0)">نارنجی</option>
-                                        </select>
+                                        <input type="color" id="color-select" value="#ff0000">
                                         <a class="btn" id="btnAdd" data-tooltip="tooltip" data-placement="bottom" title="اضافه کردن">
                                             <i class="fa fa-fw fa-plus-circle"></i>
                                         </a>
@@ -77,7 +78,7 @@
 
                         </div>
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-success">ثبت</button>
+                            <button type="submit" class="btn btn-success" >ثبت</button>
                         </div>
                     </form>
                 </div>
@@ -111,3 +112,12 @@
         }
     </style>
 @endsection
+
+{{--
+<select id="color-select">
+    <option value="blue" style="background-color: #3b5dff; color: #fff;" data-color="(0,0,255)">آبی</option>
+    <option value="purple" style="background-color: #80045a;color: #fff" data-color="(128,0,128)">بنفش</option>
+    <option value="green" style="background-color: #069207;color: #fff" data-color="(0,255,0)">سبز</option>
+    <option value="red" style="background-color: #ff091f;color: #fff" data-color="(255,0,0)">قرمز</option>
+    <option value="orange" style="background-color: #ff8a09;color: #fff" data-color="(255,165,0)">نارنجی</option>
+</select>--}}
