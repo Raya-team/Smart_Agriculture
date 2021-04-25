@@ -659,8 +659,7 @@ var all_details = JSON.parse(document.getElementById('details').value);
 var nickname, options, i;
 $("#filter_id").change(function () {
   nickname = $(this).find(':selected').data('nickname');
-  var filter_id = $(this).find(':selected').val(); // console.log(filter_id);
-
+  var filter_id = $(this).find(':selected').val();
   var data = [];
   var date = [];
 
@@ -673,7 +672,6 @@ $("#filter_id").change(function () {
     }
   }
 
-  console.log(data);
   options = {
     chart: {
       type: 'spline'
@@ -690,7 +688,7 @@ $("#filter_id").change(function () {
       }
     },
     xAxis: {
-      type: 'years',
+      type: 'datetime',
       categories: date
     },
     tooltip: {
@@ -704,11 +702,12 @@ $("#filter_id").change(function () {
     },
     // colors: ['#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
     series: [{
-      name: 'دما',
+      name: nickname,
       data: data,
       color: '#ED561B',
       marker: false,
-      showInLegend: false
+      showInLegend: false,
+      shadow: true
     }]
   };
   highcharts__WEBPACK_IMPORTED_MODULE_0___default.a.chart('highcharts', options);
@@ -738,7 +737,7 @@ $("#filter_id").change(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\highcharts.js */"./resources/js/highcharts.js");
+module.exports = __webpack_require__(/*! F:\laravel\Work\Smart agriculture\resources\js\highcharts.js */"./resources/js/highcharts.js");
 
 
 /***/ })

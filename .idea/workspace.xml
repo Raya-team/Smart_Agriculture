@@ -5,53 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d703aa5-6bf4-4443-9648-150136637f3e" name="Default Changelist" comment="Ehsan">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_10_2021_2_54_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_10_2021_2_54_AM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_10_2021_3_07_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_10_2021_3_07_PM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_15_2021_3_49_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_15_2021_3_49_PM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_5_2021_10_39_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_5_2021_10_39_PM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_5_2021_10_45_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_5_2021_10_45_PM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_9_2021_12_51_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_9_2021_12_51_PM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2021_10_24_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2021_10_24_AM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2021_12_43_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2021_12_43_AM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2021_12_46_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2021_12_46_AM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_15_2021_12_00_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_15_2021_12_00_AM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_15_2021_12_02_AM_[Default_Changelist]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_15_2021_12_02_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_15_2021_12_02_AM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_15_2021_12_02_AM__Default_Changelist_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_16_2021_11_11_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_16_2021_11_11_PM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2021_1_15_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2021_1_15_AM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2021_1_16_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2021_1_16_AM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2021_3_05_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2021_3_05_PM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2021_3_28_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2021_3_28_AM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2021_3_28_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2021_3_28_PM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_5_2021_2_19_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_5_2021_2_19_AM__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/FilterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/FilterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/FilterRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/FilterRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/leaflet-webgl-heatmap/src/webgl-heatmap/webgl-heatmap.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/leaflet-webgl-heatmap/src/webgl-heatmap/webgl-heatmap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/chosen.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/chosen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/dashboard/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/dashboard/map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/filter/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/filter/create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/filter/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/filter/edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/highcharts.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/highcharts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/leaflet/land-create.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/leaflet/land-create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/leaflet/land-edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/leaflet/land-edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/leaflet/land-heat.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/leaflet/land-heat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/leaflet/land-show.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/leaflet/land-show.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/leaflet/sensor-create.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/leaflet/sensor-create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/leaflet/sensor-edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/leaflet/sensor-edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/leaflet/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/leaflet/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/filter/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/filter/create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/filter/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/filter/edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/leaflet/land-heat.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/leaflet/land-heat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/filters/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/filters/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/highcharts.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/highcharts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/chart/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/chart/index.blade.php" afterDir="false" />
     </list>
     <ignored path="F:\laravel\Work\first\.idea\shelf/" />
     <ignored path="G:\work\Smart_Agriculture\.idea\shelf/" />
+    <ignored path="F:\laravel\Work\Smart agriculture\.idea\shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,40 +45,109 @@
     </expand>
     <select />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-884568443">
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="css" value="2" />
+          <entry key="js" value="21" />
+          <entry key="json" value="1" />
+          <entry key="php" value="28" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Blade" value="18" />
+          <entry key="CSS" value="2" />
+          <entry key="JSON" value="1" />
+          <entry key="JavaScript" value="21" />
+          <entry key="PHP" value="10" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="6" />
+          <entry key="project.open.time.32" value="1" />
+          <entry key="project.open.time.38" value="1" />
+          <entry key="project.open.time.49" value="1" />
+          <entry key="project.open.time.50" value="2" />
+          <entry key="project.opened" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="css" value="51" />
+          <entry key="js" value="1467" />
+          <entry key="php" value="711" />
+          <entry key="txt" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Blade" value="587" />
+          <entry key="CSS" value="51" />
+          <entry key="JavaScript" value="1467" />
+          <entry key="PHP" value="124" />
+          <entry key="PLAIN_TEXT" value="6" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="-1259134150">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.42" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="js" value="1" />
+          <entry key="php" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Blade" value="3" />
+          <entry key="JavaScript" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="js" value="175" />
+          <entry key="php" value="45" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Blade" value="45" />
+          <entry key="JavaScript" value="175" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="first" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/FilterController.php">
+        <entry file="file://$PROJECT_DIR$/resources/js/highcharts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
-              <folding>
-                <element signature="e#46#82#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-heat.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="989">
-              <caret line="69" selection-start-line="69" selection-end-line="69" />
-              <folding>
-                <element signature="n#style#0;n#b#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="240">
+              <caret line="25" column="25" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/node_modules/leaflet-webgl-heatmap/src/webgl-heatmap/webgl-heatmap.js">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/chart/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="955" column="44" lean-forward="true" selection-start-line="955" selection-start-column="44" selection-end-line="955" selection-end-column="44" />
+            <state relative-caret-position="444">
+              <caret line="59" column="64" selection-start-line="59" selection-start-column="64" selection-end-line="59" selection-end-column="64" />
+              <folding>
+                <element signature="e#1985#2007#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -136,6 +165,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+      <find>footer</find>
       <find>height: 45px; width: 45px</find>
       <find>alert</find>
       <find>logo</find>
@@ -165,7 +195,6 @@
       <find>نقشه</find>
       <find>valu</find>
       <find>data</find>
-      <find>console</find>
     </findStrings>
     <replaceStrings>
       <replace>داشبورد</replace>
@@ -191,6 +220,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/app/Http/Requests/FilterRequest.php" />
+        <option value="$PROJECT_DIR$/resources/lang/fa/validation.php" />
         <option value="$PROJECT_DIR$/resources/js/filter/create.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/resources/views/user/chart/index.blade.php" />
@@ -234,22 +265,64 @@
         <option value="$PROJECT_DIR$/resources/views/admin/users/verify.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/js/leaflet/land-show.js" />
+        <option value="$PROJECT_DIR$/resources/js/leaflet/land-heat.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ChartController.php" />
         <option value="$PROJECT_DIR$/app/Models/Detail.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/chart/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/js/highcharts.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/FilterController.php" />
-        <option value="$PROJECT_DIR$/resources/js/leaflet/land-heat.js" />
-        <option value="$PROJECT_DIR$/node_modules/leaflet-webgl-heatmap/src/webgl-heatmap/webgl-heatmap.js" />
+        <option value="$PROJECT_DIR$/resources/views/admin/chart/index.blade.php" />
       </list>
     </option>
   </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/Flot/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/bootstrap-colorpicker/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/bootstrap-datepicker/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/bootstrap-daterangepicker/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/bootstrap/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/chart.js/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/ckeditor-english/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/ckeditor/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/eve-raphael/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/ion.rangeSlider/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/jquery-knob/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/jquery-slimscroll/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/jquery-ui/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/morris.js/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/select2/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/Flot/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/bootstrap-colorpicker/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/bootstrap-datepicker/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/bootstrap-daterangepicker/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/bootstrap/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/chart.js/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/ckeditor-english/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/ckeditor/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/eve-raphael/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/ion.rangeSlider/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/jquery-knob/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/jquery-slimscroll/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/jquery-ui/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/morris.js/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/select2/package.json" />
+    </packageJsonPaths>
   </component>
   <component name="PhpServers">
     <servers />
@@ -367,7 +440,7 @@
       <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1385" />
@@ -381,18 +454,58 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Smart_Agriculture" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Smart_Agriculture" type="462c0819:PsiDirectoryNode" />
+              <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Smart agriculture" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Smart agriculture" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Smart agriculture" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Smart agriculture" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Smart agriculture" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Smart agriculture" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="chart" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Smart agriculture" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -400,7 +513,7 @@
     <property name="SearchEverywhereHistoryKey" value="heat&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/LandHeatController.php&#10;create&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/filters/create.blade.php&#10;index&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/filters/index.blade.php&#10;filtercontroller&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/FilterController.php&#10;login&#9;null&#9;null&#10;master&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/user/master.blade.php&#10;prof&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/user/profile&#10;profile&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/user/profile&#10;profi&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/ProfileController.php&#10;TOdo&#9;ACTION&#9;ActivateTODOToolWindow&#10;todo&#9;ACTION&#9;ActivateTODOToolWindow&#10;user&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/UserController.php&#10;maste&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php&#10;admin&#9;FILE&#9;file://F:/laravel/Work/first/routes/web/admin.php&#10;getClientOriginalName&#9;null&#9;null&#10;register&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/register.blade.php&#10;mas&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/user/master.blade.php&#10;landco&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/LandController.php&#10;sensorc&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;welcom&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/welcome.blade.php&#10;user.php&#9;FILE&#9;file://F:/laravel/Work/first/app/Models/User.php&#10;usercontroller&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/UserController.php&#10;sensorcon&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;sen&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;land&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/LandController.php&#10;throttle&#9;null&#9;null&#10;edit&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/role-user/edit.blade.php&#10;userc&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/UserController.php&#10;مخل&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/login.blade.php&#10;log&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/login.blade.php&#10;index.bla&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/lands/index.blade.php&#10;عسثق&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Requests/UserRequest.php&#10;va&#9;FILE&#9;file://F:/laravel/Work/first/resources/lang/fa/validation.php&#10;role&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/RoleController.php&#10;loginco&#9;null&#9;null&#10;landc&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/LandController.php&#10;sensor&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/Admin/SensorController.php&#10;index.b&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/sensors/index.blade.php&#10;master.php&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php&#10;home&#9;FILE&#9;file://F:/laravel/Work/first/app/Http/Controllers/HomeController.php&#10;ئ&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/master.blade.php&#10;regist&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/register.blade.php&#10;create.bla&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/users/create.blade.php&#10;logi&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/auth/login.blade.php&#10;crelandre&#9;null&#9;null&#10;config.php&#9;FILE&#9;file://F:/laravel/Work/first/vendor/psy/psysh/.phan/config.php&#10;ProviderRepository.php&#9;FILE&#9;file://F:/laravel/Work/first/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php&#10;ProviderRepository&#9;null&#9;null&#10;map&#9;FILE&#9;file://F:/laravel/Work/first/resources/js/map.js&#10;user-rol&#9;FILE&#9;file://F:/laravel/Work/first/resources/views/admin/user-role" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="G:/Api/GraphQl" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -434,10 +547,10 @@
     </option>
   </component>
   <component name="RunManager" selected="npm.watch">
-    <configuration name="create-map.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/resources/js/land/create-map.js" working-dir="$PROJECT_DIR$/resources/js">
+    <configuration name="create-map.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/resources/js/land/create-map.js" working-dir="$PROJECT_DIR$/resources/js">
       <method v="2" />
     </configuration>
-    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="dev" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
@@ -447,7 +560,7 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="prod" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="prod" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
@@ -457,7 +570,7 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="production" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="production" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
@@ -467,7 +580,7 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="watch" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="watch" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
@@ -602,14 +715,8 @@
       <workItem from="1618737183351" duration="7928000" />
       <workItem from="1618812217343" duration="10725000" />
       <workItem from="1618894717051" duration="18054000" />
-      <workItem from="1619074599590" duration="13889000" />
-    </task>
-    <task id="LOCAL-00034" summary="Ehsan">
-      <created>1614755432051</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1614755432051</updated>
+      <workItem from="1619074599590" duration="13947000" />
+      <workItem from="1619244283053" duration="8701000" />
     </task>
     <task id="LOCAL-00035" summary="Ehsan">
       <created>1614757796868</created>
@@ -947,11 +1054,18 @@
       <option name="project" value="LOCAL" />
       <updated>1619091270568</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="Ehsan">
+      <created>1619100531317</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1619100531317</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="885382000" />
+    <option name="totallyTimeSpent" value="887663000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -963,10 +1077,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-10" y="-10" width="1385" height="745" extended-state="0" />
+    <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5635838" visible="true" weight="0.30716982" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5635838" visible="true" weight="0.21395037" />
       <window_info id="Structure" order="1" sideWeight="0.43641618" side_tool="true" weight="0.2112676" />
       <window_info auto_hide="true" id="npm" order="2" sideWeight="0.44364163" side_tool="true" weight="0.1965124" />
       <window_info id="Favorites" order="3" sideWeight="0.44942197" side_tool="true" weight="0.20590208" />
@@ -989,30 +1103,6 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.22163388" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5260116" visible="true" weight="0.20590208" />
-      <window_info id="Structure" order="1" sideWeight="0.40462428" side_tool="true" weight="0.20858485" />
-      <window_info auto_hide="true" id="npm" order="2" sideWeight="0.44364163" side_tool="true" weight="0.1965124" />
-      <window_info id="Favorites" order="3" sideWeight="0.44942197" side_tool="true" weight="0.20590208" />
-      <window_info anchor="bottom" id="TypeScript" order="0" weight="0.329235" />
-      <window_info anchor="bottom" id="Database Console" order="1" weight="0.32947975" />
-      <window_info anchor="bottom" id="Message" order="2" />
-      <window_info anchor="bottom" id="Find" order="3" weight="0.3251445" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.39884394" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="Database Changes" order="7" weight="0.32658958" />
-      <window_info anchor="bottom" id="TODO" order="8" weight="0.30114567" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.5549133" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.501006" side_tool="true" weight="0.2487725" />
-      <window_info anchor="bottom" auto_hide="true" id="Run" order="12" sideWeight="0.47398844" weight="0.3251445" />
-      <window_info anchor="bottom" auto_hide="true" id="Terminal" order="13" sideWeight="0.49966466" weight="0.37861273" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.22163388" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1042,20 +1132,9 @@
         </entry>
       </map>
     </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
-          </value>
-        </entry>
-      </map>
-    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update LandController" />
@@ -1069,13 +1148,29 @@
     <option name="LAST_COMMIT_MESSAGE" value="Ehsan" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/SensorController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/FilterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1023">
+          <caret line="58" column="24" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/PermissionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2227" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ProfileController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="54" />
-          <folding>
-            <element signature="e#46#82#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="-939">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
@@ -1129,6 +1224,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/leaflet-webgl-heatmap/src/webgl-heatmap/webgl-heatmap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="931" column="19" selection-start-line="931" selection-start-column="8" selection-end-line="931" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/leaflet-webgl-heatmap/src/webgl-heatmap/webgl-heatmap.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1158,15 +1260,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/filter/edit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1457">
-          <caret line="47" column="7" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/LandHeatController.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1227,16 +1321,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/master.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="402" column="184" selection-start-line="402" selection-start-column="184" selection-end-line="402" selection-end-column="184" />
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#li#0;n#ul#3;n#section#0;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/filters/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="692">
@@ -1248,6 +1332,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
           <caret line="24" column="118" selection-start-line="24" selection-start-column="118" selection-end-line="24" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/filters/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="23" column="118" selection-start-line="23" selection-start-column="118" selection-end-line="23" selection-end-column="118" />
         </state>
       </provider>
     </entry>
@@ -1321,13 +1412,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1032">
-          <caret line="43" column="22" lean-forward="true" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-show.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1080">
@@ -1360,9 +1444,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding>
-            <element signature="e#30#84#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1370,78 +1451,44 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="386">
           <caret line="52" column="24" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
-          <folding>
-            <element signature="e#46#82#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/highcharts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-216">
-          <caret line="54" column="61" selection-start-line="54" selection-start-column="55" selection-end-line="54" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/chart/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="40" column="61" lean-forward="true" selection-start-line="40" selection-start-column="61" selection-end-line="40" selection-end-column="61" />
-          <folding>
-            <element signature="e#934#965#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/profile/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="58" column="66" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/FilterRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="30" column="78" selection-start-line="30" selection-start-column="78" selection-end-line="30" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/filters/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="28" column="52" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
-          <folding>
-            <element signature="e#4058#4080#0#HTML" expanded="true" />
-            <element signature="e#4168#4250#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/FilterController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
-          <folding>
-            <element signature="e#46#82#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-heat.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="989">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-          <folding>
-            <element signature="n#style#0;n#b#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="48">
+          <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/leaflet-webgl-heatmap/src/webgl-heatmap/webgl-heatmap.js">
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/master.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="955" column="44" lean-forward="true" selection-start-line="955" selection-start-column="44" selection-end-line="955" selection-end-column="44" />
+        <state relative-caret-position="2540">
+          <caret line="402" column="184" selection-start-line="402" selection-start-column="184" selection-end-line="402" selection-end-column="184" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="744">
+          <caret line="43" column="22" lean-forward="true" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/highcharts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="25" column="25" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/chart/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="59" column="64" selection-start-line="59" selection-start-column="64" selection-end-line="59" selection-end-column="64" />
+          <folding>
+            <element signature="e#1985#2007#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -9,7 +9,6 @@ var nickname,options,i;
 $("#filter_id").change(function () {
     nickname = $(this).find(':selected').data('nickname');
     var filter_id = $(this).find(':selected').val();
-    // console.log(filter_id);
     var data = [];
     var date = [];
 
@@ -21,8 +20,6 @@ $("#filter_id").change(function () {
             date.push(time2);
         }
     }
-
-    console.log(data);
 
     options =  {
         chart: {
@@ -40,8 +37,8 @@ $("#filter_id").change(function () {
             },
         },
         xAxis: {
-            type: 'years',
-            categories: date
+            type: 'datetime',
+            categories: date,
         },
         tooltip: {
             split: true,
@@ -54,13 +51,15 @@ $("#filter_id").change(function () {
         },
         // colors: ['#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
         series: [{
-            name: 'دما',
+            name: nickname,
             data: data,
             color: '#ED561B',
             marker: false,
             showInLegend: false,
+            shadow: true
         }]
     };
+
     Ch.chart('highcharts', options);
 
 });
