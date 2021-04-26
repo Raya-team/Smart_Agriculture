@@ -27,6 +27,7 @@
     "dependencies": {
         "@geoman-io/leaflet-geoman-free": "^2.9.0",
         "chosen-js": "^1.8.7",
+        "granim": "^2.0.0",
         "highcharts": "^8.2.2",
         "leaflet": "^1.7.1",
         "leaflet-contextmenu": "^1.4.0",

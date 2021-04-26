@@ -48,8 +48,8 @@ $("#filter_id").change(function () {
     var min1 = $(this).find(':selected').data('min');
     var max2 = 1;
     var min2 = 0;
-    var arr1 = [];
-    var arr2 = [];
+    var datapoints = [];
+    var sensorsPoints = [];
 
     for (var c = 0; c < colors.length; c++) {
         if (colors[c]['id'] == filters) {
@@ -62,25 +62,18 @@ $("#filter_id").change(function () {
     }
     for (var d = 0; d < details.length; d++) {
         if (details[d]['filter_id'] == filters) {
-            var loc = (details[d]['location']);
-            var val1 = (details[d]['value']);
+            var loc = JSON.parse(details[d]['location']);
+            var val1 = details[d]['value'];
+            var sensor_id = details[d]['sensor_id'];
             var val2 = ((val1 - min1) / (max1 - min1)) * (max2 - min2) + min2;
             //convert string to array
-            arr2.push(JSON.parse(loc));
-            arr2.push(JSON.parse(val2));
+            datapoints.push([loc[0]['lat'], loc[0]['lng'], val2]);
+            sensorsPoints.push([loc[0]['lat'], loc[0]['lng'], val2, sensor_id]);
         }
-
     }
 
-    var datapoints = [];
-    var sensorsPoints = [];
-    for (var j = 0; j < arr2.length / 2; j++) {
-        var data = [];
-        data.push(arr2[2 * j][0]['lat']);
-        data.push(arr2[2 * j][0]['lng']);
-        data.push(arr2[2 * j + 1]);
-        datapoints.push(data);
-    }
+    console.log(sensorsPoints);
+
     var heatmap = L.webGLHeatmap({
         size: 5000,
         opacity: 1,

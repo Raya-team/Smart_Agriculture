@@ -1,3 +1,5 @@
+import 'granim/dist/granim.min'
+
 $(document).ready(function(){
     var x = document.getElementById("color-select");
     var y = document.getElementById("btnAdd");
@@ -15,24 +17,36 @@ $(document).ready(function(){
     var colors = [];
     var colors2 = [];
     $('#btnAdd').click(function(){
-        var fnCell = $('<td class="del1"><div  style="background-color:' + x.value + ';width: 20px;height: 20px; border-radius: 100%; margin-top: 2px; margin-right: auto; margin-left: auto;"></div></td>');
-        var row = $('<tr></tr>');
-        console.log(colors);
-        console.log(hexToRgb(x.value));
-        if (colors2.find(item => item === x.value)){
+        if (colors2.find(item => item === x.value)) {
             $("#color-error").show(1000);
-            setTimeout(function(){
+            setTimeout(function () {
                 $("#color-error").hide(1000);
+            }, 4000);
+        }else if (colors2.length > 4) {
+            $("#color-error-count").show(1000);
+            setTimeout(function () {
+                $("#color-error-count").hide(1000);
             }, 4000);
         } else {
             colors.push(hexToRgb(x.value));
             colors2.push(x.value);
-            row.append(fnCell);
         }
 
-        $("#persons").append(row);
+        var granimInstance = new Granim({
+            element: '#granim-canvas',
+            direction: 'left-right',
+            opacity: [0.8, 1],
+            states : {
+                "default-state": {
+                    gradients: [
+                        colors2
+                    ]
+                }
+            }
+        });
+
         $('.del').click(function(){
-            $('.del1').closest('tr').remove();
+            granimInstance.destroy();
             document.getElementById('colors').value = null ;
             colors.splice([0]);
             colors2.splice([0]);

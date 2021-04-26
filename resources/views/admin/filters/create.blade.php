@@ -63,17 +63,33 @@
                                     </div>
                                 </div>
                             </div>
-                                <div class="form-group" id="color-error" style="display: none;">
-                                        <div class="alert alert-warning" role="alert" style="background-color: rgba(243,156,18,0.51) !important; color: red !important;">
-                                            رنگ انتخابی شما تکراری است
-                                        </div>
+                            <div class="form-group" id="color-error" style="display: none;">
+                                <div class="alert alert-warning" role="alert" style="background-color: rgba(243,156,18,0.51) !important; color: red !important;">
+                                    رنگ انتخابی شما تکراری است
                                 </div>
+                            </div>
+                            <div class="form-group" id="color-error-count" style="display: none;">
+                                <div class="alert alert-warning" role="alert" style="background-color: rgba(243,156,18,0.51) !important; color: red !important;">
+                                    نمی‌توانید بیشتر از 5 رنگ انتخاب کنید
+                                </div>
+                            </div>
                             <div class="row">
-                                <table id="persons" align="center">
-                                    <tr>
-                                        <td><b>رنگ های انتخابی</b></td>
-                                    </tr>
-                                </table>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <table id="persons" align="center" style="width: 100%;">
+                                            <tr style="text-align: center">
+                                                <td><b>رنگ های انتخابی</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="canvas-interactive-wrapper">
+                                                        <canvas id="granim-canvas"></canvas>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
@@ -110,6 +126,25 @@
         #btnremove:hover{
             background-color: rgba(180, 3, 26, 0.8);
         }
+
+        .canvas-interactive-wrapper {
+            position: relative;
+            height: 50px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .canvas-interactive-wrapper canvas {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
     </style>
 @endsection
 
