@@ -111,37 +111,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var granim_dist_granim_min__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(granim_dist_granim_min__WEBPACK_IMPORTED_MODULE_0__);
 
 $(document).ready(function () {
-  var x = document.getElementById("color-select");
-  var y = document.getElementById("btnAdd");
-  var z = x.value; // convert hex to rgb
-
-  function hexToRgb(hex) {
-    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    return result ? {
-      r: parseInt(result[1], 16),
-      g: parseInt(result[2], 16),
-      b: parseInt(result[3], 16)
-    } : null;
-  }
+  var x = document.getElementById("color-select"); // convert hex to rgb
+  // function hexToRgb(hex) {
+  //     var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  //     return result ? {
+  //         r: parseInt(result[1], 16),
+  //         g: parseInt(result[2], 16),
+  //         b: parseInt(result[3], 16)
+  //     } : null;
+  // }
+  // var colors = [];
 
   var colors = [];
-  var colors2 = [];
   $('#btnAdd').click(function () {
-    if (colors2.find(function (item) {
+    if (colors.find(function (item) {
       return item === x.value;
     })) {
       $("#color-error").show(1000);
       setTimeout(function () {
         $("#color-error").hide(1000);
       }, 4000);
-    } else if (colors2.length > 4) {
+    } else if (colors.length > 4) {
       $("#color-error-count").show(1000);
       setTimeout(function () {
         $("#color-error-count").hide(1000);
       }, 4000);
     } else {
-      colors.push(hexToRgb(x.value));
-      colors2.push(x.value);
+      // colors.push(hexToRgb(x.value));
+      colors.push(x.value);
     }
 
     var granimInstance = new Granim({
@@ -150,15 +147,15 @@ $(document).ready(function () {
       opacity: [0.8, 1],
       states: {
         "default-state": {
-          gradients: [colors2]
+          gradients: [colors]
         }
       }
     });
     $('.del').click(function () {
       granimInstance.destroy();
-      document.getElementById('colors').value = null;
+      document.getElementById('colors').value = null; // colors.splice([0]);
+
       colors.splice([0]);
-      colors2.splice([0]);
     });
     document.getElementById('colors').value = JSON.stringify(colors);
   });

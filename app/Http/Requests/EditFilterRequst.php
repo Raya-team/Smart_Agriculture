@@ -28,8 +28,8 @@ class EditFilterRequst extends FormRequest
         return [
             'name' => ['required', new Security(), Rule::unique('filters')->ignore($this->filter->id)],
             'nickname' => ['required', new Security()],
-            'min' => ['required', 'numeric', new Security()],
-            'max' => ['required', 'numeric', new Security(),'after:min'],
+            'max' => ['required', 'numeric', new Security()],
+            'min' => ['required', 'numeric', new Security(),'lt:max'],
             'colors' => ['required']
         ];
     }
