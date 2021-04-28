@@ -68,11 +68,9 @@ $("#filter_id").change(function () {
             var val2 = ((val1 - min1) / (max1 - min1)) * (max2 - min2) + min2;
             //convert string to array
             datapoints.push([loc[0]['lat'], loc[0]['lng'], val2]);
-            sensorsPoints.push([loc[0]['lat'], loc[0]['lng'], val2, sensor_id]);
+            sensorsPoints.push([loc[0]['lat'], loc[0]['lng'], val1, sensor_id]);
         }
     }
-
-    console.log(sensorsPoints);
 
     var heatmap = L.webGLHeatmap({
         size: 5000,
@@ -86,16 +84,34 @@ $("#filter_id").change(function () {
 
     // Create Marker
 
-    var PopupCode = "<b style='text-align: center'>جزئیات سنسور</b><br>" +
-        "" +
-        "<a href='#' style=''>نمودار</a>";
+
 
     var icon = new L.Icon.Default();
     icon.options.shadowSize = [0, 0];
-    for (var i = 0; i < datapoints.length; i++) {
-        shipLayer.addLayer(L.marker([datapoints[i][0], datapoints[i][1]], {icon: icon}).addTo(map)
-            .bindPopup(PopupCode));
+
+    function getS(id, value) {
+        return "<b style='text-align: center'>جزئیات سنسور</b><br>" +
+            "" +
+            "<div class='row' style='text-align: center'>"+
+            // "<a href=" + id + " data-tooltip=\"tooltip\" title=\"نمودار\"><i class=\"fa fa-fw fa-line-chart\"></i></a>" +
+            "<a href=" + id + " data-tooltip=\"tooltip\" title=\"نمودار\">نمایش نمودار</a>" +
+            "</div>" +
+            "<div class='row' style='text-align: center'>"+
+            "میزان : " + value +
+            "</div>"
+            ;
     }
+
+    for (var i = 0; i < sensorsPoints.length; i++) {
+        var marker_points = [sensorsPoints[i][0], sensorsPoints[i][1]];
+        var linkChartOfSensor = "http://127.0.0.1:8000/chart/" + sensorsPoints [i][3];
+        var ValueOfSensor = sensorsPoints [i][2];
+        shipLayer.addLayer(L.marker(marker_points, {icon: icon}).addTo(map)
+            .bindPopup(
+                getS(linkChartOfSensor, ValueOfSensor)
+            ));
+    }
+
 });
 
 

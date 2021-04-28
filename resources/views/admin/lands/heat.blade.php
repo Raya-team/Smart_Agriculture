@@ -40,8 +40,18 @@
     <script src="{{ asset('js/leaflet/test.js') }}"></script>
     <script src="{{ asset('js/chosen.js') }}"></script>
     <script src="{{ asset('js/leaflet/land-heat.js') }}"></script>
+    <script>
+        $(function () {
+            $('[data-tooltip="tooltip"]').tooltip()
+        })
+    </script>
 @endsection
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/chosen.css') }}">
     <link rel="stylesheet" href="{{asset('css/map.css')}}">
+    <style>
+        .cl{
+            direction: rtl;
+        }
+    </style>
 @endsection
