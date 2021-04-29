@@ -29,11 +29,15 @@
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="name">نام پارامتر</label>
-                                <input type="text" class="form-control" name="name" id="name" placeholder="نام پارامتر" value="{{ old('name' , $filter->name) }}">
+                                <input type="text" class="form-control" name="name" id="name" placeholder="نام پارامتر" value="{{ old('name', $filter->name) }}">
                             </div>
                             <div class="form-group">
                                 <label for="nickname">نام مستعار</label>
-                                <input type="text" class="form-control" name="nickname" id="nickname" placeholder="نام مستعار" value="{{ old('nickname',$filter->nickname) }}">
+                                <input type="text" class="form-control" name="nickname" id="nickname" placeholder="نام مستعار" value="{{ old('nickname', $filter->nickname) }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="nickname">شاخص</label>
+                                <input type="text" class="form-control" name="index" id="index" placeholder="شاخص اندازه گیری" value="{{ old('nickname', $filter->index) }}">
                             </div>
                             <div class="row">
                                 <div class="col-lg-6">

@@ -47,6 +47,7 @@ class FilterController extends Controller
         {
             $filter->name = $request->input('name');
             $filter->nickname = $request->input('nickname');
+            $filter->index = $request->input('index');
             $filter->min = $request->input('minimum');
             $filter->max = $request->input('maximum');
             $filter->colors = $request->input('colors');
@@ -95,6 +96,7 @@ class FilterController extends Controller
         if(count($color_num) == 5) {
             $filter->name = $request->input('name');
             $filter->nickname = $request->input('nickname');
+            $filter->index = $request->input('index');
             $filter->min = $request->input('min');
             $filter->max = $request->input('max');
             $filter->colors = $request->input('colors');

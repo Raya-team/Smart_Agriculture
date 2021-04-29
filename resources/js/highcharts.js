@@ -1,13 +1,14 @@
 import Ch from 'highcharts';
 
 
-var all_filters = JSON.parse(document.getElementById('filters').value);
+// var all_filters = JSON.parse(document.getElementById('filters').value);
 var all_details = JSON.parse(document.getElementById('details').value);
 
-var nickname,options,i;
+var nickname,index,options,i;
 
 $("#filter_id").change(function () {
     nickname = $(this).find(':selected').data('nickname');
+    index = $(this).find(':selected').data('index');
     var filter_id = $(this).find(':selected').val();
     var data = [];
     var date = [];
@@ -33,7 +34,7 @@ $("#filter_id").change(function () {
         // },
         yAxis: {
             title: {
-                text: 'شاخص دما (°C)'
+                text: 'شاخص ' + nickname + ' ' + index,
             },
         },
         xAxis: {
@@ -41,9 +42,10 @@ $("#filter_id").change(function () {
             categories: date,
         },
         tooltip: {
+            useHTML: true,
             split: true,
-            valueDecimals: 0,
-            valueSuffix: '°C'
+            // valueDecimals: 0,
+            valueSuffix: " " + index,
         },
         credits: {
             text: 'ناهید آسمان ایرانیان',

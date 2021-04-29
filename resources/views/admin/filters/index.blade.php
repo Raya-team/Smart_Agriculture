@@ -31,6 +31,7 @@
                             <tr>
                                 <th>نام پارامتر</th>
                                 <th>نام مستعار</th>
+                                <th>شاخص</th>
                                 <th>حداقل بازه</th>
                                 <th>حداکثر بازه</th>
                                 <th>عملیات</th>
@@ -41,6 +42,7 @@
                                 <tr>
                                     <td>{{ $filter->name }}</td>
                                     <td>{{ $filter->nickname }}</td>
+                                    <td>{{ $filter->index }}</td>
                                     <td>{{ $filter->min }}</td>
                                     <td>{{ $filter->max }}</td>
                                     <td>

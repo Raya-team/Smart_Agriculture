@@ -32,7 +32,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="nickname">نام مستعار</label>
-                                <input type="text" class="form-control" name="nickname" id="nickname" placeholder="نام مستعار" value="{{ old('nickname') }}">
+                                <input type="text" class="form-control" name="nickname" id="nickname" placeholder="نام مستعار پارامتر" value="{{ old('nickname') }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="nickname">شاخص</label>
+                                <input type="text" class="form-control" name="index" id="index" placeholder="شاخص اندازه گیری" value="{{ old('index') }}">
                             </div>
                             <div class="row">
                                 <div class="col-lg-6">

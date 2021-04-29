@@ -25,7 +25,7 @@ class Security implements Rule
      */
     public function passes($attribute, $value)
     {
-        return preg_match('/^[ -0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZآابپتثجچحخدذرزژسشصضطظعغفقکگلمنوهیئ\s]+$/', $value);
+        return preg_match('/^[ -0123456789°abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZآابپتثجچحخدذرزژسشصضطظعغفقکگلمنوهیئ\s]+$/', $value);
     }
 
     /**

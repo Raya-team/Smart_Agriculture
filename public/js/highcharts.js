@@ -653,12 +653,13 @@ K(e,function(d,e){if(!v&&-1<h.collectionsWithUpdate.indexOf(e))for(d=y(d),m[e]=[
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! highcharts */ "./node_modules/highcharts/highcharts.js");
 /* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(highcharts__WEBPACK_IMPORTED_MODULE_0__);
+ // var all_filters = JSON.parse(document.getElementById('filters').value);
 
-var all_filters = JSON.parse(document.getElementById('filters').value);
 var all_details = JSON.parse(document.getElementById('details').value);
-var nickname, options, i;
+var nickname, index, options, i;
 $("#filter_id").change(function () {
   nickname = $(this).find(':selected').data('nickname');
+  index = $(this).find(':selected').data('index');
   var filter_id = $(this).find(':selected').val();
   var data = [];
   var date = [];
@@ -684,7 +685,7 @@ $("#filter_id").change(function () {
     // },
     yAxis: {
       title: {
-        text: 'شاخص دما (°C)'
+        text: 'شاخص ' + nickname + ' ' + index
       }
     },
     xAxis: {
@@ -692,9 +693,10 @@ $("#filter_id").change(function () {
       categories: date
     },
     tooltip: {
+      useHTML: true,
       split: true,
-      valueDecimals: 0,
-      valueSuffix: '°C'
+      // valueDecimals: 0,
+      valueSuffix: " " + index
     },
     credits: {
       text: 'ناهید آسمان ایرانیان',

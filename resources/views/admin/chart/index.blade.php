@@ -29,7 +29,7 @@
                             <select class="form-control chosen-select" style="width: 100%;" name="filter_id" id="filter_id" data-placeholder="جهت نمایش نمودار پارامتر مورد نظر خود را انتخاب کنید">
                                 <option value=""></option>
                                 @foreach($filters as $filter)
-                                    <option value="{{ $filter->id }}" data-nickname="{{ $filter->nickname }}" >{{ $filter->nickname }}</option>
+                                    <option value="{{ $filter->id }}" data-nickname="{{ $filter->nickname }}" data-index="{{ $filter->index }}">{{ $filter->nickname }}</option>
                                 @endforeach
                             </select>
                         </div>

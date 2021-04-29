@@ -16309,6 +16309,7 @@ map.addLayer(shipLayer);
 $("#filter_id").change(function () {
   shipLayer.clearLayers();
   var filters = $(this).find(':selected').val();
+  var index = $(this).find(':selected').data('index');
   var max1 = $(this).find(':selected').data('max');
   var min1 = $(this).find(':selected').data('min');
   var max2 = 1;
@@ -16329,8 +16330,7 @@ $("#filter_id").change(function () {
       var loc = JSON.parse(details[d]['location']);
       var val1 = details[d]['value'];
       var sensor_id = details[d]['sensor_id'];
-      var val2 = (val1 - min1) / (max1 - min1) * (max2 - min2) + min2; //convert string to array
-
+      var val2 = (val1 - min1) / (max1 - min1) * (max2 - min2) + min2;
       datapoints.push([loc[0]['lat'], loc[0]['lng'], val2]);
       sensorsPoints.push([loc[0]['lat'], loc[0]['lng'], val1, sensor_id]);
     }
@@ -16348,18 +16348,18 @@ $("#filter_id").change(function () {
   var icon = new leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.Icon.Default();
   icon.options.shadowSize = [0, 0];
 
-  function getS(id, value) {
+  function htmlPopUp(id, value, index) {
     return "<b style='text-align: center'>جزئیات سنسور</b><br>" + "" + "<div class='row' style='text-align: center'>" + // "<a href=" + id + " data-tooltip=\"tooltip\" title=\"نمودار\"><i class=\"fa fa-fw fa-line-chart\"></i></a>" +
-    "<a href=" + id + " data-tooltip=\"tooltip\" title=\"نمودار\">نمایش نمودار</a>" + "</div>" + "<div class='row' style='text-align: center'>" + "میزان : " + value + "</div>";
+    "<a href=" + id + " data-tooltip=\"tooltip\" title=\"نمودار\">نمایش نمودار</a>" + "</div>" + "<div class='row' style='text-align: center; direction: rtl'>" + "میزان : " + value + " " + index + "</div>";
   }
 
   for (var i = 0; i < sensorsPoints.length; i++) {
     var marker_points = [sensorsPoints[i][0], sensorsPoints[i][1]];
-    var linkChartOfSensor = "http://127.0.0.1:8000/chart/" + sensorsPoints[i][3];
     var ValueOfSensor = sensorsPoints[i][2];
+    var linkChartOfSensor = "http://127.0.0.1:8000/chart/" + sensorsPoints[i][3];
     shipLayer.addLayer(leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.marker(marker_points, {
       icon: icon
-    }).addTo(map).bindPopup(getS(linkChartOfSensor, ValueOfSensor)));
+    }).addTo(map).bindPopup(htmlPopUp(linkChartOfSensor, ValueOfSensor, index)));
   }
 });
 

@@ -17,7 +17,7 @@
                         <select class="form-control chosen-select" style="width: 100%;" name="filter_id" id="filter_id" data-placeholder="فیلتر خود را انتخاب کنید">
                             <option value=""></option>
                             @foreach($filters as $filter)
-                                <option value="{{ $filter->id }}" data-max="{{ $filter->max }}" data-min="{{ $filter->min }}" >{{$filter->nickname}}</option>
+                                <option value="{{ $filter->id }}" data-max="{{ $filter->max }}" data-min="{{ $filter->min }}" data-index="{{ $filter->index }}" >{{ $filter->nickname }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -49,9 +49,4 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/chosen.css') }}">
     <link rel="stylesheet" href="{{asset('css/map.css')}}">
-    <style>
-        .cl{
-            direction: rtl;
-        }
-    </style>
 @endsection
