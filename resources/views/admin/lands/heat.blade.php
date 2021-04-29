@@ -14,10 +14,10 @@
                     </div>
                     <div class="box-body">
                         <label>فیلتر</label>
-                        <select class="form-control chosen-select" style="width: 100%;" name="filter_id" id="filter_id" data-placeholder="فیلتر خود را انتخاب کنید">
+                        <select class="form-control chosen-select ccc" style="width: 100%;" name="filter_id" id="filter_id" data-placeholder="فیلتر خود را انتخاب کنید">
                             <option value=""></option>
                             @foreach($filters as $filter)
-                                <option value="{{ $filter->id }}" data-max="{{ $filter->max }}" data-min="{{ $filter->min }}" data-index="{{ $filter->index }}" >{{ $filter->nickname }}</option>
+                                <option value="{{ $filter->id }}" data-max="{{ $filter->max }}" data-min="{{ $filter->min }}" data-index="{{ $filter->index }}" data-colors="{{ $filter->colors }}" >{{ $filter->nickname }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -28,6 +28,7 @@
                     <input type="hidden" id="eventoutput" name="points" value="{{ $land->points }}">
                     <input type="hidden" id="details" name="details" value="{{ $details }}">
                     <input type="hidden" id="filters" name="filters" value="{{ $filters }}">
+                    <input type="hidden" id="colors" name="colors" value="">
                 </div>
             </div>
             <!-- /.box -->

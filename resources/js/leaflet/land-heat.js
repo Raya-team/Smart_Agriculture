@@ -45,6 +45,9 @@ $("#filter_id").change(function () {
     shipLayer.clearLayers();
     var filters = $(this).find(':selected').val();
     var index = $(this).find(':selected').data('index');
+    var colorSelected = JSON.stringify($(this).find(':selected').data('colors'));
+    document.getElementById('colors').value = colorSelected;
+
     var max1 = $(this).find(':selected').data('max');
     var min1 = $(this).find(':selected').data('min');
     var max2 = 1;
