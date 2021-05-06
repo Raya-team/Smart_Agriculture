@@ -13,7 +13,7 @@ class CreateSensorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('sensors', function (Blueprint $table) {
+        Schema::create('lands', function (Blueprint $table) {
             $table->id();
             $table->string('serial')->unique();
             $table->bigInteger('land_id')->unsigned();
@@ -30,6 +30,6 @@ class CreateSensorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sensors');
+        Schema::dropIfExists('lands');
     }
 }

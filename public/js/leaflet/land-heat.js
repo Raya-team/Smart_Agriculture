@@ -1843,28 +1843,27 @@ L.webGLHeatmap = function(options) {
                 textureGradient = null;
 
 
-                var color,i,j,x;
-                var r,g,b;
+                var color,i,j,x,r,g,b;
                 var max1 = 0;
                 var min1 = 255;
                 var max2 = 1;
                 var min2 = 0;
-                var colors = []
-                var y = []
+                var colors = [];
+                var y = [];
                 color = JSON.parse(document.getElementById('colors').value);
-                for ( i = 0 ; i < color.length ; i++){
+
+                for ( i = 0 ; i < 5 ; i++){
                     colors.push(hexToRgb(color[i]))
                 }
-                // console.log(colors[1]['r']);
-                for ( j = 0 ; j < colors.length ; j++){
-                    // colors[j]['r']
+
+                for ( j = 0 ; j < 5 ; j++){
                     r = changeRange(colors[j]['r']);
                     g = changeRange(colors[j]['g']);
                     b = changeRange(colors[j]['b']);
                     x = r + "," + g + "," + b;
                     y.push(x);
                 }
-
+                //change range between 0,1
                 function changeRange(color) {
                     return ((color - min1) / (max1 - min1)) * (max2 - min2) + min2;
                 }
@@ -1879,11 +1878,11 @@ L.webGLHeatmap = function(options) {
                 }
 
                 var filterColor = {
-                    red: y[0],
-                    yellow: y[1],
+                    red: y[4],
+                    yellow: y[3],
                     green: y[2],
-                    cyan: y[3],
-                    blue: y[4]
+                    cyan: y[1],
+                    blue: y[0]
                 };
                 getColorFun = `vec3 getColor(float intensity){\n    vec3 blue = vec3(${filterColor.blue});\n    vec3 cyan = vec3(${filterColor.cyan});\n    vec3 green = vec3(${filterColor.green});\n    vec3 yellow = vec3(${filterColor.yellow});\n    vec3 red = vec3(${filterColor.red});\n\n    vec3 color = (\n        fade(-0.25, 0.25, intensity)*blue +\n        fade(0.0, 0.5, intensity)*cyan +\n        fade(0.25, 0.75, intensity)*green +\n        fade(0.5, 1.0, intensity)*yellow +\n        smoothstep(0.75, 1.0, intensity)*red\n    );\n    return color;\n}`;
             }

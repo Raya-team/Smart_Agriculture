@@ -51,11 +51,8 @@ Route::group(['middleware' =>['auth', 'auth.admin']] , function (){
     Route::resource('filters',FilterController::class);
     Route::resource('/roles',RoleController::class);
     Route::resource('/users-role',RoleUserController::class, ['parameters' => ['users-role' => 'user']]);
-
-//    if (Auth::user()->level == 1 || Auth::user()->level == 2){
-        Route::get('/admin/profile',[ProfileController::class,'index'])->name('admin.profile.index');
-        Route::PATCH('/admin/profile/{user}',[ProfileController::class,'update'])->name('admin.profile.update');
-//    }
+    Route::get('/admin/profile',[ProfileController::class,'index'])->name('admin.profile.index');
+    Route::PATCH('/admin/profile/{user}',[ProfileController::class,'update'])->name('admin.profile.update');
     Route::resource('/chart',ChartController::class, ['parameters' => ['chart' => 'sensor']]);
 });
 Route::post('/user_register',[RegisterController::class, 'store'])->name('user.register');
