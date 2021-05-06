@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Detail;
+use App\Models\Filter;
 use Illuminate\Http\Request;
 
 class ChartController extends Controller
@@ -12,6 +14,7 @@ class ChartController extends Controller
         $details = Detail::where('sensor_id', $sensor)->get();
         $filters = Filter::all();
 
-        return view('admin.chart.index', compact(['filters','details']));
+//        return $details;
+        return view('user.chart.index', compact(['filters','details']));
     }
 }

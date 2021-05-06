@@ -24,7 +24,7 @@ class LandController extends Controller
     public function show(Land $land)
     {
         if ($land->user_id == Auth::user()->id){
-            return view('admin.lands.show', compact(['land']));
+            return view('user.lands.show', compact(['land']));
         }
         abort(404);
     }
@@ -66,7 +66,7 @@ class LandController extends Controller
 //            return $details;
             $details = json_encode($details);
 
-            return view('admin.lands.heat', compact('land', 'details','filters'));
+            return view('user.lands.heat', compact('land', 'details','filters'));
         }
         abort(404);
     }
