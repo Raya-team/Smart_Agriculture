@@ -666,10 +666,9 @@ $("#filter_id").change(function () {
 
   for (i = 0; i < all_details.length; i++) {
     if (filter_id == all_details[i]['filter_id']) {
-      var time = all_details[i]['created_at'];
-      var time2 = new Date(time).toLocaleDateString('fa-IR');
-      data.push([time2, all_details[i]['value']]);
-      date.push(time2);
+      var time = new Date(all_details[i]['created_at']).toLocaleDateString('fa-IR');
+      data.push([time, all_details[i]['value']]);
+      date.push(time);
     }
   }
 
@@ -695,7 +694,6 @@ $("#filter_id").change(function () {
     tooltip: {
       useHTML: true,
       split: true,
-      // valueDecimals: 0,
       valueSuffix: " " + index
     },
     credits: {

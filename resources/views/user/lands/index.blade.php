@@ -33,6 +33,7 @@
                             <tr>
                                 <th> نام زمین</th>
                                 <th>ایستگاها</th>
+                                <th>عملیات</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -106,6 +107,11 @@
                 }
             });
         });
+    </script>
+    <script>
+        $(function () {
+            $('[data-tooltip="tooltip"]').tooltip()
+        })
     </script>
 @endsection
 @section('css')
