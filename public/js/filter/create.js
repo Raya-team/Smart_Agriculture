@@ -170,7 +170,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\laravel\Work\Smart agriculture\resources\js\filter\create.js */"./resources/js/filter/create.js");
+module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\filter\create.js */"./resources/js/filter/create.js");
 
 
 /***/ })

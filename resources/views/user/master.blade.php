@@ -350,8 +350,8 @@
     <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-    <footer class="main-footer text-left">
-        <strong>Copyleft &copy; 2014-2017 <a href="https://adminlte.io">Almsaeed Studio</a> & <a href="http://hosseinizadeh.ir/adminlte">Alireza Hosseinizadeh</a></strong>
+    <footer class="main-footer text-left" style="text-align: center">
+        <strong>شرکت ناهید آسمان ایرانیان</strong>
     </footer>
 
     <!-- Control Sidebar -->
