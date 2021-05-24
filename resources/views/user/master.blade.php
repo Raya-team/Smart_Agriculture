@@ -353,7 +353,6 @@
     <footer class="main-footer text-left" style="text-align: center">
         <strong>شرکت ناهید آسمان ایرانیان</strong>
     </footer>
-
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
         <!-- Create the tabs -->

@@ -8,7 +8,7 @@
         </h1>
         <ol class="breadcrumb" dir="ltr">
             <li><a href="{{route('dashboard')}}"><i class="fa fa-dashboard"></i> داشبورد</a></li>
-            <li><a href="{{route('lands')}}">ایستگاه ها</a></li>
+            <li><a href="{{route('sensors.index')}}">ایستگاه ها</a></li>
         </ol>
     </section>
 
