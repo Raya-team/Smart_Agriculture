@@ -14,7 +14,7 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form role="form" action="{{route('lands')}}" method="POST">
+                    <form role="form" action="{{route('sensors.store')}}" method="POST">
                         @csrf
                         @include('admin.section.errors')
                         <div class="box-body">
