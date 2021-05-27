@@ -2,7 +2,6 @@ import 'granim/dist/granim.min'
 
 $(document).ready(function(){
     var x = document.getElementById("color-select");
-
     // convert hex to rgb
     // function hexToRgb(hex) {
     //     var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -12,8 +11,6 @@ $(document).ready(function(){
     //         b: parseInt(result[3], 16)
     //     } : null;
     // }
-
-    // var colors = [];
     var colors = [];
     $('#btnAdd').click(function(){
         if (colors.find(item => item === x.value)) {

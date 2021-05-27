@@ -653,8 +653,28 @@ K(e,function(d,e){if(!v&&-1<h.collectionsWithUpdate.indexOf(e))for(d=y(d),m[e]=[
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! highcharts */ "./node_modules/highcharts/highcharts.js");
 /* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(highcharts__WEBPACK_IMPORTED_MODULE_0__);
- // var all_filters = JSON.parse(document.getElementById('filters').value);
 
+/*import 'persian-datepicker/assets/persian-date.min';
+import 'persian-datepicker/dist/js/persian-datepicker.min';*/
+// var all_filters = JSON.parse(document.getElementById('filters').value);
+// console.log($('.observer-example').persianDatepicker());
+
+var pd = $('.observer-from').persianDatepicker({
+  observer: true,
+  format: 'YYYY/MM/DD',
+  altField: '.observer-from-alt',
+  persianDigit: false
+});
+console.log(pd.options);
+$('.observer-to').persianDatepicker({
+  observer: true,
+  format: 'YYYY/MM/DD',
+  altField: '.observer-to-alt',
+  persianDigit: false
+});
+$('#btnAdd').click(function () {
+  var to = document.getElementById('to').value;
+});
 var all_details = JSON.parse(document.getElementById('details').value);
 var nickname, index, options, i;
 $("#filter_id").change(function () {

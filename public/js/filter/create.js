@@ -120,7 +120,6 @@ $(document).ready(function () {
   //         b: parseInt(result[3], 16)
   //     } : null;
   // }
-  // var colors = [];
 
   var colors = [];
   $('#btnAdd').click(function () {

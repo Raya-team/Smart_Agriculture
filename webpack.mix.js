@@ -30,4 +30,5 @@ mix
     .postCss('resources/css/chosen.css', 'public/css')
     .postCss('resources/css/map.css', 'public/css')
     .postCss('resources/css/leaflet-measure-path.css', 'public/css')
+    .postCss('resources/css/highcharts.css', 'public/css')
 ;

@@ -49857,6 +49857,17 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/css/highcharts.css":
+/*!**************************************!*\
+  !*** ./resources/css/highcharts.css ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/css/leaflet-measure-path.css":
 /*!************************************************!*\
   !*** ./resources/css/leaflet-measure-path.css ***!
@@ -50046,9 +50057,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!*********************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/css/chosen.css ./resources/css/map.css ./resources/css/leaflet-measure-path.css ***!
-  \*********************************************************************************************************************************************************/
+/*!****************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/css/chosen.css ./resources/css/map.css ./resources/css/leaflet-measure-path.css ./resources/css/highcharts.css ***!
+  \****************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -50056,7 +50067,8 @@ __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\app.js */"./resou
 __webpack_require__(/*! G:\work\Smart_Agriculture\resources\sass\app.scss */"./resources/sass/app.scss");
 __webpack_require__(/*! G:\work\Smart_Agriculture\resources\css\chosen.css */"./resources/css/chosen.css");
 __webpack_require__(/*! G:\work\Smart_Agriculture\resources\css\map.css */"./resources/css/map.css");
-module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\css\leaflet-measure-path.css */"./resources/css/leaflet-measure-path.css");
+__webpack_require__(/*! G:\work\Smart_Agriculture\resources\css\leaflet-measure-path.css */"./resources/css/leaflet-measure-path.css");
+module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\css\highcharts.css */"./resources/css/highcharts.css");
 
 
 /***/ })

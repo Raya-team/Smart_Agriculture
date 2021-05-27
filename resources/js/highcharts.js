@@ -1,11 +1,30 @@
 import Ch from 'highcharts';
-
-
+/*import 'persian-datepicker/assets/persian-date.min';
+import 'persian-datepicker/dist/js/persian-datepicker.min';*/
 // var all_filters = JSON.parse(document.getElementById('filters').value);
+// console.log($('.observer-example').persianDatepicker());
+var pd = $('.observer-from').persianDatepicker({
+    observer: true,
+    format: 'YYYY/MM/DD',
+    altField: '.observer-from-alt',
+    persianDigit: false,
+});
+console.log(pd.options);
+$('.observer-to').persianDatepicker({
+    observer: true,
+    format: 'YYYY/MM/DD',
+    altField: '.observer-to-alt',
+    persianDigit: false,
+});
+
+
+
+
+$('#btnAdd').click(function(){
+    var to = document.getElementById('to').value;
+});
 var all_details = JSON.parse(document.getElementById('details').value);
-
 var nickname,index,options,i;
-
 $("#filter_id").change(function () {
     nickname = $(this).find(':selected').data('nickname');
     index = $(this).find(':selected').data('index');
@@ -20,7 +39,6 @@ $("#filter_id").change(function () {
             date.push(time);
         }
     }
-
     options =  {
         chart: {
             type: 'spline'

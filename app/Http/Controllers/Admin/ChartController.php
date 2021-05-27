@@ -8,6 +8,7 @@ use App\Models\Filter;
 use App\Models\Land;
 use App\Models\Sensor;
 use Illuminate\Http\Request;
+use Morilog\Jalali\Jalalian;
 
 class ChartController extends Controller
 {
@@ -48,20 +49,18 @@ class ChartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($sensor)
+    public function show(Request $request,$sensor)
     {
+//        $pdate = "1400/03/05";
+//         $a=Jalalian::fromFormat('Y/m/d', $pdate)->toCarbon();
+//          $from = $request->from;
+//        $c=Jalalian::fromFormat('Y/m/d', $from)->toCarbon();
+//        $to = $request->to;
+//        $a=Jalalian::fromFormat('Y/m/d', $to)->toCarbon();
         $details = Detail::where('sensor_id', $sensor)->get();
         $filters = Filter::all();
-
-        return view('admin.chart.index', compact(['filters','details']));
+        return view('admin.chart.index', compact(['filters','details','sensor']));
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
