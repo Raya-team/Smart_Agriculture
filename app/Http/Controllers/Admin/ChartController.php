@@ -51,13 +51,17 @@ class ChartController extends Controller
      */
     public function show(Request $request,$sensor)
     {
-//        $pdate = "1400/03/05";
-//         $a=Jalalian::fromFormat('Y/m/d', $pdate)->toCarbon();
-//          $from = $request->from;
-//        $c=Jalalian::fromFormat('Y/m/d', $from)->toCarbon();
-//        $to = $request->to;
-//        $a=Jalalian::fromFormat('Y/m/d', $to)->toCarbon();
-        $details = Detail::where('sensor_id', $sensor)->get();
+        if (request()->has('from') && request()->has('to')) {
+            $from = $this->convertNumbers($request->from);
+            $a = Jalalian::fromFormat('Y/m/d', $from)->toCarbon();
+            $to = $this->convertNumbers($request->to);
+            $b = Jalalian::fromFormat('Y/m/d', $to)->toCarbon();
+            $details = Detail::
+            where('sensor_id', $sensor)->
+            whereBetween('created_at' , [$a, $b])->get();
+        }else{
+            $details = Detail::where('sensor_id', $sensor)->get();
+        }
         $filters = Filter::all();
         return view('admin.chart.index', compact(['filters','details','sensor']));
     }
@@ -87,5 +91,13 @@ class ChartController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function convertNumbers($srting,$toPersian=true)
+    {
+        $en_num = array('0','1','2','3','4','5','6','7','8','9','/');
+        $fa_num = array('۰','۱','۲','۳','۴','۵','۶','۷','۸','۹','/');
+        if( $toPersian ) return str_replace($fa_num, $en_num, $srting);
+        else return str_replace($en_num, $fa_num, $srting);
     }
 }

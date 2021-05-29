@@ -34,7 +34,7 @@ Route::group(['middleware' => ['auth', 'auth.user']] , function (){
     Route::get('/user/lands', [LandController::class, 'index'])->name('user.lands');
     Route::get('/user/show/{land}', [LandController::class, 'show'])->name('user.land.show');
     Route::get('/user/heat/{land}', [LandController::class, 'heat'])->name('user.land.heat');
-    Route::resource('/chart-user',ChartController::class, ['parameters' => ['chart' => 'sensor']]);
+    Route::resource('/chart-user',ChartController::class, ['parameters' => ['chart-user' => 'sensor']]);
 });
 
 

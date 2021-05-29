@@ -25,15 +25,16 @@
                                 <form action="{{route('chart.show' , ['sensor' => $sensor])}}" method="get">
                                     <div class="form-group">
                                     <label>از تاریخ :</label>
-                                        <input name="fromalt" type="hidden" id="from" class="datepicker-demo observer-from-alt" placeholder="از تاریخ" >
                                         <input name="from" id="from" class="datepicker-demo observer-from pwt-datepicker-input-element" placeholder="از تاریخ" >
                                     </div>
                                     <div class="form-group">
                                     <label>تا تاریخ :</label>
-                                    <input name="toalt" type="hidden" id="to" class="datepicker-demo observer-to-alt pwt-datepicker-input-element" placeholder="تا تاریخ" >
                                     <input name="to" id="to" class="datepicker-demo observer-to pwt-datepicker-input-element" placeholder="تا تاریخ" >
                                     </div>
                                     <button type="submit" class="btn btn-primary">ثبت</button>
+                                </form>
+                                <form action="{{route('chart.show' , ['sensor' => $sensor])}}" method="get">
+                                    <button type="submit" class="btn btn-danger" style="margin-top: 20px">حذف تغییرات</button>
                                 </form>
                             </div>
                             <div class="box-tools pull-right">
@@ -83,7 +84,6 @@
     </section>
 @endsection
 @section('script')
-    {{--<script src="https://code.highcharts.com/modules/exporting.js"></script>--}}
     <script src="https://unpkg.com/persian-date@1.1.0/dist/persian-date.min.js"></script>
     <script src="https://unpkg.com/persian-datepicker@1.2.0/dist/js/persian-datepicker.min.js"></script>
     <script src="{{ asset('js/highcharts.js') }}"></script>
