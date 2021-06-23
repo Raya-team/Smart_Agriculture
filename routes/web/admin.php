@@ -30,7 +30,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
 //    if (Auth::user()->level == 1 || Auth::user()->level == 2){
 //        return 'level is 1';
-//    }
+//    }ddd
 //    auth()->loginUsingId(1);
     return view('welcome');
 });

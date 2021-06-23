@@ -52,7 +52,8 @@
           <entry key="exclude" value="1" />
           <entry key="gitignore" value="1" />
           <entry key="js" value="10" />
-          <entry key="php" value="27" />
+          <entry key="php" value="28" />
+          <entry key="yml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -62,15 +63,17 @@
           <entry key="Git exclude file" value="1" />
           <entry key="Git file" value="1" />
           <entry key="JavaScript" value="10" />
-          <entry key="PHP" value="13" />
+          <entry key="PHP" value="14" />
+          <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="9" />
           <entry key="js" value="52" />
-          <entry key="php" value="586" />
+          <entry key="php" value="589" />
           <entry key="txt" value="5" />
+          <entry key="yml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -78,8 +81,9 @@
           <entry key="Blade" value="167" />
           <entry key="Git file" value="9" />
           <entry key="JavaScript" value="52" />
-          <entry key="PHP" value="419" />
+          <entry key="PHP" value="422" />
           <entry key="PLAIN_TEXT" value="5" />
+          <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -137,11 +141,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="192">
               <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.cpanel.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="4" column="23" lean-forward="true" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/web/admin.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="32" column="10" lean-forward="true" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -219,7 +241,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/admin/sensors/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/master.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" />
         <option value="$PROJECT_DIR$/resources/js/leaflet/land-create.js" />
@@ -241,7 +262,6 @@
         <option value="$PROJECT_DIR$/resources/js/leaflet/land-heat.js" />
         <option value="$PROJECT_DIR$/node_modules/leaflet-webgl-heatmap/src/webgl-heatmap/webgl-heatmap.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/User/SensorController.php" />
-        <option value="$PROJECT_DIR$/routes/web/admin.php" />
         <option value="$PROJECT_DIR$/resources/views/user/lands/heat.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/user/lands/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/js/leaflet/land-heat-User.js" />
@@ -270,6 +290,8 @@
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
         <option value="$PROJECT_DIR$/server.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/.cpanel.yml" />
+        <option value="$PROJECT_DIR$/routes/web/admin.php" />
       </list>
     </option>
   </component>
@@ -461,6 +483,17 @@
             <path>
               <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
               <item name="Smart agriculture" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Smart agriculture" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Smart agriculture" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -701,7 +734,7 @@
       <workItem from="1623234491426" duration="1315000" />
       <workItem from="1623302763441" duration="401000" />
       <workItem from="1624169774252" duration="760000" />
-      <workItem from="1624426362059" duration="6894000" />
+      <workItem from="1624426362059" duration="7314000" />
     </task>
     <task id="LOCAL-00039" summary="Ehsan">
       <created>1615363820725</created>
@@ -1050,7 +1083,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1011167000" />
+    <option name="totallyTimeSpent" value="1011587000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1063,8 +1096,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5419075" visible="true" weight="0.212609" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5419075" visible="true" weight="0.212609" />
       <window_info id="Structure" order="1" sideWeight="0.43641618" side_tool="true" weight="0.2112676" />
       <window_info auto_hide="true" id="npm" order="2" sideWeight="0.44364163" side_tool="true" weight="0.1965124" />
       <window_info id="Favorites" order="3" sideWeight="0.44942197" side_tool="true" weight="0.20590208" />
@@ -1081,7 +1115,7 @@
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.5549133" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.501006" side_tool="true" weight="0.24855492" />
       <window_info anchor="bottom" auto_hide="true" id="Run" order="12" sideWeight="0.45809248" weight="0.38439307" />
-      <window_info active="true" anchor="bottom" auto_hide="true" id="Terminal" order="13" sideWeight="0.49966466" visible="true" weight="0.56213874" />
+      <window_info anchor="bottom" auto_hide="true" id="Terminal" order="13" sideWeight="0.49966466" weight="0.56213874" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1156,13 +1190,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Ehsan" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/js/filter/create.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/filters/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="134">
@@ -1256,13 +1283,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="672">
           <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="53" column="83" selection-start-line="53" selection-start-column="83" selection-end-line="53" selection-end-column="83" />
         </state>
       </provider>
     </entry>
@@ -1478,6 +1498,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.cpanel.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="23" lean-forward="true" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="32" column="10" lean-forward="true" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
         </state>
       </provider>
     </entry>
