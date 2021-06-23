@@ -1,0 +1,11 @@
+/*
+	Leaflet.contextmenu, a context menu for Leaflet.
+	(c) 2015, Adam Ratcliffe, GeoSmart Maps Limited
+
+	@preserve
+*/
+
+/* @preserve
+ * Leaflet 1.7.1, a JS library for interactive maps. http://leafletjs.com
+ * (c) 2010-2019 Vladimir Agafonkin, (c) 2010-2011 CloudMade
+ */

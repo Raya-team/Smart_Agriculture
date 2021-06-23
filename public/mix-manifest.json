@@ -1,0 +1,21 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
+    "/css/chosen.css": "/css/chosen.css",
+    "/css/map.css": "/css/map.css",
+    "/css/leaflet-measure-path.css": "/css/leaflet-measure-path.css",
+    "/css/highcharts.css": "/css/highcharts.css",
+    "/js/chosen.js": "/js/chosen.js",
+    "/js/dashboard/map.js": "/js/dashboard/map.js",
+    "/js/filter/create.js": "/js/filter/create.js",
+    "/js/filter/edit.js": "/js/filter/edit.js",
+    "/js/highcharts.js": "/js/highcharts.js",
+    "/js/leaflet/land-create.js": "/js/leaflet/land-create.js",
+    "/js/leaflet/land-edit.js": "/js/leaflet/land-edit.js",
+    "/js/leaflet/land-heat.js": "/js/leaflet/land-heat.js",
+    "/js/leaflet/land-heat-User.js": "/js/leaflet/land-heat-User.js",
+    "/js/leaflet/land-show.js": "/js/leaflet/land-show.js",
+    "/js/leaflet/sensor-create.js": "/js/leaflet/sensor-create.js",
+    "/js/leaflet/sensor-edit.js": "/js/leaflet/sensor-edit.js",
+    "/js/leaflet/test.js": "/js/leaflet/test.js"
+}
