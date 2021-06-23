@@ -337,6 +337,8 @@
                 <li class="header">منو</li>
                 <li><a href="{{ route('user.dashboard') }}"><i class="fa fa-dashboard"></i><span>داشبورد</span></a></li>
                 <li><a href="{{ route('user.lands') }}"><i class="fa fa-fw fa-dot-circle-o"></i><span>زمین ها</span></a></li>
+                <li><a href="#"><i class="fa fa-fw fa-file-text-o"></i><span>گزارش</span></a></li>
+                <li><a href="#"><i class="fa fa-fw fa-bell-o"></i><span>اعلانات</span></a></li>
             </ul>
         </section>
         <!-- /.sidebar -->

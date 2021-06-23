@@ -11,20 +11,7 @@
     <section class="content">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-            <div class="col-lg-4 col-xs-4" style="height:180px">
-                <!-- small box -->
-                <div class="small-box bg-yellow"  >
-                    <div class="inner">
-                        <h3>{{ $users_count }}</h3>
-                        <p style="font-size:18px"><b>کاربران سامانه</b></p>
-                    </div>
-                    <div class="icon" style="padding-top: 12px">
-                        <i class="ion ion-person-add"></i>
-                    </div>
-                    <span  class="small-box-footer" style="background-color: #f39c12; color: #f39c12; height: 30px "> </span>
-                </div>
-            </div>
-            <div class="col-lg-4 col-xs-4">
+            <div class="col-lg-6 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-aqua">
                     <div class="inner">
@@ -37,7 +24,7 @@
                     <span class="small-box-footer" style="background-color: #00c0ef; color: #00c0ef; height: 30px"></span>
                 </div>
             </div>
-            <div class="col-lg-4 col-xs-4">
+            <div class="col-lg-6 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-red">
                     <div class="inner">
@@ -77,23 +64,23 @@
                     </div>
                 </div>
             </section>
-            <section class="col-lg-6 connectedSortable">
-                <div class="box box-solid bg-teal-gradient">
-                    <div class="box-header">
-                        <i class="fa fa-th"></i>
+            {{--<section class="col-lg-6 connectedSortable">--}}
+                {{--<div class="box box-solid bg-teal-gradient">--}}
+                    {{--<div class="box-header">--}}
+                        {{--<i class="fa fa-th"></i>--}}
 
-                        <h3 class="box-title">نمودار</h3>
+                        {{--<h3 class="box-title">نمودار</h3>--}}
 
-                        <div class="box-tools pull-left">
-                            <button type="button" class="btn bg-teal btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="box-body border-radius-none">
-                        <div class="chart" id="line-chart" style="height: 320px;"></div>
-                    </div>
-                </div>
-            </section>
+                        {{--<div class="box-tools pull-left">--}}
+                            {{--<button type="button" class="btn bg-teal btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>--}}
+                            {{--</button>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="box-body border-radius-none">--}}
+                        {{--<div class="chart" id="line-chart" style="height: 320px;"></div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</section>--}}
         </div>
         <input type="hidden" value="{{ $details }}" id="details">
     </section>

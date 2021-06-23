@@ -126,11 +126,9 @@ class UserController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy(User $user, Request $request)
     {
-        $user = User::findOrFail($request->user_id);
         $user->delete();
-
         alert()->success('کاربر با موفقیت حذف شد');
         return back();
     }

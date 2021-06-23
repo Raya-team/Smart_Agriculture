@@ -83,23 +83,23 @@
                     </div>
                 </div>
             </section>
-            <section class="col-lg-6 connectedSortable">
-                <div class="box box-solid bg-teal-gradient">
-                    <div class="box-header">
-                        <i class="fa fa-th"></i>
+            {{--<section class="col-lg-6 connectedSortable">--}}
+                {{--<div class="box box-solid bg-teal-gradient">--}}
+                    {{--<div class="box-header">--}}
+                        {{--<i class="fa fa-th"></i>--}}
 
-                        <h3 class="box-title">نمودار</h3>
+                        {{--<h3 class="box-title">نمودار</h3>--}}
 
-                        <div class="box-tools pull-left">
-                            <button type="button" class="btn bg-teal btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="box-body border-radius-none">
-                        <div class="chart" id="line-chart" style="height: 320px;"></div>
-                    </div>
-                </div>
-            </section>
+                        {{--<div class="box-tools pull-left">--}}
+                            {{--<button type="button" class="btn bg-teal btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>--}}
+                            {{--</button>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="box-body border-radius-none">--}}
+                        {{--<div class="chart" id="line-chart" style="height: 320px;"></div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</section>--}}
         </div>
         <input type="hidden" value="{{ $details }}" id="details">
     </section>

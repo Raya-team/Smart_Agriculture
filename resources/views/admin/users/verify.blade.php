@@ -52,36 +52,13 @@
                                                 </form>
                                             </span>
                                             <span class="spanFormat">
-                                                    <button class="btn btn-danger" data-userid="{{ $user->id }}" data-toggle="modal" data-target="#delete" data-tooltip="tooltip" data-placement="left" title="حذف"><i class="fa fa-fw fa-trash-o"></i></button>
+                                            <form action="{{ route('users.destroy' , ['user'=> $user->id]) }}" method="post">
+                                                {{ method_field('delete') }}
+                                                @csrf
+                                                <button class="btn btn-danger" data-userid="{{ $user->id }}" data-toggle="modal" data-target="#delete" data-tooltip="tooltip" data-placement="left" title="حذف"><i class="fa fa-fw fa-trash-o"></i></button>
+                                            </form>
                                             </span>
                                         </div>
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                        <h4 class="modal-title text-center" id="myModalLabel">تایید حذف</h4>
-                                                    </div>
-                                                    <form action="{{route('users.destroy',['user' => $user->id])}}" method="post">
-                                                        {{method_field('delete')}}
-                                                        {{csrf_field()}}
-                                                        <div class="modal-body">
-                                                            <p class="text-center">
-                                                                آیا از حذف این کاربر اطمینان دارین؟
-                                                            </p>
-                                                            <input type="hidden" name="user_id" id="user_id" value="">
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-primary" data-dismiss="modal">خیر، منصرف شدم</button>
-                                                            <button type="submit" class="btn btn-danger">بله، حذف شود</button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- /.modal -->
                                     </td>
                                 </tr>
                             @endforeach
