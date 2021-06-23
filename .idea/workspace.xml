@@ -52,7 +52,7 @@
           <entry key="exclude" value="1" />
           <entry key="gitignore" value="1" />
           <entry key="js" value="10" />
-          <entry key="php" value="28" />
+          <entry key="php" value="30" />
           <entry key="yml" value="1" />
         </counts>
       </usages-collector>
@@ -63,7 +63,7 @@
           <entry key="Git exclude file" value="1" />
           <entry key="Git file" value="1" />
           <entry key="JavaScript" value="10" />
-          <entry key="PHP" value="14" />
+          <entry key="PHP" value="16" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
@@ -123,6 +123,15 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Providers/AuthServiceProvider.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="362">
+              <caret line="30" column="59" lean-forward="true" selection-start-line="30" selection-start-column="59" selection-end-line="30" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -159,11 +168,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web/admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="32" column="10" lean-forward="true" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+            <state relative-caret-position="482">
+              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
             </state>
           </provider>
         </entry>
@@ -241,7 +250,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/admin/master.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" />
         <option value="$PROJECT_DIR$/resources/js/leaflet/land-create.js" />
         <option value="$PROJECT_DIR$/resources/css/leaflet-measure-path.css" />
@@ -292,6 +300,7 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/.cpanel.yml" />
         <option value="$PROJECT_DIR$/routes/web/admin.php" />
+        <option value="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
       </list>
     </option>
   </component>
@@ -483,6 +492,17 @@
             <path>
               <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
               <item name="Smart agriculture" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Smart agriculture" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Smart agriculture" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Providers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
@@ -734,7 +754,7 @@
       <workItem from="1623234491426" duration="1315000" />
       <workItem from="1623302763441" duration="401000" />
       <workItem from="1624169774252" duration="760000" />
-      <workItem from="1624426362059" duration="7314000" />
+      <workItem from="1624426362059" duration="8195000" />
     </task>
     <task id="LOCAL-00039" summary="Ehsan">
       <created>1615363820725</created>
@@ -1083,7 +1103,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1011587000" />
+    <option name="totallyTimeSpent" value="1012468000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1190,20 +1210,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Ehsan" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/filters/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="101" column="30" selection-start-line="99" selection-end-line="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/FilterController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/lands/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-279" />
@@ -1414,13 +1420,6 @@
         <state relative-caret-position="-671" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1510,8 +1509,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web/admin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="32" column="10" lean-forward="true" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+        <state relative-caret-position="482">
+          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/RouteServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-694" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/AuthServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="30" column="59" lean-forward="true" selection-start-line="30" selection-start-column="59" selection-end-line="30" selection-end-column="59" />
         </state>
       </provider>
     </entry>
