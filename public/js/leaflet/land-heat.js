@@ -16416,7 +16416,7 @@ $("#filter_id").change(function () {
   for (var i = 0; i < sensorsPoints.length; i++) {
     var marker_points = [sensorsPoints[i][0], sensorsPoints[i][1]];
     var ValueOfSensor = sensorsPoints[i][2];
-    var linkChartOfSensor = "https://tecno-agric.ir/chart/" + sensorsPoints[i][3];
+    var linkChartOfSensor = "https://techno-agric.ir/chart/" + sensorsPoints[i][3];
     shipLayer.addLayer(leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.marker(marker_points, {
       icon: icon
     }).addTo(map).bindPopup(htmlPopUp(linkChartOfSensor, ValueOfSensor, index)));
