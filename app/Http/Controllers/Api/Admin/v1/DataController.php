@@ -31,19 +31,21 @@ class DataController extends Controller
             }
             $detail->filter_id = $filter[$i]['id'];
             $nameFilter = $filter[$i]['name'];
-            if ($request->$nameFilter != "NAN" && $request->$nameFilter != null){
+            if ($request->$nameFilter && $request->$nameFilter != "NAN" && $request->$nameFilter != null){
                 $detail->value = $request->$nameFilter;
-
-            } elseif ($request->$nameFilter == null || $request->$nameFilter == "NAN") {
+            } elseif ($request->$nameFilter && $request->$nameFilter == null || $request->$nameFilter == "NAN") {
                 $lastVal = Detail::where('sensor_id', $sensor_id)->where('filter_id', $detail->filter_id)->get()->last();
-                $detail->value = $lastVal->value;
+                return $lastVal;
+                if ($lastVal){
+                    $detail->value = $lastVal->value;
+                }
             }else{
                 continue;
             }
             $detail->save();
         }
-        $rand = rand(1000,9999) . Carbon::now()->microsecond . ".json";
-        Storage::put($rand, json_encode($request->all()));
+//        $rand = rand(1000,9999) . Carbon::now()->microsecond . ".json";
+//        Storage::put($rand, json_encode($request->all()));
         return response('Saved',201);
     }
 
