@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -16308,10 +16308,10 @@ source : http://johndyer.name/native-fullscreen-javascript-api-plus-jquery-plugi
 
 /***/ }),
 
-/***/ "./resources/js/leaflet/land-heat-User.js":
-/*!************************************************!*\
-  !*** ./resources/js/leaflet/land-heat-User.js ***!
-  \************************************************/
+/***/ "./resources/js/leaflet/land-heat.js":
+/*!*******************************************!*\
+  !*** ./resources/js/leaflet/land-heat.js ***!
+  \*******************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -16336,16 +16336,18 @@ var geojson = document.getElementById('eventoutput').value;
 var points = JSON.parse(geojson);
 var Center = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]).getBounds().getCenter();
 var map = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.map('mapid', {
-  contextmenu: true,
-  contextmenuWidth: 140,
-  contextmenuItems: [{
-    text: 'اینجا کجاست؟',
-    callback: WhatHere,
-    icon: "https://fastcode.space/wp-content/uploads/2019/11/Location-Icon-Creative-Design-Template.jpg"
-  }],
-  fullscreenControl: true //TODO lat_lng
-
-}).setView([36.297418, 59.616795], 12);
+  // contextmenu: true,
+  // contextmenuWidth: 140,
+  // contextmenuItems: [{
+  //     text: 'اینجا کجاست؟',
+  //     callback: WhatHere,
+  //     icon: "https://fastcode.space/wp-content/uploads/2019/11/Location-Icon-Creative-Design-Template.jpg"
+  // }],
+  fullscreenControl: true
+}).setView([Center['lat'], Center['lng']], 5);
+map.flyToBounds(new leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]).getBounds(), {
+  'duration': 3
+});
 map.attributionControl.setPrefix('<a href="#">ناهید آسمان ایرانیان</a>');
 leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png').addTo(map);
 
@@ -16414,7 +16416,7 @@ $("#filter_id").change(function () {
   for (var i = 0; i < sensorsPoints.length; i++) {
     var marker_points = [sensorsPoints[i][0], sensorsPoints[i][1]];
     var ValueOfSensor = sensorsPoints[i][2];
-    var linkChartOfSensor = "http://127.0.0.1:8000/chart-user/" + sensorsPoints[i][3];
+    var linkChartOfSensor = "https://tecno-agric.ir/chart/" + sensorsPoints[i][3];
     shipLayer.addLayer(leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.marker(marker_points, {
       icon: icon
     }).addTo(map).bindPopup(htmlPopUp(linkChartOfSensor, ValueOfSensor, index)));
@@ -16423,14 +16425,14 @@ $("#filter_id").change(function () {
 
 /***/ }),
 
-/***/ 8:
-/*!******************************************************!*\
-  !*** multi ./resources/js/leaflet/land-heat-User.js ***!
-  \******************************************************/
+/***/ 7:
+/*!*************************************************!*\
+  !*** multi ./resources/js/leaflet/land-heat.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\laravel\Work\Smart agriculture\resources\js\leaflet\land-heat-User.js */"./resources/js/leaflet/land-heat-User.js");
+module.exports = __webpack_require__(/*! F:\laravel\Work\Smart agriculture\resources\js\leaflet\land-heat.js */"./resources/js/leaflet/land-heat.js");
 
 
 /***/ })

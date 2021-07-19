@@ -13,8 +13,8 @@
                         <h3 class="box-title">نمایش زمین</h3>
                     </div>
                     <div class="box-body">
-                        <label>فیلتر</label>
-                        <select class="form-control chosen-select ccc" style="width: 100%;" name="filter_id" id="filter_id" data-placeholder="فیلتر خود را انتخاب کنید">
+                        <label>پارامتر</label>
+                        <select class="form-control chosen-select ccc" style="width: 100%;" name="filter_id" id="filter_id" data-placeholder="پارامتر خود را انتخاب کنید">
                             <option value=""></option>
                             @foreach($filters as $filter)
                                 <option value="{{ $filter->id }}" data-max="{{ $filter->max }}" data-min="{{ $filter->min }}" data-index="{{ $filter->index }}" data-colors="{{ $filter->colors }}" >{{ $filter->nickname }}</option>

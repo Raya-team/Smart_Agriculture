@@ -64,30 +64,69 @@
                     </div>
                 </div>
             </section>
-            {{--<section class="col-lg-6 connectedSortable">--}}
-                {{--<div class="box box-solid bg-teal-gradient">--}}
-                    {{--<div class="box-header">--}}
-                        {{--<i class="fa fa-th"></i>--}}
+            <section class="col-lg-6 connectedSortable">
+                <div class="box box-solid bg-teal-gradient">
+                    <div class="box-header">
+                        <i class="fa fa-th"></i>
 
-                        {{--<h3 class="box-title">نمودار</h3>--}}
+                        <h3 class="box-title">وضعیت آب و هوا</h3>
 
-                        {{--<div class="box-tools pull-left">--}}
-                            {{--<button type="button" class="btn bg-teal btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>--}}
-                            {{--</button>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="box-body border-radius-none">--}}
-                        {{--<div class="chart" id="line-chart" style="height: 320px;"></div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</section>--}}
+                        <div class="box-tools pull-left">
+                            <button type="button" class="btn bg-teal btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body border-radius-none">
+                        <div class="chart" id="line-chart" style="height: 320px;">
+                            <div>دمای هوا : <span id="temp"></span></div>
+                            <div>دمای محسوس : <span id="feelsLike"></span></div>
+                            <div>فشار : <span id="pressure"></span></div>
+                            <div>رطوبت : <span id="humidity"></span></div>
+                            <div>سرعت باد : <span id="windSpeed"></span></div>
+                            <div>زاویه باد : <span id="windDeg"></span></div>
+                            <div>مکان : <span id="name"></span></div>
+                            <div>وضعیت : <span id="description"></span></div>
+                            <div>آیکون : <span id="iconUrl"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
         <input type="hidden" value="{{ $details }}" id="details">
+        {{--<input type="hidden" value="{{ $response }}" id="response">--}}
     </section>
 
 @endsection
 @section('script')
+
     <script src="{{ asset('js/dashboard/map.js')}}"></script>
+    <script>
+        const url = "https://api.openweathermap.org/data/2.5/weather?q=Mashhad&lang=fa&units=metric&appid=72bc22de4339f28f95a619c28a70b30a"
+        var temp,feelsLike,pressure,humidity,windSpeed,windDeg,name,description,icon,iconUrl
+        $.getJSON(url, function (data) {
+            // console.log(data.weather[0].icon);
+            temp = `°${Math.round(data.main.temp)}`;
+            feelsLike = `°${Math.round(data.main.feels_like)}`;
+            pressure = data.main.pressure;
+            humidity = `${data.main.humidity}%`;
+            windSpeed = data.wind.speed;
+            windDeg = data.wind.deg;
+            name = data.name;
+            description = data.weather[0].description;
+            icon = data.weather[0].icon;
+            iconUrl = `<img src="http://openweathermap.org/img/wn/${icon}@2x.png">`;
+
+            document.getElementById('temp').innerHTML = temp;
+            document.getElementById('feelsLike').innerHTML = feelsLike;
+            document.getElementById('pressure').innerHTML = pressure;
+            document.getElementById('humidity').innerHTML = humidity;
+            document.getElementById('windSpeed').innerHTML = windSpeed;
+            document.getElementById('windDeg').innerHTML = windDeg;
+            document.getElementById('name').innerHTML = name;
+            document.getElementById('description').innerHTML = description;
+            document.getElementById('iconUrl').innerHTML = iconUrl;
+        });
+    </script>
 @endsection
 @section('css')
     <link rel="stylesheet" href="{{asset('css/map.css')}}">

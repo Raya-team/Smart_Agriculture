@@ -15,7 +15,7 @@ class Controller extends BaseController
 
     protected function UploadImage($file, $user_image){
         if ($user_image != "/upload/images/default-profile.png"){
-            $address_file = public_path() . $user_image;
+            $address_file = public_path('public_html') . $user_image;
             if (file_exists($address_file)){
                 unlink($address_file);
             }

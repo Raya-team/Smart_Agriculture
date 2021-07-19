@@ -9,16 +9,17 @@ var points = JSON.parse(geojson);
 var Center = L.polygon([points]).getBounds().getCenter();
 
 let map = L.map('mapid', {
-    contextmenu: true,
-    contextmenuWidth: 140,
-    contextmenuItems: [{
-        text: 'اینجا کجاست؟',
-        callback: WhatHere,
-        icon: "https://fastcode.space/wp-content/uploads/2019/11/Location-Icon-Creative-Design-Template.jpg"
-    }],
+    // contextmenu: true,
+    // contextmenuWidth: 140,
+    // contextmenuItems: [{
+    //     text: 'اینجا کجاست؟',
+    //     callback: WhatHere,
+    //     icon: "https://fastcode.space/wp-content/uploads/2019/11/Location-Icon-Creative-Design-Template.jpg"
+    // }],
     fullscreenControl: true,
-    //TODO lat_lng
-}).setView([36.297418, 59.616795], 12);
+}).setView([Center['lat'],Center['lng']], 5);
+
+map.flyToBounds(new L.polygon([points]).getBounds(), {'duration':3});
 
 map.attributionControl.setPrefix('<a href="#">ناهید آسمان ایرانیان</a>');
 
@@ -108,7 +109,7 @@ $("#filter_id").change(function () {
     for (var i = 0; i < sensorsPoints.length; i++) {
         var marker_points = [sensorsPoints[i][0], sensorsPoints[i][1]];
         var ValueOfSensor = sensorsPoints [i][2];
-        var linkChartOfSensor = "http://127.0.0.1:8000/chart-user/" + sensorsPoints [i][3];
+        var linkChartOfSensor = "https://tecno-agric.ir/chart-user/" + sensorsPoints [i][3];
         shipLayer.addLayer(L.marker(marker_points, {icon: icon}).addTo(map)
             .bindPopup(
                 htmlPopUp(linkChartOfSensor, ValueOfSensor, index)

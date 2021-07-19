@@ -20,16 +20,16 @@ class DashboardController extends Controller
         $lands = Land::where('user_id', $user_id)->get();
         $sensors = Sensor::all();
         $user_sensors=[];
-            foreach ($lands as $land)
+        foreach ($lands as $land)
+        {
+            foreach ($sensors as $sensor)
             {
-                foreach ($sensors as $sensor)
+                if($land->id == $sensor->land_id)
                 {
-                    if($land->id == $sensor->land_id)
-                    {
-                        array_push($user_sensors,$sensor);
-                    }
+                    array_push($user_sensors,$sensor);
                 }
             }
+        }
         $sensors_count = count($user_sensors);
         $details = [];
         $all_details = Detail::createdAtDesc()->get();

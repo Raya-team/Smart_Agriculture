@@ -56,3 +56,6 @@ Route::group(['middleware' =>['auth', 'auth.admin']] , function (){
     Route::resource('/chart',ChartController::class, ['parameters' => ['chart' => 'sensor']]);
 });
 Route::post('/user_register',[RegisterController::class, 'store'])->name('user.register');
+Route::get('/migrate', function (){
+    return \Illuminate\Support\Facades\Artisan::call('migrate');
+});

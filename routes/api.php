@@ -19,8 +19,9 @@ use App\Http\Controllers\Api\Admin\v1;
 //    return $request->user();
 //});
 
-Route::prefix('admin/v1')->group(function () {
+Route::prefix('v1')->group(function () {
     Route::middleware('auth:api')->group(function () {
         Route::resource('/user-api' , v1\UserController::class);
     });
+    Route::get('/data-api',[v1\DataController::class,'store']);
 });
