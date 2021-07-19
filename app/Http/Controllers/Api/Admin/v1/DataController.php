@@ -14,6 +14,7 @@ class DataController extends Controller
 {
     public function store(Request $request)
     {
+//        return $request;
         $filter = Filter::all(['name', 'id']);
         $sensors = Sensor::all(['serial', 'id']);
         if ($request->Latitude && $request->Longitude){
@@ -33,13 +34,15 @@ class DataController extends Controller
             $nameFilter = $filter[$i]['name'];
             if ($request->$nameFilter && $request->$nameFilter != "NAN" && $request->$nameFilter != null){
                 $detail->value = $request->$nameFilter;
-            } elseif ($request->$nameFilter && $request->$nameFilter == null || $request->$nameFilter == "NAN") {
+            } elseif ($request->$nameFilter == "NAN" || $request->$nameFilter == null) {
                 $lastVal = Detail::where('sensor_id', $sensor_id)->where('filter_id', $detail->filter_id)->get()->last();
-                return $lastVal;
                 if ($lastVal){
                     $detail->value = $lastVal->value;
+                }else{
+                    continue;
                 }
             }else{
+                return 'weq';
                 continue;
             }
             $detail->save();
