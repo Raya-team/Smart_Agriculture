@@ -42,7 +42,6 @@ class DataController extends Controller
                     continue;
                 }
             }else{
-                return 'weq';
                 continue;
             }
             $detail->save();
