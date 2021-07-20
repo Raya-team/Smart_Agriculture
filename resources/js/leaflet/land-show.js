@@ -57,5 +57,8 @@ var _baseLayers = {
 L.control.layers(_baseLayers, null, {position: "bottomright"}).addTo(map);
 
 
-L.polygon([points]).addTo(map)
-    .showMeasurements();
+setTimeout(()=>{
+    L.polygon([points]).addTo(map)
+        .showMeasurements();
+}, 3000);
+

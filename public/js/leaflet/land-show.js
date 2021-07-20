@@ -15485,7 +15485,9 @@ var _baseLayers = {
 leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.control.layers(_baseLayers, null, {
   position: "bottomright"
 }).addTo(map);
-leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]).addTo(map).showMeasurements();
+setTimeout(function () {
+  leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points]).addTo(map).showMeasurements();
+}, 3000);
 
 /***/ }),
 

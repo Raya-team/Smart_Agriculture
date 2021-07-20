@@ -29,7 +29,9 @@ function WhatHere(e) {
     alert(e.latlng);
 }
 
-L.polygon([points], {color: "#79acff"}).addTo(map);
+setTimeout(()=>{
+    L.polygon([points], {color: "#79acff"}).addTo(map);
+}, 3000);
 
 var colorsjson = document.getElementById('filters').value;
 var colors = JSON.parse(colorsjson);

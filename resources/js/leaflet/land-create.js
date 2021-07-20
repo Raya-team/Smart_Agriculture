@@ -72,6 +72,7 @@ L.control.measure({
     completedColor: '#9b2d14',
     primaryLengthUnit: 'meters',
     secondaryLengthUnit: 'kilometers',
+    primaryAreaUnit: 'sqmeters',
     localization: 'fa',
     popupOptions: {className: 'leaflet-measure-resultpopup', autoPanPadding: [10, 10]}
 }).addTo(map);
@@ -85,7 +86,7 @@ $(".leaflet-control-measure").hover(
             );
         } else {
             if (!$('#eventoutput').value) {
-                console.log('asdasd');
+                // console.log('asdasd');
                 $(".js-startprompt").show();
             }
         }
@@ -108,6 +109,7 @@ const renderMeasure = () => {
 };
 
 map.on('measurefinish', function (evt) {
+    console.log(evt);
     document.getElementById('eventoutput').value = JSON.stringify(evt.points);
 });
 

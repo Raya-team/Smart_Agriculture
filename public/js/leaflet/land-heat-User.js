@@ -16355,9 +16355,11 @@ function WhatHere(e) {
   alert(e.latlng);
 }
 
-leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points], {
-  color: "#79acff"
-}).addTo(map);
+setTimeout(function () {
+  leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points], {
+    color: "#79acff"
+  }).addTo(map);
+}, 3000);
 var colorsjson = document.getElementById('filters').value;
 var colors = JSON.parse(colorsjson);
 var detailjson = document.getElementById('details').value;

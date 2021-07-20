@@ -15090,6 +15090,7 @@ leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.control.measure({
   completedColor: '#9b2d14',
   primaryLengthUnit: 'meters',
   secondaryLengthUnit: 'kilometers',
+  primaryAreaUnit: 'sqmeters',
   localization: 'fa',
   popupOptions: {
     className: 'leaflet-measure-resultpopup',
@@ -15102,7 +15103,7 @@ $(".leaflet-control-measure").hover(function () {
     $(".leaflet-control-measure").append("<p class='text-center p-2 h6' id='fullLand'><i class='fa fa-exclamation'></i>تنها یک مزرعه می توانید ثبت کنید</p>");
   } else {
     if (!$('#eventoutput').value) {
-      console.log('asdasd');
+      // console.log('asdasd');
       $(".js-startprompt").show();
     }
   }
@@ -15123,6 +15124,7 @@ var renderMeasure = function renderMeasure() {
 };
 
 map.on('measurefinish', function (evt) {
+  console.log(evt);
   document.getElementById('eventoutput').value = JSON.stringify(evt.points);
 });
 

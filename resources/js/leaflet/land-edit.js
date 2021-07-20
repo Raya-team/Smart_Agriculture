@@ -17,10 +17,12 @@ let map = L.map('mapid', {
 // (1) Zoom on polygon
 map.flyToBounds(new L.polygon([points]).getBounds(), {'duration':3});
 // End (1)
+setTimeout(()=>{
+    L.polygon([points],{
+        color: '#9b2d14'
+    }).addTo(map);
+}, 3000);
 
-L.polygon([points],{
-    color: '#9b2d14'
-}).addTo(map);
 
 L.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png').addTo(map);
 map.attributionControl.setPrefix('<a href="#">ناهید آسمان گستران</a>');
@@ -30,7 +32,7 @@ map.pm.addControls({
     position: 'topleft',
     drawMarker :false,
     drawCircleMarker :false,
-    drawPolygon :false,
+    drawPolygon :true,
     drawPolyline :false,
     drawRectangle :false,
     drawCircle: false,
@@ -46,6 +48,7 @@ L.control.measure({
     completedColor: '#9b2d14',
     primaryLengthUnit: 'meters',
     secondaryLengthUnit: 'kilometers',
+    primaryAreaUnit: 'sqmeters',
     localization: 'fa',
     popupOptions: {className: 'leaflet-measure-resultpopup', autoPanPadding: [10, 10]}
 }).addTo(map);
@@ -81,7 +84,7 @@ const getLayer = () => {
     return findLayer[0];
 };
 
-map.on('pm:globaleditmodetoggled', function() {
+map.on('pm:globaleditmodetoggled', function(evt) {
     let layer = getLayer();
     $('#eventoutput').val(JSON.stringify(layer));
 });
@@ -91,3 +94,11 @@ map.on('measurefinish', function (evt) {
 });
 
 map.pm.setLang('fa');
+
+map.pm.setGlobalOptions({
+    measurements: {
+        measurement: true,
+        area: true,
+        displayFormat: 'metric'
+    }
+});

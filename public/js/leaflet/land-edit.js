@@ -15113,16 +15113,18 @@ map.flyToBounds(new leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([poin
   'duration': 3
 }); // End (1)
 
-leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points], {
-  color: '#9b2d14'
-}).addTo(map);
+setTimeout(function () {
+  leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.polygon([points], {
+    color: '#9b2d14'
+  }).addTo(map);
+}, 3000);
 leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png').addTo(map);
 map.attributionControl.setPrefix('<a href="#">ناهید آسمان گستران</a>');
 map.pm.addControls({
   position: 'topleft',
   drawMarker: false,
   drawCircleMarker: false,
-  drawPolygon: false,
+  drawPolygon: true,
   drawPolyline: false,
   drawRectangle: false,
   drawCircle: false,
@@ -15136,6 +15138,7 @@ leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.control.measure({
   completedColor: '#9b2d14',
   primaryLengthUnit: 'meters',
   secondaryLengthUnit: 'kilometers',
+  primaryAreaUnit: 'sqmeters',
   localization: 'fa',
   popupOptions: {
     className: 'leaflet-measure-resultpopup',
@@ -15168,7 +15171,7 @@ var getLayer = function getLayer() {
   return findLayer[0];
 };
 
-map.on('pm:globaleditmodetoggled', function () {
+map.on('pm:globaleditmodetoggled', function (evt) {
   var layer = getLayer();
   $('#eventoutput').val(JSON.stringify(layer));
 });
@@ -15176,6 +15179,13 @@ map.on('measurefinish', function (evt) {
   document.getElementById('eventoutput').value = JSON.stringify(evt.points);
 });
 map.pm.setLang('fa');
+map.pm.setGlobalOptions({
+  measurements: {
+    measurement: true,
+    area: true,
+    displayFormat: 'metric'
+  }
+});
 
 /***/ }),
 
