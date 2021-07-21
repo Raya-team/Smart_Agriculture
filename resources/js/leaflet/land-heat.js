@@ -34,8 +34,8 @@ setTimeout(()=>{
 }, 3000);
 
 
-var colorsjson = document.getElementById('filters').value;
-var colors = JSON.parse(colorsjson);
+/*var colorsjson = document.getElementById('filters').value;
+var colors = JSON.parse(colorsjson);*/
 
 var detailjson = document.getElementById('details').value;
 var details = JSON.parse(detailjson);
@@ -49,25 +49,24 @@ $("#filter_id").change(function () {
     shipLayer.clearLayers();
     var filters = $(this).find(':selected').val();
     var index = $(this).find(':selected').data('index');
-    var colorSelected = JSON.stringify($(this).find(':selected').data('colors'));
-    document.getElementById('colors').value = colorSelected;
+    /*var colorSelected = JSON.stringify($(this).find(':selected').data('colors'));
+    document.getElementById('colors').value = colorSelected;*/
 
-    var max1 = $(this).find(':selected').data('max');
+    /*var max1 = $(this).find(':selected').data('max');
     var min1 = $(this).find(':selected').data('min');
     var max2 = 1;
-    var min2 = 0;
+    var min2 = 0;*/
     var datapoints = [];
     var sensorsPoints = [];
 
-    for (var c = 0; c < colors.length; c++) {
+    /*for (var c = 0; c < colors.length; c++) {
         if (colors[c]['id'] == filters) {
             var color = (colors[c]['colors']);
             //convert string to array
             var test = JSON.parse(color);
             // console.log(test[2]);
         }
-
-    }
+    }*/
     for (var d = 0; d < details.length; d++) {
         if (details[d]['filter_id'] == filters) {
 
@@ -75,21 +74,23 @@ $("#filter_id").change(function () {
             var val1 = details[d]['value'];
             var sensor_id = details[d]['sensor_id'];
 
-            var val2 = ((val1 - min1) / (max1 - min1)) * (max2 - min2) + min2;
+            // var val2 = ((val1 - min1) / (max1 - min1)) * (max2 - min2) + min2;
 
-            datapoints.push([loc[0]['lat'], loc[0]['lng'], val2]);
+            // datapoints.push([loc[0]['lat'], loc[0]['lng'], val2]);
+            datapoints.push(loc[0]['lat'], loc[0]['lng']);
             sensorsPoints.push([loc[0]['lat'], loc[0]['lng'], val1, sensor_id]);
+            // sensorsPoints.push([loc[0]['lat'], loc[0]['lng'], sensor_id]);
         }
     }
 
-    var heatmap = L.webGLHeatmap({
+    /*var heatmap = L.webGLHeatmap({
         size: 5000,
         opacity: 1,
         gradientTexture: false,
         alphaRange: 1
     });
     heatmap.setData(datapoints);
-    shipLayer.addLayer(heatmap);
+    shipLayer.addLayer(heatmap);*/
 
 
     // Create Marker

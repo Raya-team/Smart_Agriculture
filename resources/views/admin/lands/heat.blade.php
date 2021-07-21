@@ -17,7 +17,8 @@
                         <select class="form-control chosen-select ccc" style="width: 100%;" name="filter_id" id="filter_id" data-placeholder="پارامتر خود را انتخاب کنید">
                             <option value=""></option>
                             @foreach($filters as $filter)
-                                <option value="{{ $filter->id }}" data-max="{{ $filter->max }}" data-min="{{ $filter->min }}" data-index="{{ $filter->index }}" data-colors="{{ $filter->colors }}" >{{ $filter->nickname }}</option>
+{{--                                <option value="{{ $filter->id }}" data-max="{{ $filter->max }}" data-min="{{ $filter->min }}" data-index="{{ $filter->index }}" data-colors="{{ $filter->colors }}" >{{ $filter->nickname }}</option>--}}
+                                <option value="{{ $filter->id }}" data-index="{{ $filter->index }}">{{ $filter->nickname }}</option>
                             @endforeach
                         </select>
                     </div>
