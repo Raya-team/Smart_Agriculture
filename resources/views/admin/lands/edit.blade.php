@@ -54,6 +54,12 @@
     </section>
 @endsection
 @section('script')
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js"></script>
+    <script>
+        var polygon = turf.polygon([[[36.28504860143217, 59.62537555138496], [36.31191605745354, 59.56823193283226], [36.344858258590826, 59.634035973556], [36.31219271031355, 59.653835911312086]]]);
+        var area = turf.area(polygon);
+
+    </script>
     <script src="{{ asset('js/chosen.js') }}"></script>
     <script src="{{ asset('js/leaflet/land-edit.js') }}"></script>
 @endsection

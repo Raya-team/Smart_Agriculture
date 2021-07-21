@@ -41,23 +41,23 @@ class FilterController extends Controller
      */
     public function store(FilterRequest $request, Filter $filter)
     {
-        $color_num =  json_decode($request->colors);
+//        $color_num =  json_decode($request->colors);
 
-        if(count($color_num) == 5)
-        {
+//        if(count($color_num) == 5)
+//        {
             $filter->name = $request->input('name');
             $filter->nickname = $request->input('nickname');
             $filter->index = $request->input('index');
-            $filter->min = $request->input('minimum');
-            $filter->max = $request->input('maximum');
-            $filter->colors = $request->input('colors');
+//            $filter->min = $request->input('minimum');
+//            $filter->max = $request->input('maximum');
+//            $filter->colors = $request->input('colors');
             $filter->save();
             alert()->success('فیلتر با موفقیت ایجاد شد');
             return redirect(route('filters.index'));
-        } else {
-            Session::flash('colors', 'تعداد رنگ ها باید 5 تا باشد.');
-            return back();
-        }
+//        } else {
+//            Session::flash('colors', 'تعداد رنگ ها باید 5 تا باشد.');
+//            return back();
+//        }
     }
 
     /**
@@ -91,22 +91,22 @@ class FilterController extends Controller
      */
     public function update(EditFilterRequst $request, Filter $filter)
     {
-        $color_num =  json_decode($request->colors);
+//        $color_num =  json_decode($request->colors);
 
-        if(count($color_num) == 5) {
+//        if(count($color_num) == 5) {
             $filter->name = $request->input('name');
             $filter->nickname = $request->input('nickname');
             $filter->index = $request->input('index');
-            $filter->min = $request->input('min');
-            $filter->max = $request->input('max');
-            $filter->colors = $request->input('colors');
+//            $filter->min = $request->input('min');
+//            $filter->max = $request->input('max');
+//            $filter->colors = $request->input('colors');
             $filter->save();
             alert()->success('فیلتر با موفقیت ویرایش شد');
             return redirect(route('filters.index'));
-        } else {
-            Session::flash('colors', 'تعداد رنگ ها باید 5 تا باشد.');
-            return back();
-        }
+//        } else {
+//            Session::flash('colors', 'تعداد رنگ ها باید 5 تا باشد.');
+//            return back();
+//        }
     }
 
     /**

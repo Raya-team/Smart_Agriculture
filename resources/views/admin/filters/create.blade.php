@@ -38,7 +38,9 @@
                                 <label for="nickname">شاخص</label>
                                 <input type="text" class="form-control" name="index" id="index" placeholder="شاخص اندازه گیری" value="{{ old('index') }}">
                             </div>
-                            <div class="row">
+
+                            {{--Delete the max && min && color--}}
+                            {{--<div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label for="minimum">حداقل بازه</label>
@@ -94,7 +96,7 @@
                                         </table>
                                     </div>
                                 </div>
-                            </div>
+                            </div>--}}
 
                         </div>
                         <div class="box-footer">
@@ -107,7 +109,7 @@
     </section>
 @endsection
 @section('script')
-    <script src="{{ asset('js/filter/create.js') }}"></script>
+{{--    <script src="{{ asset('js/filter/create.js') }}"></script>--}}
     <script>
         $(function () {
             $('[data-tooltip="tooltip"]').tooltip()

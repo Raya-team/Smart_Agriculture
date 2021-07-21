@@ -17,11 +17,11 @@ var icon = new L.Icon.Default();
 
 for(var d=0;d<details.length;d++)
 {
-        var loc=(details[d]['location']);
-        var val1=(details[d]['value']);
-        //convert string to array
-        arr2.push(JSON.parse(loc));
-        arr2.push(JSON.parse(val1));
+    var loc=(details[d]['location']);
+    var val1=(details[d]['value']);
+    //convert string to array
+    arr2.push(JSON.parse(loc));
+    arr2.push(JSON.parse(val1));
 }
 
 for(var j=0;j<arr2.length/2;j++ )
