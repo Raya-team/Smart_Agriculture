@@ -18,13 +18,13 @@
                     <form role="form" action="{{route('filters.store')}}" method="POST">
                         @csrf
                         @include('admin.section.errors')
-                        @if(Session::has('colors'))
+                        {{--@if(Session::has('colors'))
                             <div class="alert alert-danger">
                                 <ul>
                                     <li>{{ Session::get('colors') }}</li>
                                 </ul>
                             </div>
-                        @endif
+                        @endif--}}
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="name">نام</label>

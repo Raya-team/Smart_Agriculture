@@ -19,13 +19,13 @@
                         @csrf
                         {{ method_field('PATCH') }}
                         @include('admin.section.errors')
-                        @if(Session::has('colors'))
+                        {{--@if(Session::has('colors'))
                             <div class="alert alert-danger">
                                 <ul>
                                     <li>{{ Session::get('colors') }}</li>
                                 </ul>
                             </div>
-                        @endif
+                        @endif--}}
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="name">نام پارامتر</label>
@@ -39,7 +39,9 @@
                                 <label for="nickname">شاخص</label>
                                 <input type="text" class="form-control" name="index" id="index" placeholder="شاخص اندازه گیری" value="{{ old('nickname', $filter->index) }}">
                             </div>
-                            <div class="row">
+
+                            {{--Delete the max && min && color--}}
+                            {{--<div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label for="min">حداقل بازه</label>
@@ -95,7 +97,9 @@
                                         </table>
                                     </div>
                                 </div>
-                            </div>
+                            </div>--}}
+
+
                         </div>
                         <div class="box-footer">
                             <button type="submit" class="btn btn-success">ویرایش</button>
@@ -107,7 +111,7 @@
     </section>
 @endsection
 @section('script')
-    <script src="{{asset('js/filter/edit.js')}}"></script>
+    {{--<script src="{{asset('js/filter/edit.js')}}"></script>--}}
     <script>
         $(function () {
             $('[data-tooltip="tooltip"]').tooltip()

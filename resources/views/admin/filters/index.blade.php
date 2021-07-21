@@ -32,8 +32,8 @@
                                 <th>نام پارامتر</th>
                                 <th>نام مستعار</th>
                                 <th>شاخص</th>
-                                <th>حداقل بازه</th>
-                                <th>حداکثر بازه</th>
+                                {{--<th>حداقل بازه</th>
+                                <th>حداکثر بازه</th>--}}
                                 <th>عملیات</th>
                             </tr>
                             </thead>
@@ -43,8 +43,8 @@
                                     <td>{{ $filter->name }}</td>
                                     <td>{{ $filter->nickname }}</td>
                                     <td>{{ $filter->index }}</td>
-                                    <td>{{ $filter->min }}</td>
-                                    <td>{{ $filter->max }}</td>
+                                    {{--<td>{{ $filter->min }}</td>
+                                    <td>{{ $filter->max }}</td>--}}
                                     <td>
                                         <form action="{{ route('filters.destroy' , ['filter'=> $filter->id]) }}" method="post">
                                             {{ method_field('delete') }}

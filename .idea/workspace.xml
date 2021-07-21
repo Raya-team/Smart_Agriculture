@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d703aa5-6bf4-4443-9648-150136637f3e" name="Default Changelist" comment="Ehsan">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/FilterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/FilterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/EditFilterRequst.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/EditFilterRequst.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Rules/Security.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/Security.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/dashboard/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/dashboard/map.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/filters/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/filters/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/lands/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/lands/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/dashboard/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/filters/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/filters/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/filters/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/filters/index.blade.php" afterDir="false" />
     </list>
     <ignored path="F:\laravel\Work\first\.idea\shelf/" />
     <ignored path="G:\work\Smart_Agriculture\.idea\shelf/" />
@@ -60,11 +55,11 @@
           <entry key="exclude" value="1" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="3" />
-          <entry key="js" value="43" />
+          <entry key="js" value="44" />
           <entry key="json" value="18" />
           <entry key="lock" value="2" />
           <entry key="md" value="1" />
-          <entry key="php" value="103" />
+          <entry key="php" value="107" />
           <entry key="txt" value="1" />
           <entry key="ver" value="1" />
           <entry key="xml" value="1" />
@@ -74,13 +69,13 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key=".env file" value="4" />
-          <entry key="Blade" value="29" />
+          <entry key="Blade" value="33" />
           <entry key="CSS" value="2" />
           <entry key="Git exclude file" value="1" />
           <entry key="Git file" value="1" />
           <entry key="HTML" value="3" />
           <entry key="JSON" value="20" />
-          <entry key="JavaScript" value="43" />
+          <entry key="JavaScript" value="44" />
           <entry key="Markdown" value="1" />
           <entry key="PHP" value="74" />
           <entry key="PLAIN_TEXT" value="2" />
@@ -92,14 +87,14 @@
         <counts>
           <entry key="gitignore" value="9" />
           <entry key="js" value="239" />
-          <entry key="php" value="5076" />
+          <entry key="php" value="5082" />
           <entry key="txt" value="5" />
           <entry key="yml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="1321" />
+          <entry key="Blade" value="1327" />
           <entry key="Git file" value="9" />
           <entry key="JavaScript" value="239" />
           <entry key="PHP" value="3755" />
@@ -142,49 +137,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/filter/create.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/filters/create.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="111" column="39" lean-forward="true" selection-start-line="111" selection-start-column="39" selection-end-line="111" selection-end-column="39" />
-              <folding>
-                <element signature="e#2178#6262#0#Blade" />
-                <element signature="e#3315#4370#0#HTML" />
-                <element signature="e#4399#4762#0#HTML" />
-                <element signature="e#4791#5171#0#HTML" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/FilterController.php">
+        <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-heat.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="47" column="33" lean-forward="true" selection-end-line="125" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2021_03_13_094139_create_filters_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="21" column="26" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Requests/EditFilterRequst.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="34" column="10" lean-forward="true" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
+            <state relative-caret-position="434">
+              <caret line="33" column="9" lean-forward="true" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+                <element signature="n#style#0;n#b#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -263,8 +226,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/User/LandController.php" />
-        <option value="$PROJECT_DIR$/resources/views/user/lands/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/sensors/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/css/highcharts.css" />
         <option value="$PROJECT_DIR$/resources/js/filter/create.js" />
@@ -312,8 +273,10 @@
         <option value="$PROJECT_DIR$/app/Rules/Security.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/FilterController.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/EditFilterRequst.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/filters/create.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2021_07_21_125749_remove_max_min_color.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/filters/create.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/filters/edit.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/filters/index.blade.php" />
       </list>
     </option>
   </component>
@@ -514,13 +477,7 @@
             <path>
               <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
               <item name="Smart agriculture" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Smart agriculture" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -779,7 +736,7 @@
       <workItem from="1626669748365" duration="3169000" />
       <workItem from="1626673669512" duration="20426000" />
       <workItem from="1626757334770" duration="10607000" />
-      <workItem from="1626854984002" duration="1407000" />
+      <workItem from="1626854984002" duration="2061000" />
     </task>
     <task id="LOCAL-00039" summary="Ehsan">
       <created>1615363820725</created>
@@ -1128,7 +1085,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1104148000" />
+    <option name="totallyTimeSpent" value="1104802000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1141,7 +1098,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5419075" visible="true" weight="0.17572099" />
       <window_info id="Structure" order="1" sideWeight="0.43641618" side_tool="true" weight="0.2112676" />
@@ -1235,8 +1191,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Ehsan" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/storage/app/7375869520.json" />
-    <entry file="file://$PROJECT_DIR$/storage/app/7542909307.json" />
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -1450,53 +1404,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-heat.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-            <element signature="n#style#0;n#b#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Filter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/EditFilterRequst.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="34" column="10" lean-forward="true" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2021_03_13_094139_create_filters_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="21" column="26" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/filter/create.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/filters/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="111" column="39" lean-forward="true" selection-start-line="111" selection-start-column="39" selection-end-line="111" selection-end-column="39" />
-          <folding>
-            <element signature="e#2178#6262#0#Blade" />
-            <element signature="e#3315#4370#0#HTML" />
-            <element signature="e#4399#4762#0#HTML" />
-            <element signature="e#4791#5171#0#HTML" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1507,10 +1418,77 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_03_13_094139_create_filters_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/FilterController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
           <caret line="47" column="33" lean-forward="true" selection-end-line="125" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/filter/create.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/EditFilterRequst.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="698">
+          <caret line="34" column="10" lean-forward="true" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/filters/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="104" column="54" lean-forward="true" selection-start-line="104" selection-start-column="54" selection-end-line="104" selection-end-column="54" />
+          <folding>
+            <element signature="e#880#1191#0#Blade" />
+            <element signature="e#2314#6421#0#Blade" />
+            <element signature="e#3385#4461#0#HTML" />
+            <element signature="e#4490#4853#0#HTML" />
+            <element signature="e#4882#5262#0#HTML" />
+            <element signature="e#5291#6345#0#HTML" />
+            <element signature="e#6885#7686#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/filters/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+          <folding>
+            <element signature="e#797#1108#0#Blade" />
+            <element signature="e#2178#6262#0#Blade" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/filters/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="47">
+          <caret line="26" column="20" lean-forward="true" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+          <folding>
+            <element signature="e#1968#2067#0#Blade" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-heat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="33" column="9" lean-forward="true" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+            <element signature="n#style#0;n#b#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
