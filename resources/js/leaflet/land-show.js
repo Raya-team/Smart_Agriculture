@@ -61,10 +61,4 @@ setTimeout(()=>{
 
     var polygon = L.polygon([points]).addTo(map)
         .showMeasurements();
-    // var area = geojsonArea.geometry(y);
-    // console.log(area);
 }, 3000);
-
-function showPolygonArea(e) {
-    // console.log(e);
-}
