@@ -6,9 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="7d703aa5-6bf4-4443-9648-150136637f3e" name="Default Changelist" comment="Ehsan">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/leaflet/land-heat.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/leaflet/land-heat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/leaflet/land-heat.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/leaflet/land-heat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/lands/heat.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/lands/heat.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/LandController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/LandController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/FilterRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/FilterRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/leaflet/land-create.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/leaflet/land-create.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/leaflet/land-edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/leaflet/land-edit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/leaflet/land-show.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/leaflet/land-show.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/leaflet/land-create.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/leaflet/land-create.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/leaflet/land-edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/leaflet/land-edit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/leaflet/land-show.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/leaflet/land-show.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/fa/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/fa/validation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/lands/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/lands/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/lands/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/lands/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/lands/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/lands/index.blade.php" afterDir="false" />
     </list>
     <ignored path="F:\laravel\Work\first\.idea\shelf/" />
     <ignored path="G:\work\Smart_Agriculture\.idea\shelf/" />
@@ -55,12 +66,12 @@
           <entry key="example" value="1" />
           <entry key="exclude" value="1" />
           <entry key="gitignore" value="1" />
-          <entry key="html" value="3" />
-          <entry key="js" value="45" />
+          <entry key="html" value="5" />
+          <entry key="js" value="63" />
           <entry key="json" value="18" />
           <entry key="lock" value="2" />
           <entry key="md" value="1" />
-          <entry key="php" value="108" />
+          <entry key="php" value="121" />
           <entry key="txt" value="1" />
           <entry key="ver" value="1" />
           <entry key="xml" value="1" />
@@ -70,15 +81,15 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key=".env file" value="4" />
-          <entry key="Blade" value="34" />
+          <entry key="Blade" value="37" />
           <entry key="CSS" value="2" />
           <entry key="Git exclude file" value="1" />
           <entry key="Git file" value="1" />
-          <entry key="HTML" value="3" />
+          <entry key="HTML" value="5" />
           <entry key="JSON" value="20" />
-          <entry key="JavaScript" value="45" />
+          <entry key="JavaScript" value="63" />
           <entry key="Markdown" value="1" />
-          <entry key="PHP" value="74" />
+          <entry key="PHP" value="84" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="XML" value="1" />
           <entry key="YAML" value="2" />
@@ -87,33 +98,35 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="9" />
-          <entry key="js" value="243" />
-          <entry key="php" value="5083" />
+          <entry key="js" value="1053" />
+          <entry key="php" value="5293" />
           <entry key="txt" value="5" />
           <entry key="yml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="1328" />
+          <entry key="Blade" value="1476" />
           <entry key="Git file" value="9" />
-          <entry key="JavaScript" value="243" />
-          <entry key="PHP" value="3755" />
+          <entry key="JavaScript" value="1053" />
+          <entry key="PHP" value="3817" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="24" />
+          <entry key="project.closed" value="26" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.114" value="1" />
+          <entry key="project.open.time.116" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.124" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.30" value="1" />
+          <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.34" value="1" />
           <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.39" value="1" />
@@ -128,7 +141,7 @@
           <entry key="project.open.time.64" value="1" />
           <entry key="project.open.time.72" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="25" />
+          <entry key="project.opened" value="27" />
         </counts>
       </usages-collector>
     </session>
@@ -138,26 +151,86 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/lands/heat.blade.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-show.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="13" column="26" lean-forward="true" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+            <state relative-caret-position="299">
+              <caret line="65" column="4" selection-start-line="65" selection-start-column="4" selection-end-line="66" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-heat.js">
+        <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-create.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="92" column="34" lean-forward="true" selection-start-line="92" selection-start-column="34" selection-end-line="92" selection-end-column="34" />
+            <state relative-caret-position="252">
+              <caret line="111" column="4" selection-start-line="111" selection-start-column="4" selection-end-line="111" selection-end-column="36" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
-                <element signature="n#style#0;n#b#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/lands/edit.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/lands/create.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-22">
+              <caret line="37" column="28" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-edit.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="314">
+              <caret line="95" column="40" selection-start-line="95" selection-start-column="40" selection-end-line="95" selection-end-column="40" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/LandController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-94">
+              <caret line="107" column="46" selection-start-line="107" selection-start-column="46" selection-end-line="107" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/lands/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
+              <folding>
+                <element signature="e#1341#1370#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2021_07_23_153433_add_area_column_to_lands_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="290">
+              <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -175,19 +248,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>arr2</find>
-      <find>colors2</find>
-      <find>max</find>
-      <find>color</find>
-      <find>green</find>
-      <find>intensity</find>
-      <find>سنسور</find>
-      <find>بد</find>
-      <find>بدو</find>
-      <find>$sensors</find>
-      <find>$arr</find>
-      <find>footer</find>
-      <find>نمودار ب</find>
       <find>@endsection</find>
       <find>year</find>
       <find>sens</find>
@@ -204,7 +264,20 @@
       <find>asdasd</find>
       <find>polygon</find>
       <find>polygo</find>
+      <find>push</find>
       <find>area</find>
+      <find>Distance</find>
+      <find>layers</find>
+      <find>_measurementLayer</find>
+      <find>measurement</find>
+      <find>log</find>
+      <find>showMeasurements</find>
+      <find>km</find>
+      <find>unit</find>
+      <find>total</find>
+      <find>measurefinish</find>
+      <find>calc</find>
+      <find>turf</find>
     </findStrings>
     <replaceStrings>
       <replace>داشبورد</replace>
@@ -236,13 +309,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/admin/sensors/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/css/highcharts.css" />
-        <option value="$PROJECT_DIR$/resources/js/filter/create.js" />
-        <option value="I:/software/installation/xampp/htdocs/test/index.php" />
-        <option value="G:/source code/racket/php/phplearn/13-oop/4-interface/oop-4.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ChartController.php" />
-        <option value="$PROJECT_DIR$/routes/web/user.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/User/ChartController.php" />
         <option value="$PROJECT_DIR$/resources/views/user/chart/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/chart/index.blade.php" />
@@ -271,12 +337,8 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/User/DashboardController.php" />
         <option value="$PROJECT_DIR$/resources/views/user/master.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Admin/v1/DataController.php" />
-        <option value="$PROJECT_DIR$/resources/js/leaflet/land-create.js" />
-        <option value="$PROJECT_DIR$/resources/js/leaflet/land-show.js" />
         <option value="$PROJECT_DIR$/resources/js/leaflet/land-heat-User.js" />
         <option value="$PROJECT_DIR$/resources/js/dashboard/map.js" />
-        <option value="$PROJECT_DIR$/resources/views/admin/lands/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/js/leaflet/land-edit.js" />
         <option value="$PROJECT_DIR$/resources/views/user/dashboard/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Rules/Security.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/FilterController.php" />
@@ -287,6 +349,17 @@
         <option value="$PROJECT_DIR$/resources/views/admin/filters/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/js/leaflet/land-heat.js" />
         <option value="$PROJECT_DIR$/resources/views/admin/lands/heat.blade.php" />
+        <option value="$PROJECT_DIR$/node_modules/leaflet-measure-path/leaflet-measure-path.js" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/FilterRequest.php" />
+        <option value="$PROJECT_DIR$/resources/lang/fa/validation.php" />
+        <option value="$PROJECT_DIR$/resources/js/leaflet/land-show.js" />
+        <option value="$PROJECT_DIR$/database/migrations/2021_07_23_153433_add_area_column_to_lands_table.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/lands/create.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/lands/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/lands/edit.blade.php" />
+        <option value="$PROJECT_DIR$/resources/js/leaflet/land-create.js" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/LandController.php" />
+        <option value="$PROJECT_DIR$/resources/js/leaflet/land-edit.js" />
       </list>
     </option>
   </component>
@@ -462,9 +535,9 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-15" />
+    <option name="y" value="-15" />
     <option name="width" value="1385" />
     <option name="height" value="745" />
   </component>
@@ -476,13 +549,38 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
               <item name="Smart agriculture" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Smart agriculture" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Smart agriculture" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Smart agriculture" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Smart agriculture" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
@@ -499,19 +597,14 @@
               <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
               <item name="Smart agriculture" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Smart agriculture" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="leaflet" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -528,16 +621,16 @@
     <property name="ts.external.directory.path" value="E:\App\PhpStorm 2018.2.4\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\laravel\Work\first\resources\js\land" />
-      <recent name="F:\laravel\Work\first\routes\web" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\work\Smart_Agriculture\resources\views\user" />
       <recent name="F:\laravel\Work\Smart agriculture\resources\js\leaflet" />
       <recent name="F:\laravel\Work\Smart agriculture\resources\js" />
       <recent name="F:\laravel\Work\Smart agriculture\resources\views\user\lands" />
       <recent name="F:\laravel\Work\first\public\user" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\laravel\Work\first\resources\js\land" />
+      <recent name="F:\laravel\Work\first\routes\web" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -765,7 +858,9 @@
       <workItem from="1626669748365" duration="3169000" />
       <workItem from="1626673669512" duration="20426000" />
       <workItem from="1626757334770" duration="10607000" />
-      <workItem from="1626854984002" duration="3821000" />
+      <workItem from="1626854984002" duration="13393000" />
+      <workItem from="1626941315730" duration="1191000" />
+      <workItem from="1627025521162" duration="8742000" />
     </task>
     <task id="LOCAL-00039" summary="Ehsan">
       <created>1615363820725</created>
@@ -1114,7 +1209,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1106562000" />
+    <option name="totallyTimeSpent" value="1126067000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1126,10 +1221,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
+    <frame x="-6" y="-6" width="1549" height="837" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5419075" visible="true" weight="0.17572099" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5419075" visible="true" weight="0.18108653" />
       <window_info id="Structure" order="1" sideWeight="0.43641618" side_tool="true" weight="0.2112676" />
       <window_info auto_hide="true" id="npm" order="2" sideWeight="0.44364163" side_tool="true" weight="0.1965124" />
       <window_info id="Favorites" order="3" sideWeight="0.44942197" side_tool="true" weight="0.20590208" />
@@ -1221,52 +1316,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Ehsan" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/image.php" />
-    <entry file="file://$PROJECT_DIR$/config/ignition.php" />
-    <entry file="file://$PROJECT_DIR$/config/trustedproxy.php" />
-    <entry file="file://$PROJECT_DIR$/config/tinker.php" />
-    <entry file="file://$PROJECT_DIR$/config/sweet-alert.php" />
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/process/Pipes/WindowsPipes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/flare.php" />
-    <entry file="file://$PROJECT_DIR$/config/openweather.php" />
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="162" column="51" lean-forward="true" selection-start-line="162" selection-start-column="51" selection-end-line="162" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/dashboard/map.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.html" />
     <entry file="file://$PROJECT_DIR$/public/css/map.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1325,13 +1374,6 @@
     <entry file="file://$PROJECT_DIR$/resources/js/leaflet/sensor-create.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-create.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2520">
-          <caret line="109" selection-start-line="109" selection-end-line="109" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-heat-User.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -1339,31 +1381,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-show.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1440">
-          <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/dashboard/map.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="23" column="32" lean-forward="true" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/leaflet-measure/dist/leaflet-measure.fa.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="33644" selection-start-column="33640" selection-end-column="33644" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/leaflet-measure/dist/leaflet-measure.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16399" selection-start-column="16399" selection-end-column="16399" />
         </state>
       </provider>
     </entry>
@@ -1382,27 +1403,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/leaflet-measure/src/leaflet-measure.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="744">
-          <caret line="37" column="63" selection-start-line="37" selection-start-column="63" selection-end-line="37" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-edit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/lands/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-852">
-          <caret line="13" column="45" lean-forward="true" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -1434,13 +1434,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2021_07_21_125749_remove_max_min_color.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2021_03_13_094139_create_filters_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
@@ -1458,26 +1451,10 @@
     <entry file="file://$PROJECT_DIR$/resources/js/filter/create.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/EditFilterRequst.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="698">
-          <caret line="34" column="10" lean-forward="true" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/filters/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1008">
           <caret line="104" column="54" lean-forward="true" selection-start-line="104" selection-start-column="54" selection-end-line="104" selection-end-column="54" />
-          <folding>
-            <element signature="e#880#1191#0#Blade" />
-            <element signature="e#2314#6421#0#Blade" />
-            <element signature="e#3385#4461#0#HTML" />
-            <element signature="e#4490#4853#0#HTML" />
-            <element signature="e#4882#5262#0#HTML" />
-            <element signature="e#5291#6345#0#HTML" />
-            <element signature="e#6885#7686#0#HTML" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1485,10 +1462,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
           <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
-          <folding>
-            <element signature="e#797#1108#0#Blade" />
-            <element signature="e#2178#6262#0#Blade" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1496,22 +1469,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="47">
           <caret line="26" column="20" lean-forward="true" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-          <folding>
-            <element signature="e#1968#2067#0#Blade" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-heat.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="92" column="34" lean-forward="true" selection-start-line="92" selection-start-column="34" selection-end-line="92" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-            <element signature="n#style#0;n#b#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1519,6 +1476,192 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
           <caret line="13" column="26" lean-forward="true" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/leaflet/land-show.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="1091" column="59" selection-start-line="1091" selection-start-column="59" selection-end-line="1091" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/leaflet-measure-path/example/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-heat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1776">
+          <caret line="78" column="30" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@mapbox/geojson-area/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/leaflet-measure-path/leaflet-measure-path.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="228" column="24" selection-start-line="228" selection-start-column="24" selection-end-line="228" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/fa/validation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="161" column="26" selection-start-line="161" selection-start-column="26" selection-end-line="161" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/leaflet-measure/dist/leaflet-measure.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14464" lean-forward="true" selection-start-column="14464" selection-end-column="14464" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/leaflet-measure/dist/leaflet-measure.fa.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="33644" selection-start-column="33640" selection-end-column="33644" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_07_21_125749_remove_max_min_color.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_07_04_113011_change_type_of_value_column_table.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_04_29_103801_add_index_to_filters_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/leaflet-measure/src/leaflet-measure.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="295" column="16" selection-start-line="295" selection-start-column="10" selection-end-line="295" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_07_23_153433_add_area_column_to_lands_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/EditFilterRequst.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/FilterRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/LandRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/leaflet-measure/src/calc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#36#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/lands/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/lands/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
+          <folding>
+            <element signature="e#1341#1370#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-show.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="65" column="4" selection-start-line="65" selection-start-column="4" selection-end-line="66" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-create.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="111" column="4" selection-start-line="111" selection-start-column="4" selection-end-line="111" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/LandController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-94">
+          <caret line="107" column="46" selection-start-line="107" selection-start-column="46" selection-end-line="107" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/lands/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-22">
+          <caret line="37" column="28" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-edit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="95" column="40" selection-start-line="95" selection-start-column="40" selection-end-line="95" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

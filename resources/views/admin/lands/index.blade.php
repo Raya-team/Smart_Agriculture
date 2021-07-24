@@ -31,6 +31,7 @@
                             <thead>
                             <tr>
                                 <th> نام زمین</th>
+                                <th>مساحت (m<sub style="vertical-align: super">۲</sub>)</th>
                                 <th>نام کاربر</th>
                                 <th>عملیات</th>
                             </tr>
@@ -39,6 +40,7 @@
                             @foreach($lands as $land)
                                 <tr>
                                     <td>{{ $land->name }}</td>
+                                    <td>{{ $land->area }}</td>
                                     <td>{{ $land->user->name }}</td>
                                     <td>
                                         <form action="{{ route('lands.destroy' , ['land'=> $land->id]) }}" method="post">

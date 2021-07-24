@@ -4,6 +4,7 @@ import 'leaflet-measure';
 import 'leaflet-measure/dist/leaflet-measure.fa';
 import '@geoman-io/leaflet-geoman-free';
 import '@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css';
+import calc from '../../../node_modules/leaflet-measure/src/calc';
 
 
 var geojson = document.getElementById('eventoutput').value;
@@ -32,7 +33,7 @@ map.pm.addControls({
     position: 'topleft',
     drawMarker :false,
     drawCircleMarker :false,
-    drawPolygon :true,
+    drawPolygon :false,
     drawPolyline :false,
     drawRectangle :false,
     drawCircle: false,
@@ -86,7 +87,10 @@ const getLayer = () => {
 
 map.on('pm:globaleditmodetoggled', function(evt) {
     let layer = getLayer();
+    var calced = calc(layer);
+    var area = Math.round(calced.area);
     $('#eventoutput').val(JSON.stringify(layer));
+    $('#area').val(area);
 });
 
 map.on('measurefinish', function (evt) {

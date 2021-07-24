@@ -3,6 +3,8 @@ import 'leaflet-measure-path/leaflet-measure-path'
 import 'leaflet-contextmenu';
 import 'leaflet.fullscreen';
 
+import calc from '../../../node_modules/leaflet-measure/src/calc';
+
 var geojson = document.getElementById('eventoutput').value;
 var points = JSON.parse(geojson);
 var Center = L.polygon([points]).getBounds().getCenter();
@@ -58,7 +60,15 @@ L.control.layers(_baseLayers, null, {position: "bottomright"}).addTo(map);
 
 
 setTimeout(()=>{
-    L.polygon([points]).addTo(map)
+
+    var polygon = L.polygon([points]).addTo(map)
         .showMeasurements();
+    var calced = calc(points);
+    console.log(calced);
+    // var area = geojsonArea.geometry(y);
+    // console.log(area);
 }, 3000);
 
+function showPolygonArea(e) {
+    // console.log(e);
+}

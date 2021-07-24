@@ -27,10 +27,10 @@ class FilterRequest extends FormRequest
         return [
             'name' => ['required', new Security(), 'unique:filters'],
             'nickname' => ['required', new Security()],
-            'maximum' => ['required', 'numeric', new Security()],
-            'minimum' => ['required', 'numeric', new Security(),'lt:maximum'],
+//            'maximum' => ['required', 'numeric', new Security()],
+//            'minimum' => ['required', 'numeric', new Security(),'lt:maximum'],
             'index' => ['required', new Security()],
-            'colors' => ['required']
+//            'colors' => ['required']
         ];
     }
 }

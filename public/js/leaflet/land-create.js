@@ -15124,7 +15124,8 @@ var renderMeasure = function renderMeasure() {
 };
 
 map.on('measurefinish', function (evt) {
-  console.log(evt);
+  var area = Math.round(evt.area);
+  document.getElementById('area').value = area;
   document.getElementById('eventoutput').value = JSON.stringify(evt.points);
 });
 

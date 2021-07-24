@@ -35,6 +35,7 @@
                                 <div id="mapid"></div>
                             </div>
                             <input type="hidden" id="eventoutput" name="points">
+                            <input type="hidden" id="area" name="area">
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer">
