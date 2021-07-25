@@ -249,7 +249,7 @@
         position: absolute;
         bottom: 0;
         right: 0;
-        font-weight: 700;
+        font-weight: 500;
         color: rgb(255, 255, 255);
         text-align: center;
     }
