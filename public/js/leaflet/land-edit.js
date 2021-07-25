@@ -94,7 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../css-loader??ref--10-1!../../../postcss-loader/src??ref--10-2!./leaflet-geoman.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css");
+var content = __webpack_require__(/*! !../../../css-loader??ref--11-1!../../../postcss-loader/src??ref--11-2!./leaflet-geoman.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -127,1228 +127,16 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/@turf/distance/main.es.js":
-/*!************************************************!*\
-  !*** ./node_modules/@turf/distance/main.es.js ***!
-  \************************************************/
+/***/ "./node_modules/@turf/area/main.es.js":
+/*!********************************************!*\
+  !*** ./node_modules/@turf/area/main.es.js ***!
+  \********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _turf_invariant__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @turf/invariant */ "./node_modules/@turf/distance/node_modules/@turf/invariant/main.es.js");
-/* harmony import */ var _turf_helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @turf/helpers */ "./node_modules/@turf/distance/node_modules/@turf/helpers/main.es.js");
-
-
-
-//http://en.wikipedia.org/wiki/Haversine_formula
-//http://www.movable-type.co.uk/scripts/latlong.html
-
-/**
- * Calculates the distance between two {@link Point|points} in degrees, radians,
- * miles, or kilometers. This uses the
- * [Haversine formula](http://en.wikipedia.org/wiki/Haversine_formula)
- * to account for global curvature.
- *
- * @name distance
- * @param {Coord} from origin point
- * @param {Coord} to destination point
- * @param {Object} [options={}] Optional parameters
- * @param {string} [options.units='kilometers'] can be degrees, radians, miles, or kilometers
- * @returns {number} distance between the two points
- * @example
- * var from = turf.point([-75.343, 39.984]);
- * var to = turf.point([-75.534, 39.123]);
- * var options = {units: 'miles'};
- *
- * var distance = turf.distance(from, to, options);
- *
- * //addToMap
- * var addToMap = [from, to];
- * from.properties.distance = distance;
- * to.properties.distance = distance;
- */
-function distance(from, to, options) {
-    // Optional parameters
-    options = options || {};
-    if (!Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_1__["isObject"])(options)) throw new Error('options is invalid');
-    var units = options.units;
-
-    var coordinates1 = Object(_turf_invariant__WEBPACK_IMPORTED_MODULE_0__["getCoord"])(from);
-    var coordinates2 = Object(_turf_invariant__WEBPACK_IMPORTED_MODULE_0__["getCoord"])(to);
-    var dLat = Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_1__["degreesToRadians"])((coordinates2[1] - coordinates1[1]));
-    var dLon = Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_1__["degreesToRadians"])((coordinates2[0] - coordinates1[0]));
-    var lat1 = Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_1__["degreesToRadians"])(coordinates1[1]);
-    var lat2 = Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_1__["degreesToRadians"])(coordinates2[1]);
-
-    var a = Math.pow(Math.sin(dLat / 2), 2) +
-          Math.pow(Math.sin(dLon / 2), 2) * Math.cos(lat1) * Math.cos(lat2);
-
-    return Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_1__["radiansToLength"])(2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)), units);
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (distance);
-
-
-/***/ }),
-
-/***/ "./node_modules/@turf/distance/node_modules/@turf/helpers/main.es.js":
-/*!***************************************************************************!*\
-  !*** ./node_modules/@turf/distance/node_modules/@turf/helpers/main.es.js ***!
-  \***************************************************************************/
-/*! exports provided: earthRadius, factors, unitsFactors, areaFactors, feature, geometry, point, points, polygon, polygons, lineString, lineStrings, featureCollection, multiLineString, multiPoint, multiPolygon, geometryCollection, round, radiansToLength, lengthToRadians, lengthToDegrees, bearingToAzimuth, radiansToDegrees, degreesToRadians, convertLength, convertArea, isNumber, isObject, validateBBox, validateId, radians2degrees, degrees2radians, distanceToDegrees, distanceToRadians, radiansToDistance, bearingToAngle, convertDistance */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "earthRadius", function() { return earthRadius; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "factors", function() { return factors; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unitsFactors", function() { return unitsFactors; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "areaFactors", function() { return areaFactors; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "feature", function() { return feature; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "geometry", function() { return geometry; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "point", function() { return point; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "points", function() { return points; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "polygon", function() { return polygon; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "polygons", function() { return polygons; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lineString", function() { return lineString; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lineStrings", function() { return lineStrings; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "featureCollection", function() { return featureCollection; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multiLineString", function() { return multiLineString; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multiPoint", function() { return multiPoint; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multiPolygon", function() { return multiPolygon; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "geometryCollection", function() { return geometryCollection; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "round", function() { return round; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "radiansToLength", function() { return radiansToLength; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lengthToRadians", function() { return lengthToRadians; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lengthToDegrees", function() { return lengthToDegrees; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bearingToAzimuth", function() { return bearingToAzimuth; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "radiansToDegrees", function() { return radiansToDegrees; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "degreesToRadians", function() { return degreesToRadians; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertLength", function() { return convertLength; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertArea", function() { return convertArea; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isNumber", function() { return isNumber; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isObject", function() { return isObject; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validateBBox", function() { return validateBBox; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validateId", function() { return validateId; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "radians2degrees", function() { return radians2degrees; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "degrees2radians", function() { return degrees2radians; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "distanceToDegrees", function() { return distanceToDegrees; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "distanceToRadians", function() { return distanceToRadians; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "radiansToDistance", function() { return radiansToDistance; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bearingToAngle", function() { return bearingToAngle; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertDistance", function() { return convertDistance; });
-/**
- * Earth Radius used with the Harvesine formula and approximates using a spherical (non-ellipsoid) Earth.
- */
-var earthRadius = 6371008.8;
-
-/**
- * Unit of measurement factors using a spherical (non-ellipsoid) earth radius.
- */
-var factors = {
-    meters: earthRadius,
-    metres: earthRadius,
-    millimeters: earthRadius * 1000,
-    millimetres: earthRadius * 1000,
-    centimeters: earthRadius * 100,
-    centimetres: earthRadius * 100,
-    kilometers: earthRadius / 1000,
-    kilometres: earthRadius / 1000,
-    miles: earthRadius / 1609.344,
-    nauticalmiles: earthRadius / 1852,
-    inches: earthRadius * 39.370,
-    yards: earthRadius / 1.0936,
-    feet: earthRadius * 3.28084,
-    radians: 1,
-    degrees: earthRadius / 111325,
-};
-
-/**
- * Units of measurement factors based on 1 meter.
- */
-var unitsFactors = {
-    meters: 1,
-    metres: 1,
-    millimeters: 1000,
-    millimetres: 1000,
-    centimeters: 100,
-    centimetres: 100,
-    kilometers: 1 / 1000,
-    kilometres: 1 / 1000,
-    miles: 1 / 1609.344,
-    nauticalmiles: 1 / 1852,
-    inches: 39.370,
-    yards: 1 / 1.0936,
-    feet: 3.28084,
-    radians: 1 / earthRadius,
-    degrees: 1 / 111325,
-};
-
-/**
- * Area of measurement factors based on 1 square meter.
- */
-var areaFactors = {
-    meters: 1,
-    metres: 1,
-    millimeters: 1000000,
-    millimetres: 1000000,
-    centimeters: 10000,
-    centimetres: 10000,
-    kilometers: 0.000001,
-    kilometres: 0.000001,
-    acres: 0.000247105,
-    miles: 3.86e-7,
-    yards: 1.195990046,
-    feet: 10.763910417,
-    inches: 1550.003100006
-};
-
-/**
- * Wraps a GeoJSON {@link Geometry} in a GeoJSON {@link Feature}.
- *
- * @name feature
- * @param {Geometry} geometry input geometry
- * @param {Object} [properties={}] an Object of key-value pairs to add as properties
- * @param {Object} [options={}] Optional Parameters
- * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
- * @param {string|number} [options.id] Identifier associated with the Feature
- * @returns {Feature} a GeoJSON Feature
- * @example
- * var geometry = {
- *   "type": "Point",
- *   "coordinates": [110, 50]
- * };
- *
- * var feature = turf.feature(geometry);
- *
- * //=feature
- */
-function feature(geometry, properties, options) {
-    // Optional Parameters
-    options = options || {};
-    if (!isObject(options)) throw new Error('options is invalid');
-    var bbox = options.bbox;
-    var id = options.id;
-
-    // Validation
-    if (geometry === undefined) throw new Error('geometry is required');
-    if (properties && properties.constructor !== Object) throw new Error('properties must be an Object');
-    if (bbox) validateBBox(bbox);
-    if (id) validateId(id);
-
-    // Main
-    var feat = {type: 'Feature'};
-    if (id) feat.id = id;
-    if (bbox) feat.bbox = bbox;
-    feat.properties = properties || {};
-    feat.geometry = geometry;
-    return feat;
-}
-
-/**
- * Creates a GeoJSON {@link Geometry} from a Geometry string type & coordinates.
- * For GeometryCollection type use `helpers.geometryCollection`
- *
- * @name geometry
- * @param {string} type Geometry Type
- * @param {Array<number>} coordinates Coordinates
- * @param {Object} [options={}] Optional Parameters
- * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Geometry
- * @returns {Geometry} a GeoJSON Geometry
- * @example
- * var type = 'Point';
- * var coordinates = [110, 50];
- *
- * var geometry = turf.geometry(type, coordinates);
- *
- * //=geometry
- */
-function geometry(type, coordinates, options) {
-    // Optional Parameters
-    options = options || {};
-    if (!isObject(options)) throw new Error('options is invalid');
-    var bbox = options.bbox;
-
-    // Validation
-    if (!type) throw new Error('type is required');
-    if (!coordinates) throw new Error('coordinates is required');
-    if (!Array.isArray(coordinates)) throw new Error('coordinates must be an Array');
-    if (bbox) validateBBox(bbox);
-
-    // Main
-    var geom;
-    switch (type) {
-    case 'Point': geom = point(coordinates).geometry; break;
-    case 'LineString': geom = lineString(coordinates).geometry; break;
-    case 'Polygon': geom = polygon(coordinates).geometry; break;
-    case 'MultiPoint': geom = multiPoint(coordinates).geometry; break;
-    case 'MultiLineString': geom = multiLineString(coordinates).geometry; break;
-    case 'MultiPolygon': geom = multiPolygon(coordinates).geometry; break;
-    default: throw new Error(type + ' is invalid');
-    }
-    if (bbox) geom.bbox = bbox;
-    return geom;
-}
-
-/**
- * Creates a {@link Point} {@link Feature} from a Position.
- *
- * @name point
- * @param {Array<number>} coordinates longitude, latitude position (each in decimal degrees)
- * @param {Object} [properties={}] an Object of key-value pairs to add as properties
- * @param {Object} [options={}] Optional Parameters
- * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
- * @param {string|number} [options.id] Identifier associated with the Feature
- * @returns {Feature<Point>} a Point feature
- * @example
- * var point = turf.point([-75.343, 39.984]);
- *
- * //=point
- */
-function point(coordinates, properties, options) {
-    if (!coordinates) throw new Error('coordinates is required');
-    if (!Array.isArray(coordinates)) throw new Error('coordinates must be an Array');
-    if (coordinates.length < 2) throw new Error('coordinates must be at least 2 numbers long');
-    if (!isNumber(coordinates[0]) || !isNumber(coordinates[1])) throw new Error('coordinates must contain numbers');
-
-    return feature({
-        type: 'Point',
-        coordinates: coordinates
-    }, properties, options);
-}
-
-/**
- * Creates a {@link Point} {@link FeatureCollection} from an Array of Point coordinates.
- *
- * @name points
- * @param {Array<Array<number>>} coordinates an array of Points
- * @param {Object} [properties={}] Translate these properties to each Feature
- * @param {Object} [options={}] Optional Parameters
- * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the FeatureCollection
- * @param {string|number} [options.id] Identifier associated with the FeatureCollection
- * @returns {FeatureCollection<Point>} Point Feature
- * @example
- * var points = turf.points([
- *   [-75, 39],
- *   [-80, 45],
- *   [-78, 50]
- * ]);
- *
- * //=points
- */
-function points(coordinates, properties, options) {
-    if (!coordinates) throw new Error('coordinates is required');
-    if (!Array.isArray(coordinates)) throw new Error('coordinates must be an Array');
-
-    return featureCollection(coordinates.map(function (coords) {
-        return point(coords, properties);
-    }), options);
-}
-
-/**
- * Creates a {@link Polygon} {@link Feature} from an Array of LinearRings.
- *
- * @name polygon
- * @param {Array<Array<Array<number>>>} coordinates an array of LinearRings
- * @param {Object} [properties={}] an Object of key-value pairs to add as properties
- * @param {Object} [options={}] Optional Parameters
- * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
- * @param {string|number} [options.id] Identifier associated with the Feature
- * @returns {Feature<Polygon>} Polygon Feature
- * @example
- * var polygon = turf.polygon([[[-5, 52], [-4, 56], [-2, 51], [-7, 54], [-5, 52]]], { name: 'poly1' });
- *
- * //=polygon
- */
-function polygon(coordinates, properties, options) {
-    if (!coordinates) throw new Error('coordinates is required');
-
-    for (var i = 0; i < coordinates.length; i++) {
-        var ring = coordinates[i];
-        if (ring.length < 4) {
-            throw new Error('Each LinearRing of a Polygon must have 4 or more Positions.');
-        }
-        for (var j = 0; j < ring[ring.length - 1].length; j++) {
-            // Check if first point of Polygon contains two numbers
-            if (i === 0 && j === 0 && !isNumber(ring[0][0]) || !isNumber(ring[0][1])) throw new Error('coordinates must contain numbers');
-            if (ring[ring.length - 1][j] !== ring[0][j]) {
-                throw new Error('First and last Position are not equivalent.');
-            }
-        }
-    }
-
-    return feature({
-        type: 'Polygon',
-        coordinates: coordinates
-    }, properties, options);
-}
-
-/**
- * Creates a {@link Polygon} {@link FeatureCollection} from an Array of Polygon coordinates.
- *
- * @name polygons
- * @param {Array<Array<Array<Array<number>>>>} coordinates an array of Polygon coordinates
- * @param {Object} [properties={}] an Object of key-value pairs to add as properties
- * @param {Object} [options={}] Optional Parameters
- * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
- * @param {string|number} [options.id] Identifier associated with the FeatureCollection
- * @returns {FeatureCollection<Polygon>} Polygon FeatureCollection
- * @example
- * var polygons = turf.polygons([
- *   [[[-5, 52], [-4, 56], [-2, 51], [-7, 54], [-5, 52]]],
- *   [[[-15, 42], [-14, 46], [-12, 41], [-17, 44], [-15, 42]]],
- * ]);
- *
- * //=polygons
- */
-function polygons(coordinates, properties, options) {
-    if (!coordinates) throw new Error('coordinates is required');
-    if (!Array.isArray(coordinates)) throw new Error('coordinates must be an Array');
-
-    return featureCollection(coordinates.map(function (coords) {
-        return polygon(coords, properties);
-    }), options);
-}
-
-/**
- * Creates a {@link LineString} {@link Feature} from an Array of Positions.
- *
- * @name lineString
- * @param {Array<Array<number>>} coordinates an array of Positions
- * @param {Object} [properties={}] an Object of key-value pairs to add as properties
- * @param {Object} [options={}] Optional Parameters
- * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
- * @param {string|number} [options.id] Identifier associated with the Feature
- * @returns {Feature<LineString>} LineString Feature
- * @example
- * var linestring1 = turf.lineString([[-24, 63], [-23, 60], [-25, 65], [-20, 69]], {name: 'line 1'});
- * var linestring2 = turf.lineString([[-14, 43], [-13, 40], [-15, 45], [-10, 49]], {name: 'line 2'});
- *
- * //=linestring1
- * //=linestring2
- */
-function lineString(coordinates, properties, options) {
-    if (!coordinates) throw new Error('coordinates is required');
-    if (coordinates.length < 2) throw new Error('coordinates must be an array of two or more positions');
-    // Check if first point of LineString contains two numbers
-    if (!isNumber(coordinates[0][1]) || !isNumber(coordinates[0][1])) throw new Error('coordinates must contain numbers');
-
-    return feature({
-        type: 'LineString',
-        coordinates: coordinates
-    }, properties, options);
-}
-
-/**
- * Creates a {@link LineString} {@link FeatureCollection} from an Array of LineString coordinates.
- *
- * @name lineStrings
- * @param {Array<Array<number>>} coordinates an array of LinearRings
- * @param {Object} [properties={}] an Object of key-value pairs to add as properties
- * @param {Object} [options={}] Optional Parameters
- * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the FeatureCollection
- * @param {string|number} [options.id] Identifier associated with the FeatureCollection
- * @returns {FeatureCollection<LineString>} LineString FeatureCollection
- * @example
- * var linestrings = turf.lineStrings([
- *   [[-24, 63], [-23, 60], [-25, 65], [-20, 69]],
- *   [[-14, 43], [-13, 40], [-15, 45], [-10, 49]]
- * ]);
- *
- * //=linestrings
- */
-function lineStrings(coordinates, properties, options) {
-    if (!coordinates) throw new Error('coordinates is required');
-    if (!Array.isArray(coordinates)) throw new Error('coordinates must be an Array');
-
-    return featureCollection(coordinates.map(function (coords) {
-        return lineString(coords, properties);
-    }), options);
-}
-
-/**
- * Takes one or more {@link Feature|Features} and creates a {@link FeatureCollection}.
- *
- * @name featureCollection
- * @param {Feature[]} features input features
- * @param {Object} [options={}] Optional Parameters
- * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
- * @param {string|number} [options.id] Identifier associated with the Feature
- * @returns {FeatureCollection} FeatureCollection of Features
- * @example
- * var locationA = turf.point([-75.343, 39.984], {name: 'Location A'});
- * var locationB = turf.point([-75.833, 39.284], {name: 'Location B'});
- * var locationC = turf.point([-75.534, 39.123], {name: 'Location C'});
- *
- * var collection = turf.featureCollection([
- *   locationA,
- *   locationB,
- *   locationC
- * ]);
- *
- * //=collection
- */
-function featureCollection(features, options) {
-    // Optional Parameters
-    options = options || {};
-    if (!isObject(options)) throw new Error('options is invalid');
-    var bbox = options.bbox;
-    var id = options.id;
-
-    // Validation
-    if (!features) throw new Error('No features passed');
-    if (!Array.isArray(features)) throw new Error('features must be an Array');
-    if (bbox) validateBBox(bbox);
-    if (id) validateId(id);
-
-    // Main
-    var fc = {type: 'FeatureCollection'};
-    if (id) fc.id = id;
-    if (bbox) fc.bbox = bbox;
-    fc.features = features;
-    return fc;
-}
-
-/**
- * Creates a {@link Feature<MultiLineString>} based on a
- * coordinate array. Properties can be added optionally.
- *
- * @name multiLineString
- * @param {Array<Array<Array<number>>>} coordinates an array of LineStrings
- * @param {Object} [properties={}] an Object of key-value pairs to add as properties
- * @param {Object} [options={}] Optional Parameters
- * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
- * @param {string|number} [options.id] Identifier associated with the Feature
- * @returns {Feature<MultiLineString>} a MultiLineString feature
- * @throws {Error} if no coordinates are passed
- * @example
- * var multiLine = turf.multiLineString([[[0,0],[10,10]]]);
- *
- * //=multiLine
- */
-function multiLineString(coordinates, properties, options) {
-    if (!coordinates) throw new Error('coordinates is required');
-
-    return feature({
-        type: 'MultiLineString',
-        coordinates: coordinates
-    }, properties, options);
-}
-
-/**
- * Creates a {@link Feature<MultiPoint>} based on a
- * coordinate array. Properties can be added optionally.
- *
- * @name multiPoint
- * @param {Array<Array<number>>} coordinates an array of Positions
- * @param {Object} [properties={}] an Object of key-value pairs to add as properties
- * @param {Object} [options={}] Optional Parameters
- * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
- * @param {string|number} [options.id] Identifier associated with the Feature
- * @returns {Feature<MultiPoint>} a MultiPoint feature
- * @throws {Error} if no coordinates are passed
- * @example
- * var multiPt = turf.multiPoint([[0,0],[10,10]]);
- *
- * //=multiPt
- */
-function multiPoint(coordinates, properties, options) {
-    if (!coordinates) throw new Error('coordinates is required');
-
-    return feature({
-        type: 'MultiPoint',
-        coordinates: coordinates
-    }, properties, options);
-}
-
-/**
- * Creates a {@link Feature<MultiPolygon>} based on a
- * coordinate array. Properties can be added optionally.
- *
- * @name multiPolygon
- * @param {Array<Array<Array<Array<number>>>>} coordinates an array of Polygons
- * @param {Object} [properties={}] an Object of key-value pairs to add as properties
- * @param {Object} [options={}] Optional Parameters
- * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
- * @param {string|number} [options.id] Identifier associated with the Feature
- * @returns {Feature<MultiPolygon>} a multipolygon feature
- * @throws {Error} if no coordinates are passed
- * @example
- * var multiPoly = turf.multiPolygon([[[[0,0],[0,10],[10,10],[10,0],[0,0]]]]);
- *
- * //=multiPoly
- *
- */
-function multiPolygon(coordinates, properties, options) {
-    if (!coordinates) throw new Error('coordinates is required');
-
-    return feature({
-        type: 'MultiPolygon',
-        coordinates: coordinates
-    }, properties, options);
-}
-
-/**
- * Creates a {@link Feature<GeometryCollection>} based on a
- * coordinate array. Properties can be added optionally.
- *
- * @name geometryCollection
- * @param {Array<Geometry>} geometries an array of GeoJSON Geometries
- * @param {Object} [properties={}] an Object of key-value pairs to add as properties
- * @param {Object} [options={}] Optional Parameters
- * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
- * @param {string|number} [options.id] Identifier associated with the Feature
- * @returns {Feature<GeometryCollection>} a GeoJSON GeometryCollection Feature
- * @example
- * var pt = {
- *     "type": "Point",
- *       "coordinates": [100, 0]
- *     };
- * var line = {
- *     "type": "LineString",
- *     "coordinates": [ [101, 0], [102, 1] ]
- *   };
- * var collection = turf.geometryCollection([pt, line]);
- *
- * //=collection
- */
-function geometryCollection(geometries, properties, options) {
-    if (!geometries) throw new Error('geometries is required');
-    if (!Array.isArray(geometries)) throw new Error('geometries must be an Array');
-
-    return feature({
-        type: 'GeometryCollection',
-        geometries: geometries
-    }, properties, options);
-}
-
-/**
- * Round number to precision
- *
- * @param {number} num Number
- * @param {number} [precision=0] Precision
- * @returns {number} rounded number
- * @example
- * turf.round(120.4321)
- * //=120
- *
- * turf.round(120.4321, 2)
- * //=120.43
- */
-function round(num, precision) {
-    if (num === undefined || num === null || isNaN(num)) throw new Error('num is required');
-    if (precision && !(precision >= 0)) throw new Error('precision must be a positive number');
-    var multiplier = Math.pow(10, precision || 0);
-    return Math.round(num * multiplier) / multiplier;
-}
-
-/**
- * Convert a distance measurement (assuming a spherical Earth) from radians to a more friendly unit.
- * Valid units: miles, nauticalmiles, inches, yards, meters, metres, kilometers, centimeters, feet
- *
- * @name radiansToLength
- * @param {number} radians in radians across the sphere
- * @param {string} [units='kilometers'] can be degrees, radians, miles, or kilometers inches, yards, metres, meters, kilometres, kilometers.
- * @returns {number} distance
- */
-function radiansToLength(radians, units) {
-    if (radians === undefined || radians === null) throw new Error('radians is required');
-
-    if (units && typeof units !== 'string') throw new Error('units must be a string');
-    var factor = factors[units || 'kilometers'];
-    if (!factor) throw new Error(units + ' units is invalid');
-    return radians * factor;
-}
-
-/**
- * Convert a distance measurement (assuming a spherical Earth) from a real-world unit into radians
- * Valid units: miles, nauticalmiles, inches, yards, meters, metres, kilometers, centimeters, feet
- *
- * @name lengthToRadians
- * @param {number} distance in real units
- * @param {string} [units='kilometers'] can be degrees, radians, miles, or kilometers inches, yards, metres, meters, kilometres, kilometers.
- * @returns {number} radians
- */
-function lengthToRadians(distance, units) {
-    if (distance === undefined || distance === null) throw new Error('distance is required');
-
-    if (units && typeof units !== 'string') throw new Error('units must be a string');
-    var factor = factors[units || 'kilometers'];
-    if (!factor) throw new Error(units + ' units is invalid');
-    return distance / factor;
-}
-
-/**
- * Convert a distance measurement (assuming a spherical Earth) from a real-world unit into degrees
- * Valid units: miles, nauticalmiles, inches, yards, meters, metres, centimeters, kilometres, feet
- *
- * @name lengthToDegrees
- * @param {number} distance in real units
- * @param {string} [units='kilometers'] can be degrees, radians, miles, or kilometers inches, yards, metres, meters, kilometres, kilometers.
- * @returns {number} degrees
- */
-function lengthToDegrees(distance, units) {
-    return radiansToDegrees(lengthToRadians(distance, units));
-}
-
-/**
- * Converts any bearing angle from the north line direction (positive clockwise)
- * and returns an angle between 0-360 degrees (positive clockwise), 0 being the north line
- *
- * @name bearingToAzimuth
- * @param {number} bearing angle, between -180 and +180 degrees
- * @returns {number} angle between 0 and 360 degrees
- */
-function bearingToAzimuth(bearing) {
-    if (bearing === null || bearing === undefined) throw new Error('bearing is required');
-
-    var angle = bearing % 360;
-    if (angle < 0) angle += 360;
-    return angle;
-}
-
-/**
- * Converts an angle in radians to degrees
- *
- * @name radiansToDegrees
- * @param {number} radians angle in radians
- * @returns {number} degrees between 0 and 360 degrees
- */
-function radiansToDegrees(radians) {
-    if (radians === null || radians === undefined) throw new Error('radians is required');
-
-    var degrees = radians % (2 * Math.PI);
-    return degrees * 180 / Math.PI;
-}
-
-/**
- * Converts an angle in degrees to radians
- *
- * @name degreesToRadians
- * @param {number} degrees angle between 0 and 360 degrees
- * @returns {number} angle in radians
- */
-function degreesToRadians(degrees) {
-    if (degrees === null || degrees === undefined) throw new Error('degrees is required');
-
-    var radians = degrees % 360;
-    return radians * Math.PI / 180;
-}
-
-/**
- * Converts a length to the requested unit.
- * Valid units: miles, nauticalmiles, inches, yards, meters, metres, kilometers, centimeters, feet
- *
- * @param {number} length to be converted
- * @param {string} originalUnit of the length
- * @param {string} [finalUnit='kilometers'] returned unit
- * @returns {number} the converted length
- */
-function convertLength(length, originalUnit, finalUnit) {
-    if (length === null || length === undefined) throw new Error('length is required');
-    if (!(length >= 0)) throw new Error('length must be a positive number');
-
-    return radiansToLength(lengthToRadians(length, originalUnit), finalUnit || 'kilometers');
-}
-
-/**
- * Converts a area to the requested unit.
- * Valid units: kilometers, kilometres, meters, metres, centimetres, millimeters, acres, miles, yards, feet, inches
- * @param {number} area to be converted
- * @param {string} [originalUnit='meters'] of the distance
- * @param {string} [finalUnit='kilometers'] returned unit
- * @returns {number} the converted distance
- */
-function convertArea(area, originalUnit, finalUnit) {
-    if (area === null || area === undefined) throw new Error('area is required');
-    if (!(area >= 0)) throw new Error('area must be a positive number');
-
-    var startFactor = areaFactors[originalUnit || 'meters'];
-    if (!startFactor) throw new Error('invalid original units');
-
-    var finalFactor = areaFactors[finalUnit || 'kilometers'];
-    if (!finalFactor) throw new Error('invalid final units');
-
-    return (area / startFactor) * finalFactor;
-}
-
-/**
- * isNumber
- *
- * @param {*} num Number to validate
- * @returns {boolean} true/false
- * @example
- * turf.isNumber(123)
- * //=true
- * turf.isNumber('foo')
- * //=false
- */
-function isNumber(num) {
-    return !isNaN(num) && num !== null && !Array.isArray(num);
-}
-
-/**
- * isObject
- *
- * @param {*} input variable to validate
- * @returns {boolean} true/false
- * @example
- * turf.isObject({elevation: 10})
- * //=true
- * turf.isObject('foo')
- * //=false
- */
-function isObject(input) {
-    return (!!input) && (input.constructor === Object);
-}
-
-/**
- * Validate BBox
- *
- * @private
- * @param {Array<number>} bbox BBox to validate
- * @returns {void}
- * @throws Error if BBox is not valid
- * @example
- * validateBBox([-180, -40, 110, 50])
- * //=OK
- * validateBBox([-180, -40])
- * //=Error
- * validateBBox('Foo')
- * //=Error
- * validateBBox(5)
- * //=Error
- * validateBBox(null)
- * //=Error
- * validateBBox(undefined)
- * //=Error
- */
-function validateBBox(bbox) {
-    if (!bbox) throw new Error('bbox is required');
-    if (!Array.isArray(bbox)) throw new Error('bbox must be an Array');
-    if (bbox.length !== 4 && bbox.length !== 6) throw new Error('bbox must be an Array of 4 or 6 numbers');
-    bbox.forEach(function (num) {
-        if (!isNumber(num)) throw new Error('bbox must only contain numbers');
-    });
-}
-
-/**
- * Validate Id
- *
- * @private
- * @param {string|number} id Id to validate
- * @returns {void}
- * @throws Error if Id is not valid
- * @example
- * validateId([-180, -40, 110, 50])
- * //=Error
- * validateId([-180, -40])
- * //=Error
- * validateId('Foo')
- * //=OK
- * validateId(5)
- * //=OK
- * validateId(null)
- * //=Error
- * validateId(undefined)
- * //=Error
- */
-function validateId(id) {
-    if (!id) throw new Error('id is required');
-    if (['string', 'number'].indexOf(typeof id) === -1) throw new Error('id must be a number or a string');
-}
-
-// Deprecated methods
-function radians2degrees() {
-    throw new Error('method has been renamed to `radiansToDegrees`');
-}
-
-function degrees2radians() {
-    throw new Error('method has been renamed to `degreesToRadians`');
-}
-
-function distanceToDegrees() {
-    throw new Error('method has been renamed to `lengthToDegrees`');
-}
-
-function distanceToRadians() {
-    throw new Error('method has been renamed to `lengthToRadians`');
-}
-
-function radiansToDistance() {
-    throw new Error('method has been renamed to `radiansToLength`');
-}
-
-function bearingToAngle() {
-    throw new Error('method has been renamed to `bearingToAzimuth`');
-}
-
-function convertDistance() {
-    throw new Error('method has been renamed to `convertLength`');
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@turf/distance/node_modules/@turf/invariant/main.es.js":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/@turf/distance/node_modules/@turf/invariant/main.es.js ***!
-  \*****************************************************************************/
-/*! exports provided: getCoord, getCoords, containsNumber, geojsonType, featureOf, collectionOf, getGeom, getGeomType, getType */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCoord", function() { return getCoord; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCoords", function() { return getCoords; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "containsNumber", function() { return containsNumber; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "geojsonType", function() { return geojsonType; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "featureOf", function() { return featureOf; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "collectionOf", function() { return collectionOf; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getGeom", function() { return getGeom; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getGeomType", function() { return getGeomType; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getType", function() { return getType; });
-/* harmony import */ var _turf_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @turf/helpers */ "./node_modules/@turf/distance/node_modules/@turf/helpers/main.es.js");
-
-
-/**
- * Unwrap a coordinate from a Point Feature, Geometry or a single coordinate.
- *
- * @name getCoord
- * @param {Array<number>|Geometry<Point>|Feature<Point>} coord GeoJSON Point or an Array of numbers
- * @returns {Array<number>} coordinates
- * @example
- * var pt = turf.point([10, 10]);
- *
- * var coord = turf.getCoord(pt);
- * //= [10, 10]
- */
-function getCoord(coord) {
-    if (!coord) throw new Error('coord is required');
-    if (coord.type === 'Feature' && coord.geometry !== null && coord.geometry.type === 'Point') return coord.geometry.coordinates;
-    if (coord.type === 'Point') return coord.coordinates;
-    if (Array.isArray(coord) && coord.length >= 2 && coord[0].length === undefined && coord[1].length === undefined) return coord;
-
-    throw new Error('coord must be GeoJSON Point or an Array of numbers');
-}
-
-/**
- * Unwrap coordinates from a Feature, Geometry Object or an Array
- *
- * @name getCoords
- * @param {Array<any>|Geometry|Feature} coords Feature, Geometry Object or an Array
- * @returns {Array<any>} coordinates
- * @example
- * var poly = turf.polygon([[[119.32, -8.7], [119.55, -8.69], [119.51, -8.54], [119.32, -8.7]]]);
- *
- * var coords = turf.getCoords(poly);
- * //= [[[119.32, -8.7], [119.55, -8.69], [119.51, -8.54], [119.32, -8.7]]]
- */
-function getCoords(coords) {
-    if (!coords) throw new Error('coords is required');
-
-    // Feature
-    if (coords.type === 'Feature' && coords.geometry !== null) return coords.geometry.coordinates;
-
-    // Geometry
-    if (coords.coordinates) return coords.coordinates;
-
-    // Array of numbers
-    if (Array.isArray(coords)) return coords;
-
-    throw new Error('coords must be GeoJSON Feature, Geometry Object or an Array');
-}
-
-/**
- * Checks if coordinates contains a number
- *
- * @name containsNumber
- * @param {Array<any>} coordinates GeoJSON Coordinates
- * @returns {boolean} true if Array contains a number
- */
-function containsNumber(coordinates) {
-    if (coordinates.length > 1 && Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_0__["isNumber"])(coordinates[0]) && Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_0__["isNumber"])(coordinates[1])) {
-        return true;
-    }
-
-    if (Array.isArray(coordinates[0]) && coordinates[0].length) {
-        return containsNumber(coordinates[0]);
-    }
-    throw new Error('coordinates must only contain numbers');
-}
-
-/**
- * Enforce expectations about types of GeoJSON objects for Turf.
- *
- * @name geojsonType
- * @param {GeoJSON} value any GeoJSON object
- * @param {string} type expected GeoJSON type
- * @param {string} name name of calling function
- * @throws {Error} if value is not the expected type.
- */
-function geojsonType(value, type, name) {
-    if (!type || !name) throw new Error('type and name required');
-
-    if (!value || value.type !== type) {
-        throw new Error('Invalid input to ' + name + ': must be a ' + type + ', given ' + value.type);
-    }
-}
-
-/**
- * Enforce expectations about types of {@link Feature} inputs for Turf.
- * Internally this uses {@link geojsonType} to judge geometry types.
- *
- * @name featureOf
- * @param {Feature} feature a feature with an expected geometry type
- * @param {string} type expected GeoJSON type
- * @param {string} name name of calling function
- * @throws {Error} error if value is not the expected type.
- */
-function featureOf(feature, type, name) {
-    if (!feature) throw new Error('No feature passed');
-    if (!name) throw new Error('.featureOf() requires a name');
-    if (!feature || feature.type !== 'Feature' || !feature.geometry) {
-        throw new Error('Invalid input to ' + name + ', Feature with geometry required');
-    }
-    if (!feature.geometry || feature.geometry.type !== type) {
-        throw new Error('Invalid input to ' + name + ': must be a ' + type + ', given ' + feature.geometry.type);
-    }
-}
-
-/**
- * Enforce expectations about types of {@link FeatureCollection} inputs for Turf.
- * Internally this uses {@link geojsonType} to judge geometry types.
- *
- * @name collectionOf
- * @param {FeatureCollection} featureCollection a FeatureCollection for which features will be judged
- * @param {string} type expected GeoJSON type
- * @param {string} name name of calling function
- * @throws {Error} if value is not the expected type.
- */
-function collectionOf(featureCollection, type, name) {
-    if (!featureCollection) throw new Error('No featureCollection passed');
-    if (!name) throw new Error('.collectionOf() requires a name');
-    if (!featureCollection || featureCollection.type !== 'FeatureCollection') {
-        throw new Error('Invalid input to ' + name + ', FeatureCollection required');
-    }
-    for (var i = 0; i < featureCollection.features.length; i++) {
-        var feature = featureCollection.features[i];
-        if (!feature || feature.type !== 'Feature' || !feature.geometry) {
-            throw new Error('Invalid input to ' + name + ', Feature with geometry required');
-        }
-        if (!feature.geometry || feature.geometry.type !== type) {
-            throw new Error('Invalid input to ' + name + ': must be a ' + type + ', given ' + feature.geometry.type);
-        }
-    }
-}
-
-/**
- * Get Geometry from Feature or Geometry Object
- *
- * @param {Feature|Geometry} geojson GeoJSON Feature or Geometry Object
- * @returns {Geometry|null} GeoJSON Geometry Object
- * @throws {Error} if geojson is not a Feature or Geometry Object
- * @example
- * var point = {
- *   "type": "Feature",
- *   "properties": {},
- *   "geometry": {
- *     "type": "Point",
- *     "coordinates": [110, 40]
- *   }
- * }
- * var geom = turf.getGeom(point)
- * //={"type": "Point", "coordinates": [110, 40]}
- */
-function getGeom(geojson) {
-    if (!geojson) throw new Error('geojson is required');
-    if (geojson.geometry !== undefined) return geojson.geometry;
-    if (geojson.coordinates || geojson.geometries) return geojson;
-    throw new Error('geojson must be a valid Feature or Geometry Object');
-}
-
-/**
- * Get Geometry Type from Feature or Geometry Object
- *
- * @throws {Error} **DEPRECATED** in v5.0.0 in favor of getType
- */
-function getGeomType() {
-    throw new Error('invariant.getGeomType has been deprecated in v5.0 in favor of invariant.getType');
-}
-
-/**
- * Get GeoJSON object's type, Geometry type is prioritize.
- *
- * @param {GeoJSON} geojson GeoJSON object
- * @param {string} [name="geojson"] name of the variable to display in error message
- * @returns {string} GeoJSON type
- * @example
- * var point = {
- *   "type": "Feature",
- *   "properties": {},
- *   "geometry": {
- *     "type": "Point",
- *     "coordinates": [110, 40]
- *   }
- * }
- * var geom = turf.getType(point)
- * //="Point"
- */
-function getType(geojson, name) {
-    if (!geojson) throw new Error((name || 'geojson') + ' is required');
-    // GeoJSON Feature & GeometryCollection
-    if (geojson.geometry && geojson.geometry.type) return geojson.geometry.type;
-    // GeoJSON Geometry & FeatureCollection
-    if (geojson.type) return geojson.type;
-    throw new Error((name || 'geojson') + ' is invalid');
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css":
-/*!***************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--10-1!./node_modules/postcss-loader/src??ref--10-2!./node_modules/@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css ***!
-  \***************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".marker-icon,\n.marker-icon:focus {\n  background-color: #ffffff;\n  border: 1px solid #3388ff;\n  border-radius: 50%;\n  margin: -8px 0 0 -8px !important;\n  width: 14px !important;\n  height: 14px !important;\n  outline: 0;\n  transition: opacity ease 0.3s;\n}\n\n.marker-icon-middle,\n.marker-icon-middle:focus {\n  opacity: 0.7;\n  margin: -6px 0 0 -6px !important;\n  width: 10px !important;\n  height: 10px !important;\n}\n\n.leaflet-pm-draggable {\n  cursor: move !important;\n}\n\n.cursor-marker {\n  cursor: crosshair;\n  pointer-events: none;\n  display: none;\n}\n\n.cursor-marker.visible {\n  display: block !important;\n}\n\n.leaflet-pm-invalid {\n  stroke: red;\n  transition: fill ease 0s, stroke ease 0s;\n}\n\n.rect-style-marker,\n.rect-start-marker {\n  opacity: 0;\n}\n\n.rect-style-marker.visible,\n.rect-start-marker.visible {\n  opacity: 1 !important;\n}\n\n.hidden {\n  display: none;\n}\n\n.vertexmarker-disabled{\n  opacity: 0.7;\n}\n\n.leaflet-pm-toolbar {\n\n}\n\n.leaflet-pm-toolbar .leaflet-buttons-control-button {\n  padding: 5px;\n  box-sizing: border-box;\n  position: relative;\n  z-index: 3;\n}\n\n.leaflet-pm-toolbar .leaflet-pm-actions-container a:first-child:not(.pos-right) {\n  border-radius: 0 !important;\n}\n\n.leaflet-pm-toolbar .leaflet-pm-actions-container a:last-child.pos-right {\n  border-radius: 0 !important;\n}\n\n.leaflet-pm-toolbar .button-container .leaflet-buttons-control-button {\n  border-radius: 0 !important;\n}\n\n.leaflet-pm-toolbar .button-container:last-child .leaflet-buttons-control-button {\n  border-radius: 0 0 2px 2px !important;\n}\n\n.leaflet-pm-toolbar .button-container:first-child .leaflet-buttons-control-button {\n  border-radius: 2px 2px 0 0 !important;\n}\n\n.leaflet-pm-toolbar .control-fa-icon {\n  font-size: 19px;\n  line-height: 24px;\n}\n\n.leaflet-pm-toolbar .control-icon {\n  width: 100%;\n  height: 100%;\n  box-sizing: border-box;\n  background-size: contain;\n  background-repeat: no-repeat;\n  background-position: center center;\n}\n\n.leaflet-pm-toolbar .leaflet-pm-icon-marker {\n  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDUyLjUgKDY3NDY5KSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5BdG9tcy9JY29ucy9Ub29scy9NYXJrZXI8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz4KICAgICAgICA8cGF0aCBkPSJNMTUuNSwyNC44NzgyOTU5IEMxNS4yOTA5MjAxLDI0Ljg3NzIyMTkgMTUuMTc0NDg1NywyNC44NDY3ODE3IDE0LjY1OTA4NjYsMjQuMjM1NDE2MyBDMTAuMjE5Njk1NSwxOS40MTE4MDU0IDgsMTUuNTAxNDM5MiA4LDEyLjUwNDMxNzcgQzgsOC4zNTk3OTc0NiAxMS4zNTc4NjQ0LDUgMTUuNSw1IEMxOS42NDIxMzU2LDUgMjMsOC4zNTk3OTc0NiAyMywxMi41MDQzMTc3IEMyMywxNyAxOC4yODc4MjE3LDIxLjkyNjgzNzggMTYuMzMzNjYwMSwyNC4yNDQwMTg2IEMxNS44MjI0NjIyLDI0Ljg1MDE4MDIgMTUuNzA5MDc5OSwyNC44NzkzNjk5IDE1LjUsMjQuODc4Mjk1OSBaIE0xNS41LDE1LjUzMjY5NDggQzE3LjI3NTIwMSwxNS41MzI2OTQ4IDE4LjcxNDI4NTcsMTQuMTE4MDAwNCAxOC43MTQyODU3LDEyLjM3Mjg4NjQgQzE4LjcxNDI4NTcsMTAuNjI3NzcyMyAxNy4yNzUyMDEsOS4yMTMwNzc5MiAxNS41LDkuMjEzMDc3OTIgQzEzLjcyNDc5OSw5LjIxMzA3NzkyIDEyLjI4NTcxNDMsMTAuNjI3NzcyMyAxMi4yODU3MTQzLDEyLjM3Mjg4NjQgQzEyLjI4NTcxNDMsMTQuMTE4MDAwNCAxMy43MjQ3OTksMTUuNTMyNjk0OCAxNS41LDE1LjUzMjY5NDggWiIgaWQ9InBhdGgtMSI+PC9wYXRoPgogICAgPC9kZWZzPgogICAgPGcgaWQ9IlN5bWJvbHMiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJBdG9tcy9JY29ucy9Ub29scy9NYXJrZXIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zLjAwMDAwMCwgLTMuMDAwMDAwKSI+CiAgICAgICAgICAgIDxtYXNrIGlkPSJtYXNrLTIiIGZpbGw9IndoaXRlIj4KICAgICAgICAgICAgICAgIDx1c2UgeGxpbms6aHJlZj0iI3BhdGgtMSI+PC91c2U+CiAgICAgICAgICAgIDwvbWFzaz4KICAgICAgICAgICAgPHVzZSBpZD0iTWFzayIgZmlsbD0iIzVCNUI1QiIgZmlsbC1ydWxlPSJub256ZXJvIiB4bGluazpocmVmPSIjcGF0aC0xIj48L3VzZT4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==);\n}\n.leaflet-pm-toolbar .leaflet-pm-icon-polygon {\n  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPGRlZnM+CiAgICA8cGF0aCBpZD0icG9seWdvbi1hIiBkPSJNMTkuNDIwNjg5Miw5LjE2NTA5NzI1IEMxOS4xNTIzNjgxLDguNjY5OTI5MTQgMTksOC4xMDI3NTgzMSAxOSw3LjUgQzE5LDUuNTY3MDAzMzggMjAuNTY3MDAzNCw0IDIyLjUsNCBDMjQuNDMyOTk2Niw0IDI2LDUuNTY3MDAzMzggMjYsNy41IEMyNiw5LjI2MzIzNTk1IDI0LjY5NjE0NzEsMTAuNzIxOTQwNyAyMywxMC45NjQ1NTU2IEwyMywxOS4wMzU0NDQ0IEMyNC42OTYxNDcxLDE5LjI3ODA1OTMgMjYsMjAuNzM2NzY0IDI2LDIyLjUgQzI2LDI0LjQzMjk5NjYgMjQuNDMyOTk2NiwyNiAyMi41LDI2IEMyMC43MzY3NjQsMjYgMTkuMjc4MDU5MywyNC42OTYxNDcxIDE5LjAzNTQ0NDQsMjMgTDEwLjk2NDU1NTYsMjMgQzEwLjcyMTk0MDcsMjQuNjk2MTQ3MSA5LjI2MzIzNTk1LDI2IDcuNSwyNiBDNS41NjcwMDMzOCwyNiA0LDI0LjQzMjk5NjYgNCwyMi41IEM0LDIwLjU2NzAwMzQgNS41NjcwMDMzOCwxOSA3LjUsMTkgQzguMTAyNzU4MzEsMTkgOC42Njk5MjkxNCwxOS4xNTIzNjgxIDkuMTY1MDk3MjUsMTkuNDIwNjg5MiBMMTkuNDIwNjg5Miw5LjE2NTA5NzI1IFogTTIwLjgzNDkwNzMsMTAuNTc5MzA2MyBMMTAuNTc5MzEwOCwyMC44MzQ5MDI3IEMxMC42MDg2NzMxLDIwLjg4OTA4ODggMTAuNjM2NjQ2OSwyMC45NDQxMzcyIDEwLjY2MzE4NDQsMjEgTDE5LjMzNjgxNTYsMjEgQzE5LjY4MjU3NzUsMjAuMjcyMTU0IDIwLjI3MjE1NCwxOS42ODI1Nzc1IDIxLDE5LjMzNjgxNTYgTDIxLDEwLjY2MzE4NDQgQzIwLjk0NDEzNzIsMTAuNjM2NjQ2OSAyMC44ODkwODg4LDEwLjYwODY3MzEgMjAuODM0OTAyNywxMC41NzkzMTA4IFogTTIyLjUsOSBDMjMuMzI4NDI3MSw5IDI0LDguMzI4NDI3MTIgMjQsNy41IEMyNCw2LjY3MTU3Mjg4IDIzLjMyODQyNzEsNiAyMi41LDYgQzIxLjY3MTU3MjksNiAyMSw2LjY3MTU3Mjg4IDIxLDcuNSBDMjEsOC4zMjg0MjcxMiAyMS42NzE1NzI5LDkgMjIuNSw5IFogTTIyLjUsMjQgQzIzLjMyODQyNzEsMjQgMjQsMjMuMzI4NDI3MSAyNCwyMi41IEMyNCwyMS42NzE1NzI5IDIzLjMyODQyNzEsMjEgMjIuNSwyMSBDMjEuNjcxNTcyOSwyMSAyMSwyMS42NzE1NzI5IDIxLDIyLjUgQzIxLDIzLjMyODQyNzEgMjEuNjcxNTcyOSwyNCAyMi41LDI0IFogTTcuNSwyNCBDOC4zMjg0MjcxMiwyNCA5LDIzLjMyODQyNzEgOSwyMi41IEM5LDIxLjY3MTU3MjkgOC4zMjg0MjcxMiwyMSA3LjUsMjEgQzYuNjcxNTcyODgsMjEgNiwyMS42NzE1NzI5IDYsMjIuNSBDNiwyMy4zMjg0MjcxIDYuNjcxNTcyODgsMjQgNy41LDI0IFoiLz4KICA8L2RlZnM+CiAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMyAtMykiPgogICAgPG1hc2sgaWQ9InBvbHlnb24tYiIgZmlsbD0iI2ZmZiI+CiAgICAgIDx1c2UgeGxpbms6aHJlZj0iI3BvbHlnb24tYSIvPgogICAgPC9tYXNrPgogICAgPHVzZSBmaWxsPSIjNUI1QjVCIiBmaWxsLXJ1bGU9Im5vbnplcm8iIHhsaW5rOmhyZWY9IiNwb2x5Z29uLWEiLz4KICAgIDxnIGZpbGw9IiM1QjVCNUIiIG1hc2s9InVybCgjcG9seWdvbi1iKSI+CiAgICAgIDxyZWN0IHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIvPgogICAgPC9nPgogIDwvZz4KPC9zdmc+Cg==);\n}\n.leaflet-pm-toolbar .leaflet-pm-icon-polyline {\n  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPGRlZnM+CiAgICA8cGF0aCBpZD0ibGluZS1hIiBkPSJNOS4xNjUwOTcyNSwxOS40MjA2ODkyIEwxOC40MjA2ODkyLDEwLjE2NTA5NzMgQzE4LjE1MjM2ODEsOS42Njk5MjkxNCAxOCw5LjEwMjc1ODMxIDE4LDguNSBDMTgsNi41NjcwMDMzOCAxOS41NjcwMDM0LDUgMjEuNSw1IEMyMy40MzI5OTY2LDUgMjUsNi41NjcwMDMzOCAyNSw4LjUgQzI1LDEwLjQzMjk5NjYgMjMuNDMyOTk2NiwxMiAyMS41LDEyIEMyMC44OTcyNDE3LDEyIDIwLjMzMDA3MDksMTEuODQ3NjMxOSAxOS44MzQ5MDI3LDExLjU3OTMxMDggTDEwLjU3OTMxMDgsMjAuODM0OTAyNyBDMTAuODQ3NjMxOSwyMS4zMzAwNzA5IDExLDIxLjg5NzI0MTcgMTEsMjIuNSBDMTEsMjQuNDMyOTk2NiA5LjQzMjk5NjYyLDI2IDcuNSwyNiBDNS41NjcwMDMzOCwyNiA0LDI0LjQzMjk5NjYgNCwyMi41IEM0LDIwLjU2NzAwMzQgNS41NjcwMDMzOCwxOSA3LjUsMTkgQzguMTAyNzU4MzEsMTkgOC42Njk5MjkxNCwxOS4xNTIzNjgxIDkuMTY1MDk3MjUsMTkuNDIwNjg5MiBaIE0yMS41LDEwIEMyMi4zMjg0MjcxLDEwIDIzLDkuMzI4NDI3MTIgMjMsOC41IEMyMyw3LjY3MTU3Mjg4IDIyLjMyODQyNzEsNyAyMS41LDcgQzIwLjY3MTU3MjksNyAyMCw3LjY3MTU3Mjg4IDIwLDguNSBDMjAsOS4zMjg0MjcxMiAyMC42NzE1NzI5LDEwIDIxLjUsMTAgWiBNNy41LDI0IEM4LjMyODQyNzEyLDI0IDksMjMuMzI4NDI3MSA5LDIyLjUgQzksMjEuNjcxNTcyOSA4LjMyODQyNzEyLDIxIDcuNSwyMSBDNi42NzE1NzI4OCwyMSA2LDIxLjY3MTU3MjkgNiwyMi41IEM2LDIzLjMyODQyNzEgNi42NzE1NzI4OCwyNCA3LjUsMjQgWiIvPgogIDwvZGVmcz4KICA8ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zIC0zKSI+CiAgICA8bWFzayBpZD0ibGluZS1iIiBmaWxsPSIjZmZmIj4KICAgICAgPHVzZSB4bGluazpocmVmPSIjbGluZS1hIi8+CiAgICA8L21hc2s+CiAgICA8dXNlIGZpbGw9IiM1QjVCNUIiIGZpbGwtcnVsZT0ibm9uemVybyIgeGxpbms6aHJlZj0iI2xpbmUtYSIvPgogICAgPGcgZmlsbD0iIzVCNUI1QiIgbWFzaz0idXJsKCNsaW5lLWIpIj4KICAgICAgPHJlY3Qgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIi8+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4K);\n}\n.leaflet-pm-toolbar .leaflet-pm-icon-circle {\n  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDUyLjUgKDY3NDY5KSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5BdG9tcy9JY29ucy9Ub29scy9DaXJjbGU8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz4KICAgICAgICA8cGF0aCBkPSJNMTguMjg5Nzc1MSw2Ljc4NjAyMjc1IEMxOC44OTI0MTMxLDYuMjk0NjQ5ODEgMTkuNjYxNzk3LDYgMjAuNSw2IEMyMi40MzI5OTY2LDYgMjQsNy41NjcwMDMzOCAyNCw5LjUgQzI0LDEwLjMzODIwMyAyMy43MDUzNTAyLDExLjEwNzU4NjkgMjMuMjEzOTc3MiwxMS43MTAyMjQ5IEMyMy43MTk1OTksMTIuODcxMjA1MyAyNCwxNC4xNTI4NTcxIDI0LDE1LjUgQzI0LDIwLjc0NjcwNTEgMTkuNzQ2NzA1MSwyNSAxNC41LDI1IEM5LjI1MzI5NDg4LDI1IDUsMjAuNzQ2NzA1MSA1LDE1LjUgQzUsMTAuMjUzMjk0OSA5LjI1MzI5NDg4LDYgMTQuNSw2IEMxNS44NDcxNDI5LDYgMTcuMTI4Nzk0Nyw2LjI4MDQwMDk4IDE4LjI4OTc3NTEsNi43ODYwMjI3NSBaIE0xNy4xNTA0MjI4LDguNDgxNzU4NiBDMTYuMzI2MzU4MSw4LjE3MDM5MjM2IDE1LjQzMzA3NzcsOCAxNC41LDggQzEwLjM1Nzg2NDQsOCA3LDExLjM1Nzg2NDQgNywxNS41IEM3LDE5LjY0MjEzNTYgMTAuMzU3ODY0NCwyMyAxNC41LDIzIEMxOC42NDIxMzU2LDIzIDIyLDE5LjY0MjEzNTYgMjIsMTUuNSBDMjIsMTQuNTY2OTIyMyAyMS44Mjk2MDc2LDEzLjY3MzY0MTkgMjEuNTE4MjQxNCwxMi44NDk1NzcyIEMyMS4xOTYwMzgzLDEyLjk0NzM5NjggMjAuODU0MTYyMiwxMyAyMC41LDEzIEMxOC41NjcwMDM0LDEzIDE3LDExLjQzMjk5NjYgMTcsOS41IEMxNyw5LjE0NTgzNzc4IDE3LjA1MjYwMzIsOC44MDM5NjE2OSAxNy4xNTA0MjI4LDguNDgxNzU4NiBaIE0xNC41LDE3IEMxMy42NzE1NzI5LDE3IDEzLDE2LjMyODQyNzEgMTMsMTUuNSBDMTMsMTQuNjcxNTcyOSAxMy42NzE1NzI5LDE0IDE0LjUsMTQgQzE1LjMyODQyNzEsMTQgMTYsMTQuNjcxNTcyOSAxNiwxNS41IEMxNiwxNi4zMjg0MjcxIDE1LjMyODQyNzEsMTcgMTQuNSwxNyBaIE0yMC41LDExIEMyMS4zMjg0MjcxLDExIDIyLDEwLjMyODQyNzEgMjIsOS41IEMyMiw4LjY3MTU3Mjg4IDIxLjMyODQyNzEsOCAyMC41LDggQzE5LjY3MTU3MjksOCAxOSw4LjY3MTU3Mjg4IDE5LDkuNSBDMTksMTAuMzI4NDI3MSAxOS42NzE1NzI5LDExIDIwLjUsMTEgWiIgaWQ9InBhdGgtMSI+PC9wYXRoPgogICAgPC9kZWZzPgogICAgPGcgaWQ9IlN5bWJvbHMiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJBdG9tcy9JY29ucy9Ub29scy9DaXJjbGUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zLjAwMDAwMCwgLTMuMDAwMDAwKSI+CiAgICAgICAgICAgIDxtYXNrIGlkPSJtYXNrLTIiIGZpbGw9IndoaXRlIj4KICAgICAgICAgICAgICAgIDx1c2UgeGxpbms6aHJlZj0iI3BhdGgtMSI+PC91c2U+CiAgICAgICAgICAgIDwvbWFzaz4KICAgICAgICAgICAgPHVzZSBpZD0iTWFzayIgZmlsbD0iIzVCNUI1QiIgZmlsbC1ydWxlPSJub256ZXJvIiB4bGluazpocmVmPSIjcGF0aC0xIj48L3VzZT4KICAgICAgICAgICAgPGcgaWQ9IkF0b21zL0NvbG9yL0dyZXkiIG1hc2s9InVybCgjbWFzay0yKSIgZmlsbD0iIzVCNUI1QiI+CiAgICAgICAgICAgICAgICA8cmVjdCBpZD0iUmVjdGFuZ2xlIiB4PSIwIiB5PSIwIiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiPjwvcmVjdD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+);\n}\n.leaflet-pm-toolbar .leaflet-pm-icon-circle-marker {\n  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KCjxzdmcgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjNUI1QjVCIiBzdHJva2Utd2lkdGg9IjgiCiAgICAgZmlsbD0ibm9uZSI+CjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjM1Ii8+CiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iMyIgZmlsbD0iIzVCNUI1QiIvPgo8L3N2Zz4=);\n}\n.leaflet-pm-toolbar .leaflet-pm-icon-rectangle {\n  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPGRlZnM+CiAgICA8cGF0aCBpZD0icmVjdGFuZ2xlLWEiIGQ9Ik0yMywxMC45NjQ1NTU2IEwyMywxOS4wMzU0NDQ0IEMyNC42OTYxNDcxLDE5LjI3ODA1OTMgMjYsMjAuNzM2NzY0IDI2LDIyLjUgQzI2LDI0LjQzMjk5NjYgMjQuNDMyOTk2NiwyNiAyMi41LDI2IEMyMC43MzY3NjQsMjYgMTkuMjc4MDU5MywyNC42OTYxNDcxIDE5LjAzNTQ0NDQsMjMgTDEwLjk2NDU1NTYsMjMgQzEwLjcyMTk0MDcsMjQuNjk2MTQ3MSA5LjI2MzIzNTk1LDI2IDcuNSwyNiBDNS41NjcwMDMzOCwyNiA0LDI0LjQzMjk5NjYgNCwyMi41IEM0LDIwLjczNjc2NCA1LjMwMzg1MjkzLDE5LjI3ODA1OTMgNywxOS4wMzU0NDQ0IEw3LDEwLjk2NDU1NTYgQzUuMzAzODUyOTMsMTAuNzIxOTQwNyA0LDkuMjYzMjM1OTUgNCw3LjUgQzQsNS41NjcwMDMzOCA1LjU2NzAwMzM4LDQgNy41LDQgQzkuMjYzMjM1OTUsNCAxMC43MjE5NDA3LDUuMzAzODUyOTMgMTAuOTY0NTU1Niw3IEwxOS4wMzU0NDQ0LDcgQzE5LjI3ODA1OTMsNS4zMDM4NTI5MyAyMC43MzY3NjQsNCAyMi41LDQgQzI0LjQzMjk5NjYsNCAyNiw1LjU2NzAwMzM4IDI2LDcuNSBDMjYsOS4yNjMyMzU5NSAyNC42OTYxNDcxLDEwLjcyMTk0MDcgMjMsMTAuOTY0NTU1NiBaIE0yMSwxMC42NjMxODQ0IEMyMC4yNzIxNTQsMTAuMzE3NDIyNSAxOS42ODI1Nzc1LDkuNzI3ODQ1OTggMTkuMzM2ODE1Niw5IEwxMC42NjMxODQ0LDkgQzEwLjMxNzQyMjUsOS43Mjc4NDU5OCA5LjcyNzg0NTk4LDEwLjMxNzQyMjUgOSwxMC42NjMxODQ0IEw5LDE5LjMzNjgxNTYgQzkuNzI3ODQ1OTgsMTkuNjgyNTc3NSAxMC4zMTc0MjI1LDIwLjI3MjE1NCAxMC42NjMxODQ0LDIxIEwxOS4zMzY4MTU2LDIxIEMxOS42ODI1Nzc1LDIwLjI3MjE1NCAyMC4yNzIxNTQsMTkuNjgyNTc3NSAyMSwxOS4zMzY4MTU2IEwyMSwxMC42NjMxODQ0IFogTTcuNSw5IEM4LjMyODQyNzEyLDkgOSw4LjMyODQyNzEyIDksNy41IEM5LDYuNjcxNTcyODggOC4zMjg0MjcxMiw2IDcuNSw2IEM2LjY3MTU3Mjg4LDYgNiw2LjY3MTU3Mjg4IDYsNy41IEM2LDguMzI4NDI3MTIgNi42NzE1NzI4OCw5IDcuNSw5IFogTTIyLjUsOSBDMjMuMzI4NDI3MSw5IDI0LDguMzI4NDI3MTIgMjQsNy41IEMyNCw2LjY3MTU3Mjg4IDIzLjMyODQyNzEsNiAyMi41LDYgQzIxLjY3MTU3MjksNiAyMSw2LjY3MTU3Mjg4IDIxLDcuNSBDMjEsOC4zMjg0MjcxMiAyMS42NzE1NzI5LDkgMjIuNSw5IFogTTIyLjUsMjQgQzIzLjMyODQyNzEsMjQgMjQsMjMuMzI4NDI3MSAyNCwyMi41IEMyNCwyMS42NzE1NzI5IDIzLjMyODQyNzEsMjEgMjIuNSwyMSBDMjEuNjcxNTcyOSwyMSAyMSwyMS42NzE1NzI5IDIxLDIyLjUgQzIxLDIzLjMyODQyNzEgMjEuNjcxNTcyOSwyNCAyMi41LDI0IFogTTcuNSwyNCBDOC4zMjg0MjcxMiwyNCA5LDIzLjMyODQyNzEgOSwyMi41IEM5LDIxLjY3MTU3MjkgOC4zMjg0MjcxMiwyMSA3LjUsMjEgQzYuNjcxNTcyODgsMjEgNiwyMS42NzE1NzI5IDYsMjIuNSBDNiwyMy4zMjg0MjcxIDYuNjcxNTcyODgsMjQgNy41LDI0IFoiLz4KICA8L2RlZnM+CiAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMyAtMykiPgogICAgPG1hc2sgaWQ9InJlY3RhbmdsZS1iIiBmaWxsPSIjZmZmIj4KICAgICAgPHVzZSB4bGluazpocmVmPSIjcmVjdGFuZ2xlLWEiLz4KICAgIDwvbWFzaz4KICAgIDx1c2UgZmlsbD0iIzVCNUI1QiIgZmlsbC1ydWxlPSJub256ZXJvIiB4bGluazpocmVmPSIjcmVjdGFuZ2xlLWEiLz4KICAgIDxnIGZpbGw9IiM1QjVCNUIiIG1hc2s9InVybCgjcmVjdGFuZ2xlLWIpIj4KICAgICAgPHJlY3Qgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIi8+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4K);\n}\n.leaflet-pm-toolbar .leaflet-pm-icon-delete {\n  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDUyLjUgKDY3NDY5KSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5BdG9tcy9JY29ucy9Ub29scy9FcmFzZXI8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz4KICAgICAgICA8cGF0aCBkPSJNMTcuNzg3NDIxOSwxOC40ODEyNTUyIEwxMS42NDgwMDc5LDEzLjM0OTgxODQgTDYuNDA0NjYwMDksMTkuMzgxNjAwMSBMMTAuNTUzOTE1NiwyMi45ODg0OTI5IEwxMy44NjkzNCwyMi45ODg0OTI5IEwxNy43ODc0MjE5LDE4LjQ4MTI1NTIgWiBNMTYuNTA3NDI1MiwyMi45ODg0OTI5IEwyNi4wMDAwMDAyLDIyLjk4ODQ5MjkgTDI2LjAwMDAwMDIsMjQuOTg4NDkyOSBMMTAuMDAwMDAwMiwyNC45ODg0OTI5IEw5LjgwNzA4MzEzLDI0Ljk4ODQ5MjkgTDUuMDkyNTQyMDQsMjAuODkxMDE5MiBDNC4yNTg5MTI4NSwyMC4xNjYzNTY0IDQuMTcwNTc4MTQsMTguOTAzMTExMiA0Ljg5NTI0MDkzLDE4LjA2OTQ4MiBMMTYuMDQ4MjQ0NCw1LjIzOTQxOTE2IEMxNi43NzI5MDcyLDQuNDA1Nzg5OTggMTguMDM2MTUyNSw0LjMxNzQ1NTI2IDE4Ljg2OTc4MTYsNS4wNDIxMTgwNiBMMjQuOTA3NDU4MywxMC4yOTA1OTAzIEMyNS43NDEwODc1LDExLjAxNTI1MzEgMjUuODI5NDIyMiwxMi4yNzg0OTgzIDI1LjEwNDc1OTQsMTMuMTEyMTI3NSBMMTYuNTA3NDI1MiwyMi45ODg0OTI5IFoiIGlkPSJwYXRoLTEiPjwvcGF0aD4KICAgIDwvZGVmcz4KICAgIDxnIGlkPSJTeW1ib2xzIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iQXRvbXMvSWNvbnMvVG9vbHMvRXJhc2VyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMy4wMDAwMDAsIC0zLjAwMDAwMCkiPgogICAgICAgICAgICA8bWFzayBpZD0ibWFzay0yIiBmaWxsPSJ3aGl0ZSI+CiAgICAgICAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNwYXRoLTEiPjwvdXNlPgogICAgICAgICAgICA8L21hc2s+CiAgICAgICAgICAgIDx1c2UgaWQ9IkNvbWJpbmVkLVNoYXBlIiBmaWxsPSIjNUI1QjVCIiBmaWxsLXJ1bGU9Im5vbnplcm8iIHhsaW5rOmhyZWY9IiNwYXRoLTEiPjwvdXNlPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+);\n}\n.leaflet-pm-toolbar .leaflet-pm-icon-edit {\n  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPGRlZnM+CiAgICA8cGF0aCBpZD0iZWRpdF9hbmNob3ItYSIgZD0iTTEzLjUsMTEgQzExLjU2NzAwMzQsMTEgMTAsOS40MzI5OTY2MiAxMCw3LjUgQzEwLDUuNTY3MDAzMzggMTEuNTY3MDAzNCw0IDEzLjUsNCBDMTUuNDMyOTk2Niw0IDE3LDUuNTY3MDAzMzggMTcsNy41IEMxNyw5LjQzMjk5NjYyIDE1LjQzMjk5NjYsMTEgMTMuNSwxMSBaIE0xMy41LDkgQzE0LjMyODQyNzEsOSAxNSw4LjMyODQyNzEyIDE1LDcuNSBDMTUsNi42NzE1NzI4OCAxNC4zMjg0MjcxLDYgMTMuNSw2IEMxMi42NzE1NzI5LDYgMTIsNi42NzE1NzI4OCAxMiw3LjUgQzEyLDguMzI4NDI3MTIgMTIuNjcxNTcyOSw5IDEzLjUsOSBaIE0xMi4wMDAyODg5LDcuNTI5NzM4OTMgQzEyLjAxMjU5ODMsOC4xNjI3MzY3MiAxMi40MTcwMTk3LDguNjk5NjY0MyAxMi45ODA3MTExLDguOTA3Njc5NjYgTDMsMTUgTDMsMTMgTDEyLjAwMDI4ODksNy41Mjk3Mzg5MyBaIE0xNC4yMTcyNzIyLDYuMTgyMjg0NzIgTDE5LjQ1MzEyNSwzIEwyMi42NTg5MzU1LDMgTDE0Ljk4OTEwMiw3LjY4MTczODg1IEMxNC45OTYyOTcxLDcuNjIyMTY0NTkgMTUsNy41NjE1MTQ3MiAxNSw3LjUgQzE1LDYuOTMxMzgzODEgMTQuNjgzNjA5OCw2LjQzNjY2NDUgMTQuMjE3MjcyMiw2LjE4MjI4NDcyIFogTTIzLjQ0MzQwNDIsMTkuMjg1MTczNiBMMjAuMTI4Mjc5OSwxOS4yODUxNzM2IEwyMS44NzI5OTgzLDIzLjUzNDk1MjUgQzIxLjk5NDUyOTYsMjMuODI5NTc3MyAyMS44NTU2NTQ2LDI0LjE1OTkyMDkgMjEuNTc3ODczNCwyNC4yODQ5MjA4IEwyMC4wNDE0Njc1LDI0Ljk1NDUxNDIgQzE5Ljc1NTA2MTMsMjUuMDc5NTE0MSAxOS40MzM4NzM4LDI0LjkzNjY3MDQgMTkuMzEyMzQyNiwyNC42NTA5NTE4IEwxNy42NTQ0MzY3LDIwLjYxNTQ1NDEgTDE0Ljk0NjE4NzMsMjMuNDAxMDE1MSBDMTQuNTg1MjgxMSwyMy43NzIxNzExIDE0LDIzLjQ4NjA0NjMgMTQsMjIuOTk5MjY1MyBMMTQsOS41NzE4MzUzMyBDMTQsOS4wNTkzMzU2MSAxNC42MjI1MzExLDguODA5NDkyIDE0Ljk0NjE1Niw5LjE3MDA4NTU1IEwyMy44MzQwMjkyLDE4LjMxMjAxNzkgQzI0LjE5MjUyOTEsMTguNjYxMzYxNSAyMy45Mjc5OTc5LDE5LjI4NTE3MzYgMjMuNDQzNDA0MiwxOS4yODUxNzM2IFoiLz4KICA8L2RlZnM+CiAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMyAtMykiPgogICAgPG1hc2sgaWQ9ImVkaXRfYW5jaG9yLWIiIGZpbGw9IiNmZmYiPgogICAgICA8dXNlIHhsaW5rOmhyZWY9IiNlZGl0X2FuY2hvci1hIi8+CiAgICA8L21hc2s+CiAgICA8dXNlIGZpbGw9IiM1QjVCNUIiIGZpbGwtcnVsZT0ibm9uemVybyIgeGxpbms6aHJlZj0iI2VkaXRfYW5jaG9yLWEiLz4KICAgIDxnIGZpbGw9IiM1QjVCNUIiIG1hc2s9InVybCgjZWRpdF9hbmNob3ItYikiPgogICAgICA8cmVjdCB3aWR0aD0iMzAiIGhlaWdodD0iMzAiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=);\n}\n.leaflet-pm-toolbar .leaflet-pm-icon-drag {\n  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPGRlZnM+CiAgICA8cGF0aCBpZD0ibW92ZS1hIiBkPSJNMjEsMTQgTDIxLDEwIEwyNywxNSBMMjEsMjAgTDIxLDE2IEwxNiwxNiBMMTYsMjEgTDIwLDIxIEwxNSwyNyBMMTAsMjEgTDE0LDIxIEwxNCwxNiBMOSwxNiBMOSwyMCBMMywxNSBMOSwxMCBMOSwxNCBMMTQsMTQgTDE0LDkgTDEwLDkgTDE1LDMgTDIwLDkgTDE2LDkgTDE2LDE0IEwyMSwxNCBaIi8+CiAgPC9kZWZzPgogIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTMgLTMpIj4KICAgIDxtYXNrIGlkPSJtb3ZlLWIiIGZpbGw9IiNmZmYiPgogICAgICA8dXNlIHhsaW5rOmhyZWY9IiNtb3ZlLWEiLz4KICAgIDwvbWFzaz4KICAgIDx1c2UgZmlsbD0iI0Q4RDhEOCIgeGxpbms6aHJlZj0iI21vdmUtYSIvPgogICAgPGcgZmlsbD0iIzVCNUI1QiIgbWFzaz0idXJsKCNtb3ZlLWIpIj4KICAgICAgPHJlY3Qgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIi8+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4K);\n}\n.leaflet-pm-toolbar .leaflet-pm-icon-cut {\n  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDUyLjUgKDY3NDY5KSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5BdG9tcy9JY29ucy9Ub29scy9TY2lzc29yczwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxkZWZzPgogICAgICAgIDxwYXRoIGQ9Ik0xMi45NjkxNTc0LDEzLjQ5Mzk0MzUgTDIxLjAzMTcwMzIsNS41NDE2NzAxMyBMMjMuNDY0OTQ5OSw1LjY3NzIyOTU3IEwxNy4wNDcwNzEzLDE0LjUxMDY4MTYgTDI3LjU2NjAzMzYsMTcuMTMzMzUzNSBMMjUuNzg5MTk0NCwxOC44MDEyNTg4IEwxNC41ODU0OTUxLDE3Ljg5ODc1MDYgTDEzLjY0ODc5NTUsMTkuMTg4MDA3IEMxMy43OTQ2MzksMTkuMjY1MDk1OCAxMy45MzY3OTg1LDE5LjM1MzQ0MTcgMTQuMDc0MTM3NywxOS40NTMyMjQ1IEMxNS42Mzc5NjQ4LDIwLjU4OTQxMTQgMTUuOTg0NjM1NywyMi43NzgyMDUyIDE0Ljg0ODQ0ODgsMjQuMzQyMDMyNCBDMTMuNzEyMjYxOSwyNS45MDU4NTk1IDExLjUyMzQ2ODEsMjYuMjUyNTMwNCA5Ljk1OTY0MDk2LDI1LjExNjM0MzUgQzguMzk1ODEzODQsMjMuOTgwMTU2NSA4LjA0OTE0Mjk2LDIxLjc5MTM2MjcgOS4xODUzMjk4NiwyMC4yMjc1MzU2IEM5Ljc0NTg3Mjc2LDE5LjQ1NjAxNDUgMTAuNTYyNjE4OCwxOC45ODA3NDc1IDExLjQzNDEyMTgsMTguODMzNjQwNyBMMTIuNjgwNTY1NiwxNy4xMTgwNTc5IEwxMi41MjM5NzI0LDE2LjM3NDcyMTYgTDExLjk1MDY5MzIsMTUuMzAxMjM5MSBMOS44OTMxMDY0NiwxNC43ODgyMjUxIEM5LjEzMDkzNzk2LDE1LjIzNTcyNjEgOC4xOTk3Nzg1NCwxNS4zOTY2NDQ3IDcuMjc0NDUzNTUsMTUuMTY1OTM1MiBDNS4zOTg4NzUxOSwxNC42OTgzMDEgNC4yNTc1MTA5NCwxMi43OTg3NTE5IDQuNzI1MTQ1MTUsMTAuOTIzMTczNiBDNS4xOTI3NzkzNSw5LjA0NzU5NTE5IDcuMDkyMzI4NDYsNy45MDYyMzA5NCA4Ljk2NzkwNjgyLDguMzczODY1MTUgQzEwLjg0MzQ4NTIsOC44NDE0OTkzNSAxMS45ODQ4NDk0LDEwLjc0MTA0ODUgMTEuNTE3MjE1MiwxMi42MTY2MjY4IEMxMS40NzYxNDY0LDEyLjc4MTM0NDkgMTEuNDI0MDMzNSwxMi45NDA0MDAxIDExLjM2MTg2MjcsMTMuMDkzMTk5OSBMMTIuOTY5MTU3NCwxMy40OTM5NDM1IFogTTcuNzU4Mjk3MzUsMTMuMjI1MzQzOCBDOC41NjIxMTY2NCwxMy40MjU3NTg0IDkuMzc2MjA5MTIsMTIuOTM2NjAyMyA5LjU3NjYyMzc4LDEyLjEzMjc4MyBDOS43NzcwMzg0NCwxMS4zMjg5NjM3IDkuMjg3ODgyMzMsMTAuNTE0ODcxMyA4LjQ4NDA2MzAzLDEwLjMxNDQ1NjYgQzcuNjgwMjQzNzMsMTAuMTE0MDQxOSA2Ljg2NjE1MTI2LDEwLjYwMzE5OCA2LjY2NTczNjYsMTEuNDA3MDE3MyBDNi40NjUzMjE5NCwxMi4yMTA4MzY2IDYuOTU0NDc4MDUsMTMuMDI0OTI5MSA3Ljc1ODI5NzM1LDEzLjIyNTM0MzggWiBNMTAuODAzMzYzOSwyMS40MDMxMDYxIEMxMC4zMTY0MjY2LDIyLjA3MzMxNzcgMTAuNDY0OTk5OCwyMy4wMTEzNzIyIDExLjEzNTIxMTUsMjMuNDk4MzA5NSBDMTEuODA1NDIzMSwyMy45ODUyNDY3IDEyLjc0MzQ3NzYsMjMuODM2NjczNSAxMy4yMzA0MTQ4LDIzLjE2NjQ2MTkgQzEzLjcxNzM1MjEsMjIuNDk2MjUwMiAxMy41Njg3Nzg4LDIxLjU1ODE5NTcgMTIuODk4NTY3MiwyMS4wNzEyNTg1IEMxMi4yMjgzNTU2LDIwLjU4NDMyMTIgMTEuMjkwMzAxMSwyMC43MzI4OTQ1IDEwLjgwMzM2MzksMjEuNDAzMTA2MSBaIiBpZD0icGF0aC0xIj48L3BhdGg+CiAgICA8L2RlZnM+CiAgICA8ZyBpZD0iU3ltYm9scyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9IkF0b21zL0ljb25zL1Rvb2xzL1NjaXNzb3JzIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMy4wMDAwMDAsIC0zLjAwMDAwMCkiPgogICAgICAgICAgICA8bWFzayBpZD0ibWFzay0yIiBmaWxsPSJ3aGl0ZSI+CiAgICAgICAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNwYXRoLTEiPjwvdXNlPgogICAgICAgICAgICA8L21hc2s+CiAgICAgICAgICAgIDx1c2UgaWQ9Ik1hc2siIGZpbGw9IiM1QjVCNUIiIGZpbGwtcnVsZT0ibm9uemVybyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTYuMDkzMTk0LCAxNS42NjMzNTEpIHJvdGF0ZSgtMzIuMDAwMDAwKSB0cmFuc2xhdGUoLTE2LjA5MzE5NCwgLTE1LjY2MzM1MSkgIiB4bGluazpocmVmPSIjcGF0aC0xIj48L3VzZT4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==);\n}\n.leaflet-pm-toolbar .leaflet-pm-icon-snapping {\n  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU3LjEgKDgzMDg4KSAtIGh0dHBzOi8vc2tldGNoLmNvbSAtLT4KICAgIDx0aXRsZT5BdG9tcy9JY29ucy9Ub29scy9NYWduZXQ8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz4KICAgICAgICA8cGF0aCBkPSJNMjEuOTk5NDc1OSwxMC45NDI4MTgzIEwyMS45OTk5OTg1LDE2LjM3MTA0MTcgQzIyLDE2LjY4NzIwMDcgMjIsMTcuMDA1ODI3OCAyMiwxNy4zMjY5NDExIEMyMiwyMS41NjQ2NTQ1IDE4LjY0MjEzNTYsMjUgMTQuNSwyNSBDMTAuMzU3ODY0NCwyNSA3LDIxLjU2NDY1NDUgNywxNy4zMjY5NDExIEw3LjAwMDg3NTA4LDEwLjk5MDc1MDcgTDExLjAwMjI4MDgsMTAuOTk4NDEyNSBDMTEuMDAxNzAzMywxMS42OTgwMTE0IDExLjAwMTI0NywxMi40MTY4MjQ4IDExLjAwMDg5OTIsMTMuMTU1NDg4NyBMMTEsMTcuMzI2OTQxMSBDMTEsMTkuMzc1NjgwOSAxMi41ODc2ODQxLDIxIDE0LjUsMjEgQzE2LjQxMjMxNTksMjEgMTgsMTkuMzc1NjgwOSAxOCwxNy4zMjY5NDExIEMxOCwxNS4wNzAyMDMyIDE3Ljk5OTU2OTYsMTIuOTYxOTY2OCAxNy45OTg1MzksMTAuOTkxMDAzMiBMMjEuOTk5NDc1OSwxMC45NDI4MTgzIFogTTEwLDcgQzEwLjU1MjI4NDcsNyAxMSw3LjQ0NzcxNTI1IDExLDggTDExLDEwIEw3LDEwIEw3LDggQzcsNy40NDc3MTUyNSA3LjQ0NzcxNTI1LDcgOCw3IEwxMCw3IFogTTIxLDcgQzIxLjU1MjI4NDcsNyAyMiw3LjQ0NzcxNTI1IDIyLDggTDIyLDEwIEwxOCwxMCBMMTgsOCBDMTgsNy40NDc3MTUyNSAxOC40NDc3MTUzLDcgMTksNyBMMjEsNyBaIiBpZD0icGF0aC0xIj48L3BhdGg+CiAgICA8L2RlZnM+CiAgICA8ZyBpZD0iU3ltYm9scyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9IkF0b21zL0ljb25zL1Rvb2xzL01hZ25ldCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTMuMDAwMDAwLCAtMy4wMDAwMDApIj4KICAgICAgICAgICAgPG1hc2sgaWQ9Im1hc2stMiIgZmlsbD0id2hpdGUiPgogICAgICAgICAgICAgICAgPHVzZSB4bGluazpocmVmPSIjcGF0aC0xIj48L3VzZT4KICAgICAgICAgICAgPC9tYXNrPgogICAgICAgICAgICA8dXNlIGlkPSJNYXNrIiBmaWxsPSIjNUI1QjVCIiBmaWxsLXJ1bGU9Im5vbnplcm8iIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE0LjUwMDAwMCwgMTYuMDAwMDAwKSByb3RhdGUoNDUuMDAwMDAwKSB0cmFuc2xhdGUoLTE0LjUwMDAwMCwgLTE2LjAwMDAwMCkgIiB4bGluazpocmVmPSIjcGF0aC0xIj48L3VzZT4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==);\n}\n\n.leaflet-buttons-control-button:hover,.leaflet-buttons-control-button:focus {\n  cursor: pointer;\n  background-color: #f4f4f4;\n}\n.active .leaflet-buttons-control-button {\n  box-shadow: inset 0 -1px 5px 2px rgba(81, 77, 77, 0.31);\n}\n\n.leaflet-buttons-control-text-hide {\n  display: none;\n}\n\n.button-container {\n  position: relative;\n}\n\n.button-container .leaflet-pm-actions-container {\n  z-index: 2;\n  position: absolute;\n  top: 0;\n  left: 100%;\n  display: none;\n  white-space: nowrap;\n  direction: ltr;\n}\n\n.leaflet-right\n  .leaflet-pm-toolbar\n  .button-container\n  .leaflet-pm-actions-container {\n  right: 100%;\n  left: auto;\n}\n\n.button-container.active .leaflet-pm-actions-container {\n  display: block;\n}\n\n.button-container .leaflet-pm-actions-container:not(.pos-right) .leaflet-pm-action:last-child {\n  border-radius: 0px 3px 3px 0px !important;\n  border-right: 0px;\n}\n.button-container .leaflet-pm-actions-container.pos-right .leaflet-pm-action:first-child {\n  border-radius: 3px 0px 0px 3px !important;\n}\n.button-container .leaflet-pm-actions-container.pos-right .leaflet-pm-action:last-child {\n  border-right: 0px;\n}\n.button-container .leaflet-pm-actions-container .leaflet-pm-action {\n  padding: 0px 10px;\n  background-color: #666;\n  color: #fff;\n  display: inline-block;\n  width: auto;\n  border-right: 1px solid #eee;\n  user-select: none;\n}\n\n.button-container .leaflet-pm-actions-container .leaflet-pm-action:hover, .button-container .leaflet-pm-actions-container .leaflet-pm-action:focus {\n  cursor: pointer;\n  background-color: #777;\n}\n\n/* That the active control is always over the other controls */\n.leaflet-pm-toolbar.activeChild{\n  z-index: 801;\n}\n\n.leaflet-buttons-control-button.pm-disabled{\n  background-color: #f4f4f4 !important;\n}\n\n.control-icon.pm-disabled{\n  filter: opacity(0.6);\n}\n\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/lib/css-base.js":
-/*!*************************************************!*\
-  !*** ./node_modules/css-loader/lib/css-base.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
-
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
-
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
-
-	return [content].join('\n');
-}
-
-// Adapted from convert-source-map (MIT)
-function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-	return '/*# ' + data + ' */';
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/leaflet-measure/dist/leaflet-measure.fa.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/leaflet-measure/dist/leaflet-measure.fa.js ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-!function(e){function t(n){if(r[n])return r[n].exports;var o=r[n]={i:n,l:!1,exports:{}};return e[n].call(o.exports,o,o.exports,t),o.l=!0,o.exports}var r={};t.m=e,t.c=r,t.d=function(e,r,n){t.o(e,r)||Object.defineProperty(e,r,{configurable:!1,enumerable:!0,get:n})},t.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(r,"a",r),r},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="/dist/",t(t.s=28)}([function(e,t,r){function n(e){return null==e?void 0===e?u:a:l&&l in Object(e)?i(e):s(e)}var o=r(4),i=r(38),s=r(39),a="[object Null]",u="[object Undefined]",l=o?o.toStringTag:void 0;e.exports=n},function(e,t){function r(e){return null!=e&&"object"==typeof e}e.exports=r},function(e,t){function r(e){var t=typeof e;return null!=e&&("object"==t||"function"==t)}e.exports=r},function(e,t,r){"use strict";function n(e,t,r){if(r=r||{},!h(r))throw new Error("options is invalid");var n=r.bbox,o=r.id;if(void 0===e)throw new Error("geometry is required");if(t&&t.constructor!==Object)throw new Error("properties must be an Object");n&&d(n),o&&m(o);var i={type:"Feature"};return o&&(i.id=o),n&&(i.bbox=n),i.properties=t||{},i.geometry=e,i}function o(e,t,r){if(!e)throw new Error("coordinates is required");if(!Array.isArray(e))throw new Error("coordinates must be an Array");if(e.length<2)throw new Error("coordinates must be at least 2 numbers long");if(!p(e[0])||!p(e[1]))throw new Error("coordinates must contain numbers");return n({type:"Point",coordinates:e},t,r)}function i(e,t,r){if(!e)throw new Error("coordinates is required");for(var o=0;o<e.length;o++){var i=e[o];if(i.length<4)throw new Error("Each LinearRing of a Polygon must have 4 or more Positions.");for(var s=0;s<i[i.length-1].length;s++){if(0===o&&0===s&&!p(i[0][0])||!p(i[0][1]))throw new Error("coordinates must contain numbers");if(i[i.length-1][s]!==i[0][s])throw new Error("First and last Position are not equivalent.")}}return n({type:"Polygon",coordinates:e},t,r)}function s(e,t,r){if(!e)throw new Error("coordinates is required");if(e.length<2)throw new Error("coordinates must be an array of two or more positions");if(!p(e[0][1])||!p(e[0][1]))throw new Error("coordinates must contain numbers");return n({type:"LineString",coordinates:e},t,r)}function a(e,t,r){if(!e)throw new Error("coordinates is required");return n({type:"MultiLineString",coordinates:e},t,r)}function u(e,t,r){if(!e)throw new Error("coordinates is required");return n({type:"MultiPoint",coordinates:e},t,r)}function l(e,t,r){if(!e)throw new Error("coordinates is required");return n({type:"MultiPolygon",coordinates:e},t,r)}function c(e,t){if(void 0===e||null===e)throw new Error("radians is required");if(t&&"string"!=typeof t)throw new Error("units must be a string");var r=y[t||"kilometers"];if(!r)throw new Error(t+" units is invalid");return e*r}function f(e){if(null===e||void 0===e)throw new Error("degrees is required");return e%360*Math.PI/180}function p(e){return!isNaN(e)&&null!==e&&!Array.isArray(e)}function h(e){return!!e&&e.constructor===Object}function d(e){if(!e)throw new Error("bbox is required");if(!Array.isArray(e))throw new Error("bbox must be an Array");if(4!==e.length&&6!==e.length)throw new Error("bbox must be an Array of 4 or 6 numbers");e.forEach(function(e){if(!p(e))throw new Error("bbox must only contain numbers")})}function m(e){if(!e)throw new Error("id is required");if(-1===["string","number"].indexOf(typeof e))throw new Error("id must be a number or a string")}r.d(t,"b",function(){return n}),r.d(t,"f",function(){return o}),r.d(t,"e",function(){return s}),r.d(t,"g",function(){return c}),r.d(t,"a",function(){return f}),r.d(t,"c",function(){return p}),r.d(t,"d",function(){return h});var y={meters:6371008.8,metres:6371008.8,millimeters:6371008800,millimetres:6371008800,centimeters:637100880,centimetres:637100880,kilometers:6371.0088,kilometres:6371.0088,miles:3958.761333810546,nauticalmiles:6371008.8/1852,inches:6371008.8*39.37,yards:6371008.8/1.0936,feet:20902260.511392,radians:1,degrees:6371008.8/111325}},function(e,t,r){var n=r(5),o=n.Symbol;e.exports=o},function(e,t,r){var n=r(11),o="object"==typeof self&&self&&self.Object===Object&&self,i=n||o||Function("return this")();e.exports=i},function(e,t){function r(e,t){return e===t||e!==e&&t!==t}e.exports=r},function(e,t,r){function n(e){return null!=e&&i(e.length)&&!o(e)}var o=r(10),i=r(16);e.exports=n},function(e,t,r){function n(e,t,r){"__proto__"==t&&o?o(e,t,{configurable:!0,enumerable:!0,value:r,writable:!0}):e[t]=r}var o=r(9);e.exports=n},function(e,t,r){var n=r(35),o=function(){try{var e=n(Object,"defineProperty");return e({},"",{}),e}catch(e){}}();e.exports=o},function(e,t,r){function n(e){if(!i(e))return!1;var t=o(e);return t==a||t==u||t==s||t==l}var o=r(0),i=r(2),s="[object AsyncFunction]",a="[object Function]",u="[object GeneratorFunction]",l="[object Proxy]";e.exports=n},function(e,t,r){(function(t){var r="object"==typeof t&&t&&t.Object===Object&&t;e.exports=r}).call(t,r(37))},function(e,t,r){function n(e,t){return s(i(e,t,o),e+"")}var o=r(13),i=r(45),s=r(46);e.exports=n},function(e,t){function r(e){return e}e.exports=r},function(e,t){function r(e,t,r){switch(r.length){case 0:return e.call(t);case 1:return e.call(t,r[0]);case 2:return e.call(t,r[0],r[1]);case 3:return e.call(t,r[0],r[1],r[2])}return e.apply(t,r)}e.exports=r},function(e,t,r){function n(e,t,r){if(!a(r))return!1;var n=typeof t;return!!("number"==n?i(r)&&s(t,r.length):"string"==n&&t in r)&&o(r[t],e)}var o=r(6),i=r(7),s=r(17),a=r(2);e.exports=n},function(e,t){function r(e){return"number"==typeof e&&e>-1&&e%1==0&&e<=n}var n=9007199254740991;e.exports=r},function(e,t){function r(e,t){var r=typeof e;return!!(t=null==t?n:t)&&("number"==r||"symbol"!=r&&o.test(e))&&e>-1&&e%1==0&&e<t}var n=9007199254740991,o=/^(?:0|[1-9]\d*)$/;e.exports=r},function(e,t,r){function n(e,t){var r=s(e),n=!r&&i(e),c=!r&&!n&&a(e),p=!r&&!n&&!c&&l(e),h=r||n||c||p,d=h?o(e.length,String):[],m=d.length;for(var y in e)!t&&!f.call(e,y)||h&&("length"==y||c&&("offset"==y||"parent"==y)||p&&("buffer"==y||"byteLength"==y||"byteOffset"==y)||u(y,m))||d.push(y);return d}var o=r(51),i=r(52),s=r(19),a=r(54),u=r(17),l=r(56),c=Object.prototype,f=c.hasOwnProperty;e.exports=n},function(e,t){var r=Array.isArray;e.exports=r},function(e,t){e.exports=function(e){return e.webpackPolyfill||(e.deprecate=function(){},e.paths=[],e.children||(e.children=[]),Object.defineProperty(e,"loaded",{enumerable:!0,get:function(){return e.l}}),Object.defineProperty(e,"id",{enumerable:!0,get:function(){return e.i}}),e.webpackPolyfill=1),e}},function(e,t){function r(e){var t=e&&e.constructor;return e===("function"==typeof t&&t.prototype||n)}var n=Object.prototype;e.exports=r},function(e,t,r){function n(e){if(!i(e))return!1;var t=o(e);return t==u||t==a||"string"==typeof e.message&&"string"==typeof e.name&&!s(e)}var o=r(0),i=r(1),s=r(63),a="[object DOMException]",u="[object Error]";e.exports=n},function(e,t){function r(e,t){return function(r){return e(t(r))}}e.exports=r},function(e,t){function r(e,t){for(var r=-1,n=null==e?0:e.length,o=Array(n);++r<n;)o[r]=t(e[r],r,e);return o}e.exports=r},function(e,t){var r=/<%=([\s\S]+?)%>/g;e.exports=r},function(e,t,r){function n(e){return null==e?"":o(e)}var o=r(75);e.exports=n},function(e,t,r){"use strict";function n(e,t,r){if(null!==e)for(var o,i,s,a,u,l,c,f,p=0,h=0,d=e.type,m="FeatureCollection"===d,y="Feature"===d,v=m?e.features.length:1,g=0;g<v;g++){c=m?e.features[g].geometry:y?e.geometry:e,f=!!c&&"GeometryCollection"===c.type,u=f?c.geometries.length:1;for(var b=0;b<u;b++){var _=0,j=0;if(null!==(a=f?c.geometries[b]:c)){l=a.coordinates;var x=a.type;switch(p=!r||"Polygon"!==x&&"MultiPolygon"!==x?0:1,x){case null:break;case"Point":if(!1===t(l,h,g,_,j))return!1;h++,_++;break;case"LineString":case"MultiPoint":for(o=0;o<l.length;o++){if(!1===t(l[o],h,g,_,j))return!1;h++,"MultiPoint"===x&&_++}"LineString"===x&&_++;break;case"Polygon":case"MultiLineString":for(o=0;o<l.length;o++){for(i=0;i<l[o].length-p;i++){if(!1===t(l[o][i],h,g,_,j))return!1;h++}"MultiLineString"===x&&_++,"Polygon"===x&&j++}"Polygon"===x&&_++;break;case"MultiPolygon":for(o=0;o<l.length;o++){for("MultiPolygon"===x&&(j=0),i=0;i<l[o].length;i++){for(s=0;s<l[o][i].length-p;s++){if(!1===t(l[o][i][s],h,g,_,j))return!1;h++}j++}_++}break;case"GeometryCollection":for(o=0;o<a.geometries.length;o++)if(!1===n(a.geometries[o],t,r))return!1;break;default:throw new Error("Unknown Geometry Type")}}}}}function o(e,t){var r,n,o,i,s,a,u,l,c,f,p=0,h="FeatureCollection"===e.type,d="Feature"===e.type,m=h?e.features.length:1;for(r=0;r<m;r++){for(a=h?e.features[r].geometry:d?e.geometry:e,l=h?e.features[r].properties:d?e.properties:{},c=h?e.features[r].bbox:d?e.bbox:void 0,f=h?e.features[r].id:d?e.id:void 0,u=!!a&&"GeometryCollection"===a.type,s=u?a.geometries.length:1,o=0;o<s;o++)if(null!==(i=u?a.geometries[o]:a))switch(i.type){case"Point":case"LineString":case"MultiPoint":case"Polygon":case"MultiLineString":case"MultiPolygon":if(!1===t(i,p,l,c,f))return!1;break;case"GeometryCollection":for(n=0;n<i.geometries.length;n++)if(!1===t(i.geometries[n],p,l,c,f))return!1;break;default:throw new Error("Unknown Geometry Type")}else if(!1===t(null,p,l,c,f))return!1;p++}}function i(e,t,r){var n=r;return o(e,function(e,o,i,s,a){n=0===o&&void 0===r?e:t(n,e,o,i,s,a)}),n}function s(e,t){o(e,function(e,r,n,o,i){var s=null===e?null:e.type;switch(s){case null:case"Point":case"LineString":case"Polygon":if(!1===t(Object(l.b)(e,n,{bbox:o,id:i}),r,0))return!1;return}var a;switch(s){case"MultiPoint":a="Point";break;case"MultiLineString":a="LineString";break;case"MultiPolygon":a="Polygon"}for(var u=0;u<e.coordinates.length;u++){var c=e.coordinates[u],f={type:a,coordinates:c};if(!1===t(Object(l.b)(f,n),r,u))return!1}})}function a(e,t){s(e,function(e,r,o){var i=0;if(e.geometry){var s=e.geometry.type;if("Point"!==s&&"MultiPoint"!==s){var a;return!1!==n(e,function(n,s,u,c,f){if(void 0===a)return void(a=n);var p=Object(l.e)([a,n],e.properties);if(!1===t(p,r,o,f,i))return!1;i++,a=n})&&void 0}}})}function u(e,t,r){var n=r,o=!1;return a(e,function(e,i,s,a,u){n=!1===o&&void 0===r?e:t(n,e,i,s,a,u),o=!0}),n}r.d(t,"a",function(){return i}),r.d(t,"b",function(){return u});var l=r(3)},function(e,t,r){e.exports=r(29)},function(e,t,r){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}r(30);var o=r(31),i=n(o),s=r(79),a=n(s),u=r(80),l=n(u),c=r(85),f=function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var r in e)Object.prototype.hasOwnProperty.call(e,r)&&(t[r]=e[r]);return t.default=e,t}(c),p=r(86),h=n(p),d=r(87),m=r(88),y={imports:{numberFormat:d.numberFormat},interpolate:/{{([\s\S]+?)}}/g},v=(0,i.default)(m.controlTemplate,y),g=(0,i.default)(m.resultsTemplate,y),b=(0,i.default)(m.pointPopupTemplate,y),_=(0,i.default)(m.linePopupTemplate,y),j=(0,i.default)(m.areaPopupTemplate,y);L.Control.Measure=L.Control.extend({_className:"leaflet-control-measure",options:{units:{},position:"topright",primaryLengthUnit:"feet",secondaryLengthUnit:"miles",primaryAreaUnit:"acres",activeColor:"#ABE67E",completedColor:"#C8F2BE",captureZIndex:1e4,popupOptions:{className:"leaflet-measure-resultpopup",autoPanPadding:[10,10]}},initialize:function(e){L.setOptions(this,e);var t=this.options,r=t.activeColor,n=t.completedColor;this._symbols=new h.default({activeColor:r,completedColor:n}),this.options.units=L.extend({},a.default,this.options.units)},onAdd:function(e){return this._map=e,this._latlngs=[],this._initLayout(),e.on("click",this._collapse,this),this._layer=L.layerGroup().addTo(e),this._container},onRemove:function(e){e.off("click",this._collapse,this),e.removeLayer(this._layer)},_initLayout:function(){var e=this._className,t=this._container=L.DomUtil.create("div",e+" leaflet-bar");t.innerHTML=v({model:{className:e}}),t.setAttribute("aria-haspopup",!0),L.DomEvent.disableClickPropagation(t),L.DomEvent.disableScrollPropagation(t);var r=this.$toggle=(0,c.selectOne)(".js-toggle",t);this.$interaction=(0,c.selectOne)(".js-interaction",t);var n=(0,c.selectOne)(".js-start",t),o=(0,c.selectOne)(".js-cancel",t),i=(0,c.selectOne)(".js-finish",t);this.$startPrompt=(0,c.selectOne)(".js-startprompt",t),this.$measuringPrompt=(0,c.selectOne)(".js-measuringprompt",t),this.$startHelp=(0,c.selectOne)(".js-starthelp",t),this.$results=(0,c.selectOne)(".js-results",t),this.$measureTasks=(0,c.selectOne)(".js-measuretasks",t),this._collapse(),this._updateMeasureNotStarted(),L.Browser.android||(L.DomEvent.on(t,"mouseenter",this._expand,this),L.DomEvent.on(t,"mouseleave",this._collapse,this)),L.DomEvent.on(r,"click",L.DomEvent.stop),L.Browser.touch?L.DomEvent.on(r,"click",this._expand,this):L.DomEvent.on(r,"focus",this._expand,this),L.DomEvent.on(n,"click",L.DomEvent.stop),L.DomEvent.on(n,"click",this._startMeasure,this),L.DomEvent.on(o,"click",L.DomEvent.stop),L.DomEvent.on(o,"click",this._finishMeasure,this),L.DomEvent.on(i,"click",L.DomEvent.stop),L.DomEvent.on(i,"click",this._handleMeasureDoubleClick,this)},_expand:function(){f.hide(this.$toggle),f.show(this.$interaction)},_collapse:function(){this._locked||(f.hide(this.$interaction),f.show(this.$toggle))},_updateMeasureNotStarted:function(){f.hide(this.$startHelp),f.hide(this.$results),f.hide(this.$measureTasks),f.hide(this.$measuringPrompt),f.show(this.$startPrompt)},_updateMeasureStartedNoPoints:function(){f.hide(this.$results),f.show(this.$startHelp),f.show(this.$measureTasks),f.hide(this.$startPrompt),f.show(this.$measuringPrompt)},_updateMeasureStartedWithPoints:function(){f.hide(this.$startHelp),f.show(this.$results),f.show(this.$measureTasks),f.hide(this.$startPrompt),f.show(this.$measuringPrompt)},_startMeasure:function(){this._locked=!0,this._measureVertexes=L.featureGroup().addTo(this._layer),this._captureMarker=L.marker(this._map.getCenter(),{clickable:!0,zIndexOffset:this.options.captureZIndex,opacity:0}).addTo(this._layer),this._setCaptureMarkerIcon(),this._captureMarker.on("mouseout",this._handleMapMouseOut,this).on("dblclick",this._handleMeasureDoubleClick,this).on("click",this._handleMeasureClick,this),this._map.on("mousemove",this._handleMeasureMove,this).on("mouseout",this._handleMapMouseOut,this).on("move",this._centerCaptureMarker,this).on("resize",this._setCaptureMarkerIcon,this),L.DomEvent.on(this._container,"mouseenter",this._handleMapMouseOut,this),this._updateMeasureStartedNoPoints(),this._map.fire("measurestart",null,!1)},_finishMeasure:function(){var e=L.extend({},this._resultsModel,{points:this._latlngs});this._locked=!1,L.DomEvent.off(this._container,"mouseover",this._handleMapMouseOut,this),this._clearMeasure(),this._captureMarker.off("mouseout",this._handleMapMouseOut,this).off("dblclick",this._handleMeasureDoubleClick,this).off("click",this._handleMeasureClick,this),this._map.off("mousemove",this._handleMeasureMove,this).off("mouseout",this._handleMapMouseOut,this).off("move",this._centerCaptureMarker,this).off("resize",this._setCaptureMarkerIcon,this),this._layer.removeLayer(this._measureVertexes).removeLayer(this._captureMarker),this._measureVertexes=null,this._updateMeasureNotStarted(),this._collapse(),this._map.fire("measurefinish",e,!1)},_clearMeasure:function(){this._latlngs=[],this._resultsModel=null,this._measureVertexes.clearLayers(),this._measureDrag&&this._layer.removeLayer(this._measureDrag),this._measureArea&&this._layer.removeLayer(this._measureArea),this._measureBoundary&&this._layer.removeLayer(this._measureBoundary),this._measureDrag=null,this._measureArea=null,this._measureBoundary=null},_centerCaptureMarker:function(){this._captureMarker.setLatLng(this._map.getCenter())},_setCaptureMarkerIcon:function(){this._captureMarker.setIcon(L.divIcon({iconSize:this._map.getSize().multiplyBy(2)}))},_getMeasurementDisplayStrings:function(e){function t(e,t,o,i,s){if(t&&n[t]){var a=r(e,n[t],i,s);if(o&&n[o]){a=a+" ("+r(e,n[o],i,s)+")"}return a}return r(e,null,i,s)}function r(e,t,r,n){var o={acres:"ایکر",feet:"پا",kilometers:"کیلومتر",hectares:"هکتار",meters:"متر",miles:"مایل",sqfeet:"پا مربع",sqmeters:"متر مربع",sqmiles:"مایل مربع"},i=L.extend({factor:1,decimals:0},t);return[(0,d.numberFormat)(e*i.factor,i.decimals,r||"/",n||","),o[i.display]||i.display].join(" ")}var n=this.options.units;return{lengthDisplay:t(e.length,this.options.primaryLengthUnit,this.options.secondaryLengthUnit,this.options.decPoint,this.options.thousandsSep),areaDisplay:t(e.area,this.options.primaryAreaUnit,this.options.secondaryAreaUnit,this.options.decPoint,this.options.thousandsSep)}},_updateResults:function(){var e=(0,l.default)(this._latlngs),t=this._resultsModel=L.extend({},e,this._getMeasurementDisplayStrings(e),{pointCount:this._latlngs.length});this.$results.innerHTML=g({model:t})},_handleMeasureMove:function(e){this._measureDrag?this._measureDrag.setLatLng(e.latlng):this._measureDrag=L.circleMarker(e.latlng,this._symbols.getSymbol("measureDrag")).addTo(this._layer),this._measureDrag.bringToFront()},_handleMeasureDoubleClick:function(){var e=this._latlngs,t=void 0,r=void 0;if(this._finishMeasure(),e.length){e.length>2&&e.push(e[0]);var n=(0,l.default)(e);1===e.length?(t=L.circleMarker(e[0],this._symbols.getSymbol("resultPoint")),r=b({model:n})):2===e.length?(t=L.polyline(e,this._symbols.getSymbol("resultLine")),r=_({model:L.extend({},n,this._getMeasurementDisplayStrings(n))})):(t=L.polygon(e,this._symbols.getSymbol("resultArea")),r=j({model:L.extend({},n,this._getMeasurementDisplayStrings(n))}));var o=L.DomUtil.create("div","");o.innerHTML=r;var i=(0,c.selectOne)(".js-zoomto",o);i&&(L.DomEvent.on(i,"click",L.DomEvent.stop),L.DomEvent.on(i,"click",function(){t.getBounds?this._map.fitBounds(t.getBounds(),{padding:[20,20],maxZoom:17}):t.getLatLng&&this._map.panTo(t.getLatLng())},this));var s=(0,c.selectOne)(".js-deletemarkup",o);s&&(L.DomEvent.on(s,"click",L.DomEvent.stop),L.DomEvent.on(s,"click",function(){this._layer.removeLayer(t)},this)),t.addTo(this._layer),t.bindPopup(o,this.options.popupOptions),t.getBounds?t.openPopup(t.getBounds().getCenter()):t.getLatLng&&t.openPopup(t.getLatLng())}},_handleMeasureClick:function(e){var t=this._map.mouseEventToLatLng(e.originalEvent),r=this._latlngs[this._latlngs.length-1],n=this._symbols.getSymbol("measureVertex");r&&t.equals(r)||(this._latlngs.push(t),this._addMeasureArea(this._latlngs),this._addMeasureBoundary(this._latlngs),this._measureVertexes.eachLayer(function(e){e.setStyle(n),e._path&&e._path.setAttribute("class",n.className)}),this._addNewVertex(t),this._measureBoundary&&this._measureBoundary.bringToFront(),this._measureVertexes.bringToFront()),this._updateResults(),this._updateMeasureStartedWithPoints()},_handleMapMouseOut:function(){this._measureDrag&&(this._layer.removeLayer(this._measureDrag),this._measureDrag=null)},_addNewVertex:function(e){L.circleMarker(e,this._symbols.getSymbol("measureVertexActive")).addTo(this._measureVertexes)},_addMeasureArea:function(e){if(e.length<3)return void(this._measureArea&&(this._layer.removeLayer(this._measureArea),this._measureArea=null));this._measureArea?this._measureArea.setLatLngs(e):this._measureArea=L.polygon(e,this._symbols.getSymbol("measureArea")).addTo(this._layer)},_addMeasureBoundary:function(e){if(e.length<2)return void(this._measureBoundary&&(this._layer.removeLayer(this._measureBoundary),this._measureBoundary=null));this._measureBoundary?this._measureBoundary.setLatLngs(e):this._measureBoundary=L.polyline(e,this._symbols.getSymbol("measureBoundary")).addTo(this._layer)}}),L.Map.mergeOptions({measureControl:!1}),L.Map.addInitHook(function(){this.options.measureControl&&(this.measureControl=(new L.Control.Measure).addTo(this))}),L.control.measure=function(e){return new L.Control.Measure(e)}},function(e,t){},function(e,t,r){function n(e,t,r){var n=h.imports._.templateSettings||h;r&&c(e,t,r)&&(t=void 0),e=d(e),t=o({},t,n,a);var j,x,M=o({},t.imports,n.imports,a),w=f(M),L=s(M,w),O=0,k=t.interpolate||b,P="__p += '",E=RegExp((t.escape||b).source+"|"+k.source+"|"+(k===p?g:b).source+"|"+(t.evaluate||b).source+"|$","g"),C="sourceURL"in t?"//# sourceURL="+t.sourceURL+"\n":"";e.replace(E,function(t,r,n,o,i,s){return n||(n=o),P+=e.slice(O,s).replace(_,u),r&&(j=!0,P+="' +\n__e("+r+") +\n'"),i&&(x=!0,P+="';\n"+i+";\n__p += '"),n&&(P+="' +\n((__t = ("+n+")) == null ? '' : __t) +\n'"),O=s+t.length,t}),P+="';\n";var S=t.variable;S||(P="with (obj) {\n"+P+"\n}\n"),P=(x?P.replace(m,""):P).replace(y,"$1").replace(v,"$1;"),P="function("+(S||"obj")+") {\n"+(S?"":"obj || (obj = {});\n")+"var __t, __p = ''"+(j?", __e = _.escape":"")+(x?", __j = Array.prototype.join;\nfunction print() { __p += __j.call(arguments, '') }\n":";\n")+P+"return __p\n}";var A=i(function(){return Function(w,C+"return "+P).apply(void 0,L)});if(A.source=P,l(A))throw A;return A}var o=r(32),i=r(62),s=r(65),a=r(66),u=r(67),l=r(22),c=r(15),f=r(68),p=r(25),h=r(71),d=r(26),m=/\b__p \+= '';/g,y=/\b(__p \+=) '' \+/g,v=/(__e\(.*?\)|\b__t\)) \+\n'';/g,g=/\$\{([^\\}]*(?:\\.[^\\}]*)*)\}/g,b=/($^)/,_=/['\n\r\u2028\u2029\\]/g;e.exports=n},function(e,t,r){var n=r(33),o=r(44),i=r(50),s=o(function(e,t,r,o){n(t,i(t),e,o)});e.exports=s},function(e,t,r){function n(e,t,r,n){var s=!r;r||(r={});for(var a=-1,u=t.length;++a<u;){var l=t[a],c=n?n(r[l],e[l],l,r,e):void 0;void 0===c&&(c=e[l]),s?i(r,l,c):o(r,l,c)}return r}var o=r(34),i=r(8);e.exports=n},function(e,t,r){function n(e,t,r){var n=e[t];a.call(e,t)&&i(n,r)&&(void 0!==r||t in e)||o(e,t,r)}var o=r(8),i=r(6),s=Object.prototype,a=s.hasOwnProperty;e.exports=n},function(e,t,r){function n(e,t){var r=i(e,t);return o(r)?r:void 0}var o=r(36),i=r(43);e.exports=n},function(e,t,r){function n(e){return!(!s(e)||i(e))&&(o(e)?d:l).test(a(e))}var o=r(10),i=r(40),s=r(2),a=r(42),u=/[\\^$.*+?()[\]{}|]/g,l=/^\[object .+?Constructor\]$/,c=Function.prototype,f=Object.prototype,p=c.toString,h=f.hasOwnProperty,d=RegExp("^"+p.call(h).replace(u,"\\$&").replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g,"$1.*?")+"$");e.exports=n},function(e,t){var r;r=function(){return this}();try{r=r||Function("return this")()||(0,eval)("this")}catch(e){"object"==typeof window&&(r=window)}e.exports=r},function(e,t,r){function n(e){var t=s.call(e,u),r=e[u];try{e[u]=void 0;var n=!0}catch(e){}var o=a.call(e);return n&&(t?e[u]=r:delete e[u]),o}var o=r(4),i=Object.prototype,s=i.hasOwnProperty,a=i.toString,u=o?o.toStringTag:void 0;e.exports=n},function(e,t){function r(e){return o.call(e)}var n=Object.prototype,o=n.toString;e.exports=r},function(e,t,r){function n(e){return!!i&&i in e}var o=r(41),i=function(){var e=/[^.]+$/.exec(o&&o.keys&&o.keys.IE_PROTO||"");return e?"Symbol(src)_1."+e:""}();e.exports=n},function(e,t,r){var n=r(5),o=n["__core-js_shared__"];e.exports=o},function(e,t){function r(e){if(null!=e){try{return o.call(e)}catch(e){}try{return e+""}catch(e){}}return""}var n=Function.prototype,o=n.toString;e.exports=r},function(e,t){function r(e,t){return null==e?void 0:e[t]}e.exports=r},function(e,t,r){function n(e){return o(function(t,r){var n=-1,o=r.length,s=o>1?r[o-1]:void 0,a=o>2?r[2]:void 0;for(s=e.length>3&&"function"==typeof s?(o--,s):void 0,a&&i(r[0],r[1],a)&&(s=o<3?void 0:s,o=1),t=Object(t);++n<o;){var u=r[n];u&&e(t,u,n,s)}return t})}var o=r(12),i=r(15);e.exports=n},function(e,t,r){function n(e,t,r){return t=i(void 0===t?e.length-1:t,0),function(){for(var n=arguments,s=-1,a=i(n.length-t,0),u=Array(a);++s<a;)u[s]=n[t+s];s=-1;for(var l=Array(t+1);++s<t;)l[s]=n[s];return l[t]=r(u),o(e,this,l)}}var o=r(14),i=Math.max;e.exports=n},function(e,t,r){var n=r(47),o=r(49),i=o(n);e.exports=i},function(e,t,r){var n=r(48),o=r(9),i=r(13),s=o?function(e,t){return o(e,"toString",{configurable:!0,enumerable:!1,value:n(t),writable:!0})}:i;e.exports=s},function(e,t){function r(e){return function(){return e}}e.exports=r},function(e,t){function r(e){var t=0,r=0;return function(){var s=i(),a=o-(s-r);if(r=s,a>0){if(++t>=n)return arguments[0]}else t=0;return e.apply(void 0,arguments)}}var n=800,o=16,i=Date.now;e.exports=r},function(e,t,r){function n(e){return s(e)?o(e,!0):i(e)}var o=r(18),i=r(60),s=r(7);e.exports=n},function(e,t){function r(e,t){for(var r=-1,n=Array(e);++r<e;)n[r]=t(r);return n}e.exports=r},function(e,t,r){var n=r(53),o=r(1),i=Object.prototype,s=i.hasOwnProperty,a=i.propertyIsEnumerable,u=n(function(){return arguments}())?n:function(e){return o(e)&&s.call(e,"callee")&&!a.call(e,"callee")};e.exports=u},function(e,t,r){function n(e){return i(e)&&o(e)==s}var o=r(0),i=r(1),s="[object Arguments]";e.exports=n},function(e,t,r){(function(e){var n=r(5),o=r(55),i="object"==typeof t&&t&&!t.nodeType&&t,s=i&&"object"==typeof e&&e&&!e.nodeType&&e,a=s&&s.exports===i,u=a?n.Buffer:void 0,l=u?u.isBuffer:void 0,c=l||o;e.exports=c}).call(t,r(20)(e))},function(e,t){function r(){return!1}e.exports=r},function(e,t,r){var n=r(57),o=r(58),i=r(59),s=i&&i.isTypedArray,a=s?o(s):n;e.exports=a},function(e,t,r){function n(e){return s(e)&&i(e.length)&&!!a[o(e)]}var o=r(0),i=r(16),s=r(1),a={};a["[object Float32Array]"]=a["[object Float64Array]"]=a["[object Int8Array]"]=a["[object Int16Array]"]=a["[object Int32Array]"]=a["[object Uint8Array]"]=a["[object Uint8ClampedArray]"]=a["[object Uint16Array]"]=a["[object Uint32Array]"]=!0,a["[object Arguments]"]=a["[object Array]"]=a["[object ArrayBuffer]"]=a["[object Boolean]"]=a["[object DataView]"]=a["[object Date]"]=a["[object Error]"]=a["[object Function]"]=a["[object Map]"]=a["[object Number]"]=a["[object Object]"]=a["[object RegExp]"]=a["[object Set]"]=a["[object String]"]=a["[object WeakMap]"]=!1,e.exports=n},function(e,t){function r(e){return function(t){return e(t)}}e.exports=r},function(e,t,r){(function(e){var n=r(11),o="object"==typeof t&&t&&!t.nodeType&&t,i=o&&"object"==typeof e&&e&&!e.nodeType&&e,s=i&&i.exports===o,a=s&&n.process,u=function(){try{return a&&a.binding&&a.binding("util")}catch(e){}}();e.exports=u}).call(t,r(20)(e))},function(e,t,r){function n(e){if(!o(e))return s(e);var t=i(e),r=[];for(var n in e)("constructor"!=n||!t&&u.call(e,n))&&r.push(n);return r}var o=r(2),i=r(21),s=r(61),a=Object.prototype,u=a.hasOwnProperty;e.exports=n},function(e,t){function r(e){var t=[];if(null!=e)for(var r in Object(e))t.push(r);return t}e.exports=r},function(e,t,r){var n=r(14),o=r(12),i=r(22),s=o(function(e,t){try{return n(e,void 0,t)}catch(e){return i(e)?e:new Error(e)}});e.exports=s},function(e,t,r){function n(e){if(!s(e)||o(e)!=a)return!1;var t=i(e);if(null===t)return!0;var r=f.call(t,"constructor")&&t.constructor;return"function"==typeof r&&r instanceof r&&c.call(r)==p}var o=r(0),i=r(64),s=r(1),a="[object Object]",u=Function.prototype,l=Object.prototype,c=u.toString,f=l.hasOwnProperty,p=c.call(Object);e.exports=n},function(e,t,r){var n=r(23),o=n(Object.getPrototypeOf,Object);e.exports=o},function(e,t,r){function n(e,t){return o(t,function(t){return e[t]})}var o=r(24);e.exports=n},function(e,t,r){function n(e,t,r,n){return void 0===e||o(e,i[r])&&!s.call(n,r)?t:e}var o=r(6),i=Object.prototype,s=i.hasOwnProperty;e.exports=n},function(e,t){function r(e){return"\\"+n[e]}var n={"\\":"\\","'":"'","\n":"n","\r":"r","\u2028":"u2028","\u2029":"u2029"};e.exports=r},function(e,t,r){function n(e){return s(e)?o(e):i(e)}var o=r(18),i=r(69),s=r(7);e.exports=n},function(e,t,r){function n(e){if(!o(e))return i(e);var t=[];for(var r in Object(e))a.call(e,r)&&"constructor"!=r&&t.push(r);return t}var o=r(21),i=r(70),s=Object.prototype,a=s.hasOwnProperty;e.exports=n},function(e,t,r){var n=r(23),o=n(Object.keys,Object);e.exports=o},function(e,t,r){var n=r(72),o=r(77),i=r(78),s=r(25),a={escape:o,evaluate:i,interpolate:s,variable:"",imports:{_:{escape:n}}};e.exports=a},function(e,t,r){function n(e){return e=i(e),e&&a.test(e)?e.replace(s,o):e}var o=r(73),i=r(26),s=/[&<>"']/g,a=RegExp(s.source);e.exports=n},function(e,t,r){var n=r(74),o={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"},i=n(o);e.exports=i},function(e,t){function r(e){return function(t){return null==e?void 0:e[t]}}e.exports=r},function(e,t,r){function n(e){if("string"==typeof e)return e;if(s(e))return i(e,n)+"";if(a(e))return c?c.call(e):"";var t=e+"";return"0"==t&&1/e==-u?"-0":t}var o=r(4),i=r(24),s=r(19),a=r(76),u=1/0,l=o?o.prototype:void 0,c=l?l.toString:void 0;e.exports=n},function(e,t,r){function n(e){return"symbol"==typeof e||i(e)&&o(e)==s}var o=r(0),i=r(1),s="[object Symbol]";e.exports=n},function(e,t){var r=/<%-([\s\S]+?)%>/g;e.exports=r},function(e,t){var r=/<%([\s\S]+?)%>/g;e.exports=r},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default={acres:{factor:24711e-8,display:"acres",decimals:2},feet:{factor:3.2808,display:"feet",decimals:0},kilometers:{factor:.001,display:"kilometers",decimals:2},hectares:{factor:1e-4,display:"hectares",decimals:2},meters:{factor:1,display:"meters",decimals:0},miles:{factor:3.2808/5280,display:"miles",decimals:2},sqfeet:{factor:10.7639,display:"sqfeet",decimals:0},sqmeters:{factor:1,display:"sqmeters",decimals:0},sqmiles:{factor:3.86102e-7,display:"sqmiles",decimals:2}}},function(e,t,r){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}function o(e){return e<10?"0"+e.toString():e.toString()}function i(e,t,r){var n=Math.abs(e),i=Math.floor(n),s=Math.floor(60*(n-i)),a=Math.round(3600*(n-i-s/60)*100)/100,u=n===e?t:r;return o(i)+"&deg; "+o(s)+"' "+o(a)+'" '+u}function s(e){var t=e[e.length-1],r=e.map(function(e){return[e.lat,e.lng]}),n=L.polyline(r),o=L.polygon(r),s=1e3*(0,u.default)(n.toGeoJSON(),{units:"kilometers"}),a=(0,c.default)(o.toGeoJSON());return{lastCoord:{dd:{x:t.lng,y:t.lat},dms:{x:i(t.lng,"E","W"),y:i(t.lat,"N","S")}},length:s,area:a}}Object.defineProperty(t,"__esModule",{value:!0}),t.default=s;var a=r(81),u=n(a),l=r(84),c=n(l)},function(e,t,r){"use strict";function n(e,t){if(t=t||{},!Object(s.d)(t))throw new Error("options is invalid");if(!e)throw new Error("geojson is required");return Object(i.b)(e,function(e,r){var n=r.geometry.coordinates;return e+Object(o.a)(n[0],n[1],t)},0)}Object.defineProperty(t,"__esModule",{value:!0});var o=r(82),i=r(27),s=r(3);t.default=n},function(e,t,r){"use strict";function n(e,t,r){if(r=r||{},!Object(i.d)(r))throw new Error("options is invalid");var n=r.units,s=Object(o.a)(e),a=Object(o.a)(t),u=Object(i.a)(a[1]-s[1]),l=Object(i.a)(a[0]-s[0]),c=Object(i.a)(s[1]),f=Object(i.a)(a[1]),p=Math.pow(Math.sin(u/2),2)+Math.pow(Math.sin(l/2),2)*Math.cos(c)*Math.cos(f);return Object(i.g)(2*Math.atan2(Math.sqrt(p),Math.sqrt(1-p)),n)}var o=r(83),i=r(3);t.a=n},function(e,t,r){"use strict";function n(e){if(!e)throw new Error("coord is required");if("Feature"===e.type&&null!==e.geometry&&"Point"===e.geometry.type)return e.geometry.coordinates;if("Point"===e.type)return e.coordinates;if(Array.isArray(e)&&e.length>=2&&void 0===e[0].length&&void 0===e[1].length)return e;throw new Error("coord must be GeoJSON Point or an Array of numbers")}r.d(t,"a",function(){return n});r(3)},function(e,t,r){"use strict";function n(e){return Object(u.a)(e,function(e,t){return e+o(t)},0)}function o(e){var t,r=0;switch(e.type){case"Polygon":return i(e.coordinates);case"MultiPolygon":for(t=0;t<e.coordinates.length;t++)r+=i(e.coordinates[t]);return r;case"Point":case"MultiPoint":case"LineString":case"MultiLineString":return 0;case"GeometryCollection":for(t=0;t<e.geometries.length;t++)r+=o(e.geometries[t]);return r}}function i(e){var t=0;if(e&&e.length>0){t+=Math.abs(s(e[0]));for(var r=1;r<e.length;r++)t-=Math.abs(s(e[r]))}return t}function s(e){var t,r,n,o,i,s,u,c=0,f=e.length;if(f>2){for(u=0;u<f;u++)u===f-2?(o=f-2,i=f-1,s=0):u===f-1?(o=f-1,i=0,s=1):(o=u,i=u+1,s=u+2),t=e[o],r=e[i],n=e[s],c+=(a(n[0])-a(t[0]))*Math.sin(a(r[1]));c=c*l*l/2}return c}function a(e){return e*Math.PI/180}Object.defineProperty(t,"__esModule",{value:!0});var u=r(27),l=6378137;t.default=n},function(e,t,r){"use strict";function n(e,t){return t||(t=document),t.querySelector(e)}function o(e,t){return t||(t=document),Array.prototype.slice.call(t.querySelectorAll(e))}function i(e){if(e)return e.setAttribute("style","display:none;"),e}function s(e){if(e)return e.removeAttribute("style"),e}Object.defineProperty(t,"__esModule",{value:!0}),t.selectOne=n,t.selectAll=o,t.hide=i,t.show=s},function(e,t,r){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}(),i={activeColor:"#ABE67E",completedColor:"#C8F2BE"},s=function(){function e(t){n(this,e),this._options=L.extend({},i,this._options,t)}return o(e,[{key:"getSymbol",value:function(e){return{measureDrag:{clickable:!1,radius:4,color:this._options.activeColor,weight:2,opacity:.7,fillColor:this._options.activeColor,fillOpacity:.5,className:"layer-measuredrag"},measureArea:{clickable:!1,stroke:!1,fillColor:this._options.activeColor,fillOpacity:.2,className:"layer-measurearea"},measureBoundary:{clickable:!1,color:this._options.activeColor,weight:2,opacity:.9,fill:!1,className:"layer-measureboundary"},measureVertex:{clickable:!1,radius:4,color:this._options.activeColor,weight:2,opacity:1,fillColor:this._options.activeColor,fillOpacity:.7,className:"layer-measurevertex"},measureVertexActive:{clickable:!1,radius:4,color:this._options.activeColor,weight:2,opacity:1,fillColor:this._options.activeColor,fillOpacity:1,className:"layer-measurevertex active"},resultArea:{clickable:!0,color:this._options.completedColor,weight:2,opacity:.9,fillColor:this._options.completedColor,fillOpacity:.2,className:"layer-measure-resultarea"},resultLine:{clickable:!0,color:this._options.completedColor,weight:3,opacity:.9,fill:!1,className:"layer-measure-resultline"},resultPoint:{clickable:!0,radius:4,color:this._options.completedColor,weight:2,opacity:1,fillColor:this._options.completedColor,fillOpacity:.7,className:"layer-measure-resultpoint"}}[e]}}]),e}();t.default=s},function(e,t,r){"use strict";function n(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:2,r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:".",n=arguments.length>3&&void 0!==arguments[3]?arguments[3]:",",o=e<0?"-":"",i=Math.abs(+e||0),s=parseInt(i.toFixed(t),10)+"",a=s.length>3?s.length%3:0;return[o,a?s.substr(0,a)+n:"",s.substr(a).replace(/(\d{3})(?=\d)/g,"$1"+n),t?""+r+Math.abs(i-s).toFixed(t).slice(2):""].join("")}Object.defineProperty(t,"__esModule",{value:!0}),t.numberFormat=n},function(e,t,r){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var o=r(89);Object.defineProperty(t,"controlTemplate",{enumerable:!0,get:function(){return n(o).default}});var i=r(90);Object.defineProperty(t,"resultsTemplate",{enumerable:!0,get:function(){return n(i).default}});var s=r(91);Object.defineProperty(t,"pointPopupTemplate",{enumerable:!0,get:function(){return n(s).default}});var a=r(92);Object.defineProperty(t,"linePopupTemplate",{enumerable:!0,get:function(){return n(a).default}});var u=r(93);Object.defineProperty(t,"areaPopupTemplate",{enumerable:!0,get:function(){return n(u).default}})},function(e,t,r){e.exports='<a class="{{ model.className }}-toggle js-toggle" href=# title="اندازه گیری فاصله و مساحت">اندازه گیری</a> <div class="{{ model.className }}-interaction js-interaction"> <div class="js-startprompt startprompt"> <h3>اندازه گیری فاصله و مساحت</h3> <ul class=tasks> <a href=# class="js-start start">ثبت اندازه گیری جدید</a> </ul> </div> <div class=js-measuringprompt> <h3>اندازه گیری فاصله و مساحت</h3> <p class=js-starthelp>برای ثبت اندازه گیری جدید نقاطی را به نقشه اضافه کنید.</p> <div class="js-results results"></div> <ul class="js-measuretasks tasks"> <li><a href=# class="js-cancel cancel">لغو</a></li> <li><a href=# class="js-finish finish">پایان اندازه گیری</a></li> </ul> </div> </div> '},function(e,t,r){e.exports='<div class=group> <p class="lastpoint heading">آخرین نقطه</p> <p>{{ model.lastCoord.dms.y }} <span class=coorddivider>/</span> {{ model.lastCoord.dms.x }}</p> <p>{{ numberFormat(model.lastCoord.dd.y, 6) }} <span class=coorddivider>/</span> {{ numberFormat(model.lastCoord.dd.x, 6) }}</p> </div> <% if (model.pointCount > 1) { %> <div class=group> <p><span class=heading>فاصله مسیر</span> {{ model.lengthDisplay }}</p> </div> <% } %> <% if (model.pointCount > 2) { %> <div class=group> <p><span class=heading>مساحت</span> {{ model.areaDisplay }}</p> </div> <% } %> '},function(e,t,r){e.exports='<h3>مکان نقطه</h3> <p>{{ model.lastCoord.dms.y }} <span class=coorddivider>/</span> {{ model.lastCoord.dms.x }}</p> <p>{{ numberFormat(model.lastCoord.dd.y, 6) }} <span class=coorddivider>/</span> {{ numberFormat(model.lastCoord.dd.x, 6) }}</p> <ul class=tasks> <li><a href=# class="js-zoomto zoomto">مرکز این مکان</a></li> <li><a href=# class="js-deletemarkup deletemarkup">حذف</a></li> </ul> '},function(e,t,r){e.exports='<h3>اندازه گیری خطی</h3> <p>{{ model.lengthDisplay }}</p> <ul class=tasks> <li><a href=# class="js-zoomto zoomto">مرکز این خط</a></li> <li><a href=# class="js-deletemarkup deletemarkup">حذف</a></li> </ul> '},function(e,t,r){e.exports='<h3>اندازه گیری مساحت</h3> <p>{{ model.areaDisplay }}</p> <p>{{ model.lengthDisplay }} محیط</p> <ul class=tasks> <li><a href=# class="js-zoomto zoomto">مرکز این سطح</a></li> <li><a href=# class="js-deletemarkup deletemarkup">حذف</a></li> </ul> '}]);
-
-/***/ }),
-
-/***/ "./node_modules/leaflet-measure/dist/leaflet-measure.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/leaflet-measure/dist/leaflet-measure.js ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-!function(e){function t(n){if(r[n])return r[n].exports;var o=r[n]={i:n,l:!1,exports:{}};return e[n].call(o.exports,o,o.exports,t),o.l=!0,o.exports}var r={};t.m=e,t.c=r,t.d=function(e,r,n){t.o(e,r)||Object.defineProperty(e,r,{configurable:!1,enumerable:!0,get:n})},t.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(r,"a",r),r},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="/dist/",t(t.s=28)}([function(e,t,r){function n(e){return null==e?void 0===e?u:a:l&&l in Object(e)?i(e):s(e)}var o=r(4),i=r(38),s=r(39),a="[object Null]",u="[object Undefined]",l=o?o.toStringTag:void 0;e.exports=n},function(e,t){function r(e){return null!=e&&"object"==typeof e}e.exports=r},function(e,t){function r(e){var t=typeof e;return null!=e&&("object"==t||"function"==t)}e.exports=r},function(e,t,r){"use strict";function n(e,t,r){if(r=r||{},!h(r))throw new Error("options is invalid");var n=r.bbox,o=r.id;if(void 0===e)throw new Error("geometry is required");if(t&&t.constructor!==Object)throw new Error("properties must be an Object");n&&d(n),o&&m(o);var i={type:"Feature"};return o&&(i.id=o),n&&(i.bbox=n),i.properties=t||{},i.geometry=e,i}function o(e,t,r){if(!e)throw new Error("coordinates is required");if(!Array.isArray(e))throw new Error("coordinates must be an Array");if(e.length<2)throw new Error("coordinates must be at least 2 numbers long");if(!p(e[0])||!p(e[1]))throw new Error("coordinates must contain numbers");return n({type:"Point",coordinates:e},t,r)}function i(e,t,r){if(!e)throw new Error("coordinates is required");for(var o=0;o<e.length;o++){var i=e[o];if(i.length<4)throw new Error("Each LinearRing of a Polygon must have 4 or more Positions.");for(var s=0;s<i[i.length-1].length;s++){if(0===o&&0===s&&!p(i[0][0])||!p(i[0][1]))throw new Error("coordinates must contain numbers");if(i[i.length-1][s]!==i[0][s])throw new Error("First and last Position are not equivalent.")}}return n({type:"Polygon",coordinates:e},t,r)}function s(e,t,r){if(!e)throw new Error("coordinates is required");if(e.length<2)throw new Error("coordinates must be an array of two or more positions");if(!p(e[0][1])||!p(e[0][1]))throw new Error("coordinates must contain numbers");return n({type:"LineString",coordinates:e},t,r)}function a(e,t,r){if(!e)throw new Error("coordinates is required");return n({type:"MultiLineString",coordinates:e},t,r)}function u(e,t,r){if(!e)throw new Error("coordinates is required");return n({type:"MultiPoint",coordinates:e},t,r)}function l(e,t,r){if(!e)throw new Error("coordinates is required");return n({type:"MultiPolygon",coordinates:e},t,r)}function c(e,t){if(void 0===e||null===e)throw new Error("radians is required");if(t&&"string"!=typeof t)throw new Error("units must be a string");var r=y[t||"kilometers"];if(!r)throw new Error(t+" units is invalid");return e*r}function f(e){if(null===e||void 0===e)throw new Error("degrees is required");return e%360*Math.PI/180}function p(e){return!isNaN(e)&&null!==e&&!Array.isArray(e)}function h(e){return!!e&&e.constructor===Object}function d(e){if(!e)throw new Error("bbox is required");if(!Array.isArray(e))throw new Error("bbox must be an Array");if(4!==e.length&&6!==e.length)throw new Error("bbox must be an Array of 4 or 6 numbers");e.forEach(function(e){if(!p(e))throw new Error("bbox must only contain numbers")})}function m(e){if(!e)throw new Error("id is required");if(-1===["string","number"].indexOf(typeof e))throw new Error("id must be a number or a string")}r.d(t,"b",function(){return n}),r.d(t,"f",function(){return o}),r.d(t,"e",function(){return s}),r.d(t,"g",function(){return c}),r.d(t,"a",function(){return f}),r.d(t,"c",function(){return p}),r.d(t,"d",function(){return h});var y={meters:6371008.8,metres:6371008.8,millimeters:6371008800,millimetres:6371008800,centimeters:637100880,centimetres:637100880,kilometers:6371.0088,kilometres:6371.0088,miles:3958.761333810546,nauticalmiles:6371008.8/1852,inches:6371008.8*39.37,yards:6371008.8/1.0936,feet:20902260.511392,radians:1,degrees:6371008.8/111325}},function(e,t,r){var n=r(5),o=n.Symbol;e.exports=o},function(e,t,r){var n=r(11),o="object"==typeof self&&self&&self.Object===Object&&self,i=n||o||Function("return this")();e.exports=i},function(e,t){function r(e,t){return e===t||e!==e&&t!==t}e.exports=r},function(e,t,r){function n(e){return null!=e&&i(e.length)&&!o(e)}var o=r(10),i=r(16);e.exports=n},function(e,t,r){function n(e,t,r){"__proto__"==t&&o?o(e,t,{configurable:!0,enumerable:!0,value:r,writable:!0}):e[t]=r}var o=r(9);e.exports=n},function(e,t,r){var n=r(35),o=function(){try{var e=n(Object,"defineProperty");return e({},"",{}),e}catch(e){}}();e.exports=o},function(e,t,r){function n(e){if(!i(e))return!1;var t=o(e);return t==a||t==u||t==s||t==l}var o=r(0),i=r(2),s="[object AsyncFunction]",a="[object Function]",u="[object GeneratorFunction]",l="[object Proxy]";e.exports=n},function(e,t,r){(function(t){var r="object"==typeof t&&t&&t.Object===Object&&t;e.exports=r}).call(t,r(37))},function(e,t,r){function n(e,t){return s(i(e,t,o),e+"")}var o=r(13),i=r(45),s=r(46);e.exports=n},function(e,t){function r(e){return e}e.exports=r},function(e,t){function r(e,t,r){switch(r.length){case 0:return e.call(t);case 1:return e.call(t,r[0]);case 2:return e.call(t,r[0],r[1]);case 3:return e.call(t,r[0],r[1],r[2])}return e.apply(t,r)}e.exports=r},function(e,t,r){function n(e,t,r){if(!a(r))return!1;var n=typeof t;return!!("number"==n?i(r)&&s(t,r.length):"string"==n&&t in r)&&o(r[t],e)}var o=r(6),i=r(7),s=r(17),a=r(2);e.exports=n},function(e,t){function r(e){return"number"==typeof e&&e>-1&&e%1==0&&e<=n}var n=9007199254740991;e.exports=r},function(e,t){function r(e,t){var r=typeof e;return!!(t=null==t?n:t)&&("number"==r||"symbol"!=r&&o.test(e))&&e>-1&&e%1==0&&e<t}var n=9007199254740991,o=/^(?:0|[1-9]\d*)$/;e.exports=r},function(e,t,r){function n(e,t){var r=s(e),n=!r&&i(e),c=!r&&!n&&a(e),p=!r&&!n&&!c&&l(e),h=r||n||c||p,d=h?o(e.length,String):[],m=d.length;for(var y in e)!t&&!f.call(e,y)||h&&("length"==y||c&&("offset"==y||"parent"==y)||p&&("buffer"==y||"byteLength"==y||"byteOffset"==y)||u(y,m))||d.push(y);return d}var o=r(51),i=r(52),s=r(19),a=r(54),u=r(17),l=r(56),c=Object.prototype,f=c.hasOwnProperty;e.exports=n},function(e,t){var r=Array.isArray;e.exports=r},function(e,t){e.exports=function(e){return e.webpackPolyfill||(e.deprecate=function(){},e.paths=[],e.children||(e.children=[]),Object.defineProperty(e,"loaded",{enumerable:!0,get:function(){return e.l}}),Object.defineProperty(e,"id",{enumerable:!0,get:function(){return e.i}}),e.webpackPolyfill=1),e}},function(e,t){function r(e){var t=e&&e.constructor;return e===("function"==typeof t&&t.prototype||n)}var n=Object.prototype;e.exports=r},function(e,t,r){function n(e){if(!i(e))return!1;var t=o(e);return t==u||t==a||"string"==typeof e.message&&"string"==typeof e.name&&!s(e)}var o=r(0),i=r(1),s=r(63),a="[object DOMException]",u="[object Error]";e.exports=n},function(e,t){function r(e,t){return function(r){return e(t(r))}}e.exports=r},function(e,t){function r(e,t){for(var r=-1,n=null==e?0:e.length,o=Array(n);++r<n;)o[r]=t(e[r],r,e);return o}e.exports=r},function(e,t){var r=/<%=([\s\S]+?)%>/g;e.exports=r},function(e,t,r){function n(e){return null==e?"":o(e)}var o=r(75);e.exports=n},function(e,t,r){"use strict";function n(e,t,r){if(null!==e)for(var o,i,s,a,u,l,c,f,p=0,h=0,d=e.type,m="FeatureCollection"===d,y="Feature"===d,v=m?e.features.length:1,g=0;g<v;g++){c=m?e.features[g].geometry:y?e.geometry:e,f=!!c&&"GeometryCollection"===c.type,u=f?c.geometries.length:1;for(var b=0;b<u;b++){var _=0,j=0;if(null!==(a=f?c.geometries[b]:c)){l=a.coordinates;var x=a.type;switch(p=!r||"Polygon"!==x&&"MultiPolygon"!==x?0:1,x){case null:break;case"Point":if(!1===t(l,h,g,_,j))return!1;h++,_++;break;case"LineString":case"MultiPoint":for(o=0;o<l.length;o++){if(!1===t(l[o],h,g,_,j))return!1;h++,"MultiPoint"===x&&_++}"LineString"===x&&_++;break;case"Polygon":case"MultiLineString":for(o=0;o<l.length;o++){for(i=0;i<l[o].length-p;i++){if(!1===t(l[o][i],h,g,_,j))return!1;h++}"MultiLineString"===x&&_++,"Polygon"===x&&j++}"Polygon"===x&&_++;break;case"MultiPolygon":for(o=0;o<l.length;o++){for("MultiPolygon"===x&&(j=0),i=0;i<l[o].length;i++){for(s=0;s<l[o][i].length-p;s++){if(!1===t(l[o][i][s],h,g,_,j))return!1;h++}j++}_++}break;case"GeometryCollection":for(o=0;o<a.geometries.length;o++)if(!1===n(a.geometries[o],t,r))return!1;break;default:throw new Error("Unknown Geometry Type")}}}}}function o(e,t){var r,n,o,i,s,a,u,l,c,f,p=0,h="FeatureCollection"===e.type,d="Feature"===e.type,m=h?e.features.length:1;for(r=0;r<m;r++){for(a=h?e.features[r].geometry:d?e.geometry:e,l=h?e.features[r].properties:d?e.properties:{},c=h?e.features[r].bbox:d?e.bbox:void 0,f=h?e.features[r].id:d?e.id:void 0,u=!!a&&"GeometryCollection"===a.type,s=u?a.geometries.length:1,o=0;o<s;o++)if(null!==(i=u?a.geometries[o]:a))switch(i.type){case"Point":case"LineString":case"MultiPoint":case"Polygon":case"MultiLineString":case"MultiPolygon":if(!1===t(i,p,l,c,f))return!1;break;case"GeometryCollection":for(n=0;n<i.geometries.length;n++)if(!1===t(i.geometries[n],p,l,c,f))return!1;break;default:throw new Error("Unknown Geometry Type")}else if(!1===t(null,p,l,c,f))return!1;p++}}function i(e,t,r){var n=r;return o(e,function(e,o,i,s,a){n=0===o&&void 0===r?e:t(n,e,o,i,s,a)}),n}function s(e,t){o(e,function(e,r,n,o,i){var s=null===e?null:e.type;switch(s){case null:case"Point":case"LineString":case"Polygon":if(!1===t(Object(l.b)(e,n,{bbox:o,id:i}),r,0))return!1;return}var a;switch(s){case"MultiPoint":a="Point";break;case"MultiLineString":a="LineString";break;case"MultiPolygon":a="Polygon"}for(var u=0;u<e.coordinates.length;u++){var c=e.coordinates[u],f={type:a,coordinates:c};if(!1===t(Object(l.b)(f,n),r,u))return!1}})}function a(e,t){s(e,function(e,r,o){var i=0;if(e.geometry){var s=e.geometry.type;if("Point"!==s&&"MultiPoint"!==s){var a;return!1!==n(e,function(n,s,u,c,f){if(void 0===a)return void(a=n);var p=Object(l.e)([a,n],e.properties);if(!1===t(p,r,o,f,i))return!1;i++,a=n})&&void 0}}})}function u(e,t,r){var n=r,o=!1;return a(e,function(e,i,s,a,u){n=!1===o&&void 0===r?e:t(n,e,i,s,a,u),o=!0}),n}r.d(t,"a",function(){return i}),r.d(t,"b",function(){return u});var l=r(3)},function(e,t,r){e.exports=r(29)},function(e,t,r){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}r(30);var o=r(31),i=n(o),s=r(79),a=n(s),u=r(80),l=n(u),c=r(85),f=function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var r in e)Object.prototype.hasOwnProperty.call(e,r)&&(t[r]=e[r]);return t.default=e,t}(c),p=r(86),h=n(p),d=r(87),m=r(88),y={imports:{numberFormat:d.numberFormat},interpolate:/{{([\s\S]+?)}}/g},v=(0,i.default)(m.controlTemplate,y),g=(0,i.default)(m.resultsTemplate,y),b=(0,i.default)(m.pointPopupTemplate,y),_=(0,i.default)(m.linePopupTemplate,y),j=(0,i.default)(m.areaPopupTemplate,y);L.Control.Measure=L.Control.extend({_className:"leaflet-control-measure",options:{units:{},position:"topright",primaryLengthUnit:"feet",secondaryLengthUnit:"miles",primaryAreaUnit:"acres",activeColor:"#ABE67E",completedColor:"#C8F2BE",captureZIndex:1e4,popupOptions:{className:"leaflet-measure-resultpopup",autoPanPadding:[10,10]}},initialize:function(e){L.setOptions(this,e);var t=this.options,r=t.activeColor,n=t.completedColor;this._symbols=new h.default({activeColor:r,completedColor:n}),this.options.units=L.extend({},a.default,this.options.units)},onAdd:function(e){return this._map=e,this._latlngs=[],this._initLayout(),e.on("click",this._collapse,this),this._layer=L.layerGroup().addTo(e),this._container},onRemove:function(e){e.off("click",this._collapse,this),e.removeLayer(this._layer)},_initLayout:function(){var e=this._className,t=this._container=L.DomUtil.create("div",e+" leaflet-bar");t.innerHTML=v({model:{className:e}}),t.setAttribute("aria-haspopup",!0),L.DomEvent.disableClickPropagation(t),L.DomEvent.disableScrollPropagation(t);var r=this.$toggle=(0,c.selectOne)(".js-toggle",t);this.$interaction=(0,c.selectOne)(".js-interaction",t);var n=(0,c.selectOne)(".js-start",t),o=(0,c.selectOne)(".js-cancel",t),i=(0,c.selectOne)(".js-finish",t);this.$startPrompt=(0,c.selectOne)(".js-startprompt",t),this.$measuringPrompt=(0,c.selectOne)(".js-measuringprompt",t),this.$startHelp=(0,c.selectOne)(".js-starthelp",t),this.$results=(0,c.selectOne)(".js-results",t),this.$measureTasks=(0,c.selectOne)(".js-measuretasks",t),this._collapse(),this._updateMeasureNotStarted(),L.Browser.android||(L.DomEvent.on(t,"mouseenter",this._expand,this),L.DomEvent.on(t,"mouseleave",this._collapse,this)),L.DomEvent.on(r,"click",L.DomEvent.stop),L.Browser.touch?L.DomEvent.on(r,"click",this._expand,this):L.DomEvent.on(r,"focus",this._expand,this),L.DomEvent.on(n,"click",L.DomEvent.stop),L.DomEvent.on(n,"click",this._startMeasure,this),L.DomEvent.on(o,"click",L.DomEvent.stop),L.DomEvent.on(o,"click",this._finishMeasure,this),L.DomEvent.on(i,"click",L.DomEvent.stop),L.DomEvent.on(i,"click",this._handleMeasureDoubleClick,this)},_expand:function(){f.hide(this.$toggle),f.show(this.$interaction)},_collapse:function(){this._locked||(f.hide(this.$interaction),f.show(this.$toggle))},_updateMeasureNotStarted:function(){f.hide(this.$startHelp),f.hide(this.$results),f.hide(this.$measureTasks),f.hide(this.$measuringPrompt),f.show(this.$startPrompt)},_updateMeasureStartedNoPoints:function(){f.hide(this.$results),f.show(this.$startHelp),f.show(this.$measureTasks),f.hide(this.$startPrompt),f.show(this.$measuringPrompt)},_updateMeasureStartedWithPoints:function(){f.hide(this.$startHelp),f.show(this.$results),f.show(this.$measureTasks),f.hide(this.$startPrompt),f.show(this.$measuringPrompt)},_startMeasure:function(){this._locked=!0,this._measureVertexes=L.featureGroup().addTo(this._layer),this._captureMarker=L.marker(this._map.getCenter(),{clickable:!0,zIndexOffset:this.options.captureZIndex,opacity:0}).addTo(this._layer),this._setCaptureMarkerIcon(),this._captureMarker.on("mouseout",this._handleMapMouseOut,this).on("dblclick",this._handleMeasureDoubleClick,this).on("click",this._handleMeasureClick,this),this._map.on("mousemove",this._handleMeasureMove,this).on("mouseout",this._handleMapMouseOut,this).on("move",this._centerCaptureMarker,this).on("resize",this._setCaptureMarkerIcon,this),L.DomEvent.on(this._container,"mouseenter",this._handleMapMouseOut,this),this._updateMeasureStartedNoPoints(),this._map.fire("measurestart",null,!1)},_finishMeasure:function(){var e=L.extend({},this._resultsModel,{points:this._latlngs});this._locked=!1,L.DomEvent.off(this._container,"mouseover",this._handleMapMouseOut,this),this._clearMeasure(),this._captureMarker.off("mouseout",this._handleMapMouseOut,this).off("dblclick",this._handleMeasureDoubleClick,this).off("click",this._handleMeasureClick,this),this._map.off("mousemove",this._handleMeasureMove,this).off("mouseout",this._handleMapMouseOut,this).off("move",this._centerCaptureMarker,this).off("resize",this._setCaptureMarkerIcon,this),this._layer.removeLayer(this._measureVertexes).removeLayer(this._captureMarker),this._measureVertexes=null,this._updateMeasureNotStarted(),this._collapse(),this._map.fire("measurefinish",e,!1)},_clearMeasure:function(){this._latlngs=[],this._resultsModel=null,this._measureVertexes.clearLayers(),this._measureDrag&&this._layer.removeLayer(this._measureDrag),this._measureArea&&this._layer.removeLayer(this._measureArea),this._measureBoundary&&this._layer.removeLayer(this._measureBoundary),this._measureDrag=null,this._measureArea=null,this._measureBoundary=null},_centerCaptureMarker:function(){this._captureMarker.setLatLng(this._map.getCenter())},_setCaptureMarkerIcon:function(){this._captureMarker.setIcon(L.divIcon({iconSize:this._map.getSize().multiplyBy(2)}))},_getMeasurementDisplayStrings:function(e){function t(e,t,o,i,s){if(t&&n[t]){var a=r(e,n[t],i,s);if(o&&n[o]){a=a+" ("+r(e,n[o],i,s)+")"}return a}return r(e,null,i,s)}function r(e,t,r,n){var o={acres:"Acres",feet:"Feet",kilometers:"Kilometers",hectares:"Hectares",meters:"Meters",miles:"Miles",sqfeet:"Sq Feet",sqmeters:"Sq Meters",sqmiles:"Sq Miles"},i=L.extend({factor:1,decimals:0},t);return[(0,d.numberFormat)(e*i.factor,i.decimals,r||".",n||","),o[i.display]||i.display].join(" ")}var n=this.options.units;return{lengthDisplay:t(e.length,this.options.primaryLengthUnit,this.options.secondaryLengthUnit,this.options.decPoint,this.options.thousandsSep),areaDisplay:t(e.area,this.options.primaryAreaUnit,this.options.secondaryAreaUnit,this.options.decPoint,this.options.thousandsSep)}},_updateResults:function(){var e=(0,l.default)(this._latlngs),t=this._resultsModel=L.extend({},e,this._getMeasurementDisplayStrings(e),{pointCount:this._latlngs.length});this.$results.innerHTML=g({model:t})},_handleMeasureMove:function(e){this._measureDrag?this._measureDrag.setLatLng(e.latlng):this._measureDrag=L.circleMarker(e.latlng,this._symbols.getSymbol("measureDrag")).addTo(this._layer),this._measureDrag.bringToFront()},_handleMeasureDoubleClick:function(){var e=this._latlngs,t=void 0,r=void 0;if(this._finishMeasure(),e.length){e.length>2&&e.push(e[0]);var n=(0,l.default)(e);1===e.length?(t=L.circleMarker(e[0],this._symbols.getSymbol("resultPoint")),r=b({model:n})):2===e.length?(t=L.polyline(e,this._symbols.getSymbol("resultLine")),r=_({model:L.extend({},n,this._getMeasurementDisplayStrings(n))})):(t=L.polygon(e,this._symbols.getSymbol("resultArea")),r=j({model:L.extend({},n,this._getMeasurementDisplayStrings(n))}));var o=L.DomUtil.create("div","");o.innerHTML=r;var i=(0,c.selectOne)(".js-zoomto",o);i&&(L.DomEvent.on(i,"click",L.DomEvent.stop),L.DomEvent.on(i,"click",function(){t.getBounds?this._map.fitBounds(t.getBounds(),{padding:[20,20],maxZoom:17}):t.getLatLng&&this._map.panTo(t.getLatLng())},this));var s=(0,c.selectOne)(".js-deletemarkup",o);s&&(L.DomEvent.on(s,"click",L.DomEvent.stop),L.DomEvent.on(s,"click",function(){this._layer.removeLayer(t)},this)),t.addTo(this._layer),t.bindPopup(o,this.options.popupOptions),t.getBounds?t.openPopup(t.getBounds().getCenter()):t.getLatLng&&t.openPopup(t.getLatLng())}},_handleMeasureClick:function(e){var t=this._map.mouseEventToLatLng(e.originalEvent),r=this._latlngs[this._latlngs.length-1],n=this._symbols.getSymbol("measureVertex");r&&t.equals(r)||(this._latlngs.push(t),this._addMeasureArea(this._latlngs),this._addMeasureBoundary(this._latlngs),this._measureVertexes.eachLayer(function(e){e.setStyle(n),e._path&&e._path.setAttribute("class",n.className)}),this._addNewVertex(t),this._measureBoundary&&this._measureBoundary.bringToFront(),this._measureVertexes.bringToFront()),this._updateResults(),this._updateMeasureStartedWithPoints()},_handleMapMouseOut:function(){this._measureDrag&&(this._layer.removeLayer(this._measureDrag),this._measureDrag=null)},_addNewVertex:function(e){L.circleMarker(e,this._symbols.getSymbol("measureVertexActive")).addTo(this._measureVertexes)},_addMeasureArea:function(e){if(e.length<3)return void(this._measureArea&&(this._layer.removeLayer(this._measureArea),this._measureArea=null));this._measureArea?this._measureArea.setLatLngs(e):this._measureArea=L.polygon(e,this._symbols.getSymbol("measureArea")).addTo(this._layer)},_addMeasureBoundary:function(e){if(e.length<2)return void(this._measureBoundary&&(this._layer.removeLayer(this._measureBoundary),this._measureBoundary=null));this._measureBoundary?this._measureBoundary.setLatLngs(e):this._measureBoundary=L.polyline(e,this._symbols.getSymbol("measureBoundary")).addTo(this._layer)}}),L.Map.mergeOptions({measureControl:!1}),L.Map.addInitHook(function(){this.options.measureControl&&(this.measureControl=(new L.Control.Measure).addTo(this))}),L.control.measure=function(e){return new L.Control.Measure(e)}},function(e,t){},function(e,t,r){function n(e,t,r){var n=h.imports._.templateSettings||h;r&&c(e,t,r)&&(t=void 0),e=d(e),t=o({},t,n,a);var j,x,M=o({},t.imports,n.imports,a),w=f(M),L=s(M,w),O=0,P=t.interpolate||b,k="__p += '",C=RegExp((t.escape||b).source+"|"+P.source+"|"+(P===p?g:b).source+"|"+(t.evaluate||b).source+"|$","g"),E="sourceURL"in t?"//# sourceURL="+t.sourceURL+"\n":"";e.replace(C,function(t,r,n,o,i,s){return n||(n=o),k+=e.slice(O,s).replace(_,u),r&&(j=!0,k+="' +\n__e("+r+") +\n'"),i&&(x=!0,k+="';\n"+i+";\n__p += '"),n&&(k+="' +\n((__t = ("+n+")) == null ? '' : __t) +\n'"),O=s+t.length,t}),k+="';\n";var S=t.variable;S||(k="with (obj) {\n"+k+"\n}\n"),k=(x?k.replace(m,""):k).replace(y,"$1").replace(v,"$1;"),k="function("+(S||"obj")+") {\n"+(S?"":"obj || (obj = {});\n")+"var __t, __p = ''"+(j?", __e = _.escape":"")+(x?", __j = Array.prototype.join;\nfunction print() { __p += __j.call(arguments, '') }\n":";\n")+k+"return __p\n}";var A=i(function(){return Function(w,E+"return "+k).apply(void 0,L)});if(A.source=k,l(A))throw A;return A}var o=r(32),i=r(62),s=r(65),a=r(66),u=r(67),l=r(22),c=r(15),f=r(68),p=r(25),h=r(71),d=r(26),m=/\b__p \+= '';/g,y=/\b(__p \+=) '' \+/g,v=/(__e\(.*?\)|\b__t\)) \+\n'';/g,g=/\$\{([^\\}]*(?:\\.[^\\}]*)*)\}/g,b=/($^)/,_=/['\n\r\u2028\u2029\\]/g;e.exports=n},function(e,t,r){var n=r(33),o=r(44),i=r(50),s=o(function(e,t,r,o){n(t,i(t),e,o)});e.exports=s},function(e,t,r){function n(e,t,r,n){var s=!r;r||(r={});for(var a=-1,u=t.length;++a<u;){var l=t[a],c=n?n(r[l],e[l],l,r,e):void 0;void 0===c&&(c=e[l]),s?i(r,l,c):o(r,l,c)}return r}var o=r(34),i=r(8);e.exports=n},function(e,t,r){function n(e,t,r){var n=e[t];a.call(e,t)&&i(n,r)&&(void 0!==r||t in e)||o(e,t,r)}var o=r(8),i=r(6),s=Object.prototype,a=s.hasOwnProperty;e.exports=n},function(e,t,r){function n(e,t){var r=i(e,t);return o(r)?r:void 0}var o=r(36),i=r(43);e.exports=n},function(e,t,r){function n(e){return!(!s(e)||i(e))&&(o(e)?d:l).test(a(e))}var o=r(10),i=r(40),s=r(2),a=r(42),u=/[\\^$.*+?()[\]{}|]/g,l=/^\[object .+?Constructor\]$/,c=Function.prototype,f=Object.prototype,p=c.toString,h=f.hasOwnProperty,d=RegExp("^"+p.call(h).replace(u,"\\$&").replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g,"$1.*?")+"$");e.exports=n},function(e,t){var r;r=function(){return this}();try{r=r||Function("return this")()||(0,eval)("this")}catch(e){"object"==typeof window&&(r=window)}e.exports=r},function(e,t,r){function n(e){var t=s.call(e,u),r=e[u];try{e[u]=void 0;var n=!0}catch(e){}var o=a.call(e);return n&&(t?e[u]=r:delete e[u]),o}var o=r(4),i=Object.prototype,s=i.hasOwnProperty,a=i.toString,u=o?o.toStringTag:void 0;e.exports=n},function(e,t){function r(e){return o.call(e)}var n=Object.prototype,o=n.toString;e.exports=r},function(e,t,r){function n(e){return!!i&&i in e}var o=r(41),i=function(){var e=/[^.]+$/.exec(o&&o.keys&&o.keys.IE_PROTO||"");return e?"Symbol(src)_1."+e:""}();e.exports=n},function(e,t,r){var n=r(5),o=n["__core-js_shared__"];e.exports=o},function(e,t){function r(e){if(null!=e){try{return o.call(e)}catch(e){}try{return e+""}catch(e){}}return""}var n=Function.prototype,o=n.toString;e.exports=r},function(e,t){function r(e,t){return null==e?void 0:e[t]}e.exports=r},function(e,t,r){function n(e){return o(function(t,r){var n=-1,o=r.length,s=o>1?r[o-1]:void 0,a=o>2?r[2]:void 0;for(s=e.length>3&&"function"==typeof s?(o--,s):void 0,a&&i(r[0],r[1],a)&&(s=o<3?void 0:s,o=1),t=Object(t);++n<o;){var u=r[n];u&&e(t,u,n,s)}return t})}var o=r(12),i=r(15);e.exports=n},function(e,t,r){function n(e,t,r){return t=i(void 0===t?e.length-1:t,0),function(){for(var n=arguments,s=-1,a=i(n.length-t,0),u=Array(a);++s<a;)u[s]=n[t+s];s=-1;for(var l=Array(t+1);++s<t;)l[s]=n[s];return l[t]=r(u),o(e,this,l)}}var o=r(14),i=Math.max;e.exports=n},function(e,t,r){var n=r(47),o=r(49),i=o(n);e.exports=i},function(e,t,r){var n=r(48),o=r(9),i=r(13),s=o?function(e,t){return o(e,"toString",{configurable:!0,enumerable:!1,value:n(t),writable:!0})}:i;e.exports=s},function(e,t){function r(e){return function(){return e}}e.exports=r},function(e,t){function r(e){var t=0,r=0;return function(){var s=i(),a=o-(s-r);if(r=s,a>0){if(++t>=n)return arguments[0]}else t=0;return e.apply(void 0,arguments)}}var n=800,o=16,i=Date.now;e.exports=r},function(e,t,r){function n(e){return s(e)?o(e,!0):i(e)}var o=r(18),i=r(60),s=r(7);e.exports=n},function(e,t){function r(e,t){for(var r=-1,n=Array(e);++r<e;)n[r]=t(r);return n}e.exports=r},function(e,t,r){var n=r(53),o=r(1),i=Object.prototype,s=i.hasOwnProperty,a=i.propertyIsEnumerable,u=n(function(){return arguments}())?n:function(e){return o(e)&&s.call(e,"callee")&&!a.call(e,"callee")};e.exports=u},function(e,t,r){function n(e){return i(e)&&o(e)==s}var o=r(0),i=r(1),s="[object Arguments]";e.exports=n},function(e,t,r){(function(e){var n=r(5),o=r(55),i="object"==typeof t&&t&&!t.nodeType&&t,s=i&&"object"==typeof e&&e&&!e.nodeType&&e,a=s&&s.exports===i,u=a?n.Buffer:void 0,l=u?u.isBuffer:void 0,c=l||o;e.exports=c}).call(t,r(20)(e))},function(e,t){function r(){return!1}e.exports=r},function(e,t,r){var n=r(57),o=r(58),i=r(59),s=i&&i.isTypedArray,a=s?o(s):n;e.exports=a},function(e,t,r){function n(e){return s(e)&&i(e.length)&&!!a[o(e)]}var o=r(0),i=r(16),s=r(1),a={};a["[object Float32Array]"]=a["[object Float64Array]"]=a["[object Int8Array]"]=a["[object Int16Array]"]=a["[object Int32Array]"]=a["[object Uint8Array]"]=a["[object Uint8ClampedArray]"]=a["[object Uint16Array]"]=a["[object Uint32Array]"]=!0,a["[object Arguments]"]=a["[object Array]"]=a["[object ArrayBuffer]"]=a["[object Boolean]"]=a["[object DataView]"]=a["[object Date]"]=a["[object Error]"]=a["[object Function]"]=a["[object Map]"]=a["[object Number]"]=a["[object Object]"]=a["[object RegExp]"]=a["[object Set]"]=a["[object String]"]=a["[object WeakMap]"]=!1,e.exports=n},function(e,t){function r(e){return function(t){return e(t)}}e.exports=r},function(e,t,r){(function(e){var n=r(11),o="object"==typeof t&&t&&!t.nodeType&&t,i=o&&"object"==typeof e&&e&&!e.nodeType&&e,s=i&&i.exports===o,a=s&&n.process,u=function(){try{return a&&a.binding&&a.binding("util")}catch(e){}}();e.exports=u}).call(t,r(20)(e))},function(e,t,r){function n(e){if(!o(e))return s(e);var t=i(e),r=[];for(var n in e)("constructor"!=n||!t&&u.call(e,n))&&r.push(n);return r}var o=r(2),i=r(21),s=r(61),a=Object.prototype,u=a.hasOwnProperty;e.exports=n},function(e,t){function r(e){var t=[];if(null!=e)for(var r in Object(e))t.push(r);return t}e.exports=r},function(e,t,r){var n=r(14),o=r(12),i=r(22),s=o(function(e,t){try{return n(e,void 0,t)}catch(e){return i(e)?e:new Error(e)}});e.exports=s},function(e,t,r){function n(e){if(!s(e)||o(e)!=a)return!1;var t=i(e);if(null===t)return!0;var r=f.call(t,"constructor")&&t.constructor;return"function"==typeof r&&r instanceof r&&c.call(r)==p}var o=r(0),i=r(64),s=r(1),a="[object Object]",u=Function.prototype,l=Object.prototype,c=u.toString,f=l.hasOwnProperty,p=c.call(Object);e.exports=n},function(e,t,r){var n=r(23),o=n(Object.getPrototypeOf,Object);e.exports=o},function(e,t,r){function n(e,t){return o(t,function(t){return e[t]})}var o=r(24);e.exports=n},function(e,t,r){function n(e,t,r,n){return void 0===e||o(e,i[r])&&!s.call(n,r)?t:e}var o=r(6),i=Object.prototype,s=i.hasOwnProperty;e.exports=n},function(e,t){function r(e){return"\\"+n[e]}var n={"\\":"\\","'":"'","\n":"n","\r":"r","\u2028":"u2028","\u2029":"u2029"};e.exports=r},function(e,t,r){function n(e){return s(e)?o(e):i(e)}var o=r(18),i=r(69),s=r(7);e.exports=n},function(e,t,r){function n(e){if(!o(e))return i(e);var t=[];for(var r in Object(e))a.call(e,r)&&"constructor"!=r&&t.push(r);return t}var o=r(21),i=r(70),s=Object.prototype,a=s.hasOwnProperty;e.exports=n},function(e,t,r){var n=r(23),o=n(Object.keys,Object);e.exports=o},function(e,t,r){var n=r(72),o=r(77),i=r(78),s=r(25),a={escape:o,evaluate:i,interpolate:s,variable:"",imports:{_:{escape:n}}};e.exports=a},function(e,t,r){function n(e){return e=i(e),e&&a.test(e)?e.replace(s,o):e}var o=r(73),i=r(26),s=/[&<>"']/g,a=RegExp(s.source);e.exports=n},function(e,t,r){var n=r(74),o={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"},i=n(o);e.exports=i},function(e,t){function r(e){return function(t){return null==e?void 0:e[t]}}e.exports=r},function(e,t,r){function n(e){if("string"==typeof e)return e;if(s(e))return i(e,n)+"";if(a(e))return c?c.call(e):"";var t=e+"";return"0"==t&&1/e==-u?"-0":t}var o=r(4),i=r(24),s=r(19),a=r(76),u=1/0,l=o?o.prototype:void 0,c=l?l.toString:void 0;e.exports=n},function(e,t,r){function n(e){return"symbol"==typeof e||i(e)&&o(e)==s}var o=r(0),i=r(1),s="[object Symbol]";e.exports=n},function(e,t){var r=/<%-([\s\S]+?)%>/g;e.exports=r},function(e,t){var r=/<%([\s\S]+?)%>/g;e.exports=r},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default={acres:{factor:24711e-8,display:"acres",decimals:2},feet:{factor:3.2808,display:"feet",decimals:0},kilometers:{factor:.001,display:"kilometers",decimals:2},hectares:{factor:1e-4,display:"hectares",decimals:2},meters:{factor:1,display:"meters",decimals:0},miles:{factor:3.2808/5280,display:"miles",decimals:2},sqfeet:{factor:10.7639,display:"sqfeet",decimals:0},sqmeters:{factor:1,display:"sqmeters",decimals:0},sqmiles:{factor:3.86102e-7,display:"sqmiles",decimals:2}}},function(e,t,r){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}function o(e){return e<10?"0"+e.toString():e.toString()}function i(e,t,r){var n=Math.abs(e),i=Math.floor(n),s=Math.floor(60*(n-i)),a=Math.round(3600*(n-i-s/60)*100)/100,u=n===e?t:r;return o(i)+"&deg; "+o(s)+"' "+o(a)+'" '+u}function s(e){var t=e[e.length-1],r=e.map(function(e){return[e.lat,e.lng]}),n=L.polyline(r),o=L.polygon(r),s=1e3*(0,u.default)(n.toGeoJSON(),{units:"kilometers"}),a=(0,c.default)(o.toGeoJSON());return{lastCoord:{dd:{x:t.lng,y:t.lat},dms:{x:i(t.lng,"E","W"),y:i(t.lat,"N","S")}},length:s,area:a}}Object.defineProperty(t,"__esModule",{value:!0}),t.default=s;var a=r(81),u=n(a),l=r(84),c=n(l)},function(e,t,r){"use strict";function n(e,t){if(t=t||{},!Object(s.d)(t))throw new Error("options is invalid");if(!e)throw new Error("geojson is required");return Object(i.b)(e,function(e,r){var n=r.geometry.coordinates;return e+Object(o.a)(n[0],n[1],t)},0)}Object.defineProperty(t,"__esModule",{value:!0});var o=r(82),i=r(27),s=r(3);t.default=n},function(e,t,r){"use strict";function n(e,t,r){if(r=r||{},!Object(i.d)(r))throw new Error("options is invalid");var n=r.units,s=Object(o.a)(e),a=Object(o.a)(t),u=Object(i.a)(a[1]-s[1]),l=Object(i.a)(a[0]-s[0]),c=Object(i.a)(s[1]),f=Object(i.a)(a[1]),p=Math.pow(Math.sin(u/2),2)+Math.pow(Math.sin(l/2),2)*Math.cos(c)*Math.cos(f);return Object(i.g)(2*Math.atan2(Math.sqrt(p),Math.sqrt(1-p)),n)}var o=r(83),i=r(3);t.a=n},function(e,t,r){"use strict";function n(e){if(!e)throw new Error("coord is required");if("Feature"===e.type&&null!==e.geometry&&"Point"===e.geometry.type)return e.geometry.coordinates;if("Point"===e.type)return e.coordinates;if(Array.isArray(e)&&e.length>=2&&void 0===e[0].length&&void 0===e[1].length)return e;throw new Error("coord must be GeoJSON Point or an Array of numbers")}r.d(t,"a",function(){return n});r(3)},function(e,t,r){"use strict";function n(e){return Object(u.a)(e,function(e,t){return e+o(t)},0)}function o(e){var t,r=0;switch(e.type){case"Polygon":return i(e.coordinates);case"MultiPolygon":for(t=0;t<e.coordinates.length;t++)r+=i(e.coordinates[t]);return r;case"Point":case"MultiPoint":case"LineString":case"MultiLineString":return 0;case"GeometryCollection":for(t=0;t<e.geometries.length;t++)r+=o(e.geometries[t]);return r}}function i(e){var t=0;if(e&&e.length>0){t+=Math.abs(s(e[0]));for(var r=1;r<e.length;r++)t-=Math.abs(s(e[r]))}return t}function s(e){var t,r,n,o,i,s,u,c=0,f=e.length;if(f>2){for(u=0;u<f;u++)u===f-2?(o=f-2,i=f-1,s=0):u===f-1?(o=f-1,i=0,s=1):(o=u,i=u+1,s=u+2),t=e[o],r=e[i],n=e[s],c+=(a(n[0])-a(t[0]))*Math.sin(a(r[1]));c=c*l*l/2}return c}function a(e){return e*Math.PI/180}Object.defineProperty(t,"__esModule",{value:!0});var u=r(27),l=6378137;t.default=n},function(e,t,r){"use strict";function n(e,t){return t||(t=document),t.querySelector(e)}function o(e,t){return t||(t=document),Array.prototype.slice.call(t.querySelectorAll(e))}function i(e){if(e)return e.setAttribute("style","display:none;"),e}function s(e){if(e)return e.removeAttribute("style"),e}Object.defineProperty(t,"__esModule",{value:!0}),t.selectOne=n,t.selectAll=o,t.hide=i,t.show=s},function(e,t,r){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}(),i={activeColor:"#ABE67E",completedColor:"#C8F2BE"},s=function(){function e(t){n(this,e),this._options=L.extend({},i,this._options,t)}return o(e,[{key:"getSymbol",value:function(e){return{measureDrag:{clickable:!1,radius:4,color:this._options.activeColor,weight:2,opacity:.7,fillColor:this._options.activeColor,fillOpacity:.5,className:"layer-measuredrag"},measureArea:{clickable:!1,stroke:!1,fillColor:this._options.activeColor,fillOpacity:.2,className:"layer-measurearea"},measureBoundary:{clickable:!1,color:this._options.activeColor,weight:2,opacity:.9,fill:!1,className:"layer-measureboundary"},measureVertex:{clickable:!1,radius:4,color:this._options.activeColor,weight:2,opacity:1,fillColor:this._options.activeColor,fillOpacity:.7,className:"layer-measurevertex"},measureVertexActive:{clickable:!1,radius:4,color:this._options.activeColor,weight:2,opacity:1,fillColor:this._options.activeColor,fillOpacity:1,className:"layer-measurevertex active"},resultArea:{clickable:!0,color:this._options.completedColor,weight:2,opacity:.9,fillColor:this._options.completedColor,fillOpacity:.2,className:"layer-measure-resultarea"},resultLine:{clickable:!0,color:this._options.completedColor,weight:3,opacity:.9,fill:!1,className:"layer-measure-resultline"},resultPoint:{clickable:!0,radius:4,color:this._options.completedColor,weight:2,opacity:1,fillColor:this._options.completedColor,fillOpacity:.7,className:"layer-measure-resultpoint"}}[e]}}]),e}();t.default=s},function(e,t,r){"use strict";function n(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:2,r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:".",n=arguments.length>3&&void 0!==arguments[3]?arguments[3]:",",o=e<0?"-":"",i=Math.abs(+e||0),s=parseInt(i.toFixed(t),10)+"",a=s.length>3?s.length%3:0;return[o,a?s.substr(0,a)+n:"",s.substr(a).replace(/(\d{3})(?=\d)/g,"$1"+n),t?""+r+Math.abs(i-s).toFixed(t).slice(2):""].join("")}Object.defineProperty(t,"__esModule",{value:!0}),t.numberFormat=n},function(e,t,r){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var o=r(89);Object.defineProperty(t,"controlTemplate",{enumerable:!0,get:function(){return n(o).default}});var i=r(90);Object.defineProperty(t,"resultsTemplate",{enumerable:!0,get:function(){return n(i).default}});var s=r(91);Object.defineProperty(t,"pointPopupTemplate",{enumerable:!0,get:function(){return n(s).default}});var a=r(92);Object.defineProperty(t,"linePopupTemplate",{enumerable:!0,get:function(){return n(a).default}});var u=r(93);Object.defineProperty(t,"areaPopupTemplate",{enumerable:!0,get:function(){return n(u).default}})},function(e,t,r){e.exports='<a class="{{ model.className }}-toggle js-toggle" href=# title="Measure distances and areas">Measure</a> <div class="{{ model.className }}-interaction js-interaction"> <div class="js-startprompt startprompt"> <h3>Measure distances and areas</h3> <ul class=tasks> <a href=# class="js-start start">Create a new measurement</a> </ul> </div> <div class=js-measuringprompt> <h3>Measure distances and areas</h3> <p class=js-starthelp>Start creating a measurement by adding points to the map</p> <div class="js-results results"></div> <ul class="js-measuretasks tasks"> <li><a href=# class="js-cancel cancel">Cancel</a></li> <li><a href=# class="js-finish finish">Finish measurement</a></li> </ul> </div> </div> '},function(e,t,r){e.exports='<div class=group> <p class="lastpoint heading">Last point</p> <p>{{ model.lastCoord.dms.y }} <span class=coorddivider>/</span> {{ model.lastCoord.dms.x }}</p> <p>{{ numberFormat(model.lastCoord.dd.y, 6) }} <span class=coorddivider>/</span> {{ numberFormat(model.lastCoord.dd.x, 6) }}</p> </div> <% if (model.pointCount > 1) { %> <div class=group> <p><span class=heading>Path distance</span> {{ model.lengthDisplay }}</p> </div> <% } %> <% if (model.pointCount > 2) { %> <div class=group> <p><span class=heading>Area</span> {{ model.areaDisplay }}</p> </div> <% } %> '},function(e,t,r){e.exports='<h3>Point location</h3> <p>{{ model.lastCoord.dms.y }} <span class=coorddivider>/</span> {{ model.lastCoord.dms.x }}</p> <p>{{ numberFormat(model.lastCoord.dd.y, 6) }} <span class=coorddivider>/</span> {{ numberFormat(model.lastCoord.dd.x, 6) }}</p> <ul class=tasks> <li><a href=# class="js-zoomto zoomto">Center on this location</a></li> <li><a href=# class="js-deletemarkup deletemarkup">Delete</a></li> </ul> '},function(e,t,r){e.exports='<h3>Linear measurement</h3> <p>{{ model.lengthDisplay }}</p> <ul class=tasks> <li><a href=# class="js-zoomto zoomto">Center on this line</a></li> <li><a href=# class="js-deletemarkup deletemarkup">Delete</a></li> </ul> '},function(e,t,r){e.exports='<h3>Area measurement</h3> <p>{{ model.areaDisplay }}</p> <p>{{ model.lengthDisplay }} Perimeter</p> <ul class=tasks> <li><a href=# class="js-zoomto zoomto">Center on this area</a></li> <li><a href=# class="js-deletemarkup deletemarkup">Delete</a></li> </ul> '}]);
-
-/***/ }),
-
-/***/ "./node_modules/leaflet-measure/node_modules/@turf/area/main.es.js":
-/*!*************************************************************************!*\
-  !*** ./node_modules/leaflet-measure/node_modules/@turf/area/main.es.js ***!
-  \*************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _turf_meta__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @turf/meta */ "./node_modules/leaflet-measure/node_modules/@turf/meta/main.es.js");
+/* harmony import */ var _turf_meta__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @turf/meta */ "./node_modules/@turf/area/node_modules/@turf/meta/main.es.js");
 
 
 /**
@@ -1477,10 +265,10 @@ function rad(_) {
 
 /***/ }),
 
-/***/ "./node_modules/leaflet-measure/node_modules/@turf/helpers/main.es.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/leaflet-measure/node_modules/@turf/helpers/main.es.js ***!
-  \****************************************************************************/
+/***/ "./node_modules/@turf/area/node_modules/@turf/helpers/main.es.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@turf/area/node_modules/@turf/helpers/main.es.js ***!
+  \***********************************************************************/
 /*! exports provided: earthRadius, factors, unitsFactors, areaFactors, feature, geometry, point, points, polygon, polygons, lineString, lineStrings, featureCollection, multiLineString, multiPoint, multiPolygon, geometryCollection, round, radiansToLength, lengthToRadians, lengthToDegrees, bearingToAzimuth, radiansToDegrees, degreesToRadians, convertLength, convertArea, isNumber, isObject, validateBBox, validateId, radians2degrees, degrees2radians, distanceToDegrees, distanceToRadians, radiansToDistance, bearingToAngle, convertDistance */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2278,62 +1066,10 @@ function convertDistance() {
 
 /***/ }),
 
-/***/ "./node_modules/leaflet-measure/node_modules/@turf/length/main.es.js":
-/*!***************************************************************************!*\
-  !*** ./node_modules/leaflet-measure/node_modules/@turf/length/main.es.js ***!
-  \***************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _turf_distance__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @turf/distance */ "./node_modules/@turf/distance/main.es.js");
-/* harmony import */ var _turf_meta__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @turf/meta */ "./node_modules/leaflet-measure/node_modules/@turf/meta/main.es.js");
-/* harmony import */ var _turf_helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @turf/helpers */ "./node_modules/leaflet-measure/node_modules/@turf/helpers/main.es.js");
-
-
-
-
-/**
- * Takes a {@link GeoJSON} and measures its length in the specified units, {@link (Multi)Point}'s distance are ignored.
- *
- * @name length
- * @param {GeoJSON} geojson GeoJSON to measure
- * @param {Object} [options={}] Optional parameters
- * @param {string} [options.units=kilometers] can be degrees, radians, miles, or kilometers
- * @returns {number} length of GeoJSON
- * @example
- * var line = turf.lineString([[115, -32], [131, -22], [143, -25], [150, -34]]);
- * var length = turf.length(line, {units: 'miles'});
- *
- * //addToMap
- * var addToMap = [line];
- * line.properties.distance = length;
- */
-function length(geojson, options) {
-    // Optional parameters
-    options = options || {};
-    if (!Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_2__["isObject"])(options)) throw new Error('options is invalid');
-
-    // Input Validation
-    if (!geojson) throw new Error('geojson is required');
-
-    // Calculate distance from 2-vertex line segements
-    return Object(_turf_meta__WEBPACK_IMPORTED_MODULE_1__["segmentReduce"])(geojson, function (previousValue, segment) {
-        var coords = segment.geometry.coordinates;
-        return previousValue + Object(_turf_distance__WEBPACK_IMPORTED_MODULE_0__["default"])(coords[0], coords[1], options);
-    }, 0);
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (length);
-
-
-/***/ }),
-
-/***/ "./node_modules/leaflet-measure/node_modules/@turf/meta/main.es.js":
-/*!*************************************************************************!*\
-  !*** ./node_modules/leaflet-measure/node_modules/@turf/meta/main.es.js ***!
-  \*************************************************************************/
+/***/ "./node_modules/@turf/area/node_modules/@turf/meta/main.es.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@turf/area/node_modules/@turf/meta/main.es.js ***!
+  \********************************************************************/
 /*! exports provided: coordEach, coordReduce, propEach, propReduce, featureEach, featureReduce, coordAll, geomEach, geomReduce, flattenEach, flattenReduce, segmentEach, segmentReduce, lineEach, lineReduce, findSegment, findPoint */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2356,7 +1092,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lineReduce", function() { return lineReduce; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "findSegment", function() { return findSegment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "findPoint", function() { return findPoint; });
-/* harmony import */ var _turf_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @turf/helpers */ "./node_modules/leaflet-measure/node_modules/@turf/helpers/main.es.js");
+/* harmony import */ var _turf_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @turf/helpers */ "./node_modules/@turf/area/node_modules/@turf/helpers/main.es.js");
 
 
 /**
@@ -3466,6 +2202,3207 @@ function findPoint(geojson, options) {
 
 /***/ }),
 
+/***/ "./node_modules/@turf/distance/main.es.js":
+/*!************************************************!*\
+  !*** ./node_modules/@turf/distance/main.es.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _turf_invariant__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @turf/invariant */ "./node_modules/@turf/distance/node_modules/@turf/invariant/main.es.js");
+/* harmony import */ var _turf_helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @turf/helpers */ "./node_modules/@turf/distance/node_modules/@turf/helpers/main.es.js");
+
+
+
+//http://en.wikipedia.org/wiki/Haversine_formula
+//http://www.movable-type.co.uk/scripts/latlong.html
+
+/**
+ * Calculates the distance between two {@link Point|points} in degrees, radians,
+ * miles, or kilometers. This uses the
+ * [Haversine formula](http://en.wikipedia.org/wiki/Haversine_formula)
+ * to account for global curvature.
+ *
+ * @name distance
+ * @param {Coord} from origin point
+ * @param {Coord} to destination point
+ * @param {Object} [options={}] Optional parameters
+ * @param {string} [options.units='kilometers'] can be degrees, radians, miles, or kilometers
+ * @returns {number} distance between the two points
+ * @example
+ * var from = turf.point([-75.343, 39.984]);
+ * var to = turf.point([-75.534, 39.123]);
+ * var options = {units: 'miles'};
+ *
+ * var distance = turf.distance(from, to, options);
+ *
+ * //addToMap
+ * var addToMap = [from, to];
+ * from.properties.distance = distance;
+ * to.properties.distance = distance;
+ */
+function distance(from, to, options) {
+    // Optional parameters
+    options = options || {};
+    if (!Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_1__["isObject"])(options)) throw new Error('options is invalid');
+    var units = options.units;
+
+    var coordinates1 = Object(_turf_invariant__WEBPACK_IMPORTED_MODULE_0__["getCoord"])(from);
+    var coordinates2 = Object(_turf_invariant__WEBPACK_IMPORTED_MODULE_0__["getCoord"])(to);
+    var dLat = Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_1__["degreesToRadians"])((coordinates2[1] - coordinates1[1]));
+    var dLon = Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_1__["degreesToRadians"])((coordinates2[0] - coordinates1[0]));
+    var lat1 = Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_1__["degreesToRadians"])(coordinates1[1]);
+    var lat2 = Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_1__["degreesToRadians"])(coordinates2[1]);
+
+    var a = Math.pow(Math.sin(dLat / 2), 2) +
+          Math.pow(Math.sin(dLon / 2), 2) * Math.cos(lat1) * Math.cos(lat2);
+
+    return Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_1__["radiansToLength"])(2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)), units);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (distance);
+
+
+/***/ }),
+
+/***/ "./node_modules/@turf/distance/node_modules/@turf/helpers/main.es.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@turf/distance/node_modules/@turf/helpers/main.es.js ***!
+  \***************************************************************************/
+/*! exports provided: earthRadius, factors, unitsFactors, areaFactors, feature, geometry, point, points, polygon, polygons, lineString, lineStrings, featureCollection, multiLineString, multiPoint, multiPolygon, geometryCollection, round, radiansToLength, lengthToRadians, lengthToDegrees, bearingToAzimuth, radiansToDegrees, degreesToRadians, convertLength, convertArea, isNumber, isObject, validateBBox, validateId, radians2degrees, degrees2radians, distanceToDegrees, distanceToRadians, radiansToDistance, bearingToAngle, convertDistance */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "earthRadius", function() { return earthRadius; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "factors", function() { return factors; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unitsFactors", function() { return unitsFactors; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "areaFactors", function() { return areaFactors; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "feature", function() { return feature; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "geometry", function() { return geometry; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "point", function() { return point; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "points", function() { return points; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "polygon", function() { return polygon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "polygons", function() { return polygons; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lineString", function() { return lineString; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lineStrings", function() { return lineStrings; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "featureCollection", function() { return featureCollection; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multiLineString", function() { return multiLineString; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multiPoint", function() { return multiPoint; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multiPolygon", function() { return multiPolygon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "geometryCollection", function() { return geometryCollection; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "round", function() { return round; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "radiansToLength", function() { return radiansToLength; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lengthToRadians", function() { return lengthToRadians; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lengthToDegrees", function() { return lengthToDegrees; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bearingToAzimuth", function() { return bearingToAzimuth; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "radiansToDegrees", function() { return radiansToDegrees; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "degreesToRadians", function() { return degreesToRadians; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertLength", function() { return convertLength; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertArea", function() { return convertArea; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isNumber", function() { return isNumber; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isObject", function() { return isObject; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validateBBox", function() { return validateBBox; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validateId", function() { return validateId; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "radians2degrees", function() { return radians2degrees; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "degrees2radians", function() { return degrees2radians; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "distanceToDegrees", function() { return distanceToDegrees; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "distanceToRadians", function() { return distanceToRadians; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "radiansToDistance", function() { return radiansToDistance; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bearingToAngle", function() { return bearingToAngle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertDistance", function() { return convertDistance; });
+/**
+ * Earth Radius used with the Harvesine formula and approximates using a spherical (non-ellipsoid) Earth.
+ */
+var earthRadius = 6371008.8;
+
+/**
+ * Unit of measurement factors using a spherical (non-ellipsoid) earth radius.
+ */
+var factors = {
+    meters: earthRadius,
+    metres: earthRadius,
+    millimeters: earthRadius * 1000,
+    millimetres: earthRadius * 1000,
+    centimeters: earthRadius * 100,
+    centimetres: earthRadius * 100,
+    kilometers: earthRadius / 1000,
+    kilometres: earthRadius / 1000,
+    miles: earthRadius / 1609.344,
+    nauticalmiles: earthRadius / 1852,
+    inches: earthRadius * 39.370,
+    yards: earthRadius / 1.0936,
+    feet: earthRadius * 3.28084,
+    radians: 1,
+    degrees: earthRadius / 111325,
+};
+
+/**
+ * Units of measurement factors based on 1 meter.
+ */
+var unitsFactors = {
+    meters: 1,
+    metres: 1,
+    millimeters: 1000,
+    millimetres: 1000,
+    centimeters: 100,
+    centimetres: 100,
+    kilometers: 1 / 1000,
+    kilometres: 1 / 1000,
+    miles: 1 / 1609.344,
+    nauticalmiles: 1 / 1852,
+    inches: 39.370,
+    yards: 1 / 1.0936,
+    feet: 3.28084,
+    radians: 1 / earthRadius,
+    degrees: 1 / 111325,
+};
+
+/**
+ * Area of measurement factors based on 1 square meter.
+ */
+var areaFactors = {
+    meters: 1,
+    metres: 1,
+    millimeters: 1000000,
+    millimetres: 1000000,
+    centimeters: 10000,
+    centimetres: 10000,
+    kilometers: 0.000001,
+    kilometres: 0.000001,
+    acres: 0.000247105,
+    miles: 3.86e-7,
+    yards: 1.195990046,
+    feet: 10.763910417,
+    inches: 1550.003100006
+};
+
+/**
+ * Wraps a GeoJSON {@link Geometry} in a GeoJSON {@link Feature}.
+ *
+ * @name feature
+ * @param {Geometry} geometry input geometry
+ * @param {Object} [properties={}] an Object of key-value pairs to add as properties
+ * @param {Object} [options={}] Optional Parameters
+ * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
+ * @param {string|number} [options.id] Identifier associated with the Feature
+ * @returns {Feature} a GeoJSON Feature
+ * @example
+ * var geometry = {
+ *   "type": "Point",
+ *   "coordinates": [110, 50]
+ * };
+ *
+ * var feature = turf.feature(geometry);
+ *
+ * //=feature
+ */
+function feature(geometry, properties, options) {
+    // Optional Parameters
+    options = options || {};
+    if (!isObject(options)) throw new Error('options is invalid');
+    var bbox = options.bbox;
+    var id = options.id;
+
+    // Validation
+    if (geometry === undefined) throw new Error('geometry is required');
+    if (properties && properties.constructor !== Object) throw new Error('properties must be an Object');
+    if (bbox) validateBBox(bbox);
+    if (id) validateId(id);
+
+    // Main
+    var feat = {type: 'Feature'};
+    if (id) feat.id = id;
+    if (bbox) feat.bbox = bbox;
+    feat.properties = properties || {};
+    feat.geometry = geometry;
+    return feat;
+}
+
+/**
+ * Creates a GeoJSON {@link Geometry} from a Geometry string type & coordinates.
+ * For GeometryCollection type use `helpers.geometryCollection`
+ *
+ * @name geometry
+ * @param {string} type Geometry Type
+ * @param {Array<number>} coordinates Coordinates
+ * @param {Object} [options={}] Optional Parameters
+ * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Geometry
+ * @returns {Geometry} a GeoJSON Geometry
+ * @example
+ * var type = 'Point';
+ * var coordinates = [110, 50];
+ *
+ * var geometry = turf.geometry(type, coordinates);
+ *
+ * //=geometry
+ */
+function geometry(type, coordinates, options) {
+    // Optional Parameters
+    options = options || {};
+    if (!isObject(options)) throw new Error('options is invalid');
+    var bbox = options.bbox;
+
+    // Validation
+    if (!type) throw new Error('type is required');
+    if (!coordinates) throw new Error('coordinates is required');
+    if (!Array.isArray(coordinates)) throw new Error('coordinates must be an Array');
+    if (bbox) validateBBox(bbox);
+
+    // Main
+    var geom;
+    switch (type) {
+    case 'Point': geom = point(coordinates).geometry; break;
+    case 'LineString': geom = lineString(coordinates).geometry; break;
+    case 'Polygon': geom = polygon(coordinates).geometry; break;
+    case 'MultiPoint': geom = multiPoint(coordinates).geometry; break;
+    case 'MultiLineString': geom = multiLineString(coordinates).geometry; break;
+    case 'MultiPolygon': geom = multiPolygon(coordinates).geometry; break;
+    default: throw new Error(type + ' is invalid');
+    }
+    if (bbox) geom.bbox = bbox;
+    return geom;
+}
+
+/**
+ * Creates a {@link Point} {@link Feature} from a Position.
+ *
+ * @name point
+ * @param {Array<number>} coordinates longitude, latitude position (each in decimal degrees)
+ * @param {Object} [properties={}] an Object of key-value pairs to add as properties
+ * @param {Object} [options={}] Optional Parameters
+ * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
+ * @param {string|number} [options.id] Identifier associated with the Feature
+ * @returns {Feature<Point>} a Point feature
+ * @example
+ * var point = turf.point([-75.343, 39.984]);
+ *
+ * //=point
+ */
+function point(coordinates, properties, options) {
+    if (!coordinates) throw new Error('coordinates is required');
+    if (!Array.isArray(coordinates)) throw new Error('coordinates must be an Array');
+    if (coordinates.length < 2) throw new Error('coordinates must be at least 2 numbers long');
+    if (!isNumber(coordinates[0]) || !isNumber(coordinates[1])) throw new Error('coordinates must contain numbers');
+
+    return feature({
+        type: 'Point',
+        coordinates: coordinates
+    }, properties, options);
+}
+
+/**
+ * Creates a {@link Point} {@link FeatureCollection} from an Array of Point coordinates.
+ *
+ * @name points
+ * @param {Array<Array<number>>} coordinates an array of Points
+ * @param {Object} [properties={}] Translate these properties to each Feature
+ * @param {Object} [options={}] Optional Parameters
+ * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the FeatureCollection
+ * @param {string|number} [options.id] Identifier associated with the FeatureCollection
+ * @returns {FeatureCollection<Point>} Point Feature
+ * @example
+ * var points = turf.points([
+ *   [-75, 39],
+ *   [-80, 45],
+ *   [-78, 50]
+ * ]);
+ *
+ * //=points
+ */
+function points(coordinates, properties, options) {
+    if (!coordinates) throw new Error('coordinates is required');
+    if (!Array.isArray(coordinates)) throw new Error('coordinates must be an Array');
+
+    return featureCollection(coordinates.map(function (coords) {
+        return point(coords, properties);
+    }), options);
+}
+
+/**
+ * Creates a {@link Polygon} {@link Feature} from an Array of LinearRings.
+ *
+ * @name polygon
+ * @param {Array<Array<Array<number>>>} coordinates an array of LinearRings
+ * @param {Object} [properties={}] an Object of key-value pairs to add as properties
+ * @param {Object} [options={}] Optional Parameters
+ * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
+ * @param {string|number} [options.id] Identifier associated with the Feature
+ * @returns {Feature<Polygon>} Polygon Feature
+ * @example
+ * var polygon = turf.polygon([[[-5, 52], [-4, 56], [-2, 51], [-7, 54], [-5, 52]]], { name: 'poly1' });
+ *
+ * //=polygon
+ */
+function polygon(coordinates, properties, options) {
+    if (!coordinates) throw new Error('coordinates is required');
+
+    for (var i = 0; i < coordinates.length; i++) {
+        var ring = coordinates[i];
+        if (ring.length < 4) {
+            throw new Error('Each LinearRing of a Polygon must have 4 or more Positions.');
+        }
+        for (var j = 0; j < ring[ring.length - 1].length; j++) {
+            // Check if first point of Polygon contains two numbers
+            if (i === 0 && j === 0 && !isNumber(ring[0][0]) || !isNumber(ring[0][1])) throw new Error('coordinates must contain numbers');
+            if (ring[ring.length - 1][j] !== ring[0][j]) {
+                throw new Error('First and last Position are not equivalent.');
+            }
+        }
+    }
+
+    return feature({
+        type: 'Polygon',
+        coordinates: coordinates
+    }, properties, options);
+}
+
+/**
+ * Creates a {@link Polygon} {@link FeatureCollection} from an Array of Polygon coordinates.
+ *
+ * @name polygons
+ * @param {Array<Array<Array<Array<number>>>>} coordinates an array of Polygon coordinates
+ * @param {Object} [properties={}] an Object of key-value pairs to add as properties
+ * @param {Object} [options={}] Optional Parameters
+ * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
+ * @param {string|number} [options.id] Identifier associated with the FeatureCollection
+ * @returns {FeatureCollection<Polygon>} Polygon FeatureCollection
+ * @example
+ * var polygons = turf.polygons([
+ *   [[[-5, 52], [-4, 56], [-2, 51], [-7, 54], [-5, 52]]],
+ *   [[[-15, 42], [-14, 46], [-12, 41], [-17, 44], [-15, 42]]],
+ * ]);
+ *
+ * //=polygons
+ */
+function polygons(coordinates, properties, options) {
+    if (!coordinates) throw new Error('coordinates is required');
+    if (!Array.isArray(coordinates)) throw new Error('coordinates must be an Array');
+
+    return featureCollection(coordinates.map(function (coords) {
+        return polygon(coords, properties);
+    }), options);
+}
+
+/**
+ * Creates a {@link LineString} {@link Feature} from an Array of Positions.
+ *
+ * @name lineString
+ * @param {Array<Array<number>>} coordinates an array of Positions
+ * @param {Object} [properties={}] an Object of key-value pairs to add as properties
+ * @param {Object} [options={}] Optional Parameters
+ * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
+ * @param {string|number} [options.id] Identifier associated with the Feature
+ * @returns {Feature<LineString>} LineString Feature
+ * @example
+ * var linestring1 = turf.lineString([[-24, 63], [-23, 60], [-25, 65], [-20, 69]], {name: 'line 1'});
+ * var linestring2 = turf.lineString([[-14, 43], [-13, 40], [-15, 45], [-10, 49]], {name: 'line 2'});
+ *
+ * //=linestring1
+ * //=linestring2
+ */
+function lineString(coordinates, properties, options) {
+    if (!coordinates) throw new Error('coordinates is required');
+    if (coordinates.length < 2) throw new Error('coordinates must be an array of two or more positions');
+    // Check if first point of LineString contains two numbers
+    if (!isNumber(coordinates[0][1]) || !isNumber(coordinates[0][1])) throw new Error('coordinates must contain numbers');
+
+    return feature({
+        type: 'LineString',
+        coordinates: coordinates
+    }, properties, options);
+}
+
+/**
+ * Creates a {@link LineString} {@link FeatureCollection} from an Array of LineString coordinates.
+ *
+ * @name lineStrings
+ * @param {Array<Array<number>>} coordinates an array of LinearRings
+ * @param {Object} [properties={}] an Object of key-value pairs to add as properties
+ * @param {Object} [options={}] Optional Parameters
+ * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the FeatureCollection
+ * @param {string|number} [options.id] Identifier associated with the FeatureCollection
+ * @returns {FeatureCollection<LineString>} LineString FeatureCollection
+ * @example
+ * var linestrings = turf.lineStrings([
+ *   [[-24, 63], [-23, 60], [-25, 65], [-20, 69]],
+ *   [[-14, 43], [-13, 40], [-15, 45], [-10, 49]]
+ * ]);
+ *
+ * //=linestrings
+ */
+function lineStrings(coordinates, properties, options) {
+    if (!coordinates) throw new Error('coordinates is required');
+    if (!Array.isArray(coordinates)) throw new Error('coordinates must be an Array');
+
+    return featureCollection(coordinates.map(function (coords) {
+        return lineString(coords, properties);
+    }), options);
+}
+
+/**
+ * Takes one or more {@link Feature|Features} and creates a {@link FeatureCollection}.
+ *
+ * @name featureCollection
+ * @param {Feature[]} features input features
+ * @param {Object} [options={}] Optional Parameters
+ * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
+ * @param {string|number} [options.id] Identifier associated with the Feature
+ * @returns {FeatureCollection} FeatureCollection of Features
+ * @example
+ * var locationA = turf.point([-75.343, 39.984], {name: 'Location A'});
+ * var locationB = turf.point([-75.833, 39.284], {name: 'Location B'});
+ * var locationC = turf.point([-75.534, 39.123], {name: 'Location C'});
+ *
+ * var collection = turf.featureCollection([
+ *   locationA,
+ *   locationB,
+ *   locationC
+ * ]);
+ *
+ * //=collection
+ */
+function featureCollection(features, options) {
+    // Optional Parameters
+    options = options || {};
+    if (!isObject(options)) throw new Error('options is invalid');
+    var bbox = options.bbox;
+    var id = options.id;
+
+    // Validation
+    if (!features) throw new Error('No features passed');
+    if (!Array.isArray(features)) throw new Error('features must be an Array');
+    if (bbox) validateBBox(bbox);
+    if (id) validateId(id);
+
+    // Main
+    var fc = {type: 'FeatureCollection'};
+    if (id) fc.id = id;
+    if (bbox) fc.bbox = bbox;
+    fc.features = features;
+    return fc;
+}
+
+/**
+ * Creates a {@link Feature<MultiLineString>} based on a
+ * coordinate array. Properties can be added optionally.
+ *
+ * @name multiLineString
+ * @param {Array<Array<Array<number>>>} coordinates an array of LineStrings
+ * @param {Object} [properties={}] an Object of key-value pairs to add as properties
+ * @param {Object} [options={}] Optional Parameters
+ * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
+ * @param {string|number} [options.id] Identifier associated with the Feature
+ * @returns {Feature<MultiLineString>} a MultiLineString feature
+ * @throws {Error} if no coordinates are passed
+ * @example
+ * var multiLine = turf.multiLineString([[[0,0],[10,10]]]);
+ *
+ * //=multiLine
+ */
+function multiLineString(coordinates, properties, options) {
+    if (!coordinates) throw new Error('coordinates is required');
+
+    return feature({
+        type: 'MultiLineString',
+        coordinates: coordinates
+    }, properties, options);
+}
+
+/**
+ * Creates a {@link Feature<MultiPoint>} based on a
+ * coordinate array. Properties can be added optionally.
+ *
+ * @name multiPoint
+ * @param {Array<Array<number>>} coordinates an array of Positions
+ * @param {Object} [properties={}] an Object of key-value pairs to add as properties
+ * @param {Object} [options={}] Optional Parameters
+ * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
+ * @param {string|number} [options.id] Identifier associated with the Feature
+ * @returns {Feature<MultiPoint>} a MultiPoint feature
+ * @throws {Error} if no coordinates are passed
+ * @example
+ * var multiPt = turf.multiPoint([[0,0],[10,10]]);
+ *
+ * //=multiPt
+ */
+function multiPoint(coordinates, properties, options) {
+    if (!coordinates) throw new Error('coordinates is required');
+
+    return feature({
+        type: 'MultiPoint',
+        coordinates: coordinates
+    }, properties, options);
+}
+
+/**
+ * Creates a {@link Feature<MultiPolygon>} based on a
+ * coordinate array. Properties can be added optionally.
+ *
+ * @name multiPolygon
+ * @param {Array<Array<Array<Array<number>>>>} coordinates an array of Polygons
+ * @param {Object} [properties={}] an Object of key-value pairs to add as properties
+ * @param {Object} [options={}] Optional Parameters
+ * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
+ * @param {string|number} [options.id] Identifier associated with the Feature
+ * @returns {Feature<MultiPolygon>} a multipolygon feature
+ * @throws {Error} if no coordinates are passed
+ * @example
+ * var multiPoly = turf.multiPolygon([[[[0,0],[0,10],[10,10],[10,0],[0,0]]]]);
+ *
+ * //=multiPoly
+ *
+ */
+function multiPolygon(coordinates, properties, options) {
+    if (!coordinates) throw new Error('coordinates is required');
+
+    return feature({
+        type: 'MultiPolygon',
+        coordinates: coordinates
+    }, properties, options);
+}
+
+/**
+ * Creates a {@link Feature<GeometryCollection>} based on a
+ * coordinate array. Properties can be added optionally.
+ *
+ * @name geometryCollection
+ * @param {Array<Geometry>} geometries an array of GeoJSON Geometries
+ * @param {Object} [properties={}] an Object of key-value pairs to add as properties
+ * @param {Object} [options={}] Optional Parameters
+ * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
+ * @param {string|number} [options.id] Identifier associated with the Feature
+ * @returns {Feature<GeometryCollection>} a GeoJSON GeometryCollection Feature
+ * @example
+ * var pt = {
+ *     "type": "Point",
+ *       "coordinates": [100, 0]
+ *     };
+ * var line = {
+ *     "type": "LineString",
+ *     "coordinates": [ [101, 0], [102, 1] ]
+ *   };
+ * var collection = turf.geometryCollection([pt, line]);
+ *
+ * //=collection
+ */
+function geometryCollection(geometries, properties, options) {
+    if (!geometries) throw new Error('geometries is required');
+    if (!Array.isArray(geometries)) throw new Error('geometries must be an Array');
+
+    return feature({
+        type: 'GeometryCollection',
+        geometries: geometries
+    }, properties, options);
+}
+
+/**
+ * Round number to precision
+ *
+ * @param {number} num Number
+ * @param {number} [precision=0] Precision
+ * @returns {number} rounded number
+ * @example
+ * turf.round(120.4321)
+ * //=120
+ *
+ * turf.round(120.4321, 2)
+ * //=120.43
+ */
+function round(num, precision) {
+    if (num === undefined || num === null || isNaN(num)) throw new Error('num is required');
+    if (precision && !(precision >= 0)) throw new Error('precision must be a positive number');
+    var multiplier = Math.pow(10, precision || 0);
+    return Math.round(num * multiplier) / multiplier;
+}
+
+/**
+ * Convert a distance measurement (assuming a spherical Earth) from radians to a more friendly unit.
+ * Valid units: miles, nauticalmiles, inches, yards, meters, metres, kilometers, centimeters, feet
+ *
+ * @name radiansToLength
+ * @param {number} radians in radians across the sphere
+ * @param {string} [units='kilometers'] can be degrees, radians, miles, or kilometers inches, yards, metres, meters, kilometres, kilometers.
+ * @returns {number} distance
+ */
+function radiansToLength(radians, units) {
+    if (radians === undefined || radians === null) throw new Error('radians is required');
+
+    if (units && typeof units !== 'string') throw new Error('units must be a string');
+    var factor = factors[units || 'kilometers'];
+    if (!factor) throw new Error(units + ' units is invalid');
+    return radians * factor;
+}
+
+/**
+ * Convert a distance measurement (assuming a spherical Earth) from a real-world unit into radians
+ * Valid units: miles, nauticalmiles, inches, yards, meters, metres, kilometers, centimeters, feet
+ *
+ * @name lengthToRadians
+ * @param {number} distance in real units
+ * @param {string} [units='kilometers'] can be degrees, radians, miles, or kilometers inches, yards, metres, meters, kilometres, kilometers.
+ * @returns {number} radians
+ */
+function lengthToRadians(distance, units) {
+    if (distance === undefined || distance === null) throw new Error('distance is required');
+
+    if (units && typeof units !== 'string') throw new Error('units must be a string');
+    var factor = factors[units || 'kilometers'];
+    if (!factor) throw new Error(units + ' units is invalid');
+    return distance / factor;
+}
+
+/**
+ * Convert a distance measurement (assuming a spherical Earth) from a real-world unit into degrees
+ * Valid units: miles, nauticalmiles, inches, yards, meters, metres, centimeters, kilometres, feet
+ *
+ * @name lengthToDegrees
+ * @param {number} distance in real units
+ * @param {string} [units='kilometers'] can be degrees, radians, miles, or kilometers inches, yards, metres, meters, kilometres, kilometers.
+ * @returns {number} degrees
+ */
+function lengthToDegrees(distance, units) {
+    return radiansToDegrees(lengthToRadians(distance, units));
+}
+
+/**
+ * Converts any bearing angle from the north line direction (positive clockwise)
+ * and returns an angle between 0-360 degrees (positive clockwise), 0 being the north line
+ *
+ * @name bearingToAzimuth
+ * @param {number} bearing angle, between -180 and +180 degrees
+ * @returns {number} angle between 0 and 360 degrees
+ */
+function bearingToAzimuth(bearing) {
+    if (bearing === null || bearing === undefined) throw new Error('bearing is required');
+
+    var angle = bearing % 360;
+    if (angle < 0) angle += 360;
+    return angle;
+}
+
+/**
+ * Converts an angle in radians to degrees
+ *
+ * @name radiansToDegrees
+ * @param {number} radians angle in radians
+ * @returns {number} degrees between 0 and 360 degrees
+ */
+function radiansToDegrees(radians) {
+    if (radians === null || radians === undefined) throw new Error('radians is required');
+
+    var degrees = radians % (2 * Math.PI);
+    return degrees * 180 / Math.PI;
+}
+
+/**
+ * Converts an angle in degrees to radians
+ *
+ * @name degreesToRadians
+ * @param {number} degrees angle between 0 and 360 degrees
+ * @returns {number} angle in radians
+ */
+function degreesToRadians(degrees) {
+    if (degrees === null || degrees === undefined) throw new Error('degrees is required');
+
+    var radians = degrees % 360;
+    return radians * Math.PI / 180;
+}
+
+/**
+ * Converts a length to the requested unit.
+ * Valid units: miles, nauticalmiles, inches, yards, meters, metres, kilometers, centimeters, feet
+ *
+ * @param {number} length to be converted
+ * @param {string} originalUnit of the length
+ * @param {string} [finalUnit='kilometers'] returned unit
+ * @returns {number} the converted length
+ */
+function convertLength(length, originalUnit, finalUnit) {
+    if (length === null || length === undefined) throw new Error('length is required');
+    if (!(length >= 0)) throw new Error('length must be a positive number');
+
+    return radiansToLength(lengthToRadians(length, originalUnit), finalUnit || 'kilometers');
+}
+
+/**
+ * Converts a area to the requested unit.
+ * Valid units: kilometers, kilometres, meters, metres, centimetres, millimeters, acres, miles, yards, feet, inches
+ * @param {number} area to be converted
+ * @param {string} [originalUnit='meters'] of the distance
+ * @param {string} [finalUnit='kilometers'] returned unit
+ * @returns {number} the converted distance
+ */
+function convertArea(area, originalUnit, finalUnit) {
+    if (area === null || area === undefined) throw new Error('area is required');
+    if (!(area >= 0)) throw new Error('area must be a positive number');
+
+    var startFactor = areaFactors[originalUnit || 'meters'];
+    if (!startFactor) throw new Error('invalid original units');
+
+    var finalFactor = areaFactors[finalUnit || 'kilometers'];
+    if (!finalFactor) throw new Error('invalid final units');
+
+    return (area / startFactor) * finalFactor;
+}
+
+/**
+ * isNumber
+ *
+ * @param {*} num Number to validate
+ * @returns {boolean} true/false
+ * @example
+ * turf.isNumber(123)
+ * //=true
+ * turf.isNumber('foo')
+ * //=false
+ */
+function isNumber(num) {
+    return !isNaN(num) && num !== null && !Array.isArray(num);
+}
+
+/**
+ * isObject
+ *
+ * @param {*} input variable to validate
+ * @returns {boolean} true/false
+ * @example
+ * turf.isObject({elevation: 10})
+ * //=true
+ * turf.isObject('foo')
+ * //=false
+ */
+function isObject(input) {
+    return (!!input) && (input.constructor === Object);
+}
+
+/**
+ * Validate BBox
+ *
+ * @private
+ * @param {Array<number>} bbox BBox to validate
+ * @returns {void}
+ * @throws Error if BBox is not valid
+ * @example
+ * validateBBox([-180, -40, 110, 50])
+ * //=OK
+ * validateBBox([-180, -40])
+ * //=Error
+ * validateBBox('Foo')
+ * //=Error
+ * validateBBox(5)
+ * //=Error
+ * validateBBox(null)
+ * //=Error
+ * validateBBox(undefined)
+ * //=Error
+ */
+function validateBBox(bbox) {
+    if (!bbox) throw new Error('bbox is required');
+    if (!Array.isArray(bbox)) throw new Error('bbox must be an Array');
+    if (bbox.length !== 4 && bbox.length !== 6) throw new Error('bbox must be an Array of 4 or 6 numbers');
+    bbox.forEach(function (num) {
+        if (!isNumber(num)) throw new Error('bbox must only contain numbers');
+    });
+}
+
+/**
+ * Validate Id
+ *
+ * @private
+ * @param {string|number} id Id to validate
+ * @returns {void}
+ * @throws Error if Id is not valid
+ * @example
+ * validateId([-180, -40, 110, 50])
+ * //=Error
+ * validateId([-180, -40])
+ * //=Error
+ * validateId('Foo')
+ * //=OK
+ * validateId(5)
+ * //=OK
+ * validateId(null)
+ * //=Error
+ * validateId(undefined)
+ * //=Error
+ */
+function validateId(id) {
+    if (!id) throw new Error('id is required');
+    if (['string', 'number'].indexOf(typeof id) === -1) throw new Error('id must be a number or a string');
+}
+
+// Deprecated methods
+function radians2degrees() {
+    throw new Error('method has been renamed to `radiansToDegrees`');
+}
+
+function degrees2radians() {
+    throw new Error('method has been renamed to `degreesToRadians`');
+}
+
+function distanceToDegrees() {
+    throw new Error('method has been renamed to `lengthToDegrees`');
+}
+
+function distanceToRadians() {
+    throw new Error('method has been renamed to `lengthToRadians`');
+}
+
+function radiansToDistance() {
+    throw new Error('method has been renamed to `radiansToLength`');
+}
+
+function bearingToAngle() {
+    throw new Error('method has been renamed to `bearingToAzimuth`');
+}
+
+function convertDistance() {
+    throw new Error('method has been renamed to `convertLength`');
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@turf/distance/node_modules/@turf/invariant/main.es.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@turf/distance/node_modules/@turf/invariant/main.es.js ***!
+  \*****************************************************************************/
+/*! exports provided: getCoord, getCoords, containsNumber, geojsonType, featureOf, collectionOf, getGeom, getGeomType, getType */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCoord", function() { return getCoord; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCoords", function() { return getCoords; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "containsNumber", function() { return containsNumber; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "geojsonType", function() { return geojsonType; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "featureOf", function() { return featureOf; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "collectionOf", function() { return collectionOf; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getGeom", function() { return getGeom; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getGeomType", function() { return getGeomType; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getType", function() { return getType; });
+/* harmony import */ var _turf_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @turf/helpers */ "./node_modules/@turf/distance/node_modules/@turf/helpers/main.es.js");
+
+
+/**
+ * Unwrap a coordinate from a Point Feature, Geometry or a single coordinate.
+ *
+ * @name getCoord
+ * @param {Array<number>|Geometry<Point>|Feature<Point>} coord GeoJSON Point or an Array of numbers
+ * @returns {Array<number>} coordinates
+ * @example
+ * var pt = turf.point([10, 10]);
+ *
+ * var coord = turf.getCoord(pt);
+ * //= [10, 10]
+ */
+function getCoord(coord) {
+    if (!coord) throw new Error('coord is required');
+    if (coord.type === 'Feature' && coord.geometry !== null && coord.geometry.type === 'Point') return coord.geometry.coordinates;
+    if (coord.type === 'Point') return coord.coordinates;
+    if (Array.isArray(coord) && coord.length >= 2 && coord[0].length === undefined && coord[1].length === undefined) return coord;
+
+    throw new Error('coord must be GeoJSON Point or an Array of numbers');
+}
+
+/**
+ * Unwrap coordinates from a Feature, Geometry Object or an Array
+ *
+ * @name getCoords
+ * @param {Array<any>|Geometry|Feature} coords Feature, Geometry Object or an Array
+ * @returns {Array<any>} coordinates
+ * @example
+ * var poly = turf.polygon([[[119.32, -8.7], [119.55, -8.69], [119.51, -8.54], [119.32, -8.7]]]);
+ *
+ * var coords = turf.getCoords(poly);
+ * //= [[[119.32, -8.7], [119.55, -8.69], [119.51, -8.54], [119.32, -8.7]]]
+ */
+function getCoords(coords) {
+    if (!coords) throw new Error('coords is required');
+
+    // Feature
+    if (coords.type === 'Feature' && coords.geometry !== null) return coords.geometry.coordinates;
+
+    // Geometry
+    if (coords.coordinates) return coords.coordinates;
+
+    // Array of numbers
+    if (Array.isArray(coords)) return coords;
+
+    throw new Error('coords must be GeoJSON Feature, Geometry Object or an Array');
+}
+
+/**
+ * Checks if coordinates contains a number
+ *
+ * @name containsNumber
+ * @param {Array<any>} coordinates GeoJSON Coordinates
+ * @returns {boolean} true if Array contains a number
+ */
+function containsNumber(coordinates) {
+    if (coordinates.length > 1 && Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_0__["isNumber"])(coordinates[0]) && Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_0__["isNumber"])(coordinates[1])) {
+        return true;
+    }
+
+    if (Array.isArray(coordinates[0]) && coordinates[0].length) {
+        return containsNumber(coordinates[0]);
+    }
+    throw new Error('coordinates must only contain numbers');
+}
+
+/**
+ * Enforce expectations about types of GeoJSON objects for Turf.
+ *
+ * @name geojsonType
+ * @param {GeoJSON} value any GeoJSON object
+ * @param {string} type expected GeoJSON type
+ * @param {string} name name of calling function
+ * @throws {Error} if value is not the expected type.
+ */
+function geojsonType(value, type, name) {
+    if (!type || !name) throw new Error('type and name required');
+
+    if (!value || value.type !== type) {
+        throw new Error('Invalid input to ' + name + ': must be a ' + type + ', given ' + value.type);
+    }
+}
+
+/**
+ * Enforce expectations about types of {@link Feature} inputs for Turf.
+ * Internally this uses {@link geojsonType} to judge geometry types.
+ *
+ * @name featureOf
+ * @param {Feature} feature a feature with an expected geometry type
+ * @param {string} type expected GeoJSON type
+ * @param {string} name name of calling function
+ * @throws {Error} error if value is not the expected type.
+ */
+function featureOf(feature, type, name) {
+    if (!feature) throw new Error('No feature passed');
+    if (!name) throw new Error('.featureOf() requires a name');
+    if (!feature || feature.type !== 'Feature' || !feature.geometry) {
+        throw new Error('Invalid input to ' + name + ', Feature with geometry required');
+    }
+    if (!feature.geometry || feature.geometry.type !== type) {
+        throw new Error('Invalid input to ' + name + ': must be a ' + type + ', given ' + feature.geometry.type);
+    }
+}
+
+/**
+ * Enforce expectations about types of {@link FeatureCollection} inputs for Turf.
+ * Internally this uses {@link geojsonType} to judge geometry types.
+ *
+ * @name collectionOf
+ * @param {FeatureCollection} featureCollection a FeatureCollection for which features will be judged
+ * @param {string} type expected GeoJSON type
+ * @param {string} name name of calling function
+ * @throws {Error} if value is not the expected type.
+ */
+function collectionOf(featureCollection, type, name) {
+    if (!featureCollection) throw new Error('No featureCollection passed');
+    if (!name) throw new Error('.collectionOf() requires a name');
+    if (!featureCollection || featureCollection.type !== 'FeatureCollection') {
+        throw new Error('Invalid input to ' + name + ', FeatureCollection required');
+    }
+    for (var i = 0; i < featureCollection.features.length; i++) {
+        var feature = featureCollection.features[i];
+        if (!feature || feature.type !== 'Feature' || !feature.geometry) {
+            throw new Error('Invalid input to ' + name + ', Feature with geometry required');
+        }
+        if (!feature.geometry || feature.geometry.type !== type) {
+            throw new Error('Invalid input to ' + name + ': must be a ' + type + ', given ' + feature.geometry.type);
+        }
+    }
+}
+
+/**
+ * Get Geometry from Feature or Geometry Object
+ *
+ * @param {Feature|Geometry} geojson GeoJSON Feature or Geometry Object
+ * @returns {Geometry|null} GeoJSON Geometry Object
+ * @throws {Error} if geojson is not a Feature or Geometry Object
+ * @example
+ * var point = {
+ *   "type": "Feature",
+ *   "properties": {},
+ *   "geometry": {
+ *     "type": "Point",
+ *     "coordinates": [110, 40]
+ *   }
+ * }
+ * var geom = turf.getGeom(point)
+ * //={"type": "Point", "coordinates": [110, 40]}
+ */
+function getGeom(geojson) {
+    if (!geojson) throw new Error('geojson is required');
+    if (geojson.geometry !== undefined) return geojson.geometry;
+    if (geojson.coordinates || geojson.geometries) return geojson;
+    throw new Error('geojson must be a valid Feature or Geometry Object');
+}
+
+/**
+ * Get Geometry Type from Feature or Geometry Object
+ *
+ * @throws {Error} **DEPRECATED** in v5.0.0 in favor of getType
+ */
+function getGeomType() {
+    throw new Error('invariant.getGeomType has been deprecated in v5.0 in favor of invariant.getType');
+}
+
+/**
+ * Get GeoJSON object's type, Geometry type is prioritize.
+ *
+ * @param {GeoJSON} geojson GeoJSON object
+ * @param {string} [name="geojson"] name of the variable to display in error message
+ * @returns {string} GeoJSON type
+ * @example
+ * var point = {
+ *   "type": "Feature",
+ *   "properties": {},
+ *   "geometry": {
+ *     "type": "Point",
+ *     "coordinates": [110, 40]
+ *   }
+ * }
+ * var geom = turf.getType(point)
+ * //="Point"
+ */
+function getType(geojson, name) {
+    if (!geojson) throw new Error((name || 'geojson') + ' is required');
+    // GeoJSON Feature & GeometryCollection
+    if (geojson.geometry && geojson.geometry.type) return geojson.geometry.type;
+    // GeoJSON Geometry & FeatureCollection
+    if (geojson.type) return geojson.type;
+    throw new Error((name || 'geojson') + ' is invalid');
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@turf/length/main.es.js":
+/*!**********************************************!*\
+  !*** ./node_modules/@turf/length/main.es.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _turf_distance__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @turf/distance */ "./node_modules/@turf/distance/main.es.js");
+/* harmony import */ var _turf_meta__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @turf/meta */ "./node_modules/@turf/length/node_modules/@turf/meta/main.es.js");
+/* harmony import */ var _turf_helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @turf/helpers */ "./node_modules/@turf/length/node_modules/@turf/helpers/main.es.js");
+
+
+
+
+/**
+ * Takes a {@link GeoJSON} and measures its length in the specified units, {@link (Multi)Point}'s distance are ignored.
+ *
+ * @name length
+ * @param {GeoJSON} geojson GeoJSON to measure
+ * @param {Object} [options={}] Optional parameters
+ * @param {string} [options.units=kilometers] can be degrees, radians, miles, or kilometers
+ * @returns {number} length of GeoJSON
+ * @example
+ * var line = turf.lineString([[115, -32], [131, -22], [143, -25], [150, -34]]);
+ * var length = turf.length(line, {units: 'miles'});
+ *
+ * //addToMap
+ * var addToMap = [line];
+ * line.properties.distance = length;
+ */
+function length(geojson, options) {
+    // Optional parameters
+    options = options || {};
+    if (!Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_2__["isObject"])(options)) throw new Error('options is invalid');
+
+    // Input Validation
+    if (!geojson) throw new Error('geojson is required');
+
+    // Calculate distance from 2-vertex line segements
+    return Object(_turf_meta__WEBPACK_IMPORTED_MODULE_1__["segmentReduce"])(geojson, function (previousValue, segment) {
+        var coords = segment.geometry.coordinates;
+        return previousValue + Object(_turf_distance__WEBPACK_IMPORTED_MODULE_0__["default"])(coords[0], coords[1], options);
+    }, 0);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (length);
+
+
+/***/ }),
+
+/***/ "./node_modules/@turf/length/node_modules/@turf/helpers/main.es.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@turf/length/node_modules/@turf/helpers/main.es.js ***!
+  \*************************************************************************/
+/*! exports provided: earthRadius, factors, unitsFactors, areaFactors, feature, geometry, point, points, polygon, polygons, lineString, lineStrings, featureCollection, multiLineString, multiPoint, multiPolygon, geometryCollection, round, radiansToLength, lengthToRadians, lengthToDegrees, bearingToAzimuth, radiansToDegrees, degreesToRadians, convertLength, convertArea, isNumber, isObject, validateBBox, validateId, radians2degrees, degrees2radians, distanceToDegrees, distanceToRadians, radiansToDistance, bearingToAngle, convertDistance */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "earthRadius", function() { return earthRadius; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "factors", function() { return factors; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unitsFactors", function() { return unitsFactors; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "areaFactors", function() { return areaFactors; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "feature", function() { return feature; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "geometry", function() { return geometry; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "point", function() { return point; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "points", function() { return points; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "polygon", function() { return polygon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "polygons", function() { return polygons; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lineString", function() { return lineString; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lineStrings", function() { return lineStrings; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "featureCollection", function() { return featureCollection; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multiLineString", function() { return multiLineString; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multiPoint", function() { return multiPoint; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multiPolygon", function() { return multiPolygon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "geometryCollection", function() { return geometryCollection; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "round", function() { return round; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "radiansToLength", function() { return radiansToLength; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lengthToRadians", function() { return lengthToRadians; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lengthToDegrees", function() { return lengthToDegrees; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bearingToAzimuth", function() { return bearingToAzimuth; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "radiansToDegrees", function() { return radiansToDegrees; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "degreesToRadians", function() { return degreesToRadians; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertLength", function() { return convertLength; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertArea", function() { return convertArea; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isNumber", function() { return isNumber; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isObject", function() { return isObject; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validateBBox", function() { return validateBBox; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validateId", function() { return validateId; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "radians2degrees", function() { return radians2degrees; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "degrees2radians", function() { return degrees2radians; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "distanceToDegrees", function() { return distanceToDegrees; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "distanceToRadians", function() { return distanceToRadians; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "radiansToDistance", function() { return radiansToDistance; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bearingToAngle", function() { return bearingToAngle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertDistance", function() { return convertDistance; });
+/**
+ * Earth Radius used with the Harvesine formula and approximates using a spherical (non-ellipsoid) Earth.
+ */
+var earthRadius = 6371008.8;
+
+/**
+ * Unit of measurement factors using a spherical (non-ellipsoid) earth radius.
+ */
+var factors = {
+    meters: earthRadius,
+    metres: earthRadius,
+    millimeters: earthRadius * 1000,
+    millimetres: earthRadius * 1000,
+    centimeters: earthRadius * 100,
+    centimetres: earthRadius * 100,
+    kilometers: earthRadius / 1000,
+    kilometres: earthRadius / 1000,
+    miles: earthRadius / 1609.344,
+    nauticalmiles: earthRadius / 1852,
+    inches: earthRadius * 39.370,
+    yards: earthRadius / 1.0936,
+    feet: earthRadius * 3.28084,
+    radians: 1,
+    degrees: earthRadius / 111325,
+};
+
+/**
+ * Units of measurement factors based on 1 meter.
+ */
+var unitsFactors = {
+    meters: 1,
+    metres: 1,
+    millimeters: 1000,
+    millimetres: 1000,
+    centimeters: 100,
+    centimetres: 100,
+    kilometers: 1 / 1000,
+    kilometres: 1 / 1000,
+    miles: 1 / 1609.344,
+    nauticalmiles: 1 / 1852,
+    inches: 39.370,
+    yards: 1 / 1.0936,
+    feet: 3.28084,
+    radians: 1 / earthRadius,
+    degrees: 1 / 111325,
+};
+
+/**
+ * Area of measurement factors based on 1 square meter.
+ */
+var areaFactors = {
+    meters: 1,
+    metres: 1,
+    millimeters: 1000000,
+    millimetres: 1000000,
+    centimeters: 10000,
+    centimetres: 10000,
+    kilometers: 0.000001,
+    kilometres: 0.000001,
+    acres: 0.000247105,
+    miles: 3.86e-7,
+    yards: 1.195990046,
+    feet: 10.763910417,
+    inches: 1550.003100006
+};
+
+/**
+ * Wraps a GeoJSON {@link Geometry} in a GeoJSON {@link Feature}.
+ *
+ * @name feature
+ * @param {Geometry} geometry input geometry
+ * @param {Object} [properties={}] an Object of key-value pairs to add as properties
+ * @param {Object} [options={}] Optional Parameters
+ * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
+ * @param {string|number} [options.id] Identifier associated with the Feature
+ * @returns {Feature} a GeoJSON Feature
+ * @example
+ * var geometry = {
+ *   "type": "Point",
+ *   "coordinates": [110, 50]
+ * };
+ *
+ * var feature = turf.feature(geometry);
+ *
+ * //=feature
+ */
+function feature(geometry, properties, options) {
+    // Optional Parameters
+    options = options || {};
+    if (!isObject(options)) throw new Error('options is invalid');
+    var bbox = options.bbox;
+    var id = options.id;
+
+    // Validation
+    if (geometry === undefined) throw new Error('geometry is required');
+    if (properties && properties.constructor !== Object) throw new Error('properties must be an Object');
+    if (bbox) validateBBox(bbox);
+    if (id) validateId(id);
+
+    // Main
+    var feat = {type: 'Feature'};
+    if (id) feat.id = id;
+    if (bbox) feat.bbox = bbox;
+    feat.properties = properties || {};
+    feat.geometry = geometry;
+    return feat;
+}
+
+/**
+ * Creates a GeoJSON {@link Geometry} from a Geometry string type & coordinates.
+ * For GeometryCollection type use `helpers.geometryCollection`
+ *
+ * @name geometry
+ * @param {string} type Geometry Type
+ * @param {Array<number>} coordinates Coordinates
+ * @param {Object} [options={}] Optional Parameters
+ * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Geometry
+ * @returns {Geometry} a GeoJSON Geometry
+ * @example
+ * var type = 'Point';
+ * var coordinates = [110, 50];
+ *
+ * var geometry = turf.geometry(type, coordinates);
+ *
+ * //=geometry
+ */
+function geometry(type, coordinates, options) {
+    // Optional Parameters
+    options = options || {};
+    if (!isObject(options)) throw new Error('options is invalid');
+    var bbox = options.bbox;
+
+    // Validation
+    if (!type) throw new Error('type is required');
+    if (!coordinates) throw new Error('coordinates is required');
+    if (!Array.isArray(coordinates)) throw new Error('coordinates must be an Array');
+    if (bbox) validateBBox(bbox);
+
+    // Main
+    var geom;
+    switch (type) {
+    case 'Point': geom = point(coordinates).geometry; break;
+    case 'LineString': geom = lineString(coordinates).geometry; break;
+    case 'Polygon': geom = polygon(coordinates).geometry; break;
+    case 'MultiPoint': geom = multiPoint(coordinates).geometry; break;
+    case 'MultiLineString': geom = multiLineString(coordinates).geometry; break;
+    case 'MultiPolygon': geom = multiPolygon(coordinates).geometry; break;
+    default: throw new Error(type + ' is invalid');
+    }
+    if (bbox) geom.bbox = bbox;
+    return geom;
+}
+
+/**
+ * Creates a {@link Point} {@link Feature} from a Position.
+ *
+ * @name point
+ * @param {Array<number>} coordinates longitude, latitude position (each in decimal degrees)
+ * @param {Object} [properties={}] an Object of key-value pairs to add as properties
+ * @param {Object} [options={}] Optional Parameters
+ * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
+ * @param {string|number} [options.id] Identifier associated with the Feature
+ * @returns {Feature<Point>} a Point feature
+ * @example
+ * var point = turf.point([-75.343, 39.984]);
+ *
+ * //=point
+ */
+function point(coordinates, properties, options) {
+    if (!coordinates) throw new Error('coordinates is required');
+    if (!Array.isArray(coordinates)) throw new Error('coordinates must be an Array');
+    if (coordinates.length < 2) throw new Error('coordinates must be at least 2 numbers long');
+    if (!isNumber(coordinates[0]) || !isNumber(coordinates[1])) throw new Error('coordinates must contain numbers');
+
+    return feature({
+        type: 'Point',
+        coordinates: coordinates
+    }, properties, options);
+}
+
+/**
+ * Creates a {@link Point} {@link FeatureCollection} from an Array of Point coordinates.
+ *
+ * @name points
+ * @param {Array<Array<number>>} coordinates an array of Points
+ * @param {Object} [properties={}] Translate these properties to each Feature
+ * @param {Object} [options={}] Optional Parameters
+ * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the FeatureCollection
+ * @param {string|number} [options.id] Identifier associated with the FeatureCollection
+ * @returns {FeatureCollection<Point>} Point Feature
+ * @example
+ * var points = turf.points([
+ *   [-75, 39],
+ *   [-80, 45],
+ *   [-78, 50]
+ * ]);
+ *
+ * //=points
+ */
+function points(coordinates, properties, options) {
+    if (!coordinates) throw new Error('coordinates is required');
+    if (!Array.isArray(coordinates)) throw new Error('coordinates must be an Array');
+
+    return featureCollection(coordinates.map(function (coords) {
+        return point(coords, properties);
+    }), options);
+}
+
+/**
+ * Creates a {@link Polygon} {@link Feature} from an Array of LinearRings.
+ *
+ * @name polygon
+ * @param {Array<Array<Array<number>>>} coordinates an array of LinearRings
+ * @param {Object} [properties={}] an Object of key-value pairs to add as properties
+ * @param {Object} [options={}] Optional Parameters
+ * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
+ * @param {string|number} [options.id] Identifier associated with the Feature
+ * @returns {Feature<Polygon>} Polygon Feature
+ * @example
+ * var polygon = turf.polygon([[[-5, 52], [-4, 56], [-2, 51], [-7, 54], [-5, 52]]], { name: 'poly1' });
+ *
+ * //=polygon
+ */
+function polygon(coordinates, properties, options) {
+    if (!coordinates) throw new Error('coordinates is required');
+
+    for (var i = 0; i < coordinates.length; i++) {
+        var ring = coordinates[i];
+        if (ring.length < 4) {
+            throw new Error('Each LinearRing of a Polygon must have 4 or more Positions.');
+        }
+        for (var j = 0; j < ring[ring.length - 1].length; j++) {
+            // Check if first point of Polygon contains two numbers
+            if (i === 0 && j === 0 && !isNumber(ring[0][0]) || !isNumber(ring[0][1])) throw new Error('coordinates must contain numbers');
+            if (ring[ring.length - 1][j] !== ring[0][j]) {
+                throw new Error('First and last Position are not equivalent.');
+            }
+        }
+    }
+
+    return feature({
+        type: 'Polygon',
+        coordinates: coordinates
+    }, properties, options);
+}
+
+/**
+ * Creates a {@link Polygon} {@link FeatureCollection} from an Array of Polygon coordinates.
+ *
+ * @name polygons
+ * @param {Array<Array<Array<Array<number>>>>} coordinates an array of Polygon coordinates
+ * @param {Object} [properties={}] an Object of key-value pairs to add as properties
+ * @param {Object} [options={}] Optional Parameters
+ * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
+ * @param {string|number} [options.id] Identifier associated with the FeatureCollection
+ * @returns {FeatureCollection<Polygon>} Polygon FeatureCollection
+ * @example
+ * var polygons = turf.polygons([
+ *   [[[-5, 52], [-4, 56], [-2, 51], [-7, 54], [-5, 52]]],
+ *   [[[-15, 42], [-14, 46], [-12, 41], [-17, 44], [-15, 42]]],
+ * ]);
+ *
+ * //=polygons
+ */
+function polygons(coordinates, properties, options) {
+    if (!coordinates) throw new Error('coordinates is required');
+    if (!Array.isArray(coordinates)) throw new Error('coordinates must be an Array');
+
+    return featureCollection(coordinates.map(function (coords) {
+        return polygon(coords, properties);
+    }), options);
+}
+
+/**
+ * Creates a {@link LineString} {@link Feature} from an Array of Positions.
+ *
+ * @name lineString
+ * @param {Array<Array<number>>} coordinates an array of Positions
+ * @param {Object} [properties={}] an Object of key-value pairs to add as properties
+ * @param {Object} [options={}] Optional Parameters
+ * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
+ * @param {string|number} [options.id] Identifier associated with the Feature
+ * @returns {Feature<LineString>} LineString Feature
+ * @example
+ * var linestring1 = turf.lineString([[-24, 63], [-23, 60], [-25, 65], [-20, 69]], {name: 'line 1'});
+ * var linestring2 = turf.lineString([[-14, 43], [-13, 40], [-15, 45], [-10, 49]], {name: 'line 2'});
+ *
+ * //=linestring1
+ * //=linestring2
+ */
+function lineString(coordinates, properties, options) {
+    if (!coordinates) throw new Error('coordinates is required');
+    if (coordinates.length < 2) throw new Error('coordinates must be an array of two or more positions');
+    // Check if first point of LineString contains two numbers
+    if (!isNumber(coordinates[0][1]) || !isNumber(coordinates[0][1])) throw new Error('coordinates must contain numbers');
+
+    return feature({
+        type: 'LineString',
+        coordinates: coordinates
+    }, properties, options);
+}
+
+/**
+ * Creates a {@link LineString} {@link FeatureCollection} from an Array of LineString coordinates.
+ *
+ * @name lineStrings
+ * @param {Array<Array<number>>} coordinates an array of LinearRings
+ * @param {Object} [properties={}] an Object of key-value pairs to add as properties
+ * @param {Object} [options={}] Optional Parameters
+ * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the FeatureCollection
+ * @param {string|number} [options.id] Identifier associated with the FeatureCollection
+ * @returns {FeatureCollection<LineString>} LineString FeatureCollection
+ * @example
+ * var linestrings = turf.lineStrings([
+ *   [[-24, 63], [-23, 60], [-25, 65], [-20, 69]],
+ *   [[-14, 43], [-13, 40], [-15, 45], [-10, 49]]
+ * ]);
+ *
+ * //=linestrings
+ */
+function lineStrings(coordinates, properties, options) {
+    if (!coordinates) throw new Error('coordinates is required');
+    if (!Array.isArray(coordinates)) throw new Error('coordinates must be an Array');
+
+    return featureCollection(coordinates.map(function (coords) {
+        return lineString(coords, properties);
+    }), options);
+}
+
+/**
+ * Takes one or more {@link Feature|Features} and creates a {@link FeatureCollection}.
+ *
+ * @name featureCollection
+ * @param {Feature[]} features input features
+ * @param {Object} [options={}] Optional Parameters
+ * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
+ * @param {string|number} [options.id] Identifier associated with the Feature
+ * @returns {FeatureCollection} FeatureCollection of Features
+ * @example
+ * var locationA = turf.point([-75.343, 39.984], {name: 'Location A'});
+ * var locationB = turf.point([-75.833, 39.284], {name: 'Location B'});
+ * var locationC = turf.point([-75.534, 39.123], {name: 'Location C'});
+ *
+ * var collection = turf.featureCollection([
+ *   locationA,
+ *   locationB,
+ *   locationC
+ * ]);
+ *
+ * //=collection
+ */
+function featureCollection(features, options) {
+    // Optional Parameters
+    options = options || {};
+    if (!isObject(options)) throw new Error('options is invalid');
+    var bbox = options.bbox;
+    var id = options.id;
+
+    // Validation
+    if (!features) throw new Error('No features passed');
+    if (!Array.isArray(features)) throw new Error('features must be an Array');
+    if (bbox) validateBBox(bbox);
+    if (id) validateId(id);
+
+    // Main
+    var fc = {type: 'FeatureCollection'};
+    if (id) fc.id = id;
+    if (bbox) fc.bbox = bbox;
+    fc.features = features;
+    return fc;
+}
+
+/**
+ * Creates a {@link Feature<MultiLineString>} based on a
+ * coordinate array. Properties can be added optionally.
+ *
+ * @name multiLineString
+ * @param {Array<Array<Array<number>>>} coordinates an array of LineStrings
+ * @param {Object} [properties={}] an Object of key-value pairs to add as properties
+ * @param {Object} [options={}] Optional Parameters
+ * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
+ * @param {string|number} [options.id] Identifier associated with the Feature
+ * @returns {Feature<MultiLineString>} a MultiLineString feature
+ * @throws {Error} if no coordinates are passed
+ * @example
+ * var multiLine = turf.multiLineString([[[0,0],[10,10]]]);
+ *
+ * //=multiLine
+ */
+function multiLineString(coordinates, properties, options) {
+    if (!coordinates) throw new Error('coordinates is required');
+
+    return feature({
+        type: 'MultiLineString',
+        coordinates: coordinates
+    }, properties, options);
+}
+
+/**
+ * Creates a {@link Feature<MultiPoint>} based on a
+ * coordinate array. Properties can be added optionally.
+ *
+ * @name multiPoint
+ * @param {Array<Array<number>>} coordinates an array of Positions
+ * @param {Object} [properties={}] an Object of key-value pairs to add as properties
+ * @param {Object} [options={}] Optional Parameters
+ * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
+ * @param {string|number} [options.id] Identifier associated with the Feature
+ * @returns {Feature<MultiPoint>} a MultiPoint feature
+ * @throws {Error} if no coordinates are passed
+ * @example
+ * var multiPt = turf.multiPoint([[0,0],[10,10]]);
+ *
+ * //=multiPt
+ */
+function multiPoint(coordinates, properties, options) {
+    if (!coordinates) throw new Error('coordinates is required');
+
+    return feature({
+        type: 'MultiPoint',
+        coordinates: coordinates
+    }, properties, options);
+}
+
+/**
+ * Creates a {@link Feature<MultiPolygon>} based on a
+ * coordinate array. Properties can be added optionally.
+ *
+ * @name multiPolygon
+ * @param {Array<Array<Array<Array<number>>>>} coordinates an array of Polygons
+ * @param {Object} [properties={}] an Object of key-value pairs to add as properties
+ * @param {Object} [options={}] Optional Parameters
+ * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
+ * @param {string|number} [options.id] Identifier associated with the Feature
+ * @returns {Feature<MultiPolygon>} a multipolygon feature
+ * @throws {Error} if no coordinates are passed
+ * @example
+ * var multiPoly = turf.multiPolygon([[[[0,0],[0,10],[10,10],[10,0],[0,0]]]]);
+ *
+ * //=multiPoly
+ *
+ */
+function multiPolygon(coordinates, properties, options) {
+    if (!coordinates) throw new Error('coordinates is required');
+
+    return feature({
+        type: 'MultiPolygon',
+        coordinates: coordinates
+    }, properties, options);
+}
+
+/**
+ * Creates a {@link Feature<GeometryCollection>} based on a
+ * coordinate array. Properties can be added optionally.
+ *
+ * @name geometryCollection
+ * @param {Array<Geometry>} geometries an array of GeoJSON Geometries
+ * @param {Object} [properties={}] an Object of key-value pairs to add as properties
+ * @param {Object} [options={}] Optional Parameters
+ * @param {Array<number>} [options.bbox] Bounding Box Array [west, south, east, north] associated with the Feature
+ * @param {string|number} [options.id] Identifier associated with the Feature
+ * @returns {Feature<GeometryCollection>} a GeoJSON GeometryCollection Feature
+ * @example
+ * var pt = {
+ *     "type": "Point",
+ *       "coordinates": [100, 0]
+ *     };
+ * var line = {
+ *     "type": "LineString",
+ *     "coordinates": [ [101, 0], [102, 1] ]
+ *   };
+ * var collection = turf.geometryCollection([pt, line]);
+ *
+ * //=collection
+ */
+function geometryCollection(geometries, properties, options) {
+    if (!geometries) throw new Error('geometries is required');
+    if (!Array.isArray(geometries)) throw new Error('geometries must be an Array');
+
+    return feature({
+        type: 'GeometryCollection',
+        geometries: geometries
+    }, properties, options);
+}
+
+/**
+ * Round number to precision
+ *
+ * @param {number} num Number
+ * @param {number} [precision=0] Precision
+ * @returns {number} rounded number
+ * @example
+ * turf.round(120.4321)
+ * //=120
+ *
+ * turf.round(120.4321, 2)
+ * //=120.43
+ */
+function round(num, precision) {
+    if (num === undefined || num === null || isNaN(num)) throw new Error('num is required');
+    if (precision && !(precision >= 0)) throw new Error('precision must be a positive number');
+    var multiplier = Math.pow(10, precision || 0);
+    return Math.round(num * multiplier) / multiplier;
+}
+
+/**
+ * Convert a distance measurement (assuming a spherical Earth) from radians to a more friendly unit.
+ * Valid units: miles, nauticalmiles, inches, yards, meters, metres, kilometers, centimeters, feet
+ *
+ * @name radiansToLength
+ * @param {number} radians in radians across the sphere
+ * @param {string} [units='kilometers'] can be degrees, radians, miles, or kilometers inches, yards, metres, meters, kilometres, kilometers.
+ * @returns {number} distance
+ */
+function radiansToLength(radians, units) {
+    if (radians === undefined || radians === null) throw new Error('radians is required');
+
+    if (units && typeof units !== 'string') throw new Error('units must be a string');
+    var factor = factors[units || 'kilometers'];
+    if (!factor) throw new Error(units + ' units is invalid');
+    return radians * factor;
+}
+
+/**
+ * Convert a distance measurement (assuming a spherical Earth) from a real-world unit into radians
+ * Valid units: miles, nauticalmiles, inches, yards, meters, metres, kilometers, centimeters, feet
+ *
+ * @name lengthToRadians
+ * @param {number} distance in real units
+ * @param {string} [units='kilometers'] can be degrees, radians, miles, or kilometers inches, yards, metres, meters, kilometres, kilometers.
+ * @returns {number} radians
+ */
+function lengthToRadians(distance, units) {
+    if (distance === undefined || distance === null) throw new Error('distance is required');
+
+    if (units && typeof units !== 'string') throw new Error('units must be a string');
+    var factor = factors[units || 'kilometers'];
+    if (!factor) throw new Error(units + ' units is invalid');
+    return distance / factor;
+}
+
+/**
+ * Convert a distance measurement (assuming a spherical Earth) from a real-world unit into degrees
+ * Valid units: miles, nauticalmiles, inches, yards, meters, metres, centimeters, kilometres, feet
+ *
+ * @name lengthToDegrees
+ * @param {number} distance in real units
+ * @param {string} [units='kilometers'] can be degrees, radians, miles, or kilometers inches, yards, metres, meters, kilometres, kilometers.
+ * @returns {number} degrees
+ */
+function lengthToDegrees(distance, units) {
+    return radiansToDegrees(lengthToRadians(distance, units));
+}
+
+/**
+ * Converts any bearing angle from the north line direction (positive clockwise)
+ * and returns an angle between 0-360 degrees (positive clockwise), 0 being the north line
+ *
+ * @name bearingToAzimuth
+ * @param {number} bearing angle, between -180 and +180 degrees
+ * @returns {number} angle between 0 and 360 degrees
+ */
+function bearingToAzimuth(bearing) {
+    if (bearing === null || bearing === undefined) throw new Error('bearing is required');
+
+    var angle = bearing % 360;
+    if (angle < 0) angle += 360;
+    return angle;
+}
+
+/**
+ * Converts an angle in radians to degrees
+ *
+ * @name radiansToDegrees
+ * @param {number} radians angle in radians
+ * @returns {number} degrees between 0 and 360 degrees
+ */
+function radiansToDegrees(radians) {
+    if (radians === null || radians === undefined) throw new Error('radians is required');
+
+    var degrees = radians % (2 * Math.PI);
+    return degrees * 180 / Math.PI;
+}
+
+/**
+ * Converts an angle in degrees to radians
+ *
+ * @name degreesToRadians
+ * @param {number} degrees angle between 0 and 360 degrees
+ * @returns {number} angle in radians
+ */
+function degreesToRadians(degrees) {
+    if (degrees === null || degrees === undefined) throw new Error('degrees is required');
+
+    var radians = degrees % 360;
+    return radians * Math.PI / 180;
+}
+
+/**
+ * Converts a length to the requested unit.
+ * Valid units: miles, nauticalmiles, inches, yards, meters, metres, kilometers, centimeters, feet
+ *
+ * @param {number} length to be converted
+ * @param {string} originalUnit of the length
+ * @param {string} [finalUnit='kilometers'] returned unit
+ * @returns {number} the converted length
+ */
+function convertLength(length, originalUnit, finalUnit) {
+    if (length === null || length === undefined) throw new Error('length is required');
+    if (!(length >= 0)) throw new Error('length must be a positive number');
+
+    return radiansToLength(lengthToRadians(length, originalUnit), finalUnit || 'kilometers');
+}
+
+/**
+ * Converts a area to the requested unit.
+ * Valid units: kilometers, kilometres, meters, metres, centimetres, millimeters, acres, miles, yards, feet, inches
+ * @param {number} area to be converted
+ * @param {string} [originalUnit='meters'] of the distance
+ * @param {string} [finalUnit='kilometers'] returned unit
+ * @returns {number} the converted distance
+ */
+function convertArea(area, originalUnit, finalUnit) {
+    if (area === null || area === undefined) throw new Error('area is required');
+    if (!(area >= 0)) throw new Error('area must be a positive number');
+
+    var startFactor = areaFactors[originalUnit || 'meters'];
+    if (!startFactor) throw new Error('invalid original units');
+
+    var finalFactor = areaFactors[finalUnit || 'kilometers'];
+    if (!finalFactor) throw new Error('invalid final units');
+
+    return (area / startFactor) * finalFactor;
+}
+
+/**
+ * isNumber
+ *
+ * @param {*} num Number to validate
+ * @returns {boolean} true/false
+ * @example
+ * turf.isNumber(123)
+ * //=true
+ * turf.isNumber('foo')
+ * //=false
+ */
+function isNumber(num) {
+    return !isNaN(num) && num !== null && !Array.isArray(num);
+}
+
+/**
+ * isObject
+ *
+ * @param {*} input variable to validate
+ * @returns {boolean} true/false
+ * @example
+ * turf.isObject({elevation: 10})
+ * //=true
+ * turf.isObject('foo')
+ * //=false
+ */
+function isObject(input) {
+    return (!!input) && (input.constructor === Object);
+}
+
+/**
+ * Validate BBox
+ *
+ * @private
+ * @param {Array<number>} bbox BBox to validate
+ * @returns {void}
+ * @throws Error if BBox is not valid
+ * @example
+ * validateBBox([-180, -40, 110, 50])
+ * //=OK
+ * validateBBox([-180, -40])
+ * //=Error
+ * validateBBox('Foo')
+ * //=Error
+ * validateBBox(5)
+ * //=Error
+ * validateBBox(null)
+ * //=Error
+ * validateBBox(undefined)
+ * //=Error
+ */
+function validateBBox(bbox) {
+    if (!bbox) throw new Error('bbox is required');
+    if (!Array.isArray(bbox)) throw new Error('bbox must be an Array');
+    if (bbox.length !== 4 && bbox.length !== 6) throw new Error('bbox must be an Array of 4 or 6 numbers');
+    bbox.forEach(function (num) {
+        if (!isNumber(num)) throw new Error('bbox must only contain numbers');
+    });
+}
+
+/**
+ * Validate Id
+ *
+ * @private
+ * @param {string|number} id Id to validate
+ * @returns {void}
+ * @throws Error if Id is not valid
+ * @example
+ * validateId([-180, -40, 110, 50])
+ * //=Error
+ * validateId([-180, -40])
+ * //=Error
+ * validateId('Foo')
+ * //=OK
+ * validateId(5)
+ * //=OK
+ * validateId(null)
+ * //=Error
+ * validateId(undefined)
+ * //=Error
+ */
+function validateId(id) {
+    if (!id) throw new Error('id is required');
+    if (['string', 'number'].indexOf(typeof id) === -1) throw new Error('id must be a number or a string');
+}
+
+// Deprecated methods
+function radians2degrees() {
+    throw new Error('method has been renamed to `radiansToDegrees`');
+}
+
+function degrees2radians() {
+    throw new Error('method has been renamed to `degreesToRadians`');
+}
+
+function distanceToDegrees() {
+    throw new Error('method has been renamed to `lengthToDegrees`');
+}
+
+function distanceToRadians() {
+    throw new Error('method has been renamed to `lengthToRadians`');
+}
+
+function radiansToDistance() {
+    throw new Error('method has been renamed to `radiansToLength`');
+}
+
+function bearingToAngle() {
+    throw new Error('method has been renamed to `bearingToAzimuth`');
+}
+
+function convertDistance() {
+    throw new Error('method has been renamed to `convertLength`');
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@turf/length/node_modules/@turf/meta/main.es.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@turf/length/node_modules/@turf/meta/main.es.js ***!
+  \**********************************************************************/
+/*! exports provided: coordEach, coordReduce, propEach, propReduce, featureEach, featureReduce, coordAll, geomEach, geomReduce, flattenEach, flattenReduce, segmentEach, segmentReduce, lineEach, lineReduce, findSegment, findPoint */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "coordEach", function() { return coordEach; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "coordReduce", function() { return coordReduce; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "propEach", function() { return propEach; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "propReduce", function() { return propReduce; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "featureEach", function() { return featureEach; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "featureReduce", function() { return featureReduce; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "coordAll", function() { return coordAll; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "geomEach", function() { return geomEach; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "geomReduce", function() { return geomReduce; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "flattenEach", function() { return flattenEach; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "flattenReduce", function() { return flattenReduce; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "segmentEach", function() { return segmentEach; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "segmentReduce", function() { return segmentReduce; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lineEach", function() { return lineEach; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lineReduce", function() { return lineReduce; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "findSegment", function() { return findSegment; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "findPoint", function() { return findPoint; });
+/* harmony import */ var _turf_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @turf/helpers */ "./node_modules/@turf/length/node_modules/@turf/helpers/main.es.js");
+
+
+/**
+ * Callback for coordEach
+ *
+ * @callback coordEachCallback
+ * @param {Array<number>} currentCoord The current coordinate being processed.
+ * @param {number} coordIndex The current index of the coordinate being processed.
+ * @param {number} featureIndex The current index of the Feature being processed.
+ * @param {number} multiFeatureIndex The current index of the Multi-Feature being processed.
+ * @param {number} geometryIndex The current index of the Geometry being processed.
+ */
+
+/**
+ * Iterate over coordinates in any GeoJSON object, similar to Array.forEach()
+ *
+ * @name coordEach
+ * @param {FeatureCollection|Feature|Geometry} geojson any GeoJSON object
+ * @param {Function} callback a method that takes (currentCoord, coordIndex, featureIndex, multiFeatureIndex)
+ * @param {boolean} [excludeWrapCoord=false] whether or not to include the final coordinate of LinearRings that wraps the ring in its iteration.
+ * @returns {void}
+ * @example
+ * var features = turf.featureCollection([
+ *   turf.point([26, 37], {"foo": "bar"}),
+ *   turf.point([36, 53], {"hello": "world"})
+ * ]);
+ *
+ * turf.coordEach(features, function (currentCoord, coordIndex, featureIndex, multiFeatureIndex, geometryIndex) {
+ *   //=currentCoord
+ *   //=coordIndex
+ *   //=featureIndex
+ *   //=multiFeatureIndex
+ *   //=geometryIndex
+ * });
+ */
+function coordEach(geojson, callback, excludeWrapCoord) {
+    // Handles null Geometry -- Skips this GeoJSON
+    if (geojson === null) return;
+    var j, k, l, geometry, stopG, coords,
+        geometryMaybeCollection,
+        wrapShrink = 0,
+        coordIndex = 0,
+        isGeometryCollection,
+        type = geojson.type,
+        isFeatureCollection = type === 'FeatureCollection',
+        isFeature = type === 'Feature',
+        stop = isFeatureCollection ? geojson.features.length : 1;
+
+    // This logic may look a little weird. The reason why it is that way
+    // is because it's trying to be fast. GeoJSON supports multiple kinds
+    // of objects at its root: FeatureCollection, Features, Geometries.
+    // This function has the responsibility of handling all of them, and that
+    // means that some of the `for` loops you see below actually just don't apply
+    // to certain inputs. For instance, if you give this just a
+    // Point geometry, then both loops are short-circuited and all we do
+    // is gradually rename the input until it's called 'geometry'.
+    //
+    // This also aims to allocate as few resources as possible: just a
+    // few numbers and booleans, rather than any temporary arrays as would
+    // be required with the normalization approach.
+    for (var featureIndex = 0; featureIndex < stop; featureIndex++) {
+        geometryMaybeCollection = (isFeatureCollection ? geojson.features[featureIndex].geometry :
+            (isFeature ? geojson.geometry : geojson));
+        isGeometryCollection = (geometryMaybeCollection) ? geometryMaybeCollection.type === 'GeometryCollection' : false;
+        stopG = isGeometryCollection ? geometryMaybeCollection.geometries.length : 1;
+
+        for (var geomIndex = 0; geomIndex < stopG; geomIndex++) {
+            var multiFeatureIndex = 0;
+            var geometryIndex = 0;
+            geometry = isGeometryCollection ?
+                geometryMaybeCollection.geometries[geomIndex] : geometryMaybeCollection;
+
+            // Handles null Geometry -- Skips this geometry
+            if (geometry === null) continue;
+            coords = geometry.coordinates;
+            var geomType = geometry.type;
+
+            wrapShrink = (excludeWrapCoord && (geomType === 'Polygon' || geomType === 'MultiPolygon')) ? 1 : 0;
+
+            switch (geomType) {
+            case null:
+                break;
+            case 'Point':
+                if (callback(coords, coordIndex, featureIndex, multiFeatureIndex, geometryIndex) === false) return false;
+                coordIndex++;
+                multiFeatureIndex++;
+                break;
+            case 'LineString':
+            case 'MultiPoint':
+                for (j = 0; j < coords.length; j++) {
+                    if (callback(coords[j], coordIndex, featureIndex, multiFeatureIndex, geometryIndex) === false) return false;
+                    coordIndex++;
+                    if (geomType === 'MultiPoint') multiFeatureIndex++;
+                }
+                if (geomType === 'LineString') multiFeatureIndex++;
+                break;
+            case 'Polygon':
+            case 'MultiLineString':
+                for (j = 0; j < coords.length; j++) {
+                    for (k = 0; k < coords[j].length - wrapShrink; k++) {
+                        if (callback(coords[j][k], coordIndex, featureIndex, multiFeatureIndex, geometryIndex) === false) return false;
+                        coordIndex++;
+                    }
+                    if (geomType === 'MultiLineString') multiFeatureIndex++;
+                    if (geomType === 'Polygon') geometryIndex++;
+                }
+                if (geomType === 'Polygon') multiFeatureIndex++;
+                break;
+            case 'MultiPolygon':
+                for (j = 0; j < coords.length; j++) {
+                    if (geomType === 'MultiPolygon') geometryIndex = 0;
+                    for (k = 0; k < coords[j].length; k++) {
+                        for (l = 0; l < coords[j][k].length - wrapShrink; l++) {
+                            if (callback(coords[j][k][l], coordIndex, featureIndex, multiFeatureIndex, geometryIndex) === false) return false;
+                            coordIndex++;
+                        }
+                        geometryIndex++;
+                    }
+                    multiFeatureIndex++;
+                }
+                break;
+            case 'GeometryCollection':
+                for (j = 0; j < geometry.geometries.length; j++)
+                    if (coordEach(geometry.geometries[j], callback, excludeWrapCoord) === false) return false;
+                break;
+            default:
+                throw new Error('Unknown Geometry Type');
+            }
+        }
+    }
+}
+
+/**
+ * Callback for coordReduce
+ *
+ * The first time the callback function is called, the values provided as arguments depend
+ * on whether the reduce method has an initialValue argument.
+ *
+ * If an initialValue is provided to the reduce method:
+ *  - The previousValue argument is initialValue.
+ *  - The currentValue argument is the value of the first element present in the array.
+ *
+ * If an initialValue is not provided:
+ *  - The previousValue argument is the value of the first element present in the array.
+ *  - The currentValue argument is the value of the second element present in the array.
+ *
+ * @callback coordReduceCallback
+ * @param {*} previousValue The accumulated value previously returned in the last invocation
+ * of the callback, or initialValue, if supplied.
+ * @param {Array<number>} currentCoord The current coordinate being processed.
+ * @param {number} coordIndex The current index of the coordinate being processed.
+ * Starts at index 0, if an initialValue is provided, and at index 1 otherwise.
+ * @param {number} featureIndex The current index of the Feature being processed.
+ * @param {number} multiFeatureIndex The current index of the Multi-Feature being processed.
+ * @param {number} geometryIndex The current index of the Geometry being processed.
+ */
+
+/**
+ * Reduce coordinates in any GeoJSON object, similar to Array.reduce()
+ *
+ * @name coordReduce
+ * @param {FeatureCollection|Geometry|Feature} geojson any GeoJSON object
+ * @param {Function} callback a method that takes (previousValue, currentCoord, coordIndex)
+ * @param {*} [initialValue] Value to use as the first argument to the first call of the callback.
+ * @param {boolean} [excludeWrapCoord=false] whether or not to include the final coordinate of LinearRings that wraps the ring in its iteration.
+ * @returns {*} The value that results from the reduction.
+ * @example
+ * var features = turf.featureCollection([
+ *   turf.point([26, 37], {"foo": "bar"}),
+ *   turf.point([36, 53], {"hello": "world"})
+ * ]);
+ *
+ * turf.coordReduce(features, function (previousValue, currentCoord, coordIndex, featureIndex, multiFeatureIndex, geometryIndex) {
+ *   //=previousValue
+ *   //=currentCoord
+ *   //=coordIndex
+ *   //=featureIndex
+ *   //=multiFeatureIndex
+ *   //=geometryIndex
+ *   return currentCoord;
+ * });
+ */
+function coordReduce(geojson, callback, initialValue, excludeWrapCoord) {
+    var previousValue = initialValue;
+    coordEach(geojson, function (currentCoord, coordIndex, featureIndex, multiFeatureIndex, geometryIndex) {
+        if (coordIndex === 0 && initialValue === undefined) previousValue = currentCoord;
+        else previousValue = callback(previousValue, currentCoord, coordIndex, featureIndex, multiFeatureIndex, geometryIndex);
+    }, excludeWrapCoord);
+    return previousValue;
+}
+
+/**
+ * Callback for propEach
+ *
+ * @callback propEachCallback
+ * @param {Object} currentProperties The current Properties being processed.
+ * @param {number} featureIndex The current index of the Feature being processed.
+ */
+
+/**
+ * Iterate over properties in any GeoJSON object, similar to Array.forEach()
+ *
+ * @name propEach
+ * @param {FeatureCollection|Feature} geojson any GeoJSON object
+ * @param {Function} callback a method that takes (currentProperties, featureIndex)
+ * @returns {void}
+ * @example
+ * var features = turf.featureCollection([
+ *     turf.point([26, 37], {foo: 'bar'}),
+ *     turf.point([36, 53], {hello: 'world'})
+ * ]);
+ *
+ * turf.propEach(features, function (currentProperties, featureIndex) {
+ *   //=currentProperties
+ *   //=featureIndex
+ * });
+ */
+function propEach(geojson, callback) {
+    var i;
+    switch (geojson.type) {
+    case 'FeatureCollection':
+        for (i = 0; i < geojson.features.length; i++) {
+            if (callback(geojson.features[i].properties, i) === false) break;
+        }
+        break;
+    case 'Feature':
+        callback(geojson.properties, 0);
+        break;
+    }
+}
+
+
+/**
+ * Callback for propReduce
+ *
+ * The first time the callback function is called, the values provided as arguments depend
+ * on whether the reduce method has an initialValue argument.
+ *
+ * If an initialValue is provided to the reduce method:
+ *  - The previousValue argument is initialValue.
+ *  - The currentValue argument is the value of the first element present in the array.
+ *
+ * If an initialValue is not provided:
+ *  - The previousValue argument is the value of the first element present in the array.
+ *  - The currentValue argument is the value of the second element present in the array.
+ *
+ * @callback propReduceCallback
+ * @param {*} previousValue The accumulated value previously returned in the last invocation
+ * of the callback, or initialValue, if supplied.
+ * @param {*} currentProperties The current Properties being processed.
+ * @param {number} featureIndex The current index of the Feature being processed.
+ */
+
+/**
+ * Reduce properties in any GeoJSON object into a single value,
+ * similar to how Array.reduce works. However, in this case we lazily run
+ * the reduction, so an array of all properties is unnecessary.
+ *
+ * @name propReduce
+ * @param {FeatureCollection|Feature} geojson any GeoJSON object
+ * @param {Function} callback a method that takes (previousValue, currentProperties, featureIndex)
+ * @param {*} [initialValue] Value to use as the first argument to the first call of the callback.
+ * @returns {*} The value that results from the reduction.
+ * @example
+ * var features = turf.featureCollection([
+ *     turf.point([26, 37], {foo: 'bar'}),
+ *     turf.point([36, 53], {hello: 'world'})
+ * ]);
+ *
+ * turf.propReduce(features, function (previousValue, currentProperties, featureIndex) {
+ *   //=previousValue
+ *   //=currentProperties
+ *   //=featureIndex
+ *   return currentProperties
+ * });
+ */
+function propReduce(geojson, callback, initialValue) {
+    var previousValue = initialValue;
+    propEach(geojson, function (currentProperties, featureIndex) {
+        if (featureIndex === 0 && initialValue === undefined) previousValue = currentProperties;
+        else previousValue = callback(previousValue, currentProperties, featureIndex);
+    });
+    return previousValue;
+}
+
+/**
+ * Callback for featureEach
+ *
+ * @callback featureEachCallback
+ * @param {Feature<any>} currentFeature The current Feature being processed.
+ * @param {number} featureIndex The current index of the Feature being processed.
+ */
+
+/**
+ * Iterate over features in any GeoJSON object, similar to
+ * Array.forEach.
+ *
+ * @name featureEach
+ * @param {FeatureCollection|Feature|Geometry} geojson any GeoJSON object
+ * @param {Function} callback a method that takes (currentFeature, featureIndex)
+ * @returns {void}
+ * @example
+ * var features = turf.featureCollection([
+ *   turf.point([26, 37], {foo: 'bar'}),
+ *   turf.point([36, 53], {hello: 'world'})
+ * ]);
+ *
+ * turf.featureEach(features, function (currentFeature, featureIndex) {
+ *   //=currentFeature
+ *   //=featureIndex
+ * });
+ */
+function featureEach(geojson, callback) {
+    if (geojson.type === 'Feature') {
+        callback(geojson, 0);
+    } else if (geojson.type === 'FeatureCollection') {
+        for (var i = 0; i < geojson.features.length; i++) {
+            if (callback(geojson.features[i], i) === false) break;
+        }
+    }
+}
+
+/**
+ * Callback for featureReduce
+ *
+ * The first time the callback function is called, the values provided as arguments depend
+ * on whether the reduce method has an initialValue argument.
+ *
+ * If an initialValue is provided to the reduce method:
+ *  - The previousValue argument is initialValue.
+ *  - The currentValue argument is the value of the first element present in the array.
+ *
+ * If an initialValue is not provided:
+ *  - The previousValue argument is the value of the first element present in the array.
+ *  - The currentValue argument is the value of the second element present in the array.
+ *
+ * @callback featureReduceCallback
+ * @param {*} previousValue The accumulated value previously returned in the last invocation
+ * of the callback, or initialValue, if supplied.
+ * @param {Feature} currentFeature The current Feature being processed.
+ * @param {number} featureIndex The current index of the Feature being processed.
+ */
+
+/**
+ * Reduce features in any GeoJSON object, similar to Array.reduce().
+ *
+ * @name featureReduce
+ * @param {FeatureCollection|Feature|Geometry} geojson any GeoJSON object
+ * @param {Function} callback a method that takes (previousValue, currentFeature, featureIndex)
+ * @param {*} [initialValue] Value to use as the first argument to the first call of the callback.
+ * @returns {*} The value that results from the reduction.
+ * @example
+ * var features = turf.featureCollection([
+ *   turf.point([26, 37], {"foo": "bar"}),
+ *   turf.point([36, 53], {"hello": "world"})
+ * ]);
+ *
+ * turf.featureReduce(features, function (previousValue, currentFeature, featureIndex) {
+ *   //=previousValue
+ *   //=currentFeature
+ *   //=featureIndex
+ *   return currentFeature
+ * });
+ */
+function featureReduce(geojson, callback, initialValue) {
+    var previousValue = initialValue;
+    featureEach(geojson, function (currentFeature, featureIndex) {
+        if (featureIndex === 0 && initialValue === undefined) previousValue = currentFeature;
+        else previousValue = callback(previousValue, currentFeature, featureIndex);
+    });
+    return previousValue;
+}
+
+/**
+ * Get all coordinates from any GeoJSON object.
+ *
+ * @name coordAll
+ * @param {FeatureCollection|Feature|Geometry} geojson any GeoJSON object
+ * @returns {Array<Array<number>>} coordinate position array
+ * @example
+ * var features = turf.featureCollection([
+ *   turf.point([26, 37], {foo: 'bar'}),
+ *   turf.point([36, 53], {hello: 'world'})
+ * ]);
+ *
+ * var coords = turf.coordAll(features);
+ * //= [[26, 37], [36, 53]]
+ */
+function coordAll(geojson) {
+    var coords = [];
+    coordEach(geojson, function (coord) {
+        coords.push(coord);
+    });
+    return coords;
+}
+
+/**
+ * Callback for geomEach
+ *
+ * @callback geomEachCallback
+ * @param {Geometry} currentGeometry The current Geometry being processed.
+ * @param {number} featureIndex The current index of the Feature being processed.
+ * @param {Object} featureProperties The current Feature Properties being processed.
+ * @param {Array<number>} featureBBox The current Feature BBox being processed.
+ * @param {number|string} featureId The current Feature Id being processed.
+ */
+
+/**
+ * Iterate over each geometry in any GeoJSON object, similar to Array.forEach()
+ *
+ * @name geomEach
+ * @param {FeatureCollection|Feature|Geometry} geojson any GeoJSON object
+ * @param {Function} callback a method that takes (currentGeometry, featureIndex, featureProperties, featureBBox, featureId)
+ * @returns {void}
+ * @example
+ * var features = turf.featureCollection([
+ *     turf.point([26, 37], {foo: 'bar'}),
+ *     turf.point([36, 53], {hello: 'world'})
+ * ]);
+ *
+ * turf.geomEach(features, function (currentGeometry, featureIndex, featureProperties, featureBBox, featureId) {
+ *   //=currentGeometry
+ *   //=featureIndex
+ *   //=featureProperties
+ *   //=featureBBox
+ *   //=featureId
+ * });
+ */
+function geomEach(geojson, callback) {
+    var i, j, g, geometry, stopG,
+        geometryMaybeCollection,
+        isGeometryCollection,
+        featureProperties,
+        featureBBox,
+        featureId,
+        featureIndex = 0,
+        isFeatureCollection = geojson.type === 'FeatureCollection',
+        isFeature = geojson.type === 'Feature',
+        stop = isFeatureCollection ? geojson.features.length : 1;
+
+    // This logic may look a little weird. The reason why it is that way
+    // is because it's trying to be fast. GeoJSON supports multiple kinds
+    // of objects at its root: FeatureCollection, Features, Geometries.
+    // This function has the responsibility of handling all of them, and that
+    // means that some of the `for` loops you see below actually just don't apply
+    // to certain inputs. For instance, if you give this just a
+    // Point geometry, then both loops are short-circuited and all we do
+    // is gradually rename the input until it's called 'geometry'.
+    //
+    // This also aims to allocate as few resources as possible: just a
+    // few numbers and booleans, rather than any temporary arrays as would
+    // be required with the normalization approach.
+    for (i = 0; i < stop; i++) {
+
+        geometryMaybeCollection = (isFeatureCollection ? geojson.features[i].geometry :
+            (isFeature ? geojson.geometry : geojson));
+        featureProperties = (isFeatureCollection ? geojson.features[i].properties :
+            (isFeature ? geojson.properties : {}));
+        featureBBox = (isFeatureCollection ? geojson.features[i].bbox :
+            (isFeature ? geojson.bbox : undefined));
+        featureId = (isFeatureCollection ? geojson.features[i].id :
+            (isFeature ? geojson.id : undefined));
+        isGeometryCollection = (geometryMaybeCollection) ? geometryMaybeCollection.type === 'GeometryCollection' : false;
+        stopG = isGeometryCollection ? geometryMaybeCollection.geometries.length : 1;
+
+        for (g = 0; g < stopG; g++) {
+            geometry = isGeometryCollection ?
+                geometryMaybeCollection.geometries[g] : geometryMaybeCollection;
+
+            // Handle null Geometry
+            if (geometry === null) {
+                if (callback(null, featureIndex, featureProperties, featureBBox, featureId) === false) return false;
+                continue;
+            }
+            switch (geometry.type) {
+            case 'Point':
+            case 'LineString':
+            case 'MultiPoint':
+            case 'Polygon':
+            case 'MultiLineString':
+            case 'MultiPolygon': {
+                if (callback(geometry, featureIndex, featureProperties, featureBBox, featureId) === false) return false;
+                break;
+            }
+            case 'GeometryCollection': {
+                for (j = 0; j < geometry.geometries.length; j++) {
+                    if (callback(geometry.geometries[j], featureIndex, featureProperties, featureBBox, featureId) === false) return false;
+                }
+                break;
+            }
+            default:
+                throw new Error('Unknown Geometry Type');
+            }
+        }
+        // Only increase `featureIndex` per each feature
+        featureIndex++;
+    }
+}
+
+/**
+ * Callback for geomReduce
+ *
+ * The first time the callback function is called, the values provided as arguments depend
+ * on whether the reduce method has an initialValue argument.
+ *
+ * If an initialValue is provided to the reduce method:
+ *  - The previousValue argument is initialValue.
+ *  - The currentValue argument is the value of the first element present in the array.
+ *
+ * If an initialValue is not provided:
+ *  - The previousValue argument is the value of the first element present in the array.
+ *  - The currentValue argument is the value of the second element present in the array.
+ *
+ * @callback geomReduceCallback
+ * @param {*} previousValue The accumulated value previously returned in the last invocation
+ * of the callback, or initialValue, if supplied.
+ * @param {Geometry} currentGeometry The current Geometry being processed.
+ * @param {number} featureIndex The current index of the Feature being processed.
+ * @param {Object} featureProperties The current Feature Properties being processed.
+ * @param {Array<number>} featureBBox The current Feature BBox being processed.
+ * @param {number|string} featureId The current Feature Id being processed.
+ */
+
+/**
+ * Reduce geometry in any GeoJSON object, similar to Array.reduce().
+ *
+ * @name geomReduce
+ * @param {FeatureCollection|Feature|Geometry} geojson any GeoJSON object
+ * @param {Function} callback a method that takes (previousValue, currentGeometry, featureIndex, featureProperties, featureBBox, featureId)
+ * @param {*} [initialValue] Value to use as the first argument to the first call of the callback.
+ * @returns {*} The value that results from the reduction.
+ * @example
+ * var features = turf.featureCollection([
+ *     turf.point([26, 37], {foo: 'bar'}),
+ *     turf.point([36, 53], {hello: 'world'})
+ * ]);
+ *
+ * turf.geomReduce(features, function (previousValue, currentGeometry, featureIndex, featureProperties, featureBBox, featureId) {
+ *   //=previousValue
+ *   //=currentGeometry
+ *   //=featureIndex
+ *   //=featureProperties
+ *   //=featureBBox
+ *   //=featureId
+ *   return currentGeometry
+ * });
+ */
+function geomReduce(geojson, callback, initialValue) {
+    var previousValue = initialValue;
+    geomEach(geojson, function (currentGeometry, featureIndex, featureProperties, featureBBox, featureId) {
+        if (featureIndex === 0 && initialValue === undefined) previousValue = currentGeometry;
+        else previousValue = callback(previousValue, currentGeometry, featureIndex, featureProperties, featureBBox, featureId);
+    });
+    return previousValue;
+}
+
+/**
+ * Callback for flattenEach
+ *
+ * @callback flattenEachCallback
+ * @param {Feature} currentFeature The current flattened feature being processed.
+ * @param {number} featureIndex The current index of the Feature being processed.
+ * @param {number} multiFeatureIndex The current index of the Multi-Feature being processed.
+ */
+
+/**
+ * Iterate over flattened features in any GeoJSON object, similar to
+ * Array.forEach.
+ *
+ * @name flattenEach
+ * @param {FeatureCollection|Feature|Geometry} geojson any GeoJSON object
+ * @param {Function} callback a method that takes (currentFeature, featureIndex, multiFeatureIndex)
+ * @example
+ * var features = turf.featureCollection([
+ *     turf.point([26, 37], {foo: 'bar'}),
+ *     turf.multiPoint([[40, 30], [36, 53]], {hello: 'world'})
+ * ]);
+ *
+ * turf.flattenEach(features, function (currentFeature, featureIndex, multiFeatureIndex) {
+ *   //=currentFeature
+ *   //=featureIndex
+ *   //=multiFeatureIndex
+ * });
+ */
+function flattenEach(geojson, callback) {
+    geomEach(geojson, function (geometry, featureIndex, properties, bbox, id) {
+        // Callback for single geometry
+        var type = (geometry === null) ? null : geometry.type;
+        switch (type) {
+        case null:
+        case 'Point':
+        case 'LineString':
+        case 'Polygon':
+            if (callback(Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_0__["feature"])(geometry, properties, {bbox: bbox, id: id}), featureIndex, 0) === false) return false;
+            return;
+        }
+
+        var geomType;
+
+        // Callback for multi-geometry
+        switch (type) {
+        case 'MultiPoint':
+            geomType = 'Point';
+            break;
+        case 'MultiLineString':
+            geomType = 'LineString';
+            break;
+        case 'MultiPolygon':
+            geomType = 'Polygon';
+            break;
+        }
+
+        for (var multiFeatureIndex = 0; multiFeatureIndex < geometry.coordinates.length; multiFeatureIndex++) {
+            var coordinate = geometry.coordinates[multiFeatureIndex];
+            var geom = {
+                type: geomType,
+                coordinates: coordinate
+            };
+            if (callback(Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_0__["feature"])(geom, properties), featureIndex, multiFeatureIndex) === false) return false;
+        }
+    });
+}
+
+/**
+ * Callback for flattenReduce
+ *
+ * The first time the callback function is called, the values provided as arguments depend
+ * on whether the reduce method has an initialValue argument.
+ *
+ * If an initialValue is provided to the reduce method:
+ *  - The previousValue argument is initialValue.
+ *  - The currentValue argument is the value of the first element present in the array.
+ *
+ * If an initialValue is not provided:
+ *  - The previousValue argument is the value of the first element present in the array.
+ *  - The currentValue argument is the value of the second element present in the array.
+ *
+ * @callback flattenReduceCallback
+ * @param {*} previousValue The accumulated value previously returned in the last invocation
+ * of the callback, or initialValue, if supplied.
+ * @param {Feature} currentFeature The current Feature being processed.
+ * @param {number} featureIndex The current index of the Feature being processed.
+ * @param {number} multiFeatureIndex The current index of the Multi-Feature being processed.
+ */
+
+/**
+ * Reduce flattened features in any GeoJSON object, similar to Array.reduce().
+ *
+ * @name flattenReduce
+ * @param {FeatureCollection|Feature|Geometry} geojson any GeoJSON object
+ * @param {Function} callback a method that takes (previousValue, currentFeature, featureIndex, multiFeatureIndex)
+ * @param {*} [initialValue] Value to use as the first argument to the first call of the callback.
+ * @returns {*} The value that results from the reduction.
+ * @example
+ * var features = turf.featureCollection([
+ *     turf.point([26, 37], {foo: 'bar'}),
+ *     turf.multiPoint([[40, 30], [36, 53]], {hello: 'world'})
+ * ]);
+ *
+ * turf.flattenReduce(features, function (previousValue, currentFeature, featureIndex, multiFeatureIndex) {
+ *   //=previousValue
+ *   //=currentFeature
+ *   //=featureIndex
+ *   //=multiFeatureIndex
+ *   return currentFeature
+ * });
+ */
+function flattenReduce(geojson, callback, initialValue) {
+    var previousValue = initialValue;
+    flattenEach(geojson, function (currentFeature, featureIndex, multiFeatureIndex) {
+        if (featureIndex === 0 && multiFeatureIndex === 0 && initialValue === undefined) previousValue = currentFeature;
+        else previousValue = callback(previousValue, currentFeature, featureIndex, multiFeatureIndex);
+    });
+    return previousValue;
+}
+
+/**
+ * Callback for segmentEach
+ *
+ * @callback segmentEachCallback
+ * @param {Feature<LineString>} currentSegment The current Segment being processed.
+ * @param {number} featureIndex The current index of the Feature being processed.
+ * @param {number} multiFeatureIndex The current index of the Multi-Feature being processed.
+ * @param {number} geometryIndex The current index of the Geometry being processed.
+ * @param {number} segmentIndex The current index of the Segment being processed.
+ * @returns {void}
+ */
+
+/**
+ * Iterate over 2-vertex line segment in any GeoJSON object, similar to Array.forEach()
+ * (Multi)Point geometries do not contain segments therefore they are ignored during this operation.
+ *
+ * @param {FeatureCollection|Feature|Geometry} geojson any GeoJSON
+ * @param {Function} callback a method that takes (currentSegment, featureIndex, multiFeatureIndex, geometryIndex, segmentIndex)
+ * @returns {void}
+ * @example
+ * var polygon = turf.polygon([[[-50, 5], [-40, -10], [-50, -10], [-40, 5], [-50, 5]]]);
+ *
+ * // Iterate over GeoJSON by 2-vertex segments
+ * turf.segmentEach(polygon, function (currentSegment, featureIndex, multiFeatureIndex, geometryIndex, segmentIndex) {
+ *   //=currentSegment
+ *   //=featureIndex
+ *   //=multiFeatureIndex
+ *   //=geometryIndex
+ *   //=segmentIndex
+ * });
+ *
+ * // Calculate the total number of segments
+ * var total = 0;
+ * turf.segmentEach(polygon, function () {
+ *     total++;
+ * });
+ */
+function segmentEach(geojson, callback) {
+    flattenEach(geojson, function (feature$$1, featureIndex, multiFeatureIndex) {
+        var segmentIndex = 0;
+
+        // Exclude null Geometries
+        if (!feature$$1.geometry) return;
+        // (Multi)Point geometries do not contain segments therefore they are ignored during this operation.
+        var type = feature$$1.geometry.type;
+        if (type === 'Point' || type === 'MultiPoint') return;
+
+        // Generate 2-vertex line segments
+        var previousCoords;
+        if (coordEach(feature$$1, function (currentCoord, coordIndex, featureIndexCoord, mutliPartIndexCoord, geometryIndex) {
+            // Simulating a meta.coordReduce() since `reduce` operations cannot be stopped by returning `false`
+            if (previousCoords === undefined) {
+                previousCoords = currentCoord;
+                return;
+            }
+            var currentSegment = Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_0__["lineString"])([previousCoords, currentCoord], feature$$1.properties);
+            if (callback(currentSegment, featureIndex, multiFeatureIndex, geometryIndex, segmentIndex) === false) return false;
+            segmentIndex++;
+            previousCoords = currentCoord;
+        }) === false) return false;
+    });
+}
+
+/**
+ * Callback for segmentReduce
+ *
+ * The first time the callback function is called, the values provided as arguments depend
+ * on whether the reduce method has an initialValue argument.
+ *
+ * If an initialValue is provided to the reduce method:
+ *  - The previousValue argument is initialValue.
+ *  - The currentValue argument is the value of the first element present in the array.
+ *
+ * If an initialValue is not provided:
+ *  - The previousValue argument is the value of the first element present in the array.
+ *  - The currentValue argument is the value of the second element present in the array.
+ *
+ * @callback segmentReduceCallback
+ * @param {*} previousValue The accumulated value previously returned in the last invocation
+ * of the callback, or initialValue, if supplied.
+ * @param {Feature<LineString>} currentSegment The current Segment being processed.
+ * @param {number} featureIndex The current index of the Feature being processed.
+ * @param {number} multiFeatureIndex The current index of the Multi-Feature being processed.
+ * @param {number} geometryIndex The current index of the Geometry being processed.
+ * @param {number} segmentIndex The current index of the Segment being processed.
+ */
+
+/**
+ * Reduce 2-vertex line segment in any GeoJSON object, similar to Array.reduce()
+ * (Multi)Point geometries do not contain segments therefore they are ignored during this operation.
+ *
+ * @param {FeatureCollection|Feature|Geometry} geojson any GeoJSON
+ * @param {Function} callback a method that takes (previousValue, currentSegment, currentIndex)
+ * @param {*} [initialValue] Value to use as the first argument to the first call of the callback.
+ * @returns {void}
+ * @example
+ * var polygon = turf.polygon([[[-50, 5], [-40, -10], [-50, -10], [-40, 5], [-50, 5]]]);
+ *
+ * // Iterate over GeoJSON by 2-vertex segments
+ * turf.segmentReduce(polygon, function (previousSegment, currentSegment, featureIndex, multiFeatureIndex, geometryIndex, segmentIndex) {
+ *   //= previousSegment
+ *   //= currentSegment
+ *   //= featureIndex
+ *   //= multiFeatureIndex
+ *   //= geometryIndex
+ *   //= segmentInex
+ *   return currentSegment
+ * });
+ *
+ * // Calculate the total number of segments
+ * var initialValue = 0
+ * var total = turf.segmentReduce(polygon, function (previousValue) {
+ *     previousValue++;
+ *     return previousValue;
+ * }, initialValue);
+ */
+function segmentReduce(geojson, callback, initialValue) {
+    var previousValue = initialValue;
+    var started = false;
+    segmentEach(geojson, function (currentSegment, featureIndex, multiFeatureIndex, geometryIndex, segmentIndex) {
+        if (started === false && initialValue === undefined) previousValue = currentSegment;
+        else previousValue = callback(previousValue, currentSegment, featureIndex, multiFeatureIndex, geometryIndex, segmentIndex);
+        started = true;
+    });
+    return previousValue;
+}
+
+/**
+ * Callback for lineEach
+ *
+ * @callback lineEachCallback
+ * @param {Feature<LineString>} currentLine The current LineString|LinearRing being processed
+ * @param {number} featureIndex The current index of the Feature being processed
+ * @param {number} multiFeatureIndex The current index of the Multi-Feature being processed
+ * @param {number} geometryIndex The current index of the Geometry being processed
+ */
+
+/**
+ * Iterate over line or ring coordinates in LineString, Polygon, MultiLineString, MultiPolygon Features or Geometries,
+ * similar to Array.forEach.
+ *
+ * @name lineEach
+ * @param {Geometry|Feature<LineString|Polygon|MultiLineString|MultiPolygon>} geojson object
+ * @param {Function} callback a method that takes (currentLine, featureIndex, multiFeatureIndex, geometryIndex)
+ * @example
+ * var multiLine = turf.multiLineString([
+ *   [[26, 37], [35, 45]],
+ *   [[36, 53], [38, 50], [41, 55]]
+ * ]);
+ *
+ * turf.lineEach(multiLine, function (currentLine, featureIndex, multiFeatureIndex, geometryIndex) {
+ *   //=currentLine
+ *   //=featureIndex
+ *   //=multiFeatureIndex
+ *   //=geometryIndex
+ * });
+ */
+function lineEach(geojson, callback) {
+    // validation
+    if (!geojson) throw new Error('geojson is required');
+
+    flattenEach(geojson, function (feature$$1, featureIndex, multiFeatureIndex) {
+        if (feature$$1.geometry === null) return;
+        var type = feature$$1.geometry.type;
+        var coords = feature$$1.geometry.coordinates;
+        switch (type) {
+        case 'LineString':
+            if (callback(feature$$1, featureIndex, multiFeatureIndex, 0, 0) === false) return false;
+            break;
+        case 'Polygon':
+            for (var geometryIndex = 0; geometryIndex < coords.length; geometryIndex++) {
+                if (callback(Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_0__["lineString"])(coords[geometryIndex], feature$$1.properties), featureIndex, multiFeatureIndex, geometryIndex) === false) return false;
+            }
+            break;
+        }
+    });
+}
+
+/**
+ * Callback for lineReduce
+ *
+ * The first time the callback function is called, the values provided as arguments depend
+ * on whether the reduce method has an initialValue argument.
+ *
+ * If an initialValue is provided to the reduce method:
+ *  - The previousValue argument is initialValue.
+ *  - The currentValue argument is the value of the first element present in the array.
+ *
+ * If an initialValue is not provided:
+ *  - The previousValue argument is the value of the first element present in the array.
+ *  - The currentValue argument is the value of the second element present in the array.
+ *
+ * @callback lineReduceCallback
+ * @param {*} previousValue The accumulated value previously returned in the last invocation
+ * of the callback, or initialValue, if supplied.
+ * @param {Feature<LineString>} currentLine The current LineString|LinearRing being processed.
+ * @param {number} featureIndex The current index of the Feature being processed
+ * @param {number} multiFeatureIndex The current index of the Multi-Feature being processed
+ * @param {number} geometryIndex The current index of the Geometry being processed
+ */
+
+/**
+ * Reduce features in any GeoJSON object, similar to Array.reduce().
+ *
+ * @name lineReduce
+ * @param {Geometry|Feature<LineString|Polygon|MultiLineString|MultiPolygon>} geojson object
+ * @param {Function} callback a method that takes (previousValue, currentLine, featureIndex, multiFeatureIndex, geometryIndex)
+ * @param {*} [initialValue] Value to use as the first argument to the first call of the callback.
+ * @returns {*} The value that results from the reduction.
+ * @example
+ * var multiPoly = turf.multiPolygon([
+ *   turf.polygon([[[12,48],[2,41],[24,38],[12,48]], [[9,44],[13,41],[13,45],[9,44]]]),
+ *   turf.polygon([[[5, 5], [0, 0], [2, 2], [4, 4], [5, 5]]])
+ * ]);
+ *
+ * turf.lineReduce(multiPoly, function (previousValue, currentLine, featureIndex, multiFeatureIndex, geometryIndex) {
+ *   //=previousValue
+ *   //=currentLine
+ *   //=featureIndex
+ *   //=multiFeatureIndex
+ *   //=geometryIndex
+ *   return currentLine
+ * });
+ */
+function lineReduce(geojson, callback, initialValue) {
+    var previousValue = initialValue;
+    lineEach(geojson, function (currentLine, featureIndex, multiFeatureIndex, geometryIndex) {
+        if (featureIndex === 0 && initialValue === undefined) previousValue = currentLine;
+        else previousValue = callback(previousValue, currentLine, featureIndex, multiFeatureIndex, geometryIndex);
+    });
+    return previousValue;
+}
+
+/**
+ * Finds a particular 2-vertex LineString Segment from a GeoJSON using `@turf/meta` indexes.
+ *
+ * Negative indexes are permitted.
+ * Point & MultiPoint will always return null.
+ *
+ * @param {FeatureCollection|Feature|Geometry} geojson Any GeoJSON Feature or Geometry
+ * @param {Object} [options={}] Optional parameters
+ * @param {number} [options.featureIndex=0] Feature Index
+ * @param {number} [options.multiFeatureIndex=0] Multi-Feature Index
+ * @param {number} [options.geometryIndex=0] Geometry Index
+ * @param {number} [options.segmentIndex=0] Segment Index
+ * @param {Object} [options.properties={}] Translate Properties to output LineString
+ * @param {BBox} [options.bbox={}] Translate BBox to output LineString
+ * @param {number|string} [options.id={}] Translate Id to output LineString
+ * @returns {Feature<LineString>} 2-vertex GeoJSON Feature LineString
+ * @example
+ * var multiLine = turf.multiLineString([
+ *     [[10, 10], [50, 30], [30, 40]],
+ *     [[-10, -10], [-50, -30], [-30, -40]]
+ * ]);
+ *
+ * // First Segment (defaults are 0)
+ * turf.findSegment(multiLine);
+ * // => Feature<LineString<[[10, 10], [50, 30]]>>
+ *
+ * // First Segment of 2nd Multi Feature
+ * turf.findSegment(multiLine, {multiFeatureIndex: 1});
+ * // => Feature<LineString<[[-10, -10], [-50, -30]]>>
+ *
+ * // Last Segment of Last Multi Feature
+ * turf.findSegment(multiLine, {multiFeatureIndex: -1, segmentIndex: -1});
+ * // => Feature<LineString<[[-50, -30], [-30, -40]]>>
+ */
+function findSegment(geojson, options) {
+    // Optional Parameters
+    options = options || {};
+    if (!Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_0__["isObject"])(options)) throw new Error('options is invalid');
+    var featureIndex = options.featureIndex || 0;
+    var multiFeatureIndex = options.multiFeatureIndex || 0;
+    var geometryIndex = options.geometryIndex || 0;
+    var segmentIndex = options.segmentIndex || 0;
+
+    // Find FeatureIndex
+    var properties = options.properties;
+    var geometry;
+
+    switch (geojson.type) {
+    case 'FeatureCollection':
+        if (featureIndex < 0) featureIndex = geojson.features.length + featureIndex;
+        properties = properties || geojson.features[featureIndex].properties;
+        geometry = geojson.features[featureIndex].geometry;
+        break;
+    case 'Feature':
+        properties = properties || geojson.properties;
+        geometry = geojson.geometry;
+        break;
+    case 'Point':
+    case 'MultiPoint':
+        return null;
+    case 'LineString':
+    case 'Polygon':
+    case 'MultiLineString':
+    case 'MultiPolygon':
+        geometry = geojson;
+        break;
+    default:
+        throw new Error('geojson is invalid');
+    }
+
+    // Find SegmentIndex
+    if (geometry === null) return null;
+    var coords = geometry.coordinates;
+    switch (geometry.type) {
+    case 'Point':
+    case 'MultiPoint':
+        return null;
+    case 'LineString':
+        if (segmentIndex < 0) segmentIndex = coords.length + segmentIndex - 1;
+        return Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_0__["lineString"])([coords[segmentIndex], coords[segmentIndex + 1]], properties, options);
+    case 'Polygon':
+        if (geometryIndex < 0) geometryIndex = coords.length + geometryIndex;
+        if (segmentIndex < 0) segmentIndex = coords[geometryIndex].length + segmentIndex - 1;
+        return Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_0__["lineString"])([coords[geometryIndex][segmentIndex], coords[geometryIndex][segmentIndex + 1]], properties, options);
+    case 'MultiLineString':
+        if (multiFeatureIndex < 0) multiFeatureIndex = coords.length + multiFeatureIndex;
+        if (segmentIndex < 0) segmentIndex = coords[multiFeatureIndex].length + segmentIndex - 1;
+        return Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_0__["lineString"])([coords[multiFeatureIndex][segmentIndex], coords[multiFeatureIndex][segmentIndex + 1]], properties, options);
+    case 'MultiPolygon':
+        if (multiFeatureIndex < 0) multiFeatureIndex = coords.length + multiFeatureIndex;
+        if (geometryIndex < 0) geometryIndex = coords[multiFeatureIndex].length + geometryIndex;
+        if (segmentIndex < 0) segmentIndex = coords[multiFeatureIndex][geometryIndex].length - segmentIndex - 1;
+        return Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_0__["lineString"])([coords[multiFeatureIndex][geometryIndex][segmentIndex], coords[multiFeatureIndex][geometryIndex][segmentIndex + 1]], properties, options);
+    }
+    throw new Error('geojson is invalid');
+}
+
+/**
+ * Finds a particular Point from a GeoJSON using `@turf/meta` indexes.
+ *
+ * Negative indexes are permitted.
+ *
+ * @param {FeatureCollection|Feature|Geometry} geojson Any GeoJSON Feature or Geometry
+ * @param {Object} [options={}] Optional parameters
+ * @param {number} [options.featureIndex=0] Feature Index
+ * @param {number} [options.multiFeatureIndex=0] Multi-Feature Index
+ * @param {number} [options.geometryIndex=0] Geometry Index
+ * @param {number} [options.coordIndex=0] Coord Index
+ * @param {Object} [options.properties={}] Translate Properties to output Point
+ * @param {BBox} [options.bbox={}] Translate BBox to output Point
+ * @param {number|string} [options.id={}] Translate Id to output Point
+ * @returns {Feature<Point>} 2-vertex GeoJSON Feature Point
+ * @example
+ * var multiLine = turf.multiLineString([
+ *     [[10, 10], [50, 30], [30, 40]],
+ *     [[-10, -10], [-50, -30], [-30, -40]]
+ * ]);
+ *
+ * // First Segment (defaults are 0)
+ * turf.findPoint(multiLine);
+ * // => Feature<Point<[10, 10]>>
+ *
+ * // First Segment of the 2nd Multi-Feature
+ * turf.findPoint(multiLine, {multiFeatureIndex: 1});
+ * // => Feature<Point<[-10, -10]>>
+ *
+ * // Last Segment of last Multi-Feature
+ * turf.findPoint(multiLine, {multiFeatureIndex: -1, coordIndex: -1});
+ * // => Feature<Point<[-30, -40]>>
+ */
+function findPoint(geojson, options) {
+    // Optional Parameters
+    options = options || {};
+    if (!Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_0__["isObject"])(options)) throw new Error('options is invalid');
+    var featureIndex = options.featureIndex || 0;
+    var multiFeatureIndex = options.multiFeatureIndex || 0;
+    var geometryIndex = options.geometryIndex || 0;
+    var coordIndex = options.coordIndex || 0;
+
+    // Find FeatureIndex
+    var properties = options.properties;
+    var geometry;
+
+    switch (geojson.type) {
+    case 'FeatureCollection':
+        if (featureIndex < 0) featureIndex = geojson.features.length + featureIndex;
+        properties = properties || geojson.features[featureIndex].properties;
+        geometry = geojson.features[featureIndex].geometry;
+        break;
+    case 'Feature':
+        properties = properties || geojson.properties;
+        geometry = geojson.geometry;
+        break;
+    case 'Point':
+    case 'MultiPoint':
+        return null;
+    case 'LineString':
+    case 'Polygon':
+    case 'MultiLineString':
+    case 'MultiPolygon':
+        geometry = geojson;
+        break;
+    default:
+        throw new Error('geojson is invalid');
+    }
+
+    // Find Coord Index
+    if (geometry === null) return null;
+    var coords = geometry.coordinates;
+    switch (geometry.type) {
+    case 'Point':
+        return Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_0__["point"])(coords, properties, options);
+    case 'MultiPoint':
+        if (multiFeatureIndex < 0) multiFeatureIndex = coords.length + multiFeatureIndex;
+        return Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_0__["point"])(coords[multiFeatureIndex], properties, options);
+    case 'LineString':
+        if (coordIndex < 0) coordIndex = coords.length + coordIndex;
+        return Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_0__["point"])(coords[coordIndex], properties, options);
+    case 'Polygon':
+        if (geometryIndex < 0) geometryIndex = coords.length + geometryIndex;
+        if (coordIndex < 0) coordIndex = coords[geometryIndex].length + coordIndex;
+        return Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_0__["point"])(coords[geometryIndex][coordIndex], properties, options);
+    case 'MultiLineString':
+        if (multiFeatureIndex < 0) multiFeatureIndex = coords.length + multiFeatureIndex;
+        if (coordIndex < 0) coordIndex = coords[multiFeatureIndex].length + coordIndex;
+        return Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_0__["point"])(coords[multiFeatureIndex][coordIndex], properties, options);
+    case 'MultiPolygon':
+        if (multiFeatureIndex < 0) multiFeatureIndex = coords.length + multiFeatureIndex;
+        if (geometryIndex < 0) geometryIndex = coords[multiFeatureIndex].length + geometryIndex;
+        if (coordIndex < 0) coordIndex = coords[multiFeatureIndex][geometryIndex].length - coordIndex;
+        return Object(_turf_helpers__WEBPACK_IMPORTED_MODULE_0__["point"])(coords[multiFeatureIndex][geometryIndex][coordIndex], properties, options);
+    }
+    throw new Error('geojson is invalid');
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css":
+/*!***************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--11-1!./node_modules/postcss-loader/src??ref--11-2!./node_modules/@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css ***!
+  \***************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".marker-icon,\n.marker-icon:focus {\n  background-color: #ffffff;\n  border: 1px solid #3388ff;\n  border-radius: 50%;\n  margin: -8px 0 0 -8px !important;\n  width: 14px !important;\n  height: 14px !important;\n  outline: 0;\n  transition: opacity ease 0.3s;\n}\n\n.marker-icon-middle,\n.marker-icon-middle:focus {\n  opacity: 0.7;\n  margin: -6px 0 0 -6px !important;\n  width: 10px !important;\n  height: 10px !important;\n}\n\n.leaflet-pm-draggable {\n  cursor: move !important;\n}\n\n.cursor-marker {\n  cursor: crosshair;\n  pointer-events: none;\n  display: none;\n}\n\n.cursor-marker.visible {\n  display: block !important;\n}\n\n.leaflet-pm-invalid {\n  stroke: red;\n  transition: fill ease 0s, stroke ease 0s;\n}\n\n.rect-style-marker,\n.rect-start-marker {\n  opacity: 0;\n}\n\n.rect-style-marker.visible,\n.rect-start-marker.visible {\n  opacity: 1 !important;\n}\n\n.hidden {\n  display: none;\n}\n\n.vertexmarker-disabled{\n  opacity: 0.7;\n}\n\n.leaflet-pm-toolbar {\n\n}\n\n.leaflet-pm-toolbar .leaflet-buttons-control-button {\n  padding: 5px;\n  box-sizing: border-box;\n  position: relative;\n  z-index: 3;\n}\n\n.leaflet-pm-toolbar .leaflet-pm-actions-container a:first-child:not(.pos-right) {\n  border-radius: 0 !important;\n}\n\n.leaflet-pm-toolbar .leaflet-pm-actions-container a:last-child.pos-right {\n  border-radius: 0 !important;\n}\n\n.leaflet-pm-toolbar .button-container .leaflet-buttons-control-button {\n  border-radius: 0 !important;\n}\n\n.leaflet-pm-toolbar .button-container:last-child .leaflet-buttons-control-button {\n  border-radius: 0 0 2px 2px !important;\n}\n\n.leaflet-pm-toolbar .button-container:first-child .leaflet-buttons-control-button {\n  border-radius: 2px 2px 0 0 !important;\n}\n\n.leaflet-pm-toolbar .control-fa-icon {\n  font-size: 19px;\n  line-height: 24px;\n}\n\n.leaflet-pm-toolbar .control-icon {\n  width: 100%;\n  height: 100%;\n  box-sizing: border-box;\n  background-size: contain;\n  background-repeat: no-repeat;\n  background-position: center center;\n}\n\n.leaflet-pm-toolbar .leaflet-pm-icon-marker {\n  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDUyLjUgKDY3NDY5KSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5BdG9tcy9JY29ucy9Ub29scy9NYXJrZXI8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz4KICAgICAgICA8cGF0aCBkPSJNMTUuNSwyNC44NzgyOTU5IEMxNS4yOTA5MjAxLDI0Ljg3NzIyMTkgMTUuMTc0NDg1NywyNC44NDY3ODE3IDE0LjY1OTA4NjYsMjQuMjM1NDE2MyBDMTAuMjE5Njk1NSwxOS40MTE4MDU0IDgsMTUuNTAxNDM5MiA4LDEyLjUwNDMxNzcgQzgsOC4zNTk3OTc0NiAxMS4zNTc4NjQ0LDUgMTUuNSw1IEMxOS42NDIxMzU2LDUgMjMsOC4zNTk3OTc0NiAyMywxMi41MDQzMTc3IEMyMywxNyAxOC4yODc4MjE3LDIxLjkyNjgzNzggMTYuMzMzNjYwMSwyNC4yNDQwMTg2IEMxNS44MjI0NjIyLDI0Ljg1MDE4MDIgMTUuNzA5MDc5OSwyNC44NzkzNjk5IDE1LjUsMjQuODc4Mjk1OSBaIE0xNS41LDE1LjUzMjY5NDggQzE3LjI3NTIwMSwxNS41MzI2OTQ4IDE4LjcxNDI4NTcsMTQuMTE4MDAwNCAxOC43MTQyODU3LDEyLjM3Mjg4NjQgQzE4LjcxNDI4NTcsMTAuNjI3NzcyMyAxNy4yNzUyMDEsOS4yMTMwNzc5MiAxNS41LDkuMjEzMDc3OTIgQzEzLjcyNDc5OSw5LjIxMzA3NzkyIDEyLjI4NTcxNDMsMTAuNjI3NzcyMyAxMi4yODU3MTQzLDEyLjM3Mjg4NjQgQzEyLjI4NTcxNDMsMTQuMTE4MDAwNCAxMy43MjQ3OTksMTUuNTMyNjk0OCAxNS41LDE1LjUzMjY5NDggWiIgaWQ9InBhdGgtMSI+PC9wYXRoPgogICAgPC9kZWZzPgogICAgPGcgaWQ9IlN5bWJvbHMiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJBdG9tcy9JY29ucy9Ub29scy9NYXJrZXIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zLjAwMDAwMCwgLTMuMDAwMDAwKSI+CiAgICAgICAgICAgIDxtYXNrIGlkPSJtYXNrLTIiIGZpbGw9IndoaXRlIj4KICAgICAgICAgICAgICAgIDx1c2UgeGxpbms6aHJlZj0iI3BhdGgtMSI+PC91c2U+CiAgICAgICAgICAgIDwvbWFzaz4KICAgICAgICAgICAgPHVzZSBpZD0iTWFzayIgZmlsbD0iIzVCNUI1QiIgZmlsbC1ydWxlPSJub256ZXJvIiB4bGluazpocmVmPSIjcGF0aC0xIj48L3VzZT4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==);\n}\n.leaflet-pm-toolbar .leaflet-pm-icon-polygon {\n  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPGRlZnM+CiAgICA8cGF0aCBpZD0icG9seWdvbi1hIiBkPSJNMTkuNDIwNjg5Miw5LjE2NTA5NzI1IEMxOS4xNTIzNjgxLDguNjY5OTI5MTQgMTksOC4xMDI3NTgzMSAxOSw3LjUgQzE5LDUuNTY3MDAzMzggMjAuNTY3MDAzNCw0IDIyLjUsNCBDMjQuNDMyOTk2Niw0IDI2LDUuNTY3MDAzMzggMjYsNy41IEMyNiw5LjI2MzIzNTk1IDI0LjY5NjE0NzEsMTAuNzIxOTQwNyAyMywxMC45NjQ1NTU2IEwyMywxOS4wMzU0NDQ0IEMyNC42OTYxNDcxLDE5LjI3ODA1OTMgMjYsMjAuNzM2NzY0IDI2LDIyLjUgQzI2LDI0LjQzMjk5NjYgMjQuNDMyOTk2NiwyNiAyMi41LDI2IEMyMC43MzY3NjQsMjYgMTkuMjc4MDU5MywyNC42OTYxNDcxIDE5LjAzNTQ0NDQsMjMgTDEwLjk2NDU1NTYsMjMgQzEwLjcyMTk0MDcsMjQuNjk2MTQ3MSA5LjI2MzIzNTk1LDI2IDcuNSwyNiBDNS41NjcwMDMzOCwyNiA0LDI0LjQzMjk5NjYgNCwyMi41IEM0LDIwLjU2NzAwMzQgNS41NjcwMDMzOCwxOSA3LjUsMTkgQzguMTAyNzU4MzEsMTkgOC42Njk5MjkxNCwxOS4xNTIzNjgxIDkuMTY1MDk3MjUsMTkuNDIwNjg5MiBMMTkuNDIwNjg5Miw5LjE2NTA5NzI1IFogTTIwLjgzNDkwNzMsMTAuNTc5MzA2MyBMMTAuNTc5MzEwOCwyMC44MzQ5MDI3IEMxMC42MDg2NzMxLDIwLjg4OTA4ODggMTAuNjM2NjQ2OSwyMC45NDQxMzcyIDEwLjY2MzE4NDQsMjEgTDE5LjMzNjgxNTYsMjEgQzE5LjY4MjU3NzUsMjAuMjcyMTU0IDIwLjI3MjE1NCwxOS42ODI1Nzc1IDIxLDE5LjMzNjgxNTYgTDIxLDEwLjY2MzE4NDQgQzIwLjk0NDEzNzIsMTAuNjM2NjQ2OSAyMC44ODkwODg4LDEwLjYwODY3MzEgMjAuODM0OTAyNywxMC41NzkzMTA4IFogTTIyLjUsOSBDMjMuMzI4NDI3MSw5IDI0LDguMzI4NDI3MTIgMjQsNy41IEMyNCw2LjY3MTU3Mjg4IDIzLjMyODQyNzEsNiAyMi41LDYgQzIxLjY3MTU3MjksNiAyMSw2LjY3MTU3Mjg4IDIxLDcuNSBDMjEsOC4zMjg0MjcxMiAyMS42NzE1NzI5LDkgMjIuNSw5IFogTTIyLjUsMjQgQzIzLjMyODQyNzEsMjQgMjQsMjMuMzI4NDI3MSAyNCwyMi41IEMyNCwyMS42NzE1NzI5IDIzLjMyODQyNzEsMjEgMjIuNSwyMSBDMjEuNjcxNTcyOSwyMSAyMSwyMS42NzE1NzI5IDIxLDIyLjUgQzIxLDIzLjMyODQyNzEgMjEuNjcxNTcyOSwyNCAyMi41LDI0IFogTTcuNSwyNCBDOC4zMjg0MjcxMiwyNCA5LDIzLjMyODQyNzEgOSwyMi41IEM5LDIxLjY3MTU3MjkgOC4zMjg0MjcxMiwyMSA3LjUsMjEgQzYuNjcxNTcyODgsMjEgNiwyMS42NzE1NzI5IDYsMjIuNSBDNiwyMy4zMjg0MjcxIDYuNjcxNTcyODgsMjQgNy41LDI0IFoiLz4KICA8L2RlZnM+CiAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMyAtMykiPgogICAgPG1hc2sgaWQ9InBvbHlnb24tYiIgZmlsbD0iI2ZmZiI+CiAgICAgIDx1c2UgeGxpbms6aHJlZj0iI3BvbHlnb24tYSIvPgogICAgPC9tYXNrPgogICAgPHVzZSBmaWxsPSIjNUI1QjVCIiBmaWxsLXJ1bGU9Im5vbnplcm8iIHhsaW5rOmhyZWY9IiNwb2x5Z29uLWEiLz4KICAgIDxnIGZpbGw9IiM1QjVCNUIiIG1hc2s9InVybCgjcG9seWdvbi1iKSI+CiAgICAgIDxyZWN0IHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIvPgogICAgPC9nPgogIDwvZz4KPC9zdmc+Cg==);\n}\n.leaflet-pm-toolbar .leaflet-pm-icon-polyline {\n  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPGRlZnM+CiAgICA8cGF0aCBpZD0ibGluZS1hIiBkPSJNOS4xNjUwOTcyNSwxOS40MjA2ODkyIEwxOC40MjA2ODkyLDEwLjE2NTA5NzMgQzE4LjE1MjM2ODEsOS42Njk5MjkxNCAxOCw5LjEwMjc1ODMxIDE4LDguNSBDMTgsNi41NjcwMDMzOCAxOS41NjcwMDM0LDUgMjEuNSw1IEMyMy40MzI5OTY2LDUgMjUsNi41NjcwMDMzOCAyNSw4LjUgQzI1LDEwLjQzMjk5NjYgMjMuNDMyOTk2NiwxMiAyMS41LDEyIEMyMC44OTcyNDE3LDEyIDIwLjMzMDA3MDksMTEuODQ3NjMxOSAxOS44MzQ5MDI3LDExLjU3OTMxMDggTDEwLjU3OTMxMDgsMjAuODM0OTAyNyBDMTAuODQ3NjMxOSwyMS4zMzAwNzA5IDExLDIxLjg5NzI0MTcgMTEsMjIuNSBDMTEsMjQuNDMyOTk2NiA5LjQzMjk5NjYyLDI2IDcuNSwyNiBDNS41NjcwMDMzOCwyNiA0LDI0LjQzMjk5NjYgNCwyMi41IEM0LDIwLjU2NzAwMzQgNS41NjcwMDMzOCwxOSA3LjUsMTkgQzguMTAyNzU4MzEsMTkgOC42Njk5MjkxNCwxOS4xNTIzNjgxIDkuMTY1MDk3MjUsMTkuNDIwNjg5MiBaIE0yMS41LDEwIEMyMi4zMjg0MjcxLDEwIDIzLDkuMzI4NDI3MTIgMjMsOC41IEMyMyw3LjY3MTU3Mjg4IDIyLjMyODQyNzEsNyAyMS41LDcgQzIwLjY3MTU3MjksNyAyMCw3LjY3MTU3Mjg4IDIwLDguNSBDMjAsOS4zMjg0MjcxMiAyMC42NzE1NzI5LDEwIDIxLjUsMTAgWiBNNy41LDI0IEM4LjMyODQyNzEyLDI0IDksMjMuMzI4NDI3MSA5LDIyLjUgQzksMjEuNjcxNTcyOSA4LjMyODQyNzEyLDIxIDcuNSwyMSBDNi42NzE1NzI4OCwyMSA2LDIxLjY3MTU3MjkgNiwyMi41IEM2LDIzLjMyODQyNzEgNi42NzE1NzI4OCwyNCA3LjUsMjQgWiIvPgogIDwvZGVmcz4KICA8ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zIC0zKSI+CiAgICA8bWFzayBpZD0ibGluZS1iIiBmaWxsPSIjZmZmIj4KICAgICAgPHVzZSB4bGluazpocmVmPSIjbGluZS1hIi8+CiAgICA8L21hc2s+CiAgICA8dXNlIGZpbGw9IiM1QjVCNUIiIGZpbGwtcnVsZT0ibm9uemVybyIgeGxpbms6aHJlZj0iI2xpbmUtYSIvPgogICAgPGcgZmlsbD0iIzVCNUI1QiIgbWFzaz0idXJsKCNsaW5lLWIpIj4KICAgICAgPHJlY3Qgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIi8+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4K);\n}\n.leaflet-pm-toolbar .leaflet-pm-icon-circle {\n  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDUyLjUgKDY3NDY5KSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5BdG9tcy9JY29ucy9Ub29scy9DaXJjbGU8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz4KICAgICAgICA8cGF0aCBkPSJNMTguMjg5Nzc1MSw2Ljc4NjAyMjc1IEMxOC44OTI0MTMxLDYuMjk0NjQ5ODEgMTkuNjYxNzk3LDYgMjAuNSw2IEMyMi40MzI5OTY2LDYgMjQsNy41NjcwMDMzOCAyNCw5LjUgQzI0LDEwLjMzODIwMyAyMy43MDUzNTAyLDExLjEwNzU4NjkgMjMuMjEzOTc3MiwxMS43MTAyMjQ5IEMyMy43MTk1OTksMTIuODcxMjA1MyAyNCwxNC4xNTI4NTcxIDI0LDE1LjUgQzI0LDIwLjc0NjcwNTEgMTkuNzQ2NzA1MSwyNSAxNC41LDI1IEM5LjI1MzI5NDg4LDI1IDUsMjAuNzQ2NzA1MSA1LDE1LjUgQzUsMTAuMjUzMjk0OSA5LjI1MzI5NDg4LDYgMTQuNSw2IEMxNS44NDcxNDI5LDYgMTcuMTI4Nzk0Nyw2LjI4MDQwMDk4IDE4LjI4OTc3NTEsNi43ODYwMjI3NSBaIE0xNy4xNTA0MjI4LDguNDgxNzU4NiBDMTYuMzI2MzU4MSw4LjE3MDM5MjM2IDE1LjQzMzA3NzcsOCAxNC41LDggQzEwLjM1Nzg2NDQsOCA3LDExLjM1Nzg2NDQgNywxNS41IEM3LDE5LjY0MjEzNTYgMTAuMzU3ODY0NCwyMyAxNC41LDIzIEMxOC42NDIxMzU2LDIzIDIyLDE5LjY0MjEzNTYgMjIsMTUuNSBDMjIsMTQuNTY2OTIyMyAyMS44Mjk2MDc2LDEzLjY3MzY0MTkgMjEuNTE4MjQxNCwxMi44NDk1NzcyIEMyMS4xOTYwMzgzLDEyLjk0NzM5NjggMjAuODU0MTYyMiwxMyAyMC41LDEzIEMxOC41NjcwMDM0LDEzIDE3LDExLjQzMjk5NjYgMTcsOS41IEMxNyw5LjE0NTgzNzc4IDE3LjA1MjYwMzIsOC44MDM5NjE2OSAxNy4xNTA0MjI4LDguNDgxNzU4NiBaIE0xNC41LDE3IEMxMy42NzE1NzI5LDE3IDEzLDE2LjMyODQyNzEgMTMsMTUuNSBDMTMsMTQuNjcxNTcyOSAxMy42NzE1NzI5LDE0IDE0LjUsMTQgQzE1LjMyODQyNzEsMTQgMTYsMTQuNjcxNTcyOSAxNiwxNS41IEMxNiwxNi4zMjg0MjcxIDE1LjMyODQyNzEsMTcgMTQuNSwxNyBaIE0yMC41LDExIEMyMS4zMjg0MjcxLDExIDIyLDEwLjMyODQyNzEgMjIsOS41IEMyMiw4LjY3MTU3Mjg4IDIxLjMyODQyNzEsOCAyMC41LDggQzE5LjY3MTU3MjksOCAxOSw4LjY3MTU3Mjg4IDE5LDkuNSBDMTksMTAuMzI4NDI3MSAxOS42NzE1NzI5LDExIDIwLjUsMTEgWiIgaWQ9InBhdGgtMSI+PC9wYXRoPgogICAgPC9kZWZzPgogICAgPGcgaWQ9IlN5bWJvbHMiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJBdG9tcy9JY29ucy9Ub29scy9DaXJjbGUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zLjAwMDAwMCwgLTMuMDAwMDAwKSI+CiAgICAgICAgICAgIDxtYXNrIGlkPSJtYXNrLTIiIGZpbGw9IndoaXRlIj4KICAgICAgICAgICAgICAgIDx1c2UgeGxpbms6aHJlZj0iI3BhdGgtMSI+PC91c2U+CiAgICAgICAgICAgIDwvbWFzaz4KICAgICAgICAgICAgPHVzZSBpZD0iTWFzayIgZmlsbD0iIzVCNUI1QiIgZmlsbC1ydWxlPSJub256ZXJvIiB4bGluazpocmVmPSIjcGF0aC0xIj48L3VzZT4KICAgICAgICAgICAgPGcgaWQ9IkF0b21zL0NvbG9yL0dyZXkiIG1hc2s9InVybCgjbWFzay0yKSIgZmlsbD0iIzVCNUI1QiI+CiAgICAgICAgICAgICAgICA8cmVjdCBpZD0iUmVjdGFuZ2xlIiB4PSIwIiB5PSIwIiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiPjwvcmVjdD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+);\n}\n.leaflet-pm-toolbar .leaflet-pm-icon-circle-marker {\n  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KCjxzdmcgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjNUI1QjVCIiBzdHJva2Utd2lkdGg9IjgiCiAgICAgZmlsbD0ibm9uZSI+CjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjM1Ii8+CiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iMyIgZmlsbD0iIzVCNUI1QiIvPgo8L3N2Zz4=);\n}\n.leaflet-pm-toolbar .leaflet-pm-icon-rectangle {\n  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPGRlZnM+CiAgICA8cGF0aCBpZD0icmVjdGFuZ2xlLWEiIGQ9Ik0yMywxMC45NjQ1NTU2IEwyMywxOS4wMzU0NDQ0IEMyNC42OTYxNDcxLDE5LjI3ODA1OTMgMjYsMjAuNzM2NzY0IDI2LDIyLjUgQzI2LDI0LjQzMjk5NjYgMjQuNDMyOTk2NiwyNiAyMi41LDI2IEMyMC43MzY3NjQsMjYgMTkuMjc4MDU5MywyNC42OTYxNDcxIDE5LjAzNTQ0NDQsMjMgTDEwLjk2NDU1NTYsMjMgQzEwLjcyMTk0MDcsMjQuNjk2MTQ3MSA5LjI2MzIzNTk1LDI2IDcuNSwyNiBDNS41NjcwMDMzOCwyNiA0LDI0LjQzMjk5NjYgNCwyMi41IEM0LDIwLjczNjc2NCA1LjMwMzg1MjkzLDE5LjI3ODA1OTMgNywxOS4wMzU0NDQ0IEw3LDEwLjk2NDU1NTYgQzUuMzAzODUyOTMsMTAuNzIxOTQwNyA0LDkuMjYzMjM1OTUgNCw3LjUgQzQsNS41NjcwMDMzOCA1LjU2NzAwMzM4LDQgNy41LDQgQzkuMjYzMjM1OTUsNCAxMC43MjE5NDA3LDUuMzAzODUyOTMgMTAuOTY0NTU1Niw3IEwxOS4wMzU0NDQ0LDcgQzE5LjI3ODA1OTMsNS4zMDM4NTI5MyAyMC43MzY3NjQsNCAyMi41LDQgQzI0LjQzMjk5NjYsNCAyNiw1LjU2NzAwMzM4IDI2LDcuNSBDMjYsOS4yNjMyMzU5NSAyNC42OTYxNDcxLDEwLjcyMTk0MDcgMjMsMTAuOTY0NTU1NiBaIE0yMSwxMC42NjMxODQ0IEMyMC4yNzIxNTQsMTAuMzE3NDIyNSAxOS42ODI1Nzc1LDkuNzI3ODQ1OTggMTkuMzM2ODE1Niw5IEwxMC42NjMxODQ0LDkgQzEwLjMxNzQyMjUsOS43Mjc4NDU5OCA5LjcyNzg0NTk4LDEwLjMxNzQyMjUgOSwxMC42NjMxODQ0IEw5LDE5LjMzNjgxNTYgQzkuNzI3ODQ1OTgsMTkuNjgyNTc3NSAxMC4zMTc0MjI1LDIwLjI3MjE1NCAxMC42NjMxODQ0LDIxIEwxOS4zMzY4MTU2LDIxIEMxOS42ODI1Nzc1LDIwLjI3MjE1NCAyMC4yNzIxNTQsMTkuNjgyNTc3NSAyMSwxOS4zMzY4MTU2IEwyMSwxMC42NjMxODQ0IFogTTcuNSw5IEM4LjMyODQyNzEyLDkgOSw4LjMyODQyNzEyIDksNy41IEM5LDYuNjcxNTcyODggOC4zMjg0MjcxMiw2IDcuNSw2IEM2LjY3MTU3Mjg4LDYgNiw2LjY3MTU3Mjg4IDYsNy41IEM2LDguMzI4NDI3MTIgNi42NzE1NzI4OCw5IDcuNSw5IFogTTIyLjUsOSBDMjMuMzI4NDI3MSw5IDI0LDguMzI4NDI3MTIgMjQsNy41IEMyNCw2LjY3MTU3Mjg4IDIzLjMyODQyNzEsNiAyMi41LDYgQzIxLjY3MTU3MjksNiAyMSw2LjY3MTU3Mjg4IDIxLDcuNSBDMjEsOC4zMjg0MjcxMiAyMS42NzE1NzI5LDkgMjIuNSw5IFogTTIyLjUsMjQgQzIzLjMyODQyNzEsMjQgMjQsMjMuMzI4NDI3MSAyNCwyMi41IEMyNCwyMS42NzE1NzI5IDIzLjMyODQyNzEsMjEgMjIuNSwyMSBDMjEuNjcxNTcyOSwyMSAyMSwyMS42NzE1NzI5IDIxLDIyLjUgQzIxLDIzLjMyODQyNzEgMjEuNjcxNTcyOSwyNCAyMi41LDI0IFogTTcuNSwyNCBDOC4zMjg0MjcxMiwyNCA5LDIzLjMyODQyNzEgOSwyMi41IEM5LDIxLjY3MTU3MjkgOC4zMjg0MjcxMiwyMSA3LjUsMjEgQzYuNjcxNTcyODgsMjEgNiwyMS42NzE1NzI5IDYsMjIuNSBDNiwyMy4zMjg0MjcxIDYuNjcxNTcyODgsMjQgNy41LDI0IFoiLz4KICA8L2RlZnM+CiAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMyAtMykiPgogICAgPG1hc2sgaWQ9InJlY3RhbmdsZS1iIiBmaWxsPSIjZmZmIj4KICAgICAgPHVzZSB4bGluazpocmVmPSIjcmVjdGFuZ2xlLWEiLz4KICAgIDwvbWFzaz4KICAgIDx1c2UgZmlsbD0iIzVCNUI1QiIgZmlsbC1ydWxlPSJub256ZXJvIiB4bGluazpocmVmPSIjcmVjdGFuZ2xlLWEiLz4KICAgIDxnIGZpbGw9IiM1QjVCNUIiIG1hc2s9InVybCgjcmVjdGFuZ2xlLWIpIj4KICAgICAgPHJlY3Qgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIi8+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4K);\n}\n.leaflet-pm-toolbar .leaflet-pm-icon-delete {\n  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDUyLjUgKDY3NDY5KSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5BdG9tcy9JY29ucy9Ub29scy9FcmFzZXI8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz4KICAgICAgICA8cGF0aCBkPSJNMTcuNzg3NDIxOSwxOC40ODEyNTUyIEwxMS42NDgwMDc5LDEzLjM0OTgxODQgTDYuNDA0NjYwMDksMTkuMzgxNjAwMSBMMTAuNTUzOTE1NiwyMi45ODg0OTI5IEwxMy44NjkzNCwyMi45ODg0OTI5IEwxNy43ODc0MjE5LDE4LjQ4MTI1NTIgWiBNMTYuNTA3NDI1MiwyMi45ODg0OTI5IEwyNi4wMDAwMDAyLDIyLjk4ODQ5MjkgTDI2LjAwMDAwMDIsMjQuOTg4NDkyOSBMMTAuMDAwMDAwMiwyNC45ODg0OTI5IEw5LjgwNzA4MzEzLDI0Ljk4ODQ5MjkgTDUuMDkyNTQyMDQsMjAuODkxMDE5MiBDNC4yNTg5MTI4NSwyMC4xNjYzNTY0IDQuMTcwNTc4MTQsMTguOTAzMTExMiA0Ljg5NTI0MDkzLDE4LjA2OTQ4MiBMMTYuMDQ4MjQ0NCw1LjIzOTQxOTE2IEMxNi43NzI5MDcyLDQuNDA1Nzg5OTggMTguMDM2MTUyNSw0LjMxNzQ1NTI2IDE4Ljg2OTc4MTYsNS4wNDIxMTgwNiBMMjQuOTA3NDU4MywxMC4yOTA1OTAzIEMyNS43NDEwODc1LDExLjAxNTI1MzEgMjUuODI5NDIyMiwxMi4yNzg0OTgzIDI1LjEwNDc1OTQsMTMuMTEyMTI3NSBMMTYuNTA3NDI1MiwyMi45ODg0OTI5IFoiIGlkPSJwYXRoLTEiPjwvcGF0aD4KICAgIDwvZGVmcz4KICAgIDxnIGlkPSJTeW1ib2xzIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iQXRvbXMvSWNvbnMvVG9vbHMvRXJhc2VyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMy4wMDAwMDAsIC0zLjAwMDAwMCkiPgogICAgICAgICAgICA8bWFzayBpZD0ibWFzay0yIiBmaWxsPSJ3aGl0ZSI+CiAgICAgICAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNwYXRoLTEiPjwvdXNlPgogICAgICAgICAgICA8L21hc2s+CiAgICAgICAgICAgIDx1c2UgaWQ9IkNvbWJpbmVkLVNoYXBlIiBmaWxsPSIjNUI1QjVCIiBmaWxsLXJ1bGU9Im5vbnplcm8iIHhsaW5rOmhyZWY9IiNwYXRoLTEiPjwvdXNlPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+);\n}\n.leaflet-pm-toolbar .leaflet-pm-icon-edit {\n  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPGRlZnM+CiAgICA8cGF0aCBpZD0iZWRpdF9hbmNob3ItYSIgZD0iTTEzLjUsMTEgQzExLjU2NzAwMzQsMTEgMTAsOS40MzI5OTY2MiAxMCw3LjUgQzEwLDUuNTY3MDAzMzggMTEuNTY3MDAzNCw0IDEzLjUsNCBDMTUuNDMyOTk2Niw0IDE3LDUuNTY3MDAzMzggMTcsNy41IEMxNyw5LjQzMjk5NjYyIDE1LjQzMjk5NjYsMTEgMTMuNSwxMSBaIE0xMy41LDkgQzE0LjMyODQyNzEsOSAxNSw4LjMyODQyNzEyIDE1LDcuNSBDMTUsNi42NzE1NzI4OCAxNC4zMjg0MjcxLDYgMTMuNSw2IEMxMi42NzE1NzI5LDYgMTIsNi42NzE1NzI4OCAxMiw3LjUgQzEyLDguMzI4NDI3MTIgMTIuNjcxNTcyOSw5IDEzLjUsOSBaIE0xMi4wMDAyODg5LDcuNTI5NzM4OTMgQzEyLjAxMjU5ODMsOC4xNjI3MzY3MiAxMi40MTcwMTk3LDguNjk5NjY0MyAxMi45ODA3MTExLDguOTA3Njc5NjYgTDMsMTUgTDMsMTMgTDEyLjAwMDI4ODksNy41Mjk3Mzg5MyBaIE0xNC4yMTcyNzIyLDYuMTgyMjg0NzIgTDE5LjQ1MzEyNSwzIEwyMi42NTg5MzU1LDMgTDE0Ljk4OTEwMiw3LjY4MTczODg1IEMxNC45OTYyOTcxLDcuNjIyMTY0NTkgMTUsNy41NjE1MTQ3MiAxNSw3LjUgQzE1LDYuOTMxMzgzODEgMTQuNjgzNjA5OCw2LjQzNjY2NDUgMTQuMjE3MjcyMiw2LjE4MjI4NDcyIFogTTIzLjQ0MzQwNDIsMTkuMjg1MTczNiBMMjAuMTI4Mjc5OSwxOS4yODUxNzM2IEwyMS44NzI5OTgzLDIzLjUzNDk1MjUgQzIxLjk5NDUyOTYsMjMuODI5NTc3MyAyMS44NTU2NTQ2LDI0LjE1OTkyMDkgMjEuNTc3ODczNCwyNC4yODQ5MjA4IEwyMC4wNDE0Njc1LDI0Ljk1NDUxNDIgQzE5Ljc1NTA2MTMsMjUuMDc5NTE0MSAxOS40MzM4NzM4LDI0LjkzNjY3MDQgMTkuMzEyMzQyNiwyNC42NTA5NTE4IEwxNy42NTQ0MzY3LDIwLjYxNTQ1NDEgTDE0Ljk0NjE4NzMsMjMuNDAxMDE1MSBDMTQuNTg1MjgxMSwyMy43NzIxNzExIDE0LDIzLjQ4NjA0NjMgMTQsMjIuOTk5MjY1MyBMMTQsOS41NzE4MzUzMyBDMTQsOS4wNTkzMzU2MSAxNC42MjI1MzExLDguODA5NDkyIDE0Ljk0NjE1Niw5LjE3MDA4NTU1IEwyMy44MzQwMjkyLDE4LjMxMjAxNzkgQzI0LjE5MjUyOTEsMTguNjYxMzYxNSAyMy45Mjc5OTc5LDE5LjI4NTE3MzYgMjMuNDQzNDA0MiwxOS4yODUxNzM2IFoiLz4KICA8L2RlZnM+CiAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMyAtMykiPgogICAgPG1hc2sgaWQ9ImVkaXRfYW5jaG9yLWIiIGZpbGw9IiNmZmYiPgogICAgICA8dXNlIHhsaW5rOmhyZWY9IiNlZGl0X2FuY2hvci1hIi8+CiAgICA8L21hc2s+CiAgICA8dXNlIGZpbGw9IiM1QjVCNUIiIGZpbGwtcnVsZT0ibm9uemVybyIgeGxpbms6aHJlZj0iI2VkaXRfYW5jaG9yLWEiLz4KICAgIDxnIGZpbGw9IiM1QjVCNUIiIG1hc2s9InVybCgjZWRpdF9hbmNob3ItYikiPgogICAgICA8cmVjdCB3aWR0aD0iMzAiIGhlaWdodD0iMzAiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=);\n}\n.leaflet-pm-toolbar .leaflet-pm-icon-drag {\n  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPGRlZnM+CiAgICA8cGF0aCBpZD0ibW92ZS1hIiBkPSJNMjEsMTQgTDIxLDEwIEwyNywxNSBMMjEsMjAgTDIxLDE2IEwxNiwxNiBMMTYsMjEgTDIwLDIxIEwxNSwyNyBMMTAsMjEgTDE0LDIxIEwxNCwxNiBMOSwxNiBMOSwyMCBMMywxNSBMOSwxMCBMOSwxNCBMMTQsMTQgTDE0LDkgTDEwLDkgTDE1LDMgTDIwLDkgTDE2LDkgTDE2LDE0IEwyMSwxNCBaIi8+CiAgPC9kZWZzPgogIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTMgLTMpIj4KICAgIDxtYXNrIGlkPSJtb3ZlLWIiIGZpbGw9IiNmZmYiPgogICAgICA8dXNlIHhsaW5rOmhyZWY9IiNtb3ZlLWEiLz4KICAgIDwvbWFzaz4KICAgIDx1c2UgZmlsbD0iI0Q4RDhEOCIgeGxpbms6aHJlZj0iI21vdmUtYSIvPgogICAgPGcgZmlsbD0iIzVCNUI1QiIgbWFzaz0idXJsKCNtb3ZlLWIpIj4KICAgICAgPHJlY3Qgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIi8+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4K);\n}\n.leaflet-pm-toolbar .leaflet-pm-icon-cut {\n  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDUyLjUgKDY3NDY5KSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5BdG9tcy9JY29ucy9Ub29scy9TY2lzc29yczwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxkZWZzPgogICAgICAgIDxwYXRoIGQ9Ik0xMi45NjkxNTc0LDEzLjQ5Mzk0MzUgTDIxLjAzMTcwMzIsNS41NDE2NzAxMyBMMjMuNDY0OTQ5OSw1LjY3NzIyOTU3IEwxNy4wNDcwNzEzLDE0LjUxMDY4MTYgTDI3LjU2NjAzMzYsMTcuMTMzMzUzNSBMMjUuNzg5MTk0NCwxOC44MDEyNTg4IEwxNC41ODU0OTUxLDE3Ljg5ODc1MDYgTDEzLjY0ODc5NTUsMTkuMTg4MDA3IEMxMy43OTQ2MzksMTkuMjY1MDk1OCAxMy45MzY3OTg1LDE5LjM1MzQ0MTcgMTQuMDc0MTM3NywxOS40NTMyMjQ1IEMxNS42Mzc5NjQ4LDIwLjU4OTQxMTQgMTUuOTg0NjM1NywyMi43NzgyMDUyIDE0Ljg0ODQ0ODgsMjQuMzQyMDMyNCBDMTMuNzEyMjYxOSwyNS45MDU4NTk1IDExLjUyMzQ2ODEsMjYuMjUyNTMwNCA5Ljk1OTY0MDk2LDI1LjExNjM0MzUgQzguMzk1ODEzODQsMjMuOTgwMTU2NSA4LjA0OTE0Mjk2LDIxLjc5MTM2MjcgOS4xODUzMjk4NiwyMC4yMjc1MzU2IEM5Ljc0NTg3Mjc2LDE5LjQ1NjAxNDUgMTAuNTYyNjE4OCwxOC45ODA3NDc1IDExLjQzNDEyMTgsMTguODMzNjQwNyBMMTIuNjgwNTY1NiwxNy4xMTgwNTc5IEwxMi41MjM5NzI0LDE2LjM3NDcyMTYgTDExLjk1MDY5MzIsMTUuMzAxMjM5MSBMOS44OTMxMDY0NiwxNC43ODgyMjUxIEM5LjEzMDkzNzk2LDE1LjIzNTcyNjEgOC4xOTk3Nzg1NCwxNS4zOTY2NDQ3IDcuMjc0NDUzNTUsMTUuMTY1OTM1MiBDNS4zOTg4NzUxOSwxNC42OTgzMDEgNC4yNTc1MTA5NCwxMi43OTg3NTE5IDQuNzI1MTQ1MTUsMTAuOTIzMTczNiBDNS4xOTI3NzkzNSw5LjA0NzU5NTE5IDcuMDkyMzI4NDYsNy45MDYyMzA5NCA4Ljk2NzkwNjgyLDguMzczODY1MTUgQzEwLjg0MzQ4NTIsOC44NDE0OTkzNSAxMS45ODQ4NDk0LDEwLjc0MTA0ODUgMTEuNTE3MjE1MiwxMi42MTY2MjY4IEMxMS40NzYxNDY0LDEyLjc4MTM0NDkgMTEuNDI0MDMzNSwxMi45NDA0MDAxIDExLjM2MTg2MjcsMTMuMDkzMTk5OSBMMTIuOTY5MTU3NCwxMy40OTM5NDM1IFogTTcuNzU4Mjk3MzUsMTMuMjI1MzQzOCBDOC41NjIxMTY2NCwxMy40MjU3NTg0IDkuMzc2MjA5MTIsMTIuOTM2NjAyMyA5LjU3NjYyMzc4LDEyLjEzMjc4MyBDOS43NzcwMzg0NCwxMS4zMjg5NjM3IDkuMjg3ODgyMzMsMTAuNTE0ODcxMyA4LjQ4NDA2MzAzLDEwLjMxNDQ1NjYgQzcuNjgwMjQzNzMsMTAuMTE0MDQxOSA2Ljg2NjE1MTI2LDEwLjYwMzE5OCA2LjY2NTczNjYsMTEuNDA3MDE3MyBDNi40NjUzMjE5NCwxMi4yMTA4MzY2IDYuOTU0NDc4MDUsMTMuMDI0OTI5MSA3Ljc1ODI5NzM1LDEzLjIyNTM0MzggWiBNMTAuODAzMzYzOSwyMS40MDMxMDYxIEMxMC4zMTY0MjY2LDIyLjA3MzMxNzcgMTAuNDY0OTk5OCwyMy4wMTEzNzIyIDExLjEzNTIxMTUsMjMuNDk4MzA5NSBDMTEuODA1NDIzMSwyMy45ODUyNDY3IDEyLjc0MzQ3NzYsMjMuODM2NjczNSAxMy4yMzA0MTQ4LDIzLjE2NjQ2MTkgQzEzLjcxNzM1MjEsMjIuNDk2MjUwMiAxMy41Njg3Nzg4LDIxLjU1ODE5NTcgMTIuODk4NTY3MiwyMS4wNzEyNTg1IEMxMi4yMjgzNTU2LDIwLjU4NDMyMTIgMTEuMjkwMzAxMSwyMC43MzI4OTQ1IDEwLjgwMzM2MzksMjEuNDAzMTA2MSBaIiBpZD0icGF0aC0xIj48L3BhdGg+CiAgICA8L2RlZnM+CiAgICA8ZyBpZD0iU3ltYm9scyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9IkF0b21zL0ljb25zL1Rvb2xzL1NjaXNzb3JzIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMy4wMDAwMDAsIC0zLjAwMDAwMCkiPgogICAgICAgICAgICA8bWFzayBpZD0ibWFzay0yIiBmaWxsPSJ3aGl0ZSI+CiAgICAgICAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNwYXRoLTEiPjwvdXNlPgogICAgICAgICAgICA8L21hc2s+CiAgICAgICAgICAgIDx1c2UgaWQ9Ik1hc2siIGZpbGw9IiM1QjVCNUIiIGZpbGwtcnVsZT0ibm9uemVybyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTYuMDkzMTk0LCAxNS42NjMzNTEpIHJvdGF0ZSgtMzIuMDAwMDAwKSB0cmFuc2xhdGUoLTE2LjA5MzE5NCwgLTE1LjY2MzM1MSkgIiB4bGluazpocmVmPSIjcGF0aC0xIj48L3VzZT4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==);\n}\n.leaflet-pm-toolbar .leaflet-pm-icon-snapping {\n  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU3LjEgKDgzMDg4KSAtIGh0dHBzOi8vc2tldGNoLmNvbSAtLT4KICAgIDx0aXRsZT5BdG9tcy9JY29ucy9Ub29scy9NYWduZXQ8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz4KICAgICAgICA8cGF0aCBkPSJNMjEuOTk5NDc1OSwxMC45NDI4MTgzIEwyMS45OTk5OTg1LDE2LjM3MTA0MTcgQzIyLDE2LjY4NzIwMDcgMjIsMTcuMDA1ODI3OCAyMiwxNy4zMjY5NDExIEMyMiwyMS41NjQ2NTQ1IDE4LjY0MjEzNTYsMjUgMTQuNSwyNSBDMTAuMzU3ODY0NCwyNSA3LDIxLjU2NDY1NDUgNywxNy4zMjY5NDExIEw3LjAwMDg3NTA4LDEwLjk5MDc1MDcgTDExLjAwMjI4MDgsMTAuOTk4NDEyNSBDMTEuMDAxNzAzMywxMS42OTgwMTE0IDExLjAwMTI0NywxMi40MTY4MjQ4IDExLjAwMDg5OTIsMTMuMTU1NDg4NyBMMTEsMTcuMzI2OTQxMSBDMTEsMTkuMzc1NjgwOSAxMi41ODc2ODQxLDIxIDE0LjUsMjEgQzE2LjQxMjMxNTksMjEgMTgsMTkuMzc1NjgwOSAxOCwxNy4zMjY5NDExIEMxOCwxNS4wNzAyMDMyIDE3Ljk5OTU2OTYsMTIuOTYxOTY2OCAxNy45OTg1MzksMTAuOTkxMDAzMiBMMjEuOTk5NDc1OSwxMC45NDI4MTgzIFogTTEwLDcgQzEwLjU1MjI4NDcsNyAxMSw3LjQ0NzcxNTI1IDExLDggTDExLDEwIEw3LDEwIEw3LDggQzcsNy40NDc3MTUyNSA3LjQ0NzcxNTI1LDcgOCw3IEwxMCw3IFogTTIxLDcgQzIxLjU1MjI4NDcsNyAyMiw3LjQ0NzcxNTI1IDIyLDggTDIyLDEwIEwxOCwxMCBMMTgsOCBDMTgsNy40NDc3MTUyNSAxOC40NDc3MTUzLDcgMTksNyBMMjEsNyBaIiBpZD0icGF0aC0xIj48L3BhdGg+CiAgICA8L2RlZnM+CiAgICA8ZyBpZD0iU3ltYm9scyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9IkF0b21zL0ljb25zL1Rvb2xzL01hZ25ldCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTMuMDAwMDAwLCAtMy4wMDAwMDApIj4KICAgICAgICAgICAgPG1hc2sgaWQ9Im1hc2stMiIgZmlsbD0id2hpdGUiPgogICAgICAgICAgICAgICAgPHVzZSB4bGluazpocmVmPSIjcGF0aC0xIj48L3VzZT4KICAgICAgICAgICAgPC9tYXNrPgogICAgICAgICAgICA8dXNlIGlkPSJNYXNrIiBmaWxsPSIjNUI1QjVCIiBmaWxsLXJ1bGU9Im5vbnplcm8iIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE0LjUwMDAwMCwgMTYuMDAwMDAwKSByb3RhdGUoNDUuMDAwMDAwKSB0cmFuc2xhdGUoLTE0LjUwMDAwMCwgLTE2LjAwMDAwMCkgIiB4bGluazpocmVmPSIjcGF0aC0xIj48L3VzZT4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==);\n}\n\n.leaflet-buttons-control-button:hover,.leaflet-buttons-control-button:focus {\n  cursor: pointer;\n  background-color: #f4f4f4;\n}\n.active .leaflet-buttons-control-button {\n  box-shadow: inset 0 -1px 5px 2px rgba(81, 77, 77, 0.31);\n}\n\n.leaflet-buttons-control-text-hide {\n  display: none;\n}\n\n.button-container {\n  position: relative;\n}\n\n.button-container .leaflet-pm-actions-container {\n  z-index: 2;\n  position: absolute;\n  top: 0;\n  left: 100%;\n  display: none;\n  white-space: nowrap;\n  direction: ltr;\n}\n\n.leaflet-right\n  .leaflet-pm-toolbar\n  .button-container\n  .leaflet-pm-actions-container {\n  right: 100%;\n  left: auto;\n}\n\n.button-container.active .leaflet-pm-actions-container {\n  display: block;\n}\n\n.button-container .leaflet-pm-actions-container:not(.pos-right) .leaflet-pm-action:last-child {\n  border-radius: 0px 3px 3px 0px !important;\n  border-right: 0px;\n}\n.button-container .leaflet-pm-actions-container.pos-right .leaflet-pm-action:first-child {\n  border-radius: 3px 0px 0px 3px !important;\n}\n.button-container .leaflet-pm-actions-container.pos-right .leaflet-pm-action:last-child {\n  border-right: 0px;\n}\n.button-container .leaflet-pm-actions-container .leaflet-pm-action {\n  padding: 0px 10px;\n  background-color: #666;\n  color: #fff;\n  display: inline-block;\n  width: auto;\n  border-right: 1px solid #eee;\n  user-select: none;\n}\n\n.button-container .leaflet-pm-actions-container .leaflet-pm-action:hover, .button-container .leaflet-pm-actions-container .leaflet-pm-action:focus {\n  cursor: pointer;\n  background-color: #777;\n}\n\n/* That the active control is always over the other controls */\n.leaflet-pm-toolbar.activeChild{\n  z-index: 801;\n}\n\n.leaflet-buttons-control-button.pm-disabled{\n  background-color: #f4f4f4 !important;\n}\n\n.control-icon.pm-disabled{\n  filter: opacity(0.6);\n}\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/lib/css-base.js":
+/*!*************************************************!*\
+  !*** ./node_modules/css-loader/lib/css-base.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/leaflet-measure/dist/leaflet-measure.fa.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/leaflet-measure/dist/leaflet-measure.fa.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+!function(e){function t(n){if(r[n])return r[n].exports;var o=r[n]={i:n,l:!1,exports:{}};return e[n].call(o.exports,o,o.exports,t),o.l=!0,o.exports}var r={};t.m=e,t.c=r,t.d=function(e,r,n){t.o(e,r)||Object.defineProperty(e,r,{configurable:!1,enumerable:!0,get:n})},t.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(r,"a",r),r},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="/dist/",t(t.s=28)}([function(e,t,r){function n(e){return null==e?void 0===e?u:a:l&&l in Object(e)?i(e):s(e)}var o=r(4),i=r(38),s=r(39),a="[object Null]",u="[object Undefined]",l=o?o.toStringTag:void 0;e.exports=n},function(e,t){function r(e){return null!=e&&"object"==typeof e}e.exports=r},function(e,t){function r(e){var t=typeof e;return null!=e&&("object"==t||"function"==t)}e.exports=r},function(e,t,r){"use strict";function n(e,t,r){if(r=r||{},!h(r))throw new Error("options is invalid");var n=r.bbox,o=r.id;if(void 0===e)throw new Error("geometry is required");if(t&&t.constructor!==Object)throw new Error("properties must be an Object");n&&d(n),o&&m(o);var i={type:"Feature"};return o&&(i.id=o),n&&(i.bbox=n),i.properties=t||{},i.geometry=e,i}function o(e,t,r){if(!e)throw new Error("coordinates is required");if(!Array.isArray(e))throw new Error("coordinates must be an Array");if(e.length<2)throw new Error("coordinates must be at least 2 numbers long");if(!p(e[0])||!p(e[1]))throw new Error("coordinates must contain numbers");return n({type:"Point",coordinates:e},t,r)}function i(e,t,r){if(!e)throw new Error("coordinates is required");for(var o=0;o<e.length;o++){var i=e[o];if(i.length<4)throw new Error("Each LinearRing of a Polygon must have 4 or more Positions.");for(var s=0;s<i[i.length-1].length;s++){if(0===o&&0===s&&!p(i[0][0])||!p(i[0][1]))throw new Error("coordinates must contain numbers");if(i[i.length-1][s]!==i[0][s])throw new Error("First and last Position are not equivalent.")}}return n({type:"Polygon",coordinates:e},t,r)}function s(e,t,r){if(!e)throw new Error("coordinates is required");if(e.length<2)throw new Error("coordinates must be an array of two or more positions");if(!p(e[0][1])||!p(e[0][1]))throw new Error("coordinates must contain numbers");return n({type:"LineString",coordinates:e},t,r)}function a(e,t,r){if(!e)throw new Error("coordinates is required");return n({type:"MultiLineString",coordinates:e},t,r)}function u(e,t,r){if(!e)throw new Error("coordinates is required");return n({type:"MultiPoint",coordinates:e},t,r)}function l(e,t,r){if(!e)throw new Error("coordinates is required");return n({type:"MultiPolygon",coordinates:e},t,r)}function c(e,t){if(void 0===e||null===e)throw new Error("radians is required");if(t&&"string"!=typeof t)throw new Error("units must be a string");var r=y[t||"kilometers"];if(!r)throw new Error(t+" units is invalid");return e*r}function f(e){if(null===e||void 0===e)throw new Error("degrees is required");return e%360*Math.PI/180}function p(e){return!isNaN(e)&&null!==e&&!Array.isArray(e)}function h(e){return!!e&&e.constructor===Object}function d(e){if(!e)throw new Error("bbox is required");if(!Array.isArray(e))throw new Error("bbox must be an Array");if(4!==e.length&&6!==e.length)throw new Error("bbox must be an Array of 4 or 6 numbers");e.forEach(function(e){if(!p(e))throw new Error("bbox must only contain numbers")})}function m(e){if(!e)throw new Error("id is required");if(-1===["string","number"].indexOf(typeof e))throw new Error("id must be a number or a string")}r.d(t,"b",function(){return n}),r.d(t,"f",function(){return o}),r.d(t,"e",function(){return s}),r.d(t,"g",function(){return c}),r.d(t,"a",function(){return f}),r.d(t,"c",function(){return p}),r.d(t,"d",function(){return h});var y={meters:6371008.8,metres:6371008.8,millimeters:6371008800,millimetres:6371008800,centimeters:637100880,centimetres:637100880,kilometers:6371.0088,kilometres:6371.0088,miles:3958.761333810546,nauticalmiles:6371008.8/1852,inches:6371008.8*39.37,yards:6371008.8/1.0936,feet:20902260.511392,radians:1,degrees:6371008.8/111325}},function(e,t,r){var n=r(5),o=n.Symbol;e.exports=o},function(e,t,r){var n=r(11),o="object"==typeof self&&self&&self.Object===Object&&self,i=n||o||Function("return this")();e.exports=i},function(e,t){function r(e,t){return e===t||e!==e&&t!==t}e.exports=r},function(e,t,r){function n(e){return null!=e&&i(e.length)&&!o(e)}var o=r(10),i=r(16);e.exports=n},function(e,t,r){function n(e,t,r){"__proto__"==t&&o?o(e,t,{configurable:!0,enumerable:!0,value:r,writable:!0}):e[t]=r}var o=r(9);e.exports=n},function(e,t,r){var n=r(35),o=function(){try{var e=n(Object,"defineProperty");return e({},"",{}),e}catch(e){}}();e.exports=o},function(e,t,r){function n(e){if(!i(e))return!1;var t=o(e);return t==a||t==u||t==s||t==l}var o=r(0),i=r(2),s="[object AsyncFunction]",a="[object Function]",u="[object GeneratorFunction]",l="[object Proxy]";e.exports=n},function(e,t,r){(function(t){var r="object"==typeof t&&t&&t.Object===Object&&t;e.exports=r}).call(t,r(37))},function(e,t,r){function n(e,t){return s(i(e,t,o),e+"")}var o=r(13),i=r(45),s=r(46);e.exports=n},function(e,t){function r(e){return e}e.exports=r},function(e,t){function r(e,t,r){switch(r.length){case 0:return e.call(t);case 1:return e.call(t,r[0]);case 2:return e.call(t,r[0],r[1]);case 3:return e.call(t,r[0],r[1],r[2])}return e.apply(t,r)}e.exports=r},function(e,t,r){function n(e,t,r){if(!a(r))return!1;var n=typeof t;return!!("number"==n?i(r)&&s(t,r.length):"string"==n&&t in r)&&o(r[t],e)}var o=r(6),i=r(7),s=r(17),a=r(2);e.exports=n},function(e,t){function r(e){return"number"==typeof e&&e>-1&&e%1==0&&e<=n}var n=9007199254740991;e.exports=r},function(e,t){function r(e,t){var r=typeof e;return!!(t=null==t?n:t)&&("number"==r||"symbol"!=r&&o.test(e))&&e>-1&&e%1==0&&e<t}var n=9007199254740991,o=/^(?:0|[1-9]\d*)$/;e.exports=r},function(e,t,r){function n(e,t){var r=s(e),n=!r&&i(e),c=!r&&!n&&a(e),p=!r&&!n&&!c&&l(e),h=r||n||c||p,d=h?o(e.length,String):[],m=d.length;for(var y in e)!t&&!f.call(e,y)||h&&("length"==y||c&&("offset"==y||"parent"==y)||p&&("buffer"==y||"byteLength"==y||"byteOffset"==y)||u(y,m))||d.push(y);return d}var o=r(51),i=r(52),s=r(19),a=r(54),u=r(17),l=r(56),c=Object.prototype,f=c.hasOwnProperty;e.exports=n},function(e,t){var r=Array.isArray;e.exports=r},function(e,t){e.exports=function(e){return e.webpackPolyfill||(e.deprecate=function(){},e.paths=[],e.children||(e.children=[]),Object.defineProperty(e,"loaded",{enumerable:!0,get:function(){return e.l}}),Object.defineProperty(e,"id",{enumerable:!0,get:function(){return e.i}}),e.webpackPolyfill=1),e}},function(e,t){function r(e){var t=e&&e.constructor;return e===("function"==typeof t&&t.prototype||n)}var n=Object.prototype;e.exports=r},function(e,t,r){function n(e){if(!i(e))return!1;var t=o(e);return t==u||t==a||"string"==typeof e.message&&"string"==typeof e.name&&!s(e)}var o=r(0),i=r(1),s=r(63),a="[object DOMException]",u="[object Error]";e.exports=n},function(e,t){function r(e,t){return function(r){return e(t(r))}}e.exports=r},function(e,t){function r(e,t){for(var r=-1,n=null==e?0:e.length,o=Array(n);++r<n;)o[r]=t(e[r],r,e);return o}e.exports=r},function(e,t){var r=/<%=([\s\S]+?)%>/g;e.exports=r},function(e,t,r){function n(e){return null==e?"":o(e)}var o=r(75);e.exports=n},function(e,t,r){"use strict";function n(e,t,r){if(null!==e)for(var o,i,s,a,u,l,c,f,p=0,h=0,d=e.type,m="FeatureCollection"===d,y="Feature"===d,v=m?e.features.length:1,g=0;g<v;g++){c=m?e.features[g].geometry:y?e.geometry:e,f=!!c&&"GeometryCollection"===c.type,u=f?c.geometries.length:1;for(var b=0;b<u;b++){var _=0,j=0;if(null!==(a=f?c.geometries[b]:c)){l=a.coordinates;var x=a.type;switch(p=!r||"Polygon"!==x&&"MultiPolygon"!==x?0:1,x){case null:break;case"Point":if(!1===t(l,h,g,_,j))return!1;h++,_++;break;case"LineString":case"MultiPoint":for(o=0;o<l.length;o++){if(!1===t(l[o],h,g,_,j))return!1;h++,"MultiPoint"===x&&_++}"LineString"===x&&_++;break;case"Polygon":case"MultiLineString":for(o=0;o<l.length;o++){for(i=0;i<l[o].length-p;i++){if(!1===t(l[o][i],h,g,_,j))return!1;h++}"MultiLineString"===x&&_++,"Polygon"===x&&j++}"Polygon"===x&&_++;break;case"MultiPolygon":for(o=0;o<l.length;o++){for("MultiPolygon"===x&&(j=0),i=0;i<l[o].length;i++){for(s=0;s<l[o][i].length-p;s++){if(!1===t(l[o][i][s],h,g,_,j))return!1;h++}j++}_++}break;case"GeometryCollection":for(o=0;o<a.geometries.length;o++)if(!1===n(a.geometries[o],t,r))return!1;break;default:throw new Error("Unknown Geometry Type")}}}}}function o(e,t){var r,n,o,i,s,a,u,l,c,f,p=0,h="FeatureCollection"===e.type,d="Feature"===e.type,m=h?e.features.length:1;for(r=0;r<m;r++){for(a=h?e.features[r].geometry:d?e.geometry:e,l=h?e.features[r].properties:d?e.properties:{},c=h?e.features[r].bbox:d?e.bbox:void 0,f=h?e.features[r].id:d?e.id:void 0,u=!!a&&"GeometryCollection"===a.type,s=u?a.geometries.length:1,o=0;o<s;o++)if(null!==(i=u?a.geometries[o]:a))switch(i.type){case"Point":case"LineString":case"MultiPoint":case"Polygon":case"MultiLineString":case"MultiPolygon":if(!1===t(i,p,l,c,f))return!1;break;case"GeometryCollection":for(n=0;n<i.geometries.length;n++)if(!1===t(i.geometries[n],p,l,c,f))return!1;break;default:throw new Error("Unknown Geometry Type")}else if(!1===t(null,p,l,c,f))return!1;p++}}function i(e,t,r){var n=r;return o(e,function(e,o,i,s,a){n=0===o&&void 0===r?e:t(n,e,o,i,s,a)}),n}function s(e,t){o(e,function(e,r,n,o,i){var s=null===e?null:e.type;switch(s){case null:case"Point":case"LineString":case"Polygon":if(!1===t(Object(l.b)(e,n,{bbox:o,id:i}),r,0))return!1;return}var a;switch(s){case"MultiPoint":a="Point";break;case"MultiLineString":a="LineString";break;case"MultiPolygon":a="Polygon"}for(var u=0;u<e.coordinates.length;u++){var c=e.coordinates[u],f={type:a,coordinates:c};if(!1===t(Object(l.b)(f,n),r,u))return!1}})}function a(e,t){s(e,function(e,r,o){var i=0;if(e.geometry){var s=e.geometry.type;if("Point"!==s&&"MultiPoint"!==s){var a;return!1!==n(e,function(n,s,u,c,f){if(void 0===a)return void(a=n);var p=Object(l.e)([a,n],e.properties);if(!1===t(p,r,o,f,i))return!1;i++,a=n})&&void 0}}})}function u(e,t,r){var n=r,o=!1;return a(e,function(e,i,s,a,u){n=!1===o&&void 0===r?e:t(n,e,i,s,a,u),o=!0}),n}r.d(t,"a",function(){return i}),r.d(t,"b",function(){return u});var l=r(3)},function(e,t,r){e.exports=r(29)},function(e,t,r){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}r(30);var o=r(31),i=n(o),s=r(79),a=n(s),u=r(80),l=n(u),c=r(85),f=function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var r in e)Object.prototype.hasOwnProperty.call(e,r)&&(t[r]=e[r]);return t.default=e,t}(c),p=r(86),h=n(p),d=r(87),m=r(88),y={imports:{numberFormat:d.numberFormat},interpolate:/{{([\s\S]+?)}}/g},v=(0,i.default)(m.controlTemplate,y),g=(0,i.default)(m.resultsTemplate,y),b=(0,i.default)(m.pointPopupTemplate,y),_=(0,i.default)(m.linePopupTemplate,y),j=(0,i.default)(m.areaPopupTemplate,y);L.Control.Measure=L.Control.extend({_className:"leaflet-control-measure",options:{units:{},position:"topright",primaryLengthUnit:"feet",secondaryLengthUnit:"miles",primaryAreaUnit:"acres",activeColor:"#ABE67E",completedColor:"#C8F2BE",captureZIndex:1e4,popupOptions:{className:"leaflet-measure-resultpopup",autoPanPadding:[10,10]}},initialize:function(e){L.setOptions(this,e);var t=this.options,r=t.activeColor,n=t.completedColor;this._symbols=new h.default({activeColor:r,completedColor:n}),this.options.units=L.extend({},a.default,this.options.units)},onAdd:function(e){return this._map=e,this._latlngs=[],this._initLayout(),e.on("click",this._collapse,this),this._layer=L.layerGroup().addTo(e),this._container},onRemove:function(e){e.off("click",this._collapse,this),e.removeLayer(this._layer)},_initLayout:function(){var e=this._className,t=this._container=L.DomUtil.create("div",e+" leaflet-bar");t.innerHTML=v({model:{className:e}}),t.setAttribute("aria-haspopup",!0),L.DomEvent.disableClickPropagation(t),L.DomEvent.disableScrollPropagation(t);var r=this.$toggle=(0,c.selectOne)(".js-toggle",t);this.$interaction=(0,c.selectOne)(".js-interaction",t);var n=(0,c.selectOne)(".js-start",t),o=(0,c.selectOne)(".js-cancel",t),i=(0,c.selectOne)(".js-finish",t);this.$startPrompt=(0,c.selectOne)(".js-startprompt",t),this.$measuringPrompt=(0,c.selectOne)(".js-measuringprompt",t),this.$startHelp=(0,c.selectOne)(".js-starthelp",t),this.$results=(0,c.selectOne)(".js-results",t),this.$measureTasks=(0,c.selectOne)(".js-measuretasks",t),this._collapse(),this._updateMeasureNotStarted(),L.Browser.android||(L.DomEvent.on(t,"mouseenter",this._expand,this),L.DomEvent.on(t,"mouseleave",this._collapse,this)),L.DomEvent.on(r,"click",L.DomEvent.stop),L.Browser.touch?L.DomEvent.on(r,"click",this._expand,this):L.DomEvent.on(r,"focus",this._expand,this),L.DomEvent.on(n,"click",L.DomEvent.stop),L.DomEvent.on(n,"click",this._startMeasure,this),L.DomEvent.on(o,"click",L.DomEvent.stop),L.DomEvent.on(o,"click",this._finishMeasure,this),L.DomEvent.on(i,"click",L.DomEvent.stop),L.DomEvent.on(i,"click",this._handleMeasureDoubleClick,this)},_expand:function(){f.hide(this.$toggle),f.show(this.$interaction)},_collapse:function(){this._locked||(f.hide(this.$interaction),f.show(this.$toggle))},_updateMeasureNotStarted:function(){f.hide(this.$startHelp),f.hide(this.$results),f.hide(this.$measureTasks),f.hide(this.$measuringPrompt),f.show(this.$startPrompt)},_updateMeasureStartedNoPoints:function(){f.hide(this.$results),f.show(this.$startHelp),f.show(this.$measureTasks),f.hide(this.$startPrompt),f.show(this.$measuringPrompt)},_updateMeasureStartedWithPoints:function(){f.hide(this.$startHelp),f.show(this.$results),f.show(this.$measureTasks),f.hide(this.$startPrompt),f.show(this.$measuringPrompt)},_startMeasure:function(){this._locked=!0,this._measureVertexes=L.featureGroup().addTo(this._layer),this._captureMarker=L.marker(this._map.getCenter(),{clickable:!0,zIndexOffset:this.options.captureZIndex,opacity:0}).addTo(this._layer),this._setCaptureMarkerIcon(),this._captureMarker.on("mouseout",this._handleMapMouseOut,this).on("dblclick",this._handleMeasureDoubleClick,this).on("click",this._handleMeasureClick,this),this._map.on("mousemove",this._handleMeasureMove,this).on("mouseout",this._handleMapMouseOut,this).on("move",this._centerCaptureMarker,this).on("resize",this._setCaptureMarkerIcon,this),L.DomEvent.on(this._container,"mouseenter",this._handleMapMouseOut,this),this._updateMeasureStartedNoPoints(),this._map.fire("measurestart",null,!1)},_finishMeasure:function(){var e=L.extend({},this._resultsModel,{points:this._latlngs});this._locked=!1,L.DomEvent.off(this._container,"mouseover",this._handleMapMouseOut,this),this._clearMeasure(),this._captureMarker.off("mouseout",this._handleMapMouseOut,this).off("dblclick",this._handleMeasureDoubleClick,this).off("click",this._handleMeasureClick,this),this._map.off("mousemove",this._handleMeasureMove,this).off("mouseout",this._handleMapMouseOut,this).off("move",this._centerCaptureMarker,this).off("resize",this._setCaptureMarkerIcon,this),this._layer.removeLayer(this._measureVertexes).removeLayer(this._captureMarker),this._measureVertexes=null,this._updateMeasureNotStarted(),this._collapse(),this._map.fire("measurefinish",e,!1)},_clearMeasure:function(){this._latlngs=[],this._resultsModel=null,this._measureVertexes.clearLayers(),this._measureDrag&&this._layer.removeLayer(this._measureDrag),this._measureArea&&this._layer.removeLayer(this._measureArea),this._measureBoundary&&this._layer.removeLayer(this._measureBoundary),this._measureDrag=null,this._measureArea=null,this._measureBoundary=null},_centerCaptureMarker:function(){this._captureMarker.setLatLng(this._map.getCenter())},_setCaptureMarkerIcon:function(){this._captureMarker.setIcon(L.divIcon({iconSize:this._map.getSize().multiplyBy(2)}))},_getMeasurementDisplayStrings:function(e){function t(e,t,o,i,s){if(t&&n[t]){var a=r(e,n[t],i,s);if(o&&n[o]){a=a+" ("+r(e,n[o],i,s)+")"}return a}return r(e,null,i,s)}function r(e,t,r,n){var o={acres:"ایکر",feet:"پا",kilometers:"کیلومتر",hectares:"هکتار",meters:"متر",miles:"مایل",sqfeet:"پا مربع",sqmeters:"متر مربع",sqmiles:"مایل مربع"},i=L.extend({factor:1,decimals:0},t);return[(0,d.numberFormat)(e*i.factor,i.decimals,r||"/",n||","),o[i.display]||i.display].join(" ")}var n=this.options.units;return{lengthDisplay:t(e.length,this.options.primaryLengthUnit,this.options.secondaryLengthUnit,this.options.decPoint,this.options.thousandsSep),areaDisplay:t(e.area,this.options.primaryAreaUnit,this.options.secondaryAreaUnit,this.options.decPoint,this.options.thousandsSep)}},_updateResults:function(){var e=(0,l.default)(this._latlngs),t=this._resultsModel=L.extend({},e,this._getMeasurementDisplayStrings(e),{pointCount:this._latlngs.length});this.$results.innerHTML=g({model:t})},_handleMeasureMove:function(e){this._measureDrag?this._measureDrag.setLatLng(e.latlng):this._measureDrag=L.circleMarker(e.latlng,this._symbols.getSymbol("measureDrag")).addTo(this._layer),this._measureDrag.bringToFront()},_handleMeasureDoubleClick:function(){var e=this._latlngs,t=void 0,r=void 0;if(this._finishMeasure(),e.length){e.length>2&&e.push(e[0]);var n=(0,l.default)(e);1===e.length?(t=L.circleMarker(e[0],this._symbols.getSymbol("resultPoint")),r=b({model:n})):2===e.length?(t=L.polyline(e,this._symbols.getSymbol("resultLine")),r=_({model:L.extend({},n,this._getMeasurementDisplayStrings(n))})):(t=L.polygon(e,this._symbols.getSymbol("resultArea")),r=j({model:L.extend({},n,this._getMeasurementDisplayStrings(n))}));var o=L.DomUtil.create("div","");o.innerHTML=r;var i=(0,c.selectOne)(".js-zoomto",o);i&&(L.DomEvent.on(i,"click",L.DomEvent.stop),L.DomEvent.on(i,"click",function(){t.getBounds?this._map.fitBounds(t.getBounds(),{padding:[20,20],maxZoom:17}):t.getLatLng&&this._map.panTo(t.getLatLng())},this));var s=(0,c.selectOne)(".js-deletemarkup",o);s&&(L.DomEvent.on(s,"click",L.DomEvent.stop),L.DomEvent.on(s,"click",function(){this._layer.removeLayer(t)},this)),t.addTo(this._layer),t.bindPopup(o,this.options.popupOptions),t.getBounds?t.openPopup(t.getBounds().getCenter()):t.getLatLng&&t.openPopup(t.getLatLng())}},_handleMeasureClick:function(e){var t=this._map.mouseEventToLatLng(e.originalEvent),r=this._latlngs[this._latlngs.length-1],n=this._symbols.getSymbol("measureVertex");r&&t.equals(r)||(this._latlngs.push(t),this._addMeasureArea(this._latlngs),this._addMeasureBoundary(this._latlngs),this._measureVertexes.eachLayer(function(e){e.setStyle(n),e._path&&e._path.setAttribute("class",n.className)}),this._addNewVertex(t),this._measureBoundary&&this._measureBoundary.bringToFront(),this._measureVertexes.bringToFront()),this._updateResults(),this._updateMeasureStartedWithPoints()},_handleMapMouseOut:function(){this._measureDrag&&(this._layer.removeLayer(this._measureDrag),this._measureDrag=null)},_addNewVertex:function(e){L.circleMarker(e,this._symbols.getSymbol("measureVertexActive")).addTo(this._measureVertexes)},_addMeasureArea:function(e){if(e.length<3)return void(this._measureArea&&(this._layer.removeLayer(this._measureArea),this._measureArea=null));this._measureArea?this._measureArea.setLatLngs(e):this._measureArea=L.polygon(e,this._symbols.getSymbol("measureArea")).addTo(this._layer)},_addMeasureBoundary:function(e){if(e.length<2)return void(this._measureBoundary&&(this._layer.removeLayer(this._measureBoundary),this._measureBoundary=null));this._measureBoundary?this._measureBoundary.setLatLngs(e):this._measureBoundary=L.polyline(e,this._symbols.getSymbol("measureBoundary")).addTo(this._layer)}}),L.Map.mergeOptions({measureControl:!1}),L.Map.addInitHook(function(){this.options.measureControl&&(this.measureControl=(new L.Control.Measure).addTo(this))}),L.control.measure=function(e){return new L.Control.Measure(e)}},function(e,t){},function(e,t,r){function n(e,t,r){var n=h.imports._.templateSettings||h;r&&c(e,t,r)&&(t=void 0),e=d(e),t=o({},t,n,a);var j,x,M=o({},t.imports,n.imports,a),w=f(M),L=s(M,w),O=0,k=t.interpolate||b,P="__p += '",E=RegExp((t.escape||b).source+"|"+k.source+"|"+(k===p?g:b).source+"|"+(t.evaluate||b).source+"|$","g"),C="sourceURL"in t?"//# sourceURL="+t.sourceURL+"\n":"";e.replace(E,function(t,r,n,o,i,s){return n||(n=o),P+=e.slice(O,s).replace(_,u),r&&(j=!0,P+="' +\n__e("+r+") +\n'"),i&&(x=!0,P+="';\n"+i+";\n__p += '"),n&&(P+="' +\n((__t = ("+n+")) == null ? '' : __t) +\n'"),O=s+t.length,t}),P+="';\n";var S=t.variable;S||(P="with (obj) {\n"+P+"\n}\n"),P=(x?P.replace(m,""):P).replace(y,"$1").replace(v,"$1;"),P="function("+(S||"obj")+") {\n"+(S?"":"obj || (obj = {});\n")+"var __t, __p = ''"+(j?", __e = _.escape":"")+(x?", __j = Array.prototype.join;\nfunction print() { __p += __j.call(arguments, '') }\n":";\n")+P+"return __p\n}";var A=i(function(){return Function(w,C+"return "+P).apply(void 0,L)});if(A.source=P,l(A))throw A;return A}var o=r(32),i=r(62),s=r(65),a=r(66),u=r(67),l=r(22),c=r(15),f=r(68),p=r(25),h=r(71),d=r(26),m=/\b__p \+= '';/g,y=/\b(__p \+=) '' \+/g,v=/(__e\(.*?\)|\b__t\)) \+\n'';/g,g=/\$\{([^\\}]*(?:\\.[^\\}]*)*)\}/g,b=/($^)/,_=/['\n\r\u2028\u2029\\]/g;e.exports=n},function(e,t,r){var n=r(33),o=r(44),i=r(50),s=o(function(e,t,r,o){n(t,i(t),e,o)});e.exports=s},function(e,t,r){function n(e,t,r,n){var s=!r;r||(r={});for(var a=-1,u=t.length;++a<u;){var l=t[a],c=n?n(r[l],e[l],l,r,e):void 0;void 0===c&&(c=e[l]),s?i(r,l,c):o(r,l,c)}return r}var o=r(34),i=r(8);e.exports=n},function(e,t,r){function n(e,t,r){var n=e[t];a.call(e,t)&&i(n,r)&&(void 0!==r||t in e)||o(e,t,r)}var o=r(8),i=r(6),s=Object.prototype,a=s.hasOwnProperty;e.exports=n},function(e,t,r){function n(e,t){var r=i(e,t);return o(r)?r:void 0}var o=r(36),i=r(43);e.exports=n},function(e,t,r){function n(e){return!(!s(e)||i(e))&&(o(e)?d:l).test(a(e))}var o=r(10),i=r(40),s=r(2),a=r(42),u=/[\\^$.*+?()[\]{}|]/g,l=/^\[object .+?Constructor\]$/,c=Function.prototype,f=Object.prototype,p=c.toString,h=f.hasOwnProperty,d=RegExp("^"+p.call(h).replace(u,"\\$&").replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g,"$1.*?")+"$");e.exports=n},function(e,t){var r;r=function(){return this}();try{r=r||Function("return this")()||(0,eval)("this")}catch(e){"object"==typeof window&&(r=window)}e.exports=r},function(e,t,r){function n(e){var t=s.call(e,u),r=e[u];try{e[u]=void 0;var n=!0}catch(e){}var o=a.call(e);return n&&(t?e[u]=r:delete e[u]),o}var o=r(4),i=Object.prototype,s=i.hasOwnProperty,a=i.toString,u=o?o.toStringTag:void 0;e.exports=n},function(e,t){function r(e){return o.call(e)}var n=Object.prototype,o=n.toString;e.exports=r},function(e,t,r){function n(e){return!!i&&i in e}var o=r(41),i=function(){var e=/[^.]+$/.exec(o&&o.keys&&o.keys.IE_PROTO||"");return e?"Symbol(src)_1."+e:""}();e.exports=n},function(e,t,r){var n=r(5),o=n["__core-js_shared__"];e.exports=o},function(e,t){function r(e){if(null!=e){try{return o.call(e)}catch(e){}try{return e+""}catch(e){}}return""}var n=Function.prototype,o=n.toString;e.exports=r},function(e,t){function r(e,t){return null==e?void 0:e[t]}e.exports=r},function(e,t,r){function n(e){return o(function(t,r){var n=-1,o=r.length,s=o>1?r[o-1]:void 0,a=o>2?r[2]:void 0;for(s=e.length>3&&"function"==typeof s?(o--,s):void 0,a&&i(r[0],r[1],a)&&(s=o<3?void 0:s,o=1),t=Object(t);++n<o;){var u=r[n];u&&e(t,u,n,s)}return t})}var o=r(12),i=r(15);e.exports=n},function(e,t,r){function n(e,t,r){return t=i(void 0===t?e.length-1:t,0),function(){for(var n=arguments,s=-1,a=i(n.length-t,0),u=Array(a);++s<a;)u[s]=n[t+s];s=-1;for(var l=Array(t+1);++s<t;)l[s]=n[s];return l[t]=r(u),o(e,this,l)}}var o=r(14),i=Math.max;e.exports=n},function(e,t,r){var n=r(47),o=r(49),i=o(n);e.exports=i},function(e,t,r){var n=r(48),o=r(9),i=r(13),s=o?function(e,t){return o(e,"toString",{configurable:!0,enumerable:!1,value:n(t),writable:!0})}:i;e.exports=s},function(e,t){function r(e){return function(){return e}}e.exports=r},function(e,t){function r(e){var t=0,r=0;return function(){var s=i(),a=o-(s-r);if(r=s,a>0){if(++t>=n)return arguments[0]}else t=0;return e.apply(void 0,arguments)}}var n=800,o=16,i=Date.now;e.exports=r},function(e,t,r){function n(e){return s(e)?o(e,!0):i(e)}var o=r(18),i=r(60),s=r(7);e.exports=n},function(e,t){function r(e,t){for(var r=-1,n=Array(e);++r<e;)n[r]=t(r);return n}e.exports=r},function(e,t,r){var n=r(53),o=r(1),i=Object.prototype,s=i.hasOwnProperty,a=i.propertyIsEnumerable,u=n(function(){return arguments}())?n:function(e){return o(e)&&s.call(e,"callee")&&!a.call(e,"callee")};e.exports=u},function(e,t,r){function n(e){return i(e)&&o(e)==s}var o=r(0),i=r(1),s="[object Arguments]";e.exports=n},function(e,t,r){(function(e){var n=r(5),o=r(55),i="object"==typeof t&&t&&!t.nodeType&&t,s=i&&"object"==typeof e&&e&&!e.nodeType&&e,a=s&&s.exports===i,u=a?n.Buffer:void 0,l=u?u.isBuffer:void 0,c=l||o;e.exports=c}).call(t,r(20)(e))},function(e,t){function r(){return!1}e.exports=r},function(e,t,r){var n=r(57),o=r(58),i=r(59),s=i&&i.isTypedArray,a=s?o(s):n;e.exports=a},function(e,t,r){function n(e){return s(e)&&i(e.length)&&!!a[o(e)]}var o=r(0),i=r(16),s=r(1),a={};a["[object Float32Array]"]=a["[object Float64Array]"]=a["[object Int8Array]"]=a["[object Int16Array]"]=a["[object Int32Array]"]=a["[object Uint8Array]"]=a["[object Uint8ClampedArray]"]=a["[object Uint16Array]"]=a["[object Uint32Array]"]=!0,a["[object Arguments]"]=a["[object Array]"]=a["[object ArrayBuffer]"]=a["[object Boolean]"]=a["[object DataView]"]=a["[object Date]"]=a["[object Error]"]=a["[object Function]"]=a["[object Map]"]=a["[object Number]"]=a["[object Object]"]=a["[object RegExp]"]=a["[object Set]"]=a["[object String]"]=a["[object WeakMap]"]=!1,e.exports=n},function(e,t){function r(e){return function(t){return e(t)}}e.exports=r},function(e,t,r){(function(e){var n=r(11),o="object"==typeof t&&t&&!t.nodeType&&t,i=o&&"object"==typeof e&&e&&!e.nodeType&&e,s=i&&i.exports===o,a=s&&n.process,u=function(){try{return a&&a.binding&&a.binding("util")}catch(e){}}();e.exports=u}).call(t,r(20)(e))},function(e,t,r){function n(e){if(!o(e))return s(e);var t=i(e),r=[];for(var n in e)("constructor"!=n||!t&&u.call(e,n))&&r.push(n);return r}var o=r(2),i=r(21),s=r(61),a=Object.prototype,u=a.hasOwnProperty;e.exports=n},function(e,t){function r(e){var t=[];if(null!=e)for(var r in Object(e))t.push(r);return t}e.exports=r},function(e,t,r){var n=r(14),o=r(12),i=r(22),s=o(function(e,t){try{return n(e,void 0,t)}catch(e){return i(e)?e:new Error(e)}});e.exports=s},function(e,t,r){function n(e){if(!s(e)||o(e)!=a)return!1;var t=i(e);if(null===t)return!0;var r=f.call(t,"constructor")&&t.constructor;return"function"==typeof r&&r instanceof r&&c.call(r)==p}var o=r(0),i=r(64),s=r(1),a="[object Object]",u=Function.prototype,l=Object.prototype,c=u.toString,f=l.hasOwnProperty,p=c.call(Object);e.exports=n},function(e,t,r){var n=r(23),o=n(Object.getPrototypeOf,Object);e.exports=o},function(e,t,r){function n(e,t){return o(t,function(t){return e[t]})}var o=r(24);e.exports=n},function(e,t,r){function n(e,t,r,n){return void 0===e||o(e,i[r])&&!s.call(n,r)?t:e}var o=r(6),i=Object.prototype,s=i.hasOwnProperty;e.exports=n},function(e,t){function r(e){return"\\"+n[e]}var n={"\\":"\\","'":"'","\n":"n","\r":"r","\u2028":"u2028","\u2029":"u2029"};e.exports=r},function(e,t,r){function n(e){return s(e)?o(e):i(e)}var o=r(18),i=r(69),s=r(7);e.exports=n},function(e,t,r){function n(e){if(!o(e))return i(e);var t=[];for(var r in Object(e))a.call(e,r)&&"constructor"!=r&&t.push(r);return t}var o=r(21),i=r(70),s=Object.prototype,a=s.hasOwnProperty;e.exports=n},function(e,t,r){var n=r(23),o=n(Object.keys,Object);e.exports=o},function(e,t,r){var n=r(72),o=r(77),i=r(78),s=r(25),a={escape:o,evaluate:i,interpolate:s,variable:"",imports:{_:{escape:n}}};e.exports=a},function(e,t,r){function n(e){return e=i(e),e&&a.test(e)?e.replace(s,o):e}var o=r(73),i=r(26),s=/[&<>"']/g,a=RegExp(s.source);e.exports=n},function(e,t,r){var n=r(74),o={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"},i=n(o);e.exports=i},function(e,t){function r(e){return function(t){return null==e?void 0:e[t]}}e.exports=r},function(e,t,r){function n(e){if("string"==typeof e)return e;if(s(e))return i(e,n)+"";if(a(e))return c?c.call(e):"";var t=e+"";return"0"==t&&1/e==-u?"-0":t}var o=r(4),i=r(24),s=r(19),a=r(76),u=1/0,l=o?o.prototype:void 0,c=l?l.toString:void 0;e.exports=n},function(e,t,r){function n(e){return"symbol"==typeof e||i(e)&&o(e)==s}var o=r(0),i=r(1),s="[object Symbol]";e.exports=n},function(e,t){var r=/<%-([\s\S]+?)%>/g;e.exports=r},function(e,t){var r=/<%([\s\S]+?)%>/g;e.exports=r},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default={acres:{factor:24711e-8,display:"acres",decimals:2},feet:{factor:3.2808,display:"feet",decimals:0},kilometers:{factor:.001,display:"kilometers",decimals:2},hectares:{factor:1e-4,display:"hectares",decimals:2},meters:{factor:1,display:"meters",decimals:0},miles:{factor:3.2808/5280,display:"miles",decimals:2},sqfeet:{factor:10.7639,display:"sqfeet",decimals:0},sqmeters:{factor:1,display:"sqmeters",decimals:0},sqmiles:{factor:3.86102e-7,display:"sqmiles",decimals:2}}},function(e,t,r){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}function o(e){return e<10?"0"+e.toString():e.toString()}function i(e,t,r){var n=Math.abs(e),i=Math.floor(n),s=Math.floor(60*(n-i)),a=Math.round(3600*(n-i-s/60)*100)/100,u=n===e?t:r;return o(i)+"&deg; "+o(s)+"' "+o(a)+'" '+u}function s(e){var t=e[e.length-1],r=e.map(function(e){return[e.lat,e.lng]}),n=L.polyline(r),o=L.polygon(r),s=1e3*(0,u.default)(n.toGeoJSON(),{units:"kilometers"}),a=(0,c.default)(o.toGeoJSON());return{lastCoord:{dd:{x:t.lng,y:t.lat},dms:{x:i(t.lng,"E","W"),y:i(t.lat,"N","S")}},length:s,area:a}}Object.defineProperty(t,"__esModule",{value:!0}),t.default=s;var a=r(81),u=n(a),l=r(84),c=n(l)},function(e,t,r){"use strict";function n(e,t){if(t=t||{},!Object(s.d)(t))throw new Error("options is invalid");if(!e)throw new Error("geojson is required");return Object(i.b)(e,function(e,r){var n=r.geometry.coordinates;return e+Object(o.a)(n[0],n[1],t)},0)}Object.defineProperty(t,"__esModule",{value:!0});var o=r(82),i=r(27),s=r(3);t.default=n},function(e,t,r){"use strict";function n(e,t,r){if(r=r||{},!Object(i.d)(r))throw new Error("options is invalid");var n=r.units,s=Object(o.a)(e),a=Object(o.a)(t),u=Object(i.a)(a[1]-s[1]),l=Object(i.a)(a[0]-s[0]),c=Object(i.a)(s[1]),f=Object(i.a)(a[1]),p=Math.pow(Math.sin(u/2),2)+Math.pow(Math.sin(l/2),2)*Math.cos(c)*Math.cos(f);return Object(i.g)(2*Math.atan2(Math.sqrt(p),Math.sqrt(1-p)),n)}var o=r(83),i=r(3);t.a=n},function(e,t,r){"use strict";function n(e){if(!e)throw new Error("coord is required");if("Feature"===e.type&&null!==e.geometry&&"Point"===e.geometry.type)return e.geometry.coordinates;if("Point"===e.type)return e.coordinates;if(Array.isArray(e)&&e.length>=2&&void 0===e[0].length&&void 0===e[1].length)return e;throw new Error("coord must be GeoJSON Point or an Array of numbers")}r.d(t,"a",function(){return n});r(3)},function(e,t,r){"use strict";function n(e){return Object(u.a)(e,function(e,t){return e+o(t)},0)}function o(e){var t,r=0;switch(e.type){case"Polygon":return i(e.coordinates);case"MultiPolygon":for(t=0;t<e.coordinates.length;t++)r+=i(e.coordinates[t]);return r;case"Point":case"MultiPoint":case"LineString":case"MultiLineString":return 0;case"GeometryCollection":for(t=0;t<e.geometries.length;t++)r+=o(e.geometries[t]);return r}}function i(e){var t=0;if(e&&e.length>0){t+=Math.abs(s(e[0]));for(var r=1;r<e.length;r++)t-=Math.abs(s(e[r]))}return t}function s(e){var t,r,n,o,i,s,u,c=0,f=e.length;if(f>2){for(u=0;u<f;u++)u===f-2?(o=f-2,i=f-1,s=0):u===f-1?(o=f-1,i=0,s=1):(o=u,i=u+1,s=u+2),t=e[o],r=e[i],n=e[s],c+=(a(n[0])-a(t[0]))*Math.sin(a(r[1]));c=c*l*l/2}return c}function a(e){return e*Math.PI/180}Object.defineProperty(t,"__esModule",{value:!0});var u=r(27),l=6378137;t.default=n},function(e,t,r){"use strict";function n(e,t){return t||(t=document),t.querySelector(e)}function o(e,t){return t||(t=document),Array.prototype.slice.call(t.querySelectorAll(e))}function i(e){if(e)return e.setAttribute("style","display:none;"),e}function s(e){if(e)return e.removeAttribute("style"),e}Object.defineProperty(t,"__esModule",{value:!0}),t.selectOne=n,t.selectAll=o,t.hide=i,t.show=s},function(e,t,r){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}(),i={activeColor:"#ABE67E",completedColor:"#C8F2BE"},s=function(){function e(t){n(this,e),this._options=L.extend({},i,this._options,t)}return o(e,[{key:"getSymbol",value:function(e){return{measureDrag:{clickable:!1,radius:4,color:this._options.activeColor,weight:2,opacity:.7,fillColor:this._options.activeColor,fillOpacity:.5,className:"layer-measuredrag"},measureArea:{clickable:!1,stroke:!1,fillColor:this._options.activeColor,fillOpacity:.2,className:"layer-measurearea"},measureBoundary:{clickable:!1,color:this._options.activeColor,weight:2,opacity:.9,fill:!1,className:"layer-measureboundary"},measureVertex:{clickable:!1,radius:4,color:this._options.activeColor,weight:2,opacity:1,fillColor:this._options.activeColor,fillOpacity:.7,className:"layer-measurevertex"},measureVertexActive:{clickable:!1,radius:4,color:this._options.activeColor,weight:2,opacity:1,fillColor:this._options.activeColor,fillOpacity:1,className:"layer-measurevertex active"},resultArea:{clickable:!0,color:this._options.completedColor,weight:2,opacity:.9,fillColor:this._options.completedColor,fillOpacity:.2,className:"layer-measure-resultarea"},resultLine:{clickable:!0,color:this._options.completedColor,weight:3,opacity:.9,fill:!1,className:"layer-measure-resultline"},resultPoint:{clickable:!0,radius:4,color:this._options.completedColor,weight:2,opacity:1,fillColor:this._options.completedColor,fillOpacity:.7,className:"layer-measure-resultpoint"}}[e]}}]),e}();t.default=s},function(e,t,r){"use strict";function n(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:2,r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:".",n=arguments.length>3&&void 0!==arguments[3]?arguments[3]:",",o=e<0?"-":"",i=Math.abs(+e||0),s=parseInt(i.toFixed(t),10)+"",a=s.length>3?s.length%3:0;return[o,a?s.substr(0,a)+n:"",s.substr(a).replace(/(\d{3})(?=\d)/g,"$1"+n),t?""+r+Math.abs(i-s).toFixed(t).slice(2):""].join("")}Object.defineProperty(t,"__esModule",{value:!0}),t.numberFormat=n},function(e,t,r){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var o=r(89);Object.defineProperty(t,"controlTemplate",{enumerable:!0,get:function(){return n(o).default}});var i=r(90);Object.defineProperty(t,"resultsTemplate",{enumerable:!0,get:function(){return n(i).default}});var s=r(91);Object.defineProperty(t,"pointPopupTemplate",{enumerable:!0,get:function(){return n(s).default}});var a=r(92);Object.defineProperty(t,"linePopupTemplate",{enumerable:!0,get:function(){return n(a).default}});var u=r(93);Object.defineProperty(t,"areaPopupTemplate",{enumerable:!0,get:function(){return n(u).default}})},function(e,t,r){e.exports='<a class="{{ model.className }}-toggle js-toggle" href=# title="اندازه گیری فاصله و مساحت">اندازه گیری</a> <div class="{{ model.className }}-interaction js-interaction"> <div class="js-startprompt startprompt"> <h3>اندازه گیری فاصله و مساحت</h3> <ul class=tasks> <a href=# class="js-start start">ثبت اندازه گیری جدید</a> </ul> </div> <div class=js-measuringprompt> <h3>اندازه گیری فاصله و مساحت</h3> <p class=js-starthelp>برای ثبت اندازه گیری جدید نقاطی را به نقشه اضافه کنید.</p> <div class="js-results results"></div> <ul class="js-measuretasks tasks"> <li><a href=# class="js-cancel cancel">لغو</a></li> <li><a href=# class="js-finish finish">پایان اندازه گیری</a></li> </ul> </div> </div> '},function(e,t,r){e.exports='<div class=group> <p class="lastpoint heading">آخرین نقطه</p> <p>{{ model.lastCoord.dms.y }} <span class=coorddivider>/</span> {{ model.lastCoord.dms.x }}</p> <p>{{ numberFormat(model.lastCoord.dd.y, 6) }} <span class=coorddivider>/</span> {{ numberFormat(model.lastCoord.dd.x, 6) }}</p> </div> <% if (model.pointCount > 1) { %> <div class=group> <p><span class=heading>فاصله مسیر</span> {{ model.lengthDisplay }}</p> </div> <% } %> <% if (model.pointCount > 2) { %> <div class=group> <p><span class=heading>مساحت</span> {{ model.areaDisplay }}</p> </div> <% } %> '},function(e,t,r){e.exports='<h3>مکان نقطه</h3> <p>{{ model.lastCoord.dms.y }} <span class=coorddivider>/</span> {{ model.lastCoord.dms.x }}</p> <p>{{ numberFormat(model.lastCoord.dd.y, 6) }} <span class=coorddivider>/</span> {{ numberFormat(model.lastCoord.dd.x, 6) }}</p> <ul class=tasks> <li><a href=# class="js-zoomto zoomto">مرکز این مکان</a></li> <li><a href=# class="js-deletemarkup deletemarkup">حذف</a></li> </ul> '},function(e,t,r){e.exports='<h3>اندازه گیری خطی</h3> <p>{{ model.lengthDisplay }}</p> <ul class=tasks> <li><a href=# class="js-zoomto zoomto">مرکز این خط</a></li> <li><a href=# class="js-deletemarkup deletemarkup">حذف</a></li> </ul> '},function(e,t,r){e.exports='<h3>اندازه گیری مساحت</h3> <p>{{ model.areaDisplay }}</p> <p>{{ model.lengthDisplay }} محیط</p> <ul class=tasks> <li><a href=# class="js-zoomto zoomto">مرکز این سطح</a></li> <li><a href=# class="js-deletemarkup deletemarkup">حذف</a></li> </ul> '}]);
+
+/***/ }),
+
+/***/ "./node_modules/leaflet-measure/dist/leaflet-measure.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/leaflet-measure/dist/leaflet-measure.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+!function(e){function t(n){if(r[n])return r[n].exports;var o=r[n]={i:n,l:!1,exports:{}};return e[n].call(o.exports,o,o.exports,t),o.l=!0,o.exports}var r={};t.m=e,t.c=r,t.d=function(e,r,n){t.o(e,r)||Object.defineProperty(e,r,{configurable:!1,enumerable:!0,get:n})},t.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(r,"a",r),r},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="/dist/",t(t.s=28)}([function(e,t,r){function n(e){return null==e?void 0===e?u:a:l&&l in Object(e)?i(e):s(e)}var o=r(4),i=r(38),s=r(39),a="[object Null]",u="[object Undefined]",l=o?o.toStringTag:void 0;e.exports=n},function(e,t){function r(e){return null!=e&&"object"==typeof e}e.exports=r},function(e,t){function r(e){var t=typeof e;return null!=e&&("object"==t||"function"==t)}e.exports=r},function(e,t,r){"use strict";function n(e,t,r){if(r=r||{},!h(r))throw new Error("options is invalid");var n=r.bbox,o=r.id;if(void 0===e)throw new Error("geometry is required");if(t&&t.constructor!==Object)throw new Error("properties must be an Object");n&&d(n),o&&m(o);var i={type:"Feature"};return o&&(i.id=o),n&&(i.bbox=n),i.properties=t||{},i.geometry=e,i}function o(e,t,r){if(!e)throw new Error("coordinates is required");if(!Array.isArray(e))throw new Error("coordinates must be an Array");if(e.length<2)throw new Error("coordinates must be at least 2 numbers long");if(!p(e[0])||!p(e[1]))throw new Error("coordinates must contain numbers");return n({type:"Point",coordinates:e},t,r)}function i(e,t,r){if(!e)throw new Error("coordinates is required");for(var o=0;o<e.length;o++){var i=e[o];if(i.length<4)throw new Error("Each LinearRing of a Polygon must have 4 or more Positions.");for(var s=0;s<i[i.length-1].length;s++){if(0===o&&0===s&&!p(i[0][0])||!p(i[0][1]))throw new Error("coordinates must contain numbers");if(i[i.length-1][s]!==i[0][s])throw new Error("First and last Position are not equivalent.")}}return n({type:"Polygon",coordinates:e},t,r)}function s(e,t,r){if(!e)throw new Error("coordinates is required");if(e.length<2)throw new Error("coordinates must be an array of two or more positions");if(!p(e[0][1])||!p(e[0][1]))throw new Error("coordinates must contain numbers");return n({type:"LineString",coordinates:e},t,r)}function a(e,t,r){if(!e)throw new Error("coordinates is required");return n({type:"MultiLineString",coordinates:e},t,r)}function u(e,t,r){if(!e)throw new Error("coordinates is required");return n({type:"MultiPoint",coordinates:e},t,r)}function l(e,t,r){if(!e)throw new Error("coordinates is required");return n({type:"MultiPolygon",coordinates:e},t,r)}function c(e,t){if(void 0===e||null===e)throw new Error("radians is required");if(t&&"string"!=typeof t)throw new Error("units must be a string");var r=y[t||"kilometers"];if(!r)throw new Error(t+" units is invalid");return e*r}function f(e){if(null===e||void 0===e)throw new Error("degrees is required");return e%360*Math.PI/180}function p(e){return!isNaN(e)&&null!==e&&!Array.isArray(e)}function h(e){return!!e&&e.constructor===Object}function d(e){if(!e)throw new Error("bbox is required");if(!Array.isArray(e))throw new Error("bbox must be an Array");if(4!==e.length&&6!==e.length)throw new Error("bbox must be an Array of 4 or 6 numbers");e.forEach(function(e){if(!p(e))throw new Error("bbox must only contain numbers")})}function m(e){if(!e)throw new Error("id is required");if(-1===["string","number"].indexOf(typeof e))throw new Error("id must be a number or a string")}r.d(t,"b",function(){return n}),r.d(t,"f",function(){return o}),r.d(t,"e",function(){return s}),r.d(t,"g",function(){return c}),r.d(t,"a",function(){return f}),r.d(t,"c",function(){return p}),r.d(t,"d",function(){return h});var y={meters:6371008.8,metres:6371008.8,millimeters:6371008800,millimetres:6371008800,centimeters:637100880,centimetres:637100880,kilometers:6371.0088,kilometres:6371.0088,miles:3958.761333810546,nauticalmiles:6371008.8/1852,inches:6371008.8*39.37,yards:6371008.8/1.0936,feet:20902260.511392,radians:1,degrees:6371008.8/111325}},function(e,t,r){var n=r(5),o=n.Symbol;e.exports=o},function(e,t,r){var n=r(11),o="object"==typeof self&&self&&self.Object===Object&&self,i=n||o||Function("return this")();e.exports=i},function(e,t){function r(e,t){return e===t||e!==e&&t!==t}e.exports=r},function(e,t,r){function n(e){return null!=e&&i(e.length)&&!o(e)}var o=r(10),i=r(16);e.exports=n},function(e,t,r){function n(e,t,r){"__proto__"==t&&o?o(e,t,{configurable:!0,enumerable:!0,value:r,writable:!0}):e[t]=r}var o=r(9);e.exports=n},function(e,t,r){var n=r(35),o=function(){try{var e=n(Object,"defineProperty");return e({},"",{}),e}catch(e){}}();e.exports=o},function(e,t,r){function n(e){if(!i(e))return!1;var t=o(e);return t==a||t==u||t==s||t==l}var o=r(0),i=r(2),s="[object AsyncFunction]",a="[object Function]",u="[object GeneratorFunction]",l="[object Proxy]";e.exports=n},function(e,t,r){(function(t){var r="object"==typeof t&&t&&t.Object===Object&&t;e.exports=r}).call(t,r(37))},function(e,t,r){function n(e,t){return s(i(e,t,o),e+"")}var o=r(13),i=r(45),s=r(46);e.exports=n},function(e,t){function r(e){return e}e.exports=r},function(e,t){function r(e,t,r){switch(r.length){case 0:return e.call(t);case 1:return e.call(t,r[0]);case 2:return e.call(t,r[0],r[1]);case 3:return e.call(t,r[0],r[1],r[2])}return e.apply(t,r)}e.exports=r},function(e,t,r){function n(e,t,r){if(!a(r))return!1;var n=typeof t;return!!("number"==n?i(r)&&s(t,r.length):"string"==n&&t in r)&&o(r[t],e)}var o=r(6),i=r(7),s=r(17),a=r(2);e.exports=n},function(e,t){function r(e){return"number"==typeof e&&e>-1&&e%1==0&&e<=n}var n=9007199254740991;e.exports=r},function(e,t){function r(e,t){var r=typeof e;return!!(t=null==t?n:t)&&("number"==r||"symbol"!=r&&o.test(e))&&e>-1&&e%1==0&&e<t}var n=9007199254740991,o=/^(?:0|[1-9]\d*)$/;e.exports=r},function(e,t,r){function n(e,t){var r=s(e),n=!r&&i(e),c=!r&&!n&&a(e),p=!r&&!n&&!c&&l(e),h=r||n||c||p,d=h?o(e.length,String):[],m=d.length;for(var y in e)!t&&!f.call(e,y)||h&&("length"==y||c&&("offset"==y||"parent"==y)||p&&("buffer"==y||"byteLength"==y||"byteOffset"==y)||u(y,m))||d.push(y);return d}var o=r(51),i=r(52),s=r(19),a=r(54),u=r(17),l=r(56),c=Object.prototype,f=c.hasOwnProperty;e.exports=n},function(e,t){var r=Array.isArray;e.exports=r},function(e,t){e.exports=function(e){return e.webpackPolyfill||(e.deprecate=function(){},e.paths=[],e.children||(e.children=[]),Object.defineProperty(e,"loaded",{enumerable:!0,get:function(){return e.l}}),Object.defineProperty(e,"id",{enumerable:!0,get:function(){return e.i}}),e.webpackPolyfill=1),e}},function(e,t){function r(e){var t=e&&e.constructor;return e===("function"==typeof t&&t.prototype||n)}var n=Object.prototype;e.exports=r},function(e,t,r){function n(e){if(!i(e))return!1;var t=o(e);return t==u||t==a||"string"==typeof e.message&&"string"==typeof e.name&&!s(e)}var o=r(0),i=r(1),s=r(63),a="[object DOMException]",u="[object Error]";e.exports=n},function(e,t){function r(e,t){return function(r){return e(t(r))}}e.exports=r},function(e,t){function r(e,t){for(var r=-1,n=null==e?0:e.length,o=Array(n);++r<n;)o[r]=t(e[r],r,e);return o}e.exports=r},function(e,t){var r=/<%=([\s\S]+?)%>/g;e.exports=r},function(e,t,r){function n(e){return null==e?"":o(e)}var o=r(75);e.exports=n},function(e,t,r){"use strict";function n(e,t,r){if(null!==e)for(var o,i,s,a,u,l,c,f,p=0,h=0,d=e.type,m="FeatureCollection"===d,y="Feature"===d,v=m?e.features.length:1,g=0;g<v;g++){c=m?e.features[g].geometry:y?e.geometry:e,f=!!c&&"GeometryCollection"===c.type,u=f?c.geometries.length:1;for(var b=0;b<u;b++){var _=0,j=0;if(null!==(a=f?c.geometries[b]:c)){l=a.coordinates;var x=a.type;switch(p=!r||"Polygon"!==x&&"MultiPolygon"!==x?0:1,x){case null:break;case"Point":if(!1===t(l,h,g,_,j))return!1;h++,_++;break;case"LineString":case"MultiPoint":for(o=0;o<l.length;o++){if(!1===t(l[o],h,g,_,j))return!1;h++,"MultiPoint"===x&&_++}"LineString"===x&&_++;break;case"Polygon":case"MultiLineString":for(o=0;o<l.length;o++){for(i=0;i<l[o].length-p;i++){if(!1===t(l[o][i],h,g,_,j))return!1;h++}"MultiLineString"===x&&_++,"Polygon"===x&&j++}"Polygon"===x&&_++;break;case"MultiPolygon":for(o=0;o<l.length;o++){for("MultiPolygon"===x&&(j=0),i=0;i<l[o].length;i++){for(s=0;s<l[o][i].length-p;s++){if(!1===t(l[o][i][s],h,g,_,j))return!1;h++}j++}_++}break;case"GeometryCollection":for(o=0;o<a.geometries.length;o++)if(!1===n(a.geometries[o],t,r))return!1;break;default:throw new Error("Unknown Geometry Type")}}}}}function o(e,t){var r,n,o,i,s,a,u,l,c,f,p=0,h="FeatureCollection"===e.type,d="Feature"===e.type,m=h?e.features.length:1;for(r=0;r<m;r++){for(a=h?e.features[r].geometry:d?e.geometry:e,l=h?e.features[r].properties:d?e.properties:{},c=h?e.features[r].bbox:d?e.bbox:void 0,f=h?e.features[r].id:d?e.id:void 0,u=!!a&&"GeometryCollection"===a.type,s=u?a.geometries.length:1,o=0;o<s;o++)if(null!==(i=u?a.geometries[o]:a))switch(i.type){case"Point":case"LineString":case"MultiPoint":case"Polygon":case"MultiLineString":case"MultiPolygon":if(!1===t(i,p,l,c,f))return!1;break;case"GeometryCollection":for(n=0;n<i.geometries.length;n++)if(!1===t(i.geometries[n],p,l,c,f))return!1;break;default:throw new Error("Unknown Geometry Type")}else if(!1===t(null,p,l,c,f))return!1;p++}}function i(e,t,r){var n=r;return o(e,function(e,o,i,s,a){n=0===o&&void 0===r?e:t(n,e,o,i,s,a)}),n}function s(e,t){o(e,function(e,r,n,o,i){var s=null===e?null:e.type;switch(s){case null:case"Point":case"LineString":case"Polygon":if(!1===t(Object(l.b)(e,n,{bbox:o,id:i}),r,0))return!1;return}var a;switch(s){case"MultiPoint":a="Point";break;case"MultiLineString":a="LineString";break;case"MultiPolygon":a="Polygon"}for(var u=0;u<e.coordinates.length;u++){var c=e.coordinates[u],f={type:a,coordinates:c};if(!1===t(Object(l.b)(f,n),r,u))return!1}})}function a(e,t){s(e,function(e,r,o){var i=0;if(e.geometry){var s=e.geometry.type;if("Point"!==s&&"MultiPoint"!==s){var a;return!1!==n(e,function(n,s,u,c,f){if(void 0===a)return void(a=n);var p=Object(l.e)([a,n],e.properties);if(!1===t(p,r,o,f,i))return!1;i++,a=n})&&void 0}}})}function u(e,t,r){var n=r,o=!1;return a(e,function(e,i,s,a,u){n=!1===o&&void 0===r?e:t(n,e,i,s,a,u),o=!0}),n}r.d(t,"a",function(){return i}),r.d(t,"b",function(){return u});var l=r(3)},function(e,t,r){e.exports=r(29)},function(e,t,r){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}r(30);var o=r(31),i=n(o),s=r(79),a=n(s),u=r(80),l=n(u),c=r(85),f=function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var r in e)Object.prototype.hasOwnProperty.call(e,r)&&(t[r]=e[r]);return t.default=e,t}(c),p=r(86),h=n(p),d=r(87),m=r(88),y={imports:{numberFormat:d.numberFormat},interpolate:/{{([\s\S]+?)}}/g},v=(0,i.default)(m.controlTemplate,y),g=(0,i.default)(m.resultsTemplate,y),b=(0,i.default)(m.pointPopupTemplate,y),_=(0,i.default)(m.linePopupTemplate,y),j=(0,i.default)(m.areaPopupTemplate,y);L.Control.Measure=L.Control.extend({_className:"leaflet-control-measure",options:{units:{},position:"topright",primaryLengthUnit:"feet",secondaryLengthUnit:"miles",primaryAreaUnit:"acres",activeColor:"#ABE67E",completedColor:"#C8F2BE",captureZIndex:1e4,popupOptions:{className:"leaflet-measure-resultpopup",autoPanPadding:[10,10]}},initialize:function(e){L.setOptions(this,e);var t=this.options,r=t.activeColor,n=t.completedColor;this._symbols=new h.default({activeColor:r,completedColor:n}),this.options.units=L.extend({},a.default,this.options.units)},onAdd:function(e){return this._map=e,this._latlngs=[],this._initLayout(),e.on("click",this._collapse,this),this._layer=L.layerGroup().addTo(e),this._container},onRemove:function(e){e.off("click",this._collapse,this),e.removeLayer(this._layer)},_initLayout:function(){var e=this._className,t=this._container=L.DomUtil.create("div",e+" leaflet-bar");t.innerHTML=v({model:{className:e}}),t.setAttribute("aria-haspopup",!0),L.DomEvent.disableClickPropagation(t),L.DomEvent.disableScrollPropagation(t);var r=this.$toggle=(0,c.selectOne)(".js-toggle",t);this.$interaction=(0,c.selectOne)(".js-interaction",t);var n=(0,c.selectOne)(".js-start",t),o=(0,c.selectOne)(".js-cancel",t),i=(0,c.selectOne)(".js-finish",t);this.$startPrompt=(0,c.selectOne)(".js-startprompt",t),this.$measuringPrompt=(0,c.selectOne)(".js-measuringprompt",t),this.$startHelp=(0,c.selectOne)(".js-starthelp",t),this.$results=(0,c.selectOne)(".js-results",t),this.$measureTasks=(0,c.selectOne)(".js-measuretasks",t),this._collapse(),this._updateMeasureNotStarted(),L.Browser.android||(L.DomEvent.on(t,"mouseenter",this._expand,this),L.DomEvent.on(t,"mouseleave",this._collapse,this)),L.DomEvent.on(r,"click",L.DomEvent.stop),L.Browser.touch?L.DomEvent.on(r,"click",this._expand,this):L.DomEvent.on(r,"focus",this._expand,this),L.DomEvent.on(n,"click",L.DomEvent.stop),L.DomEvent.on(n,"click",this._startMeasure,this),L.DomEvent.on(o,"click",L.DomEvent.stop),L.DomEvent.on(o,"click",this._finishMeasure,this),L.DomEvent.on(i,"click",L.DomEvent.stop),L.DomEvent.on(i,"click",this._handleMeasureDoubleClick,this)},_expand:function(){f.hide(this.$toggle),f.show(this.$interaction)},_collapse:function(){this._locked||(f.hide(this.$interaction),f.show(this.$toggle))},_updateMeasureNotStarted:function(){f.hide(this.$startHelp),f.hide(this.$results),f.hide(this.$measureTasks),f.hide(this.$measuringPrompt),f.show(this.$startPrompt)},_updateMeasureStartedNoPoints:function(){f.hide(this.$results),f.show(this.$startHelp),f.show(this.$measureTasks),f.hide(this.$startPrompt),f.show(this.$measuringPrompt)},_updateMeasureStartedWithPoints:function(){f.hide(this.$startHelp),f.show(this.$results),f.show(this.$measureTasks),f.hide(this.$startPrompt),f.show(this.$measuringPrompt)},_startMeasure:function(){this._locked=!0,this._measureVertexes=L.featureGroup().addTo(this._layer),this._captureMarker=L.marker(this._map.getCenter(),{clickable:!0,zIndexOffset:this.options.captureZIndex,opacity:0}).addTo(this._layer),this._setCaptureMarkerIcon(),this._captureMarker.on("mouseout",this._handleMapMouseOut,this).on("dblclick",this._handleMeasureDoubleClick,this).on("click",this._handleMeasureClick,this),this._map.on("mousemove",this._handleMeasureMove,this).on("mouseout",this._handleMapMouseOut,this).on("move",this._centerCaptureMarker,this).on("resize",this._setCaptureMarkerIcon,this),L.DomEvent.on(this._container,"mouseenter",this._handleMapMouseOut,this),this._updateMeasureStartedNoPoints(),this._map.fire("measurestart",null,!1)},_finishMeasure:function(){var e=L.extend({},this._resultsModel,{points:this._latlngs});this._locked=!1,L.DomEvent.off(this._container,"mouseover",this._handleMapMouseOut,this),this._clearMeasure(),this._captureMarker.off("mouseout",this._handleMapMouseOut,this).off("dblclick",this._handleMeasureDoubleClick,this).off("click",this._handleMeasureClick,this),this._map.off("mousemove",this._handleMeasureMove,this).off("mouseout",this._handleMapMouseOut,this).off("move",this._centerCaptureMarker,this).off("resize",this._setCaptureMarkerIcon,this),this._layer.removeLayer(this._measureVertexes).removeLayer(this._captureMarker),this._measureVertexes=null,this._updateMeasureNotStarted(),this._collapse(),this._map.fire("measurefinish",e,!1)},_clearMeasure:function(){this._latlngs=[],this._resultsModel=null,this._measureVertexes.clearLayers(),this._measureDrag&&this._layer.removeLayer(this._measureDrag),this._measureArea&&this._layer.removeLayer(this._measureArea),this._measureBoundary&&this._layer.removeLayer(this._measureBoundary),this._measureDrag=null,this._measureArea=null,this._measureBoundary=null},_centerCaptureMarker:function(){this._captureMarker.setLatLng(this._map.getCenter())},_setCaptureMarkerIcon:function(){this._captureMarker.setIcon(L.divIcon({iconSize:this._map.getSize().multiplyBy(2)}))},_getMeasurementDisplayStrings:function(e){function t(e,t,o,i,s){if(t&&n[t]){var a=r(e,n[t],i,s);if(o&&n[o]){a=a+" ("+r(e,n[o],i,s)+")"}return a}return r(e,null,i,s)}function r(e,t,r,n){var o={acres:"Acres",feet:"Feet",kilometers:"Kilometers",hectares:"Hectares",meters:"Meters",miles:"Miles",sqfeet:"Sq Feet",sqmeters:"Sq Meters",sqmiles:"Sq Miles"},i=L.extend({factor:1,decimals:0},t);return[(0,d.numberFormat)(e*i.factor,i.decimals,r||".",n||","),o[i.display]||i.display].join(" ")}var n=this.options.units;return{lengthDisplay:t(e.length,this.options.primaryLengthUnit,this.options.secondaryLengthUnit,this.options.decPoint,this.options.thousandsSep),areaDisplay:t(e.area,this.options.primaryAreaUnit,this.options.secondaryAreaUnit,this.options.decPoint,this.options.thousandsSep)}},_updateResults:function(){var e=(0,l.default)(this._latlngs),t=this._resultsModel=L.extend({},e,this._getMeasurementDisplayStrings(e),{pointCount:this._latlngs.length});this.$results.innerHTML=g({model:t})},_handleMeasureMove:function(e){this._measureDrag?this._measureDrag.setLatLng(e.latlng):this._measureDrag=L.circleMarker(e.latlng,this._symbols.getSymbol("measureDrag")).addTo(this._layer),this._measureDrag.bringToFront()},_handleMeasureDoubleClick:function(){var e=this._latlngs,t=void 0,r=void 0;if(this._finishMeasure(),e.length){e.length>2&&e.push(e[0]);var n=(0,l.default)(e);1===e.length?(t=L.circleMarker(e[0],this._symbols.getSymbol("resultPoint")),r=b({model:n})):2===e.length?(t=L.polyline(e,this._symbols.getSymbol("resultLine")),r=_({model:L.extend({},n,this._getMeasurementDisplayStrings(n))})):(t=L.polygon(e,this._symbols.getSymbol("resultArea")),r=j({model:L.extend({},n,this._getMeasurementDisplayStrings(n))}));var o=L.DomUtil.create("div","");o.innerHTML=r;var i=(0,c.selectOne)(".js-zoomto",o);i&&(L.DomEvent.on(i,"click",L.DomEvent.stop),L.DomEvent.on(i,"click",function(){t.getBounds?this._map.fitBounds(t.getBounds(),{padding:[20,20],maxZoom:17}):t.getLatLng&&this._map.panTo(t.getLatLng())},this));var s=(0,c.selectOne)(".js-deletemarkup",o);s&&(L.DomEvent.on(s,"click",L.DomEvent.stop),L.DomEvent.on(s,"click",function(){this._layer.removeLayer(t)},this)),t.addTo(this._layer),t.bindPopup(o,this.options.popupOptions),t.getBounds?t.openPopup(t.getBounds().getCenter()):t.getLatLng&&t.openPopup(t.getLatLng())}},_handleMeasureClick:function(e){var t=this._map.mouseEventToLatLng(e.originalEvent),r=this._latlngs[this._latlngs.length-1],n=this._symbols.getSymbol("measureVertex");r&&t.equals(r)||(this._latlngs.push(t),this._addMeasureArea(this._latlngs),this._addMeasureBoundary(this._latlngs),this._measureVertexes.eachLayer(function(e){e.setStyle(n),e._path&&e._path.setAttribute("class",n.className)}),this._addNewVertex(t),this._measureBoundary&&this._measureBoundary.bringToFront(),this._measureVertexes.bringToFront()),this._updateResults(),this._updateMeasureStartedWithPoints()},_handleMapMouseOut:function(){this._measureDrag&&(this._layer.removeLayer(this._measureDrag),this._measureDrag=null)},_addNewVertex:function(e){L.circleMarker(e,this._symbols.getSymbol("measureVertexActive")).addTo(this._measureVertexes)},_addMeasureArea:function(e){if(e.length<3)return void(this._measureArea&&(this._layer.removeLayer(this._measureArea),this._measureArea=null));this._measureArea?this._measureArea.setLatLngs(e):this._measureArea=L.polygon(e,this._symbols.getSymbol("measureArea")).addTo(this._layer)},_addMeasureBoundary:function(e){if(e.length<2)return void(this._measureBoundary&&(this._layer.removeLayer(this._measureBoundary),this._measureBoundary=null));this._measureBoundary?this._measureBoundary.setLatLngs(e):this._measureBoundary=L.polyline(e,this._symbols.getSymbol("measureBoundary")).addTo(this._layer)}}),L.Map.mergeOptions({measureControl:!1}),L.Map.addInitHook(function(){this.options.measureControl&&(this.measureControl=(new L.Control.Measure).addTo(this))}),L.control.measure=function(e){return new L.Control.Measure(e)}},function(e,t){},function(e,t,r){function n(e,t,r){var n=h.imports._.templateSettings||h;r&&c(e,t,r)&&(t=void 0),e=d(e),t=o({},t,n,a);var j,x,M=o({},t.imports,n.imports,a),w=f(M),L=s(M,w),O=0,P=t.interpolate||b,k="__p += '",C=RegExp((t.escape||b).source+"|"+P.source+"|"+(P===p?g:b).source+"|"+(t.evaluate||b).source+"|$","g"),E="sourceURL"in t?"//# sourceURL="+t.sourceURL+"\n":"";e.replace(C,function(t,r,n,o,i,s){return n||(n=o),k+=e.slice(O,s).replace(_,u),r&&(j=!0,k+="' +\n__e("+r+") +\n'"),i&&(x=!0,k+="';\n"+i+";\n__p += '"),n&&(k+="' +\n((__t = ("+n+")) == null ? '' : __t) +\n'"),O=s+t.length,t}),k+="';\n";var S=t.variable;S||(k="with (obj) {\n"+k+"\n}\n"),k=(x?k.replace(m,""):k).replace(y,"$1").replace(v,"$1;"),k="function("+(S||"obj")+") {\n"+(S?"":"obj || (obj = {});\n")+"var __t, __p = ''"+(j?", __e = _.escape":"")+(x?", __j = Array.prototype.join;\nfunction print() { __p += __j.call(arguments, '') }\n":";\n")+k+"return __p\n}";var A=i(function(){return Function(w,E+"return "+k).apply(void 0,L)});if(A.source=k,l(A))throw A;return A}var o=r(32),i=r(62),s=r(65),a=r(66),u=r(67),l=r(22),c=r(15),f=r(68),p=r(25),h=r(71),d=r(26),m=/\b__p \+= '';/g,y=/\b(__p \+=) '' \+/g,v=/(__e\(.*?\)|\b__t\)) \+\n'';/g,g=/\$\{([^\\}]*(?:\\.[^\\}]*)*)\}/g,b=/($^)/,_=/['\n\r\u2028\u2029\\]/g;e.exports=n},function(e,t,r){var n=r(33),o=r(44),i=r(50),s=o(function(e,t,r,o){n(t,i(t),e,o)});e.exports=s},function(e,t,r){function n(e,t,r,n){var s=!r;r||(r={});for(var a=-1,u=t.length;++a<u;){var l=t[a],c=n?n(r[l],e[l],l,r,e):void 0;void 0===c&&(c=e[l]),s?i(r,l,c):o(r,l,c)}return r}var o=r(34),i=r(8);e.exports=n},function(e,t,r){function n(e,t,r){var n=e[t];a.call(e,t)&&i(n,r)&&(void 0!==r||t in e)||o(e,t,r)}var o=r(8),i=r(6),s=Object.prototype,a=s.hasOwnProperty;e.exports=n},function(e,t,r){function n(e,t){var r=i(e,t);return o(r)?r:void 0}var o=r(36),i=r(43);e.exports=n},function(e,t,r){function n(e){return!(!s(e)||i(e))&&(o(e)?d:l).test(a(e))}var o=r(10),i=r(40),s=r(2),a=r(42),u=/[\\^$.*+?()[\]{}|]/g,l=/^\[object .+?Constructor\]$/,c=Function.prototype,f=Object.prototype,p=c.toString,h=f.hasOwnProperty,d=RegExp("^"+p.call(h).replace(u,"\\$&").replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g,"$1.*?")+"$");e.exports=n},function(e,t){var r;r=function(){return this}();try{r=r||Function("return this")()||(0,eval)("this")}catch(e){"object"==typeof window&&(r=window)}e.exports=r},function(e,t,r){function n(e){var t=s.call(e,u),r=e[u];try{e[u]=void 0;var n=!0}catch(e){}var o=a.call(e);return n&&(t?e[u]=r:delete e[u]),o}var o=r(4),i=Object.prototype,s=i.hasOwnProperty,a=i.toString,u=o?o.toStringTag:void 0;e.exports=n},function(e,t){function r(e){return o.call(e)}var n=Object.prototype,o=n.toString;e.exports=r},function(e,t,r){function n(e){return!!i&&i in e}var o=r(41),i=function(){var e=/[^.]+$/.exec(o&&o.keys&&o.keys.IE_PROTO||"");return e?"Symbol(src)_1."+e:""}();e.exports=n},function(e,t,r){var n=r(5),o=n["__core-js_shared__"];e.exports=o},function(e,t){function r(e){if(null!=e){try{return o.call(e)}catch(e){}try{return e+""}catch(e){}}return""}var n=Function.prototype,o=n.toString;e.exports=r},function(e,t){function r(e,t){return null==e?void 0:e[t]}e.exports=r},function(e,t,r){function n(e){return o(function(t,r){var n=-1,o=r.length,s=o>1?r[o-1]:void 0,a=o>2?r[2]:void 0;for(s=e.length>3&&"function"==typeof s?(o--,s):void 0,a&&i(r[0],r[1],a)&&(s=o<3?void 0:s,o=1),t=Object(t);++n<o;){var u=r[n];u&&e(t,u,n,s)}return t})}var o=r(12),i=r(15);e.exports=n},function(e,t,r){function n(e,t,r){return t=i(void 0===t?e.length-1:t,0),function(){for(var n=arguments,s=-1,a=i(n.length-t,0),u=Array(a);++s<a;)u[s]=n[t+s];s=-1;for(var l=Array(t+1);++s<t;)l[s]=n[s];return l[t]=r(u),o(e,this,l)}}var o=r(14),i=Math.max;e.exports=n},function(e,t,r){var n=r(47),o=r(49),i=o(n);e.exports=i},function(e,t,r){var n=r(48),o=r(9),i=r(13),s=o?function(e,t){return o(e,"toString",{configurable:!0,enumerable:!1,value:n(t),writable:!0})}:i;e.exports=s},function(e,t){function r(e){return function(){return e}}e.exports=r},function(e,t){function r(e){var t=0,r=0;return function(){var s=i(),a=o-(s-r);if(r=s,a>0){if(++t>=n)return arguments[0]}else t=0;return e.apply(void 0,arguments)}}var n=800,o=16,i=Date.now;e.exports=r},function(e,t,r){function n(e){return s(e)?o(e,!0):i(e)}var o=r(18),i=r(60),s=r(7);e.exports=n},function(e,t){function r(e,t){for(var r=-1,n=Array(e);++r<e;)n[r]=t(r);return n}e.exports=r},function(e,t,r){var n=r(53),o=r(1),i=Object.prototype,s=i.hasOwnProperty,a=i.propertyIsEnumerable,u=n(function(){return arguments}())?n:function(e){return o(e)&&s.call(e,"callee")&&!a.call(e,"callee")};e.exports=u},function(e,t,r){function n(e){return i(e)&&o(e)==s}var o=r(0),i=r(1),s="[object Arguments]";e.exports=n},function(e,t,r){(function(e){var n=r(5),o=r(55),i="object"==typeof t&&t&&!t.nodeType&&t,s=i&&"object"==typeof e&&e&&!e.nodeType&&e,a=s&&s.exports===i,u=a?n.Buffer:void 0,l=u?u.isBuffer:void 0,c=l||o;e.exports=c}).call(t,r(20)(e))},function(e,t){function r(){return!1}e.exports=r},function(e,t,r){var n=r(57),o=r(58),i=r(59),s=i&&i.isTypedArray,a=s?o(s):n;e.exports=a},function(e,t,r){function n(e){return s(e)&&i(e.length)&&!!a[o(e)]}var o=r(0),i=r(16),s=r(1),a={};a["[object Float32Array]"]=a["[object Float64Array]"]=a["[object Int8Array]"]=a["[object Int16Array]"]=a["[object Int32Array]"]=a["[object Uint8Array]"]=a["[object Uint8ClampedArray]"]=a["[object Uint16Array]"]=a["[object Uint32Array]"]=!0,a["[object Arguments]"]=a["[object Array]"]=a["[object ArrayBuffer]"]=a["[object Boolean]"]=a["[object DataView]"]=a["[object Date]"]=a["[object Error]"]=a["[object Function]"]=a["[object Map]"]=a["[object Number]"]=a["[object Object]"]=a["[object RegExp]"]=a["[object Set]"]=a["[object String]"]=a["[object WeakMap]"]=!1,e.exports=n},function(e,t){function r(e){return function(t){return e(t)}}e.exports=r},function(e,t,r){(function(e){var n=r(11),o="object"==typeof t&&t&&!t.nodeType&&t,i=o&&"object"==typeof e&&e&&!e.nodeType&&e,s=i&&i.exports===o,a=s&&n.process,u=function(){try{return a&&a.binding&&a.binding("util")}catch(e){}}();e.exports=u}).call(t,r(20)(e))},function(e,t,r){function n(e){if(!o(e))return s(e);var t=i(e),r=[];for(var n in e)("constructor"!=n||!t&&u.call(e,n))&&r.push(n);return r}var o=r(2),i=r(21),s=r(61),a=Object.prototype,u=a.hasOwnProperty;e.exports=n},function(e,t){function r(e){var t=[];if(null!=e)for(var r in Object(e))t.push(r);return t}e.exports=r},function(e,t,r){var n=r(14),o=r(12),i=r(22),s=o(function(e,t){try{return n(e,void 0,t)}catch(e){return i(e)?e:new Error(e)}});e.exports=s},function(e,t,r){function n(e){if(!s(e)||o(e)!=a)return!1;var t=i(e);if(null===t)return!0;var r=f.call(t,"constructor")&&t.constructor;return"function"==typeof r&&r instanceof r&&c.call(r)==p}var o=r(0),i=r(64),s=r(1),a="[object Object]",u=Function.prototype,l=Object.prototype,c=u.toString,f=l.hasOwnProperty,p=c.call(Object);e.exports=n},function(e,t,r){var n=r(23),o=n(Object.getPrototypeOf,Object);e.exports=o},function(e,t,r){function n(e,t){return o(t,function(t){return e[t]})}var o=r(24);e.exports=n},function(e,t,r){function n(e,t,r,n){return void 0===e||o(e,i[r])&&!s.call(n,r)?t:e}var o=r(6),i=Object.prototype,s=i.hasOwnProperty;e.exports=n},function(e,t){function r(e){return"\\"+n[e]}var n={"\\":"\\","'":"'","\n":"n","\r":"r","\u2028":"u2028","\u2029":"u2029"};e.exports=r},function(e,t,r){function n(e){return s(e)?o(e):i(e)}var o=r(18),i=r(69),s=r(7);e.exports=n},function(e,t,r){function n(e){if(!o(e))return i(e);var t=[];for(var r in Object(e))a.call(e,r)&&"constructor"!=r&&t.push(r);return t}var o=r(21),i=r(70),s=Object.prototype,a=s.hasOwnProperty;e.exports=n},function(e,t,r){var n=r(23),o=n(Object.keys,Object);e.exports=o},function(e,t,r){var n=r(72),o=r(77),i=r(78),s=r(25),a={escape:o,evaluate:i,interpolate:s,variable:"",imports:{_:{escape:n}}};e.exports=a},function(e,t,r){function n(e){return e=i(e),e&&a.test(e)?e.replace(s,o):e}var o=r(73),i=r(26),s=/[&<>"']/g,a=RegExp(s.source);e.exports=n},function(e,t,r){var n=r(74),o={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"},i=n(o);e.exports=i},function(e,t){function r(e){return function(t){return null==e?void 0:e[t]}}e.exports=r},function(e,t,r){function n(e){if("string"==typeof e)return e;if(s(e))return i(e,n)+"";if(a(e))return c?c.call(e):"";var t=e+"";return"0"==t&&1/e==-u?"-0":t}var o=r(4),i=r(24),s=r(19),a=r(76),u=1/0,l=o?o.prototype:void 0,c=l?l.toString:void 0;e.exports=n},function(e,t,r){function n(e){return"symbol"==typeof e||i(e)&&o(e)==s}var o=r(0),i=r(1),s="[object Symbol]";e.exports=n},function(e,t){var r=/<%-([\s\S]+?)%>/g;e.exports=r},function(e,t){var r=/<%([\s\S]+?)%>/g;e.exports=r},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default={acres:{factor:24711e-8,display:"acres",decimals:2},feet:{factor:3.2808,display:"feet",decimals:0},kilometers:{factor:.001,display:"kilometers",decimals:2},hectares:{factor:1e-4,display:"hectares",decimals:2},meters:{factor:1,display:"meters",decimals:0},miles:{factor:3.2808/5280,display:"miles",decimals:2},sqfeet:{factor:10.7639,display:"sqfeet",decimals:0},sqmeters:{factor:1,display:"sqmeters",decimals:0},sqmiles:{factor:3.86102e-7,display:"sqmiles",decimals:2}}},function(e,t,r){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}function o(e){return e<10?"0"+e.toString():e.toString()}function i(e,t,r){var n=Math.abs(e),i=Math.floor(n),s=Math.floor(60*(n-i)),a=Math.round(3600*(n-i-s/60)*100)/100,u=n===e?t:r;return o(i)+"&deg; "+o(s)+"' "+o(a)+'" '+u}function s(e){var t=e[e.length-1],r=e.map(function(e){return[e.lat,e.lng]}),n=L.polyline(r),o=L.polygon(r),s=1e3*(0,u.default)(n.toGeoJSON(),{units:"kilometers"}),a=(0,c.default)(o.toGeoJSON());return{lastCoord:{dd:{x:t.lng,y:t.lat},dms:{x:i(t.lng,"E","W"),y:i(t.lat,"N","S")}},length:s,area:a}}Object.defineProperty(t,"__esModule",{value:!0}),t.default=s;var a=r(81),u=n(a),l=r(84),c=n(l)},function(e,t,r){"use strict";function n(e,t){if(t=t||{},!Object(s.d)(t))throw new Error("options is invalid");if(!e)throw new Error("geojson is required");return Object(i.b)(e,function(e,r){var n=r.geometry.coordinates;return e+Object(o.a)(n[0],n[1],t)},0)}Object.defineProperty(t,"__esModule",{value:!0});var o=r(82),i=r(27),s=r(3);t.default=n},function(e,t,r){"use strict";function n(e,t,r){if(r=r||{},!Object(i.d)(r))throw new Error("options is invalid");var n=r.units,s=Object(o.a)(e),a=Object(o.a)(t),u=Object(i.a)(a[1]-s[1]),l=Object(i.a)(a[0]-s[0]),c=Object(i.a)(s[1]),f=Object(i.a)(a[1]),p=Math.pow(Math.sin(u/2),2)+Math.pow(Math.sin(l/2),2)*Math.cos(c)*Math.cos(f);return Object(i.g)(2*Math.atan2(Math.sqrt(p),Math.sqrt(1-p)),n)}var o=r(83),i=r(3);t.a=n},function(e,t,r){"use strict";function n(e){if(!e)throw new Error("coord is required");if("Feature"===e.type&&null!==e.geometry&&"Point"===e.geometry.type)return e.geometry.coordinates;if("Point"===e.type)return e.coordinates;if(Array.isArray(e)&&e.length>=2&&void 0===e[0].length&&void 0===e[1].length)return e;throw new Error("coord must be GeoJSON Point or an Array of numbers")}r.d(t,"a",function(){return n});r(3)},function(e,t,r){"use strict";function n(e){return Object(u.a)(e,function(e,t){return e+o(t)},0)}function o(e){var t,r=0;switch(e.type){case"Polygon":return i(e.coordinates);case"MultiPolygon":for(t=0;t<e.coordinates.length;t++)r+=i(e.coordinates[t]);return r;case"Point":case"MultiPoint":case"LineString":case"MultiLineString":return 0;case"GeometryCollection":for(t=0;t<e.geometries.length;t++)r+=o(e.geometries[t]);return r}}function i(e){var t=0;if(e&&e.length>0){t+=Math.abs(s(e[0]));for(var r=1;r<e.length;r++)t-=Math.abs(s(e[r]))}return t}function s(e){var t,r,n,o,i,s,u,c=0,f=e.length;if(f>2){for(u=0;u<f;u++)u===f-2?(o=f-2,i=f-1,s=0):u===f-1?(o=f-1,i=0,s=1):(o=u,i=u+1,s=u+2),t=e[o],r=e[i],n=e[s],c+=(a(n[0])-a(t[0]))*Math.sin(a(r[1]));c=c*l*l/2}return c}function a(e){return e*Math.PI/180}Object.defineProperty(t,"__esModule",{value:!0});var u=r(27),l=6378137;t.default=n},function(e,t,r){"use strict";function n(e,t){return t||(t=document),t.querySelector(e)}function o(e,t){return t||(t=document),Array.prototype.slice.call(t.querySelectorAll(e))}function i(e){if(e)return e.setAttribute("style","display:none;"),e}function s(e){if(e)return e.removeAttribute("style"),e}Object.defineProperty(t,"__esModule",{value:!0}),t.selectOne=n,t.selectAll=o,t.hide=i,t.show=s},function(e,t,r){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}(),i={activeColor:"#ABE67E",completedColor:"#C8F2BE"},s=function(){function e(t){n(this,e),this._options=L.extend({},i,this._options,t)}return o(e,[{key:"getSymbol",value:function(e){return{measureDrag:{clickable:!1,radius:4,color:this._options.activeColor,weight:2,opacity:.7,fillColor:this._options.activeColor,fillOpacity:.5,className:"layer-measuredrag"},measureArea:{clickable:!1,stroke:!1,fillColor:this._options.activeColor,fillOpacity:.2,className:"layer-measurearea"},measureBoundary:{clickable:!1,color:this._options.activeColor,weight:2,opacity:.9,fill:!1,className:"layer-measureboundary"},measureVertex:{clickable:!1,radius:4,color:this._options.activeColor,weight:2,opacity:1,fillColor:this._options.activeColor,fillOpacity:.7,className:"layer-measurevertex"},measureVertexActive:{clickable:!1,radius:4,color:this._options.activeColor,weight:2,opacity:1,fillColor:this._options.activeColor,fillOpacity:1,className:"layer-measurevertex active"},resultArea:{clickable:!0,color:this._options.completedColor,weight:2,opacity:.9,fillColor:this._options.completedColor,fillOpacity:.2,className:"layer-measure-resultarea"},resultLine:{clickable:!0,color:this._options.completedColor,weight:3,opacity:.9,fill:!1,className:"layer-measure-resultline"},resultPoint:{clickable:!0,radius:4,color:this._options.completedColor,weight:2,opacity:1,fillColor:this._options.completedColor,fillOpacity:.7,className:"layer-measure-resultpoint"}}[e]}}]),e}();t.default=s},function(e,t,r){"use strict";function n(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:2,r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:".",n=arguments.length>3&&void 0!==arguments[3]?arguments[3]:",",o=e<0?"-":"",i=Math.abs(+e||0),s=parseInt(i.toFixed(t),10)+"",a=s.length>3?s.length%3:0;return[o,a?s.substr(0,a)+n:"",s.substr(a).replace(/(\d{3})(?=\d)/g,"$1"+n),t?""+r+Math.abs(i-s).toFixed(t).slice(2):""].join("")}Object.defineProperty(t,"__esModule",{value:!0}),t.numberFormat=n},function(e,t,r){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var o=r(89);Object.defineProperty(t,"controlTemplate",{enumerable:!0,get:function(){return n(o).default}});var i=r(90);Object.defineProperty(t,"resultsTemplate",{enumerable:!0,get:function(){return n(i).default}});var s=r(91);Object.defineProperty(t,"pointPopupTemplate",{enumerable:!0,get:function(){return n(s).default}});var a=r(92);Object.defineProperty(t,"linePopupTemplate",{enumerable:!0,get:function(){return n(a).default}});var u=r(93);Object.defineProperty(t,"areaPopupTemplate",{enumerable:!0,get:function(){return n(u).default}})},function(e,t,r){e.exports='<a class="{{ model.className }}-toggle js-toggle" href=# title="Measure distances and areas">Measure</a> <div class="{{ model.className }}-interaction js-interaction"> <div class="js-startprompt startprompt"> <h3>Measure distances and areas</h3> <ul class=tasks> <a href=# class="js-start start">Create a new measurement</a> </ul> </div> <div class=js-measuringprompt> <h3>Measure distances and areas</h3> <p class=js-starthelp>Start creating a measurement by adding points to the map</p> <div class="js-results results"></div> <ul class="js-measuretasks tasks"> <li><a href=# class="js-cancel cancel">Cancel</a></li> <li><a href=# class="js-finish finish">Finish measurement</a></li> </ul> </div> </div> '},function(e,t,r){e.exports='<div class=group> <p class="lastpoint heading">Last point</p> <p>{{ model.lastCoord.dms.y }} <span class=coorddivider>/</span> {{ model.lastCoord.dms.x }}</p> <p>{{ numberFormat(model.lastCoord.dd.y, 6) }} <span class=coorddivider>/</span> {{ numberFormat(model.lastCoord.dd.x, 6) }}</p> </div> <% if (model.pointCount > 1) { %> <div class=group> <p><span class=heading>Path distance</span> {{ model.lengthDisplay }}</p> </div> <% } %> <% if (model.pointCount > 2) { %> <div class=group> <p><span class=heading>Area</span> {{ model.areaDisplay }}</p> </div> <% } %> '},function(e,t,r){e.exports='<h3>Point location</h3> <p>{{ model.lastCoord.dms.y }} <span class=coorddivider>/</span> {{ model.lastCoord.dms.x }}</p> <p>{{ numberFormat(model.lastCoord.dd.y, 6) }} <span class=coorddivider>/</span> {{ numberFormat(model.lastCoord.dd.x, 6) }}</p> <ul class=tasks> <li><a href=# class="js-zoomto zoomto">Center on this location</a></li> <li><a href=# class="js-deletemarkup deletemarkup">Delete</a></li> </ul> '},function(e,t,r){e.exports='<h3>Linear measurement</h3> <p>{{ model.lengthDisplay }}</p> <ul class=tasks> <li><a href=# class="js-zoomto zoomto">Center on this line</a></li> <li><a href=# class="js-deletemarkup deletemarkup">Delete</a></li> </ul> '},function(e,t,r){e.exports='<h3>Area measurement</h3> <p>{{ model.areaDisplay }}</p> <p>{{ model.lengthDisplay }} Perimeter</p> <ul class=tasks> <li><a href=# class="js-zoomto zoomto">Center on this area</a></li> <li><a href=# class="js-deletemarkup deletemarkup">Delete</a></li> </ul> '}]);
+
+/***/ }),
+
 /***/ "./node_modules/leaflet-measure/src/calc.js":
 /*!**************************************************!*\
   !*** ./node_modules/leaflet-measure/src/calc.js ***!
@@ -3476,8 +5413,8 @@ function findPoint(geojson, options) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return calc; });
-/* harmony import */ var _turf_length__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @turf/length */ "./node_modules/leaflet-measure/node_modules/@turf/length/main.es.js");
-/* harmony import */ var _turf_area__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @turf/area */ "./node_modules/leaflet-measure/node_modules/@turf/area/main.es.js");
+/* harmony import */ var _turf_length__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @turf/length */ "./node_modules/@turf/length/main.es.js");
+/* harmony import */ var _turf_area__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @turf/area */ "./node_modules/@turf/area/main.es.js");
 // calc.js
 // measure calculations
 
@@ -18472,7 +20409,7 @@ map.pm.setGlobalOptions({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\laravel\Work\Smart agriculture\resources\js\leaflet\land-edit.js */"./resources/js/leaflet/land-edit.js");
+module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\leaflet\land-edit.js */"./resources/js/leaflet/land-edit.js");
 
 
 /***/ })

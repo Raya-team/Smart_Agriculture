@@ -18,6 +18,7 @@ class DashboardController extends Controller
         $users_count = User::where('status', '1')->count();
         $lands_count = Land::where('user_id', $user_id)->count();
         $lands = Land::where('user_id', $user_id)->get();
+        $total_area = Land::where('user_id', $user_id)->sum('area');
         $sensors = Sensor::all();
         $user_sensors=[];
         foreach ($lands as $land)
@@ -52,7 +53,7 @@ class DashboardController extends Controller
         $details = json_encode($details);
 
 //            return view('admin.lands.heat', compact('land', 'details','filters'));
-        return view('user.dashboard.index', compact(['users_count', 'lands_count', 'sensors_count', 'details']));
+        return view('user.dashboard.index', compact(['users_count', 'lands_count', 'sensors_count', 'details','total_area']));
     }
     public function SearchDetails(array $details, $all_detail,$sensor)
     {
