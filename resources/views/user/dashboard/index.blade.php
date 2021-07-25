@@ -129,12 +129,14 @@
         var Units = 'metric';
         var Cnt = 4;
 
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=Mashhad&lang=fa&units=metric&appid=72bc22de4339f28f95a619c28a70b30a`;
-        var uuu = "https://api.openweathermap.org/data/2.5/onecall?lat=36.28504860143217&lon=59.62537555138496&appid=72bc22de4339f28f95a619c28a70b30a&units=metric&lang=fa"
-        const url2 = `api.openweathermap.org/data/2.5/forecast/daily?q=${City}&cnt=${Cnt}&lang=${Lang}&units=${Units}&appid=${ApiKey}`;
-        $.getJSON(url2,function (data) {
-            console.log(data);
-        });
+        // const url = `https://api.openweathermap.org/data/2.5/weather?q=Mashhad&lang=fa&units=metric&appid=72bc22de4339f28f95a619c28a70b30a`;
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${City}&lang=${Lang}&units=${Units}&appid=${ApiKey}`;
+
+        // var url2 = "https://api.openweathermap.org/data/2.5/onecall?lat=36.28504860143217&lon=59.62537555138496&appid=72bc22de4339f28f95a619c28a70b30a&units=metric&lang=fa"
+        // const url3 = `api.openweathermap.org/data/2.5/forecast/daily?q=${City}&cnt=${Cnt}&lang=${Lang}&units=${Units}&appid=${ApiKey}`;
+        // $.getJSON(url3,function (data) {
+        //     console.log(data);
+        // });
         var temp,feelsLike,pressure,humidity,windSpeed,windDeg,name,description,icon,iconUrl
         $.getJSON(url, function (data) {
             temp = `${Math.round(data.main.temp)}`;
