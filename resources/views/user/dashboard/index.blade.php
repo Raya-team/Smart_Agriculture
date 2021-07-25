@@ -144,15 +144,26 @@
             windSpeed = `${data.wind.speed} MPH`;
             windDeg = data.wind.deg;
             switch (true) {
-                case (windDeg == 0 || windDeg == 360): windDeg = 'شمال';break;
-                case (0<windDeg<90): windDeg = 'شمال شرقی';break;
-                case (windDeg == 90): windDeg = 'شرق';break;
-                case (90<windDeg<180): windDeg = 'جنوب شرقی';break;
-                case (windDeg == 180): windDeg = 'جنوب';break;
-                case (180<windDeg<270): windDeg = 'جنوب غربی';break;
-                case (windDeg == 270): windDeg = 'غرب';break;
-                case (270<windDeg<360): windDeg = 'شمال غربی';break;
+                case (windDeg == 0 || windDeg == 360): $('.windDeg').append('<style>.windDeg:before{transform:rotate(0deg);}</style>');break;
+                case (0<windDeg && windDeg<90): $('.windDeg').append('<style>.windDeg:before{transform:rotate(45deg);}</style>');break;
+                case (windDeg == 90): $('.windDeg').append('<style>.windDeg:before{transform:rotate(90deg);}</style>');break;
+                case (90<windDeg && windDeg<180): $('.windDeg').append('<style>.windDeg:before{transform:rotate(135deg);}</style>');break;
+                case (windDeg == 180): $('.windDeg').append('<style>.windDeg:before{transform:rotate(180deg);}</style>');break;
+                case (180<windDeg && windDeg<270): $('.windDeg').append('<style>.windDeg:before{transform:rotate(225deg);}</style>');break;
+                case (windDeg == 270): $('.windDeg').append('<style>.windDeg:before{transform:rotate(270deg);}</style>');break;
+                case (270<windDeg && windDeg<360): $('.windDeg').append('<style>.windDeg:before{transform:rotate(313deg);}</style>');break;
             }
+            switch (true) {
+                case (windDeg == 0 || windDeg == 360): windDeg = 'شمال';break;
+                case (0<windDeg && windDeg<90): windDeg = 'شمال شرقی';break;
+                case (windDeg == 90): windDeg = 'شرق';break;
+                case (90<windDeg && windDeg<180): windDeg = 'جنوب شرقی';break;
+                case (windDeg == 180): windDeg = 'جنوب';break;
+                case (180<windDeg && windDeg<270): windDeg = 'جنوب غربی';break;
+                case (windDeg == 270): windDeg = 'غرب';break;
+                case (270<windDeg && windDeg<360): windDeg = 'شمال غربی';break;
+            }
+
             name = data.name;
             description = data.weather[0].description;
             icon = data.weather[0].icon;
