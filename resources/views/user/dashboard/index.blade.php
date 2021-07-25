@@ -240,22 +240,6 @@
         color: rgb(255, 255, 255);
         text-align: center;
     }
-    .rain {
-        width: 50%;
-        position: absolute;
-        left: 10px;
-        word-spacing: 60px;
-        top: 3px;
-    }
-    .rain::before{
-        display: block;
-        content: '\f04e';
-        font-family: weathericons;
-        font-size: 40px;
-        left: 6px;
-        top: -4px;
-        position: absolute;
-    }
     .wind {
         width: 50%;
         right: -10px;
@@ -270,7 +254,6 @@
         font-size: 25px;
         left: -10px;
         position: absolute;
-        top: 5px;
     }
     .humidity {
         width: 50%;
@@ -285,7 +268,6 @@
         font-family: weathericons;
         font-size: 25px;
         left: 6px;
-        top: -4px;
         position: absolute;
     }
     .pressure {
@@ -301,7 +283,6 @@
         font-family: weathericons;
         font-size: 25px;
         left: 6px;
-        top: -4px;
         position: absolute;
     }
     .windDeg {
@@ -315,10 +296,8 @@
         display: block;
         content: '\f0b1';
         font-family: weathericons;
-        font-size: 25px;
+        font-size: 32px;
         left: -10px;
         position: absolute;
-        top: 5px;
     }
 </style>
-{{--windDeg--}}

@@ -5,27 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d703aa5-6bf4-4443-9648-150136637f3e" name="Default Changelist" comment="mahdy">
-      <change afterPath="$PROJECT_DIR$/resources/css/weather.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/chosen.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/chosen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/dashboard/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/dashboard/map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/filter/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/filter/create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/filter/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/filter/edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/highcharts.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/highcharts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/leaflet/land-create.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/leaflet/land-create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/leaflet/land-edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/leaflet/land-edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/leaflet/land-heat-User.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/leaflet/land-heat-User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/leaflet/land-heat.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/leaflet/land-heat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/leaflet/land-show.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/leaflet/land-show.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/leaflet/sensor-create.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/leaflet/sensor-create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/leaflet/sensor-edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/leaflet/sensor-edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/leaflet/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/leaflet/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/user/dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/dashboard/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <ignored path="F:\laravel\Work\first\.idea\shelf/" />
     <ignored path="G:\work\Smart_Agriculture\.idea\shelf/" />
@@ -71,8 +51,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/user/dashboard/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="58" column="65" selection-start-line="58" selection-start-column="65" selection-end-line="58" selection-end-column="65" />
+            <state relative-caret-position="208">
+              <caret line="295" column="23" lean-forward="true" selection-start-line="295" selection-start-column="23" selection-end-line="295" selection-end-column="23" />
               <folding>
                 <element signature="e#330#2384#0#HTML" />
                 <element signature="e#869#933#0#HTML" expanded="true" />
@@ -987,7 +967,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1153700000" />
+    <option name="totallyTimeSpent" value="1153973000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1451,8 +1431,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/user/dashboard/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="58" column="65" selection-start-line="58" selection-start-column="65" selection-end-line="58" selection-end-column="65" />
+        <state relative-caret-position="208">
+          <caret line="295" column="23" lean-forward="true" selection-start-line="295" selection-start-column="23" selection-end-line="295" selection-end-column="23" />
           <folding>
             <element signature="e#330#2384#0#HTML" />
             <element signature="e#869#933#0#HTML" expanded="true" />
