@@ -190,8 +190,8 @@
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.6/animate.min.css" />
 @endsection
 <style>
-    @import url(https://lib.arvancloud.com/ar/weather-icons/2.0.9/css/weather-icons-wind.min.css);
-    @import url(https://lib.arvancloud.com/ar/weather-icons/2.0.9/css/weather-icons.min.css);
+    /*@import url(https://lib.arvancloud.com/ar/weather-icons/2.0.9/css/weather-icons-wind.min.css);*/
+    /*@import url(https://lib.arvancloud.com/ar/weather-icons/2.0.9/css/weather-icons.min.css);*/
     @import url(https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css);
     #mapid {
         height: 900px;

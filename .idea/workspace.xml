@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7d703aa5-6bf4-4443-9648-150136637f3e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/dashboard/index.blade.php" afterDir="false" />
     </list>
     <ignored path="F:\laravel\Work\first\.idea\shelf/" />
     <ignored path="G:\work\Smart_Agriculture\.idea\shelf/" />
@@ -48,13 +47,13 @@
     <session id="-1259134150">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="392" />
+          <entry key="php" value="400" />
           <entry key="txt" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="392" />
+          <entry key="Blade" value="400" />
           <entry key="PLAIN_TEXT" value="5" />
         </counts>
       </usages-collector>
@@ -70,6 +69,13 @@
           <entry key="CSS" value="3" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.84" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
     </session>
   </component>
   <component name="FavoritesManager">
@@ -82,28 +88,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/views/user/dashboard/index.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="359">
-                  <caret line="251" column="22" selection-start-line="251" selection-start-column="22" selection-end-line="251" selection-end-column="22" />
-                  <folding>
-                    <element signature="e#593#615#0#HTML" expanded="true" />
-                    <element signature="e#701#726#0#HTML" expanded="true" />
-                    <element signature="e#869#933#0#HTML" expanded="true" />
-                    <element signature="e#1228#1250#0#HTML" expanded="true" />
-                    <element signature="e#1335#1360#0#HTML" expanded="true" />
-                    <element signature="e#1415#1441#0#HTML" expanded="true" />
-                    <element signature="e#1525#1588#0#HTML" expanded="true" />
-                    <element signature="e#1884#1906#0#HTML" expanded="true" />
-                    <element signature="e#1994#2019#0#HTML" expanded="true" />
-                    <element signature="e#2171#2234#0#HTML" expanded="true" />
-                    <element signature="e#2896#2921#0#HTML" expanded="true" />
-                    <element signature="e#3360#3395#0#HTML" expanded="true" />
-                    <element signature="e#3593#3722#0#HTML" expanded="true" />
-                    <element signature="e#4042#4086#0#HTML" expanded="true" />
-                    <element signature="e#4514#4519#1#HTML" expanded="true" />
-                    <element signature="e#4866#4886#0#HTML" expanded="true" />
-                    <element signature="e#5165#5186#0#HTML" expanded="true" />
-                    <element signature="e#5589#5611#0#HTML" expanded="true" />
-                  </folding>
+                <state relative-caret-position="185">
+                  <caret line="290" column="17" lean-forward="true" selection-start-line="290" selection-start-column="17" selection-end-line="290" selection-end-column="17" />
                 </state>
               </provider>
             </entry>
@@ -111,11 +97,11 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/views/user/dashboard/index.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="851">
+                <state relative-caret-position="113">
                   <caret line="295" column="21" selection-start-line="295" selection-start-column="21" selection-end-line="295" selection-end-column="21" />
                 </state>
               </provider>
@@ -263,6 +249,44 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/Flot/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/bootstrap-colorpicker/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/bootstrap-datepicker/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/bootstrap-daterangepicker/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/bootstrap/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/chart.js/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/ckeditor-english/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/ckeditor/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/eve-raphael/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/ion.rangeSlider/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/jquery-knob/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/jquery-slimscroll/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/jquery-ui/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/morris.js/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/select2/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/Flot/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/bootstrap-colorpicker/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/bootstrap-datepicker/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/bootstrap-daterangepicker/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/bootstrap/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/chart.js/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/ckeditor-english/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/ckeditor/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/eve-raphael/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/ion.rangeSlider/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/jquery-knob/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/jquery-slimscroll/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/jquery-ui/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/morris.js/package.json" />
+      <path value="$PROJECT_DIR$/public/user/bower_components/select2/package.json" />
+    </packageJsonPaths>
+  </component>
   <component name="PhpServers">
     <servers />
   </component>
@@ -387,9 +411,9 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-75" />
-    <option name="y" value="8" />
-    <option name="width" value="784" />
-    <option name="height" value="788" />
+    <option name="y" value="7" />
+    <option name="width" value="785" />
+    <option name="height" value="790" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -399,7 +423,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -416,6 +439,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -673,13 +697,7 @@
       <workItem from="1626941315730" duration="1191000" />
       <workItem from="1627025521162" duration="8742000" />
       <workItem from="1627192079376" duration="9700000" />
-    </task>
-    <task id="LOCAL-00040" summary="Ehsan">
-      <created>1615364513099</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1615364513099</updated>
+      <workItem from="1627275757110" duration="1812000" />
     </task>
     <task id="LOCAL-00041" summary="Ehsan">
       <created>1615364721049</created>
@@ -1017,11 +1035,18 @@
       <option name="project" value="LOCAL" />
       <updated>1627217413640</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="Ehsan">
+      <created>1627217619896</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1627217619896</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1160122000" />
+    <option name="totallyTimeSpent" value="1162591000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1036,7 +1061,7 @@
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5419075" visible="true" weight="0.18376929" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5419075" visible="true" weight="0.18645205" />
       <window_info id="Structure" order="1" sideWeight="0.43641618" side_tool="true" weight="0.2112676" />
       <window_info auto_hide="true" id="npm" order="2" sideWeight="0.44364163" side_tool="true" weight="0.1965124" />
       <window_info id="Favorites" order="3" sideWeight="0.44942197" side_tool="true" weight="0.20590208" />
@@ -1053,7 +1078,7 @@
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.5549133" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.501006" side_tool="true" weight="0.24855492" />
       <window_info anchor="bottom" auto_hide="true" id="Run" order="12" sideWeight="0.45809248" weight="0.09819967" />
-      <window_info anchor="bottom" auto_hide="true" id="Terminal" order="13" sideWeight="0.49966466" weight="0.4140753" />
+      <window_info anchor="bottom" auto_hide="true" id="Terminal" order="13" sideWeight="0.49966466" weight="0.4132948" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1112,6 +1137,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update LandController" />
@@ -1429,28 +1457,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/user/dashboard/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="251" column="22" selection-start-line="251" selection-start-column="22" selection-end-line="251" selection-end-column="22" />
-          <folding>
-            <element signature="e#593#615#0#HTML" expanded="true" />
-            <element signature="e#701#726#0#HTML" expanded="true" />
-            <element signature="e#869#933#0#HTML" expanded="true" />
-            <element signature="e#1228#1250#0#HTML" expanded="true" />
-            <element signature="e#1335#1360#0#HTML" expanded="true" />
-            <element signature="e#1415#1441#0#HTML" expanded="true" />
-            <element signature="e#1525#1588#0#HTML" expanded="true" />
-            <element signature="e#1884#1906#0#HTML" expanded="true" />
-            <element signature="e#1994#2019#0#HTML" expanded="true" />
-            <element signature="e#2171#2234#0#HTML" expanded="true" />
-            <element signature="e#2896#2921#0#HTML" expanded="true" />
-            <element signature="e#3360#3395#0#HTML" expanded="true" />
-            <element signature="e#3593#3722#0#HTML" expanded="true" />
-            <element signature="e#4042#4086#0#HTML" expanded="true" />
-            <element signature="e#4514#4519#1#HTML" expanded="true" />
-            <element signature="e#4866#4886#0#HTML" expanded="true" />
-            <element signature="e#5165#5186#0#HTML" expanded="true" />
-            <element signature="e#5589#5611#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="185">
+          <caret line="290" column="17" lean-forward="true" selection-start-line="290" selection-start-column="17" selection-end-line="290" selection-end-column="17" />
         </state>
       </provider>
     </entry>
