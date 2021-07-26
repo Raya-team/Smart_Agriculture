@@ -16,7 +16,7 @@
                 <div class="small-box bg-yellow">
                     <div class="inner">
                         <h3>{{$total_area}}</h3>
-                        <p style="font-size:18px"><b>مساحت کل</b></p>
+                        <p style="font-size:18px"><b>مساحت کل (هکتار)</b></p>
                     </div>
                     <div class="icon" style="padding-top: 12px">
                         <i class="fa fa-fw fa-area-chart"></i>
