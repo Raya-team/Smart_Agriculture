@@ -80,7 +80,7 @@
             <section class="col-lg-6 connectedSortable">
                 <div class="box box-solid bg-teal-gradient" style="background: -webkit-gradient(linear, right bottom, right top, color-stop(0, #39cccc), color-stop(1, #3F51B5)) !important;">
                     <div class="box-header">
-                        <i class="fa fa-th"></i>
+                        <i class="wi wi-day-cloudy"></i>
                         <h3 class="box-title">وضعیت آب و هوا</h3>
                         <div class="box-tools pull-left">
                             <button type="button" class="btn bg-teal btn-sm" data-widget="collapse" style="background-color: #3e53b5 !important"><i class="fa fa-minus"></i>

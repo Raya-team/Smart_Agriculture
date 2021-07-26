@@ -19,7 +19,7 @@ class DashboardController extends Controller
         $lands_count = Land::where('user_id', $user_id)->count();
         $lands = Land::where('user_id', $user_id)->get();
         $total_area = Land::where('user_id', $user_id)->sum('area');
-        $total_area = round($total_area/10000);
+        $total_area = round($total_area/10000,2);
         $sensors = Sensor::all();
         $user_sensors=[];
         foreach ($lands as $land)
