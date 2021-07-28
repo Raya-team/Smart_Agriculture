@@ -7,6 +7,7 @@ use App\Models\Detail;
 use App\Models\Filter;
 use App\Models\Land;
 use App\Models\Sensor;
+use App\Rules\Security;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Morilog\Jalali\Jalalian;
@@ -52,16 +53,24 @@ class ChartController extends Controller
      */
     public function show(Request $request,$sensor)
     {
-        if (request()->has('from') && request()->has('to')) {
+        if (request()->has('from') && request()->has('to') && request()->has('filter_id') && request()->has('period')) {
+            $validated = $request->validate([
+                'filter' => ['required', new Security()],
+                'from' => ['required', new Security()],
+                'to' => ['required', new Security()],
+                'period' => ['required', new Security()]
+            ]);
             $from = $this->convertNumbers($request->from);
             $a = Jalalian::fromFormat('Y/m/d', $from)->toCarbon();
             $to = $this->convertNumbers($request->to);
             $b = Jalalian::fromFormat('Y/m/d', $to)->toCarbon();
             $details = Detail::
             where('sensor_id', $sensor)->
-            whereBetween('created_at' , [$a, $b])->where('')->get();
-        }else{
-            $details = Detail::where('sensor_id', $sensor)->get();
+            where('filter_id', $request->filter_id)->
+            whereBetween('created_at' , [$a, $b])->get();
+        }else
+        {
+            $details = null;
         }
         $filters = Filter::all();
         return view('admin.chart.index', compact(['filters','details','sensor']));

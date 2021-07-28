@@ -144,7 +144,7 @@
             pressure = `${data.main.pressure} bar`;
             humidity = `${data.main.humidity} درصد `;
             windSpeed = `${data.wind.speed} MPH`;
-            windDeg = data.wind.deg;
+            windDeg = data.wind.deg; 
             switch (true) {
                 case (windDeg == 0 || windDeg == 360): $('.windDeg').append('<style>.windDeg:before{transform:rotate(0deg);}</style>');break;
                 case (0<windDeg && windDeg<90): $('.windDeg').append('<style>.windDeg:before{transform:rotate(45deg);}</style>');break;

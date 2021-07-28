@@ -21,9 +21,11 @@
                             <hr style=" border: 1px solid rgba(0,0,0,0.31);">
                             <div class="box-body">
                                 <form action="{{route('chart.show' , ['sensor' => $sensor])}}" method="get">
+                                    @csrf
+                                    @include('admin.section.errors')
                                     <div class="form-group">
                                         <label>پارامتر:</label>
-                                        <select class="form-control chosen-select" style="width: 100%;" name="filter_id" id="filter_id">
+                                        <select class="form-control chosen-select" style="width: 100%;" name="filter" id="filter_id">
                                             @foreach($filters as $filter)
                                                 <option value="{{ $filter->id }}" data-nickname="{{ $filter->nickname }}" data-index="{{ $filter->index }}">{{ $filter->nickname }}</option>
                                             @endforeach
@@ -41,7 +43,7 @@
                                     <hr>
                                     <div class="form-group">
                                         <label>بازه:</label>
-                                        <select class="form-control chosen-select" style="width: 100%;" name="filter_id" id="filter_id" data-placeholder="جهت نمایش نمودار پارامتر مورد نظر خود را انتخاب کنید">
+                                        <select class="form-control chosen-select" style="width: 100%;" name="period" id="period" data-placeholder="جهت نمایش نمودار پارامتر مورد نظر خود را انتخاب کنید">
                                             <option value="h">ساعتی</option>
                                             <option value="d">روزانه</option>
                                             <option value="w">هفتگی</option>
