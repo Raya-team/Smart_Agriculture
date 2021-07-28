@@ -72,10 +72,10 @@ class LandController extends Controller
      */
     public function show(Land $land)
     {
-        if (Gate::allows('show-land') || Auth::user()->level == 2) {
-            return view('admin.lands.show', compact(['land']));
-        }
-        abort(401);
+//        if (Gate::allows('show-land') || Auth::user()->level == 2) {
+//            return view('admin.lands.show', compact(['land']));
+//        }
+        abort(404);
     }
 
     /**

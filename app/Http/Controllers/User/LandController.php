@@ -23,9 +23,9 @@ class LandController extends Controller
 
     public function show(Land $land)
     {
-        if ($land->user_id == Auth::user()->id){
-            return view('user.lands.show', compact(['land']));
-        }
+//        if ($land->user_id == Auth::user()->id){
+//            return view('user.lands.show', compact(['land']));
+//        }
         abort(404);
     }
 

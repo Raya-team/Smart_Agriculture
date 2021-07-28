@@ -31,7 +31,7 @@
                             <thead>
                             <tr>
                                 <th> نام زمین</th>
-                                <th>مساحت (m<sub style="vertical-align: super">۲</sub>)</th>
+                                <th>مساحت (هکتار)</th>
                                 <th>نام کاربر</th>
                                 <th>عملیات</th>
                             </tr>
@@ -40,7 +40,7 @@
                             @foreach($lands as $land)
                                 <tr>
                                     <td>{{ $land->name }}</td>
-                                    <td>{{ $land->area }}</td>
+                                    <td>{{ round($land->area/10000, 2) }}</td>
                                     <td>{{ $land->user->name }}</td>
                                     <td>
                                         <form action="{{ route('lands.destroy' , ['land'=> $land->id]) }}" method="post">
@@ -49,7 +49,7 @@
 
                                             <div class="btn-group btn-group-xs">
                                                 <a href="{{ route('lands.edit', ['land' => $land->id]) }}" class="btn btn-primary" data-tooltip="tooltip" data-placement="bottom" title="ویرایش"><i class="fa fa-fw fa-edit"></i></a>
-                                                <a href="{{ route('lands.show', ['land' => $land->id]) }}" class="btn btn-success" data-tooltip="tooltip" data-placement="bottom" title="نمایش"><i class="fa fa-fw fa-eye"></i></a>
+{{--                                                <a href="{{ route('lands.show', ['land' => $land->id]) }}" class="btn btn-success" data-tooltip="tooltip" data-placement="bottom" title="نمایش"><i class="fa fa-fw fa-eye"></i></a>--}}
                                                 <a href="{{ route('lands.heat', ['land' => $land->id]) }}" class="btn btn-warning" data-tooltip="tooltip" data-placement="bottom" title="اسموتینگ"><i class="fa fa-fw fa-fire"></i></a>
                                                 <button type="submit" class="btn btn-danger"><i class="fa fa-fw fa-trash-o" data-tooltip="tooltip" data-placement="bottom" title="حذف"></i></button>
                                             </div>

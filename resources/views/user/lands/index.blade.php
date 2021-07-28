@@ -32,6 +32,7 @@
                             <thead>
                             <tr>
                                 <th> نام زمین</th>
+                                <th>مساحت (هکتار)</th>
                                 <th>ایستگاها</th>
                                 <th>عملیات</th>
                             </tr>
@@ -40,6 +41,7 @@
                             @foreach($lands as $land)
                                 <tr>
                                     <td>{{ $land->name }}</td>
+                                    <td>{{ round($land->area/10000, 2) }}</td>
                                     <td>
                                         @if(count($land->sensors))
                                             @foreach($land->sensors as $sensor)
@@ -52,8 +54,8 @@
                                     </td>
                                     <td>
                                         <div class="btn-group btn-group-xs">
-                                            <a href="{{ route('user.land.show', ['land' => $land->id]) }}" class="btn btn-success" data-tooltip="tooltip" data-placement="bottom" title="نمایش"><i class="fa fa-fw fa-eye"></i></a>
-                                            <a href="{{ route('user.land.heat', ['land' => $land->id]) }}" class="btn btn-warning" data-tooltip="tooltip" data-placement="bottom" title="اسموتینگ"><i class="fa fa-fw fa-fire"></i></a>
+{{--                                            <a href="{{ route('user.land.show', ['land' => $land->id]) }}" class="btn btn-success" data-tooltip="tooltip" data-placement="bottom" title="نمایش"><i class="fa fa-fw fa-eye"></i></a>--}}
+                                            <a href="{{ route('user.land.heat', ['land' => $land->id]) }}" class="btn btn-success" data-tooltip="tooltip" data-placement="bottom" title="نمایش"><i class="fa fa-fw fa-eye"></i></a>
                                         </div>
                                     </td>
                                 </tr>
