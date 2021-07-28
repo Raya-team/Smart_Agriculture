@@ -21,7 +21,6 @@
                             <hr style=" border: 1px solid rgba(0,0,0,0.31);">
                             <div class="box-body">
                                 <form action="{{route('chart.show' , ['sensor' => $sensor])}}" method="get">
-                                    @csrf
                                     @include('admin.section.errors')
                                     <div class="form-group">
                                         <label>پارامتر:</label>

@@ -53,7 +53,7 @@ class ChartController extends Controller
      */
     public function show(Request $request,$sensor)
     {
-        if (request()->has('from') && request()->has('to') && request()->has('filter_id') && request()->has('period')) {
+        if (request()->has('from') && request()->has('to') && request()->has('filter') && request()->has('period')) {
             $validated = $request->validate([
                 'filter' => ['required', new Security()],
                 'from' => ['required', new Security()],
