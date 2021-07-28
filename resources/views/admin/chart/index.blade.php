@@ -20,21 +20,37 @@
                             <h3 class="box-title">فیلتر داده ها</h3>
                             <hr style=" border: 1px solid rgba(0,0,0,0.31);">
                             <div class="box-body">
-                                <label style="font-size: 16px;color: red">بازه زمانی</label>
-                                <br>
                                 <form action="{{route('chart.show' , ['sensor' => $sensor])}}" method="get">
                                     <div class="form-group">
-                                    <label>از تاریخ :</label>
+                                        <label>پارامتر:</label>
+                                        <select class="form-control chosen-select" style="width: 100%;" name="filter_id" id="filter_id">
+                                            @foreach($filters as $filter)
+                                                <option value="{{ $filter->id }}" data-nickname="{{ $filter->nickname }}" data-index="{{ $filter->index }}">{{ $filter->nickname }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <hr>
+                                    <div class="form-group">
+                                    <label for="from">از تاریخ :</label>
                                         <input name="from" id="from" class="datepicker-demo observer-from pwt-datepicker-input-element" placeholder="از تاریخ" >
                                     </div>
                                     <div class="form-group">
-                                    <label>تا تاریخ :</label>
+                                    <label for="to">تا تاریخ :</label>
                                     <input name="to" id="to" class="datepicker-demo observer-to pwt-datepicker-input-element" placeholder="تا تاریخ" >
                                     </div>
-                                    <button type="submit" class="btn btn-primary">ثبت</button>
-                                </form>
-                                <form action="{{route('chart.show' , ['sensor' => $sensor])}}" method="get">
-                                    <button type="submit" class="btn btn-danger" style="margin-top: 20px">حذف تغییرات</button>
+                                    <hr>
+                                    <div class="form-group">
+                                        <label>بازه:</label>
+                                        <select class="form-control chosen-select" style="width: 100%;" name="filter_id" id="filter_id" data-placeholder="جهت نمایش نمودار پارامتر مورد نظر خود را انتخاب کنید">
+                                            <option value="h">ساعتی</option>
+                                            <option value="d">روزانه</option>
+                                            <option value="w">هفتگی</option>
+                                            <option value="m">ماهانه</option>
+                                            <option value="y">سالانه</option>
+                                        </select>
+                                    </div>
+                                    <br>
+                                    <button type="submit" class="btn btn-primary">نمایش</button>
                                 </form>
                             </div>
                             <div class="box-tools pull-right">
@@ -52,19 +68,10 @@
                 <div class="col-xs-12">
                     <!-- interactive chart -->
                     <div class="box box-primary">
-                        <div class="box-header with-border">
+                        <div class="box-header">
                             <i class="fa fa-bar-chart-o"></i>
                             <h3 class="box-title">نمودار</h3>
                             <hr style=" border: 1px solid rgba(0,0,0,0.31);">
-                            <div class="box-body">
-                                <label>پارامتر</label>
-                                <select class="form-control chosen-select" style="width: 100%;" name="filter_id" id="filter_id" data-placeholder="جهت نمایش نمودار پارامتر مورد نظر خود را انتخاب کنید">
-                                    <option value=""></option>
-                                    @foreach($filters as $filter)
-                                        <option value="{{ $filter->id }}" data-nickname="{{ $filter->nickname }}" data-index="{{ $filter->index }}">{{ $filter->nickname }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
                             <div class="box-tools pull-right">
                                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                             </div>

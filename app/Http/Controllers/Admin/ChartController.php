@@ -7,6 +7,7 @@ use App\Models\Detail;
 use App\Models\Filter;
 use App\Models\Land;
 use App\Models\Sensor;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Morilog\Jalali\Jalalian;
 
@@ -58,7 +59,7 @@ class ChartController extends Controller
             $b = Jalalian::fromFormat('Y/m/d', $to)->toCarbon();
             $details = Detail::
             where('sensor_id', $sensor)->
-            whereBetween('created_at' , [$a, $b])->get();
+            whereBetween('created_at' , [$a, $b])->where('')->get();
         }else{
             $details = Detail::where('sensor_id', $sensor)->get();
         }
