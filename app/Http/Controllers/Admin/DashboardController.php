@@ -21,6 +21,8 @@ class DashboardController extends Controller
             $unapproved_users = User::where('status','0')->count();
             $lands_count = Land::all()->count();
             $sensors_count = Sensor::all()->count();
+            $total_area = Land::sum('area');
+            $total_area = round($total_area/10000,2);
             $details = [];
 
             $sensors = Sensor::all();
@@ -47,7 +49,7 @@ class DashboardController extends Controller
             $details = json_encode($details);
 
 //            return view('admin.lands.heat', compact('land', 'details','filters'));
-            return view('admin.dashboard.index', compact(['users_count','lands_count', 'sensors_count', 'unapproved_users', 'details']));
+            return view('admin.dashboard.index', compact(['users_count','lands_count', 'sensors_count', 'unapproved_users', 'details', 'total_area']));
 
         }
         abort(401);
