@@ -66,8 +66,11 @@ class ChartController extends Controller
             $b = Jalalian::fromFormat('Y/m/d', $to)->toCarbon();
             $details = Detail::
             where('sensor_id', $sensor)->
-            where('filter_id', $request->filter_id)->
+            where('filter_id', $request->filter)->
             whereBetween('created_at' , [$a, $b])->get();
+            $details = collect($details);
+            return $details->where('id', 6);
+//            return $details;
         }else
         {
             $details = null;
