@@ -58,10 +58,12 @@ class ChartController extends Controller
                 $details = $this->Hourly($request, $sensor, $a, $b);
             }*/
             $data = [];
+            $date = [];
             foreach ($details as $key => $value){
                 $detail = collect($value);
                 $avg = round($detail->avg('value'),2);
-                array_push($data,["$key",$avg]);
+                array_push($data, [$avg, "$key"]);
+                array_push($date, "$key");
             }
             $details = null;
 
