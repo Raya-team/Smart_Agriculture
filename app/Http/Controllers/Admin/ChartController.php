@@ -65,7 +65,7 @@ class ChartController extends Controller
                 array_push($data, [$avg, "$key"]);
                 array_push($date, "$key");
             }
-            $details = null;
+//            $details = null;
 
             return $data;
         }else
