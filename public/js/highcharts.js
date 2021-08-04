@@ -653,36 +653,19 @@ K(e,function(d,e){if(!v&&-1<h.collectionsWithUpdate.indexOf(e))for(d=y(d),m[e]=[
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! highcharts */ "./node_modules/highcharts/highcharts.js");
 /* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(highcharts__WEBPACK_IMPORTED_MODULE_0__);
- //n DatePicker
 
-$('.observer-from').persianDatepicker({
-  observer: true,
-  format: 'YYYY/MM/DD',
-  altField: '.observer-from-alt'
-});
-$('.observer-to').persianDatepicker({
-  observer: true,
-  format: 'YYYY/MM/DD',
-  altField: '.observer-to-alt'
-}); // Show Chart
+var nickname, index, options, data, date, filter;
 
-var all_details = JSON.parse(document.getElementById('details').value);
-var nickname, index, options, i;
-$("#filter_id").change(function () {
-  nickname = $(this).find(':selected').data('nickname');
-  index = $(this).find(':selected').data('index');
-  var filter_id = $(this).find(':selected').val();
-  var data = [];
-  var date = [];
+if (document.getElementById('data').value && document.getElementById('date').value && document.getElementById('filter_selected').value) {
+  data = JSON.parse(document.getElementById('data').value);
+  date = JSON.parse(document.getElementById('date').value);
+  filter = JSON.parse(document.getElementById('filter_selected').value);
+  nickname = filter.nickname;
+  index = filter.index;
+} // Show Chart
 
-  for (i = 0; i < all_details.length; i++) {
-    if (filter_id == all_details[i]['filter_id']) {
-      var time = new Date(all_details[i]['created_at']).toLocaleDateString('fa-IR');
-      data.push([time, all_details[i]['value']]);
-      date.push(time);
-    }
-  }
 
+if (data && date && filter) {
   options = {
     chart: {
       type: 'spline'
@@ -722,22 +705,7 @@ $("#filter_id").change(function () {
     }]
   };
   highcharts__WEBPACK_IMPORTED_MODULE_0___default.a.chart('highcharts', options);
-}); // newseries = {
-//     name: '',
-//     data: []
-// }
-// var ab = [];
-// for (var y = 0; y<fitlers.length ; y++ ){
-//     var newseries = new Object();
-//     newseries.name = fitlers[y]['nickname'];
-//     for (var j = 0; j<fitlers[y]['details'].length ; j++ ){
-//         ab.push(fitlers[y]['details'][j]);
-//     }
-//     newseries.data = ab;
-//     options.series.push(newseries);
-//     console.log(ab);
-//     ab.splice([0]);
-// }
+}
 
 /***/ }),
 
@@ -748,7 +716,7 @@ $("#filter_id").change(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\highcharts.js */"./resources/js/highcharts.js");
+module.exports = __webpack_require__(/*! F:\laravel\Work\Smart agriculture\resources\js\highcharts.js */"./resources/js/highcharts.js");
 
 
 /***/ })

@@ -1,36 +1,17 @@
 import Ch from 'highcharts';
 
-//n DatePicker
-$('.observer-from').persianDatepicker({
-    observer: true,
-    format: 'YYYY/MM/DD',
-    altField: '.observer-from-alt',
-});
-
-$('.observer-to').persianDatepicker({
-    observer: true,
-    format: 'YYYY/MM/DD',
-    altField: '.observer-to-alt',
-});
+var nickname, index, options, data, date, filter;
+if (document.getElementById('data').value && document.getElementById('date').value && document.getElementById('filter_selected').value) {
+    data = JSON.parse(document.getElementById('data').value);
+    date = JSON.parse(document.getElementById('date').value);
+    filter = JSON.parse(document.getElementById('filter_selected').value);
+    nickname = filter.nickname;
+    index = filter.index;
+}
 
 
 // Show Chart
-var all_details = JSON.parse(document.getElementById('details').value);
-var nickname,index,options,i;
-$("#filter_id").change(function () {
-    nickname = $(this).find(':selected').data('nickname');
-    index = $(this).find(':selected').data('index');
-    var filter_id = $(this).find(':selected').val();
-    var data = [];
-    var date = [];
-
-    for (i=0 ; i<all_details.length ; i++){
-        if ( filter_id == all_details[i]['filter_id'] ){
-            var time = new Date(all_details[i]['created_at']).toLocaleDateString('fa-IR');
-            data.push([ time, all_details[i]['value'] ]);
-            date.push(time);
-        }
-    }
+if (data && date && filter){
     options =  {
         chart: {
             type: 'spline'
@@ -69,62 +50,8 @@ $("#filter_id").change(function () {
             shadow: true
         }]
     };
-
     Ch.chart('highcharts', options);
+}
 
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// newseries = {
-//     name: '',
-//     data: []
-// }
-// var ab = [];
-// for (var y = 0; y<fitlers.length ; y++ ){
-//     var newseries = new Object();
-//     newseries.name = fitlers[y]['nickname'];
-//     for (var j = 0; j<fitlers[y]['details'].length ; j++ ){
-//         ab.push(fitlers[y]['details'][j]);
-//     }
-//     newseries.data = ab;
-//     options.series.push(newseries);
-//     console.log(ab);
-//     ab.splice([0]);
-// }
 
 

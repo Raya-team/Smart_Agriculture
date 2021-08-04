@@ -23,6 +23,8 @@ class ChartController extends Controller
      */
     public function show(Request $request,$sensor)
     {
+        $filters = Filter::all();
+
         if (request()->has('from') && request()->has('to') && request()->has('filter') && request()->has('period')) {
             $validated = $request->validate([
                 'filter' => ['required', new Security()],
@@ -30,11 +32,15 @@ class ChartController extends Controller
                 'to' => ['required', new Security()],
                 'period' => ['required', new Security()]
             ]);
+            $filter_selected = Filter::findOrFail($request->filter);
             $from = $this->convertNumbers($request->from);
             $a = Jalalian::fromFormat('Y/m/d', $from)->toCarbon();
             $to = $this->convertNumbers($request->to);
             $b = Jalalian::fromFormat('Y/m/d', $to)->toCarbon();
             switch ($request->period){
+                case 'h' :
+                    $details = $this->Hourly($request, $sensor, $a, $b);
+                    break;
                 case 'd' :
                     $details = $this->Daily($request, $sensor, $a, $b);
                     break;
@@ -44,36 +50,36 @@ class ChartController extends Controller
                 case 'y' :
                     $details = $this->Yearly($request, $sensor, $a, $b);
                     break;
-                case 'h' :
-                    $details = $this->Hourly($request, $sensor, $a, $b);
-                    break;
+                default :
+                    $data = [];
+                    $date = [];
+                    $data = json_encode($data);
+                    $date = json_encode($date);
+                    return view('admin.chart.index', compact(['filters', 'filter_selected', 'sensor', 'data', 'date']));
             }
-            /*if ($request->period == 'd'){
-                $details = $this->Daily($request, $sensor, $a, $b);
-            }elseif ($request->period == 'm'){
-                $details = $this->Monthly($request, $sensor, $a, $b);
-            }elseif ($request->period == 'y'){
-                $details = $this->Yearly($request, $sensor, $a, $b);
-            } elseif ($request->period == 'h'){
-                $details = $this->Hourly($request, $sensor, $a, $b);
-            }*/
+
             $data = [];
             $date = [];
             foreach ($details as $key => $value){
                 $detail = collect($value);
                 $avg = round($detail->avg('value'),2);
-                array_push($data, [$avg, "$key"]);
+                array_push($data, ["$key", $avg]);
                 array_push($date, "$key");
             }
-//            $details = null;
+            $data = json_encode($data);
+            $date = json_encode($date);
 
-            return $data;
-        }else
-        {
-            $details = null;
+        }else {
+            $filter_selected = null;
+            $data = [];
+            $date = [];
+            $data = json_encode($data);
+            $date = json_encode($date);
         }
-        $filters = Filter::all();
-        return view('admin.chart.index', compact(['filters','details','sensor']));
+//        return $request;
+
+
+        return view('admin.chart.index', compact(['filters', 'filter_selected', 'sensor', 'data', 'date']));
     }
 
     public function convertNumbers($srting,$toPersian=true)

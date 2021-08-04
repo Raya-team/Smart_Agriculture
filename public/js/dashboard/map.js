@@ -14456,7 +14456,7 @@ for (var i = 0; i < datapoints.length; i++) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! G:\work\Smart_Agriculture\resources\js\dashboard\map.js */"./resources/js/dashboard/map.js");
+module.exports = __webpack_require__(/*! F:\laravel\Work\Smart agriculture\resources\js\dashboard\map.js */"./resources/js/dashboard/map.js");
 
 
 /***/ })

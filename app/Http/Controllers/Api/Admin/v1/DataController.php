@@ -14,16 +14,17 @@ class DataController extends Controller
 {
     public function store(Request $request)
     {
-//        return $request;
         $filter = Filter::all(['name', 'id']);
         $sensors = Sensor::all(['serial', 'id']);
-        if ($request->Latitude && $request->Longitude){
-            $lat = $request->Latitude; $lng = $request->Longitude;
+
+        if ($request->Lt && $request->Lg){
+            $lat = $request->Lt; $lng = $request->Lg;
         }
         for ($i = 0 ; $i < $filter->count() ; $i++){
             $detail = new Detail();
+            $sensor_id = $this->SearchSensors($request, $sensors, $detail);
             if (!$this->SearchSensors($request, $sensors, $detail)){continue;}
-            if ($request->Latitude && $request->Longitude){
+            if ($request->Lt && $request->Lg){
                 $detail->location = "[{\"lat\":$lat,\"lng\":$lng}]";
             }else{
                 $sensor_id = $this->SearchSensors($request, $sensors, $detail);
@@ -46,8 +47,8 @@ class DataController extends Controller
             }
             $detail->save();
         }
-//        $rand = rand(1000,9999) . Carbon::now()->microsecond . ".json";
-//        Storage::put($rand, json_encode($request->all()));
+        //$rand = rand(1000,9999) . Carbon::now()->microsecond . ".json";
+        //Storage::put($rand, json_encode($request->all()));
         return response('Saved',201);
     }
 

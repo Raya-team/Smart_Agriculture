@@ -26,7 +26,7 @@
                                         <label>پارامتر:</label>
                                         <select class="form-control chosen-select" style="width: 100%;" name="filter" id="filter_id">
                                             @foreach($filters as $filter)
-                                                <option value="{{ $filter->id }}" data-nickname="{{ $filter->nickname }}" data-index="{{ $filter->index }}">{{ $filter->nickname }}</option>
+                                                <option value="{{ $filter->id }}">{{ $filter->nickname }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -63,8 +63,9 @@
             </div>
         </div>
         <div class="col-md-9">
-            <input type="hidden" value="{{ $details }}" id="details">
-            <input type="hidden" value="{{ $filters }}" id="filters">
+            <input type="hidden" value="{{ $data }}" id="data">
+            <input type="hidden" value="{{ $date }}" id="date">
+            <input type="hidden" value="{{ $filter_selected }}" id="filter_selected">
             <div class="row">
                 <div class="col-xs-12">
                     <!-- interactive chart -->
@@ -94,6 +95,23 @@
 @section('script')
     <script src="https://unpkg.com/persian-date@1.1.0/dist/persian-date.min.js"></script>
     <script src="https://unpkg.com/persian-datepicker@1.2.0/dist/js/persian-datepicker.min.js"></script>
+    <script>
+        // DatePicker
+        var h =$('.observer-from').pDatepicker({
+            observer: true,
+            format: 'YYYY/MM/DD',
+            altField: '.observer-from-alt',
+            persianDigit: false
+        });
+
+        $('.observer-to').pDatepicker({
+            observer: true,
+            format: 'YYYY/MM/DD',
+            altField: '.observer-to-alt',
+            persianDigit: false
+        });
+    </script>
+
     <script src="{{ asset('js/highcharts.js') }}"></script>
     <script src="{{ asset('js/chosen.js') }}"></script>
 @endsection
