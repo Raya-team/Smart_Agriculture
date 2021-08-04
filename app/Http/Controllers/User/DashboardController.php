@@ -14,6 +14,16 @@ class DashboardController extends Controller
 {
     public function index()
     {
+        $details = [];
+        $sensors = Sensor::with('land')->get();
+        foreach ($sensors as $sensor){
+            if (Auth::user()->id == $sensor->land->user_id){
+                Sensor::with('details')->where('id', $sensor->id)->get();
+                $data = $sensor->details->last();
+                array_push($details, $data);
+            }
+        }
+
         $user_id = Auth::user()->id;
         $users_count = User::where('status', '1')->count();
         $lands_count = Land::where('user_id', $user_id)->count();
@@ -33,24 +43,7 @@ class DashboardController extends Controller
             }
         }
         $sensors_count = count($user_sensors);
-        $details = [];
-        $all_details = Detail::createdAtDesc()->get();
-        foreach ($user_sensors as $user_sensor) {
-            foreach ($all_details as $all_detail) {
-                if ($all_detail->sensor_id == $user_sensor->id) {
-                    if ($details == null) {
-                        array_push($details, $all_detail);
-                    } else {
-                        if ($this->SearchDetails($details, $all_detail, $user_sensor)) {
-                            continue;
-                        } else {
-                            array_push($details, $all_detail);
-                        }
-                    }
-                }
-            }
-        }
-//            return $details;
+
         $details = json_encode($details);
 
 //            return view('admin.lands.heat', compact('land', 'details','filters'));

@@ -23,4 +23,9 @@ class Land extends Model
     {
         return $this->hasMany(Sensor::class);
     }
+
+    public function sensorsdetails()
+    {
+        return $this->hasMany(Sensor::class)->with('lastdetails');
+    }
 }

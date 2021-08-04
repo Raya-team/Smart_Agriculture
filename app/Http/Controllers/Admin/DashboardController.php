@@ -31,11 +31,16 @@ class DashboardController extends Controller
                 $sensor = $sensor->details->last();
                 array_push($details, $sensor);
             }
-//            return $details;
             $details = json_encode($details);
 
-//            return view('admin.lands.heat', compact('land', 'details','filters'));
-            return view('admin.dashboard.index', compact(['users_count','lands_count', 'sensors_count', 'unapproved_users', 'details', 'total_area']));
+            return view('admin.dashboard.index', compact([
+                'users_count',
+                'lands_count',
+                'sensors_count',
+                'unapproved_users',
+                'details',
+                'total_area'
+            ]));
 
         }
         abort(401);
