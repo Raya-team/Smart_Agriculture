@@ -4,40 +4,8 @@
     <bookmark url="file://$PROJECT_DIR$/resources/views" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d703aa5-6bf4-4443-9648-150136637f3e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_25_2021_1_50_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_25_2021_1_50_PM__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_25_2021_2_02_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_25_2021_2_02_PM__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_26_2021_11_21_AM_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_26_2021_11_21_AM__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2021_10_01_AM_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2021_10_01_AM__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2021_10_24_AM_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2021_10_24_AM__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2021_2_37_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2021_2_37_PM__Default_Changelist_.xml" beforeDir="false" />
+    <list default="true" id="7d703aa5-6bf4-4443-9648-150136637f3e" name="Default Changelist" comment="Ehsan">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ChartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ChartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Admin/v1/DataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Admin/v1/DataController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Detail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/weather.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/weather.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/chosen.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/chosen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/dashboard/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/dashboard/map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/filter/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/filter/create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/filter/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/filter/edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/highcharts.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/highcharts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/leaflet/land-create.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/leaflet/land-create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/leaflet/land-edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/leaflet/land-edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/leaflet/land-heat-User.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/leaflet/land-heat-User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/leaflet/land-heat.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/leaflet/land-heat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/leaflet/sensor-create.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/leaflet/sensor-create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/leaflet/sensor-edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/leaflet/sensor-edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/leaflet/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/leaflet/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/highcharts.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/highcharts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/chart/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/chart/index.blade.php" afterDir="false" />
     </list>
     <ignored path="F:\laravel\Work\first\.idea\shelf/" />
     <ignored path="G:\work\Smart_Agriculture\.idea\shelf/" />
@@ -80,14 +48,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="js" value="481" />
-          <entry key="php" value="2147" />
+          <entry key="php" value="2197" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Blade" value="215" />
           <entry key="JavaScript" value="481" />
-          <entry key="PHP" value="1932" />
+          <entry key="PHP" value="1982" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -103,14 +71,14 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="js" value="4" />
-          <entry key="php" value="9" />
+          <entry key="php" value="11" />
           <entry key="vue" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JavaScript" value="4" />
-          <entry key="PHP" value="9" />
+          <entry key="PHP" value="11" />
           <entry key="Vue.js" value="1" />
         </counts>
       </usages-collector>
@@ -121,50 +89,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ChartController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
-              <folding>
-                <element signature="e#46#82#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Admin/v1/DataController.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/LandHeatController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1056">
-              <caret line="50" column="10" selection-end-line="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webpack.mix.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="18" column="67" lean-forward="true" selection-start-line="18" selection-start-column="67" selection-end-line="18" selection-end-column="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/chart/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2520">
-              <caret line="105" selection-start-line="105" selection-end-line="105" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/highcharts.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+            <state relative-caret-position="-502">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
@@ -243,7 +172,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/.cpanel.yml" />
         <option value="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
         <option value="$PROJECT_DIR$/routes/web/admin.php" />
@@ -291,9 +219,10 @@
         <option value="$PROJECT_DIR$/resources/views/admin/dashboard/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Models/Detail.php" />
         <option value="$PROJECT_DIR$/resources/js/highcharts.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ChartController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/chart/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Admin/v1/DataController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/LandHeatController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ChartController.php" />
       </list>
     </option>
   </component>
@@ -469,7 +398,7 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-75" />
     <option name="y" value="5" />
     <option name="width" value="785" />
@@ -493,47 +422,7 @@
             <path>
               <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
               <item name="Smart agriculture" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Smart agriculture" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Smart agriculture" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Smart agriculture" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Smart agriculture" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Api" type="462c0819:PsiDirectoryNode" />
-              <item name="Admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Smart agriculture" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Smart agriculture" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Api" type="462c0819:PsiDirectoryNode" />
-              <item name="Admin" type="462c0819:PsiDirectoryNode" />
-              <item name="v1" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -804,7 +693,7 @@
       <workItem from="1627711689662" duration="13840000" />
       <workItem from="1627810105340" duration="3839000" />
       <workItem from="1627999126730" duration="1652000" />
-      <workItem from="1628073119102" duration="251000" />
+      <workItem from="1628073119102" duration="2117000" />
     </task>
     <task id="LOCAL-00050" summary="Ehsan">
       <created>1616470712750</created>
@@ -1153,7 +1042,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1218662000" />
+    <option name="totallyTimeSpent" value="1220528000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1166,7 +1055,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5419075" visible="true" weight="0.20254862" />
       <window_info id="Structure" order="1" sideWeight="0.43641618" side_tool="true" weight="0.2112676" />
@@ -1260,13 +1148,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Ehsan" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/js/leaflet/land-heat.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1776">
-          <caret line="78" column="30" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@mapbox/geojson-area/index.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/leaflet-measure-path/leaflet-measure-path.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -1425,13 +1306,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/LandController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="77" column="17" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/LandController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -1540,17 +1414,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/chart/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2520">
-          <caret line="105" selection-start-line="105" selection-end-line="105" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/highcharts.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/chart/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="105" selection-start-line="105" selection-end-line="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/LandController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-24">
+          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Admin/v1/DataController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-624">
+          <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1563,18 +1451,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ChartController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+        <state relative-caret-position="578">
+          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
           <folding>
             <element signature="e#46#82#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Admin/v1/DataController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/LandHeatController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
-          <caret line="50" column="10" selection-end-line="72" />
+        <state relative-caret-position="-502">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
