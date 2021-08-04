@@ -25,25 +25,11 @@ class DashboardController extends Controller
             $total_area = round($total_area/10000,2);
             $details = [];
 
-            $sensors = Sensor::all();
-
-            $all_details = Detail::createdAtDesc()->get();
-
-            foreach ($sensors as $sensor) {
-                    foreach ($all_details as $all_detail)
-                    {
-                        if ($all_detail->sensor_id == $sensor->id) {
-                            if ($details == null){
-                                array_push($details, $all_detail);
-                            } else {
-                                if ($this->SearchDetails($details, $all_detail, $sensor)){
-                                    continue;
-                                }else{
-                                    array_push($details, $all_detail);
-                                }
-                            }
-                        }
-                    }
+            $sensors = Sensor::with('details')->get();
+            foreach ($sensors as $sensor)
+            {
+                $sensor = $sensor->details->last();
+                array_push($details, $sensor);
             }
 //            return $details;
             $details = json_encode($details);
