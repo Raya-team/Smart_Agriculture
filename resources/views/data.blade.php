@@ -44,6 +44,7 @@
                     <tr>
                         <th scope="col">شناسه</th>
                         <th scope="col">داده</th>
+                        <th scope="col">زمان</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -51,6 +52,7 @@
                         <tr>
                             <th scope="row">{{ $data->id }}</th>
                             <td>{{ substr($data->data,38) }}</td>
+                            <td>{{ \Morilog\Jalali\Jalalian::forge($data->created_at)->format('تاریخ: Y/m/d | ساعت: H:i') }}</td>
                         </tr>
                     @endforeach
                     </tbody>
