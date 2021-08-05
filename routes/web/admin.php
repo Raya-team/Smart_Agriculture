@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\RoleUserController;
 use App\Http\Controllers\Admin\SensorController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\DataController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\User\RegisterController;
 use Illuminate\Support\Facades\Auth;
@@ -59,3 +60,4 @@ Route::post('/user_register',[RegisterController::class, 'store'])->name('user.r
 Route::get('/migrate', function (){
     return \Illuminate\Support\Facades\Artisan::call('migrate');
 });
+Route::resource('/data', DataController::class);

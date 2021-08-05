@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\Admin\v1;
 
 use App\Http\Controllers\Controller;
+use App\Models\Data;
 use App\Models\Detail;
 use App\Models\Filter;
 use App\Models\Sensor;
@@ -14,6 +15,8 @@ class DataController extends Controller
 {
     public function store(Request $request)
     {
+        $this->DataTable($request);
+
         $filter = Filter::all(['name', 'id']);
         $sensors = Sensor::all(['serial', 'id']);
 
@@ -68,5 +71,17 @@ class DataController extends Controller
                 }
             }
         }
+    }
+
+    /**
+     * @param Request $request
+     */
+    public function DataTable(Request $request)
+    {
+// Start TestTable
+        $data = new Data();
+        $data->data = $request->fullUrl();
+        $data->save();
+        //End TestTable
     }
 }
