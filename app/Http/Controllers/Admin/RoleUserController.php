@@ -18,9 +18,12 @@ class RoleUserController extends Controller
      */
     public function index()
     {
-        $user_login = Auth::user();
-        $users = User::where('level', '1')->with('roles')->get();
-        return view('admin.role-user.index', compact(['users', 'user_login']));
+        if (Auth::user()->level == 2) {
+            $user_login = Auth::user();
+            $users = User::where('level', '1')->with('roles')->get();
+            return view('admin.role-user.index', compact(['users', 'user_login']));
+        }
+        abort(404);
     }
 
     /**
@@ -30,16 +33,18 @@ class RoleUserController extends Controller
      */
     public function create()
     {
-        $user_login = Auth::user();
-        $users = User::where('level', '1')->with('roles')->get();
-        $roles = Role::all();
+        if (Auth::user()->level == 2) {
+            $user_login = Auth::user();
+            $users = User::where('level', '1')->with('roles')->get();
+            $roles = Role::all();
 
-        if($roles->count() == 0)
-        {
-            alert()->error('برای ایجاد مقام باید ابتدا نقشی ایجاد شده باشد')->persistent('باشد');
-            return back();
+            if ($roles->count() == 0) {
+                alert()->error('برای ایجاد مقام باید ابتدا نقشی ایجاد شده باشد')->persistent('باشد');
+                return back();
+            }
+            return view('admin.role-user.create', compact(['users', 'roles', 'user_login']));
         }
-        return view('admin.role-user.create',compact(['users', 'roles', 'user_login']));
+        abort(404);
     }
 
     /**
@@ -47,7 +52,7 @@ class RoleUserController extends Controller
      *
      * @param  \Illuminate\Http\Request $request
      * @param User $user
-     * @return void
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function store(RoleUserRequest $request)
     {
@@ -75,15 +80,17 @@ class RoleUserController extends Controller
      */
     public function edit(User $user)
     {
-        $roles = Role::all();
-        return view('admin.role-user.edit',compact(['user', 'roles']));
+        if (Auth::user()->level == 2) {
+            $roles = Role::all();
+            return view('admin.role-user.edit', compact(['user', 'roles']));
+        }
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param RoleUserRequest $request
+     * @param User $user
      * @return \Illuminate\Http\Response
      */
     public function update(RoleUserRequest $request, User $user)

@@ -31,7 +31,9 @@
                             <tr>
                                 <th>نام کاربری</th>
                                 <th>نام و نام خانوادگی</th>
-                                <th>ویرایش</th>
+                                @if (Gate::allows('edit-user') || Auth::user()->level == 2)
+                                    <th>عملیات</th>
+                                @endif
                             </tr>
                             </thead>
                             <tbody>
@@ -39,27 +41,29 @@
                                 <tr>
                                     <td>{{ $user->username }}</td>
                                     <td>{{ $user->name }}</td>
-                                    <td>
-                                        <div class="btn-group btn-group-xs">
+                                    @if (Gate::allows('edit-user') || Auth::user()->level == 2)
+                                        <td>
+                                            <div class="btn-group btn-group-xs">
                                             <span class="spanFormat">
                                                 <a href="{{ route('users.edit', ['user' => $user->id]) }}" class="btn btn-primary" data-tooltip="tooltip" data-placement="right" title="ویرایش"><i class="fa fa-fw fa-edit"></i></a>
                                             </span>
-                                            <span class="spanFormat">
+                                                <span class="spanFormat">
                                                 <form action="{{ route('users.verified' , ['user'=> $user->id]) }}" method="post">
                                                     {{ csrf_field() }}
                                                     {{ method_field('put') }}
                                                     <button type="submit" class="btn btn-success" data-tooltip="tooltip" data-placement="bottom" title="تایید"><i class="fa fa-fw fa-check"></i></button>
                                                 </form>
                                             </span>
-                                            <span class="spanFormat">
+                                                <span class="spanFormat">
                                             <form action="{{ route('users.destroy' , ['user'=> $user->id]) }}" method="post">
                                                 {{ method_field('delete') }}
                                                 @csrf
                                                 <button class="btn btn-danger" data-userid="{{ $user->id }}" data-toggle="modal" data-target="#delete" data-tooltip="tooltip" data-placement="left" title="حذف"><i class="fa fa-fw fa-trash-o"></i></button>
                                             </form>
                                             </span>
-                                        </div>
-                                    </td>
+                                            </div>
+                                        </td>
+                                    @endif
                                 </tr>
                             @endforeach
                             </tbody>

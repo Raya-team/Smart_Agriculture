@@ -8,6 +8,8 @@ use App\Http\Requests\EditSensorRequest;
 use App\Models\Land;
 use App\Models\Sensor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class SensorController extends Controller
 {
@@ -29,13 +31,15 @@ class SensorController extends Controller
      */
     public function create()
     {
-        $lands = Land::all();
-        if ($lands->count() == 0)
-        {
-            alert()->error("برای ایجاد سنسور باید ابتدا زمینی ایجاد شده باشد")->persistent("باشد");
-            return back();
+        if (Gate::allows('create-sensor') || Auth::user()->level == 2) {
+            $lands = Land::all();
+            if ($lands->count() == 0) {
+                alert()->error("برای ایجاد سنسور باید ابتدا زمینی ایجاد شده باشد")->persistent("باشد");
+                return back();
+            }
+            return view('admin.sensors.create', compact('lands'));
         }
-        return view('admin.sensors.create', compact('lands'));
+        abort(404);
     }
 
     /**
@@ -74,8 +78,11 @@ class SensorController extends Controller
      */
     public function edit(Sensor $sensor)
     {
-        $lands = Land::all();
-        return view('admin.sensors.edit', compact(['sensor', 'lands']));
+        if (Gate::allows('create-sensor') || Auth::user()->level == 2) {
+            $lands = Land::all();
+            return view('admin.sensors.edit', compact(['sensor', 'lands']));
+        }
+        abort(404);
     }
 
     /**

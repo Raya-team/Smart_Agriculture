@@ -45,7 +45,6 @@
                                         <select class="form-control chosen-select" style="width: 100%;" name="period" id="period" data-placeholder="جهت نمایش نمودار پارامتر مورد نظر خود را انتخاب کنید">
                                             <option value="h">ساعتی</option>
                                             <option value="d">روزانه</option>
-                                            <option value="w">هفتگی</option>
                                             <option value="m">ماهانه</option>
                                             <option value="y">سالانه</option>
                                         </select>

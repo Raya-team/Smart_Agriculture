@@ -65,8 +65,10 @@ class LandController extends Controller
             }
 //            return $details;
             $details = json_encode($details);
+//            return $details;
 
-            return view('user.lands.heat', compact('land', 'details','filters'));
+//            return view('user.lands.heat', compact('land', 'details','filters'));
+            return view('user.lands.heat', compact(['land' , 'details', 'filters']));
         }
         abort(404);
     }

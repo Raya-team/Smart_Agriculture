@@ -19,12 +19,13 @@
                 <div class="box">
                     <div class="box-header">
                         <h1 class="box-title">ایستگاه ها</h1>
-                        <div class="box-tools pull-right">
-                            <a href="{{ route('sensors.create') }}" class="btn btn-app" style="background-color: #89ffae">
-                                <i class="fa fa-plus"></i> ایجاد ایستگاه
-                            </a>
-                        </div>
-
+                        @if (Gate::allows('create-sensor') || Auth::user()->level == 2)
+                            <div class="box-tools pull-right">
+                                <a href="{{ route('sensors.create') }}" class="btn btn-app" style="background-color: #89ffae">
+                                    <i class="fa fa-plus"></i> ایجاد ایستگاه
+                                </a>
+                            </div>
+                        @endif
                     </div>
 
                     <!-- /.box-header -->
@@ -34,7 +35,9 @@
                             <tr>
                                 <th>شناسه</th>
                                 <th>زمین</th>
-                                <th>عملیات</th>
+                                @if (Gate::allows('edit-sensor') || Auth::user()->level == 2)
+                                    <th>عملیات</th>
+                                @endif
                             </tr>
                             </thead>
                             <tbody>
@@ -42,18 +45,20 @@
                                 <tr>
                                     <td>{{ $sensor->serial }}</td>
                                     <td>{{ $sensor->land->name }}</td>
-                                    <td>
-                                        <form action="{{ route('sensors.destroy' , ['sensor'=> $sensor->id]) }}" method="post">
-                                            {{ method_field('delete') }}
-                                            {{ csrf_field() }}
+                                    @if (Gate::allows('edit-sensor') || Auth::user()->level == 2)
+                                        <td>
+                                            <form action="{{ route('sensors.destroy' , ['sensor'=> $sensor->id]) }}" method="post">
+                                                {{ method_field('delete') }}
+                                                {{ csrf_field() }}
 
-                                            <div class="btn-group btn-group-xs">
-                                                <a href="{{ route('sensors.edit', ['sensor' => $sensor->id]) }}" class="btn btn-primary" data-tooltip="tooltip" data-placement="right" title="ویرایش"><i class="fa fa-fw fa-edit"></i></a>
-                                                <button type="submit" class="btn btn-danger" data-tooltip="tooltip" data-placement="left" title="حذف"><i class="fa fa-fw fa-trash-o"></i></button>
-                                            </div>
+                                                <div class="btn-group btn-group-xs">
+                                                    <a href="{{ route('sensors.edit', ['sensor' => $sensor->id]) }}" class="btn btn-primary" data-tooltip="tooltip" data-placement="right" title="ویرایش"><i class="fa fa-fw fa-edit"></i></a>
+                                                    <button type="submit" class="btn btn-danger" data-tooltip="tooltip" data-placement="left" title="حذف"><i class="fa fa-fw fa-trash-o"></i></button>
+                                                </div>
 
-                                        </form>
-                                    </td>
+                                            </form>
+                                        </td>
+                                    @endif
                                 </tr>
                             @endforeach
                             </tbody>

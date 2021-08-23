@@ -10,7 +10,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>CodePen - Fargo 404</title>
+    <title>صفحه یافت نشد</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Dosis:400,300,500,800'>
     <style>
@@ -177,7 +177,7 @@
 <div class="content">
     <canvas class="snow" id="snow"></canvas>
     <div class="main-text">
-            {{--<h1>Aw jeez.<br />That page has gone missing.</h1><a class="home-link" href="{{ redirect('login') }}">بازگشت به داشبورد.</a>--}}
+        {{--<h1>Aw jeez.<br />That page has gone missing.</h1><a class="home-link" href="{{ redirect('login') }}">بازگشت به داشبورد.</a>--}}
     </div>
     <div class="ground">
         <div class="mound">

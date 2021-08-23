@@ -31,7 +31,9 @@
                             <tr>
                                 <th>نام کاربری</th>
                                 <th>نام و نام خانوادگی</th>
-                                <th>ویرایش</th>
+                                @if (Gate::allows('edit-user') || Auth::user()->level == 2)
+                                    <th>ویرایش</th>
+                                @endif
                             </tr>
                             </thead>
                             <tbody>
@@ -39,16 +41,18 @@
                                 <tr>
                                     <td>{{ $user->username }}</td>
                                     <td>{{ $user->name }}</td>
-                                    <td>
-                                        <form action="{{ route('users.destroy' , ['user'=> $user->id]) }}" method="post">
-                                            {{ method_field('delete') }}
-                                            @csrf
-                                            <div class="btn-group btn-group-xs">
-                                                <a href="{{ route('users.edit', ['user' => $user->id]) }}" class="btn btn-primary" data-tooltip="tooltip" data-placement="right" title="ویرایش"><i class="fa fa-fw fa-edit"></i></a>
-                                                <button class="btn btn-danger" data-userid="{{$user->id}}" data-toggle="modal" data-target="#delete" data-tooltip="tooltip" data-placement="left" title="حذف"><i class="fa fa-fw fa-trash-o"></i></button>
-                                            </div>
-                                        </form>
-                                    </td>
+                                    @if (Gate::allows('edit-user') || Auth::user()->level == 2)
+                                        <td>
+                                            <form action="{{ route('users.destroy' , ['user'=> $user->id]) }}" method="post">
+                                                {{ method_field('delete') }}
+                                                @csrf
+                                                <div class="btn-group btn-group-xs">
+                                                    <a href="{{ route('users.edit', ['user' => $user->id]) }}" class="btn btn-primary" data-tooltip="tooltip" data-placement="right" title="ویرایش"><i class="fa fa-fw fa-edit"></i></a>
+                                                    <button class="btn btn-danger" data-userid="{{$user->id}}" data-toggle="modal" data-target="#delete" data-tooltip="tooltip" data-placement="left" title="حذف"><i class="fa fa-fw fa-trash-o"></i></button>
+                                                </div>
+                                            </form>
+                                        </td>
+                                    @endif
                                 </tr>
                             @endforeach
                             </tbody>

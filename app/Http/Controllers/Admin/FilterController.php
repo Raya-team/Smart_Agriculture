@@ -7,6 +7,8 @@ use App\Http\Requests\EditFilterRequst;
 use App\Http\Requests\FilterRequest;
 use App\Models\Filter;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Session;
 
 class FilterController extends Controller
@@ -29,7 +31,10 @@ class FilterController extends Controller
      */
     public function create()
     {
-        return view('admin.filters.create');
+        if (Gate::allows('create-sensor') || Auth::user()->level == 2) {
+            return view('admin.filters.create');
+        }
+        abort(404);
     }
 
     /**
@@ -79,7 +84,10 @@ class FilterController extends Controller
      */
     public function edit(Filter $filter)
     {
-        return view('admin.filters.edit',compact('filter'));
+        if (Gate::allows('edit-sensor') || Auth::user()->level == 2) {
+            return view('admin.filters.edit', compact('filter'));
+        }
+        abort(404);
     }
 
     /**

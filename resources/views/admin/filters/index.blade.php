@@ -34,7 +34,9 @@
                                 <th>شاخص</th>
                                 {{--<th>حداقل بازه</th>
                                 <th>حداکثر بازه</th>--}}
-                                <th>عملیات</th>
+                                @if (Gate::allows('edit-filter') || Auth::user()->level == 2)
+                                    <th>عملیات</th>
+                                @endif
                             </tr>
                             </thead>
                             <tbody>
@@ -45,22 +47,24 @@
                                     <td>{{ $filter->index }}</td>
                                     {{--<td>{{ $filter->min }}</td>
                                     <td>{{ $filter->max }}</td>--}}
-                                    <td>
-                                        <form action="{{ route('filters.destroy' , ['filter'=> $filter->id]) }}" method="post">
-                                            {{ method_field('delete') }}
-                                            {{ csrf_field() }}
+                                    @if (Gate::allows('edit-filter') || Auth::user()->level == 2)
+                                        <td>
+                                            <form action="{{ route('filters.destroy' , ['filter'=> $filter->id]) }}" method="post">
+                                                {{ method_field('delete') }}
+                                                {{ csrf_field() }}
 
-                                            <div class="btn-group btn-group-xs">
-                                                <a href="{{ route('filters.edit', ['filter' => $filter->id]) }}" class="btn btn-primary" data-tooltip="tooltip" data-placement="bottom" title="ویرایش">
-                                                    <i class="fa fa-fw fa-edit"></i>
-                                                </a>
-                                                <button type="submit" class="btn btn-danger">
-                                                    <i class="fa fa-fw fa-trash-o" data-tooltip="tooltip" data-placement="bottom" title="حذف"></i>
-                                                </button>
-                                            </div>
+                                                <div class="btn-group btn-group-xs">
+                                                    <a href="{{ route('filters.edit', ['filter' => $filter->id]) }}" class="btn btn-primary" data-tooltip="tooltip" data-placement="bottom" title="ویرایش">
+                                                        <i class="fa fa-fw fa-edit"></i>
+                                                    </a>
+                                                    <button type="submit" class="btn btn-danger">
+                                                        <i class="fa fa-fw fa-trash-o" data-tooltip="tooltip" data-placement="bottom" title="حذف"></i>
+                                                    </button>
+                                                </div>
 
-                                        </form>
-                                    </td>
+                                            </form>
+                                        </td>
+                                    @endif
                                 </tr>
                             @endforeach
                             </tbody>

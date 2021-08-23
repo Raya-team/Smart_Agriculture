@@ -32,7 +32,7 @@
                             <tr>
                                 <th> نام زمین</th>
                                 <th>مساحت (هکتار)</th>
-                                <th>نام کاربر</th>
+                                <th>نام کاربری</th>
                                 <th>عملیات</th>
                             </tr>
                             </thead>
@@ -48,10 +48,14 @@
                                             {{ csrf_field() }}
 
                                             <div class="btn-group btn-group-xs">
-                                                <a href="{{ route('lands.edit', ['land' => $land->id]) }}" class="btn btn-primary" data-tooltip="tooltip" data-placement="bottom" title="ویرایش"><i class="fa fa-fw fa-edit"></i></a>
-{{--                                                <a href="{{ route('lands.show', ['land' => $land->id]) }}" class="btn btn-success" data-tooltip="tooltip" data-placement="bottom" title="نمایش"><i class="fa fa-fw fa-eye"></i></a>--}}
+                                                @if (Gate::allows('edit-land') || Auth::user()->level == 2)
+                                                    <a href="{{ route('lands.edit', ['land' => $land->id]) }}" class="btn btn-primary" data-tooltip="tooltip" data-placement="bottom" title="ویرایش"><i class="fa fa-fw fa-edit"></i></a>
+                                                @endif
+                                                {{--                                                <a href="{{ route('lands.show', ['land' => $land->id]) }}" class="btn btn-success" data-tooltip="tooltip" data-placement="bottom" title="نمایش"><i class="fa fa-fw fa-eye"></i></a>--}}
                                                 <a href="{{ route('lands.heat', ['land' => $land->id]) }}" class="btn btn-success" data-tooltip="tooltip" data-placement="bottom" title="نمایش زمین"><i class="fa fa-fw fa-eye"></i></a>
-                                                <button type="submit" class="btn btn-danger"><i class="fa fa-fw fa-trash-o" data-tooltip="tooltip" data-placement="bottom" title="حذف"></i></button>
+                                                @if (Gate::allows('edit-land') || Auth::user()->level == 2)
+                                                    <button type="submit" class="btn btn-danger"><i class="fa fa-fw fa-trash-o" data-tooltip="tooltip" data-placement="bottom" title="حذف"></i></button>
+                                                @endif
                                             </div>
 
                                         </form>

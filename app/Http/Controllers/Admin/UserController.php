@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Rules\Security;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 
@@ -31,7 +32,10 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.users.create');
+        if (Gate::allows('user-create') || Auth::user()->level == 2) {
+            return view('admin.users.create');
+        }
+        abort(404);
     }
 
     /**
@@ -80,7 +84,10 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('admin.users.edit', compact('user'));
+        if (Gate::allows('edit-user') || Auth::user()->level == 2){
+            return view('admin.users.edit', compact('user'));
+        }
+        abort(404);
     }
 
     /**
@@ -123,8 +130,10 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
+     * @param User $user
      * @param Request $request
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     public function destroy(User $user, Request $request)
     {

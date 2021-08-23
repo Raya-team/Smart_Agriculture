@@ -25,11 +25,8 @@ class LandController extends Controller
      */
     public function index()
     {
-        if (Gate::allows('index-land') || Auth::user()->level == 2) {
-            $lands = Land::all();
-            return view('admin.lands.index', compact('lands'));
-        }
-        abort(401);
+        $lands = Land::all();
+        return view('admin.lands.index', compact('lands'));
     }
 
     /**
@@ -43,7 +40,7 @@ class LandController extends Controller
             $users = User::Where('level', 0)->get();
             return view('admin.lands.create',compact('users'));
         }
-        abort(401);
+        abort(404);
     }
 
     /**
@@ -90,7 +87,7 @@ class LandController extends Controller
             $users = User::where('level', 0)->get();
             return view('admin.lands.edit', compact(['land', 'users']));
         }
-        abort(401);
+        abort(404);
     }
 
     /**

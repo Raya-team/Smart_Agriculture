@@ -7,6 +7,7 @@ use App\Http\Requests\RoleRequest;
 use App\Models\Permission;
 use App\Models\Role;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RoleController extends Controller
 {
@@ -17,8 +18,11 @@ class RoleController extends Controller
      */
     public function index()
     {
-        $roles=Role::with('permissions')->get();
-        return view('admin.roles.index',compact('roles'));
+        if (Auth::user()->level == 2) {
+            $roles = Role::with('permissions')->get();
+            return view('admin.roles.index', compact('roles'));
+        }
+        abort(404);
     }
 
     /**
@@ -28,14 +32,18 @@ class RoleController extends Controller
      */
     public function create()
     {
-        $permissions=Permission::all();
-        return view('admin.roles.create', compact('permissions'));
+        if (Auth::user()->level == 2) {
+            $permissions = Permission::all();
+            return view('admin.roles.create', compact('permissions'));
+        }
+        abort(404);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param RoleRequest $request
+     * @param Role $role
      * @return \Illuminate\Http\Response
      */
     public function store(RoleRequest $request,role $role)
@@ -48,11 +56,12 @@ class RoleController extends Controller
 
         return redirect(route('roles.index'));
     }
+
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  int $id
+     * @return void
      */
     public function show($id)
     {
@@ -62,20 +71,23 @@ class RoleController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param Role $role
      * @return \Illuminate\Http\Response
      */
     public function edit(Role $role)
     {
-        $permissions=Permission::all();
-        return view('admin.roles.edit', compact('role','permissions'));
+        if (Auth::user()->level == 2) {
+            $permissions = Permission::all();
+            return view('admin.roles.edit', compact(['role', 'permissions']));
+        }
+        abort(404);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param RoleRequest $request
+     * @param Role $role
      * @return \Illuminate\Http\Response
      */
     public function update(RoleRequest $request,Role $role)
@@ -88,8 +100,9 @@ class RoleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param Role $role
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     public function destroy(Role $role)
     {
