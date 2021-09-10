@@ -64,7 +64,6 @@ $("#filter_id").change(function () {
             var color = (colors[c]['colors']);
             //convert string to array
             var test = JSON.parse(color);
-            // console.log(test[2]);
         }
     }*/
     for (var d = 0; d < details.length; d++) {

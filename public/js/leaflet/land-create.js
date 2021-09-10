@@ -15037,10 +15037,6 @@ var map = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.map('mapid', {
   contextmenu: true,
   contextmenuWidth: 140,
   contextmenuItems: [{
-    text: 'اینجا کجاست؟',
-    callback: WhatHere,
-    icon: "https://fastcode.space/wp-content/uploads/2019/11/Location-Icon-Creative-Design-Template.jpg"
-  }, {
     text: "بزرگنمایی",
     callback: Zoomin,
     index: 0,
@@ -15103,7 +15099,6 @@ $(".leaflet-control-measure").hover(function () {
     $(".leaflet-control-measure").append("<p class='text-center p-2 h6' id='fullLand'><i class='fa fa-exclamation'></i>تنها یک مزرعه می توانید ثبت کنید</p>");
   } else {
     if (!$('#eventoutput').value) {
-      // console.log('asdasd');
       $(".js-startprompt").show();
     }
   }
@@ -15128,10 +15123,6 @@ map.on('measurefinish', function (evt) {
   document.getElementById('area').value = area;
   document.getElementById('eventoutput').value = JSON.stringify(evt.points);
 });
-
-function WhatHere(e) {
-  alert(e.latlng);
-}
 
 function Zoomin(e) {
   map.zoomIn();

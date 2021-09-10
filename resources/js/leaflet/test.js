@@ -42,5 +42,3 @@ function colorValues(color)
         });
     }
 }
-
-// console.log(colorValues('black'));

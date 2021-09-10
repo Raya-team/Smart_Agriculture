@@ -63,7 +63,6 @@ $(".leaflet-control-measure").hover(
             );
         } else {
             if (!$('#eventoutput').value) {
-                console.log('asdasd');
                 $(".js-startprompt").show();
             }
         }

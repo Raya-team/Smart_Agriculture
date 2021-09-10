@@ -16364,7 +16364,6 @@ var colorsjson = document.getElementById('filters').value;
 var colors = JSON.parse(colorsjson);
 var detailjson = document.getElementById('details').value;
 var details = JSON.parse(detailjson);
-console.log(details);
 var shipLayer = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.layerGroup();
 map.addLayer(shipLayer);
 $("#filter_id").change(function () {
@@ -16383,7 +16382,6 @@ $("#filter_id").change(function () {
   //         var color = (colors[c]['colors']);
   //         //convert string to array
   //         var test = JSON.parse(color);
-  //         // console.log(test[2]);
   //     }
   //
   // }

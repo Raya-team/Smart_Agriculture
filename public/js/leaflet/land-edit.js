@@ -18424,7 +18424,6 @@ $(".leaflet-control-measure").hover(function () {
     $(".leaflet-control-measure").append("<p class='text-center p-2 h6' id='fullLand'><i class='fa fa-exclamation'></i>تنها یک مزرعه می توانید ثبت کنید</p>");
   } else {
     if (!$('#eventoutput').value) {
-      console.log('asdasd');
       $(".js-startprompt").show();
     }
   }

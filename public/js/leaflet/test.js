@@ -130,7 +130,7 @@ function colorValues(color) {
       return +a;
     });
   }
-} // console.log(colorValues('black'));
+}
 
 /***/ }),
 

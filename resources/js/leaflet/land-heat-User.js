@@ -38,7 +38,6 @@ var colors = JSON.parse(colorsjson);
 
 var detailjson = document.getElementById('details').value;
 var details = JSON.parse(detailjson);
-console.log(details);
 
 
 var shipLayer = L.layerGroup();
@@ -64,7 +63,6 @@ $("#filter_id").change(function () {
     //         var color = (colors[c]['colors']);
     //         //convert string to array
     //         var test = JSON.parse(color);
-    //         // console.log(test[2]);
     //     }
     //
     // }

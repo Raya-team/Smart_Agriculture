@@ -7,11 +7,7 @@ import 'leaflet.fullscreen';
 let map = L.map('mapid', {
     contextmenu: true,
     contextmenuWidth: 140,
-    contextmenuItems: [{
-        text: 'اینجا کجاست؟',
-        callback: WhatHere,
-        icon: "https://fastcode.space/wp-content/uploads/2019/11/Location-Icon-Creative-Design-Template.jpg"
-    },
+    contextmenuItems: [
         {
             text: "بزرگنمایی",
             callback: Zoomin,
@@ -86,7 +82,6 @@ $(".leaflet-control-measure").hover(
             );
         } else {
             if (!$('#eventoutput').value) {
-                // console.log('asdasd');
                 $(".js-startprompt").show();
             }
         }
@@ -114,10 +109,6 @@ map.on('measurefinish', function (evt) {
     document.getElementById('eventoutput').value = JSON.stringify(evt.points);
 });
 
-
-function WhatHere(e) {
-    alert(e.latlng);
-}
 
 function Zoomin(e) {
     map.zoomIn();

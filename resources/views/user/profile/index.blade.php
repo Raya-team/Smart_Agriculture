@@ -28,13 +28,11 @@
                             <img class="profile-user-img img-responsive img-circle" src="{{ Auth::user()->image }}" alt="User profile picture" style="height: 100px;">
                         @endif
 
-                        <h3 class="profile-username text-center">{{ $user->name }}</h3>
-
-                        <p class="text-muted text-center">{{ $user->username }}</p>
+                        <h3 class="profile-username text-center">{{ $user->username }}</h3>
 
                         <ul class="list-group list-group-unbordered">
                             <li class="list-group-item">
-                                <b>آدرس</b> <a class="pull-left">مشهد، عبادی</a>
+                                <b>نام و نام خانوادگی</b> <a class="pull-left">{{ $user->name }}</a>
                             </li>
                             <li class="list-group-item">
                                 <b>شماره تلفن</b> <a class="pull-left">{{ $user->phone_number }}</a>

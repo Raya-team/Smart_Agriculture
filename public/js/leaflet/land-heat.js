@@ -16386,7 +16386,6 @@ $("#filter_id").change(function () {
           var color = (colors[c]['colors']);
           //convert string to array
           var test = JSON.parse(color);
-          // console.log(test[2]);
       }
   }*/
 
